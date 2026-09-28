@@ -1,0 +1,2700 @@
+{
+  "_meta": {
+    "status": "incompleto",
+    "missingSource": "CANON-CREATURES (04_CRIATURAS.md) no esta presente en NarrativeEngine/",
+    "derivedFrom": [
+      "CANON-TECHNIQUES > Tecnicas especiales (numero y nombre de especie)",
+      "CANON-NOVELS (tipos declarados en fichas individuales, no en fichas de especie)"
+    ],
+    "statKeys": [
+      "hp",
+      "atk",
+      "matk",
+      "def",
+      "mdef",
+      "spe"
+    ],
+    "depthFactors": {
+      "fluida": 0.8,
+      "normal": 1.0,
+      "exigente": 1.2,
+      "dificil": 1.5,
+      "singular": 2.0
+    }
+  },
+  "species": [
+    {
+      "id": "brasal",
+      "number": 1,
+      "name": "Brasal",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "golpe_candente"
+      ]
+    },
+    {
+      "id": "dracendra",
+      "number": 2,
+      "name": "Dracendra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "ariete_draconico"
+      ]
+    },
+    {
+      "id": "valdrakar",
+      "number": 3,
+      "name": "Valdrakar",
+      "types": [
+        "fuego",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 7211
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "fauces_incandescentes"
+      ]
+    },
+    {
+      "id": "neril",
+      "number": 4,
+      "name": "Neril",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "sentir_la_corriente"
+      ]
+    },
+    {
+      "id": "talassar",
+      "number": 5,
+      "name": "Talassar",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "chorro_a_reaccion"
+      ]
+    },
+    {
+      "id": "maraviel",
+      "number": 6,
+      "name": "Maraviel",
+      "types": [
+        "agua",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1368
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "marea_inversa"
+      ]
+    },
+    {
+      "id": "velarc",
+      "number": 7,
+      "name": "Velarc",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rocio_de_astas"
+      ]
+    },
+    {
+      "id": "varemar",
+      "number": 8,
+      "name": "Varemar",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cornamenta_viva"
+      ]
+    },
+    {
+      "id": "vercosalvi",
+      "number": 9,
+      "name": "Vercosalvi",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "bosque_andante"
+      ]
+    },
+    {
+      "id": "gorim",
+      "number": 10,
+      "name": "Gorim",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "puno_de_piedra"
+      ]
+    },
+    {
+      "id": "targor",
+      "number": 11,
+      "name": "Targor",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cuerpo_monolitico"
+      ]
+    },
+    {
+      "id": "numegor",
+      "number": 12,
+      "name": "Numegor",
+      "types": [
+        "tierra",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1548
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "desprendimiento"
+      ]
+    },
+    {
+      "id": "nimburu",
+      "number": 13,
+      "name": "Nimburu",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rebufo"
+      ]
+    },
+    {
+      "id": "nimbaro",
+      "number": 14,
+      "name": "Nimbaro",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "quiebro"
+      ]
+    },
+    {
+      "id": "nimburai",
+      "number": 15,
+      "name": "Nimburai",
+      "types": [
+        "aire",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 7242
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "nueve_corrientes"
+      ]
+    },
+    {
+      "id": "zairu",
+      "number": 16,
+      "name": "Zairu",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arranque"
+      ]
+    },
+    {
+      "id": "keraul",
+      "number": 17,
+      "name": "Keraul",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arco_serpentino"
+      ]
+    },
+    {
+      "id": "nerakous",
+      "number": 18,
+      "name": "Nerakous",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cielo_conductor"
+      ]
+    },
+    {
+      "id": "nulem",
+      "number": 19,
+      "name": "Nulem",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "fogonazo"
+      ]
+    },
+    {
+      "id": "aureon",
+      "number": 20,
+      "name": "Aureon",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "guardia_solar"
+      ]
+    },
+    {
+      "id": "archelia",
+      "number": 21,
+      "name": "Archelia",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "bajo_mi_amparo"
+      ]
+    },
+    {
+      "id": "umbrin",
+      "number": 22,
+      "name": "Umbrín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rastro"
+      ]
+    },
+    {
+      "id": "noctargo",
+      "number": 23,
+      "name": "Noctargo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "caza_de_sombra"
+      ]
+    },
+    {
+      "id": "umbrafen",
+      "number": 24,
+      "name": "Umbrafen",
+      "types": [
+        "oscuridad",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1200
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "caza_espectral"
+      ]
+    },
+    {
+      "id": "broncian",
+      "number": 25,
+      "name": "Broncian",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "hollin_ardiente"
+      ]
+    },
+    {
+      "id": "vetamur",
+      "number": 26,
+      "name": "Vetamur",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "veta_incandescente"
+      ]
+    },
+    {
+      "id": "pirarin",
+      "number": 27,
+      "name": "Pirarín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "pluma_ignea"
+      ]
+    },
+    {
+      "id": "faresban",
+      "number": 28,
+      "name": "Faresban",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "lagrimas_de_fenix"
+      ]
+    },
+    {
+      "id": "fenyrax",
+      "number": 29,
+      "name": "Fényrax",
+      "types": [
+        "fuego",
+        "aire"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1005
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "canto_final"
+      ]
+    },
+    {
+      "id": "brascajo",
+      "number": 30,
+      "name": "Bráscajo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "caparazon_incandescente"
+      ]
+    },
+    {
+      "id": "cervolasto",
+      "number": 31,
+      "name": "Cervolasto",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "tenaza_voltaica"
+      ]
+    },
+    {
+      "id": "cauzarzas",
+      "number": 32,
+      "name": "Cauzarzas",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "espinas_candentes"
+      ]
+    },
+    {
+      "id": "zarpiroza",
+      "number": 33,
+      "name": "Zarpiroza",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "espinas_de_rebrote"
+      ]
+    },
+    {
+      "id": "florain",
+      "number": 34,
+      "name": "Florain",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "lumbre_ventral"
+      ]
+    },
+    {
+      "id": "solandra",
+      "number": 35,
+      "name": "Solandra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "llama_blanca"
+      ]
+    },
+    {
+      "id": "pantarin",
+      "number": 36,
+      "name": "Pantarin",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "panzazo"
+      ]
+    },
+    {
+      "id": "darnalo",
+      "number": 37,
+      "name": "Darnalo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "salto_sismico"
+      ]
+    },
+    {
+      "id": "juncel",
+      "number": 38,
+      "name": "Juncel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "impulso_elastico"
+      ]
+    },
+    {
+      "id": "batrioma",
+      "number": 39,
+      "name": "Batrioma",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "jardin_dorsal"
+      ]
+    },
+    {
+      "id": "brumel",
+      "number": 40,
+      "name": "Brumel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "campana_de_presion"
+      ]
+    },
+    {
+      "id": "belusamunda",
+      "number": 41,
+      "name": "Belusamunda",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "nube_osmotica"
+      ]
+    },
+    {
+      "id": "linganui",
+      "number": 42,
+      "name": "Linganui",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "latigazo_sinuoso"
+      ]
+    },
+    {
+      "id": "fulguilla",
+      "number": 43,
+      "name": "Fulguilla",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "abrazo_voltaico"
+      ]
+    },
+    {
+      "id": "murlin",
+      "number": 44,
+      "name": "Murlín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "pulso_abisal"
+      ]
+    },
+    {
+      "id": "abisalia",
+      "number": 45,
+      "name": "Abisalia",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "acecho"
+      ]
+    },
+    {
+      "id": "naugrima",
+      "number": 46,
+      "name": "Naugrima",
+      "types": [
+        "agua",
+        "oscuridad"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1256
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "pavor_abisal"
+      ]
+    },
+    {
+      "id": "zeropid",
+      "number": 47,
+      "name": "Zeropid",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rodar_en_placas"
+      ]
+    },
+    {
+      "id": "musgarma",
+      "number": 48,
+      "name": "Musgarma",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "caparazon_fertil"
+      ]
+    },
+    {
+      "id": "nipto",
+      "number": 49,
+      "name": "Nipto",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "socavar"
+      ]
+    },
+    {
+      "id": "palmatagma",
+      "number": 50,
+      "name": "Palmatagma",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "taladro_al_rojo"
+      ]
+    },
+    {
+      "id": "ofelito",
+      "number": 51,
+      "name": "Ofelito",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "muda_de_pizarra"
+      ]
+    },
+    {
+      "id": "litofis",
+      "number": 52,
+      "name": "Litófis",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "muralla_quebrada"
+      ]
+    },
+    {
+      "id": "zercual",
+      "number": 53,
+      "name": "Zercual",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cristal_opaco"
+      ]
+    },
+    {
+      "id": "luminax",
+      "number": 54,
+      "name": "Luminax",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "prisma_de_retorno"
+      ]
+    },
+    {
+      "id": "nairen",
+      "number": 55,
+      "name": "Nairen",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "patada_rasante"
+      ]
+    },
+    {
+      "id": "valeduno",
+      "number": 56,
+      "name": "Valeduno",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "quiebro_aereo"
+      ]
+    },
+    {
+      "id": "brelatadire",
+      "number": 57,
+      "name": "Brelatadire",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "salto_balistico"
+      ]
+    },
+    {
+      "id": "alverin",
+      "number": 58,
+      "name": "Álverin",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rasante"
+      ]
+    },
+    {
+      "id": "torvalan",
+      "number": 59,
+      "name": "Torvalán",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "estampido"
+      ]
+    },
+    {
+      "id": "lenipon",
+      "number": 60,
+      "name": "Lenipon",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "polvillo_de_alas"
+      ]
+    },
+    {
+      "id": "verdalula",
+      "number": 61,
+      "name": "Verdálula",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "siembra_al_vuelo"
+      ]
+    },
+    {
+      "id": "cirrin",
+      "number": 62,
+      "name": "Cirrín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "deshilado"
+      ]
+    },
+    {
+      "id": "zanolah",
+      "number": 63,
+      "name": "Zanolah",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "instinto_adoptado"
+      ]
+    },
+    {
+      "id": "curmin",
+      "number": 64,
+      "name": "Curmin",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "eco_exacto"
+      ]
+    },
+    {
+      "id": "noctivelo",
+      "number": 65,
+      "name": "Noctivelo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "silencio_de_alas"
+      ]
+    },
+    {
+      "id": "eosmis",
+      "number": 66,
+      "name": "Eosmis",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "compresion"
+      ]
+    },
+    {
+      "id": "brumarina",
+      "number": 67,
+      "name": "Brumarina",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "lluvia_propia"
+      ]
+    },
+    {
+      "id": "tempestral",
+      "number": 68,
+      "name": "Tempestral",
+      "types": [
+        "aire",
+        "rayo"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1396
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "tormenta_encarnada"
+      ]
+    },
+    {
+      "id": "fulmus",
+      "number": 69,
+      "name": "Fulmus",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "chisporroteo"
+      ]
+    },
+    {
+      "id": "centelox",
+      "number": 70,
+      "name": "Centelox",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "estela_electrica"
+      ]
+    },
+    {
+      "id": "pardochis",
+      "number": 71,
+      "name": "Pardochis",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cornada_estatica"
+      ]
+    },
+    {
+      "id": "fulgurom",
+      "number": 72,
+      "name": "Fulgurom",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cuerno_mineral"
+      ]
+    },
+    {
+      "id": "fulgocerno",
+      "number": 73,
+      "name": "Fulgocerno",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "embestida_de_chispa"
+      ]
+    },
+    {
+      "id": "voltacerno",
+      "number": 74,
+      "name": "Voltacerno",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cuerno_al_rojo"
+      ]
+    },
+    {
+      "id": "brontocerno",
+      "number": 75,
+      "name": "Brontocerno",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "carga_de_tormenta"
+      ]
+    },
+    {
+      "id": "zulpin",
+      "number": 76,
+      "name": "Zulpin",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "pulso_intermitente"
+      ]
+    },
+    {
+      "id": "valdoroi",
+      "number": 77,
+      "name": "Valdoroi",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arco_blanco"
+      ]
+    },
+    {
+      "id": "noxilo",
+      "number": 78,
+      "name": "Noxilo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "reflejo_galvanico"
+      ]
+    },
+    {
+      "id": "bramentor",
+      "number": 79,
+      "name": "Bramentor",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "apagon"
+      ]
+    },
+    {
+      "id": "brotali",
+      "number": 80,
+      "name": "Brotalí",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "hocico_de_brotes"
+      ]
+    },
+    {
+      "id": "rizabal",
+      "number": 81,
+      "name": "Rizabal",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arado_de_raices"
+      ]
+    },
+    {
+      "id": "camalin",
+      "number": 82,
+      "name": "Camalín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "sesteo"
+      ]
+    },
+    {
+      "id": "camabara",
+      "number": 83,
+      "name": "Camabara",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "remanso"
+      ]
+    },
+    {
+      "id": "sonderir",
+      "number": 84,
+      "name": "Sonderir",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "hoja_trampa"
+      ]
+    },
+    {
+      "id": "nerponterre",
+      "number": 85,
+      "name": "Nerponterre",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "digestion"
+      ]
+    },
+    {
+      "id": "dalgoni",
+      "number": 86,
+      "name": "Dalgoni",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "prenderse"
+      ]
+    },
+    {
+      "id": "copolusa",
+      "number": 87,
+      "name": "Copolusa",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "polen_anestesico"
+      ]
+    },
+    {
+      "id": "velaflora",
+      "number": 88,
+      "name": "Velaflora",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "dispersion"
+      ]
+    },
+    {
+      "id": "rolfel",
+      "number": 89,
+      "name": "Rolfel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "polen_nutritivo"
+      ]
+    },
+    {
+      "id": "flarosol",
+      "number": 90,
+      "name": "Flarosol",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "flor_solar"
+      ]
+    },
+    {
+      "id": "lucilo",
+      "number": 91,
+      "name": "Lucilo",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "salto_de_luz"
+      ]
+    },
+    {
+      "id": "heliacris",
+      "number": 92,
+      "name": "Heliacris",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "rebote_solar"
+      ]
+    },
+    {
+      "id": "irisela",
+      "number": 93,
+      "name": "Irisela",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "escamas_prismaticas"
+      ]
+    },
+    {
+      "id": "halaria",
+      "number": 94,
+      "name": "Halaria",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cinta_de_luz"
+      ]
+    },
+    {
+      "id": "cornelin",
+      "number": 95,
+      "name": "Cornelín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cuerno_sereno"
+      ]
+    },
+    {
+      "id": "unisylva",
+      "number": 96,
+      "name": "Unisylva",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "savia_luminosa"
+      ]
+    },
+    {
+      "id": "silvakeros",
+      "number": 97,
+      "name": "Silvakeros",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "lanza_vital"
+      ]
+    },
+    {
+      "id": "pelnir",
+      "number": 98,
+      "name": "Pelnir",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "senal_de_banco"
+      ]
+    },
+    {
+      "id": "zularem",
+      "number": 99,
+      "name": "Zularem",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "faro_profundo"
+      ]
+    },
+    {
+      "id": "vitrel",
+      "number": 100,
+      "name": "Vitrel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "escama_espejo"
+      ]
+    },
+    {
+      "id": "talifano",
+      "number": 101,
+      "name": "Talifano",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "boveda_cristalina"
+      ]
+    },
+    {
+      "id": "murrin",
+      "number": 102,
+      "name": "Murrín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "mordida_baja"
+      ]
+    },
+    {
+      "id": "palutra",
+      "number": 103,
+      "name": "Palutra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arrastre_de_corriente"
+      ]
+    },
+    {
+      "id": "grotin",
+      "number": 104,
+      "name": "Grotín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "mano_larga"
+      ]
+    },
+    {
+      "id": "corvexan",
+      "number": 105,
+      "name": "Corvexan",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "blindaje_de_despojos"
+      ]
+    },
+    {
+      "id": "gremorak",
+      "number": 106,
+      "name": "Gremorak",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "saqueo"
+      ]
+    },
+    {
+      "id": "velin",
+      "number": 107,
+      "name": "Velín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "borrar_el_contorno"
+      ]
+    },
+    {
+      "id": "lacumbra",
+      "number": 108,
+      "name": "Lacumbra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "jiron_cortante"
+      ]
+    },
+    {
+      "id": "nilloh",
+      "number": 109,
+      "name": "Nilloh",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "salto_de_hollin"
+      ]
+    },
+    {
+      "id": "cinthera",
+      "number": 110,
+      "name": "Cinthera",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "asalto_ahumado"
+      ]
+    },
+    {
+      "id": "micora",
+      "number": 111,
+      "name": "Mícora",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "infeccion"
+      ]
+    },
+    {
+      "id": "somicor",
+      "number": 112,
+      "name": "Somícor",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "regeneracion_micelial"
+      ]
+    },
+    {
+      "id": "holomicor",
+      "number": 113,
+      "name": "Holómicor",
+      "types": [
+        "oscuridad",
+        "planta"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1804
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "horda"
+      ]
+    },
+    {
+      "id": "melin",
+      "number": 114,
+      "name": "Melín",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "encajar"
+      ]
+    },
+    {
+      "id": "barramel",
+      "number": 115,
+      "name": "Barramel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "carga_excavadora"
+      ]
+    },
+    {
+      "id": "megales",
+      "number": 116,
+      "name": "Megalés",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "no_ceder"
+      ]
+    },
+    {
+      "id": "calanima",
+      "number": 117,
+      "name": "Calánima",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "mueca"
+      ]
+    },
+    {
+      "id": "calignis",
+      "number": 118,
+      "name": "Calignis",
+      "types": [
+        "oscuridad",
+        "fuego"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1836
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "boca_del_brasero"
+      ]
+    },
+    {
+      "id": "ascuil",
+      "number": 119,
+      "name": "Ascuil",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cola_de_brasa"
+      ]
+    },
+    {
+      "id": "aurascuil",
+      "number": 120,
+      "name": "Aurascuil",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "estela_dorada"
+      ]
+    },
+    {
+      "id": "bural",
+      "number": 121,
+      "name": "Bural",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cabeza_baja"
+      ]
+    },
+    {
+      "id": "leucauro",
+      "number": 122,
+      "name": "Leucauro",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "carga_cegadora"
+      ]
+    },
+    {
+      "id": "lorican",
+      "number": 123,
+      "name": "Lorican",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "polipos_a_presion"
+      ]
+    },
+    {
+      "id": "curxola",
+      "number": 124,
+      "name": "Curxola",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "manto_coralino"
+      ]
+    },
+    {
+      "id": "cerreali",
+      "number": 125,
+      "name": "Cerreali",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "mil_faros"
+      ]
+    },
+    {
+      "id": "lurigan",
+      "number": 126,
+      "name": "Lurigan",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "disparo_gular"
+      ]
+    },
+    {
+      "id": "pelaskos",
+      "number": 127,
+      "name": "Pelaskos",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "canon_gular"
+      ]
+    },
+    {
+      "id": "pelagon",
+      "number": 128,
+      "name": "Pelagón",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "bombardeo_hidraulico"
+      ]
+    },
+    {
+      "id": "prunel",
+      "number": 129,
+      "name": "Prunel",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "brasa_desprendida"
+      ]
+    },
+    {
+      "id": "ignar",
+      "number": 130,
+      "name": "Ignar",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "fuego_guiado"
+      ]
+    },
+    {
+      "id": "riftari",
+      "number": 131,
+      "name": "Riftari",
+      "types": [
+        "fuego"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1061
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "punto_blanco"
+      ]
+    },
+    {
+      "id": "gutula",
+      "number": 132,
+      "name": "Gútula",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "ceder"
+      ]
+    },
+    {
+      "id": "nayara",
+      "number": 133,
+      "name": "Náyara",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "licuar"
+      ]
+    },
+    {
+      "id": "undaria",
+      "number": 134,
+      "name": "Undaria",
+      "types": [
+        "agua"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1604
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "forma_de_ola"
+      ]
+    },
+    {
+      "id": "artelar",
+      "number": 135,
+      "name": "Artelar",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "aletazo_de_pala"
+      ]
+    },
+    {
+      "id": "litharra",
+      "number": 136,
+      "name": "Litharra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cuchillas_cruzadas"
+      ]
+    },
+    {
+      "id": "tamegona",
+      "number": 137,
+      "name": "Tamegona",
+      "types": [
+        "tierra"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1089
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "marea_mineral"
+      ]
+    },
+    {
+      "id": "filsin",
+      "number": 138,
+      "name": "Filsin",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "sin_inercia"
+      ]
+    },
+    {
+      "id": "foceri",
+      "number": 139,
+      "name": "Foceri",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "retorno"
+      ]
+    },
+    {
+      "id": "anemarca",
+      "number": 140,
+      "name": "Anemarca",
+      "types": [
+        "aire"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1519
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cizalla"
+      ]
+    },
+    {
+      "id": "cistra",
+      "number": 141,
+      "name": "Cistra",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "salto_estatico"
+      ]
+    },
+    {
+      "id": "raigral",
+      "number": 142,
+      "name": "Raigral",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "puas_cargadas"
+      ]
+    },
+    {
+      "id": "vajrakar",
+      "number": 143,
+      "name": "Vajrakar",
+      "types": [
+        "rayo"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1423
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "asalto_del_rayo"
+      ]
+    },
+    {
+      "id": "taliade",
+      "number": 144,
+      "name": "Talíade",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "arraigo"
+      ]
+    },
+    {
+      "id": "dariad",
+      "number": 145,
+      "name": "Dariad",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "aguardar"
+      ]
+    },
+    {
+      "id": "mairahda",
+      "number": 146,
+      "name": "Mairahda",
+      "types": [
+        "planta"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1033
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "momento_justo"
+      ]
+    },
+    {
+      "id": "aelio",
+      "number": 147,
+      "name": "Aelio",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "corona_de_motas"
+      ]
+    },
+    {
+      "id": "lefaries",
+      "number": 148,
+      "name": "Lefaries",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "velo_luminoso"
+      ]
+    },
+    {
+      "id": "parohim",
+      "number": 149,
+      "name": "Parohim",
+      "types": [
+        "luz"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1228
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "revelar"
+      ]
+    },
+    {
+      "id": "sargot",
+      "number": 150,
+      "name": "Sargot",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "aprovechar_hueco"
+      ]
+    },
+    {
+      "id": "sedopan",
+      "number": 151,
+      "name": "Sedopan",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "tu_miedo"
+      ]
+    },
+    {
+      "id": "amra",
+      "number": 152,
+      "name": "Amra",
+      "types": [
+        "oscuridad"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1864
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "forma_del_miedo"
+      ]
+    },
+    {
+      "id": "nirdih",
+      "number": 153,
+      "name": "Nirdih",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "tres_mordiscos"
+      ]
+    },
+    {
+      "id": "karydha",
+      "number": 154,
+      "name": "Karydha",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "regenerar_cabezas"
+      ]
+    },
+    {
+      "id": "lernyra",
+      "number": 155,
+      "name": "Lernyra",
+      "types": [
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1892
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cerco_de_nueve"
+      ]
+    },
+    {
+      "id": "telnice",
+      "number": 156,
+      "name": "Telnice",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "chispa_fugaz"
+      ]
+    },
+    {
+      "id": "astrapi",
+      "number": 157,
+      "name": "Astrapí",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "cruce_relampago"
+      ]
+    },
+    {
+      "id": "kerauli",
+      "number": 158,
+      "name": "Keraulí",
+      "types": [
+        "rayo",
+        "mitico"
+      ],
+      "typesSource": {
+        "id": "CANON-NOVELS",
+        "line": 1284
+      },
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "linea_de_relampago"
+      ]
+    },
+    {
+      "id": "photerion",
+      "number": 159,
+      "name": "Photerion",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "revelacion_absoluta",
+        "mediodia"
+      ]
+    },
+    {
+      "id": "skoterion",
+      "number": 160,
+      "name": "Skoterion",
+      "types": null,
+      "typesSource": null,
+      "powerCategory": null,
+      "transfigurationLine": null,
+      "depthFactor": null,
+      "baseStatsNV50": null,
+      "anatomy": null,
+      "learnableTechniques": null,
+      "signatureTechniques": [
+        "negacion",
+        "colapso"
+      ]
+    }
+  ]
+}

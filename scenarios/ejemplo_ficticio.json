@@ -1,0 +1,51 @@
+{
+  "_nota": "Escenario ficticio de humo: estadisticas inventadas para probar el motor; no es canon.",
+  "seed": 11,
+  "config": { "effectsMode": "strict", "maxRounds": 30 },
+  "sides": [
+    {
+      "summoner": {
+        "id": "s0", "name": "Invocador A", "estamento": "invocador", "amplitude": 250,
+        "fortalezaCapacity": 40, "fortalezaMaxPerStat": 20, "simultaneity": "stable",
+        "partialMaterialization": true, "manifestationRepertoire": ["calima"]
+      },
+      "preparation": {
+        "creatures": [
+          { "id": "brasal_a", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
+            "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
+            "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
+            "equippedTechniques": ["golpe_candente", "aranazo", "mordisco"], "equippedManifestations": ["calima"],
+            "persistentStatuses": [] },
+          { "id": "gorim_a", "speciesId": "gorim", "types": ["tierra"], "nv": 45,
+            "baseStatsNV50": { "hp": 320, "atk": 130, "matk": 60, "def": 130, "mdef": 90, "spe": 60 },
+            "fortaleza": {}, "orientations": [],
+            "equippedTechniques": ["embate_de_roca", "pisoton"], "equippedManifestations": [],
+            "persistentStatuses": [] }
+        ]
+      },
+      "initialDeployment": ["brasal_a", null]
+    },
+    {
+      "summoner": {
+        "id": "s1", "name": "Iniciada B", "estamento": "iniciado", "amplitude": 150,
+        "fortalezaCapacity": 20, "fortalezaMaxPerStat": 10, "simultaneity": "single",
+        "partialMaterialization": false, "manifestationRepertoire": []
+      },
+      "preparation": {
+        "creatures": [
+          { "id": "dracendra_b", "speciesId": "dracendra", "types": ["fuego"], "nv": 42,
+            "baseStatsNV50": { "hp": 280, "atk": 125, "matk": 90, "def": 95, "mdef": 85, "spe": 100 },
+            "fortaleza": { "atk": 10 }, "orientations": ["atk"],
+            "equippedTechniques": ["ariete_draconico", "zarpazo"], "equippedManifestations": [],
+            "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }] },
+          { "id": "vercosalvi_b", "speciesId": "vercosalvi", "types": ["planta"], "nv": 38,
+            "baseStatsNV50": { "hp": 300, "atk": 100, "matk": 110, "def": 100, "mdef": 110, "spe": 70 },
+            "fortaleza": {}, "orientations": [],
+            "equippedTechniques": ["latigo_de_lianas", "latigazo"], "equippedManifestations": [],
+            "persistentStatuses": [] }
+        ]
+      },
+      "initialDeployment": ["dracendra_b"]
+    }
+  ]
+}

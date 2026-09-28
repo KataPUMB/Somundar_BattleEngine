@@ -1,0 +1,187 @@
+{
+  "_meta": {
+    "generatedFrom": "NarrativeEngine/05_SISTEMA_DE_INVOCACION.md",
+    "revision": "r2"
+  },
+  "types": [
+    {
+      "id": "fuego",
+      "name": "Fuego"
+    },
+    {
+      "id": "agua",
+      "name": "Agua"
+    },
+    {
+      "id": "tierra",
+      "name": "Tierra"
+    },
+    {
+      "id": "aire",
+      "name": "Aire"
+    },
+    {
+      "id": "rayo",
+      "name": "Rayo"
+    },
+    {
+      "id": "planta",
+      "name": "Planta"
+    },
+    {
+      "id": "luz",
+      "name": "Luz"
+    },
+    {
+      "id": "oscuridad",
+      "name": "Oscuridad"
+    },
+    {
+      "id": "mitico",
+      "name": "Mítico"
+    }
+  ],
+  "effectiveness": {
+    "fuego": {
+      "fuego": 1.0,
+      "agua": 0.5,
+      "tierra": 1.0,
+      "aire": 2.0,
+      "rayo": 1.0,
+      "planta": 2.0,
+      "luz": 0.5,
+      "oscuridad": 2.0,
+      "mitico": 0.5
+    },
+    "agua": {
+      "fuego": 2.0,
+      "agua": 1.0,
+      "tierra": 2.0,
+      "aire": 0.5,
+      "rayo": 1.0,
+      "planta": 0.5,
+      "luz": 1.0,
+      "oscuridad": 1.0,
+      "mitico": 0.5
+    },
+    "tierra": {
+      "fuego": 2.0,
+      "agua": 1.0,
+      "tierra": 1.0,
+      "aire": 0.5,
+      "rayo": 2.0,
+      "planta": 1.0,
+      "luz": 1.0,
+      "oscuridad": 1.0,
+      "mitico": 0.5
+    },
+    "aire": {
+      "fuego": 0.5,
+      "agua": 1.0,
+      "tierra": 2.0,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 2.0,
+      "luz": 1.0,
+      "oscuridad": 1.0,
+      "mitico": 0.5
+    },
+    "rayo": {
+      "fuego": 1.0,
+      "agua": 2.0,
+      "tierra": 0.5,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 0.5,
+      "luz": 1.0,
+      "oscuridad": 1.0,
+      "mitico": 1.0
+    },
+    "planta": {
+      "fuego": 0.5,
+      "agua": 2.0,
+      "tierra": 2.0,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 1.0,
+      "luz": 1.0,
+      "oscuridad": 1.0,
+      "mitico": 1.0
+    },
+    "luz": {
+      "fuego": 0.5,
+      "agua": 1.0,
+      "tierra": 1.0,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 0.5,
+      "luz": 1.0,
+      "oscuridad": 2.0,
+      "mitico": 2.0
+    },
+    "oscuridad": {
+      "fuego": 1.0,
+      "agua": 0.5,
+      "tierra": 0.5,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 1.0,
+      "luz": 2.0,
+      "oscuridad": 1.0,
+      "mitico": 2.0
+    },
+    "mitico": {
+      "fuego": 1.0,
+      "agua": 1.0,
+      "tierra": 1.0,
+      "aire": 1.0,
+      "rayo": 1.0,
+      "planta": 1.0,
+      "luz": 2.0,
+      "oscuridad": 0.5,
+      "mitico": 2.0
+    }
+  },
+  "dualTypeRule": "multiply",
+  "sameTypeBonus": false,
+  "immunities": {
+    "fuego": [
+      "quemado"
+    ],
+    "agua": [
+      "saturado"
+    ],
+    "planta": [
+      "enraizado"
+    ],
+    "tierra": [
+      "agrietado"
+    ],
+    "rayo": [
+      "paralizado"
+    ],
+    "aire": [
+      "desorientado"
+    ],
+    "luz": [
+      "espiritu_cercenado"
+    ],
+    "oscuridad": [
+      "desvinculado"
+    ],
+    "mitico": [
+      "espiritu_cercenado",
+      "desvinculado"
+    ]
+  },
+  "notes": [
+    "effectiveness[atacante][defensor] (CANON-MECHANICS 22.1).",
+    "Duotipo: los multiplicadores defensivos se multiplican (22.2).",
+    "Sin bonificacion implicita por afinidad de tipo (22.2, 23.6).",
+    "La inmunidad al estado no implica inmunidad al dano (24.1)."
+  ],
+  "source": {
+    "id": "CANON-MECHANICS",
+    "line": 1854
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "generatedFrom": "NarrativeEngine/05_SISTEMA_DE_INVOCACION.md",
+    "revision": "r2"
+  },
+  "rules": {
+    "coexistence": "Todos pueden coexistir salvo inmunidad; aplicar uno no elimina otro.",
+    "sameStatPenalty": "most_severe_only",
+    "persistence": "Persisten tras Salida, reentrada y fin de combate hasta curarse.",
+    "turnCounters": "Solo avanzan en turnos propios materializados; el Intermedio los congela.",
+    "source": "CANON-MECHANICS 24.1-24.11"
+  },
+  "conditions": [
+    {
+      "id": "quemado",
+      "name": "Quemado",
+      "element": "fuego",
+      "statModifiersPct": {
+        "def": -50
+      },
+      "damageOverTime": {
+        "pctMaxHp": 6.25,
+        "timing": "end_of_own_turn"
+      },
+      "restrictions": [],
+      "section": "24.3"
+    },
+    {
+      "id": "saturado",
+      "name": "Saturado",
+      "element": "agua",
+      "statModifiersPct": {
+        "matk": -50
+      },
+      "restrictions": [
+        {
+          "kind": "stat_cannot_increase",
+          "stat": "matk",
+          "turns": 5
+        }
+      ],
+      "section": "24.4"
+    },
+    {
+      "id": "enraizado",
+      "name": "Enraizado",
+      "element": "planta",
+      "statModifiersPct": {
+        "spe": -25
+      },
+      "restrictions": [
+        {
+          "kind": "no_voluntary_withdraw",
+          "turns": 2
+        }
+      ],
+      "section": "24.5"
+    },
+    {
+      "id": "agrietado",
+      "name": "Agrietado",
+      "element": "tierra",
+      "statModifiersPct": {
+        "atk": -50
+      },
+      "restrictions": [
+        {
+          "kind": "stat_cannot_increase",
+          "stat": "atk",
+          "turns": 5
+        }
+      ],
+      "section": "24.6"
+    },
+    {
+      "id": "paralizado",
+      "name": "Paralizado",
+      "element": "rayo",
+      "statModifiersPct": {
+        "spe": -50
+      },
+      "restrictions": [
+        {
+          "kind": "stat_cannot_increase",
+          "stat": "spe",
+          "turns": 5
+        }
+      ],
+      "section": "24.7"
+    },
+    {
+      "id": "desorientado",
+      "name": "Desorientado",
+      "element": "aire",
+      "statModifiersPct": {
+        "accuracy": -25
+      },
+      "restrictions": [
+        {
+          "kind": "no_same_technique_consecutive",
+          "turns": 5
+        }
+      ],
+      "section": "24.8"
+    },
+    {
+      "id": "espiritu_cercenado",
+      "name": "Espíritu Cercenado",
+      "element": "luz",
+      "statModifiersPct": {
+        "atk": -25,
+        "matk": -25
+      },
+      "restrictions": [
+        {
+          "kind": "dual_type_benefits_halved",
+          "turns": 5
+        }
+      ],
+      "section": "24.9"
+    },
+    {
+      "id": "desvinculado",
+      "name": "Desvinculado",
+      "element": "oscuridad",
+      "statModifiersPct": {
+        "healingReceived": -25
+      },
+      "restrictions": [
+        {
+          "kind": "manifestations_disabled",
+          "turns": 5,
+          "except": "worksWhileDesvinculado"
+        },
+        {
+          "kind": "bond_communication_cut",
+          "turns": 5
+        }
+      ],
+      "section": "24.10"
+    }
+  ]
+}

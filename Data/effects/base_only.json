@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "purpose": "Tecnicas cuya descripcion autoritativa no anade efecto a sus parametros base (effects vacio = verificado).",
+    "criterion": "La descripcion dice literalmente 'Sin efecto adicional' o solo describe el gesto anatomico / numero de impactos."
+  },
+  "techniques": {
+    "latigo_de_lianas": { "effects": [], "note": "Sin efecto adicional." },
+    "embate_de_roca": { "effects": [], "note": "Sin efecto adicional." },
+    "pulso_primordial": { "effects": [], "note": "Sin efecto adicional." },
+    "embate_primordial": { "effects": [], "note": "Sin efecto adicional." },
+    "impacto_soberano": { "effects": [], "note": "Sin efecto adicional." },
+    "golpe_candente": { "effects": [], "note": "Sin efecto adicional." },
+    "ariete_draconico": { "effects": [], "note": "Sin efecto adicional." },
+    "fauces_incandescentes": { "effects": [], "note": "Sin efecto adicional." },
+    "aranazo": { "effects": [] },
+    "picoteo_frenetico": { "effects": [], "note": "1-5 impactos: parametro base." },
+    "rafaga_de_zarpazos": { "effects": [], "note": "1-5 impactos: parametro base." },
+    "golpe_tentaculo": { "effects": [] },
+    "mordisco": { "effects": [] },
+    "picotazo": { "effects": [] },
+    "punetazo": { "effects": [] },
+    "coletazo": { "effects": [] },
+    "embestida": { "effects": [] },
+    "golpe_de_ala": { "effects": [] },
+    "golpe_de_aleta": { "effects": [] },
+    "patada": { "effects": [] },
+    "colmillazo": { "effects": [] },
+    "cornada": { "effects": [] },
+    "impacto_de_caparazon": { "effects": [] },
+    "latigazo": { "effects": [] },
+    "pisoton": { "effects": [] },
+    "zarpazo": { "effects": [] },
+    "taladrar": { "effects": [] },
+    "aleta_cortante": { "effects": [] },
+    "descenso_aereo": { "effects": [] },
+    "patadon": { "effects": [] },
+    "embestida_pesada": { "effects": [] },
+    "garra_perforante": { "effects": [] },
+    "cornada_poderosa": { "effects": [] },
+    "garra_brutal": { "effects": [] },
+    "pisoton_aplastante": { "effects": [] }
+  }
+}

@@ -1,0 +1,54 @@
+import type { Action, BattleState, Declarations, SideIndex, TargetDecl } from '../model/battle.js';
+import type { ActionOption } from '../legality/actions.js';
+import type { RoundStartChoice } from '../pipeline/battle.js';
+import { nextFloat, nextInt, type RngState } from '../rng.js';
+
+export interface Policy {
+  roundStart?(view: Readonly<BattleState>, side: SideIndex, rng: RngState): RoundStartChoice[];
+  declare(view: Readonly<BattleState>, side: SideIndex, legal: Map<string, ActionOption[]>, rng: RngState): Declarations;
+}
+
+function pick<T>(rng: RngState, xs: T[]): T {
+  return xs[nextInt(rng, 0, xs.length - 1)]!;
+}
+
+function enemyTargets(view: Readonly<BattleState>, side: SideIndex): string[] {
+  const foe = view.sides[side === 0 ? 1 : 0].positions;
+  const occupied = foe.filter((p) => p.occupantUid !== null).map((p) => p.id);
+  return occupied.length > 0 ? occupied : foe.map((p) => p.id);
+}
+
+export function withTarget(view: Readonly<BattleState>, side: SideIndex, opt: ActionOption, rng: RngState): Action {
+  const a = opt.action;
+  if (a.kind !== 'technique' && a.kind !== 'partial') return a;
+  if (opt.reason === 'ejecucion de la carga') return a;
+  const enemies = enemyTargets(view, side);
+  let target: TargetDecl;
+  if (opt.targeting === 'all') target = { kind: 'auto' };
+  else if (opt.targeting === 'multi') target = { kind: 'sequence', positionIds: enemies };
+  else target = { kind: 'position', positionId: pick(rng, enemies) };
+  return { ...a, target };
+}
+
+export const randomLegalPolicy: Policy = {
+  roundStart(view, side, rng) {
+    const s = view.sides[side];
+    if (s.summoner.simultaneity !== 'adept_temporary' || s.positions.length >= 2 || nextFloat(rng) < 0.5) return [];
+    const reserves = s.combatants.filter((c) => c.location === 'intermedio' && c.hp > 0);
+    return reserves.length > 0 ? [{ side, creatureId: pick(rng, reserves).creature.id }] : [];
+  },
+  declare(view, side, legal, rng) {
+    const out: Declarations = {};
+    for (const [pid, opts] of legal) {
+      const ok = opts.filter((o) => o.legal && o.action.kind !== 'surrender');
+      const occupied = view.sides[side].positions.find((p) => p.id === pid)?.occupantUid !== null;
+      if (ok.length === 0) {
+        if (occupied) out[pid] = { kind: 'surrender' };
+        continue;
+      }
+      if (!occupied && nextFloat(rng) < 0.5) continue;
+      out[pid] = withTarget(view, side, pick(rng, ok), rng);
+    }
+    return out;
+  },
+};

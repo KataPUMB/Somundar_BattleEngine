@@ -1,0 +1,2981 @@
+{
+  "_meta": {
+    "generatedFrom": "NarrativeEngine/05_SISTEMA_DE_INVOCACION.md",
+    "revision": "r2",
+    "source": "CANON-MANIFESTATIONS",
+    "count": 138,
+    "note": "text es autoritativo; mechanics es extraccion asistida"
+  },
+  "manifestations": [
+    {
+      "id": "combustion",
+      "name": "Combustión",
+      "element": "fuego",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Fuego causan +25% de daño."
+      ],
+      "text": "Las técnicas de Fuego causan +25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "fuego": 25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6823
+      }
+    },
+    {
+      "id": "ignicion",
+      "name": "Ignición",
+      "element": "fuego",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La siguiente técnica de Fuego utilizada después de entrar causa +50% de daño."
+      ],
+      "text": "La siguiente técnica de Fuego utilizada después de entrar causa +50% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": "fuego",
+          "pct": 50,
+          "afterEntryOnly": true
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6828
+      }
+    },
+    {
+      "id": "marca_ardiente",
+      "name": "Marca Ardiente",
+      "element": "fuego",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Quemados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Quemados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "quemado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6835
+      }
+    },
+    {
+      "id": "punto_de_ignicion",
+      "name": "Punto de Ignición",
+      "element": "fuego",
+      "rarity": "comun",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Fuego causan +50% de daño contra enemigos afectados por cualquier problema de estado."
+      ],
+      "text": "Las técnicas de Fuego causan +50% de daño contra enemigos afectados por cualquier problema de estado.",
+      "mechanics": {
+        "conditionalDamageDealt": [
+          {
+            "type": "fuego",
+            "pct": 50,
+            "condition": "contra enemigos afectados por cualquier problema de estado"
+          }
+        ]
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6840
+      }
+    },
+    {
+      "id": "cortina_de_humo",
+      "name": "Cortina de Humo",
+      "element": "fuego",
+      "rarity": "comun",
+      "label": "Defensiva",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los aliados reciben:",
+        "- 25% menos de daño de técnicas Físicas;",
+        "- 25% menos de daño mágico;",
+        "hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al entrar, todos los aliados reciben: - 25% menos de daño de técnicas Físicas; - 25% menos de daño mágico; hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6845
+      }
+    },
+    {
+      "id": "horno_blanco",
+      "name": "Horno Blanco",
+      "element": "fuego",
+      "rarity": "rara",
+      "label": "Ofensiva / defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Técnicas de Fuego +50%.",
+        "- Daño de Agua recibido -50%."
+      ],
+      "text": "- Técnicas de Fuego +50%. - Daño de Agua recibido -50%.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "fuego": 50
+        },
+        "damageTakenByTypePct": {
+          "agua": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6857
+      }
+    },
+    {
+      "id": "cenizas_protectoras",
+      "name": "Cenizas Protectoras",
+      "element": "fuego",
+      "rarity": "rara",
+      "label": "Soporte",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente:",
+        "- todos los aliados recuperan 25% de Vitalidad;",
+        "- reciben 25% menos de daño hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al retirarse voluntariamente: - todos los aliados recuperan 25% de Vitalidad; - reciben 25% menos de daño hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6863
+      }
+    },
+    {
+      "id": "corazon_incendiado",
+      "name": "Corazón Incendiado",
+      "element": "fuego",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Fuego causan +100% de daño."
+      ],
+      "text": "Las técnicas de Fuego causan +100% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "fuego": 100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6873
+      }
+    },
+    {
+      "id": "devorallamas",
+      "name": "Devorallamas",
+      "element": "fuego",
+      "rarity": "muy_rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Fuego recibido -100%."
+      ],
+      "text": "Daño de Fuego recibido -100%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "fuego": -100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6878
+      }
+    },
+    {
+      "id": "calima",
+      "name": "Calima",
+      "element": "fuego",
+      "rarity": "super_super_rara",
+      "label": "Clima",
+      "trigger": "environment",
+      "environmentKind": "weather",
+      "effect": [
+        "Mientras permanezca activa:",
+        "- técnicas de Fuego +50% de daño;",
+        "- técnicas de Agua -50% de daño;",
+        "- las técnicas de Aire tienen un 12,5% de probabilidad de Quemar al objetivo."
+      ],
+      "text": "Mientras permanezca activa: - técnicas de Fuego +50% de daño; - técnicas de Agua -50% de daño; - las técnicas de Aire tienen un 12,5% de probabilidad de Quemar al objetivo.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "fuego": 50,
+          "agua": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6885
+      }
+    },
+    {
+      "id": "cuerpo_fluido",
+      "name": "Cuerpo Fluido",
+      "element": "agua",
+      "rarity": "tipica",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de técnicas Físicas recibido -25%."
+      ],
+      "text": "Daño de técnicas Físicas recibido -25%.",
+      "mechanics": {
+        "physicalDamageTakenPct": -25
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6902
+      }
+    },
+    {
+      "id": "saturacion",
+      "name": "Saturación",
+      "element": "agua",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Saturados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Saturados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "saturado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6909
+      }
+    },
+    {
+      "id": "marea_reparadora",
+      "name": "Marea Reparadora",
+      "element": "agua",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los aliados recuperan 25% de Vitalidad."
+      ],
+      "text": "Al entrar, todos los aliados recuperan 25% de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6914
+      }
+    },
+    {
+      "id": "manantial_interior",
+      "name": "Manantial Interior",
+      "element": "agua",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las curaciones realizadas por el portador aumentan un 50%."
+      ],
+      "text": "Las curaciones realizadas por el portador aumentan un 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6919
+      }
+    },
+    {
+      "id": "guardamar",
+      "name": "Guardamar",
+      "element": "agua",
+      "rarity": "comun",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Todos los aliados reciben 25% menos de daño de técnicas Mágicas mientras el portador permanezca presente."
+      ],
+      "text": "Todos los aliados reciben 25% menos de daño de técnicas Mágicas mientras el portador permanezca presente.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6924
+      }
+    },
+    {
+      "id": "reflujo_sanador",
+      "name": "Reflujo Sanador",
+      "element": "agua",
+      "rarity": "rara",
+      "label": "Curación",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente:",
+        "- todos los aliados recuperan 25% de Vitalidad;",
+        "- reciben 25% menos de daño hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al retirarse voluntariamente: - todos los aliados recuperan 25% de Vitalidad; - reciben 25% menos de daño hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6931
+      }
+    },
+    {
+      "id": "profundidad_insondable",
+      "name": "Profundidad Insondable",
+      "element": "agua",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Daño de técnicas Físicas recibido -50%.",
+        "- Daño de técnicas Mágicas recibido -50%."
+      ],
+      "text": "- Daño de técnicas Físicas recibido -50%. - Daño de técnicas Mágicas recibido -50%.",
+      "mechanics": {
+        "physicalDamageTakenPct": -50,
+        "magicalDamageTakenPct": -50
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6939
+      }
+    },
+    {
+      "id": "contracorriente_verde",
+      "name": "Contracorriente Verde",
+      "element": "agua",
+      "rarity": "rara",
+      "label": "Defensiva / ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Técnicas de Agua +50%.",
+        "- Daño de Planta recibido -50%."
+      ],
+      "text": "- Técnicas de Agua +50%. - Daño de Planta recibido -50%.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "agua": 50
+        },
+        "damageTakenByTypePct": {
+          "planta": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6945
+      }
+    },
+    {
+      "id": "oleaje_purificador",
+      "name": "Oleaje Purificador",
+      "element": "agua",
+      "rarity": "muy_rara",
+      "label": "Curación",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar elimina todos los problemas de estado de los aliados.",
+        "No elimina modificaciones normales de características."
+      ],
+      "text": "Al entrar elimina todos los problemas de estado de los aliados. No elimina modificaciones normales de características.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6953
+      }
+    },
+    {
+      "id": "llovizna",
+      "name": "Llovizna",
+      "element": "agua",
+      "rarity": "super_super_rara",
+      "label": "Clima",
+      "trigger": "environment",
+      "environmentKind": "weather",
+      "effect": [
+        "Mientras permanezca activa:",
+        "- técnicas de Agua +50% de daño;",
+        "- técnicas de Fuego -50% de daño;",
+        "- las técnicas de Rayo nunca fallan."
+      ],
+      "text": "Mientras permanezca activa: - técnicas de Agua +50% de daño; - técnicas de Fuego -50% de daño; - las técnicas de Rayo nunca fallan.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "agua": 50,
+          "fuego": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6962
+      }
+    },
+    {
+      "id": "savia_medicinal",
+      "name": "Savia Medicinal",
+      "element": "planta",
+      "rarity": "tipica",
+      "label": "Curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las curaciones realizadas aumentan un 25%."
+      ],
+      "text": "Las curaciones realizadas aumentan un 25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6979
+      }
+    },
+    {
+      "id": "raices_invasoras",
+      "name": "Raíces Invasoras",
+      "element": "planta",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Enraizados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Enraizados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "enraizado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6986
+      }
+    },
+    {
+      "id": "brote_reparador",
+      "name": "Brote Reparador",
+      "element": "planta",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los aliados recuperan 25% de Vitalidad."
+      ],
+      "text": "Al entrar, todos los aliados recuperan 25% de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6991
+      }
+    },
+    {
+      "id": "fronda_vital",
+      "name": "Fronda Vital",
+      "element": "planta",
+      "rarity": "rara",
+      "label": "Curación",
+      "trigger": "passive_periodic",
+      "environmentKind": null,
+      "effect": [
+        "Mientras permanezca presente, todos los aliados recuperan 6,25% de Vitalidad máxima por turno."
+      ],
+      "text": "Mientras permanezca presente, todos los aliados recuperan 6,25% de Vitalidad máxima por turno.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 6998
+      }
+    },
+    {
+      "id": "fronda_guardiana",
+      "name": "Fronda Guardiana",
+      "element": "planta",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Todos los aliados reciben 25% menos de daño mientras el portador permanezca presente."
+      ],
+      "text": "Todos los aliados reciben 25% menos de daño mientras el portador permanezca presente.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7003
+      }
+    },
+    {
+      "id": "corteza_ancestral",
+      "name": "Corteza Ancestral",
+      "element": "planta",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Defensa +50%.",
+        "- Defensa mágica +50%."
+      ],
+      "text": "- Defensa +50%. - Defensa mágica +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7008
+      }
+    },
+    {
+      "id": "corazon_del_bosque",
+      "name": "Corazón del Bosque",
+      "element": "planta",
+      "rarity": "muy_rara",
+      "label": "Curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las curaciones realizadas aumentan un 100%."
+      ],
+      "text": "Las curaciones realizadas aumentan un 100%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7016
+      }
+    },
+    {
+      "id": "semillas_de_retorno",
+      "name": "Semillas de Retorno",
+      "element": "planta",
+      "rarity": "muy_rara",
+      "label": "Curación",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente:",
+        "- todos los aliados recuperan 25% de Vitalidad;",
+        "- elimina sus problemas de estado."
+      ],
+      "text": "Al retirarse voluntariamente: - todos los aliados recuperan 25% de Vitalidad; - elimina sus problemas de estado.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7021
+      }
+    },
+    {
+      "id": "raiz_compartida",
+      "name": "Raíz Compartida",
+      "element": "planta",
+      "rarity": "muy_rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "El 50% del daño dirigido contra otras invocaciones aliadas se transfiere al portador.",
+        "El daño transferido se reduce un 50%."
+      ],
+      "text": "El 50% del daño dirigido contra otras invocaciones aliadas se transfiere al portador. El daño transferido se reduce un 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7029
+      }
+    },
+    {
+      "id": "campo_floral",
+      "name": "Campo Floral",
+      "element": "planta",
+      "rarity": "super_super_rara",
+      "label": "Campo",
+      "trigger": "environment",
+      "environmentKind": "field",
+      "effect": [
+        "Mientras permanezca activo:",
+        "- técnicas de Planta +50% de daño;",
+        "- técnicas de Tierra -25% de daño;",
+        "- técnicas de Rayo -25% de daño."
+      ],
+      "text": "Mientras permanezca activo: - técnicas de Planta +50% de daño; - técnicas de Tierra -25% de daño; - técnicas de Rayo -25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "planta": 50,
+          "tierra": -25,
+          "rayo": -25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7038
+      }
+    },
+    {
+      "id": "piel_de_piedra",
+      "name": "Piel de Piedra",
+      "element": "tierra",
+      "rarity": "tipica",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de técnicas Físicas recibido -25%."
+      ],
+      "text": "Daño de técnicas Físicas recibido -25%.",
+      "mechanics": {
+        "physicalDamageTakenPct": -25
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7055
+      }
+    },
+    {
+      "id": "fractura_sismica",
+      "name": "Fractura Sísmica",
+      "element": "tierra",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Agrietados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Agrietados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "agrietado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7062
+      }
+    },
+    {
+      "id": "muralla_emergente",
+      "name": "Muralla Emergente",
+      "element": "tierra",
+      "rarity": "comun",
+      "label": "Defensiva",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los aliados obtienen Defensa +50% hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al entrar, todos los aliados obtienen Defensa +50% hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7067
+      }
+    },
+    {
+      "id": "baluarte",
+      "name": "Baluarte",
+      "element": "tierra",
+      "rarity": "comun",
+      "label": "Soporte",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Todos los aliados reciben 25% menos de daño de técnicas Físicas."
+      ],
+      "text": "Todos los aliados reciben 25% menos de daño de técnicas Físicas.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7072
+      }
+    },
+    {
+      "id": "monolito",
+      "name": "Monolito",
+      "element": "tierra",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Daño de técnicas Físicas recibido -50%.",
+        "- Daño de técnicas Mágicas recibido -50%."
+      ],
+      "text": "- Daño de técnicas Físicas recibido -50%. - Daño de técnicas Mágicas recibido -50%.",
+      "mechanics": {
+        "physicalDamageTakenPct": -50,
+        "magicalDamageTakenPct": -50
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7079
+      }
+    },
+    {
+      "id": "toma_de_tierra",
+      "name": "Toma de Tierra",
+      "element": "tierra",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Rayo recibido -100%."
+      ],
+      "text": "Daño de Rayo recibido -100%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "rayo": -100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7085
+      }
+    },
+    {
+      "id": "muralla_de_relevo",
+      "name": "Muralla de Relevo",
+      "element": "tierra",
+      "rarity": "rara",
+      "label": "Soporte",
+      "trigger": "on_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse, todos los aliados reciben 50% menos de daño de técnicas Físicas hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al retirarse, todos los aliados reciben 50% menos de daño de técnicas Físicas hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7090
+      }
+    },
+    {
+      "id": "coraza_de_estratos",
+      "name": "Coraza de Estratos",
+      "element": "tierra",
+      "rarity": "muy_rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño recibido:",
+        "- Fuego -25%;",
+        "- Agua -25%;",
+        "- Aire -25%;",
+        "- Planta -25%."
+      ],
+      "text": "Daño recibido: - Fuego -25%; - Agua -25%; - Aire -25%; - Planta -25%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "fuego": -25,
+          "agua": -25,
+          "aire": -25,
+          "planta": -25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7097
+      }
+    },
+    {
+      "id": "estrato_desigual",
+      "name": "Estrato Desigual",
+      "element": "tierra",
+      "rarity": "muy_rara",
+      "label": "Táctica",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras permanezca presente, todas las criaturas tienen:",
+        "- Defensa +50%;",
+        "- Defensa mágica -50%.",
+        "Afecta a ambos bandos."
+      ],
+      "text": "Mientras permanezca presente, todas las criaturas tienen: - Defensa +50%; - Defensa mágica -50%. Afecta a ambos bandos.",
+      "mechanics": {
+        "affectsBothSides": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7107
+      }
+    },
+    {
+      "id": "campo_rocoso",
+      "name": "Campo Rocoso",
+      "element": "tierra",
+      "rarity": "super_super_rara",
+      "label": "Campo",
+      "trigger": "environment",
+      "environmentKind": "field",
+      "effect": [
+        "Mientras permanezca activo:",
+        "- las criaturas que no sean Tierra reciben 12,5% de su Vitalidad máxima como daño de Tierra al entrar;",
+        "- las criaturas de Tierra obtienen Defensa +50%."
+      ],
+      "text": "Mientras permanezca activo: - las criaturas que no sean Tierra reciben 12,5% de su Vitalidad máxima como daño de Tierra al entrar; - las criaturas de Tierra obtienen Defensa +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7119
+      }
+    },
+    {
+      "id": "carga_subita",
+      "name": "Carga Súbita",
+      "element": "rayo",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La siguiente técnica de Rayo causa +50% de daño."
+      ],
+      "text": "La siguiente técnica de Rayo causa +50% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": "rayo",
+          "pct": 50,
+          "afterEntryOnly": false
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7135
+      }
+    },
+    {
+      "id": "alta_tension",
+      "name": "Alta Tensión",
+      "element": "rayo",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Rayo causan +25% de daño."
+      ],
+      "text": "Las técnicas de Rayo causan +25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "rayo": 25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7140
+      }
+    },
+    {
+      "id": "descarga_paralizante",
+      "name": "Descarga Paralizante",
+      "element": "rayo",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Paralizados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Paralizados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "paralizado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7147
+      }
+    },
+    {
+      "id": "relampago_adelantado",
+      "name": "Relámpago Adelantado",
+      "element": "rayo",
+      "rarity": "comun",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Rayo causan +50% de daño contra enemigos que todavía no hayan actuado durante esa ronda."
+      ],
+      "text": "Las técnicas de Rayo causan +50% de daño contra enemigos que todavía no hayan actuado durante esa ronda.",
+      "mechanics": {
+        "conditionalDamageDealt": [
+          {
+            "type": "rayo",
+            "pct": 50,
+            "condition": "contra enemigos que todavia no hayan actuado durante esa ronda"
+          }
+        ]
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7152
+      }
+    },
+    {
+      "id": "reflejos_electricos",
+      "name": "Reflejos Eléctricos",
+      "element": "rayo",
+      "rarity": "comun",
+      "label": "Velocidad",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Velocidad +25%."
+      ],
+      "text": "Velocidad +25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7157
+      }
+    },
+    {
+      "id": "pulso_nervioso",
+      "name": "Pulso Nervioso",
+      "element": "rayo",
+      "rarity": "comun",
+      "label": "Soporte",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Velocidad de todos los aliados +25%."
+      ],
+      "text": "Velocidad de todos los aliados +25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7162
+      }
+    },
+    {
+      "id": "ionizacion",
+      "name": "Ionización",
+      "element": "rayo",
+      "rarity": "rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras permanezca presente, la Defensa mágica de todos los enemigos disminuye un 50%."
+      ],
+      "text": "Mientras permanezca presente, la Defensa mágica de todos los enemigos disminuye un 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7169
+      }
+    },
+    {
+      "id": "descarga_de_cobertura",
+      "name": "Descarga de Cobertura",
+      "element": "rayo",
+      "rarity": "rara",
+      "label": "Soporte",
+      "trigger": "on_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse, todos los aliados obtienen Defensa mágica +50% hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al retirarse, todos los aliados obtienen Defensa mágica +50% hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7174
+      }
+    },
+    {
+      "id": "descarga_absoluta",
+      "name": "Descarga Absoluta",
+      "element": "rayo",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Rayo causan +100% de daño."
+      ],
+      "text": "Las técnicas de Rayo causan +100% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "rayo": 100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7181
+      }
+    },
+    {
+      "id": "tormenta_electrica",
+      "name": "Tormenta Eléctrica",
+      "element": "rayo",
+      "rarity": "super_super_rara",
+      "label": "Clima",
+      "trigger": "environment",
+      "environmentKind": "weather",
+      "effect": [
+        "Mientras permanezca activa:",
+        "- las criaturas que no sean Rayo ni Tierra pierden 6,25% de su Vitalidad máxima como daño de Rayo por turno;",
+        "- las criaturas de Rayo obtienen Defensa mágica +50%."
+      ],
+      "text": "Mientras permanezca activa: - las criaturas que no sean Rayo ni Tierra pierden 6,25% de su Vitalidad máxima como daño de Rayo por turno; - las criaturas de Rayo obtienen Defensa mágica +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7188
+      }
+    },
+    {
+      "id": "impulso_ascendente",
+      "name": "Impulso Ascendente",
+      "element": "aire",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La siguiente técnica de Aire causa +50% de daño."
+      ],
+      "text": "La siguiente técnica de Aire causa +50% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": "aire",
+          "pct": 50,
+          "afterEntryOnly": false
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7204
+      }
+    },
+    {
+      "id": "filo_del_viento",
+      "name": "Filo del Viento",
+      "element": "aire",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Aire causan +25% de daño."
+      ],
+      "text": "Las técnicas de Aire causan +25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "aire": 25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7209
+      }
+    },
+    {
+      "id": "golpe_desorientador",
+      "name": "Golpe Desorientador",
+      "element": "aire",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Desorientados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Desorientados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "desorientado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7216
+      }
+    },
+    {
+      "id": "fluidez_aerea",
+      "name": "Fluidez Aérea",
+      "element": "aire",
+      "rarity": "comun",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de técnicas Mágicas recibido -25%."
+      ],
+      "text": "Daño de técnicas Mágicas recibido -25%.",
+      "mechanics": {
+        "magicalDamageTakenPct": -25
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7221
+      }
+    },
+    {
+      "id": "formacion_de_caza",
+      "name": "Formación de Caza",
+      "element": "aire",
+      "rarity": "rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras el portador permanezca presente, todos los aliados obtienen:",
+        "- Ataque +25%;",
+        "- Ataque mágico +25%."
+      ],
+      "text": "Mientras el portador permanezca presente, todos los aliados obtienen: - Ataque +25%; - Ataque mágico +25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7228
+      }
+    },
+    {
+      "id": "ingravido",
+      "name": "Ingrávido",
+      "element": "aire",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Tierra recibido -100%."
+      ],
+      "text": "Daño de Tierra recibido -100%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "tierra": -100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7236
+      }
+    },
+    {
+      "id": "rebufo_protector",
+      "name": "Rebufo Protector",
+      "element": "aire",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "on_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse, el siguiente ataque recibido por cada aliado causa 50% menos de daño."
+      ],
+      "text": "Al retirarse, el siguiente ataque recibido por cada aliado causa 50% menos de daño.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7241
+      }
+    },
+    {
+      "id": "senor_del_vendaval",
+      "name": "Señor del Vendaval",
+      "element": "aire",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Aire causan +100% de daño."
+      ],
+      "text": "Las técnicas de Aire causan +100% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "aire": 100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7248
+      }
+    },
+    {
+      "id": "escudo_de_los_cuatro_vientos",
+      "name": "Escudo de los Cuatro Vientos",
+      "element": "aire",
+      "rarity": "muy_rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño recibido:",
+        "- Fuego -25%;",
+        "- Agua -25%;",
+        "- Tierra -25%;",
+        "- Planta -25%."
+      ],
+      "text": "Daño recibido: - Fuego -25%; - Agua -25%; - Tierra -25%; - Planta -25%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "fuego": -25,
+          "agua": -25,
+          "tierra": -25,
+          "planta": -25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7253
+      }
+    },
+    {
+      "id": "vendaval",
+      "name": "Vendaval",
+      "element": "aire",
+      "rarity": "super_super_rara",
+      "label": "Clima",
+      "trigger": "environment",
+      "environmentKind": "weather",
+      "effect": [
+        "Mientras permanezca activo:",
+        "- las criaturas que no sean Aire reciben 12,5% de su Vitalidad máxima como daño de Aire al entrar;",
+        "- las criaturas de Aire obtienen Defensa mágica +50%."
+      ],
+      "text": "Mientras permanezca activo: - las criaturas que no sean Aire reciben 12,5% de su Vitalidad máxima como daño de Aire al entrar; - las criaturas de Aire obtienen Defensa mágica +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7265
+      }
+    },
+    {
+      "id": "lanza_del_alba",
+      "name": "Lanza del Alba",
+      "element": "luz",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La siguiente técnica de Luz causa +50% de daño."
+      ],
+      "text": "La siguiente técnica de Luz causa +50% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": "luz",
+          "pct": 50,
+          "afterEntryOnly": false
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7281
+      }
+    },
+    {
+      "id": "resplandor",
+      "name": "Resplandor",
+      "element": "luz",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Luz causan +25% de daño."
+      ],
+      "text": "Las técnicas de Luz causan +25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "luz": 25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7286
+      }
+    },
+    {
+      "id": "corte_del_espiritu",
+      "name": "Corte del Espíritu",
+      "element": "luz",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan con Espíritu Cercenado."
+      ],
+      "text": "Al entrar, todos los enemigos quedan con Espíritu Cercenado.",
+      "mechanics": {
+        "entryStatusAllEnemies": "espiritu_cercenado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7293
+      }
+    },
+    {
+      "id": "veredicto",
+      "name": "Veredicto",
+      "element": "luz",
+      "rarity": "comun",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Luz causan +50% de daño contra criaturas con menos del 50% de Vitalidad."
+      ],
+      "text": "Las técnicas de Luz causan +50% de daño contra criaturas con menos del 50% de Vitalidad.",
+      "mechanics": {
+        "conditionalDamageDealt": [
+          {
+            "type": "luz",
+            "pct": 50,
+            "condition": "contra criaturas con menos del 50% de vitalidad"
+          }
+        ]
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7298
+      }
+    },
+    {
+      "id": "bendicion_de_llegada",
+      "name": "Bendición de Llegada",
+      "element": "luz",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los aliados recuperan 25% de Vitalidad."
+      ],
+      "text": "Al entrar, todos los aliados recuperan 25% de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7303
+      }
+    },
+    {
+      "id": "manos_de_luz",
+      "name": "Manos de Luz",
+      "element": "luz",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las curaciones realizadas aumentan un 25%."
+      ],
+      "text": "Las curaciones realizadas aumentan un 25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7308
+      }
+    },
+    {
+      "id": "relevo_radiante",
+      "name": "Relevo Radiante",
+      "element": "luz",
+      "rarity": "rara",
+      "label": "Curación",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente:",
+        "- todos los aliados recuperan 25% de Vitalidad;",
+        "- las curaciones que reciban hasta finalizar la siguiente ronda aumentan un 25%."
+      ],
+      "text": "Al retirarse voluntariamente: - todos los aliados recuperan 25% de Vitalidad; - las curaciones que reciban hasta finalizar la siguiente ronda aumentan un 25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7315
+      }
+    },
+    {
+      "id": "sol_interior",
+      "name": "Sol Interior",
+      "element": "luz",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Luz causan +100% de daño."
+      ],
+      "text": "Las técnicas de Luz causan +100% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "luz": 100
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7325
+      }
+    },
+    {
+      "id": "intercesion",
+      "name": "Intercesión",
+      "element": "luz",
+      "rarity": "muy_rara",
+      "label": "Curación / protección",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Si una invocación aliada se encuentra al 100% de Vitalidad y un único ataque fuese a derrotarla, permanece con 1 punto de Vitalidad."
+      ],
+      "text": "Si una invocación aliada se encuentra al 100% de Vitalidad y un único ataque fuese a derrotarla, permanece con 1 punto de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7330
+      }
+    },
+    {
+      "id": "campo_luminoso",
+      "name": "Campo Luminoso",
+      "element": "luz",
+      "rarity": "super_super_rara",
+      "label": "Campo",
+      "trigger": "environment",
+      "environmentKind": "field",
+      "effect": [
+        "Mientras permanezca activo:",
+        "- todas las criaturas que no sean Oscuridad recuperan 6,25% de Vitalidad máxima por turno;",
+        "- las criaturas de Luz obtienen Defensa mágica +50%;",
+        "- las criaturas de Oscuridad sufren Defensa -25% y Defensa mágica -25%."
+      ],
+      "text": "Mientras permanezca activo: - todas las criaturas que no sean Oscuridad recuperan 6,25% de Vitalidad máxima por turno; - las criaturas de Luz obtienen Defensa mágica +50%; - las criaturas de Oscuridad sufren Defensa -25% y Defensa mágica -25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7337
+      }
+    },
+    {
+      "id": "manto_oscuro",
+      "name": "Manto Oscuro",
+      "element": "oscuridad",
+      "rarity": "tipica",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Oscuridad recibido -25%."
+      ],
+      "text": "Daño de Oscuridad recibido -25%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "oscuridad": -25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7356
+      }
+    },
+    {
+      "id": "ruptura_del_vinculo",
+      "name": "Ruptura del Vínculo",
+      "element": "oscuridad",
+      "rarity": "comun",
+      "label": "Entrada · Estado",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan Desvinculados."
+      ],
+      "text": "Al entrar, todos los enemigos quedan Desvinculados.",
+      "mechanics": {
+        "entryStatusAllEnemies": "desvinculado"
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7363
+      }
+    },
+    {
+      "id": "noche_protectora",
+      "name": "Noche Protectora",
+      "element": "oscuridad",
+      "rarity": "comun",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Todos los aliados reciben 25% menos de daño de técnicas Mágicas mientras el portador permanezca presente."
+      ],
+      "text": "Todos los aliados reciben 25% menos de daño de técnicas Mágicas mientras el portador permanezca presente.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7368
+      }
+    },
+    {
+      "id": "reflujo_umbrio",
+      "name": "Reflujo Umbrío",
+      "element": "oscuridad",
+      "rarity": "comun",
+      "label": "Curación",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente, todos los aliados recuperan 25% de Vitalidad."
+      ],
+      "text": "Al retirarse voluntariamente, todos los aliados recuperan 25% de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7373
+      }
+    },
+    {
+      "id": "profundidad_umbria",
+      "name": "Profundidad Umbría",
+      "element": "oscuridad",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Daño de técnicas Físicas recibido -50%.",
+        "- Daño de técnicas Mágicas recibido -50%."
+      ],
+      "text": "- Daño de técnicas Físicas recibido -50%. - Daño de técnicas Mágicas recibido -50%.",
+      "mechanics": {
+        "physicalDamageTakenPct": -50,
+        "magicalDamageTakenPct": -50
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7380
+      }
+    },
+    {
+      "id": "velo_nocturno",
+      "name": "Velo Nocturno",
+      "element": "oscuridad",
+      "rarity": "rara",
+      "label": "Defensiva / curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Daño de Luz recibido -50%.",
+        "- Curaciones recibidas +50%."
+      ],
+      "text": "- Daño de Luz recibido -50%. - Curaciones recibidas +50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "luz": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7386
+      }
+    },
+    {
+      "id": "sed_carmesi",
+      "name": "Sed Carmesí",
+      "element": "oscuridad",
+      "rarity": "rara",
+      "label": "Curación por absorción",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Cada aliado recupera Vitalidad equivalente al 12,5% del daño que cause."
+      ],
+      "text": "Cada aliado recupera Vitalidad equivalente al 12,5% del daño que cause.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7392
+      }
+    },
+    {
+      "id": "hambre_del_abismo",
+      "name": "Hambre del Abismo",
+      "element": "oscuridad",
+      "rarity": "rara",
+      "label": "Desgaste",
+      "trigger": "passive_periodic",
+      "environmentKind": null,
+      "effect": [
+        "Mientras el portador permanezca presente, todos los enemigos pierden 6,25% de Vitalidad máxima por turno."
+      ],
+      "text": "Mientras el portador permanezca presente, todos los enemigos pierden 6,25% de Vitalidad máxima por turno.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7397
+      }
+    },
+    {
+      "id": "hambre_de_sombras",
+      "name": "Hambre de Sombras",
+      "element": "oscuridad",
+      "rarity": "muy_rara",
+      "label": "Curación",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Cada vez que una criatura enemiga se retira voluntariamente, todos los aliados recuperan 25% de Vitalidad."
+      ],
+      "text": "Cada vez que una criatura enemiga se retira voluntariamente, todos los aliados recuperan 25% de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7404
+      }
+    },
+    {
+      "id": "neblina_oscura",
+      "name": "Neblina Oscura",
+      "element": "oscuridad",
+      "rarity": "super_super_rara",
+      "label": "Campo",
+      "trigger": "environment",
+      "environmentKind": "field",
+      "effect": [
+        "Al activarse elimina todos los modificadores de características de las criaturas que no sean Oscuridad.",
+        "Mientras permanezca activa:",
+        "- criaturas de Oscuridad: Defensa +50%;",
+        "- criaturas de Luz: Defensa -25% y Defensa mágica -25%.",
+        "No elimina problemas de estado."
+      ],
+      "text": "Al activarse elimina todos los modificadores de características de las criaturas que no sean Oscuridad. Mientras permanezca activa: - criaturas de Oscuridad: Defensa +50%; - criaturas de Luz: Defensa -25% y Defensa mágica -25%. No elimina problemas de estado.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7411
+      }
+    },
+    {
+      "id": "sangre_antigua",
+      "name": "Sangre Antigua",
+      "element": "mitico",
+      "rarity": "tipica",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas Míticas causan +33% de daño."
+      ],
+      "text": "Las técnicas Míticas causan +33% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "mitico": 33
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7437
+      }
+    },
+    {
+      "id": "eco_primordial",
+      "name": "Eco Primordial",
+      "element": "mitico",
+      "rarity": "comun",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La siguiente técnica Mítica utilizada después de entrar causa +75% de daño."
+      ],
+      "text": "La siguiente técnica Mítica utilizada después de entrar causa +75% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": "mitico",
+          "pct": 75,
+          "afterEntryOnly": true
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7444
+      }
+    },
+    {
+      "id": "presagio_imposible",
+      "name": "Presagio Imposible",
+      "element": "mitico",
+      "rarity": "rara",
+      "label": "Entrada · Ofensiva",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, todos los enemigos quedan marcados.",
+        "El siguiente ataque que reciba cada uno causa +75% de daño.",
+        "La marca desaparece después de recibir ese ataque."
+      ],
+      "text": "Al entrar, todos los enemigos quedan marcados. El siguiente ataque que reciba cada uno causa +75% de daño. La marca desaparece después de recibir ese ataque.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7451
+      }
+    },
+    {
+      "id": "ruptura_de_afinidad",
+      "name": "Ruptura de Afinidad",
+      "element": "mitico",
+      "rarity": "rara",
+      "label": "Antielemental",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Los ataques ignoran las resistencias naturales producidas por los tipos del objetivo.",
+        "Este efecto no suprime las inmunidades a problemas de estado definidas en CANON-MECHANICS > 24.1."
+      ],
+      "text": "Los ataques ignoran las resistencias naturales producidas por los tipos del objetivo. Este efecto no suprime las inmunidades a problemas de estado definidas en CANON-MECHANICS > 24.1.",
+      "mechanics": {},
+      "notes": [
+        "Adquisición individual fijada por el autor — DEC-005: cuando Risco transfigura en Valdrakar, Risco y Adriano ganan Ruptura de Afinidad. Queda equipada junto a Mundano en la Preparación final de la novela IV (CANON-NOVELS > PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES). La adquisición pertenece a ese Vínculo concreto; no es una Manifestación natural ni un desbloqueo universal de todos los Valdrakar."
+      ],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7460
+      }
+    },
+    {
+      "id": "antinomia",
+      "name": "Antinomia",
+      "element": "mitico",
+      "rarity": "rara",
+      "label": "Ofensiva / antielemental",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "- Técnicas Míticas +75% de daño.",
+        "- Daño de Luz recibido -33%.",
+        "- Daño de Oscuridad recibido -33%."
+      ],
+      "text": "- Técnicas Míticas +75% de daño. - Daño de Luz recibido -33%. - Daño de Oscuridad recibido -33%.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "mitico": 75
+        },
+        "damageTakenByTypePct": {
+          "luz": -33,
+          "oscuridad": -33
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7469
+      }
+    },
+    {
+      "id": "forma_arquetipica",
+      "name": "Forma Arquetípica",
+      "element": "mitico",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas Míticas causan +150% de daño."
+      ],
+      "text": "Las técnicas Míticas causan +150% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "mitico": 150
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7478
+      }
+    },
+    {
+      "id": "escudo_de_las_seis_leyes",
+      "name": "Escudo de las Seis Leyes",
+      "element": "mitico",
+      "rarity": "muy_rara",
+      "label": "Antielemental",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño recibido:",
+        "- Fuego -33%;",
+        "- Agua -33%;",
+        "- Planta -33%;",
+        "- Tierra -33%;",
+        "- Aire -33%;",
+        "- Rayo -33%."
+      ],
+      "text": "Daño recibido: - Fuego -33%; - Agua -33%; - Planta -33%; - Tierra -33%; - Aire -33%; - Rayo -33%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "fuego": -33,
+          "agua": -33,
+          "planta": -33,
+          "tierra": -33,
+          "aire": -33,
+          "rayo": -33
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7483
+      }
+    },
+    {
+      "id": "invariante",
+      "name": "Invariante",
+      "element": "mitico",
+      "rarity": "muy_rara",
+      "label": "Antielemental",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Ignora los modificadores de daño de campos y climas, pero no sus demás efectos."
+      ],
+      "text": "Ignora los modificadores de daño de campos y climas, pero no sus demás efectos.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7495
+      }
+    },
+    {
+      "id": "negacion_elemental",
+      "name": "Negación Elemental",
+      "element": "mitico",
+      "rarity": "muy_rara",
+      "label": "Antielemental / soporte",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Los aliados no reciben daño adicional por ventajas de tipo del atacante."
+      ],
+      "text": "Los aliados no reciben daño adicional por ventajas de tipo del atacante.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7500
+      }
+    },
+    {
+      "id": "silencio_del_vinculo",
+      "name": "Silencio del Vínculo",
+      "element": "mitico",
+      "rarity": "super_super_rara",
+      "label": "Anomalía",
+      "trigger": "environment",
+      "environmentKind": "anomaly",
+      "effect": [
+        "Mientras permanezca activo:",
+        "- todas las Manifestaciones de criaturas no Míticas quedan desactivadas;",
+        "- técnicas Míticas +50% de daño;",
+        "- técnicas de Luz -25% de daño;",
+        "- técnicas de Oscuridad -25% de daño."
+      ],
+      "text": "Mientras permanezca activo: - todas las Manifestaciones de criaturas no Míticas quedan desactivadas; - técnicas Míticas +50% de daño; - técnicas de Luz -25% de daño; - técnicas de Oscuridad -25% de daño.",
+      "mechanics": {
+        "damageDealtByTypePct": {
+          "mitico": 50,
+          "luz": -25,
+          "oscuridad": -25
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7507
+      }
+    },
+    {
+      "id": "juramento_de_las_hogueras",
+      "name": "Juramento de las Hogueras",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Fuego recibido -50%."
+      ],
+      "text": "Daño de Fuego recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "fuego": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7554
+      }
+    },
+    {
+      "id": "juramento_de_las_mareas",
+      "name": "Juramento de las Mareas",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Agua recibido -50%."
+      ],
+      "text": "Daño de Agua recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "agua": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7558
+      }
+    },
+    {
+      "id": "juramento_de_las_raices",
+      "name": "Juramento de las Raíces",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Planta recibido -50%."
+      ],
+      "text": "Daño de Planta recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "planta": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7562
+      }
+    },
+    {
+      "id": "juramento_de_la_piedra",
+      "name": "Juramento de la Piedra",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Tierra recibido -50%."
+      ],
+      "text": "Daño de Tierra recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "tierra": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7566
+      }
+    },
+    {
+      "id": "juramento_del_vendaval",
+      "name": "Juramento del Vendaval",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Aire recibido -50%."
+      ],
+      "text": "Daño de Aire recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "aire": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7570
+      }
+    },
+    {
+      "id": "juramento_de_la_tormenta",
+      "name": "Juramento de la Tormenta",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Rayo recibido -50%."
+      ],
+      "text": "Daño de Rayo recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "rayo": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7574
+      }
+    },
+    {
+      "id": "juramento_del_alba",
+      "name": "Juramento del Alba",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Luz recibido -50%."
+      ],
+      "text": "Daño de Luz recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "luz": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7578
+      }
+    },
+    {
+      "id": "juramento_de_la_noche",
+      "name": "Juramento de la Noche",
+      "element": "global",
+      "rarity": "comun",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño de Oscuridad recibido -50%."
+      ],
+      "text": "Daño de Oscuridad recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "oscuridad": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7582
+      }
+    },
+    {
+      "id": "corazon_de_brasa",
+      "name": "Corazón de Brasa",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Quemado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Quemado:",
+        "Ataque +50%."
+      ],
+      "text": "Mientras esté Quemado: Ataque +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7586
+      }
+    },
+    {
+      "id": "respiracion_abisal",
+      "name": "Respiración Abisal",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Saturado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Saturado:",
+        "Defensa mágica +50%."
+      ],
+      "text": "Mientras esté Saturado: Defensa mágica +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7593
+      }
+    },
+    {
+      "id": "raiz_ferrea",
+      "name": "Raíz Férrea",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Enraizado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Enraizado:",
+        "- Defensa +25%;",
+        "- Defensa mágica +25%."
+      ],
+      "text": "Mientras esté Enraizado: - Defensa +25%; - Defensa mágica +25%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7600
+      }
+    },
+    {
+      "id": "furia_de_cantera",
+      "name": "Furia de Cantera",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Agrietado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Agrietado:",
+        "Ataque mágico +50%."
+      ],
+      "text": "Mientras esté Agrietado: Ataque mágico +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7608
+      }
+    },
+    {
+      "id": "nervio_de_tormenta",
+      "name": "Nervio de Tormenta",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Paralizado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Paralizado:",
+        "Ataque mágico +50%."
+      ],
+      "text": "Mientras esté Paralizado: Ataque mágico +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7615
+      }
+    },
+    {
+      "id": "instinto_del_vendaval",
+      "name": "Instinto del Vendaval",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Desorientado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Desorientado:",
+        "Velocidad +50%."
+      ],
+      "text": "Mientras esté Desorientado: Velocidad +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7622
+      }
+    },
+    {
+      "id": "voluntad_radiante",
+      "name": "Voluntad Radiante",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Espíritu Cercenado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras tenga el Espíritu Cercenado:",
+        "Curaciones recibidas +50%."
+      ],
+      "text": "Mientras tenga el Espíritu Cercenado: Curaciones recibidas +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7629
+      }
+    },
+    {
+      "id": "voluntad_desnuda",
+      "name": "Voluntad Desnuda",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Asociada a Desvinculado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Desvinculado, Ataque y Ataque mágico +25%. Funciona aunque Desvinculado desactive las Manifestaciones."
+      ],
+      "text": "Mientras esté Desvinculado, Ataque y Ataque mágico +25%. Funciona aunque Desvinculado desactive las Manifestaciones.",
+      "mechanics": {
+        "worksWhileDesvinculado": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7636
+      }
+    },
+    {
+      "id": "tercer_ojo",
+      "name": "Tercer ojo",
+      "element": "global",
+      "rarity": "comun",
+      "label": "Precisión",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Precisión de todas las técnicas +10 puntos porcentuales, hasta un máximo de 100%."
+      ],
+      "text": "Precisión de todas las técnicas +10 puntos porcentuales, hasta un máximo de 100%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7641
+      }
+    },
+    {
+      "id": "juramento_ancestral",
+      "name": "Juramento Ancestral",
+      "element": "global",
+      "rarity": "rara",
+      "label": null,
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Daño Mítico recibido -50%."
+      ],
+      "text": "Daño Mítico recibido -50%.",
+      "mechanics": {
+        "damageTakenByTypePct": {
+          "mitico": -50
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7650
+      }
+    },
+    {
+      "id": "presencia_opresiva",
+      "name": "Presencia Opresiva",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Entrada",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, el Ataque de todos los enemigos disminuye un 50%."
+      ],
+      "text": "Al entrar, el Ataque de todos los enemigos disminuye un 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7654
+      }
+    },
+    {
+      "id": "presion_arcana",
+      "name": "Presión Arcana",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Entrada",
+      "trigger": "on_entry",
+      "environmentKind": null,
+      "effect": [
+        "Al entrar, el Ataque mágico de todos los enemigos disminuye un 50%."
+      ],
+      "text": "Al entrar, el Ataque mágico de todos los enemigos disminuye un 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7659
+      }
+    },
+    {
+      "id": "relevo_protector",
+      "name": "Relevo Protector",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Retirada",
+      "trigger": "on_voluntary_withdraw",
+      "environmentKind": null,
+      "effect": [
+        "Al retirarse voluntariamente:",
+        "- todos los aliados recuperan 25% de Vitalidad;",
+        "- reciben 25% menos de daño hasta finalizar la siguiente ronda."
+      ],
+      "text": "Al retirarse voluntariamente: - todos los aliados recuperan 25% de Vitalidad; - reciben 25% menos de daño hasta finalizar la siguiente ronda.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7664
+      }
+    },
+    {
+      "id": "segundo_aliento",
+      "name": "Segundo Aliento",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Supervivencia",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "La primera vez que su Vitalidad cae por debajo del 50%, recupera inmediatamente 25% de Vitalidad máxima."
+      ],
+      "text": "La primera vez que su Vitalidad cae por debajo del 50%, recupera inmediatamente 25% de Vitalidad máxima.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7672
+      }
+    },
+    {
+      "id": "regeneracion",
+      "name": "Regeneración",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Recuperación",
+      "trigger": "passive_periodic",
+      "environmentKind": null,
+      "effect": [
+        "Al final de cada turno recupera 6,25% de Vitalidad máxima."
+      ],
+      "text": "Al final de cada turno recupera 6,25% de Vitalidad máxima.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7677
+      }
+    },
+    {
+      "id": "amartillar",
+      "name": "Amartillar",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Compromiso · Física",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas Físicas causan +100% de daño. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo."
+      ],
+      "text": "Las técnicas Físicas causan +100% de daño. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo.",
+      "mechanics": {
+        "locksFirstTechnique": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7682
+      }
+    },
+    {
+      "id": "concentracion",
+      "name": "Concentración",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Compromiso · Mágica",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas Mágicas causan +100% de daño. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo."
+      ],
+      "text": "Las técnicas Mágicas causan +100% de daño. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo.",
+      "mechanics": {
+        "locksFirstTechnique": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7687
+      }
+    },
+    {
+      "id": "ataque_rapido",
+      "name": "Ataque Rápido",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Compromiso · Velocidad",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Velocidad +100%. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo."
+      ],
+      "text": "Velocidad +100%. Tras usar su primera técnica, solo puede repetir esa técnica mientras permanezca en campo.",
+      "mechanics": {
+        "locksFirstTechnique": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7692
+      }
+    },
+    {
+      "id": "sobrecarga",
+      "name": "Sobrecarga",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Multigolpe",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas multigolpe realizan al menos 4 impactos."
+      ],
+      "text": "Las técnicas multigolpe realizan al menos 4 impactos.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7697
+      }
+    },
+    {
+      "id": "mundano",
+      "name": "Mundano",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Especialización",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de daño sin efectos adicionales causan +100% de daño; las que poseen efectos adicionales causan -50% de daño."
+      ],
+      "text": "Las técnicas de daño sin efectos adicionales causan +100% de daño; las que poseen efectos adicionales causan -50% de daño.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7702
+      }
+    },
+    {
+      "id": "poder_latente",
+      "name": "Poder latente",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras pueda evolucionar o transformarse, Defensa y Defensa mágica +100%."
+      ],
+      "text": "Mientras pueda evolucionar o transformarse, Defensa y Defensa mágica +100%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7707
+      }
+    },
+    {
+      "id": "versatilidad",
+      "name": "Versatilidad",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "La primera vez que utiliza cada técnica de daño equipada, esa técnica causa +50% de daño."
+      ],
+      "text": "La primera vez que utiliza cada técnica de daño equipada, esa técnica causa +50% de daño.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7712
+      }
+    },
+    {
+      "id": "respuesta_adaptativa",
+      "name": "Respuesta adaptativa",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Al recibir una técnica Física, sube la Defensa mágica. Al recibir una técnica Mágica, sube la Defensa."
+      ],
+      "text": "Al recibir una técnica Física, sube la Defensa mágica. Al recibir una técnica Mágica, sube la Defensa.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7717
+      }
+    },
+    {
+      "id": "concentracion_absoluta",
+      "name": "Concentración absoluta",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Defensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras prepara o carga una técnica, el daño recibido se reduce a la mitad. Y estas técnicas no pueden ser evdadidas usando evasión."
+      ],
+      "text": "Mientras prepara o carga una técnica, el daño recibido se reduce a la mitad. Y estas técnicas no pueden ser evdadidas usando evasión.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7722
+      }
+    },
+    {
+      "id": "oportunista",
+      "name": "Oportunista",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Táctica",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas de Estado se ejecutan con prioridad."
+      ],
+      "text": "Las técnicas de Estado se ejecutan con prioridad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7727
+      }
+    },
+    {
+      "id": "afinidad_prestada",
+      "name": "Afinidad prestada",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las técnicas elementales de tipos que el portador no posee causan +50% de daño."
+      ],
+      "text": "Las técnicas elementales de tipos que el portador no posee causan +50% de daño.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7732
+      }
+    },
+    {
+      "id": "arsenal_ligero",
+      "name": "Arsenal ligero",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Velocidad",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Si ninguna técnica equipada cuesta más de 25 de Vínculo, Velocidad +50%."
+      ],
+      "text": "Si ninguna técnica equipada cuesta más de 25 de Vínculo, Velocidad +50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7737
+      }
+    },
+    {
+      "id": "arsenal_pesado",
+      "name": "Arsenal pesado",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Si tiene equipadas al menos 2 técnicas de coste 50 o superior, sus técnicas de daño causan +50% de daño."
+      ],
+      "text": "Si tiene equipadas al menos 2 técnicas de coste 50 o superior, sus técnicas de daño causan +50% de daño.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7742
+      }
+    },
+    {
+      "id": "relevo",
+      "name": "Relevo",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Retirada · Curación",
+      "trigger": "on_switch_out",
+      "environmentKind": null,
+      "effect": [
+        "Cada vez que es sustituido, recupera 25% de Vitalidad máxima."
+      ],
+      "text": "Cada vez que es sustituido, recupera 25% de Vitalidad máxima.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7747
+      }
+    },
+    {
+      "id": "desafiante",
+      "name": "Desafiante",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Respuesta",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Cuando una de sus características baja, sube mucho el Ataque."
+      ],
+      "text": "Cuando una de sus características baja, sube mucho el Ataque.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7752
+      }
+    },
+    {
+      "id": "contramedida",
+      "name": "Contramedida",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Respuesta",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Cuando una de sus características baja, sube mucho el Ataque mágico."
+      ],
+      "text": "Cuando una de sus características baja, sube mucho el Ataque mágico.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7757
+      }
+    },
+    {
+      "id": "no_me_toques",
+      "name": "No me toques",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Respuesta · Retirada",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Cuando una de sus características baja, es sustituido inmediatamente por otra criatura disponible elegida al azar."
+      ],
+      "text": "Cuando una de sus características baja, es sustituido inmediatamente por otra criatura disponible elegida al azar.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7762
+      }
+    },
+    {
+      "id": "retaguardia",
+      "name": "Retaguardia",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Soporte",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Tras utilizar una técnica de Estado, el siguiente daño que reciba un aliado se reduce 50%."
+      ],
+      "text": "Tras utilizar una técnica de Estado, el siguiente daño que reciba un aliado se reduce 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7767
+      }
+    },
+    {
+      "id": "fortificacion",
+      "name": "Fortificación",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Soporte",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las barreras creadas por sus técnicas duran 2 rondas adicionales."
+      ],
+      "text": "Las barreras creadas por sus técnicas duran 2 rondas adicionales.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7772
+      }
+    },
+    {
+      "id": "triaje",
+      "name": "Triaje",
+      "element": "global",
+      "rarity": "rara",
+      "label": "Curación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Las curaciones sobre criaturas con menos del 50% de Vitalidad aumentan 50%."
+      ],
+      "text": "Las curaciones sobre criaturas con menos del 50% de Vitalidad aumentan 50%.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7777
+      }
+    },
+    {
+      "id": "ultimo_hilo",
+      "name": "Último Hilo",
+      "element": "global",
+      "rarity": "muy_rara",
+      "label": "Supervivencia",
+      "trigger": "response",
+      "environmentKind": null,
+      "effect": [
+        "Si el portador se encuentra al 100% de Vitalidad y un único ataque fuese a derrotarlo, permanece con 1 punto de Vitalidad."
+      ],
+      "text": "Si el portador se encuentra al 100% de Vitalidad y un único ataque fuese a derrotarlo, permanece con 1 punto de Vitalidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7786
+      }
+    },
+    {
+      "id": "ultimo_recurso",
+      "name": "Último recurso",
+      "element": "global",
+      "rarity": "muy_rara",
+      "label": "Ofensiva",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Tras utilizar todas sus técnicas disponibles, la siguiente técnica de daño causa +150% de daño."
+      ],
+      "text": "Tras utilizar todas sus técnicas disponibles, la siguiente técnica de daño causa +150% de daño.",
+      "mechanics": {
+        "nextTechniqueBonus": {
+          "type": null,
+          "pct": 150,
+          "afterEntryOnly": false
+        }
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7791
+      }
+    },
+    {
+      "id": "desapego",
+      "name": "Desapego",
+      "element": "global",
+      "rarity": "muy_rara",
+      "label": "Ofensiva · Desvinculado",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Mientras esté Desvinculado, sus técnicas causan +50% de daño. Funciona aunque Desvinculado desactive las Manifestaciones."
+      ],
+      "text": "Mientras esté Desvinculado, sus técnicas causan +50% de daño. Funciona aunque Desvinculado desactive las Manifestaciones.",
+      "mechanics": {
+        "worksWhileDesvinculado": true
+      },
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7796
+      }
+    },
+    {
+      "id": "espejo_concavo",
+      "name": "Espejo cóncavo",
+      "element": "global",
+      "rarity": "muy_rara",
+      "label": "Alteración de características",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "Invierte las subidas y bajadas de características recibidas, manteniendo su intensidad."
+      ],
+      "text": "Invierte las subidas y bajadas de características recibidas, manteniendo su intensidad.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7801
+      }
+    },
+    {
+      "id": "equilibrio_del_vinculo",
+      "name": "Equilibrio del Vínculo",
+      "element": "global",
+      "rarity": "muy_rara",
+      "label": "Antimanifestación",
+      "trigger": "passive",
+      "environmentKind": null,
+      "effect": [
+        "El aumento total de daño procedente de Manifestaciones no puede superar +50% para ninguna criatura."
+      ],
+      "text": "El aumento total de daño procedente de Manifestaciones no puede superar +50% para ninguna criatura.",
+      "mechanics": {},
+      "notes": [],
+      "source": {
+        "id": "CANON-MANIFESTATIONS",
+        "line": 7806
+      }
+    }
+  ]
+}

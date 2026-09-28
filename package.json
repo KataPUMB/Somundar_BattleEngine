@@ -1,0 +1,18 @@
+{
+  "name": "battlesim",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Simulador arbitral de combates de invocacion de Somundar",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/tests/**/*.test.js\"",
+    "coverage": "npm run build && node dist/app/cli.js coverage",
+    "validate-data": "npm run build && node dist/app/cli.js validate-data",
+    "simulate": "npm run build && node dist/app/cli.js simulate"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3"
+  }
+}
