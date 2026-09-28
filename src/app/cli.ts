@@ -9,6 +9,10 @@ import { validatePreparation } from '../engine/legality/preparation.js';
 import { randomLegalPolicy } from '../engine/ai/random.js';
 import { RULE_GAPS } from '../engine/gaps.js';
 import { runBattle } from './simulate.js';
+import { askReplacement, humanPolicy } from './human.js';
+import { formatEvent } from './format.js';
+import type { BattleState, SideIndex } from '../engine/model/battle.js';
+import type { Policy } from '../engine/ai/random.js';
 
 function flag(args: string[], name: string): string | undefined {
   const i = args.indexOf(`--${name}`);
@@ -52,16 +56,38 @@ function main(argv: string[]): number {
       const sc = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as { sides: [SideSetup, SideSetup]; seed?: number; config?: Partial<BattleConfig> };
       const seed = Number(flag(args, 'seed') ?? sc.seed ?? 1);
       const mode = flag(args, 'mode') as EffectsMode | undefined;
-      const st = runBattle(data, sc.sides, [randomLegalPolicy, randomLegalPolicy], { seed, config: { ...sc.config, ...(mode ? { effectsMode: mode } : {}) } });
+      const humanArg = flag(args, 'human');
+      const human = [humanArg === '0' || humanArg === 'both', humanArg === '1' || humanArg === 'both'];
+      const pretty = args.includes('--pretty') || human.some(Boolean);
+      let printed = 0;
+      const flush = (st: BattleState) => {
+        for (const e of st.log) {
+          if (e.id <= printed) continue;
+          printed = e.id;
+          const line = pretty ? formatEvent(data, st, e) : `#${e.id} R${e.round} ${e.phase} ${e.type}${e.actor ? ` ${e.actor}` : ''}${e.data ? ` ${JSON.stringify(e.data)}` : ''}`;
+          if (line !== null) console.log(line);
+        }
+      };
+      const policies = [0, 1].map((s) => (human[s] ? humanPolicy(data) : randomLegalPolicy)) as [Policy, Policy];
+      const controllers = {
+        chooseReplacement: (st: BattleState, side: SideIndex, pid: string, candidates: string[]) => {
+          if (!human[side]) return candidates[0]!;
+          flush(st);
+          return askReplacement(st, pid, candidates);
+        },
+      };
+      const st = runBattle(data, sc.sides, policies, {
+        seed,
+        config: { ...sc.config, ...(mode ? { effectsMode: mode } : {}) },
+        controllers,
+        onUpdate: json ? undefined : flush,
+      });
       if (json) console.log(JSON.stringify(st.log, null, 2));
-      else {
-        for (const e of st.log) console.log(`#${e.id} R${e.round} ${e.phase} ${e.type}${e.actor ? ` ${e.actor}` : ''}${e.data ? ` ${JSON.stringify(e.data)}` : ''}`);
-        console.log(`Resultado: ${JSON.stringify(st.outcome)}`);
-      }
+      else console.log(`Resultado: ${JSON.stringify(st.outcome)}`);
       return 0;
     }
     default:
-      console.log('Uso: cli <validate-data | coverage [--mode strict|lenient] [--json] | gaps | validate <setup.json> | simulate <escenario.json> [--seed N] [--mode M] [--json]> [--data DIR]');
+      console.log('Uso: cli <validate-data | coverage [--mode strict|lenient] [--json] | gaps | validate <setup.json> | simulate <escenario.json> [--seed N] [--mode M] [--human 0|1|both] [--pretty] [--json]> [--data DIR]');
       return cmd ? 1 : 0;
   }
 }
