@@ -11,6 +11,7 @@ export interface EngineCtx {
   data: GameData;
   st: BattleState;
   controllers: Controllers;
+  depth?: number;
 }
 
 export function sideOf(st: BattleState, i: SideIndex): SideState {

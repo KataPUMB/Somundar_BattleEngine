@@ -129,6 +129,8 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
   for (const side of st.sides) for (const c of side.combatants) {
     c.presentAtDeclaration = c.location === 'field';
     c.dodgingThisRound = false;
+    c.actedThisRound = false;
+    c.flinched = false;
   }
   st.phase = 'declaration';
   return st;
@@ -164,6 +166,7 @@ function freeze(ctx: EngineCtx, decls: Declarations): Frozen[] {
 }
 
 function fail(ctx: EngineCtx, f: Frozen, reason: string, ruleRef: string): void {
+  combatant(ctx.st, f.actorUid).actedThisRound = true;
   emit(ctx.st, { type: 'action_failed', actor: f.actorUid, targets: [f.positionId], data: { action: f.action.kind, reason }, ruleRef });
 }
 
@@ -182,6 +185,7 @@ function resolveSwitch(ctx: EngineCtx, f: Frozen): void {
   const incoming = sideOf(ctx.st, f.side).combatants.find((c) => c.creature.id === (f.action as { incomingId: string }).incomingId);
   if (!incoming || !isViableReserve(incoming)) return fail(ctx, f, 'el reemplazo ya no es viable', 'CANON-MECHANICS 16.4');
   const pos = findPosition(ctx.st, f.positionId)!;
+  out.actedThisRound = true;
   const ev = emit(ctx.st, { type: 'switch', actor: out.uid, targets: [pos.id], data: { incoming: incoming.uid }, ruleRef: 'CANON-MECHANICS 16.3' });
   exitField(ctx, out, 'withdraw', ev);
   materializeWithEntry(ctx, incoming, pos, ev);
@@ -193,6 +197,7 @@ function resolveDodge(ctx: EngineCtx, f: Frozen): void {
   if (!c) return fail(ctx, f, 'la criatura ya no ocupa la posicion', 'CANON-MECHANICS 14.3');
   const chance = dodgeChance(c.dodgeStreak);
   const r = roll(ctx, `dodge:${c.uid}`, chance);
+  c.actedThisRound = true;
   c.dodgeStreak++;
   c.dodgingThisRound = r.result;
   c.lastTurnTechniqueId = null;
@@ -207,9 +212,10 @@ function resolveAction(ctx: EngineCtx, f: Frozen): void {
     const c = combatant(ctx.st, f.actorUid);
     const t = ctx.data.techniques.get(a.techniqueId)!;
     if (!pos || pos.occupantUid !== null || !isViableReserve(c)) return fail(ctx, f, 'la Materializacion parcial ya no es posible', 'CANON-MECHANICS 14.3');
+    c.actedThisRound = true;
     pos.partialUid = c.uid;
     const ev = emit(ctx.st, { type: 'partial_materialization', actor: c.uid, targets: [pos.id], data: { technique: t.id }, ruleRef: 'CANON-MECHANICS 1 (Materializacion parcial) / 32' });
-    executeTechnique(ctx, t, c, a.target, ev);
+    executeTechnique(ctx, t, c, a.target, ev, true);
     pos.partialUid = null;
     emit(ctx.st, { type: 'partial_end', actor: c.uid, targets: [pos.id], cause: ev, ruleRef: 'CANON-MECHANICS 32' });
     return;
@@ -217,6 +223,8 @@ function resolveAction(ctx: EngineCtx, f: Frozen): void {
   if (a.kind !== 'technique') return;
   const c = stillOccupies(ctx, f);
   if (!c) return fail(ctx, f, 'el usuario ya no esta activo; la accion se pierde', 'CANON-MECHANICS 16.6 / 28.5.15');
+  if (c.flinched) return fail(ctx, f, 'retrocede y no puede actuar este turno', 'CANON-TECHNIQUES / GAP-FLINCH');
+  c.actedThisRound = true;
   c.dodgeStreak = 0;
   const t = ctx.data.techniques.get(a.techniqueId)!;
   const continuing = c.charging?.techniqueId === t.id;
@@ -267,6 +275,7 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
   for (const c of turnHolders) {
     if (!hadTurn(c)) continue;
     c.turnsMaterialized++;
+    c.turnsSinceEntry++;
     for (const s of c.statuses) for (const k of Object.keys(s.counters)) if ((s.counters[k] ?? 0) > 0) s.counters[k]!--;
   }
   emit(st, { type: 'counters_advanced', data: { creatures: turnHolders.filter(hadTurn).map((c) => c.uid), gap: 'GAP-TURN-PREDICATE' }, ruleRef: 'CANON-MECHANICS 24.2 / 28.6.18' });
@@ -298,6 +307,8 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
   for (const side of st.sides) for (const c of side.combatants) {
     c.presentAtDeclaration = false;
     c.dodgingThisRound = false;
+    c.actedThisRound = false;
+    c.flinched = false;
   }
   checkOutcome(ctx);
 }

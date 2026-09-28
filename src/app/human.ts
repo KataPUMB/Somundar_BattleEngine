@@ -38,17 +38,17 @@ function ask(question: string, max: number, allowZero = false): number {
   }
 }
 
-function printBoard(st: BattleState, side: SideIndex, title = `ronda ${st.round}`): void {
+function printBoard(data: GameData, st: BattleState, side: SideIndex, title = `ronda ${st.round}`): void {
   const foe: SideIndex = side === 0 ? 1 : 0;
   console.log(`\n--- ${st.sides[side].summoner.name}: ${title} ---`);
   for (const s of [foe, side]) {
     for (const p of st.sides[s].positions) {
       const c = p.occupantUid ? st.sides[s].combatants.find((x) => x.uid === p.occupantUid)! : null;
-      console.log(`  ${p.id}${p.temporary ? '*' : ''} ${s === side ? '(tuya)' : '(rival)'}: ${c ? `${creatureName(st, c.uid)} ${statusLine(c)}` : 'vacia'}`);
+      console.log(`  ${p.id}${p.temporary ? '*' : ''} ${s === side ? '(tuya)' : '(rival)'}: ${c ? `${creatureName(st, c.uid)} ${statusLine(c, data)}` : 'vacia'}`);
     }
   }
   const reserves = st.sides[side].combatants.filter((c) => c.location !== 'field');
-  if (reserves.length) console.log(`  Intermedio: ${reserves.map((c) => `${c.creature.name ?? c.creature.id} ${c.location === 'defeated' ? '(derrotada)' : statusLine(c)}`).join(' | ')}`);
+  if (reserves.length) console.log(`  Intermedio: ${reserves.map((c) => `${c.creature.name ?? c.creature.id} ${c.location === 'defeated' ? '(derrotada)' : statusLine(c, data)}`).join(' | ')}`);
   const foeLeft = st.sides[foe].combatants.filter((c) => c.location === 'intermedio').length;
   console.log(`  Reservas viables del rival: ${foeLeft}`);
 }
@@ -98,10 +98,10 @@ export function humanPolicy(data: GameData): Policy {
       const empty = s.positions.filter((p) => p.occupantUid === null);
       const canOpen = s.summoner.simultaneity === 'adept_temporary' && s.positions.length < 2;
       if (reserves.length === 0 || (!canOpen && empty.length === 0)) return [];
-      printBoard(view as BattleState, side, `establecimiento de posiciones de la ronda ${view.round + 1}`);
+      printBoard(data, view as BattleState, side, `establecimiento de posiciones de la ronda ${view.round + 1}`);
       const where = canOpen ? 'abrir una segunda posicion temporal' : `ocupar ${empty[0]!.id}`;
       console.log(`  Puedes ${where} materializando una criatura completa:`);
-      reserves.forEach((c, i) => console.log(`    ${i + 1}) ${c.creature.name ?? c.creature.id} ${statusLine(c)}`));
+      reserves.forEach((c, i) => console.log(`    ${i + 1}) ${c.creature.name ?? c.creature.id} ${statusLine(c, data)}`));
       const n = ask('  Criatura (0 = no):', reserves.length, true);
       if (n === 0) return [];
       const choice: RoundStartChoice = { side, creatureId: reserves[n - 1]!.creature.id };
@@ -109,7 +109,7 @@ export function humanPolicy(data: GameData): Policy {
     },
     declare(view, side, legal) {
       const st = view as BattleState;
-      printBoard(st, side);
+      printBoard(data, st, side);
       const out: Declarations = {};
       for (const [pid, opts] of legal) {
         const occ = st.sides[side].positions.find((p) => p.id === pid)?.occupantUid;

@@ -19,10 +19,13 @@ test('13.4 / 28.1 / 29: despliegue por Velocidad y Entradas reunidas despues, ta
   const slow = creature('lento', { baseStatsNV50: { ...FLAT_STATS, spe: 50 }, equippedManifestations: ['calima'] });
   const fast = creature('rapido', { speciesId: 'undaria', types: ['agua'], baseStatsNV50: { ...FLAT_STATS, spe: 150 }, equippedManifestations: ['llovizna'] });
   const st = start(data, setup(s0, [slow]), setup(s1, [fast]));
-  const types = st.log.map((e) => `${e.type}:${e.actor ?? ''}`).filter((x) => /^(materialize|manifestation)/.test(x));
+  const types = st.log.map((e) => `${e.type}:${e.actor ?? ''}`).filter((x) => /^(materialize|manifestation|environment_set)/.test(x));
   assert.deepEqual(types, [
-    'materialize:1:rapido', 'materialize:0:lento', 'manifestation_inert:1:rapido', 'manifestation_inert:0:lento',
+    'materialize:1:rapido', 'materialize:0:lento',
+    'manifestation:1:rapido', 'environment_set:1:rapido', 'manifestation:0:lento', 'environment_set:0:lento',
   ]);
+  assert.equal(st.environment?.id, 'calima');
+  assert.equal(st.environment?.sourceUid, uid(0, 'lento'));
   assert.equal(st.log.at(-1)?.type, 'deployment_complete');
 });
 

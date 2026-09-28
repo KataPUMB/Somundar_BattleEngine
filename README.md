@@ -1,6 +1,6 @@
 # Simulador de combates de Somundar
 
-Árbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y usa como base de datos los JSON de `Data/`.
+Ýrbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y usa como base de datos los JSON de `Data/`.
 
 No es un videojuego libre: nunca inventa reglas. Cuando el canon no cubre una situación, el motor aplica un **supuesto configurable** (`RuleGap`), lo declara en la cabecera del log y lo marca en el evento donde interviene.
 
@@ -16,14 +16,16 @@ La especificación completa está en [PROMPT_ARQUITECTURA.md](PROMPT_ARQUITECTUR
 | 2 | Fórmulas puras (`rules/`) con tests | Hecha |
 | 3 | Modelo + validador de Preparación | Hecha |
 | 4 | Pipeline de ronda sin efectos especiales | Hecha |
-| 5 | Motor de cadenas + intérprete del DSL de efectos + curado | Pendiente |
+| 5 | Motor de cadenas + intérprete del DSL de efectos + curado | En curso (ver abajo) |
 | 6 | Log causal, exportador narrativo | Parcial (log estructurado y repetición exacta) |
 | 7 | IA y modo lote | Parcial (política aleatoria legal y modo interactivo por consola) |
 | 8 | UI | Pendiente |
 
 Lo que ya funciona: despliegue inicial, posiciones (incluida la temporal del Adepto), declaración oculta, Intercambios, Esquivas, técnicas ordenadas por Prioridad/Velocidad, daño, tipos, precisión, multigolpe (Objetivo único / Multiobjetivo / A todos), técnicas de carga, Materialización parcial, Derrota y Reemplazo forzado, Quemado, contadores de estados, restricciones de Enraizado y Desorientado, fin de combate.
 
-Lo que todavía **no** tiene efecto: los efectos propios de técnicas y Manifestaciones (subir/bajar etapas, aplicar estados, climas, curas, retrocesos...). Las Manifestaciones se registran en el log como `manifestation_inert` con el motivo. Llegan en la fase 5.
+Lo que todavía **no** tiene efecto: las técnicas y Manifestaciones sin curar. En strict las técnicas sin curar no se pueden declarar; las Manifestaciones sin curar se registran en el log como `manifestation_inert` con el motivo.
+
+Fase 5 hasta ahora: intérprete del DSL con condiciones estructuradas; Manifestaciones activas solo con la criatura completamente materializada (10.7), desactivadas por Desvinculado (24.10) o por Silencio del Vínculo; modificadores de daño de Manifestaciones y Climas sumados en M (23.2); precisión «nunca falla» por Clima; Entradas que aplican estados a todos los enemigos; Campos/Climas/Anomalías que se sustituyen (25.1); bonificaciones «la siguiente técnica tras entrar»; Puño preciso (solo en el primer turno tras materializarse; hace retroceder al objetivo que aún no ha actuado). Siguen sin efecto: etapas, curas, retrocesos, Intercambios forzados, efectos laterales y el resto de técnicas y Manifestaciones sin curar.
 
 ---
 
@@ -151,7 +153,27 @@ Los presets por estamento (Amplitud, Fortaleza, simultaneidad, Materialización 
 ```
 
 - `effects: []` significa **verificado: sin efecto más allá de sus parámetros base**. [Data/effects/base_only.json](Data/effects/base_only.json) marca así 35 técnicas (las que dicen «Sin efecto adicional» y las anatómicas cuya descripción solo describe el gesto). Este curado es revisable.
-- El formato de `effects` (disparadores, objetivos, operaciones) está en [src/engine/effects/dsl.ts](src/engine/effects/dsl.ts). El cargador valida su estructura; el intérprete llega en la fase 5.
+- El formato de `effects` (disparadores, objetivos, operaciones) está en [src/engine/effects/dsl.ts](src/engine/effects/dsl.ts). El cargador valida su estructura (disparadores, objetivos, operaciones y claves de condición).
+- Curado actual: [Data/effects/base_only.json](Data/effects/base_only.json) (técnicas sin efecto adicional), [Data/effects/techniques_core.json](Data/effects/techniques_core.json) (Puño preciso) y [Data/effects/manifestations_core.json](Data/effects/manifestations_core.json) (52 Manifestaciones: daño por tipo o clase, condicionales, «siguiente técnica tras entrar», estados al entrar, Calima, Llovizna, Campo floral y Silencio del Vínculo).
+- Si el texto de una Manifestación incluye algo que el intérprete aún no sabe hacer, se cura entera con una operación sin intérprete (p. ej. `modifyHealing` en Velo nocturno) para que quede bloqueada y no se aplique a medias.
+
+### Efectos: disparadores, condiciones y operaciones
+
+```json
+{ "trigger": "passive", "target": "self",
+  "condition": { "techniqueType": ["fuego"], "targetHasAnyStatus": true },
+  "ops": [ { "op": "modifyDamage", "role": "dealt", "pct": 50 } ] }
+```
+
+| Pieza | Valores implementados |
+|---|---|
+| `trigger` | `passive` (mientras está materializada), `on_entry`, `on_voluntary_withdraw`, `on_exit`, `on_use`, `on_hit`, `environment` (mientras el Clima/Campo/Anomalía está activo) |
+| `target` | `self`, `target`, `all_enemies`, `all_allies`, `all_present` |
+| `condition` | `techniqueType`, `techniqueClass`, `subjectTypes`, `subjectNotTypes`, `targetHasAnyStatus`, `targetHpBelowPct`, `targetHasNotActed`, `userFirstTurnSinceEntry` |
+| `ops` con intérprete | `modifyDamage` (`role` dealt/taken, `pct`, `oncePerEntry`), `modifyAccuracy` (`pct`, `pp`, `neverMiss`), `applyStatus` (`status`, `chance`), `setEnvironment`, `disableManifestations`, `flinch`, `failTechnique` |
+| `flags` | `isSecondaryEffect`, `perHit` (efecto por impacto en vez de una vez por objetivo), `worksWhileDesvinculado` |
+
+El resto de operaciones listadas en [src/engine/effects/dsl.ts](src/engine/effects/dsl.ts) se validan pero aún no se ejecutan: lo que las usa queda bloqueado.
 
 ### Modos `strict` y `lenient`
 
@@ -162,7 +184,7 @@ Los presets por estamento (Amplitud, Fortaleza, simultaneidad, Materialización 
 | Técnica curada con operaciones aún no implementadas | Bloqueada | Bloqueada |
 | Poder o precisión no numéricos (Horda, Eco exacto, Silencio de alas) | Bloqueada hasta tener handler | Bloqueada |
 
-Cobertura actual: en strict se pueden usar 35 de 343 técnicas; en lenient, 340. Ninguna de las 138 Manifestaciones tiene todavía efecto.
+Cobertura actual: en strict se pueden usar 36 de 343 técnicas; en lenient, 340. Están activas 52 de las 138 Manifestaciones; 85 siguen sin curar y 1 está curada pero bloqueada (Velo nocturno, por la curación).
 
 ---
 
@@ -219,7 +241,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Lagunas del canon (RuleGap)
 
-`node dist/app/cli.js gaps` lista las 22 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
+`node dist/app/cli.js gaps` lista las 27 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
 
 | Laguna | Supuesto actual |
 |---|---|
@@ -235,12 +257,16 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | Ambos bandos derrotados en la misma ronda | Empate |
 | Técnica contra posición vacía | El impacto falla |
 | «A todos» sin curar | Todas las posiciones enemigas ocupadas |
+| Puño preciso usado mediante Materialización parcial | Cuenta como primer turno tras materializarse: funciona |
+| Hacer retroceder (Puño preciso) | Es efecto secundario; la acción pendiente del objetivo falla y se consume; una carga en curso se conserva; si ya actuó (incluida Esquiva) no hace nada |
+| Activación y duración de Campos/Climas/Anomalías | Se activan con la Entrada de su portador y duran hasta ser sustituidos, aunque el portador salga |
+| Efectos al impactar en multigolpe | Una vez por objetivo impactado salvo `perHit`; nunca sobre criaturas ya derrotadas |
 
 ---
 
 ## Tests
 
-`npm test` ejecuta 49 tests:
+`npm test` ejecuta 62 tests:
 
 - **Datos**: esquemas, referencias cruzadas técnica <-> especie, overrides y cobertura.
 - **Fórmulas**: casos canónicos 33 (240 -> 320 -> 400), 20.2 (75% -> 85%), 21.3 (x0,75), 23.5 (1000 / 170), 24.1 (Paralizado + Enraizado = -50%), tabla de etapas 21.2, tipos duales, inmunidades, Profundidad y Esquiva.
@@ -248,4 +274,6 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 - **Pipeline**: despliegue por Velocidad (29, parcial), orden de Intercambios, objetivo por posición (31), Materialización parcial (32), Esquivas 100/50/12,5/0 (17), multigolpe y Reemplazo al final (19.4), carga, Quemado y contadores, Adepto, modo strict, fin de combate, inmutabilidad del estado.
 - **Propiedades**: 300 combates aleatorios comprobando los invariantes de la sección 8 de la especificación, más repetición exacta por semilla.
 
-Pendientes de la fase 5: el Clima final del ejemplo 29 y el Intercambio que falla por Enraizado aplicado en la misma ronda (ejemplo 30), porque requieren ejecutar efectos de Manifestaciones.
+- **Efectos (fase 5)**: despliegue con dos Climas en el que prevalece el de la criatura lenta (29), Entrada rápida que aplica Enraizado y hace fallar el Intercambio rival (30), suma de modificadores en M (Combustión + Juramento = x0,75; Devorallamas = 0), Calima, Llovizna con Rayo que nunca falla bajo Desorientado, Desvinculado y Silencio del Vínculo desactivando Manifestaciones, Ignición una vez por Entrada, Punto de ignición, inmunidad Mítica a Desvinculado, y Puño preciso (retroceso del objetivo, fallo fuera del primer turno, recarga al volver a entrar y uso mediante Materialización parcial).
+
+Pendiente en la fase 5: etapas (con las restricciones «no puede aumentar» de los estados), curas, retrocesos y drenajes, Intercambios forzados, efectos laterales, respuestas de supervivencia y el curado del resto de técnicas y Manifestaciones.

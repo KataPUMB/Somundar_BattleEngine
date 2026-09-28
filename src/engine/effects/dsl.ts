@@ -13,6 +13,7 @@ export const OP_KINDS = [
   'modifyStat', 'modifyAccuracy', 'modifyPriority', 'forceSwitch', 'selfSwitch', 'preventWithdraw',
   'setEnvironment', 'addSideEffect', 'destroySideEffect', 'mark', 'lockTechnique', 'survivesAt1Hp',
   'redirectAttacks', 'ignoreResistances', 'ignoreDefense', 'recoil', 'drain', 'handler',
+  'flinch', 'failTechnique', 'disableManifestations', 'modifyHealing',
 ] as const;
 export type OpKind = (typeof OP_KINDS)[number];
 
@@ -21,15 +22,29 @@ export interface Op {
   [param: string]: unknown;
 }
 
-export type Expr = string;
+export interface Condition {
+  techniqueType?: string[];
+  techniqueClass?: ('physical' | 'magical' | 'status')[];
+  subjectTypes?: string[];
+  subjectNotTypes?: string[];
+  targetHasAnyStatus?: boolean;
+  targetHpBelowPct?: number;
+  targetHasNotActed?: boolean;
+  userFirstTurnSinceEntry?: boolean;
+}
+
+export const CONDITION_KEYS: readonly (keyof Condition)[] = [
+  'techniqueType', 'techniqueClass', 'subjectTypes', 'subjectNotTypes', 'targetHasAnyStatus', 'targetHpBelowPct',
+  'targetHasNotActed', 'userFirstTurnSinceEntry',
+];
 
 export interface Effect {
   trigger: Trigger;
-  condition?: Expr;
+  condition?: Condition;
   target: EffectTarget;
   ops: Op[];
   duration?: { turns?: number; rounds?: number; untilExit?: boolean; untilNextAction?: boolean };
-  flags?: { worksWhileDesvinculado?: boolean; isSecondaryEffect?: boolean };
+  flags?: { worksWhileDesvinculado?: boolean; isSecondaryEffect?: boolean; perHit?: boolean };
   ruleRef?: string;
 }
 
@@ -53,6 +68,10 @@ export function validateEffects(effects: unknown, where: string): string[] {
       const op = (o as Record<string, unknown> | null)?.op;
       if (!OP_KINDS.includes(op as OpKind)) errors.push(`${at}.ops[${j}]: op desconocida ${String(op)}`);
     });
+    if (eff.condition !== undefined) {
+      if (typeof eff.condition !== 'object' || eff.condition === null) errors.push(`${at}: condition debe ser un objeto`);
+      else for (const k of Object.keys(eff.condition)) if (!CONDITION_KEYS.includes(k as keyof Condition)) errors.push(`${at}: condicion desconocida ${k}`);
+    }
   });
   return errors;
 }

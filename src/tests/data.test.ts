@@ -49,7 +49,16 @@ test('informe de cobertura coherente en strict y lenient', () => {
   const lenient = buildCoverageReport(data, 'lenient');
   const sum = (o: Record<string, number>) => Object.values(o).reduce((a, b) => a + b, 0);
   assert.equal(sum(strict.techniques.byStatus), 343);
-  assert.equal(strict.techniques.executable, strict.techniques.byStatus.base_only_verified ?? 0);
-  assert.equal(lenient.techniques.executable, 343 - (lenient.techniques.byStatus.needs_handler ?? 0));
-  assert.equal(strict.manifestations.executable, 0);
+  assert.equal(strict.techniques.executable, (strict.techniques.byStatus.base_only_verified ?? 0) + (strict.techniques.byStatus.implemented ?? 0));
+  assert.equal(lenient.techniques.executable, 343 - (lenient.techniques.byStatus.needs_handler ?? 0) - (lenient.techniques.byStatus.curated_pending ?? 0));
+  assert.equal(strict.manifestations.executable, strict.manifestations.byStatus.implemented ?? 0);
+  assert.equal(strict.manifestations.entries.find((e) => e.id === 'velo_nocturno')?.status, 'curated_pending');
+});
+
+test('condiciones desconocidas en el DSL se rechazan', () => {
+  const errs = validateOverrideFile(
+    { manifestations: { combustion: { effects: [{ trigger: 'passive', target: 'self', condition: { inventada: true }, ops: [{ op: 'modifyDamage' }] }] as never } } },
+    'test.json', data.techniques, data.manifestations,
+  );
+  assert.ok(errs.some((e) => e.message.includes('condicion desconocida inventada')));
 });

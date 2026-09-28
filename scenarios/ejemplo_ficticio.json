@@ -37,7 +37,7 @@
             "baseStatsNV50": { "hp": 280, "atk": 125, "matk": 90, "def": 95, "mdef": 85, "spe": 100 },
             "fortaleza": { "atk": 10 }, "orientations": ["atk"],
             "equippedTechniques": ["ariete_draconico", "zarpazo"], "equippedManifestations": [],
-            "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }] },
+            "persistentStatuses": [] },
           { "id": "vercosalvi_b", "speciesId": "vercosalvi", "types": ["planta"], "nv": 38,
             "baseStatsNV50": { "hp": 300, "atk": 100, "matk": 110, "def": 100, "mdef": 110, "spe": 70 },
             "fortaleza": {}, "orientations": [],

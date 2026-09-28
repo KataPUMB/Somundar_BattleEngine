@@ -3,8 +3,9 @@ import type { OpKind } from './dsl.js';
 
 export type EffectsMode = 'strict' | 'lenient';
 
-// Fase 4: el interprete de efectos todavia no ejecuta operaciones (llega en fase 5)
-export const SUPPORTED_OPS: ReadonlySet<OpKind> = new Set<OpKind>();
+export const SUPPORTED_OPS: ReadonlySet<OpKind> = new Set<OpKind>([
+  'modifyDamage', 'modifyAccuracy', 'applyStatus', 'setEnvironment', 'flinch', 'failTechnique', 'disableManifestations',
+]);
 export const SUPPORTED_HANDLERS: ReadonlySet<string> = new Set<string>();
 
 export type CoverageStatus = 'implemented' | 'base_only_verified' | 'curated_pending' | 'uncurated' | 'needs_handler';

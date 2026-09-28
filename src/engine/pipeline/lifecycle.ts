@@ -1,42 +1,64 @@
 import type { Combatant, Position } from '../model/battle.js';
+import type { Trigger } from '../effects/dsl.js';
 import { emit } from '../log/events.js';
 import { manifestationAvailability } from '../effects/availability.js';
+import { manifestationInactiveReason, runEffects } from '../effects/runtime.js';
 import { combatant, findPosition, orderDesc, sideOf, type EngineCtx } from './context.js';
 import { effSpeed, isViableReserve, zeroStages } from './combatant.js';
 
-const ENTRY_TRIGGERS = ['on_entry', 'environment'];
-const VOLUNTARY_WITHDRAW_TRIGGERS = ['on_voluntary_withdraw', 'on_withdraw', 'on_switch_out'];
+// Disparadores del texto generado, solo para registrar Manifestaciones sin curar
+const RAW_TRIGGERS: Partial<Record<Trigger, string[]>> = {
+  on_entry: ['on_entry', 'environment'],
+  on_voluntary_withdraw: ['on_voluntary_withdraw', 'on_withdraw', 'on_switch_out'],
+};
 
 export function placeOnField(ctx: EngineCtx, c: Combatant, pos: Position, cause?: number): number {
   c.location = 'field';
   c.positionId = pos.id;
   c.dodgeStreak = 0;
+  c.turnsSinceEntry = 0;
+  c.entryBonusesUsed = [];
+  c.flinched = false;
   pos.occupantUid = c.uid;
   return emit(ctx.st, { type: 'materialize', actor: c.uid, targets: [pos.id], cause, ruleRef: 'CANON-MECHANICS 1 (Materializacion)' });
 }
 
-export function entryManifestations(ctx: EngineCtx, c: Combatant): string[] {
-  return c.creature.equippedManifestations.filter((id) => ENTRY_TRIGGERS.includes(ctx.data.manifestations.get(id)?.trigger ?? ''));
+export function manifestationsFor(ctx: EngineCtx, c: Combatant, trigger: Trigger): string[] {
+  return c.creature.equippedManifestations.filter((id) => {
+    const m = ctx.data.manifestations.get(id);
+    if (!m) return false;
+    if (m.override?.effects) return m.override.effects.some((e) => e.trigger === trigger);
+    return (RAW_TRIGGERS[trigger] ?? []).includes(m.trigger);
+  });
 }
 
-// Fase 4: sin interprete de efectos; se registra cada activacion como inerte para auditoria
-export function resolveManifestation(ctx: EngineCtx, c: Combatant, manifestationId: string, cause?: number): void {
+export function entryManifestations(ctx: EngineCtx, c: Combatant): string[] {
+  return manifestationsFor(ctx, c, 'on_entry');
+}
+
+// CANON-MECHANICS 10.7
+export function resolveManifestation(ctx: EngineCtx, c: Combatant, manifestationId: string, trigger: Trigger, cause?: number): void {
   const m = ctx.data.manifestations.get(manifestationId);
   if (!m) return;
   const a = manifestationAvailability(m);
-  emit(ctx.st, {
-    type: a.executable ? 'manifestation' : 'manifestation_inert',
-    actor: c.uid,
-    data: { manifestation: manifestationId, trigger: m.trigger, status: a.status, reason: a.reason },
-    cause,
-    ruleRef: 'CANON-MECHANICS 10.7',
-  });
+  const base = { actor: c.uid, cause, ruleRef: 'CANON-MECHANICS 10.7' };
+  if (!a.executable) {
+    emit(ctx.st, { ...base, type: 'manifestation_inert', data: { manifestation: m.id, trigger: m.trigger, status: a.status, reason: a.reason } });
+    return;
+  }
+  const inactive = manifestationInactiveReason(ctx, c, m);
+  if (inactive) {
+    emit(ctx.st, { ...base, type: 'manifestation_inactive', data: { manifestation: m.id, trigger, reason: inactive } });
+    return;
+  }
+  const ev = emit(ctx.st, { ...base, type: 'manifestation', data: { manifestation: m.id, trigger } });
+  runEffects(ctx, m.override?.effects ?? [], trigger, { subject: c, source: m.id, sourceKind: 'manifestation', cause: ev });
 }
 
 // CANON-MECHANICS 1 (Entrada) / 10.7 / 16.3: la Entrada forma parte de la Materializacion
 export function materializeWithEntry(ctx: EngineCtx, c: Combatant, pos: Position, cause?: number): void {
   const ev = placeOnField(ctx, c, pos, cause);
-  for (const m of entryManifestations(ctx, c)) resolveManifestation(ctx, c, m, ev);
+  for (const m of entryManifestations(ctx, c)) resolveManifestation(ctx, c, m, 'on_entry', ev);
   emit(ctx.st, { type: 'entry_complete', actor: c.uid, targets: [pos.id], cause: ev, ruleRef: 'CANON-MECHANICS 10.7' });
 }
 
@@ -45,10 +67,9 @@ export type ExitKind = 'withdraw' | 'defeat' | 'forced' | 'position_closed';
 // CANON-MECHANICS 21.4 / 19.5: cualquier Salida borra etapas y pierde la carga; los estados persisten
 export function exitField(ctx: EngineCtx, c: Combatant, kind: ExitKind, cause?: number): number {
   if (kind === 'withdraw') {
-    for (const id of c.creature.equippedManifestations) {
-      if (VOLUNTARY_WITHDRAW_TRIGGERS.includes(ctx.data.manifestations.get(id)?.trigger ?? '')) resolveManifestation(ctx, c, id, cause);
-    }
+    for (const id of manifestationsFor(ctx, c, 'on_voluntary_withdraw')) resolveManifestation(ctx, c, id, 'on_voluntary_withdraw', cause);
   }
+  for (const id of manifestationsFor(ctx, c, 'on_exit')) resolveManifestation(ctx, c, id, 'on_exit', cause);
   const pos = c.positionId ? findPosition(ctx.st, c.positionId) : undefined;
   if (pos && pos.occupantUid === c.uid) pos.occupantUid = null;
   const hadCharge = c.charging !== null;
@@ -92,6 +113,6 @@ export function initialDeployment(ctx: EngineCtx, placements: { c: Combatant; po
   for (const p of physical) placeOnField(ctx, p.c, p.pos);
   const pending = physical.flatMap((p) => entryManifestations(ctx, p.c).map((m) => ({ c: p.c, m })));
   const ordered = orderDesc(ctx, pending, (x) => [effSpeed(ctx.data, x.c)], 'deployment_entries', (x) => `${x.c.uid}/${x.m}`);
-  for (const x of ordered) resolveManifestation(ctx, x.c, x.m);
+  for (const x of ordered) resolveManifestation(ctx, x.c, x.m, 'on_entry');
   emit(ctx.st, { type: 'deployment_complete', ruleRef: 'CANON-MECHANICS 28.1' });
 }

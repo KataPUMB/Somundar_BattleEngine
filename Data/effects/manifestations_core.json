@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "purpose": "Manifestaciones que modifican el dano, aplican estados al entrar o imponen Clima/Campo/Anomalia.",
+    "criterion": "Transcripcion literal del campo text; si el texto incluye algo no soportado se usa una op sin interprete para que quede bloqueada entera."
+  },
+  "manifestations": {
+    "combustion": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 25 }] }] },
+    "horno_blanco": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["agua"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }
+    ] },
+    "corazon_incendiado": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] }] },
+    "devorallamas": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -100 }] }] },
+    "punto_de_ignicion": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"], "targetHasAnyStatus": true }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "ignicion": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50, "oncePerEntry": true }] }] },
+
+    "cuerpo_fluido": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "profundidad_insondable": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "contracorriente_verde": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["agua"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["planta"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }
+    ] },
+
+    "piel_de_piedra": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "monolito": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "toma_de_tierra": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -100 }] }] },
+    "coraza_de_estratos": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego", "agua", "aire", "planta"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+
+    "alta_tension": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 25 }] }] },
+    "descarga_absoluta": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] }] },
+    "relampago_adelantado": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"], "targetHasNotActed": true }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+
+    "filo_del_viento": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["aire"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 25 }] }] },
+    "fluidez_aerea": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "ingravido": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["tierra"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -100 }] }] },
+    "senor_del_vendaval": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["aire"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] }] },
+    "escudo_de_los_cuatro_vientos": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego", "agua", "tierra", "planta"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+
+    "resplandor": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 25 }] }] },
+    "veredicto": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"], "targetHpBelowPct": 50 }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "sol_interior": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] }] },
+
+    "manto_oscuro": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["oscuridad"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "profundidad_umbria": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "velo_nocturno": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] },
+      { "trigger": "passive", "target": "self", "ops": [{ "op": "modifyHealing", "pct": 50 }] }
+    ] },
+
+    "sangre_antigua": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 33 }] }] },
+    "eco_primordial": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 75, "oncePerEntry": true }] }] },
+    "antinomia": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 75 }] },
+      { "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz", "oscuridad"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -33 }] }
+    ] },
+    "forma_arquetipica": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 150 }] }] },
+    "escudo_de_las_seis_leyes": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego", "agua", "planta", "tierra", "aire", "rayo"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -33 }] }] },
+
+    "juramento_de_las_hogueras": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_de_las_mareas": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["agua"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_de_las_raices": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["planta"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_de_la_piedra": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["tierra"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_del_vendaval": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["aire"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_de_la_tormenta": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_del_alba": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_de_la_noche": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["oscuridad"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+    "juramento_ancestral": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -50 }] }] },
+
+    "marca_ardiente": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "quemado" }] }] },
+    "saturacion": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "saturado" }] }] },
+    "raices_invasoras": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "enraizado" }] }] },
+    "fractura_sismica": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "agrietado" }] }] },
+    "descarga_paralizante": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "paralizado" }] }] },
+    "golpe_desorientador": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "desorientado" }] }] },
+    "corte_del_espiritu": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "espiritu_cercenado" }] }] },
+    "ruptura_del_vinculo": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "applyStatus", "status": "desvinculado" }] }] },
+
+    "calima": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["agua"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": -50 }] },
+      { "trigger": "on_hit", "target": "target", "condition": { "techniqueType": ["aire"] }, "ops": [{ "op": "applyStatus", "status": "quemado", "chance": 12.5 }], "flags": { "isSecondaryEffect": true } }
+    ] },
+    "llovizna": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["agua"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["fuego"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": -50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyAccuracy", "neverMiss": true }] }
+    ] },
+    "campo_floral": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["planta"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["tierra", "rayo"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": -25 }] }
+    ] },
+    "silencio_del_vinculo": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectNotTypes": ["mitico"] }, "ops": [{ "op": "disableManifestations" }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["mitico"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "techniqueType": ["luz", "oscuridad"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": -25 }] }
+    ] }
+  }
+}

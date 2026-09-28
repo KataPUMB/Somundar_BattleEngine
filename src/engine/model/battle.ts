@@ -28,6 +28,10 @@ export interface Combatant {
   turnsMaterialized: number;
   presentAtDeclaration: boolean;
   dodgingThisRound: boolean;
+  turnsSinceEntry: number;
+  actedThisRound: boolean;
+  flinched: boolean;
+  entryBonusesUsed: string[];
 }
 
 export interface Position {

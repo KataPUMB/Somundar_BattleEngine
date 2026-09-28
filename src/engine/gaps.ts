@@ -28,6 +28,11 @@ export const RULE_GAPS: readonly RuleGapDef[] = [
   { id: 'GAP-HP-START', ruleRef: 'CANON-MECHANICS 24.1 / 26.1', question: 'Si la Vitalidad perdida persiste entre combates (los estados si persisten).', assumption: 'Cada combate empieza con Vitalidad maxima salvo hpCurrent explicito en el escenario.' },
   { id: 'GAP-STATUS-REAPPLY', ruleRef: 'CANON-MECHANICS 24.1', question: 'Aplicar un estado que la criatura ya tiene.', assumption: 'Sin efecto: se conservan los contadores existentes.' },
   { id: 'GAP-EMPTY-POSITION-FILL', ruleRef: 'CANON-MECHANICS 1 (Materializacion en accion) / 15.1', question: 'Si se puede materializar una criatura completa en una posicion vacia ya existente.', assumption: 'Si, al establecer posiciones al inicio de ronda, ordenado por Velocidad como las del Adepto.' },
+  { id: 'GAP-PARTIAL-FIRST-TURN', ruleRef: 'CANON-TECHNIQUES Puno preciso', question: 'Si una Materializacion parcial cuenta como "materializacion" para "solo funciona en el primer turno tras cada materializacion".', assumption: 'Si: usada mediante Materializacion parcial siempre cuenta como primer turno.' },
+  { id: 'GAP-FLINCH', ruleRef: 'CANON-TECHNIQUES Puno preciso', question: 'Alcance de "lo hace retroceder y le impide actuar durante ese turno".', assumption: 'Se marca como efecto secundario; la accion pendiente falla y se consume; una carga en curso se conserva; si el objetivo ya actuo (incluida Esquiva) o no tiene accion pendiente, no hace nada.' },
+  { id: 'GAP-ENV-ACTIVATION', ruleRef: 'CANON-MECHANICS 10.7 / 25.1', question: 'Cuando se activa una Manifestacion de Campo/Clima/Anomalia y cuanto dura.', assumption: 'Se activa con la Entrada de su portador y permanece hasta ser sustituida, aunque el portador salga.' },
+  { id: 'GAP-HIT-EFFECTS', ruleRef: 'CANON-TECHNIQUES Terminologia (A todos)', question: 'Efectos al impactar de tecnicas multigolpe; efectos sobre objetivos ya derrotados.', assumption: 'Una vez por objetivo impactado salvo que el curado indique perHit; no se aplican a criaturas que ya no estan en el campo.' },
+  { id: 'GAP-CHAIN-DEPTH', ruleRef: 'CANON-MECHANICS 10.10', question: 'Cadenas de respuestas sin fin.', assumption: 'Se corta al superar maxChainDepth y se registra.' },
 ];
 
 export function gapById(id: string): RuleGapDef {

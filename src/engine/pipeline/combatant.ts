@@ -29,6 +29,10 @@ export function createCombatant(side: SideIndex, creature: BondedCreature): Comb
     turnsMaterialized: 0,
     presentAtDeclaration: false,
     dodgingThisRound: false,
+    turnsSinceEntry: 0,
+    actedThisRound: false,
+    flinched: false,
+    entryBonusesUsed: [],
   };
 }
 

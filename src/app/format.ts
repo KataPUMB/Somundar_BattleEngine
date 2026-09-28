@@ -13,10 +13,22 @@ export function techName(data: GameData, id: unknown): string {
   return data.techniques.get(String(id))?.name ?? String(id);
 }
 
-export function statusLine(c: Combatant): string {
+const RESTRICTION_LABELS: Record<string, string> = {
+  no_voluntary_withdraw: 'no puede retirarse',
+  stat_cannot_increase: 'no puede subir',
+  no_same_technique_consecutive: 'no puede repetir tecnica',
+  dual_type_benefits_halved: 'beneficios duales a la mitad',
+  manifestations_disabled: 'Manifestaciones desactivadas',
+  bond_communication_cut: 'comunicacion cortada',
+};
+
+export function statusLine(c: Combatant, data?: GameData): string {
   const sts = c.statuses.map((s) => {
-    const counters = Object.entries(s.counters).filter(([, v]) => v > 0).map(([k, v]) => `${k}:${v}`);
-    return counters.length ? `${s.id}(${counters.join(',')})` : s.id;
+    const def = data?.statuses.get(s.id);
+    const penalties = Object.entries(def?.statModifiersPct ?? {}).map(([k, v]) => `${k} ${v}%`);
+    const active = Object.entries(s.counters).filter(([, v]) => v > 0).map(([k, v]) => `${RESTRICTION_LABELS[k] ?? k}: ${v} turno${v === 1 ? '' : 's'}`);
+    const parts = [...penalties, ...active];
+    return parts.length ? `${s.id}(${parts.join('; ')})` : s.id;
   });
   const stages = Object.entries(c.stages).filter(([, v]) => v !== 0).map(([k, v]) => `${k}${v > 0 ? '+' : ''}${v}`);
   const extra = [...sts, ...stages];
@@ -45,7 +57,23 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'partial_end': return `  ${who} vuelve al Intermedio`;
     case 'charge_start': return `${who} carga ${techName(data, d.technique)}`;
     case 'hit_count': return `  ${String(d.hits)} impactos`;
-    case 'damage': return `  -> ${tgt} pierde ${String(d.loss)} (${String(d.before)} -> ${String(d.after)})${d.typeMult !== 1 ? ` x${String(d.typeMult)}` : ''}`;
+    case 'damage': {
+      const mods = (d.modifiers as { pct: number; source: string }[] | undefined) ?? [];
+      const m = mods.length ? ` [${mods.map((x) => `${x.source} ${x.pct > 0 ? '+' : ''}${x.pct}%`).join(', ')}]` : '';
+      return `  -> ${tgt} pierde ${String(d.loss)} (${String(d.before)} -> ${String(d.after)})${d.typeMult !== 1 ? ` x${String(d.typeMult)}` : ''}${m}`;
+    }
+    case 'manifestation': return `  Manifestacion ${String(d.manifestation)} de ${who}`;
+    case 'manifestation_inactive': return `  Manifestacion ${String(d.manifestation)} de ${who} desactivada (${String(d.reason)})`;
+    case 'status_applied': return `  ${tgt} queda ${String(d.status)} (${String(d.source)})`;
+    case 'status_immune': return `  ${tgt} es inmune a ${String(d.status)}`;
+    case 'status_already_present': return `  ${tgt} ya estaba ${String(d.status)}`;
+    case 'status_not_applied': return `  ${String(d.status)} no se aplica a ${tgt} (${String(d.chance)}%)`;
+    case 'environment_set': return `  ${String(d.environment)} se impone${d.replaced ? ` y sustituye a ${String(d.replaced)}` : ''}`;
+    case 'flinch': return `  ${tgt} retrocede: no podra actuar este turno`;
+    case 'flinch_no_effect': return `  ${tgt} no retrocede (${String(d.reason)})`;
+    case 'technique_failed': return `  la tecnica falla: no se cumple su condicion de uso (${String(d.source)})`;
+    case 'bonus_consumed': return `  ${String(d.manifestation)} potencia esta tecnica (+${String(d.pct)}%)`;
+    case 'impact': return `  -> impacta a ${tgt}`;
     case 'miss': return `  -> falla contra ${tgt} (precision ${Number(d.accuracy).toFixed(1)}%)`;
     case 'dodged': return `  -> ${tgt} lo esquiva`;
     case 'hit_no_target': return `  -> ${e.targets?.[0]} esta vacia: el impacto se pierde`;

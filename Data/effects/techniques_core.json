@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "purpose": "Tecnicas con efectos curados (fase 5).",
+    "criterion": "Transcripcion literal de description; las decisiones no cubiertas por el texto se registran como RuleGap."
+  },
+  "techniques": {
+    "puno_preciso": {
+      "effects": [
+        { "trigger": "on_use", "target": "self", "condition": { "userFirstTurnSinceEntry": false }, "ops": [{ "op": "failTechnique" }], "ruleRef": "CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN" },
+        { "trigger": "on_hit", "target": "target", "condition": { "targetHasNotActed": true }, "ops": [{ "op": "flinch" }], "flags": { "isSecondaryEffect": true }, "ruleRef": "CANON-TECHNIQUES Puno preciso / GAP-FLINCH" }
+      ]
+    }
+  }
+}
