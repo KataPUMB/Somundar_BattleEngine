@@ -72,9 +72,9 @@ function describe(data: GameData, st: BattleState, positionId: string, o: Action
 }
 
 function chooseTarget(st: BattleState, side: SideIndex, o: ActionOption): TargetDecl {
-  if (o.targeting === 'all') return { kind: 'auto' };
+  if (o.targeting === 'all' || o.targetSide === 'self' || o.targetSide === 'side') return { kind: 'auto' };
   const foe: SideIndex = side === 0 ? 1 : 0;
-  const positions = [...st.sides[foe].positions, ...st.sides[side].positions];
+  const positions = o.targetSide === 'ally' ? [...st.sides[side].positions] : [...st.sides[foe].positions, ...st.sides[side].positions];
   const label = (id: string) => {
     const p = positions.find((x) => x.id === id)!;
     return `${id} ${p.side === side ? '(tuya)' : '(rival)'}: ${p.occupantUid ? creatureName(st, p.occupantUid) : 'vacia'}`;
@@ -123,7 +123,14 @@ export function humanPolicy(data: GameData): Policy {
         const o = ok[n - 1]!;
         let action: Action = o.action;
         if ((action.kind === 'technique' || action.kind === 'partial') && o.reason !== 'ejecucion de la carga') {
-          action = { ...action, target: chooseTarget(st, side, o) };
+          const t = data.techniques.get(action.techniqueId);
+          if (t) console.log(`    ${t.description}`);
+          let choice: string | undefined;
+          if (o.choices) {
+            o.choices.forEach((c, i) => console.log(`    ${i + 1}) ${c}`));
+            choice = o.choices[ask('  Opcion:', o.choices.length) - 1];
+          }
+          action = { ...action, target: chooseTarget(st, side, o), ...(choice ? { choice } : {}) };
         }
         out[pid] = action;
       }
@@ -136,4 +143,11 @@ export function askReplacement(st: BattleState, positionId: string, candidates: 
   console.log(`\n  Reemplazo forzado en ${positionId}:`);
   candidates.forEach((u, i) => console.log(`    ${i + 1}) ${creatureName(st, u)}`));
   return candidates[ask('  Criatura:', candidates.length) - 1]!;
+}
+
+export function askOptionalSwitch(st: BattleState, uid: string, candidates: string[]): string | null {
+  console.log(`\n  ${creatureName(st, uid)} puede retirarse voluntariamente y ser sustituida:`);
+  candidates.forEach((u, i) => console.log(`    ${i + 1}) ${creatureName(st, u)}`));
+  const n = ask('  Criatura (0 = quedarse):', candidates.length, true);
+  return n === 0 ? null : candidates[n - 1]!;
 }

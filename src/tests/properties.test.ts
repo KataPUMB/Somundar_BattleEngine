@@ -11,25 +11,45 @@ import { TYPE_IDS } from '../engine/model/types.js';
 import { creature, loadData, summoner } from './helpers.js';
 
 const data = loadData();
-const cheap = [...data.techniques.values()]
-  .filter((t) => t.category !== 'special' && t.bondCost <= 12.5 && typeof t.power?.perHit === 'number' && typeof t.accuracy === 'number')
-  .map((t) => t.id);
+const executable = [...data.techniques.values()];
+const corpseTechniques = executable.filter((t) => t.category === 'anatomical' && t.class === 'physical' && typeof t.power?.perHit === 'number');
+const general = executable.filter((t) => t.category !== 'special');
+const special = executable.filter((t) => t.category === 'special');
+const speciesByNumber = new Map([...data.species.values()].map((s) => [s.number, s]));
+const manifestations = [...data.manifestations.values()].filter((m) => m.override?.effects);
 
 function randomSetup(rng: RngState, tag: string): SideSetup {
   const estamentos: Estamento[] = ['iniciado', 'adepto', 'invocador', 'magister', 'arconte'];
-  const s = summoner(tag, estamentos[nextInt(rng, 0, estamentos.length - 1)]!);
+  const s = summoner(tag, estamentos[nextInt(rng, 0, estamentos.length - 1)]!, { amplitude: null, manifestationRepertoire: manifestations.map((m) => m.id) });
   const n = nextInt(rng, 1, 4);
+  const usedManifestations = new Set<string>();
   const creatures = Array.from({ length: n }, (_, i) => {
-    const type = TYPE_IDS[nextInt(rng, 0, TYPE_IDS.length - 1)] as TypeId;
-    const techs = new Set<string>();
-    while (techs.size < 2) techs.add(cheap[nextInt(rng, 0, cheap.length - 1)]!);
+    const sig = special[nextInt(rng, 0, special.length - 1)]!;
+    const sp = speciesByNumber.get(sig.species!.number)!;
+    const types = sp.types ?? [TYPE_IDS[nextInt(rng, 0, TYPE_IDS.length - 1)] as TypeId];
+    const techs = new Map<string, number>([[sig.id, sig.bondCost]]);
+    for (let k = 0; k < 10 && techs.size < 4; k++) {
+      const t = general[nextInt(rng, 0, general.length - 1)]!;
+      const used = [...techs.values()].reduce((a, b) => a + b, 0);
+      if (used + t.bondCost <= 100) techs.set(t.id, t.bondCost);
+    }
+    const nv = nextInt(rng, 5, 100);
+    const compatible = manifestations.filter((m) => !usedManifestations.has(m.id) && (m.element === 'global' || types.includes(m.element as TypeId)));
+    const mani = compatible.length ? [compatible[nextInt(rng, 0, compatible.length - 1)]!.id] : [];
+    mani.forEach((m) => usedManifestations.add(m));
     const stat = () => nextInt(rng, 40, 160);
     return creature(`${tag}${i}`, {
-      speciesId: 'riftari',
-      types: [type],
-      nv: nextInt(rng, 5, 100),
+      speciesId: sp.id,
+      types,
+      nv,
+      instinct: (['atk', 'def', 'spe'] as const)[nextInt(rng, 0, 2)],
       baseStatsNV50: { hp: nextInt(rng, 150, 400), atk: stat(), matk: stat(), def: stat(), mdef: stat(), spe: stat() },
-      equippedTechniques: [...techs],
+      equippedTechniques: [...techs.keys()],
+      equippedManifestations: mani,
+      horde: techs.has('horda')
+        ? [0, 1, 2].map((j) => ({ speciesId: `cadaver${j}`, atkNV50: stat(), techniqueId: corpseTechniques[nextInt(rng, 0, corpseTechniques.length - 1)]!.id }))
+        : undefined,
+      canTransfigure: nextInt(rng, 0, 1) === 1,
     });
   });
   const cap = s.simultaneity === 'stable' ? 2 : 1;
@@ -64,12 +84,12 @@ function checkInvariants(st: BattleState, everDefeated: Set<string>): void {
   }
 }
 
-test('propiedades: invariantes de 8. en 300 combates aleatorios (lenient)', () => {
+test('propiedades: invariantes de 8. en 300 combates aleatorios con todo el catalogo curado (strict)', () => {
   let ended = 0;
   for (let seed = 1; seed <= 300; seed++) {
     const rng = createRng(seed * 7919);
     const setups: [SideSetup, SideSetup] = [randomSetup(rng, 'a'), randomSetup(rng, 'b')];
-    let st = createBattle(data, setups, { seed, config: { effectsMode: 'lenient', maxRounds: 60 } });
+    let st = createBattle(data, setups, { seed, config: { effectsMode: 'strict', maxRounds: 60 } });
     const everDefeated = new Set<string>();
     checkInvariants(st, everDefeated);
     while (!st.outcome) {
@@ -89,7 +109,7 @@ test('propiedades: invariantes de 8. en 300 combates aleatorios (lenient)', () =
 test('repeticion exacta: misma semilla y escenario -> mismo log', () => {
   const rng = createRng(42);
   const setups: [SideSetup, SideSetup] = [randomSetup(rng, 'a'), randomSetup(rng, 'b')];
-  const run = (seed: number) => runBattle(data, setups, [randomLegalPolicy, randomLegalPolicy], { seed, config: { effectsMode: 'lenient' } });
+  const run = (seed: number) => runBattle(data, setups, [randomLegalPolicy, randomLegalPolicy], { seed, config: { effectsMode: 'strict' } });
   assert.equal(JSON.stringify(run(5).log), JSON.stringify(run(5).log));
   assert.notEqual(JSON.stringify(run(5).log), JSON.stringify(run(6).log));
 });

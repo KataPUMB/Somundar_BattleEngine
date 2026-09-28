@@ -56,7 +56,7 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'partial_materialization': return `${who} se materializa parcialmente en ${e.targets?.[0]} para usar ${techName(data, d.technique)}`;
     case 'partial_end': return `  ${who} vuelve al Intermedio`;
     case 'charge_start': return `${who} carga ${techName(data, d.technique)}`;
-    case 'hit_count': return `  ${String(d.hits)} impactos`;
+    case 'hit_count': return d.minimumFrom ? `  ${String(d.hits)} impactos (minimo por ${String(d.minimumFrom)})` : `  ${String(d.hits)} impactos`;
     case 'damage': {
       const mods = (d.modifiers as { pct: number; source: string }[] | undefined) ?? [];
       const m = mods.length ? ` [${mods.map((x) => `${x.source} ${x.pct > 0 ? '+' : ''}${x.pct}%`).join(', ')}]` : '';
@@ -74,6 +74,36 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'technique_failed': return `  la tecnica falla: no se cumple su condicion de uso (${String(d.source)})`;
     case 'bonus_consumed': return `  ${String(d.manifestation)} potencia esta tecnica (+${String(d.pct)}%)`;
     case 'impact': return `  -> impacta a ${tgt}`;
+    case 'stage': return d.reverted ? `  ${tgt}: ${String(d.stat)} vuelve a ${String(d.to)}` : `  ${tgt}: ${String(d.stat)} ${String(d.from)} -> ${String(d.to)}${d.stolen ? ' (robada)' : ''}`;
+    case 'stage_blocked': return `  ${tgt}: ${String(d.stat)} no puede subir (${String(d.status)})`;
+    case 'heal': return `  ${tgt} recupera ${String(d.healed)} (${String(d.before)} -> ${String(d.after)})${d.factor !== 1 ? ` x${Number(d.factor).toFixed(2)}` : ''}`;
+    case 'recoil': return `  ${tgt} sufre retroceso: -${String(d.loss)} (${String(d.before)} -> ${String(d.after)})`;
+    case 'self_damage': case 'periodic_damage': case 'death_mark_damage': case 'retaliation_damage': case 'reflect': case 'splash_damage':
+    case 'shared_damage': case 'environment_damage':
+      return `  ${tgt} pierde ${String(d.loss)} por ${String(d.source)} (${String(d.before)} -> ${String(d.after)})`;
+    case 'survived': return `  ${tgt} resiste con ${String(d.hp)} de Vitalidad (${String(d.source)})`;
+    case 'horde_corpse': return `  cadaver ${Number(d.hitIndex) + 1}: ${String(d.species)} usa ${techName(data, d.technique)} (Ataque ${String(d.attack)})`;
+    case 'stage_inverted': return `  ${tgt}: el cambio de ${String(d.stat)} se invierte (${String(d.source)})`;
+    case 'retaliation': return `  ${who} castiga el contacto de ${tgt} (${String(d.source)})`;
+    case 'mark': return `  ${tgt}: ${String(d.source)} (${String(d.kind)})`;
+    case 'mark_expired': case 'mark_consumed': return null;
+    case 'mark_blocked': return `  ${tgt}: ${String(d.source)} no tiene efecto (${String(d.reason)})`;
+    case 'marks_removed': return `  ${tgt} pierde ${String(d.removed)} efecto(s) (${String(d.source)})`;
+    case 'side_effect_added': return `  ${String(d.id)} se establece en el lado ${String(d.side)} (${typeof d.rounds === 'number' ? `${d.rounds} rondas` : String(d.rounds)})`;
+    case 'side_effect_destroyed': return d.consumed ? `  ${String(d.id)} se consume` : `  ${String(d.id)} es destruida (${String(d.source)})`;
+    case 'side_effect_expired': return `${String(d.id)} se disipa en el lado ${String(d.side)}`;
+    case 'field_flag': return `  ${String(d.source)}: ${String(d.flag)}${d.rounds ? ` (${String(d.rounds)} rondas)` : ''}`;
+    case 'field_flag_expired': return `${String(d.flag)} termina`;
+    case 'self_switch': return `  ${who} es sustituido por ${creatureName(st, String(d.incoming))} (${String(d.source)})`;
+    case 'self_switch_failed': return `  ${who} no puede ser sustituido (${String(d.reason)})`;
+    case 'self_switch_declined': return `  ${who} se queda en el campo`;
+    case 'periodic': return null;
+    case 'death_mark': return `  ${tgt} sucumbe a ${String(d.source)}`;
+    case 'redirected': return `  el ataque se desvia hacia ${tgt}`;
+    case 'intercept': return `${who} intercepta a ${tgt} antes de su retirada`;
+    case 'status_cured': return `  ${tgt} se libra de ${String(d.status)}`;
+    case 'effect_not_triggered': return null;
+    case 'environment_cleared': return `  ${String(d.environment)} desaparece (${String(d.source)})`;
     case 'miss': return `  -> falla contra ${tgt} (precision ${Number(d.accuracy).toFixed(1)}%)`;
     case 'dodged': return `  -> ${tgt} lo esquiva`;
     case 'hit_no_target': return `  -> ${e.targets?.[0]} esta vacia: el impacto se pierde`;

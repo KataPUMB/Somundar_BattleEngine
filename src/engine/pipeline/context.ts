@@ -1,10 +1,20 @@
 import type { GameData } from '../../data/schema.js';
-import type { BattleState, Combatant, Position, SideIndex, SideState } from '../model/battle.js';
+import type { Action, BattleState, Combatant, Position, SideIndex, SideState } from '../model/battle.js';
 import { emit, type RollRecord } from '../log/events.js';
 import { nextFloat } from '../rng.js';
 
 export interface Controllers {
   chooseReplacement?(st: Readonly<BattleState>, side: SideIndex, positionId: string, candidates: string[]): string;
+  chooseOptionalSwitch?(st: Readonly<BattleState>, uid: string, candidates: string[]): string | null;
+}
+
+export interface PendingSelfSwitch {
+  uid: string;
+  mode: 'forced' | 'optional';
+  ignoreRestrictions: boolean;
+  random?: boolean;
+  source: string;
+  cause?: number;
 }
 
 export interface EngineCtx {
@@ -12,6 +22,10 @@ export interface EngineCtx {
   st: BattleState;
   controllers: Controllers;
   depth?: number;
+  reorder?: boolean;
+  declared?: Map<string, Action>;
+  selfSwitches?: PendingSelfSwitch[];
+  pendingReplacements?: string[];
 }
 
 export function sideOf(st: BattleState, i: SideIndex): SideState {

@@ -16,16 +16,27 @@ La especificación completa está en [PROMPT_ARQUITECTURA.md](PROMPT_ARQUITECTUR
 | 2 | Fórmulas puras (`rules/`) con tests | Hecha |
 | 3 | Modelo + validador de Preparación | Hecha |
 | 4 | Pipeline de ronda sin efectos especiales | Hecha |
-| 5 | Motor de cadenas + intérprete del DSL de efectos + curado | En curso (ver abajo) |
+| 5 | Motor de cadenas + intérprete del DSL de efectos + curado | Hecha: 343/343 técnicas y 138/138 Manifestaciones |
 | 6 | Log causal, exportador narrativo | Parcial (log estructurado y repetición exacta) |
 | 7 | IA y modo lote | Parcial (política aleatoria legal y modo interactivo por consola) |
 | 8 | UI | Pendiente |
 
 Lo que ya funciona: despliegue inicial, posiciones (incluida la temporal del Adepto), declaración oculta, Intercambios, Esquivas, técnicas ordenadas por Prioridad/Velocidad, daño, tipos, precisión, multigolpe (Objetivo único / Multiobjetivo / A todos), técnicas de carga, Materialización parcial, Derrota y Reemplazo forzado, Quemado, contadores de estados, restricciones de Enraizado y Desorientado, fin de combate.
 
-Lo que todavía **no** tiene efecto: las técnicas y Manifestaciones sin curar. En strict las técnicas sin curar no se pueden declarar; las Manifestaciones sin curar se registran en el log como `manifestation_inert` con el motivo.
+Lo que todavía **no** tiene efecto: nada del catálogo. Horda funciona cuando la instancia de Holómicor declara sus tres cadáveres (`horde`, ver Escenarios); sin ellos es ilegal (GAP-HORDA).
 
-Fase 5 hasta ahora: intérprete del DSL con condiciones estructuradas; Manifestaciones activas solo con la criatura completamente materializada (10.7), desactivadas por Desvinculado (24.10) o por Silencio del Vínculo; modificadores de daño de Manifestaciones y Climas sumados en M (23.2); precisión «nunca falla» por Clima; Entradas que aplican estados a todos los enemigos; Campos/Climas/Anomalías que se sustituyen (25.1); bonificaciones «la siguiente técnica tras entrar»; Puño preciso (solo en el primer turno tras materializarse; hace retroceder al objetivo que aún no ha actuado). Siguen sin efecto: etapas, curas, retrocesos, Intercambios forzados, efectos laterales y el resto de técnicas y Manifestaciones sin curar.
+Fase 5: las 343 descripciones de técnicas se han revisado una a una y están curadas en `Data/effects/`. El motor ejecuta etapas (con los límites [-6,+6] y las restricciones «no puede aumentar» de Paralizado, Saturado y Agrietado), curaciones (con Desvinculado, reducciones de curación y Velo nocturno), retroceso y drenaje sobre la Vitalidad realmente perdida, pérdidas de Vitalidad propias, estados con probabilidad por objetivo o por impacto, efectos laterales de lado (Barrera de fuerza y Zona antimagia dividen el daño; Estela; bóvedas y mantos que reducen el daño) y su destrucción, marcas temporales sobre criaturas (guardias «el siguiente daño», evasión, bajadas de Precisión del próximo ataque, Rastro, Acecho, Infección, Canto final, castigo por contacto, reacciones), sustituciones del usuario (forzadas u opcionales), Prioridad modificada durante la ronda (Anular prioridad, Arrastre de corriente, Pulso intermitente), Velocidad invertida, Revelación absoluta, redirección (Bajo mi amparo), intercepción de Intercambios (Caza espectral), daño repartido a la segunda criatura (Bola de fuego, Arco serpentino), cambios de estadística ofensiva (Defensa, Velocidad o el ataque del objetivo), ignorar Defensa o barreras, supereficacia forzada, técnicas de carga, técnicas que no pueden repetirse y opciones declaradas (Mueca).
+
+Las 138 Manifestaciones también están curadas. Además de los modificadores de daño por tipo o clase, el motor aplica:
+
+- **Auras**: una Manifestación pasiva alcanza al portador (`self`), a sus aliados (`all_allies`, `other_allies`), a los enemigos (`all_enemies`) o a todos los presentes (`all_present`) mientras el portador está completamente materializado: Guardamar, Baluarte, Fronda guardiana, Pulso nervioso, Formación de caza, Ionización, Estrato desigual, Negación elemental, Equilibrio del Vínculo...
+- **Modificadores de estadística** (`modifyStat`), también condicionados a un estado (Corazón de brasa, Raíz férrea, Voluntad desnuda aunque esté Desvinculado) o al equipo (Arsenal ligero, Poder latente con `canTransfigure`).
+- **Curación dada y recibida**: Manantial interior, Savia medicinal, Corazón del bosque, Manos de luz y Triaje multiplican las curaciones que hace el portador; Voluntad radiante, las que recibe.
+- **Por turno**: Regeneración, Fronda vital, Hambre del abismo y los Climas/Campos con pérdida o recuperación periódica (Tormenta eléctrica, Campo luminoso) actúan al final del turno de cada criatura.
+- **Al entrar con un Clima/Campo activo**: Campo rocoso y Vendaval quitan el 12,5% a quien no es de su tipo, antes de sus propias Manifestaciones de Entrada.
+- **Respuestas**: Último hilo e Intercesión (sobrevivir con 1 a un golpe letal con la Vitalidad completa), Segundo aliento (una vez por combate al bajar del 50%), Desafiante, Contramedida y No me toques (al bajar una característica), Respuesta adaptativa (al recibir una técnica), Hambre de sombras (retirada enemiga), Relevo (al ser sustituido).
+- **Compromiso**: Amartillar, Concentración y Ataque rápido solo permiten repetir la primera técnica usada desde la Entrada.
+- **Otros**: Sobrecarga (mínimo 4 impactos), Mundano, Versatilidad, Último recurso, Afinidad prestada, Ruptura de afinidad, Invariante, Concentración absoluta, Oportunista, Espejo cóncavo, Raíz compartida, Retaguardia, Fortificación, Presagio imposible, Presencia opresiva y Presión arcana.
 
 ---
 
@@ -116,7 +127,11 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
             "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }],
             "hpCurrent": 200,             // opcional; por defecto Vitalidad máxima
             "priorForms": [],             // formas anteriores (técnicas especiales heredadas)
-            "transfigurationLine": null   // para comprobar 2.5
+            "transfigurationLine": null,  // para comprobar 2.5
+            "canTransfigure": false,      // Poder latente (falta CANON-CREATURES)
+            "horde": [                    // solo Holómicor con Horda: tres cadáveres
+              { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo" }
+            ]
           }
         ]
       },
@@ -154,8 +169,9 @@ Los presets por estamento (Amplitud, Fortaleza, simultaneidad, Materialización 
 
 - `effects: []` significa **verificado: sin efecto más allá de sus parámetros base**. [Data/effects/base_only.json](Data/effects/base_only.json) marca así 35 técnicas (las que dicen «Sin efecto adicional» y las anatómicas cuya descripción solo describe el gesto). Este curado es revisable.
 - El formato de `effects` (disparadores, objetivos, operaciones) está en [src/engine/effects/dsl.ts](src/engine/effects/dsl.ts). El cargador valida su estructura (disparadores, objetivos, operaciones y claves de condición).
-- Curado actual: [Data/effects/base_only.json](Data/effects/base_only.json) (técnicas sin efecto adicional), [Data/effects/techniques_core.json](Data/effects/techniques_core.json) (Puño preciso) y [Data/effects/manifestations_core.json](Data/effects/manifestations_core.json) (52 Manifestaciones: daño por tipo o clase, condicionales, «siguiente técnica tras entrar», estados al entrar, Calima, Llovizna, Campo floral y Silencio del Vínculo).
-- Si el texto de una Manifestación incluye algo que el intérprete aún no sabe hacer, se cura entera con una operación sin intérprete (p. ej. `modifyHealing` en Velo nocturno) para que quede bloqueada y no se aplique a medias.
+- Curado actual: [base_only.json](Data/effects/base_only.json) y las técnicas sin efecto de [techniques_elemental.json](Data/effects/techniques_elemental.json) / [techniques_special.json](Data/effects/techniques_special.json) (80 técnicas verificadas sin efecto adicional), [techniques_core.json](Data/effects/techniques_core.json) (Puño preciso), [techniques_elemental.json](Data/effects/techniques_elemental.json) (anatómicas, elementales y sin elemento), [techniques_special.json](Data/effects/techniques_special.json) (las 160 especiales) y [manifestations_core.json](Data/effects/manifestations_core.json) (53 Manifestaciones: daño por tipo o clase, condicionales, «siguiente técnica tras entrar», estados al entrar, Calima, Llovizna, Campo floral y Silencio del Vínculo) y [manifestations_rest.json](Data/effects/manifestations_rest.json) (las 85 restantes: auras, curación, respuestas, compromisos, Climas y Campos con efectos por turno o al entrar).
+- Cada entrada es una transcripción literal de la descripción; cuando el texto no basta, la entrada remite a su RuleGap (`ruleRef`).
+- Si el texto de una Manifestación incluye algo que el intérprete aún no sabe hacer, se cura entera con una operación sin intérprete para que quede bloqueada y no se aplique a medias.
 
 ### Efectos: disparadores, condiciones y operaciones
 
@@ -167,13 +183,13 @@ Los presets por estamento (Amplitud, Fortaleza, simultaneidad, Materialización 
 
 | Pieza | Valores implementados |
 |---|---|
-| `trigger` | `passive` (mientras está materializada), `on_entry`, `on_voluntary_withdraw`, `on_exit`, `on_use`, `on_hit`, `environment` (mientras el Clima/Campo/Anomalía está activo) |
-| `target` | `self`, `target`, `all_enemies`, `all_allies`, `all_present` |
-| `condition` | `techniqueType`, `techniqueClass`, `subjectTypes`, `subjectNotTypes`, `targetHasAnyStatus`, `targetHpBelowPct`, `targetHasNotActed`, `userFirstTurnSinceEntry` |
-| `ops` con intérprete | `modifyDamage` (`role` dealt/taken, `pct`, `oncePerEntry`), `modifyAccuracy` (`pct`, `pp`, `neverMiss`), `applyStatus` (`status`, `chance`), `setEnvironment`, `disableManifestations`, `flinch`, `failTechnique` |
-| `flags` | `isSecondaryEffect`, `perHit` (efecto por impacto en vez de una vez por objetivo), `worksWhileDesvinculado` |
+| `trigger` | `passive` (siempre activo: Manifestaciones materializadas o durante la propia técnica), `on_entry`, `on_voluntary_withdraw`, `on_exit`, `on_use` (antes de los impactos), `on_hit` (tras los impactos, una vez por objetivo o `perHit`), `after_damage` (si causó pérdida de Vitalidad), `after_use` (siempre al terminar), `environment` (mientras el Clima/Campo/Anomalía está activo), `environment_entry` (Clima/Campo activo cuando alguien entra), `end_of_turn`, `on_switched_out`, `on_enemy_voluntary_withdraw`, `on_stat_lowered`, `on_hp_threshold`, `would_be_defeated`, `on_technique_received` |
+| `target` | `self`, `target`, `all_enemies`, `all_allies`, `other_allies`, `all_present`, `lowest_ally`; `targetFilter` filtra cada objetivo con las mismas claves de condición |
+| `condition` | tipo/clase de técnica, tipos del sujeto, estados o marcas del objetivo, etapas del objetivo, Vitalidad del usuario u objetivo, si el objetivo ya actuó, falló su última técnica o declaró una técnica de Estado, si el usuario recibió daño o causó daño la ronda anterior, primer turno tras entrar, Clima activo, opción declarada, impactos sobre el objetivo, fase de la técnica, estados del sujeto, carga en curso, categoría de la técnica o tipo no propio, técnica con efectos adicionales, primer uso, coste del equipo, umbral de Vitalidad cruzado, Vitalidad completa |
+| `ops` | daño y precisión: `modifyDamage`, `modifyAccuracy`, `ignoreDefense`, `attackStat`, `typeOverride`, `ignoreBarriers`, `modifyPriority`; estado y etapas: `applyStatus`, `cureStatuses`, `stage`, `clearStages`, `stealStage`, `stageHighest`, `convertStages`; Vitalidad: `heal`, `drain`, `recoil`, `selfDamage`, `distributeHeal`, `modifyHealing`; campo: `setEnvironment`, `clearEnvironment`, `disableManifestations`, `addSideEffect`, `destroySideEffect`, `setFieldFlag`; criatura: `mark`, `removeMarks`, `consumeMark`, `lockTechnique`, `selfSwitch`, `flinch`, `failTechnique`, `modifyStat`; Manifestaciones: `divideDamage`, `survivesAt1Hp`, `commitFirstTechnique`, `minHits`, `invertStages`, `capManifestationDamage`, `ignoreEnvironmentDamage`, `shareDamage`, `extendBarriers`, `typedLoss` |
+| `flags` | `isSecondaryEffect`, `perHit`, `worksWhileDesvinculado`, `oncePerBattle` |
 
-El resto de operaciones listadas en [src/engine/effects/dsl.ts](src/engine/effects/dsl.ts) se validan pero aún no se ejecutan: lo que las usa queda bloqueado.
+Campos de técnica en el override: `targetSide` (`self`, `ally`, `side`), `targetSet`, `declareAs`, `charge`, `chargeSkipEnvironment`, `noConsecutiveUse`, `usableIf`, `choices`, `splashPct`, `streak`, `phases`, `interceptSwitch`, `accuracyAssumed`, `neverMiss`, `contact`, `requiresInstinct`, `handler`. El cargador valida disparadores, objetivos, operaciones, estados, estadísticas, tipos de marca y claves de condición.
 
 ### Modos `strict` y `lenient`
 
@@ -182,9 +198,9 @@ El resto de operaciones listadas en [src/engine/effects/dsl.ts](src/engine/effec
 | Técnica con `effects: []` | Se ejecuta | Se ejecuta |
 | Técnica sin curar | **Bloqueada** (no se puede declarar) | Solo daño/parámetros base + aviso en el log |
 | Técnica curada con operaciones aún no implementadas | Bloqueada | Bloqueada |
-| Poder o precisión no numéricos (Horda, Eco exacto, Silencio de alas) | Bloqueada hasta tener handler | Bloqueada |
+| Horda sin cadáveres declarados en la instancia | Ilegal | Ilegal |
 
-Cobertura actual: en strict se pueden usar 36 de 343 técnicas; en lenient, 340. Están activas 52 de las 138 Manifestaciones; 85 siguen sin curar y 1 está curada pero bloqueada (Velo nocturno, por la curación).
+Cobertura actual: en strict se pueden usar las 343 técnicas y están activas las 138 Manifestaciones.
 
 ---
 
@@ -241,7 +257,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Lagunas del canon (RuleGap)
 
-`node dist/app/cli.js gaps` lista las 27 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
+`node dist/app/cli.js gaps` lista las 73 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
 
 | Laguna | Supuesto actual |
 |---|---|
@@ -261,12 +277,26 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | Hacer retroceder (Puño preciso) | Es efecto secundario; la acción pendiente del objetivo falla y se consume; una carga en curso se conserva; si ya actuó (incluida Esquiva) no hace nada |
 | Activación y duración de Campos/Climas/Anomalías | Se activan con la Entrada de su portador y duran hasta ser sustituidos, aunque el portador salga |
 | Efectos al impactar en multigolpe | Una vez por objetivo impactado salvo `perHit`; nunca sobre criaturas ya derrotadas |
+| Técnicas de contacto | Toda técnica Física (configurable con `contactDefault`) |
+| «El daño se reduce X%» | Porcentaje en M; solo «reduce a la mitad» divide (R) |
+| «Permanece N rondas» / «las siguientes N rondas» | La primera incluye la ronda de uso; la segunda empieza en la siguiente |
+| Efectos temporales sobre una criatura | Desaparecen con cualquier Salida |
+| «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
+| Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
+| Cambios de Prioridad a mitad de ronda | Reordenan las acciones pendientes de esa ronda |
+| «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
+| Horda (sin CANON-CREATURES) | Tres cadáveres explícitos por instancia; cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
+| «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
+| «Todos los aliados» en una Retirada | No incluye a la criatura que se retira |
+| Daño porcentual de Climas/Campos | Pérdida fija de Vitalidad máxima, sin tabla de tipos |
+| Segundo aliento ante un golpe que deja la Vitalidad en 0 | Actúa antes de la Derrota (28.5.15) y la criatura sigue en pie |
+| Presencia opresiva / Presión arcana («disminuye un 50%») | -2 etapas |
 
 ---
 
 ## Tests
 
-`npm test` ejecuta 62 tests:
+`npm test` ejecuta 106 tests:
 
 - **Datos**: esquemas, referencias cruzadas técnica <-> especie, overrides y cobertura.
 - **Fórmulas**: casos canónicos 33 (240 -> 320 -> 400), 20.2 (75% -> 85%), 21.3 (x0,75), 23.5 (1000 / 170), 24.1 (Paralizado + Enraizado = -50%), tabla de etapas 21.2, tipos duales, inmunidades, Profundidad y Esquiva.
@@ -276,4 +306,8 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 - **Efectos (fase 5)**: despliegue con dos Climas en el que prevalece el de la criatura lenta (29), Entrada rápida que aplica Enraizado y hace fallar el Intercambio rival (30), suma de modificadores en M (Combustión + Juramento = x0,75; Devorallamas = 0), Calima, Llovizna con Rayo que nunca falla bajo Desorientado, Desvinculado y Silencio del Vínculo desactivando Manifestaciones, Ignición una vez por Entrada, Punto de ignición, inmunidad Mítica a Desvinculado, y Puño preciso (retroceso del objetivo, fallo fuera del primer turno, recarga al volver a entrar y uso mediante Materialización parcial).
 
-Pendiente en la fase 5: etapas (con las restricciones «no puede aumentar» de los estados), curas, retrocesos y drenajes, Intercambios forzados, efectos laterales, respuestas de supervivencia y el curado del resto de técnicas y Manifestaciones.
+- **Técnicas**: etapas y restricciones de estado (Enfado, Acelerar bajo Parálisis, Pacto de sangre), curación con Desvinculado, retroceso y drenaje, Barrera de fuerza y su destrucción, Estela y Maraña, sustituciones forzadas u opcionales, «no puede usarse dos turnos consecutivos», Mordisco de presa, Canto final, Bajo mi amparo, Caza espectral, Velocidad invertida, Anular prioridad, Bola de fuego, Aprovechar hueco, Pulso intermitente, Incinerar, Sesteo, Cristal opaco + Prisma de retorno, Caparazón incandescente, Mueca, Helar contra Planta, Aliento de dragón con Calima, Retorno arcano, Infección, Revelación absoluta, Borrar el contorno, Mediodía y Colapso.
+- **Propiedades**: los 300 combates aleatorios usan ahora todo el catálogo curado en modo strict (técnicas especiales con su especie, Manifestaciones compatibles al azar) sin errores ni invariantes rotos, incluida Horda con cadáveres al azar.
+- **Manifestaciones**: Último hilo, Segundo aliento, Amartillar, Sobrecarga, Horda, Regeneración, Campo rocoso, Tormenta eléctrica, Presagio imposible, Retaguardia, Presencia opresiva + Desafiante, No me toques, Espejo cóncavo, Raíz compartida, Ruptura de afinidad y Negación elemental.
+
+Pendiente: las fases 6 a 8.

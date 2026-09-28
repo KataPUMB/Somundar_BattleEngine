@@ -61,6 +61,18 @@ export interface BondedCreature {
   equippedManifestations: string[];
   persistentStatuses: PersistentStatus[];
   hpCurrent?: number;
+  /** aptitud fijada por Instinto adoptado (Zanolah) */
+  instinct?: 'atk' | 'def' | 'spe';
+  /** puede Transfigurarse todavia (Poder latente); explicito mientras falte CANON-CREATURES */
+  canTransfigure?: boolean;
+  /** cadaveres de Horda (Holomicor); explicitos mientras falte CANON-CREATURES */
+  horde?: HordeCorpse[];
+}
+
+export interface HordeCorpse {
+  speciesId: string;
+  atkNV50: number;
+  techniqueId: string;
 }
 
 export interface Preparation {

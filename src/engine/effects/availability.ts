@@ -5,8 +5,14 @@ export type EffectsMode = 'strict' | 'lenient';
 
 export const SUPPORTED_OPS: ReadonlySet<OpKind> = new Set<OpKind>([
   'modifyDamage', 'modifyAccuracy', 'applyStatus', 'setEnvironment', 'flinch', 'failTechnique', 'disableManifestations',
+  'modifyHealing', 'heal', 'stage', 'clearStages', 'cureStatuses', 'stealStage', 'stageHighest', 'convertStages',
+  'selfDamage', 'recoil', 'drain', 'distributeHeal', 'selfSwitch', 'mark', 'addSideEffect', 'destroySideEffect',
+  'setFieldFlag', 'clearEnvironment', 'lockTechnique', 'ignoreDefense', 'attackStat', 'typeOverride', 'ignoreBarriers',
+  'modifyPriority', 'removeMarks', 'consumeMark', 'modifyStat',
+  'commitFirstTechnique', 'minHits', 'invertStages', 'capManifestationDamage', 'ignoreEnvironmentDamage', 'shareDamage',
+  'extendBarriers', 'typedLoss', 'survivesAt1Hp', 'divideDamage',
 ]);
-export const SUPPORTED_HANDLERS: ReadonlySet<string> = new Set<string>();
+export const SUPPORTED_HANDLERS: ReadonlySet<string> = new Set<string>(['horda']);
 
 export type CoverageStatus = 'implemented' | 'base_only_verified' | 'curated_pending' | 'uncurated' | 'needs_handler';
 
@@ -23,7 +29,7 @@ function numericParams(t: Technique): boolean {
 }
 
 function numericAccuracy(t: Technique): boolean {
-  return typeof t.accuracy === 'number' || t.override?.neverMiss === true;
+  return typeof t.accuracy === 'number' || t.override?.neverMiss === true || t.override?.accuracyAssumed !== undefined;
 }
 
 export function techniqueAvailability(t: Technique, mode: EffectsMode): Availability {

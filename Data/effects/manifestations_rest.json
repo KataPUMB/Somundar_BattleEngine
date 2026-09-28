@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "purpose": "Resto de Manifestaciones: auras de aliados/enemigos, curacion, respuestas, supervivencia, compromisos, Climas y Campos con efectos por turno o al entrar.",
+    "criterion": "Transcripcion literal del campo text. 'Hasta finalizar la siguiente ronda' = efecto de lado de 2 rondas (GAP-ALLY-BUFF-SIDE). En retiradas, 'todos los aliados' excluye a la criatura que sale (GAP-ALLIES-SELF)."
+  },
+  "manifestations": {
+    "cortina_de_humo": { "effects": [{ "trigger": "on_entry", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "damage_taken", "pct": -25, "classes": ["physical"] }, { "kind": "damage_taken", "pct": -25, "classes": ["magical"] }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }] },
+    "cenizas_protectoras": { "effects": [
+      { "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-ALLIES-SELF" },
+      { "trigger": "on_voluntary_withdraw", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "damage_taken", "pct": -25 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }
+    ] },
+    "marea_reparadora": { "effects": [{ "trigger": "on_entry", "target": "all_allies", "ops": [{ "op": "heal", "pct": 25 }] }] },
+    "manantial_interior": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyHealing", "role": "given", "pct": 50 }], "ruleRef": "GAP-HEAL-GIVEN" }] },
+    "guardamar": { "effects": [{ "trigger": "passive", "target": "all_allies", "condition": { "techniqueClass": ["magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "reflujo_sanador": { "effects": [
+      { "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-ALLIES-SELF" },
+      { "trigger": "on_voluntary_withdraw", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "damage_taken", "pct": -25 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }
+    ] },
+    "oleaje_purificador": { "effects": [{ "trigger": "on_entry", "target": "all_allies", "ops": [{ "op": "cureStatuses", "all": true }] }] },
+    "savia_medicinal": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyHealing", "role": "given", "pct": 25 }], "ruleRef": "GAP-HEAL-GIVEN" }] },
+    "brote_reparador": { "effects": [{ "trigger": "on_entry", "target": "all_allies", "ops": [{ "op": "heal", "pct": 25 }] }] },
+    "fronda_vital": { "effects": [{ "trigger": "end_of_turn", "target": "all_allies", "ops": [{ "op": "heal", "pct": 6.25 }] }] },
+    "fronda_guardiana": { "effects": [{ "trigger": "passive", "target": "all_allies", "condition": { "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "corteza_ancestral": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyStat", "stats": ["def", "mdef"], "pct": 50 }] }] },
+    "corazon_del_bosque": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyHealing", "role": "given", "pct": 100 }], "ruleRef": "GAP-HEAL-GIVEN" }] },
+    "semillas_de_retorno": { "effects": [{ "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }, { "op": "cureStatuses", "all": true }], "ruleRef": "GAP-ALLIES-SELF" }] },
+    "raiz_compartida": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "shareDamage", "transferPct": 50, "reductionPct": 50 }], "ruleRef": "GAP-RAIZ" }] },
+    "muralla_emergente": { "effects": [{ "trigger": "on_entry", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "stat", "stat": "def", "pct": 50 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }] },
+    "baluarte": { "effects": [{ "trigger": "passive", "target": "all_allies", "condition": { "techniqueClass": ["physical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "muralla_de_relevo": { "effects": [{ "trigger": "on_switched_out", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "damage_taken", "pct": -50, "classes": ["physical"] }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }] },
+    "estrato_desigual": { "effects": [{ "trigger": "passive", "target": "all_present", "ops": [{ "op": "modifyStat", "stat": "def", "pct": 50 }, { "op": "modifyStat", "stat": "mdef", "pct": -50 }] }] },
+    "campo_rocoso": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment_entry", "target": "all_present", "condition": { "subjectNotTypes": ["tierra"] }, "ops": [{ "op": "typedLoss", "pctMaxHp": 12.5, "type": "tierra" }], "ruleRef": "GAP-ENV-DAMAGE" },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["tierra"] }, "ops": [{ "op": "modifyStat", "stat": "def", "pct": 50 }] }
+    ] },
+    "carga_subita": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["rayo"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50, "oncePerEntry": true }], "ruleRef": "GAP-NEXT-TECH" }] },
+    "reflejos_electricos": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyStat", "stat": "spe", "pct": 25 }] }] },
+    "pulso_nervioso": { "effects": [{ "trigger": "passive", "target": "all_allies", "ops": [{ "op": "modifyStat", "stat": "spe", "pct": 25 }] }] },
+    "ionizacion": { "effects": [{ "trigger": "passive", "target": "all_enemies", "ops": [{ "op": "modifyStat", "stat": "mdef", "pct": -50 }] }] },
+    "descarga_de_cobertura": { "effects": [{ "trigger": "on_switched_out", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "stat", "stat": "mdef", "pct": 50 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }] },
+    "tormenta_electrica": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "end_of_turn", "target": "all_present", "condition": { "subjectNotTypes": ["rayo", "tierra"] }, "ops": [{ "op": "typedLoss", "pctMaxHp": 6.25, "type": "rayo" }], "ruleRef": "GAP-ENV-DAMAGE" },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["rayo"] }, "ops": [{ "op": "modifyStat", "stat": "mdef", "pct": 50 }] }
+    ] },
+    "impulso_ascendente": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["aire"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50, "oncePerEntry": true }], "ruleRef": "GAP-NEXT-TECH" }] },
+    "formacion_de_caza": { "effects": [{ "trigger": "passive", "target": "all_allies", "ops": [{ "op": "modifyStat", "stats": ["atk", "matk"], "pct": 25 }] }] },
+    "rebufo_protector": { "effects": [{ "trigger": "on_switched_out", "target": "other_allies", "ops": [{ "op": "mark", "kind": "damage_taken", "pct": -50, "consume": true, "expires": "exit" }], "ruleRef": "GAP-ALLIES-SELF" }] },
+    "vendaval": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "environment_entry", "target": "all_present", "condition": { "subjectNotTypes": ["aire"] }, "ops": [{ "op": "typedLoss", "pctMaxHp": 12.5, "type": "aire" }], "ruleRef": "GAP-ENV-DAMAGE" },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["aire"] }, "ops": [{ "op": "modifyStat", "stat": "mdef", "pct": 50 }] }
+    ] },
+    "lanza_del_alba": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueType": ["luz"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50, "oncePerEntry": true }], "ruleRef": "GAP-NEXT-TECH" }] },
+    "bendicion_de_llegada": { "effects": [{ "trigger": "on_entry", "target": "all_allies", "ops": [{ "op": "heal", "pct": 25 }] }] },
+    "manos_de_luz": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyHealing", "role": "given", "pct": 25 }], "ruleRef": "GAP-HEAL-GIVEN" }] },
+    "relevo_radiante": { "effects": [
+      { "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-ALLIES-SELF" },
+      { "trigger": "on_voluntary_withdraw", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "healing", "pct": 25 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }
+    ] },
+    "intercesion": { "effects": [{ "trigger": "would_be_defeated", "target": "all_allies", "ops": [{ "op": "survivesAt1Hp" }], "ruleRef": "CANON-MECHANICS 28.5.15" }] },
+    "campo_luminoso": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "end_of_turn", "target": "all_present", "condition": { "subjectNotTypes": ["oscuridad"] }, "ops": [{ "op": "heal", "pct": 6.25 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["luz"] }, "ops": [{ "op": "modifyStat", "stat": "mdef", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["oscuridad"] }, "ops": [{ "op": "modifyStat", "stats": ["def", "mdef"], "pct": -25 }] }
+    ] },
+    "noche_protectora": { "effects": [{ "trigger": "passive", "target": "all_allies", "condition": { "techniqueClass": ["magical"] }, "ops": [{ "op": "modifyDamage", "role": "taken", "pct": -25 }] }] },
+    "reflujo_umbrio": { "effects": [{ "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-ALLIES-SELF" }] },
+    "sed_carmesi": { "effects": [{ "trigger": "after_damage", "target": "all_allies", "ops": [{ "op": "drain", "pct": 12.5 }] }] },
+    "hambre_del_abismo": { "effects": [{ "trigger": "end_of_turn", "target": "all_enemies", "ops": [{ "op": "selfDamage", "pctMaxHp": 6.25 }] }] },
+    "hambre_de_sombras": { "effects": [{ "trigger": "on_enemy_voluntary_withdraw", "target": "all_allies", "ops": [{ "op": "heal", "pct": 25 }] }] },
+    "neblina_oscura": { "effects": [
+      { "trigger": "on_entry", "target": "self", "ops": [{ "op": "setEnvironment" }], "ruleRef": "GAP-ENV-ACTIVATION" },
+      { "trigger": "on_entry", "target": "all_present", "targetFilter": { "subjectNotTypes": ["oscuridad"] }, "ops": [{ "op": "clearStages", "positive": true, "negative": true }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["oscuridad"] }, "ops": [{ "op": "modifyStat", "stat": "def", "pct": 50 }] },
+      { "trigger": "environment", "target": "all_present", "condition": { "subjectTypes": ["luz"] }, "ops": [{ "op": "modifyStat", "stats": ["def", "mdef"], "pct": -25 }] }
+    ] },
+    "presagio_imposible": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "mark", "kind": "damage_taken", "pct": 75, "consume": true, "expires": "exit" }] }] },
+    "ruptura_de_afinidad": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "typeOverride", "neutralizeResistances": true }] }] },
+    "invariante": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "ignoreEnvironmentDamage" }], "ruleRef": "GAP-INVARIANTE" }] },
+    "negacion_elemental": { "effects": [{ "trigger": "passive", "target": "all_allies", "ops": [{ "op": "typeOverride", "role": "taken", "capAdvantage": true }] }] },
+    "corazon_de_brasa": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["quemado"] }, "ops": [{ "op": "modifyStat", "stat": "atk", "pct": 50 }] }] },
+    "respiracion_abisal": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["saturado"] }, "ops": [{ "op": "modifyStat", "stat": "mdef", "pct": 50 }] }] },
+    "raiz_ferrea": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["enraizado"] }, "ops": [{ "op": "modifyStat", "stats": ["def", "mdef"], "pct": 25 }] }] },
+    "furia_de_cantera": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["agrietado"] }, "ops": [{ "op": "modifyStat", "stat": "matk", "pct": 50 }] }] },
+    "nervio_de_tormenta": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["paralizado"] }, "ops": [{ "op": "modifyStat", "stat": "matk", "pct": 50 }] }] },
+    "instinto_del_vendaval": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["desorientado"] }, "ops": [{ "op": "modifyStat", "stat": "spe", "pct": 50 }] }] },
+    "voluntad_radiante": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["espiritu_cercenado"] }, "ops": [{ "op": "modifyHealing", "role": "received", "pct": 50 }] }] },
+    "voluntad_desnuda": { "worksWhileDesvinculado": true, "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["desvinculado"] }, "ops": [{ "op": "modifyStat", "stats": ["atk", "matk"], "pct": 25 }] }] },
+    "tercer_ojo": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyAccuracy", "pp": 10 }] }] },
+    "presencia_opresiva": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "stage", "stat": "atk", "n": -2 }], "ruleRef": "GAP-PRESENCIA" }] },
+    "presion_arcana": { "effects": [{ "trigger": "on_entry", "target": "all_enemies", "ops": [{ "op": "stage", "stat": "matk", "n": -2 }], "ruleRef": "GAP-PRESENCIA" }] },
+    "relevo_protector": { "effects": [
+      { "trigger": "on_voluntary_withdraw", "target": "other_allies", "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-ALLIES-SELF" },
+      { "trigger": "on_voluntary_withdraw", "target": "self", "ops": [{ "op": "addSideEffect", "rounds": 2, "mods": [{ "kind": "damage_taken", "pct": -25 }] }], "ruleRef": "GAP-ALLY-BUFF-SIDE" }
+    ] },
+    "segundo_aliento": { "effects": [{ "trigger": "on_hp_threshold", "target": "self", "condition": { "hpCrossedBelowPct": 50 }, "flags": { "oncePerBattle": true }, "ops": [{ "op": "heal", "pct": 25 }], "ruleRef": "GAP-SEGUNDO-ALIENTO-ZERO" }] },
+    "regeneracion": { "effects": [{ "trigger": "end_of_turn", "target": "self", "ops": [{ "op": "heal", "pct": 6.25 }] }] },
+    "amartillar": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] },
+      { "trigger": "passive", "target": "self", "ops": [{ "op": "commitFirstTechnique" }] }
+    ] },
+    "concentracion": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["magical"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }] },
+      { "trigger": "passive", "target": "self", "ops": [{ "op": "commitFirstTechnique" }] }
+    ] },
+    "ataque_rapido": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "modifyStat", "stat": "spe", "pct": 100 }, { "op": "commitFirstTechnique" }] }] },
+    "sobrecarga": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "minHits", "n": 4 }], "ruleRef": "GAP-SOBRECARGA" }] },
+    "mundano": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"], "techniqueHasAdditionalEffects": false }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 100 }], "ruleRef": "GAP-MUNDANO" },
+      { "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"], "techniqueHasAdditionalEffects": true }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": -50 }], "ruleRef": "GAP-MUNDANO" }
+    ] },
+    "poder_latente": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectCanTransfigure": true }, "ops": [{ "op": "modifyStat", "stats": ["def", "mdef"], "pct": 100 }] }] },
+    "versatilidad": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["physical", "magical"], "techniqueFirstUseEver": true }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "respuesta_adaptativa": { "effects": [
+      { "trigger": "on_technique_received", "target": "self", "condition": { "techniqueClass": ["physical"] }, "ops": [{ "op": "stage", "stat": "mdef", "n": 1 }] },
+      { "trigger": "on_technique_received", "target": "self", "condition": { "techniqueClass": ["magical"] }, "ops": [{ "op": "stage", "stat": "def", "n": 1 }] }
+    ] },
+    "concentracion_absoluta": { "effects": [
+      { "trigger": "passive", "target": "self", "condition": { "subjectCharging": true }, "ops": [{ "op": "divideDamage" }] },
+      { "trigger": "passive", "target": "self", "condition": { "techniqueCharged": true }, "ops": [{ "op": "modifyAccuracy", "ignoreEvasion": true }] }
+    ] },
+    "oportunista": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueClass": ["status"] }, "ops": [{ "op": "modifyPriority", "delta": 1 }], "ruleRef": "GAP-OPORTUNISTA" }] },
+    "afinidad_prestada": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "techniqueCategory": ["elemental"], "techniqueTypeNotOwn": true }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "arsenal_ligero": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "userEquipMaxCostAtMost": 25 }, "ops": [{ "op": "modifyStat", "stat": "spe", "pct": 50 }] }] },
+    "arsenal_pesado": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "userEquipCostAtLeast": { "cost": 50, "count": 2 }, "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "relevo": { "effects": [{ "trigger": "on_switched_out", "target": "self", "ops": [{ "op": "heal", "pct": 25 }] }] },
+    "desafiante": { "effects": [{ "trigger": "on_stat_lowered", "target": "self", "ops": [{ "op": "stage", "stat": "atk", "n": 2 }], "ruleRef": "GAP-STAT-LOWERED-SOURCE" }] },
+    "contramedida": { "effects": [{ "trigger": "on_stat_lowered", "target": "self", "ops": [{ "op": "stage", "stat": "matk", "n": 2 }], "ruleRef": "GAP-STAT-LOWERED-SOURCE" }] },
+    "no_me_toques": { "effects": [{ "trigger": "on_stat_lowered", "target": "self", "ops": [{ "op": "selfSwitch", "mode": "forced", "random": true }], "ruleRef": "GAP-STAT-LOWERED-SOURCE" }] },
+    "retaguardia": { "effects": [{ "trigger": "after_use", "target": "self", "condition": { "techniqueClass": ["status"] }, "ops": [{ "op": "addSideEffect", "untilConsumed": true, "mods": [{ "kind": "damage_taken", "pct": -50, "consume": true }] }], "ruleRef": "GAP-RETAGUARDIA" }] },
+    "fortificacion": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "extendBarriers", "rounds": 2 }] }] },
+    "triaje": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "targetHpBelowPct": 50 }, "ops": [{ "op": "modifyHealing", "role": "given", "pct": 50 }], "ruleRef": "GAP-HEAL-GIVEN" }] },
+    "ultimo_hilo": { "effects": [{ "trigger": "would_be_defeated", "target": "self", "ops": [{ "op": "survivesAt1Hp" }], "ruleRef": "CANON-MECHANICS 28.5.15" }] },
+    "ultimo_recurso": { "effects": [{ "trigger": "passive", "target": "self", "condition": { "userUsedAllTechniques": true, "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 150, "oncePerEntry": true }], "ruleRef": "GAP-NEXT-TECH" }] },
+    "desapego": { "worksWhileDesvinculado": true, "effects": [{ "trigger": "passive", "target": "self", "condition": { "subjectHasStatus": ["desvinculado"], "techniqueClass": ["physical", "magical"] }, "ops": [{ "op": "modifyDamage", "role": "dealt", "pct": 50 }] }] },
+    "espejo_concavo": { "effects": [{ "trigger": "passive", "target": "self", "ops": [{ "op": "invertStages" }] }] },
+    "equilibrio_del_vinculo": { "effects": [{ "trigger": "passive", "target": "all_present", "ops": [{ "op": "capManifestationDamage", "max": 50 }] }] }
+  }
+}

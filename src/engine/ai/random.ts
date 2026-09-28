@@ -22,12 +22,18 @@ export function withTarget(view: Readonly<BattleState>, side: SideIndex, opt: Ac
   const a = opt.action;
   if (a.kind !== 'technique' && a.kind !== 'partial') return a;
   if (opt.reason === 'ejecucion de la carga') return a;
-  const enemies = enemyTargets(view, side);
+  const choice = opt.choices ? pick(rng, opt.choices) : undefined;
   let target: TargetDecl;
-  if (opt.targeting === 'all') target = { kind: 'auto' };
-  else if (opt.targeting === 'multi') target = { kind: 'sequence', positionIds: enemies };
-  else target = { kind: 'position', positionId: pick(rng, enemies) };
-  return { ...a, target };
+  if (opt.targetSide === 'self' || opt.targetSide === 'side' || opt.targeting === 'all') target = { kind: 'auto' };
+  else if (opt.targetSide === 'ally') {
+    const own = view.sides[side].positions;
+    const occupied = own.filter((p) => p.occupantUid !== null).map((p) => p.id);
+    target = { kind: 'position', positionId: pick(rng, occupied.length ? occupied : own.map((p) => p.id)) };
+  } else {
+    const enemies = enemyTargets(view, side);
+    target = opt.targeting === 'multi' ? { kind: 'sequence', positionIds: enemies } : { kind: 'position', positionId: pick(rng, enemies) };
+  }
+  return choice === undefined ? { ...a, target } : { ...a, target, choice };
 }
 
 export const randomLegalPolicy: Policy = {

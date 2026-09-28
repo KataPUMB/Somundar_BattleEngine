@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { beginRound, DeclarationError, resolveRound } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
-import { creature, eventsOf, loadData, round, setup, start, summoner, uid, withTechniqueOverrides, FLAT_STATS } from './helpers.js';
+import { creature, eventsOf, loadData, round, setup, start, summoner, uid, withoutOverride, withTechniqueOverrides, FLAT_STATS } from './helpers.js';
 
 const data = withTechniqueOverrides(loadData(), {
   abrazo_voltaico: { effects: [] },
@@ -183,8 +183,9 @@ test('13.2 / 28.6.19: segunda posicion temporal del Adepto (supuesto por defecto
 
 test('modo strict: una tecnica sin efectos curados no se puede declarar', () => {
   const s = summoner('x', 'iniciado');
-  const st = beginRound(data, start(data, setup(s, [creature('a', { equippedTechniques: ['bola_de_fuego'] })]), setup(s, [creature('b')])));
-  assert.throws(() => resolveRound(data, st, { S0P0: { kind: 'technique', techniqueId: 'bola_de_fuego', target: { kind: 'position', positionId: 'S1P0' } }, S1P0: hit('S0P0') }), /sin efectos curados/);
+  const raw = withoutOverride(data, 'bola_de_fuego');
+  const st = beginRound(raw, start(raw, setup(s, [creature('a', { equippedTechniques: ['bola_de_fuego'] })]), setup(s, [creature('b')])));
+  assert.throws(() => resolveRound(raw, st, { S0P0: { kind: 'technique', techniqueId: 'bola_de_fuego', target: { kind: 'position', positionId: 'S1P0' } }, S1P0: hit('S0P0') }), /sin efectos curados/);
 });
 
 test('26.2: derrotar a toda la Preparacion termina el combate', () => {

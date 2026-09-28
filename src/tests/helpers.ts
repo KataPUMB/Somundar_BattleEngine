@@ -25,6 +25,12 @@ export function withTechniqueOverrides(data: GameData, ovs: Record<string, Techn
   return { ...data, techniques };
 }
 
+export function withoutOverride(data: GameData, id: string): GameData {
+  const techniques = new Map(data.techniques);
+  techniques.set(id, { ...techniques.get(id)!, override: null, overrideSource: null });
+  return { ...data, techniques };
+}
+
 export const FLAT_STATS: StatBlock = { hp: 300, atk: 100, matk: 100, def: 100, mdef: 100, spe: 100 };
 
 export function creature(id: string, over: Partial<BondedCreature> = {}): BondedCreature {

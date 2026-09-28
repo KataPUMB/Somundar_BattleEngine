@@ -1,20 +1,23 @@
-import type { GameData } from '../../data/schema.js';
+import type { GameData, Technique } from '../../data/schema.js';
 import {
   DEFAULT_CONFIG, type Action, type BattleConfig, type BattleState, type Combatant, type Declarations, type Position,
   type SideIndex, type SideState,
 } from '../model/battle.js';
-import type { SideSetup } from '../model/types.js';
+import type { SideSetup, StageKey } from '../model/types.js';
 import { emit } from '../log/events.js';
 import { createRng } from '../rng.js';
 import { RULE_GAPS } from '../gaps.js';
 import { dodgeChance } from '../rules/accuracy.js';
-import { techniqueAvailability } from '../effects/availability.js';
+import { clampStage } from '../rules/stats.js';
 import { hasErrors, positionCapacityAtDeployment, validatePreparation, type Violation } from '../legality/preparation.js';
-import { positionsNeedingDeclaration, validateDeclaration } from '../legality/actions.js';
+import { positionsNeedingDeclaration, techniqueBlockReason, validateDeclaration } from '../legality/actions.js';
+import { afterHpLoss, auraOps, heal, loseHp, marksOf, removeMark, speedOf } from '../effects/runtime.js';
+import { runAuras } from '../effects/interpreter.js';
 import { combatant, findPosition, orderDesc, positionId, roll, sideOf, type Controllers, type EngineCtx } from './context.js';
-import { createCombatant, effSpeed, isViableReserve, restrictionActive } from './combatant.js';
-import { exitField, forcedReplacement, initialDeployment, materializeWithEntry } from './lifecycle.js';
-import { executeTechnique } from './techniques.js';
+import { createCombatant, isViableReserve } from './combatant.js';
+import { exitField, initialDeployment, materializeWithEntry, withdrawBlocker } from './lifecycle.js';
+import { defeatIfZero, executeTechnique, flushPending } from './techniques.js';
+import { techniquePassiveOps } from './damage.js';
 
 export class PreparationError extends Error {
   constructor(public readonly violations: { side: SideIndex; violations: Violation[] }[]) {
@@ -48,7 +51,10 @@ export function createBattle(data: GameData, setups: [SideSetup, SideSetup], opt
     return { index: side, summoner: s.summoner, combatants: s.preparation.creatures.map((c) => createCombatant(side, c)), positions, sideEffects: [], surrendered: false };
   }) as [SideState, SideState];
 
-  const st: BattleState = { config, round: 0, phase: 'deployment', sides, environment: null, rng: createRng(opts.seed), log: [], nextEventId: 1, outcome: null };
+  const st: BattleState = {
+    config, round: 0, phase: 'deployment', sides, environment: null, field: { trickRoomRounds: 0, priorityNullifiedRound: null, revelationRounds: 0 },
+    rng: createRng(opts.seed), log: [], nextEventId: 1, outcome: null,
+  };
   emit(st, {
     type: 'battle_start',
     data: {
@@ -71,6 +77,7 @@ export function createBattle(data: GameData, setups: [SideSetup, SideSetup], opt
     });
   });
   initialDeployment(ctx, placements);
+  flushPending(ctx);
   checkOutcome(ctx);
   return st;
 }
@@ -89,6 +96,12 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
   const ctx: EngineCtx = { data, st, controllers };
   st.round++;
   st.phase = 'round_start';
+  for (const side of st.sides) for (const c of side.combatants) {
+    c.dodgingThisRound = false;
+    c.actedThisRound = false;
+    c.flinched = false;
+    c.damagedThisRound = false;
+  }
   emit(st, { type: 'round_start', ruleRef: 'CANON-MECHANICS 28.2' });
 
   const problems: string[] = [];
@@ -115,7 +128,7 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
   }
   if (problems.length > 0) throw new DeclarationError(problems);
 
-  const ordered = orderDesc(ctx, pending, (p) => [effSpeed(data, p.c)], 'round_start_materialization', (p) => p.c.uid);
+  const ordered = orderDesc(ctx, pending, (p) => [speedOf(ctx, p.c)], 'round_start_materialization', (p) => p.c.uid);
   for (const p of ordered) {
     if (p.opened) {
       sideOf(st, p.pos.side).positions.push(p.pos);
@@ -124,14 +137,10 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
       emit(st, { type: 'rule_gap', targets: [p.pos.id], data: { gap: 'GAP-EMPTY-POSITION-FILL' } });
     }
     materializeWithEntry(ctx, p.c, p.pos);
+    flushPending(ctx);
   }
 
-  for (const side of st.sides) for (const c of side.combatants) {
-    c.presentAtDeclaration = c.location === 'field';
-    c.dodgingThisRound = false;
-    c.actedThisRound = false;
-    c.flinched = false;
-  }
+  for (const side of st.sides) for (const c of side.combatants) c.presentAtDeclaration = c.location === 'field';
   st.phase = 'declaration';
   return st;
 }
@@ -141,6 +150,7 @@ interface Frozen {
   side: SideIndex;
   actorUid: string;
   action: Action;
+  done?: boolean;
 }
 
 function freeze(ctx: EngineCtx, decls: Declarations): Frozen[] {
@@ -165,8 +175,15 @@ function freeze(ctx: EngineCtx, decls: Declarations): Frozen[] {
   return out;
 }
 
+// Toda marca "hasta su siguiente accion" termina al empezar esa accion
+function startAction(c: Combatant): void {
+  c.actedThisRound = true;
+  c.marks = c.marks.filter((m) => m.expires.kind !== 'next_action');
+}
+
 function fail(ctx: EngineCtx, f: Frozen, reason: string, ruleRef: string): void {
-  combatant(ctx.st, f.actorUid).actedThisRound = true;
+  f.done = true;
+  startAction(combatant(ctx.st, f.actorUid));
   emit(ctx.st, { type: 'action_failed', actor: f.actorUid, targets: [f.positionId], data: { action: f.action.kind, reason }, ruleRef });
 }
 
@@ -175,86 +192,183 @@ function stillOccupies(ctx: EngineCtx, f: Frozen): Combatant | null {
   return c.location === 'field' && c.positionId === f.positionId ? c : null;
 }
 
+// Caza espectral: intercepta a la criatura saliente antes de su Intercambio, sin usar Prioridad
+function interceptSwitch(ctx: EngineCtx, sw: Frozen, frozen: Frozen[]): void {
+  for (const f of frozen) {
+    if (f.done || f.side === sw.side || (f.action.kind !== 'technique' && f.action.kind !== 'partial')) continue;
+    const t = ctx.data.techniques.get(f.action.techniqueId);
+    const ic = t?.override?.interceptSwitch;
+    if (!t || !ic) continue;
+    const tgt = f.action.target;
+    if (tgt.kind !== 'position' || tgt.positionId !== sw.positionId) continue;
+    const hunter = combatant(ctx.st, f.actorUid);
+    const prey = combatant(ctx.st, sw.actorUid);
+    if (f.action.kind === 'technique' && (hunter.location !== 'field' || hunter.positionId !== f.positionId)) continue;
+    if (prey.location !== 'field') continue;
+    f.done = true;
+    startAction(hunter);
+    const mark = { kind: 'next_damage_bonus' as const, source: `${t.id}:intercepcion`, by: hunter.uid, expires: { kind: 'exit' as const }, params: { pct: ic.damagePct } };
+    hunter.marks.push(mark);
+    const ev = emit(ctx.st, { type: 'intercept', actor: hunter.uid, targets: [prey.uid], data: { technique: t.id }, ruleRef: 'CANON-TECHNIQUES Caza espectral' });
+    executeTechnique(ctx, t, hunter, tgt, ev, f.action.kind === 'partial');
+    hunter.marks = hunter.marks.filter((m) => m !== mark);
+  }
+}
+
 // CANON-MECHANICS 16.3 / 28.3
-function resolveSwitch(ctx: EngineCtx, f: Frozen): void {
+function resolveSwitch(ctx: EngineCtx, f: Frozen, frozen: Frozen[]): void {
   if (f.action.kind !== 'switch') return;
+  interceptSwitch(ctx, f, frozen);
   const out = stillOccupies(ctx, f);
   if (!out) return fail(ctx, f, 'la criatura saliente ya no ocupa la posicion', 'CANON-MECHANICS 14.3');
-  const rooted = restrictionActive(out, 'no_voluntary_withdraw');
-  if (rooted) return fail(ctx, f, `${rooted}: la Retirada voluntaria se ha vuelto ilegal`, 'CANON-MECHANICS 16.4 / 24.5');
+  const blocker = withdrawBlocker(out, true);
+  if (blocker) return fail(ctx, f, `${blocker}: la Retirada voluntaria se ha vuelto ilegal`, 'CANON-MECHANICS 16.4 / 24.5');
   const incoming = sideOf(ctx.st, f.side).combatants.find((c) => c.creature.id === (f.action as { incomingId: string }).incomingId);
   if (!incoming || !isViableReserve(incoming)) return fail(ctx, f, 'el reemplazo ya no es viable', 'CANON-MECHANICS 16.4');
+  f.done = true;
   const pos = findPosition(ctx.st, f.positionId)!;
-  out.actedThisRound = true;
+  startAction(out);
   const ev = emit(ctx.st, { type: 'switch', actor: out.uid, targets: [pos.id], data: { incoming: incoming.uid }, ruleRef: 'CANON-MECHANICS 16.3' });
   exitField(ctx, out, 'withdraw', ev);
   materializeWithEntry(ctx, incoming, pos, ev);
+  flushPending(ctx, ev);
 }
 
 // CANON-MECHANICS 17 / 28.4
 function resolveDodge(ctx: EngineCtx, f: Frozen): void {
   const c = stillOccupies(ctx, f);
   if (!c) return fail(ctx, f, 'la criatura ya no ocupa la posicion', 'CANON-MECHANICS 14.3');
+  f.done = true;
+  startAction(c);
   const chance = dodgeChance(c.dodgeStreak);
   const r = roll(ctx, `dodge:${c.uid}`, chance);
-  c.actedThisRound = true;
   c.dodgeStreak++;
   c.dodgingThisRound = r.result;
   c.lastTurnTechniqueId = null;
   emit(ctx.st, { type: r.result ? 'dodge_success' : 'dodge_fail', actor: c.uid, data: { consecutiveUse: c.dodgeStreak, chance }, rolls: [r], ruleRef: 'CANON-MECHANICS 17' });
 }
 
+// CANON-MECHANICS 18.1 con modificaciones de Prioridad (fase, marcas, Anular prioridad)
+export function effectivePriority(ctx: EngineCtx, t: Technique, user: Combatant): number {
+  const phase = t.override?.phases ? ((user.techUses[t.id] ?? 0) % t.override.phases) + 1 : 1;
+  let p = t.priority;
+  for (const o of techniquePassiveOps(ctx, t, { subject: user, user, technique: t, phase }, 'modifyPriority')) p += Number(o.delta);
+  if (user.location === 'field') for (const a of auraOps(ctx, user, 'modifyPriority', { subject: user, user, technique: t })) p += Number(a.op.delta);
+  for (const m of marksOf(user, 'priority_mod')) p += Number(m.params.delta);
+  if (ctx.st.field.priorityNullifiedRound === ctx.st.round && p > 0) p = 0;
+  return p;
+}
+
+function actionKey(ctx: EngineCtx, f: Frozen): number[] {
+  const a = f.action as { techniqueId: string };
+  const c = combatant(ctx.st, f.actorUid);
+  const t = ctx.data.techniques.get(a.techniqueId)!;
+  const continuing = c.charging?.techniqueId === t.id;
+  const speed = speedOf(ctx, c);
+  // Velocidad invertida: dentro de la misma Prioridad actua antes la mas lenta
+  return [continuing ? t.priority : effectivePriority(ctx, t, c), ctx.st.field.trickRoomRounds > 0 ? -speed : speed];
+}
+
 // CANON-MECHANICS 28.5.15
 function resolveAction(ctx: EngineCtx, f: Frozen): void {
   const a = f.action;
+  if (a.kind !== 'technique' && a.kind !== 'partial') return;
+  const t = ctx.data.techniques.get(a.techniqueId)!;
   if (a.kind === 'partial') {
     const pos = findPosition(ctx.st, f.positionId);
     const c = combatant(ctx.st, f.actorUid);
-    const t = ctx.data.techniques.get(a.techniqueId)!;
     if (!pos || pos.occupantUid !== null || !isViableReserve(c)) return fail(ctx, f, 'la Materializacion parcial ya no es posible', 'CANON-MECHANICS 14.3');
-    c.actedThisRound = true;
+    const blocked = techniqueBlockReason(ctx, c, t, true);
+    if (blocked) return fail(ctx, f, blocked, 'CANON-MECHANICS 14.3');
+    f.done = true;
+    startAction(c);
     pos.partialUid = c.uid;
     const ev = emit(ctx.st, { type: 'partial_materialization', actor: c.uid, targets: [pos.id], data: { technique: t.id }, ruleRef: 'CANON-MECHANICS 1 (Materializacion parcial) / 32' });
-    executeTechnique(ctx, t, c, a.target, ev, true);
+    executeTechnique(ctx, t, c, a.target, ev, true, a.choice);
     pos.partialUid = null;
     emit(ctx.st, { type: 'partial_end', actor: c.uid, targets: [pos.id], cause: ev, ruleRef: 'CANON-MECHANICS 32' });
     return;
   }
-  if (a.kind !== 'technique') return;
   const c = stillOccupies(ctx, f);
   if (!c) return fail(ctx, f, 'el usuario ya no esta activo; la accion se pierde', 'CANON-MECHANICS 16.6 / 28.5.15');
   if (c.flinched) return fail(ctx, f, 'retrocede y no puede actuar este turno', 'CANON-TECHNIQUES / GAP-FLINCH');
-  c.actedThisRound = true;
-  c.dodgeStreak = 0;
-  const t = ctx.data.techniques.get(a.techniqueId)!;
   const continuing = c.charging?.techniqueId === t.id;
   if (!continuing) {
-    const avail = techniqueAvailability(t, ctx.st.config.effectsMode);
-    if (!avail.executable) return fail(ctx, f, avail.reason ?? 'tecnica no ejecutable', 'CANON-MECHANICS 14.3');
-    const dis = restrictionActive(c, 'no_same_technique_consecutive');
-    if (dis && c.lastTurnTechniqueId === t.id) return fail(ctx, f, `${dis}: tecnica repetida`, 'CANON-MECHANICS 14.3 / 24.8');
+    const blocked = techniqueBlockReason(ctx, c, t, false);
+    if (blocked) return fail(ctx, f, blocked, 'CANON-MECHANICS 14.3');
   }
+  f.done = true;
+  startAction(c);
+  c.dodgeStreak = 0;
   c.lastTurnTechniqueId = t.id;
-  if (t.override?.charge && !continuing) {
+  const skip = (t.override?.chargeSkipEnvironment ?? []).includes(ctx.st.environment?.id ?? '');
+  if (t.override?.charge && !continuing && !skip) {
     c.charging = { techniqueId: t.id, target: a.target };
+    c.committedTechnique ??= t.id;
     emit(ctx.st, { type: 'charge_start', actor: c.uid, data: { technique: t.id }, ruleRef: 'CANON-MECHANICS 19.5' });
     return;
   }
   const target = continuing ? c.charging!.target : a.target;
   c.charging = null;
-  const ev = emit(ctx.st, { type: 'technique', actor: c.uid, targets: target.kind === 'position' ? [target.positionId] : [], data: { technique: t.id, priority: t.priority }, ruleRef: 'CANON-MECHANICS 18' });
-  executeTechnique(ctx, t, c, target, ev);
+  const ev = emit(ctx.st, { type: 'technique', actor: c.uid, targets: target.kind === 'position' ? [target.positionId] : [], data: { technique: t.id, priority: t.priority, chargeSkipped: skip || undefined }, ruleRef: 'CANON-MECHANICS 18' });
+  executeTechnique(ctx, t, c, target, ev, false, a.choice);
 }
 
 function hadTurn(c: Combatant): boolean {
   return c.presentAtDeclaration && c.location === 'field';
 }
 
+// Marcas periodicas, marcas de muerte y expiraciones de fin de ronda
+function endOfRoundMarks(ctx: EngineCtx): void {
+  const st = ctx.st;
+  const present = orderDesc(ctx, st.sides.flatMap((s) => s.combatants).filter((c) => c.location === 'field'), (c) => [speedOf(ctx, c)], 'end_of_round', (c) => c.uid);
+  for (const c of present) {
+    for (const m of marksOf(c, 'periodic')) {
+      if (c.location !== 'field') break;
+      if (typeof m.params.heal === 'number') heal(ctx, c, (c.maxHp * m.params.heal) / 100, m.source);
+      if (typeof m.params.loss === 'number') {
+        const pct = m.params.loss + Number(m.params.accumulated ?? 0);
+        const ev = emit(st, { type: 'periodic', actor: m.by, targets: [c.uid], data: { source: m.source, pct } });
+        loseHp(ctx, c, (c.maxHp * pct) / 100, m.source, ev, 'periodic_damage');
+        if (typeof m.params.increment === 'number') m.params.accumulated = Number(m.params.accumulated ?? 0) + m.params.increment;
+        defeatIfZero(ctx, c, ev);
+      }
+    }
+    for (const m of marksOf(c, 'death')) {
+      if (c.location === 'field' && st.round >= Number(m.params.atEndOfRound)) {
+        const ev = emit(st, { type: 'death_mark', actor: m.by, targets: [c.uid], data: { source: m.source, gap: 'GAP-CANTO-COUNT' } });
+        loseHp(ctx, c, c.hp, m.source, ev, 'death_mark_damage');
+        defeatIfZero(ctx, c, ev);
+      }
+    }
+  }
+  flushPending(ctx);
+  for (const c of st.sides.flatMap((s) => s.combatants)) {
+    for (const m of [...c.marks]) {
+      const e = m.expires;
+      let gone = false;
+      if (e.kind === 'end_of_round') gone = st.round >= e.round;
+      else if (e.kind === 'rounds') gone = --e.left <= 0;
+      if (!gone) continue;
+      removeMark(c, m);
+      if (m.kind === 'temp_stage' && c.location === 'field') {
+        const stat = m.params.stat as StageKey;
+        c.stages[stat] = clampStage(c.stages[stat] - Number(m.params.applied ?? 0));
+        emit(st, { type: 'stage', targets: [c.uid], data: { stat, to: c.stages[stat], source: m.source, reverted: true, gap: 'GAP-TEMP-STAGE' } });
+      }
+      emit(st, { type: 'mark_expired', targets: [c.uid], data: { kind: m.kind, source: m.source } });
+    }
+  }
+  const f = st.field;
+  if (f.trickRoomRounds > 0 && --f.trickRoomRounds === 0) emit(st, { type: 'field_flag_expired', data: { flag: 'trick_room' } });
+  if (f.revelationRounds > 0 && --f.revelationRounds === 0) emit(st, { type: 'field_flag_expired', data: { flag: 'revelation' } });
+}
+
 // CANON-MECHANICS 28.6
 function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
   const st = ctx.st;
   st.phase = 'close';
-  const turnHolders = orderDesc(ctx, st.sides.flatMap((s) => s.combatants).filter(hadTurn), (c) => [effSpeed(ctx.data, c)], 'end_of_turn', (c) => c.uid);
+  const turnHolders = orderDesc(ctx, st.sides.flatMap((s) => s.combatants).filter(hadTurn), (c) => [speedOf(ctx, c)], 'end_of_turn', (c) => c.uid);
   for (const c of turnHolders) {
     for (const s of c.statuses) {
       const dot = ctx.data.statuses.get(s.id)?.damageOverTime;
@@ -263,13 +377,18 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
       const before = c.hp;
       c.hp -= loss;
       const ev = emit(st, { type: 'status_damage', actor: c.uid, data: { status: s.id, loss, before, after: c.hp, gap: 'GAP-DOT-ROUNDING' }, ruleRef: `CANON-MECHANICS ${ctx.data.statuses.get(s.id)?.section ?? '24'}` });
-      if (c.hp <= 0) {
-        const pid = c.positionId!;
-        exitField(ctx, c, 'defeat', ev);
-        forcedReplacement(ctx, pid, ev);
-      }
+      afterHpLoss(ctx, c, before, ev);
+      defeatIfZero(ctx, c, ev);
+      flushPending(ctx, ev);
+    }
+    // Manifestaciones periodicas y Climas/Campos "por turno"
+    if (c.location === 'field') {
+      runAuras(ctx, c, 'end_of_turn');
+      defeatIfZero(ctx, c);
+      flushPending(ctx);
     }
   }
+  endOfRoundMarks(ctx);
   emit(st, { type: 'end_of_round', ruleRef: 'CANON-MECHANICS 28.6.17' });
 
   for (const c of turnHolders) {
@@ -277,10 +396,13 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
     c.turnsMaterialized++;
     c.turnsSinceEntry++;
     for (const s of c.statuses) for (const k of Object.keys(s.counters)) if ((s.counters[k] ?? 0) > 0) s.counters[k]!--;
+    for (const m of [...c.marks]) if (m.expires.kind === 'turns' && --m.expires.left <= 0) removeMark(c, m);
   }
   emit(st, { type: 'counters_advanced', data: { creatures: turnHolders.filter(hadTurn).map((c) => c.uid), gap: 'GAP-TURN-PREDICATE' }, ruleRef: 'CANON-MECHANICS 24.2 / 28.6.18' });
   for (const side of st.sides) {
-    side.sideEffects = side.sideEffects.map((e) => ({ ...e, roundsLeft: e.roundsLeft - 1 })).filter((e) => e.roundsLeft > 0);
+    for (const e of side.sideEffects) e.roundsLeft--;
+    for (const e of side.sideEffects.filter((x) => x.roundsLeft <= 0)) emit(st, { type: 'side_effect_expired', data: { side: side.index, id: e.id } });
+    side.sideEffects = side.sideEffects.filter((e) => e.roundsLeft > 0);
   }
 
   for (const side of st.sides) {
@@ -336,24 +458,31 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
   const st = structuredClone(state);
   const ctx: EngineCtx = { data, st, controllers };
   const frozen = freeze(ctx, declarations);
+  ctx.declared = new Map(frozen.map((f) => [f.actorUid, f.action]));
   for (const f of frozen) emit(st, { type: 'declaration', actor: f.actorUid, targets: [f.positionId], data: { action: f.action }, ruleRef: 'CANON-MECHANICS 14.1' });
 
   st.phase = 'switches';
   const switches = frozen.filter((f) => f.action.kind === 'switch');
-  for (const f of orderDesc(ctx, switches, (x) => [effSpeed(data, combatant(st, x.actorUid))], 'switch_order', (x) => x.actorUid)) resolveSwitch(ctx, f);
+  for (const f of orderDesc(ctx, switches, (x) => [speedOf(ctx, combatant(st, x.actorUid))], 'switch_order', (x) => x.actorUid)) resolveSwitch(ctx, f, frozen);
 
   st.phase = 'dodges';
   for (const f of frozen.filter((x) => x.action.kind === 'dodge')) resolveDodge(ctx, f);
 
   st.phase = 'actions';
-  const acts = frozen.filter((f) => f.action.kind === 'technique' || f.action.kind === 'partial');
-  const key = (f: Frozen) => {
-    const a = f.action as { techniqueId: string };
-    return [data.techniques.get(a.techniqueId)?.priority ?? 0, effSpeed(data, combatant(st, f.actorUid))];
-  };
-  const ordered = orderDesc(ctx, acts, key, 'action_order', (x) => x.actorUid);
-  emit(st, { type: 'action_order', data: { order: ordered.map((f) => f.actorUid), gap: 'GAP-ORDER-STATIC' }, ruleRef: 'CANON-MECHANICS 28.5.12-14' });
-  for (const f of ordered) resolveAction(ctx, f);
+  let queue = orderDesc(ctx, frozen.filter((f) => !f.done && (f.action.kind === 'technique' || f.action.kind === 'partial')), (f) => actionKey(ctx, f), 'action_order', (x) => x.actorUid);
+  emit(st, { type: 'action_order', data: { order: queue.map((f) => f.actorUid), gap: 'GAP-ORDER-STATIC' }, ruleRef: 'CANON-MECHANICS 28.5.12-14' });
+  ctx.reorder = false;
+  while (queue.length > 0) {
+    const f = queue.shift()!;
+    if (f.done) continue;
+    resolveAction(ctx, f);
+    if (ctx.reorder && queue.length > 1) {
+      // GAP-PRIORITY-MIDROUND: un cambio de Prioridad durante la ronda reordena las acciones pendientes
+      queue = orderDesc(ctx, queue, (x) => actionKey(ctx, x), 'action_reorder', (x) => x.actorUid);
+      emit(st, { type: 'action_order', data: { order: queue.map((x) => x.actorUid), reordered: true, gap: 'GAP-PRIORITY-MIDROUND' } });
+    }
+    ctx.reorder = false;
+  }
 
   closeRound(ctx, new Set(frozen.filter((f) => f.action.kind === 'surrender').map((f) => f.side)));
   return st;

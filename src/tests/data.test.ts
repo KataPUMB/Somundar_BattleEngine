@@ -52,7 +52,8 @@ test('informe de cobertura coherente en strict y lenient', () => {
   assert.equal(strict.techniques.executable, (strict.techniques.byStatus.base_only_verified ?? 0) + (strict.techniques.byStatus.implemented ?? 0));
   assert.equal(lenient.techniques.executable, 343 - (lenient.techniques.byStatus.needs_handler ?? 0) - (lenient.techniques.byStatus.curated_pending ?? 0));
   assert.equal(strict.manifestations.executable, strict.manifestations.byStatus.implemented ?? 0);
-  assert.equal(strict.manifestations.entries.find((e) => e.id === 'velo_nocturno')?.status, 'curated_pending');
+  assert.deepEqual(strict.techniques.entries.filter((e) => !e.executable).map((e) => e.id), []);
+  assert.equal(strict.manifestations.executable, 138);
 });
 
 test('condiciones desconocidas en el DSL se rechazan', () => {

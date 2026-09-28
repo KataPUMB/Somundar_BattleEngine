@@ -33,6 +33,15 @@ export function createCombatant(side: SideIndex, creature: BondedCreature): Comb
     actedThisRound: false,
     flinched: false,
     entryBonusesUsed: [],
+    marks: [],
+    damagedThisRound: false,
+    lastDamageDealtRound: null,
+    lastDamagingMissed: false,
+    techUses: {},
+    streak: null,
+    committedTechnique: null,
+    everUsed: [],
+    onceUsed: [],
   };
 }
 

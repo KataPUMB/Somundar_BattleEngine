@@ -32,7 +32,46 @@ export interface Combatant {
   actedThisRound: boolean;
   flinched: boolean;
   entryBonusesUsed: string[];
+  marks: Mark[];
+  damagedThisRound: boolean;
+  lastDamageDealtRound: number | null;
+  lastDamagingMissed: boolean;
+  techUses: Record<string, number>;
+  streak: { techniqueId: string; targetUid: string; count: number } | null;
+  committedTechnique: string | null;
+  everUsed: string[];
+  onceUsed: string[];
 }
+
+export type Expiry =
+  | { kind: 'exit' }
+  | { kind: 'next_action' }
+  | { kind: 'end_of_round'; round: number }
+  | { kind: 'rounds'; left: number }
+  | { kind: 'turns'; left: number };
+
+export type MarkKind =
+  | 'healing_mod' | 'incoming_accuracy' | 'outgoing_accuracy' | 'damage_taken' | 'retaliate_contact' | 'redirect'
+  | 'no_withdraw' | 'periodic' | 'death' | 'next_damage_bonus' | 'sure_hit' | 'undermine' | 'stored_energy'
+  | 'priority_mod' | 'temp_stage' | 'reactive' | 'type_lock' | 'technique_lock' | 'tag';
+
+// Efecto temporal fijado sobre una criatura; toda marca desaparece con cualquier Salida (GAP-MARKS-EXIT)
+export interface Mark {
+  kind: MarkKind;
+  source: string;
+  by: string;
+  expires: Expiry;
+  uses?: number;
+  barrier?: boolean;
+  evasion?: boolean;
+  params: Record<string, unknown>;
+}
+
+export type SideMod =
+  | { kind: 'damage_taken'; pct: number; classes?: string[]; consume?: boolean }
+  | { kind: 'halve'; classes?: string[] }
+  | { kind: 'stat'; stat: string; pct: number }
+  | { kind: 'healing'; pct: number };
 
 export interface Position {
   id: string;
@@ -48,7 +87,8 @@ export interface SideEffect {
   id: string;
   sourceUid: string | null;
   roundsLeft: number;
-  data: Record<string, unknown>;
+  barrier: boolean;
+  mods: SideMod[];
 }
 
 export interface SideState {
@@ -67,11 +107,18 @@ export interface EnvironmentState {
   sinceRound: number;
 }
 
+export interface FieldState {
+  trickRoomRounds: number;
+  priorityNullifiedRound: number | null;
+  revelationRounds: number;
+}
+
 export interface BattleConfig {
   effectsMode: EffectsMode;
   multiHitDistribution: 'uniform';
   maxRounds: number;
   maxChainDepth: number;
+  contactDefault: 'physical' | 'none';
 }
 
 export const DEFAULT_CONFIG: BattleConfig = {
@@ -79,6 +126,7 @@ export const DEFAULT_CONFIG: BattleConfig = {
   multiHitDistribution: 'uniform',
   maxRounds: 100,
   maxChainDepth: 64,
+  contactDefault: 'physical',
 };
 
 export type Outcome =
@@ -93,6 +141,7 @@ export interface BattleState {
   phase: Phase;
   sides: [SideState, SideState];
   environment: EnvironmentState | null;
+  field: FieldState;
   rng: RngState;
   log: BattleEvent[];
   nextEventId: number;
@@ -106,10 +155,10 @@ export type TargetDecl =
   | { kind: 'auto' };
 
 export type Action =
-  | { kind: 'technique'; techniqueId: string; target: TargetDecl }
+  | { kind: 'technique'; techniqueId: string; target: TargetDecl; choice?: string }
   | { kind: 'dodge' }
   | { kind: 'switch'; incomingId: string }
-  | { kind: 'partial'; creatureId: string; techniqueId: string; target: TargetDecl }
+  | { kind: 'partial'; creatureId: string; techniqueId: string; target: TargetDecl; choice?: string }
   | { kind: 'surrender' };
 
 export type Declarations = Record<string, Action>;

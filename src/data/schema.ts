@@ -1,5 +1,5 @@
 import type { StatKey, StatusId, TypeId } from '../engine/model/types.js';
-import type { Effect } from '../engine/effects/dsl.js';
+import type { Condition, Effect } from '../engine/effects/dsl.js';
 
 export type TechniqueCategory = 'anatomical' | 'elemental' | 'no_element' | 'special';
 export type TechniqueClass = 'physical' | 'magical' | 'status';
@@ -95,6 +95,19 @@ export interface TechniqueOverride {
   contact?: boolean;
   neverMiss?: boolean;
   targetSet?: 'all_enemies' | 'all_allies' | 'all_present';
+  /** self: sin objetivo declarado; ally: posicion propia; side: efecto de lado o de campo sin impactos */
+  targetSide?: 'self' | 'ally' | 'side';
+  declareAs?: 'single';
+  noConsecutiveUse?: boolean;
+  chargeSkipEnvironment?: string[];
+  usableIf?: Condition;
+  choices?: string[];
+  splashPct?: number;
+  streak?: { pct: number; max: number };
+  phases?: number;
+  accuracyAssumed?: number;
+  interceptSwitch?: { damagePct: number };
+  requiresInstinct?: boolean;
   handler?: string;
   note?: string;
 }
