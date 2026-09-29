@@ -22,10 +22,12 @@ export interface EngineCtx {
   st: BattleState;
   controllers: Controllers;
   depth?: number;
-  reorder?: boolean;
   declared?: Map<string, Action>;
   selfSwitches?: PendingSelfSwitch[];
   pendingReplacements?: string[];
+  /** tecnicas en curso: sus Reemplazos e Intercambios forzados esperan a que terminen (28.5) */
+  inTechnique?: number;
+  chainDepth?: number;
 }
 
 export function sideOf(st: BattleState, i: SideIndex): SideState {

@@ -11,7 +11,7 @@
       },
       "preparation": {
         "creatures": [
-          { "id": "brasal_a", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
+          { "id": "brasal_a", "nickname": "Chispa", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
             "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
             "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
             "equippedTechniques": ["golpe_candente", "aranazo", "mordisco"], "equippedManifestations": ["calima"],

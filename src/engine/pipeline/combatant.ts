@@ -9,13 +9,14 @@ export function zeroStages(): Record<StageKey, number> {
   return Object.fromEntries(STAGE_KEYS.map((k) => [k, 0])) as Record<StageKey, number>;
 }
 
-export function createCombatant(side: SideIndex, creature: BondedCreature): Combatant {
+export function createCombatant(side: SideIndex, creature: BondedCreature, speciesName?: string): Combatant {
   const stable = stableStats(creature.baseStatsNV50, creature.nv, creature.fortaleza);
   const hp = creature.hpCurrent === undefined ? stable.hp : Math.max(0, Math.min(stable.hp, creature.hpCurrent));
   return {
     uid: `${side}:${creature.id}`,
     side,
     creature,
+    displayName: creature.nickname?.trim() || speciesName || creature.id,
     stable,
     maxHp: stable.hp,
     hp,

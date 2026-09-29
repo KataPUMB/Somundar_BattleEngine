@@ -6,7 +6,7 @@ import { allCombatants } from '../engine/pipeline/context.js';
 export function creatureName(st: BattleState, uid: string | undefined): string {
   if (!uid) return '?';
   const c = allCombatants(st).find((x) => x.uid === uid);
-  return c ? `${c.creature.name ?? c.creature.id} (${st.sides[c.side].summoner.name})` : uid;
+  return c ? `${c.displayName} (${st.sides[c.side].summoner.name})` : uid;
 }
 
 export function techName(data: GameData, id: unknown): string {
@@ -40,7 +40,7 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
   const tgt = creatureName(st, e.targets?.[0]);
   const d = e.data ?? {};
   switch (e.type) {
-    case 'battle_start': return `Combate (semilla ${String(d.seed)}, modo ${String((d.config as { effectsMode?: string })?.effectsMode)}). Supuestos activos: ${(d.assumptions as unknown[]).length} (ver "cli gaps")`;
+    case 'battle_start': return `Combate (semilla ${String(d.seed)}, modo ${String((d.config as { effectsMode?: string })?.effectsMode)}, constante de dano ${String((d.config as { damageConstant?: number })?.damageConstant)}). Supuestos activos: ${(d.assumptions as unknown[]).length} (ver "cli gaps")`;
     case 'round_start': return `\n=== Ronda ${e.round} ===`;
     case 'materialize': return `${who} se materializa en ${e.targets?.[0]}`;
     case 'manifestation_inert': return `  Manifestacion ${String(d.manifestation)} de ${who}: sin efecto (${String(d.reason)})`;
@@ -51,7 +51,7 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'entry_complete': return null;
     case 'dodge_success': return `${who} esquiva (uso ${String(d.consecutiveUse)}, ${String(d.chance)}%): exito`;
     case 'dodge_fail': return `${who} intenta esquivar (uso ${String(d.consecutiveUse)}, ${String(d.chance)}%): fallo`;
-    case 'action_order': return null;
+    case 'action_order': return d.reordered ? `  (cambia el orden: ${(d.order as string[]).map((u) => creatureName(st, u)).join(' > ')})` : null;
     case 'technique': return `${who} usa ${techName(data, d.technique)}`;
     case 'partial_materialization': return `${who} se materializa parcialmente en ${e.targets?.[0]} para usar ${techName(data, d.technique)}`;
     case 'partial_end': return `  ${who} vuelve al Intermedio`;

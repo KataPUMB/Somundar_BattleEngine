@@ -2002,7 +2002,7 @@ Estado: regla operativa resuelta por precedencia expresa; armonización de redac
 
 ## ISS-005 · Fórmula abreviada de daño
 
-CANON-CREATURES > Daño y Vitalidad presenta `0,75 × Ataque × √(Ataque / Defensa)`. CANON-MECHANICS > 23.1. Fórmula base añade PB/100, M, T y R, con redondeo y límites en 23.5. La expresión abreviada coincide con un caso base cuando esos factores valen uno; no debe usarse como fórmula completa de cualquier técnica.
+CANON-CREATURES > Daño y Vitalidad presenta `0,75 × Ataque × √(Ataque / Defensa)`. CANON-MECHANICS > 23.1. Fórmula base añade PB/100, M, T y R, con redondeo y límites en 23.5. La expresión abreviada coincide con un caso base cuando esos factores valen uno; no debe usarse como fórmula completa de cualquier técnica. La constante vigente de CANON-MECHANICS > 23.1 es 0,9375 (antes 0,75); la expresión abreviada de CANON-CREATURES debe leerse con esa constante.
 
 Estado: alcance de uso delimitado. Para cálculo completo se recupera la sección mecánica y los efectos concretos.
 

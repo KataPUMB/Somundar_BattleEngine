@@ -1883,7 +1883,7 @@ No existe bonificación implícita por utilizar una técnica del mismo tipo que 
 
 Para una técnica dañina:
 
-`Daño bruto = 0,75 × (PB / 100) × Ataque × √(Ataque / Defensa) × M × T / R`
+`Daño bruto = 0,9375 × (PB / 100) × Ataque × √(Ataque / Defensa) × M × T / R`
 
 Donde:
 
@@ -1918,7 +1918,7 @@ Las reducciones redactadas como «daño recibido -50%» pertenecen a M, no a R.
 
 Si una técnica ignora Defensa o Defensa mágica, se elimina el término defensivo de la raíz:
 
-`Daño bruto = 0,75 × (PB / 100) × Ataque × M × T / R`
+`Daño bruto = 0,9375 × (PB / 100) × Ataque × M × T / R`
 
 ## 23.5. Límites
 

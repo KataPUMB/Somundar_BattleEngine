@@ -45,7 +45,8 @@ export interface PersistentStatus {
 
 export interface BondedCreature {
   id: string;
-  name?: string;
+  /** sustituye al nombre de la especie en el log y la consola */
+  nickname?: string;
   speciesId: string;
   form?: string;
   transfigurationLine?: string | null;

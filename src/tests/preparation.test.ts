@@ -1,10 +1,22 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { validatePreparation } from '../engine/legality/preparation.js';
+import { createBattle } from '../engine/pipeline/battle.js';
+import { creatureName } from '../app/format.js';
 import { creature, loadData, setup, summoner } from './helpers.js';
 
 const data = loadData();
 const codes = (v: ReturnType<typeof validatePreparation>) => v.filter((x) => x.severity === 'error').map((x) => x.code).sort();
+
+test('nickname sustituye al nombre de la especie; sin nickname se usa la especie; vacio es error', () => {
+  const st = createBattle(data, [
+    setup(summoner('ana'), [creature('a', { speciesId: 'brasal', nickname: 'Chispa' })]),
+    setup(summoner('bea'), [creature('b', { speciesId: 'brasal' })]),
+  ], { seed: 1 });
+  assert.equal(creatureName(st, '0:a'), 'Chispa (ana)');
+  assert.equal(creatureName(st, '1:b'), `${data.species.get('brasal')!.name} (bea)`);
+  assert.deepEqual(codes(validatePreparation(setup(summoner('ana'), [creature('a', { nickname: '  ' })]), data)), ['CRE_NICKNAME']);
+});
 
 test('Preparacion valida sin errores', () => {
   const s = summoner('ana', 'invocador', { manifestationRepertoire: ['combustion', 'juramento_de_las_mareas'] });

@@ -156,7 +156,7 @@ export function computeHit(ctx: EngineCtx, h: HitScope, perHit: number): HitCalc
     }
   }
 
-  const raw = rawDamage({ power: perHit, attack, defense, damagePcts: mods.map((m) => m.pct), typeMult, halvings, ignoreDefense });
+  const raw = rawDamage({ power: perHit, attack, defense, damagePcts: mods.map((m) => m.pct), typeMult, halvings, ignoreDefense, constant: ctx.st.config.damageConstant });
   return { attack, defense, typeMult, mods, halvings, ignoreDefense, raw, damageTakenMarks, consumedSideEffects };
 }
 

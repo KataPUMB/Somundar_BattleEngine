@@ -20,6 +20,7 @@ export interface DamageInput {
   typeMult: number;
   halvings: number;
   ignoreDefense: boolean;
+  constant: number;
 }
 
 // CANON-MECHANICS 23.1-23.4: sin redondeo intermedio
@@ -27,7 +28,7 @@ export function rawDamage(i: DamageInput): number {
   const m = Math.max(0, 1 + i.damagePcts.reduce((a, b) => a + b, 0) / 100);
   const r = 2 ** i.halvings;
   const root = i.ignoreDefense ? 1 : Math.sqrt(i.attack / Math.max(1, i.defense));
-  return (0.75 * (i.power / 100) * i.attack * root * m * i.typeMult) / r;
+  return (i.constant * (i.power / 100) * i.attack * root * m * i.typeMult) / r;
 }
 
 export interface DamageOutcome {

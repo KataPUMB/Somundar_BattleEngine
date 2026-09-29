@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { DeclarationError } from '../engine/pipeline/battle.js';
+import { beginRound, DeclarationError, resolveRound } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
 import { effStat } from '../engine/pipeline/combatant.js';
 import { stableStat } from '../engine/rules/stats.js';
@@ -178,4 +178,52 @@ test('Ruptura de afinidad ignora resistencias; Negacion elemental impide el supe
   const f = c('f', { types: ['fuego'], equippedTechniques: ['llama'] });
   st = round(data, start(data, setup(S('a'), [f]), setup(S('b'), [z({ types: ['mitico', weak], equippedManifestations: ['negacion_elemental'] })])), { S0P0: at('llama', 'S1P0'), S1P0: self('enfado') });
   assert.equal(dmg(st, uid(0, 'f'))[0]!.data!.typeMult, 1);
+});
+
+test('10.10 / 16.5: Rebufo -> Entrada -> Respuesta -> Intercambio forzado -> Entrada: todo se resuelve antes de la siguiente accion y en profundidad', () => {
+  const n = c('n', { speciesId: 'nimburu', types: ['aire'], baseStatsNV50: { ...tank, spe: 200 }, equippedTechniques: ['rebufo'] });
+  const r = c('r', { types: ['tierra'], nv: 100, baseStatsNV50: tank, equippedTechniques: ['enfado'], equippedManifestations: ['presencia_opresiva', 'presion_arcana'] });
+  const q = c('q', { baseStatsNV50: tank, equippedTechniques: ['enfado'], equippedManifestations: ['marca_ardiente'] });
+  let st = start(data, setup(S('a'), [n, r]), setup(S('b'), [z({ equippedManifestations: ['no_me_toques'] }), q]));
+  st = resolveRound(data, beginRound(data, st), { S0P0: at('rebufo', 'S1P0'), S1P0: at('aranazo', 'S0P0') }, { chooseOptionalSwitch: (_s, _u, cands) => cands[0]! });
+  const log = st.log.filter((e) => e.round === 1);
+  const idx = (pred: (e: (typeof log)[number]) => boolean) => log.findIndex(pred);
+  const rebufoEnd = idx((e) => e.type === 'technique_end' && e.data!.technique === 'rebufo');
+  const rIn = idx((e) => e.type === 'self_switch' && e.actor === uid(0, 'n'));
+  const presencia = idx((e) => e.type === 'stage' && e.data!.source === 'presencia_opresiva' && e.targets?.[0] === uid(1, 'z'));
+  const zOut = idx((e) => e.type === 'self_switch' && e.actor === uid(1, 'z'));
+  const burn = idx((e) => e.data?.source === 'marca_ardiente' && e.targets?.[0] === uid(0, 'r'));
+  const arcana = idx((e) => e.type === 'stage' && e.data!.source === 'presion_arcana');
+  const zFails = idx((e) => e.type === 'action_failed' && e.actor === uid(1, 'z'));
+  assert.ok(rebufoEnd < rIn && rIn < presencia && presencia < zOut && zOut < burn && burn < arcana && arcana < zFails, JSON.stringify([rebufoEnd, rIn, presencia, zOut, burn, arcana, zFails]));
+  assert.equal(log[arcana]!.targets?.[0], uid(1, 'q'), 'Presion arcana alcanza al enemigo que ya ha entrado');
+  assert.equal(dmg(st, uid(1, 'z')).length, 0);
+  assert.equal(combatant(st, uid(1, 'q')).stages.matk, -2);
+});
+
+test('16.6 / 28.5: un Reemplazo forzado resuelve toda su cadena de Entrada antes de la siguiente accion', () => {
+  const a = c('a', { baseStatsNV50: { ...FLAT_STATS, atk: 3000, spe: 200 } });
+  const weak = c('w', { baseStatsNV50: { ...FLAT_STATS, hp: 10 }, equippedTechniques: ['enfado'] });
+  const p = c('p', { baseStatsNV50: tank, equippedTechniques: ['enfado'], equippedManifestations: ['presencia_opresiva'] });
+  let st = start(data, setup(S('a'), [a]), setup(S('b'), [weak, p]));
+  st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: self('enfado') });
+  const log = st.log.filter((e) => e.round === 1);
+  const repl = log.findIndex((e) => e.type === 'forced_replacement');
+  const drop = log.findIndex((e) => e.type === 'stage' && e.data!.source === 'presencia_opresiva');
+  const end = log.findIndex((e) => e.type === 'end_of_round');
+  assert.ok(repl >= 0 && repl < drop && drop < end);
+  assert.equal(combatant(st, uid(0, 'a')).stages.atk, -2);
+});
+
+test('18.2 / 28.5: si una accion altera la Velocidad se recalcula el orden de las pendientes (Estela)', () => {
+  const a1 = c('a1', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: { ...tank, spe: 200 }, equippedTechniques: ['estela', 'aranazo'] });
+  const a2 = c('a2', { baseStatsNV50: { ...tank, spe: 50 } });
+  const b = c('b', { baseStatsNV50: { ...tank, spe: 80 } });
+  const st = round(data, start(data, setup(S('a', 'invocador'), [a1, a2], ['a1', 'a2']), setup(S('b'), [b])), {
+    S0P0: self('estela'), S0P1: at('aranazo', 'S1P0'), S1P0: at('aranazo', 'S0P0'),
+  });
+  const orders = eventsOf(st, 'action_order').map((e) => e.data!.order);
+  assert.deepEqual(orders, [[uid(0, 'a1'), uid(1, 'b'), uid(0, 'a2')], [uid(0, 'a2'), uid(1, 'b')]]);
+  const hits = eventsOf(st, 'damage').map((e) => e.actor);
+  assert.deepEqual(hits, [uid(0, 'a2'), uid(1, 'b')]);
 });

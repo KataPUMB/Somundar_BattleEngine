@@ -2,10 +2,13 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { beginRound, DeclarationError, resolveRound } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
-import type { Action, BattleState, Declarations } from '../engine/model/battle.js';
+import { DEFAULT_CONFIG, type Action, type BattleState, type Declarations } from '../engine/model/battle.js';
 import type { BondedCreature } from '../engine/model/types.js';
 import type { Controllers } from '../engine/pipeline/context.js';
 import { creature, eventsOf, loadData, round, setup, start, summoner, uid, FLAT_STATS } from './helpers.js';
+import { legalMap } from '../app/simulate.js';
+import { randomLegalPolicy } from '../engine/ai/random.js';
+import { createRng } from '../engine/rng.js';
 
 const data = loadData();
 const tank = { ...FLAT_STATS, hp: 5000 };
@@ -53,7 +56,7 @@ test('25.3 / 23.3: Barrera de fuerza divide el dano fisico; Martillo magmatico l
   st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: self('barrera_de_fuerza') });
   st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: self('enfado') });
   assert.equal(dmg(st, uid(0, 'a'), 2)[0]!.data!.halvings, 1);
-  assert.equal(dmg(st, uid(0, 'a'), 2)[0]!.data!.loss, Math.round((0.75 * 0.45 * 100) / 2));
+  assert.equal(dmg(st, uid(0, 'a'), 2)[0]!.data!.loss, Math.round((DEFAULT_CONFIG.damageConstant * 0.45 * 100) / 2));
   st = round(data, st, { S0P0: at('martillo_magmatico', 'S1P0'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'side_effect_destroyed', 3)[0]!.data!.id, 'barrera_de_fuerza');
   assert.equal(dmg(st, uid(0, 'a'), 3)[0]!.data!.halvings, 0);
@@ -302,4 +305,25 @@ test('Colapso destruye las barreras enemigas antes del dano e impide retirarse e
   st = round(data, st, { S0P0: self('colapso'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'side_effect_destroyed', 2)[0]!.data!.id, 'boveda_cristalina');
   assert.ok(eventsOf(st, 'mark', 2).some((e) => e.data!.kind === 'no_withdraw'));
+});
+
+test('Puno preciso fuera del primer turno se marca como futil y la IA aleatoria no lo elige', () => {
+  const a = c('a', { equippedTechniques: ['puno_preciso', 'aranazo'] });
+  let st = beginRound(data, start(data, setup(S('a'), [a]), setup(S('b'), [z()])));
+  const opt = (s: BattleState) => legalMap(data, s, 0).get('S0P0')!.find((o) => o.action.kind === 'technique' && o.action.techniqueId === 'puno_preciso')!;
+  assert.equal(opt(st).futile, undefined);
+  st = beginRound(data, resolveRound(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: self('enfado') }));
+  assert.ok(opt(st).legal && opt(st).futile);
+  for (let seed = 1; seed <= 50; seed++) {
+    const d = randomLegalPolicy.declare(st, 0, legalMap(data, st, 0), createRng(seed));
+    assert.notEqual((d.S0P0 as { techniqueId?: string }).techniqueId, 'puno_preciso');
+  }
+});
+
+test('23.1: la constante de dano del canon es 0,9375 (+25% sobre la anterior 0,75) y es configurable', () => {
+  const hit = (config = {}) => {
+    const st = round(data, start(data, setup(S('a'), [c('a')]), setup(S('b'), [z()]), 1, config), { S0P0: at('aranazo', 'S1P0'), S1P0: self('enfado') });
+    return Number(eventsOf(st, 'damage')[0]!.data!.raw);
+  };
+  assert.ok(Math.abs(hit() / hit({ damageConstant: 0.75 }) - 1.25) < 1e-9);
 });

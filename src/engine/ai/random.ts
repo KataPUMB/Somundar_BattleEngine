@@ -46,7 +46,9 @@ export const randomLegalPolicy: Policy = {
   declare(view, side, legal, rng) {
     const out: Declarations = {};
     for (const [pid, opts] of legal) {
-      const ok = opts.filter((o) => o.legal && o.action.kind !== 'surrender');
+      const legalOpts = opts.filter((o) => o.legal && o.action.kind !== 'surrender');
+      const useful = legalOpts.filter((o) => !o.futile);
+      const ok = useful.length > 0 ? useful : legalOpts;
       const occupied = view.sides[side].positions.find((p) => p.id === pid)?.occupantUid !== null;
       if (ok.length === 0) {
         if (occupied) out[pid] = { kind: 'surrender' };

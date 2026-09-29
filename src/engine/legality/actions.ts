@@ -15,6 +15,8 @@ export interface ActionOption {
   targeting?: Technique['targeting'];
   targetSide?: 'self' | 'ally' | 'side' | 'any';
   choices?: string[];
+  /** legal pero fallara con seguridad al resolverse (p. ej. Puno preciso fuera del primer turno) */
+  futile?: string;
 }
 
 function activeBonds(st: BattleState, side: 0 | 1): number {
@@ -62,6 +64,8 @@ function techniqueOption(ctx: EngineCtx, user: Combatant, tid: string, partial: 
   const info = { targeting: t.override?.declareAs ?? t.targeting, targetSide: side, targetPositions, choices: t.override?.choices };
   const blocked = techniqueBlockReason(ctx, user, t, partial);
   if (blocked) return { action: base, legal: false, reason: blocked, ruleRef: 'CANON-MECHANICS 14.3', ...info };
+  const fails = (t.override?.effects ?? []).find((e) => e.trigger === 'on_use' && e.ops.some((o) => o.op === 'failTechnique') && evalCondition(ctx, e.condition, { subject: user, user, technique: t, partial }));
+  if (fails) return { action: base, legal: true, futile: `fallara al usarse${fails.ruleRef ? ` (${fails.ruleRef})` : ''}`, ...info };
   return { action: base, legal: true, ...info };
 }
 

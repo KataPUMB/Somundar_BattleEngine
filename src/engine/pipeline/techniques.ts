@@ -64,12 +64,6 @@ export function defeatIfZero(ctx: EngineCtx, c: Combatant, cause?: number): void
   }
 }
 
-export function flushReplacements(ctx: EngineCtx, cause?: number): void {
-  const pending = ctx.pendingReplacements ?? [];
-  ctx.pendingReplacements = [];
-  for (const pid of pending) forcedReplacement(ctx, pid, cause);
-}
-
 function redirectTarget(ctx: EngineCtx, t: Technique, user: Combatant, target: Combatant, single: boolean): { target: Combatant; pct: number } | null {
   if (!single || t.class === 'status' || target.side === user.side) return null;
   const guard = sideOf(ctx.st, target.side).combatants.find((c) => c !== target && c.location === 'field' && marksOf(c, 'redirect').length > 0);
@@ -215,6 +209,7 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
   const ov = t.override;
   const effects = ov?.effects ?? [];
   const phase = ov?.phases ? ((user.techUses[t.id] ?? 0) % ov.phases) + 1 : 1;
+  ctx.inTechnique = (ctx.inTechnique ?? 0) + 1;
   // Ultimo recurso y similares se evaluan con los usos previos a esta tecnica
   const bonuses = oncePerEntryBonuses(ctx, t, user, partial);
   user.techUses[t.id] = (user.techUses[t.id] ?? 0) + 1;
@@ -236,6 +231,8 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
   const declared = positionsForTarget(ctx, target);
   const side = ov?.targetSide;
   const targeting = ov?.declareAs ?? t.targeting;
+  // un usuario derrotado a mitad de tecnica (reflejo) no realiza mas impactos
+  const active = () => user.location !== 'defeated';
 
   if (ov?.handler === 'horda') {
     hordeHits(ctx, run, declared);
@@ -246,9 +243,9 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
     run.anyImpact = true;
     emit(ctx.st, { type: 'impact', actor: user.uid, targets: [user.uid], data: { technique: t.id, self: true }, cause });
   } else if (targeting === 'all') {
-    for (let i = 0; i < n; i++) for (const p of autoTargets(ctx, t, user)) resolveHit(ctx, run, p, i, false, false);
+    for (let i = 0; i < n && active(); i++) for (const p of autoTargets(ctx, t, user)) if (active()) resolveHit(ctx, run, p, i, false, false);
   } else if (target.kind === 'perHit') {
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < n && active(); i++) {
       const p = declared[Math.min(i, declared.length - 1)];
       if (!p) break;
       if (i >= declared.length) emit(ctx.st, { type: 'rule_gap', data: { gap: 'GAP-MULTI-OVERFLOW', hitIndex: i }, cause });
@@ -258,7 +255,7 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
     // Objetivo unico: se detiene al derrotar; secuencia Multiobjetivo: pasa a la siguiente posicion declarada (19.4)
     let idx = 0;
     const single = targeting === 'single';
-    for (let i = 0; i < n && idx < declared.length; i++) if (resolveHit(ctx, run, declared[idx]!, i, single, i === 0)) idx++;
+    for (let i = 0; i < n && idx < declared.length && active(); i++) if (resolveHit(ctx, run, declared[idx]!, i, single, i === 0)) idx++;
   }
 
   // GAP-SPLASH: la segunda criatura activa enemiga recibe un % del dano calculado contra el objetivo principal, sin efectos secundarios
@@ -318,18 +315,58 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
 function finish(ctx: EngineCtx, t: Technique, user: Combatant, cause: number, run: TechRun | null): void {
   if (!user.everUsed.includes(t.id)) user.everUsed.push(t.id);
   emit(ctx.st, { type: 'technique_end', actor: user.uid, data: { technique: t.id, damageDealt: run?.damageDealt ?? 0 }, cause, ruleRef: 'CANON-MECHANICS 19.4' });
+  ctx.inTechnique = (ctx.inTechnique ?? 1) - 1;
   // CANON-MECHANICS 19.4 / 28.5: Reemplazos forzados solo al terminar la tecnica; despues los Intercambios forzados
   flushPending(ctx, cause);
 }
 
-// Reemplazos pendientes, Intercambios forzados por efectos y los Reemplazos que estos provoquen
+// Derrotas producidas fuera de un impacto (perdidas por efectos, Climas, respuestas)
+function sweepDefeats(ctx: EngineCtx, cause?: number): void {
+  for (const side of ctx.st.sides) for (const c of side.combatants) if (c.location === 'field' && c.hp <= 0) defeatIfZero(ctx, c, cause);
+}
+
+// CANON-MECHANICS 10.10 / 16.5 / 16.6 / 28.5: la cadena se vacia en profundidad antes de seguir; dentro de una tecnica espera a que termine
 export function flushPending(ctx: EngineCtx, cause?: number): void {
-  for (let guard = 0; guard < 16; guard++) {
-    flushReplacements(ctx, cause);
-    const switches = ctx.selfSwitches ?? [];
-    ctx.selfSwitches = [];
-    for (const p of switches) performSelfSwitch(ctx, p);
-    if ((ctx.pendingReplacements ?? []).length === 0 && (ctx.selfSwitches ?? []).length === 0) return;
+  if ((ctx.inTechnique ?? 0) > 0) return;
+  for (;;) {
+    sweepDefeats(ctx, cause);
+    const pid = ctx.pendingReplacements?.shift();
+    if (pid !== undefined) {
+      resolveChain(ctx, () => forcedReplacement(ctx, pid, cause));
+      continue;
+    }
+    const sw = ctx.selfSwitches?.shift();
+    if (sw) {
+      resolveChain(ctx, () => performSelfSwitch(ctx, sw), true);
+      continue;
+    }
+    return;
+  }
+}
+
+// Resuelve un eslabon y todas sus consecuencias antes que las consecuencias pendientes anteriores
+export function resolveChain(ctx: EngineCtx, step: () => void, droppable = false): void {
+  if ((ctx.inTechnique ?? 0) > 0) return step();
+  const depth = (ctx.chainDepth ?? 0) + 1;
+  if (depth > ctx.st.config.maxChainDepth) {
+    // GAP-CHAIN-DEPTH: se cortan los Intercambios forzados en bucle; Reemplazos y Entradas siempre se resuelven
+    if (droppable) {
+      emit(ctx.st, { type: 'rule_gap', data: { gap: 'GAP-CHAIN-DEPTH', dropped: 'self_switch' }, ruleRef: 'CANON-MECHANICS 10.10' });
+      return;
+    }
+    return step();
+  }
+  const saved = { r: ctx.pendingReplacements ?? [], s: ctx.selfSwitches ?? [] };
+  ctx.pendingReplacements = [];
+  ctx.selfSwitches = [];
+  ctx.chainDepth = depth;
+  try {
+    step();
+    flushPending(ctx);
+  } finally {
+    ctx.chainDepth = depth - 1;
+    ctx.pendingReplacements = [...(ctx.pendingReplacements ?? []), ...saved.r];
+    ctx.selfSwitches = [...(ctx.selfSwitches ?? []), ...saved.s];
   }
 }
 
@@ -340,7 +377,7 @@ function hordeHits(ctx: EngineCtx, run: TechRun, declared: Position[]): void {
     const corpse = horde[i];
     const ct = corpse ? ctx.data.techniques.get(corpse.techniqueId) : undefined;
     const p = declared[Math.min(i, declared.length - 1)];
-    if (!corpse || !ct || !p) break;
+    if (!corpse || !ct || !p || run.user.location === 'defeated') break;
     const attack = stableStat(corpse.atkNV50, run.user.creature.nv);
     const ev = emit(ctx.st, { type: 'horde_corpse', actor: run.user.uid, data: { hitIndex: i, species: corpse.speciesId, technique: ct.id, attack, gap: 'GAP-HORDA' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
     const target = occupantOf(ctx.st, p.id);

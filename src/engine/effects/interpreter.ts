@@ -249,7 +249,6 @@ function runOp(ctx: EngineCtx, o: Op, e: Effect, target: Combatant, s: RunScope)
       }
       // GAP-CANTO-COUNT: la ronda de uso cuenta como la primera
       if (mark.kind === 'death') mark.params.atEndOfRound = ctx.st.round + Number(params.rounds ?? 1) - 1;
-      if (mark.kind === 'priority_mod') ctx.reorder = true;
       addMark(ctx, target, mark, s.cause);
       return false;
     }
@@ -304,7 +303,6 @@ function runOp(ctx: EngineCtx, o: Op, e: Effect, target: Combatant, s: RunScope)
       } else if (o.flag === 'revelation') {
         f.revelationRounds = Number(o.rounds);
       }
-      ctx.reorder = true;
       emit(ctx.st, { ...base, targets: [], type: 'field_flag', data: { flag: o.flag, rounds: o.rounds, source: s.source } });
       return false;
     }

@@ -1,0 +1,84 @@
+{
+  "_nota": "Emboscada: Adriano Valerio contra el Asesino. Preparaciones segun ficha; estadisticas NV50 inventadas (no hay CANON-CREATURES) y sin Fortaleza entrenada declarada.",
+  "seed": 1,
+  "config": { "effectsMode": "strict", "maxRounds": 30 },
+  "sides": [
+    {
+      "summoner": {
+        "id": "adriano", "name": "Adriano Valerio", "estamento": "invocador", "amplitude": 290,
+        "fortalezaCapacity": 40, "fortalezaMaxPerStat": 20, "simultaneity": "stable",
+        "partialMaterialization": true,
+        "manifestationRepertoire": ["mundano", "oportunista", "formacion_de_caza", "filo_del_viento", "marea_reparadora"]
+      },
+      "preparation": {
+        "creatures": [
+          { "id": "risco", "nickname": "Risco", "speciesId": "dracendra", "types": ["fuego"], "nv": 49,
+            "baseStatsNV50": { "hp": 290, "atk": 135, "matk": 85, "def": 100, "mdef": 85, "spe": 105 },
+            "fortaleza": {}, "orientations": ["atk", "spe"],
+            "equippedTechniques": ["ariete_draconico", "proyectil_igneo", "zarpazo", "coletazo"],
+            "equippedManifestations": ["mundano"],
+            "persistentStatuses": [] },
+          { "id": "mota", "nickname": "Mota", "speciesId": "nimbaro", "priorForms": ["nimburu"], "types": ["aire"], "nv": 50,
+            "baseStatsNV50": { "hp": 250, "atk": 90, "matk": 115, "def": 80, "mdef": 90, "spe": 135 },
+            "fortaleza": {}, "orientations": ["matk", "spe"],
+            "equippedTechniques": ["estela", "rebufo", "desorientar", "zarpazo"],
+            "equippedManifestations": ["oportunista", "formacion_de_caza"],
+            "persistentStatuses": [] },
+          { "id": "brumarina", "speciesId": "brumarina", "types": ["aire", "agua"], "nv": 36,
+            "baseStatsNV50": { "hp": 260, "atk": 70, "matk": 125, "def": 80, "mdef": 110, "spe": 105 },
+            "fortaleza": {}, "orientations": ["matk", "mdef"],
+            "equippedTechniques": ["hoja_de_viento", "corrientes_cambiantes", "rafaga", "puno_preciso"],
+            "equippedManifestations": ["filo_del_viento"],
+            "persistentStatuses": [] },
+          { "id": "nayara", "speciesId": "nayara", "types": ["agua"], "nv": 41,
+            "baseStatsNV50": { "hp": 330, "atk": 75, "matk": 100, "def": 120, "mdef": 115, "spe": 70 },
+            "fortaleza": {}, "orientations": ["def", "hp"],
+            "equippedTechniques": ["agua_curativa", "licuar", "chorro", "puno_preciso"],
+            "equippedManifestations": ["marea_reparadora"],
+            "persistentStatuses": [] }
+        ]
+      },
+      "initialDeployment": ["risco", "mota"]
+    },
+    {
+      "summoner": {
+        "id": "asesino", "name": "Asesino", "estamento": "invocador", "amplitude": 250,
+        "fortalezaCapacity": 40, "fortalezaMaxPerStat": 20, "simultaneity": "stable",
+        "partialMaterialization": true,
+        "manifestationRepertoire": [
+          "golpe_desorientador", "reflujo_umbrio", "reflejos_electricos", "noche_protectora",
+          "baluarte", "sed_carmesi", "ruptura_del_vinculo", "hambre_del_abismo"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          { "id": "noctivelo", "speciesId": "noctivelo", "types": ["aire", "oscuridad"], "nv": 57,
+            "baseStatsNV50": { "hp": 250, "atk": 125, "matk": 80, "def": 80, "mdef": 85, "spe": 140 },
+            "fortaleza": {}, "orientations": ["atk", "spe"],
+            "equippedTechniques": ["silencio_de_alas", "rafaga", "mordisco", "golpe_de_ala"],
+            "equippedManifestations": ["golpe_desorientador", "reflujo_umbrio"],
+            "persistentStatuses": [] },
+          { "id": "bramentor", "speciesId": "bramentor", "types": ["rayo", "oscuridad"], "nv": 55,
+            "baseStatsNV50": { "hp": 260, "atk": 90, "matk": 130, "def": 85, "mdef": 90, "spe": 125 },
+            "fortaleza": {}, "orientations": ["matk", "spe"],
+            "equippedTechniques": ["apagon", "salto_de_voltaje", "zarpazo", "mordisco"],
+            "equippedManifestations": ["reflejos_electricos", "noche_protectora"],
+            "persistentStatuses": [] },
+          { "id": "litofis", "speciesId": "litofis", "types": ["tierra", "oscuridad"], "nv": 53,
+            "baseStatsNV50": { "hp": 320, "atk": 125, "matk": 60, "def": 140, "mdef": 95, "spe": 55 },
+            "fortaleza": {}, "orientations": ["atk", "def"],
+            "equippedTechniques": ["muralla_quebrada", "corte_de_vinculo", "mordisco_de_presa", "impacto_acorazado"],
+            "equippedManifestations": ["baluarte", "sed_carmesi"],
+            "persistentStatuses": [] },
+          { "id": "sedopan", "speciesId": "sedopan", "types": ["oscuridad"], "nv": 50,
+            "baseStatsNV50": { "hp": 300, "atk": 90, "matk": 105, "def": 95, "mdef": 100, "spe": 110 },
+            "fortaleza": {}, "orientations": ["spe", "hp"],
+            "equippedTechniques": ["anular_prioridad", "tu_miedo", "punetazo", "patada"],
+            "equippedManifestations": ["ruptura_del_vinculo", "hambre_del_abismo"],
+            "persistentStatuses": [] }
+        ]
+      },
+      "initialDeployment": ["noctivelo", "litofis"]
+    }
+  ]
+}

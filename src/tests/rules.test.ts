@@ -54,12 +54,14 @@ test('20.2: 100% con Desorientado -> 75%; + Tercer ojo (+10 pp) -> 85%', () => {
   assert.equal(finalAccuracy(90, { relativePct: [50], percentagePoints: [] }), 100);
 });
 
-test('23.1-23.4: formula de dano, M, R e ignorar Defensa', () => {
-  const base = { power: 100, attack: 400, defense: 100, damagePcts: [], typeMult: 1, halvings: 0, ignoreDefense: false };
-  close(rawDamage(base), 0.75 * 400 * 2);
-  close(rawDamage({ ...base, damagePcts: [100, -50] }), 0.75 * 400 * 2 * 1.5);
-  close(rawDamage({ ...base, halvings: 2 }), (0.75 * 400 * 2) / 4);
-  close(rawDamage({ ...base, ignoreDefense: true }), 0.75 * 400);
+test('23.1-23.4: formula de dano, M, R e ignorar Defensa (constante configurable)', () => {
+  const K = 0.75;
+  const base = { power: 100, attack: 400, defense: 100, damagePcts: [], typeMult: 1, halvings: 0, ignoreDefense: false, constant: K };
+  close(rawDamage(base), K * 400 * 2);
+  close(rawDamage({ ...base, damagePcts: [100, -50] }), K * 400 * 2 * 1.5);
+  close(rawDamage({ ...base, halvings: 2 }), (K * 400 * 2) / 4);
+  close(rawDamage({ ...base, ignoreDefense: true }), K * 400);
+  close(rawDamage({ ...base, constant: K * 1.25 }), K * 1.25 * 400 * 2);
   assert.equal(rawDamage({ ...base, damagePcts: [-150] }), 0);
 });
 

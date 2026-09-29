@@ -25,6 +25,7 @@ function validateCreature(c: BondedCreature, path: string, setup: SideSetup, dat
   const w = (code: string, ruleRef: string, message: string, p = path) => out.push({ severity: 'warning', code, ruleRef, message, path: p });
   const s = setup.summoner;
 
+  if (c.nickname !== undefined && (typeof c.nickname !== 'string' || c.nickname.trim() === '')) e('CRE_NICKNAME', 'escenario', 'nickname debe ser un texto no vacio');
   if (!Number.isInteger(c.nv) || c.nv < 1 || c.nv > 100) e('CRE_NV_RANGE', 'CANON-MECHANICS 1 (Nivel de Vinculo)', `NV ${c.nv} fuera de 1-100`);
   if (c.types.length < 1 || c.types.length > 2) e('CRE_TYPES', 'CANON-MECHANICS 22.2', 'una criatura tiene 1 o 2 tipos');
   for (const t of c.types) if (!TYPE_IDS.includes(t)) e('CRE_TYPES', 'CANON-MECHANICS 22', `tipo desconocido: ${t}`);

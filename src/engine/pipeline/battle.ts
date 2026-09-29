@@ -48,7 +48,7 @@ export function createBattle(data: GameData, setups: [SideSetup, SideSetup], opt
     for (let slot = 0; slot < positionCapacityAtDeployment(s); slot++) {
       positions.push({ id: positionId(side, slot), side, slot, temporary: false, openedRound: 0, occupantUid: null, partialUid: null });
     }
-    return { index: side, summoner: s.summoner, combatants: s.preparation.creatures.map((c) => createCombatant(side, c)), positions, sideEffects: [], surrendered: false };
+    return { index: side, summoner: s.summoner, combatants: s.preparation.creatures.map((c) => createCombatant(side, c, data.species.get(c.speciesId)?.name)), positions, sideEffects: [], surrendered: false };
   }) as [SideState, SideState];
 
   const st: BattleState = {
@@ -341,8 +341,8 @@ function endOfRoundMarks(ctx: EngineCtx): void {
         defeatIfZero(ctx, c, ev);
       }
     }
+    flushPending(ctx);
   }
-  flushPending(ctx);
   for (const c of st.sides.flatMap((s) => s.combatants)) {
     for (const m of [...c.marks]) {
       const e = m.expires;
@@ -462,28 +462,65 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
   for (const f of frozen) emit(st, { type: 'declaration', actor: f.actorUid, targets: [f.positionId], data: { action: f.action }, ruleRef: 'CANON-MECHANICS 14.1' });
 
   st.phase = 'switches';
-  const switches = frozen.filter((f) => f.action.kind === 'switch');
-  for (const f of orderDesc(ctx, switches, (x) => [speedOf(ctx, combatant(st, x.actorUid))], 'switch_order', (x) => x.actorUid)) resolveSwitch(ctx, f, frozen);
+  const switchKey = (x: Frozen) => [speedOf(ctx, combatant(st, x.actorUid))];
+  let switchQueue = orderDesc(ctx, frozen.filter((f) => f.action.kind === 'switch'), switchKey, 'switch_order', (x) => x.actorUid);
+  let switchKeys = new Map(switchQueue.map((x) => [x, switchKey(x)]));
+  while (switchQueue.length > 0) {
+    resolveSwitch(ctx, switchQueue.shift()!, frozen);
+    const next = reorderPending(ctx, switchQueue, switchKeys, switchKey, 'switch_reorder');
+    if (next) switchQueue = next;
+  }
 
   st.phase = 'dodges';
   for (const f of frozen.filter((x) => x.action.kind === 'dodge')) resolveDodge(ctx, f);
 
   st.phase = 'actions';
-  let queue = orderDesc(ctx, frozen.filter((f) => !f.done && (f.action.kind === 'technique' || f.action.kind === 'partial')), (f) => actionKey(ctx, f), 'action_order', (x) => x.actorUid);
-  emit(st, { type: 'action_order', data: { order: queue.map((f) => f.actorUid), gap: 'GAP-ORDER-STATIC' }, ruleRef: 'CANON-MECHANICS 28.5.12-14' });
-  ctx.reorder = false;
+  const key = (f: Frozen) => actionKey(ctx, f);
+  let queue = orderDesc(ctx, frozen.filter((f) => !f.done && (f.action.kind === 'technique' || f.action.kind === 'partial')), key, 'action_order', (x) => x.actorUid);
+  emit(st, { type: 'action_order', data: { order: queue.map((f) => f.actorUid) }, ruleRef: 'CANON-MECHANICS 28.5.12-14' });
+  let keys = new Map(queue.map((f) => [f, key(f)]));
   while (queue.length > 0) {
     const f = queue.shift()!;
     if (f.done) continue;
     resolveAction(ctx, f);
-    if (ctx.reorder && queue.length > 1) {
-      // GAP-PRIORITY-MIDROUND: un cambio de Prioridad durante la ronda reordena las acciones pendientes
-      queue = orderDesc(ctx, queue, (x) => actionKey(ctx, x), 'action_reorder', (x) => x.actorUid);
-      emit(st, { type: 'action_order', data: { order: queue.map((x) => x.actorUid), reordered: true, gap: 'GAP-PRIORITY-MIDROUND' } });
-    }
-    ctx.reorder = false;
+    const next = reorderPending(ctx, queue.filter((x) => !x.done), keys, key, 'action_reorder');
+    if (next) queue = next;
   }
 
   closeRound(ctx, new Set(frozen.filter((f) => f.action.kind === 'surrender').map((f) => f.side)));
   return st;
+}
+
+const sameKeys = (a: number[], b: number[]) => a.length === b.length && a.every((v, i) => v === b[i]);
+
+// GAP-ORDER-DYNAMIC: tras cada accion se recalculan Prioridad y Velocidad de las acciones pendientes (18, 28.5.12-14);
+// los empates ya resueltos se conservan y solo los empates nuevos se sortean
+function reorderPending(ctx: EngineCtx, queue: Frozen[], keys: Map<Frozen, number[]>, keyOf: (f: Frozen) => number[], purpose: string): Frozen[] | null {
+  const now = new Map(queue.map((f) => [f, keyOf(f)]));
+  if (queue.every((f) => sameKeys(now.get(f)!, keys.get(f)!))) return null;
+  const pos = new Map(queue.map((f, i) => [f, i]));
+  const cmp = (a: number[], b: number[]) => {
+    for (let i = 0; i < Math.max(a.length, b.length); i++) if ((b[i] ?? 0) !== (a[i] ?? 0)) return (b[i] ?? 0) - (a[i] ?? 0);
+    return 0;
+  };
+  const sorted = [...queue].sort((a, b) => cmp(now.get(a)!, now.get(b)!) || pos.get(a)! - pos.get(b)!);
+  const out: Frozen[] = [];
+  for (let i = 0; i < sorted.length; ) {
+    let j = i + 1;
+    while (j < sorted.length && cmp(now.get(sorted[i]!)!, now.get(sorted[j]!)!) === 0) j++;
+    const group = sorted.slice(i, j);
+    const newTie = group.some((f) => !sameKeys(keys.get(f)!, keys.get(group[0]!)!));
+    out.push(...(newTie ? orderDesc(ctx, group, () => [0], purpose, (x) => x.actorUid) : group));
+    i = j;
+  }
+  for (const [f, k] of now) keys.set(f, k);
+  const changed = out.some((f, i) => f !== queue[i]);
+  if (changed) {
+    emit(ctx.st, {
+      type: 'action_order',
+      data: { order: out.map((f) => f.actorUid), reordered: true, keys: out.map((f) => now.get(f)), phase: purpose },
+      ruleRef: 'CANON-MECHANICS 18 / 28.5.12-14',
+    });
+  }
+  return out;
 }

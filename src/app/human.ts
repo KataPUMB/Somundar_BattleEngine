@@ -48,25 +48,26 @@ function printBoard(data: GameData, st: BattleState, side: SideIndex, title = `r
     }
   }
   const reserves = st.sides[side].combatants.filter((c) => c.location !== 'field');
-  if (reserves.length) console.log(`  Intermedio: ${reserves.map((c) => `${c.creature.name ?? c.creature.id} ${c.location === 'defeated' ? '(derrotada)' : statusLine(c, data)}`).join(' | ')}`);
+  if (reserves.length) console.log(`  Intermedio: ${reserves.map((c) => `${c.displayName} ${c.location === 'defeated' ? '(derrotada)' : statusLine(c, data)}`).join(' | ')}`);
   const foeLeft = st.sides[foe].combatants.filter((c) => c.location === 'intermedio').length;
   console.log(`  Reservas viables del rival: ${foeLeft}`);
 }
 
 function describe(data: GameData, st: BattleState, positionId: string, o: ActionOption): string {
   const a = o.action;
+  const own = (creatureId: string) => creatureName(st, `${positionId.charAt(1)}:${creatureId}`);
   switch (a.kind) {
     case 'technique': {
       const t = data.techniques.get(a.techniqueId);
       return `${techName(data, a.techniqueId)} [${t?.class}, ${t?.type ?? 'sin tipo'}, PB ${t?.power?.perHit ?? '-'}${t?.power?.hits && t.power.hits.max > 1 ? ` x${t.power.hits.min}-${t.power.hits.max}` : ''}, prio ${t?.priority}, ${t?.targeting}]${o.reason === 'ejecucion de la carga' ? ' (ejecutar carga)' : ''}`;
     }
-    case 'partial': return `Materializacion parcial de ${a.creatureId}: ${techName(data, a.techniqueId)}`;
+    case 'partial': return `Materializacion parcial de ${own(a.creatureId)}: ${techName(data, a.techniqueId)}`;
     case 'dodge': {
       const occ = st.sides.flatMap((s) => s.positions).find((p) => p.id === positionId)?.occupantUid;
       const streak = st.sides.flatMap((s) => s.combatants).find((c) => c.uid === occ)?.dodgeStreak ?? 0;
       return `Esquiva (${dodgeChance(streak)}% de exito)`;
     }
-    case 'switch': return `Intercambio -> ${a.incomingId}`;
+    case 'switch': return `Intercambio -> ${own(a.incomingId)}`;
     case 'surrender': return 'Rendirse';
   }
 }
@@ -101,7 +102,7 @@ export function humanPolicy(data: GameData): Policy {
       printBoard(data, view as BattleState, side, `establecimiento de posiciones de la ronda ${view.round + 1}`);
       const where = canOpen ? 'abrir una segunda posicion temporal' : `ocupar ${empty[0]!.id}`;
       console.log(`  Puedes ${where} materializando una criatura completa:`);
-      reserves.forEach((c, i) => console.log(`    ${i + 1}) ${c.creature.name ?? c.creature.id} ${statusLine(c, data)}`));
+      reserves.forEach((c, i) => console.log(`    ${i + 1}) ${c.displayName} ${statusLine(c, data)}`));
       const n = ask('  Criatura (0 = no):', reserves.length, true);
       if (n === 0) return [];
       const choice: RoundStartChoice = { side, creatureId: reserves[n - 1]!.creature.id };
@@ -116,7 +117,7 @@ export function humanPolicy(data: GameData): Policy {
         if (!occ && opts.length === 0) continue;
         console.log(`\n  ${pid}: ${occ ? creatureName(st, occ) : 'posicion vacia'}`);
         const ok = opts.filter((o) => o.legal);
-        ok.forEach((o, i) => console.log(`    ${i + 1}) ${describe(data, st, pid, o)}`));
+        ok.forEach((o, i) => console.log(`    ${i + 1}) ${describe(data, st, pid, o)}${o.futile ? `  [aviso: ${o.futile}]` : ''}`));
         for (const o of opts.filter((x) => !x.legal)) console.log(`     -  ${describe(data, st, pid, o)}: no disponible (${o.reason}${o.ruleRef ? `; ${o.ruleRef}` : ''})`);
         const n = ask('  Accion:', ok.length, !occ);
         if (n === 0) continue;

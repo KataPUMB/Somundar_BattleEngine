@@ -1,6 +1,6 @@
 # Simulador de combates de Somundar
 
-Ýrbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y usa como base de datos los JSON de `Data/`.
+Árbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y usa como base de datos los JSON de `Data/`.
 
 No es un videojuego libre: nunca inventa reglas. Cuando el canon no cubre una situación, el motor aplica un **supuesto configurable** (`RuleGap`), lo declara en la cabecera del log y lo marca en el evento donde interviene.
 
@@ -37,6 +37,14 @@ Las 138 Manifestaciones también están curadas. Además de los modificadores de
 - **Respuestas**: Último hilo e Intercesión (sobrevivir con 1 a un golpe letal con la Vitalidad completa), Segundo aliento (una vez por combate al bajar del 50%), Desafiante, Contramedida y No me toques (al bajar una característica), Respuesta adaptativa (al recibir una técnica), Hambre de sombras (retirada enemiga), Relevo (al ser sustituido).
 - **Compromiso**: Amartillar, Concentración y Ataque rápido solo permiten repetir la primera técnica usada desde la Entrada.
 - **Otros**: Sobrecarga (mínimo 4 impactos), Mundano, Versatilidad, Último recurso, Afinidad prestada, Ruptura de afinidad, Invariante, Concentración absoluta, Oportunista, Espejo cóncavo, Raíz compartida, Retaguardia, Fortificación, Presagio imposible, Presencia opresiva y Presión arcana.
+
+**Resolución hasta las últimas consecuencias (10.10, 16.3, 16.5, 16.6, 28.1, 28.5).** Cada acción abre una cadena que se vacía por completo, en profundidad, antes de pasar a la siguiente acción:
+
+- Dentro de una técnica, las Derrotas se registran y los Reemplazos e Intercambios forzados esperan a que la técnica termine (28.5); las respuestas que no mueven criaturas (Desafiante, Segundo aliento, Último hilo...) se resuelven al instante.
+- Fuera de una técnica, cada eslabón (un Reemplazo, un Intercambio forzado, cada Manifestación de Entrada, el efecto ambiental de Entrada) se resuelve con todas sus consecuencias antes que las consecuencias que ya estaban pendientes. En el despliegue inicial, cada Manifestación de Entrada se resuelve entera antes de la siguiente (28.1.7).
+- Ejemplo: Rebufo -> sustitución -> entra una criatura con Presencia opresiva y Presión arcana -> Presencia baja el Ataque del rival -> su No me toques lo sustituye -> el reemplazo entra y su Marca ardiente quema a quien acaba de entrar -> **solo entonces** se resuelve Presión arcana, que ya alcanza al rival nuevo -> la acción pendiente de la criatura retirada se pierde.
+- Cualquier criatura que llegue a 0 fuera de un impacto (Climas, Hambre del abismo, marcas...) se derrota y se reemplaza dentro de la misma cadena. Un usuario derrotado a mitad de técnica (reflejo) no realiza más impactos.
+- Los bucles de Intercambios forzados (dos No me toques que se provocan mutuamente) se cortan al superar `maxChainDepth` (GAP-CHAIN-DEPTH).
 
 ---
 
@@ -104,7 +112,7 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
 ```jsonc
 {
   "seed": 11,
-  "config": { "effectsMode": "strict", "maxRounds": 30 },
+  "config": { "effectsMode": "strict", "maxRounds": 30, "damageConstant": 0.9375 },   // damageConstant opcional (canon 23.1: 0.9375; 0.75 = fórmula anterior)
   "sides": [
     {
       "summoner": {
@@ -120,6 +128,7 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
         "creatures": [
           {
             "id": "brasal_a", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
+            "nickname": "Chispa",         // opcional; sustituye al nombre de la especie en el log y la consola
             "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
             "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
             "equippedTechniques": ["golpe_candente", "aranazo"],
@@ -265,7 +274,8 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | Distribución de impactos en «1-5» | Uniforme |
 | Mantenimiento de la segunda posición del Adepto | `adeptSustain` por invocador; si falta, 1 ronda |
 | Cuándo ha tenido turno una criatura (contadores, Quemado) | Si ocupaba posición al declarar y sigue materializada al cierre |
-| Orden de técnicas si cambia la Velocidad a mitad de ronda | Orden fijado al empezar la fase de técnicas |
+| Técnicas legales que fallarán con seguridad (Puño preciso fuera del primer turno) | Siguen siendo declarables (consumen la acción), se marcan con aviso en el modo interactivo y la IA aleatoria las evita si tiene otra opción |
+| Cambios de Velocidad o Prioridad a mitad de ronda | Tras cada Intercambio y cada acción se recalcula el orden de las pendientes; los empates ya sorteados se conservan y los nuevos se sortean al 50% |
 | Acciones mientras se carga | Solo ejecutar la carga o Intercambiar |
 | Materializar una criatura completa en una posición vacía | Permitido al inicio de ronda, ordenado por Velocidad |
 | Vitalidad al empezar un combate | Máxima, salvo `hpCurrent` explícito (los estados sí persisten) |
@@ -283,7 +293,6 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | Efectos temporales sobre una criatura | Desaparecen con cualquier Salida |
 | «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
 | Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
-| Cambios de Prioridad a mitad de ronda | Reordenan las acciones pendientes de esa ronda |
 | «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
 | Horda (sin CANON-CREATURES) | Tres cadáveres explícitos por instancia; cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
 | «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
@@ -296,7 +305,9 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Tests
 
-`npm test` ejecuta 106 tests:
+`npm test` ejecuta 159 tests:
+
+- **Escenarios** (`scenarios/sarah_vs_adriano.json`, `scenarios/asesino_vs_adriano.json`): Preparaciones válidas, 40 combates aleatorios por escenario sin errores, cada técnica de daño equipada impacta, y un caso dirigido por cada técnica de Estado, técnica con efecto y Manifestación equipada, usando las propias criaturas del escenario.
 
 - **Datos**: esquemas, referencias cruzadas técnica <-> especie, overrides y cobertura.
 - **Fórmulas**: casos canónicos 33 (240 -> 320 -> 400), 20.2 (75% -> 85%), 21.3 (x0,75), 23.5 (1000 / 170), 24.1 (Paralizado + Enraizado = -50%), tabla de etapas 21.2, tipos duales, inmunidades, Profundidad y Esquiva.
@@ -308,6 +319,6 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 - **Técnicas**: etapas y restricciones de estado (Enfado, Acelerar bajo Parálisis, Pacto de sangre), curación con Desvinculado, retroceso y drenaje, Barrera de fuerza y su destrucción, Estela y Maraña, sustituciones forzadas u opcionales, «no puede usarse dos turnos consecutivos», Mordisco de presa, Canto final, Bajo mi amparo, Caza espectral, Velocidad invertida, Anular prioridad, Bola de fuego, Aprovechar hueco, Pulso intermitente, Incinerar, Sesteo, Cristal opaco + Prisma de retorno, Caparazón incandescente, Mueca, Helar contra Planta, Aliento de dragón con Calima, Retorno arcano, Infección, Revelación absoluta, Borrar el contorno, Mediodía y Colapso.
 - **Propiedades**: los 300 combates aleatorios usan ahora todo el catálogo curado en modo strict (técnicas especiales con su especie, Manifestaciones compatibles al azar) sin errores ni invariantes rotos, incluida Horda con cadáveres al azar.
-- **Manifestaciones**: Último hilo, Segundo aliento, Amartillar, Sobrecarga, Horda, Regeneración, Campo rocoso, Tormenta eléctrica, Presagio imposible, Retaguardia, Presencia opresiva + Desafiante, No me toques, Espejo cóncavo, Raíz compartida, Ruptura de afinidad y Negación elemental.
+- **Manifestaciones**: Último hilo, Segundo aliento, Amartillar, Sobrecarga, Horda, Regeneración, Campo rocoso, Tormenta eléctrica, Presagio imposible, Retaguardia, Presencia opresiva + Desafiante, No me toques, Espejo cóncavo, Raíz compartida, Ruptura de afinidad y Negación elemental; el recálculo del orden cuando una acción cambia la Velocidad (Estela) y dos cadenas completas (Rebufo con Entradas y Respuestas encadenadas; Reemplazo forzado con Entrada antes de la siguiente acción).
 
 Pendiente: las fases 6 a 8.

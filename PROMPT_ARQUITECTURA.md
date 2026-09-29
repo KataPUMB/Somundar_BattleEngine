@@ -107,7 +107,7 @@ Principios:
 - **Etapas** (21.2): +1 ×1,5 · +2 ×2 · +3 ×2,5 · +4 ×3 · +5 ×3,5 · +6 ×4 · -1 ×0,667 · -2 ×0,5 · -3 ×0,4 · -4 ×0,333 · -5 ×0,286 · -6 ×0,25. Límite [-6, +6].
 - **Estadística efectiva** (21.3): `max(1, estable × etapa × max(0, 1 + suma de modificadores directos))`. Antes de sumar, de los **problemas de estado** sólo cuenta la penalización más severa **por estadística**; los demás modificadores (técnicas, Manifestaciones, campos) se suman normalmente.
 - **Precisión** (20.2): `clamp(0, 100, base × (1 + suma relativos) + puntos porcentuales)`. PB < 100 -> 100% base salvo ficha; PB >= 100 usa la ficha (20.1). «Nunca falla» ignora reducciones ordinarias (20.3).
-- **Daño** (23.1): `0,75 × (PB/100) × Ataque × sqrt(Ataque/Defensa) × M × T / R`.
+- **Daño** (23.1): `0,9375 × (PB/100) × Ataque × sqrt(Ataque/Defensa) × M × T / R`.
   - Física: Ataque físico vs Defensa; Mágica: Ataque mágico vs Defensa mágica (19.1–19.2). Excepciones de ficha (p. ej. usar Defensa como ataque).
   - `M = max(0, 1 + suma de % de daño)` (23.2). «Daño recibido -X%» suma en M; «reduce el daño a la mitad» añade divisor 2 a R (23.3).
   - `T` = producto de multiplicadores de tipo del defensor (22.2). **Sin STAB, críticos ni variación aleatoria** (23.6).

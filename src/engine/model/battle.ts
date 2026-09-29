@@ -15,6 +15,8 @@ export interface Combatant {
   uid: string;
   side: SideIndex;
   creature: BondedCreature;
+  /** nickname o, si no tiene, nombre de la especie */
+  displayName: string;
   stable: StatBlock;
   maxHp: number;
   hp: number;
@@ -119,6 +121,8 @@ export interface BattleConfig {
   maxRounds: number;
   maxChainDepth: number;
   contactDefault: 'physical' | 'none';
+  /** constante de CANON-MECHANICS 23.1 (0,9375; la version anterior usaba 0,75) */
+  damageConstant: number;
 }
 
 export const DEFAULT_CONFIG: BattleConfig = {
@@ -127,6 +131,7 @@ export const DEFAULT_CONFIG: BattleConfig = {
   maxRounds: 100,
   maxChainDepth: 64,
   contactDefault: 'physical',
+  damageConstant: 0.9375,
 };
 
 export type Outcome =

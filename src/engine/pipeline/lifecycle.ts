@@ -4,7 +4,7 @@ import { emit } from '../log/events.js';
 import { manifestationAvailability } from '../effects/availability.js';
 import { manifestationInactiveReason, speedOf } from '../effects/runtime.js';
 import { runAuras, runEffects } from '../effects/interpreter.js';
-import { defeatIfZero } from './techniques.js';
+import { resolveChain } from './techniques.js';
 import { nextFloat } from '../rng.js';
 import { combatant, findPosition, orderDesc, sideOf, type EngineCtx, type PendingSelfSwitch } from './context.js';
 import { isViableReserve, restrictionActive, zeroStages } from './combatant.js';
@@ -62,9 +62,12 @@ export function resolveManifestation(ctx: EngineCtx, c: Combatant, manifestation
 // CANON-MECHANICS 1 (Entrada) / 10.7 / 16.3: efectos ambientales de Entrada, despues las Manifestaciones de Entrada
 export function materializeWithEntry(ctx: EngineCtx, c: Combatant, pos: Position, cause?: number): void {
   const ev = placeOnField(ctx, c, pos, cause);
-  runAuras(ctx, c, 'environment_entry', { cause: ev });
-  if (c.hp <= 0) return defeatIfZero(ctx, c, ev);
-  if (c.location === 'field') for (const m of entryManifestations(ctx, c)) resolveManifestation(ctx, c, m, 'on_entry', ev);
+  resolveChain(ctx, () => runAuras(ctx, c, 'environment_entry', { cause: ev }));
+  for (const m of entryManifestations(ctx, c)) {
+    if (c.location !== 'field' || c.positionId !== pos.id) break;
+    resolveChain(ctx, () => resolveManifestation(ctx, c, m, 'on_entry', ev));
+  }
+  if (c.location !== 'field') return;
   emit(ctx.st, { type: 'entry_complete', actor: c.uid, targets: [pos.id], cause: ev, ruleRef: 'CANON-MECHANICS 10.7' });
 }
 
@@ -176,6 +179,6 @@ export function initialDeployment(ctx: EngineCtx, placements: { c: Combatant; po
   for (const p of physical) placeOnField(ctx, p.c, p.pos);
   const pending = physical.flatMap((p) => entryManifestations(ctx, p.c).map((m) => ({ c: p.c, m })));
   const ordered = orderDesc(ctx, pending, (x) => [speedOf(ctx, x.c)], 'deployment_entries', (x) => `${x.c.uid}/${x.m}`);
-  for (const x of ordered) resolveManifestation(ctx, x.c, x.m, 'on_entry');
+  for (const x of ordered) resolveChain(ctx, () => resolveManifestation(ctx, x.c, x.m, 'on_entry'));
   emit(ctx.st, { type: 'deployment_complete', ruleRef: 'CANON-MECHANICS 28.1' });
 }
