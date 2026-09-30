@@ -12,7 +12,7 @@ const repertoire = [...data.manifestations.keys()];
 const sum = (id: string, est: 'iniciado' | 'invocador' = 'iniciado') => summoner(id, est, { manifestationRepertoire: repertoire });
 const at = (techniqueId: string, positionId: string) => ({ kind: 'technique' as const, techniqueId, target: { kind: 'position' as const, positionId } });
 const brasal = (id: string, over: Partial<BondedCreature> = {}) => creature(id, { speciesId: 'brasal', types: ['fuego'], equippedTechniques: ['golpe_candente', 'aranazo'], ...over });
-const rock = (id: string, over: Partial<BondedCreature> = {}) => creature(id, { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: tank, ...over });
+const rock = (id: string, over: Partial<BondedCreature> = {}) => creature(id, { speciesId: 'prueba', types: ['tierra'], baseStatsNV50: tank, ...over });
 // Golpe candente (PB 65, Fuego) con 100 de Ataque contra 100 de Defensa y tipo x1
 const base = (m: number) => rawDamage({ power: 65, attack: 100, defense: 100, damagePcts: [(m - 1) * 100], typeMult: 1, halvings: 0, ignoreDefense: false, constant: DEFAULT_CONFIG.damageConstant, stab: DEFAULT_CONFIG.stabMultiplier });
 
@@ -30,7 +30,7 @@ test('23.2: Combustion +25% y Juramento de las hogueras -50% se suman en M = 0,7
 });
 
 test('23.2: Devorallamas -100% anula el dano de Fuego (M = 0)', () => {
-  const st = start(data, setup(sum('a'), [brasal('b')]), setup(sum('z'), [rock('r', { equippedManifestations: ['devorallamas'], types: ['fuego'], speciesId: 'riftari' })]));
+  const st = start(data, setup(sum('a'), [brasal('b')]), setup(sum('z'), [rock('r', { equippedManifestations: ['devorallamas'], types: ['fuego'] })]));
   const r = round(data, st, { S0P0: at('golpe_candente', 'S1P0'), S1P0: at('aranazo', 'S0P0') });
   assert.equal(firstDamage(r, uid(0, 'b')).data!.loss, 0);
 });
@@ -46,7 +46,7 @@ test('25.1 / Calima: tecnicas de Fuego +50% mientras el Clima esta activo', () =
 
 test('Llovizna: las tecnicas de Rayo nunca fallan aunque el usuario este Desorientado (20.3)', () => {
   const zap = creature('zap', { speciesId: 'vajrakar', types: ['rayo'], equippedTechniques: ['relampago'], persistentStatuses: [{ id: 'desorientado', counters: { no_same_technique_consecutive: 5 } }] });
-  const rain = creature('rain', { speciesId: 'undaria', types: ['agua'], baseStatsNV50: tank, equippedManifestations: ['llovizna'] });
+  const rain = creature('rain', { speciesId: 'prueba', types: ['agua'], baseStatsNV50: tank, equippedManifestations: ['llovizna'] });
   const st = start(data, setup(sum('a'), [zap]), setup(sum('z'), [rain]));
   assert.equal(st.environment?.id, 'llovizna');
   const r = round(data, st, { S0P0: at('relampago', 'S1P0'), S1P0: at('aranazo', 'S0P0') });
@@ -72,7 +72,7 @@ test('Silencio del Vinculo: desactiva las Manifestaciones de criaturas no Mitica
 
 test('Ignicion: +50% solo a la siguiente tecnica de Fuego tras cada Entrada', () => {
   const s0 = sum('a');
-  let st = start(data, setup(s0, [brasal('b', { equippedManifestations: ['ignicion'] }), brasal('b2')]), setup(sum('z'), [rock('r')]));
+  let st = start(data, setup(s0, [brasal('b', { equippedManifestations: ['ignicion'] }), creature('b2')]), setup(sum('z'), [rock('r')]));
   st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: at('aranazo', 'S0P0') });
   st = round(data, st, { S0P0: at('golpe_candente', 'S1P0'), S1P0: at('aranazo', 'S0P0') });
   st = round(data, st, { S0P0: at('golpe_candente', 'S1P0'), S1P0: at('aranazo', 'S0P0') });
@@ -96,7 +96,7 @@ test('30: una Entrada rapida aplica Enraizado y el Intercambio rival falla y se 
   const s0 = sum('aster');
   const s1 = sum('rival');
   const riftari = creature('riftari', { baseStatsNV50: { ...FLAT_STATS, spe: 200 } });
-  const raiz = creature('raiz', { speciesId: 'mairahda', types: ['planta'], equippedManifestations: ['raices_invasoras'] });
+  const raiz = creature('raiz', { speciesId: 'prueba', types: ['planta'], equippedManifestations: ['raices_invasoras'] });
   const lento = creature('lento', { baseStatsNV50: { ...FLAT_STATS, spe: 100 } });
   const st = start(data, setup(s0, [riftari, raiz]), setup(s1, [lento, creature('otro')]));
   const r = round(data, st, { S0P0: { kind: 'switch', incomingId: 'raiz' }, S1P0: { kind: 'switch', incomingId: 'otro' } });
@@ -109,7 +109,7 @@ test('30: una Entrada rapida aplica Enraizado y el Intercambio rival falla y se 
 });
 
 test('24.1: Mitico es inmune a Desvinculado aplicado por una Entrada', () => {
-  const dark = creature('dark', { speciesId: 'amra', types: ['oscuridad'], equippedManifestations: ['ruptura_del_vinculo'] });
+  const dark = creature('dark', { speciesId: 'prueba', types: ['oscuridad'], equippedManifestations: ['ruptura_del_vinculo'] });
   const myth = creature('myth', { speciesId: 'lernyra', types: ['mitico'] });
   const st = start(data, setup(sum('a'), [dark]), setup(sum('z'), [myth]));
   assert.equal(eventsOf(st, 'status_immune').length, 1);

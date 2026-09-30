@@ -1,6 +1,6 @@
 # Simulador de combates de Somundar
 
-Ýrbitro de duelos de invocación del mundo de Somundar. Resuelve combates entre dos invocadores aplicando las reglas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (mecánicas, técnicas y Manifestaciones) y los datos de `Data/`.
+Árbitro de duelos de invocación del mundo de Somundar. Resuelve combates entre dos invocadores aplicando las reglas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (mecánicas, técnicas y Manifestaciones), las fichas de `NarrativeEngine/ficha_completa_de_criaturas.md` y los datos de `Data/`.
 
 - **Determinista y reproducible**: la misma semilla, el mismo escenario y las mismas decisiones producen siempre el mismo combate.
 - **Auditable**: cada evento del log indica su causa, la regla aplicada y las tiradas realizadas.
@@ -121,9 +121,7 @@ Un escenario es un JSON con la semilla, la configuración y los dos bandos. Hay 
       "preparation": {
         "creatures": [
           {
-            "id": "brasal_a", "nickname": "Chispa", "speciesId": "brasal",
-            "types": ["fuego"], "nv": 40,
-            "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
+            "id": "brasal_a", "nickname": "Chispa", "speciesId": "brasal", "nv": 40,
             "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
             "equippedTechniques": ["golpe_candente", "aranazo"],
             "equippedManifestations": ["calima"],
@@ -142,8 +140,8 @@ Campos opcionales de cada criatura:
 
 - `nickname`: nombre que se muestra en lugar del de la especie.
 - `hpCurrent`: Vitalidad inicial; por defecto, la máxima.
-- `priorForms`: formas anteriores de la criatura, para usar sus técnicas especiales.
-- `canTransfigure`: indica si la criatura todavía puede transfigurarse.
-- `horde`: cadáveres de Holómicor para la técnica Horda.
+- `types` y `baseStatsNV50`: por defecto, los de la ficha de la especie. Si se indican otros, se usan y la validación muestra un aviso.
+- `canTransfigure`: indica si la criatura todavía puede transfigurarse; por defecto, sí cuando la especie tiene una forma siguiente.
+- `horde`: cadáveres de Holómicor para la técnica Horda (`speciesId`, `techniqueId` y, si la especie no está en la guía, `atkNV50`).
 
-Las estadísticas de cada criatura (`baseStatsNV50`) se indican siempre en el escenario.
+La línea de transfiguración y las formas anteriores salen de la ficha. La validación comprueba que cada técnica equipada se aprenda con el NV de la criatura y que el NV alcance el mínimo de su forma.

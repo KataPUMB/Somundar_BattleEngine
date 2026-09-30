@@ -17,7 +17,7 @@ test('13.4 / 28.1 / 29: despliegue por Velocidad y Entradas reunidas despues, ta
   const s0 = summoner('ana', 'iniciado', { manifestationRepertoire: ['calima'] });
   const s1 = summoner('bea', 'iniciado', { manifestationRepertoire: ['llovizna'] });
   const slow = creature('lento', { baseStatsNV50: { ...FLAT_STATS, spe: 50 }, equippedManifestations: ['calima'] });
-  const fast = creature('rapido', { speciesId: 'undaria', types: ['agua'], baseStatsNV50: { ...FLAT_STATS, spe: 150 }, equippedManifestations: ['llovizna'] });
+  const fast = creature('rapido', { speciesId: 'prueba', types: ['agua'], baseStatsNV50: { ...FLAT_STATS, spe: 150 }, equippedManifestations: ['llovizna'] });
   const st = start(data, setup(s0, [slow]), setup(s1, [fast]));
   const types = st.log.map((e) => `${e.type}:${e.actor ?? ''}`).filter((x) => /^(materialize|manifestation|environment_set)/.test(x));
   assert.deepEqual(types, [
@@ -158,8 +158,8 @@ test('19.5: tecnica de carga; la carga se pierde al salir', () => {
 
 test('24.2-24.5: Quemado al cierre; contadores solo avanzan materializada; Enraizado impide Intercambio', () => {
   const s = summoner('x', 'iniciado');
-  const burnt = creature('q', { speciesId: 'undaria', types: ['agua'], persistentStatuses: [{ id: 'quemado', counters: {} }, { id: 'enraizado', counters: { no_voluntary_withdraw: 2 } }] });
-  const reserve = creature('res', { speciesId: 'undaria', types: ['agua'], persistentStatuses: [{ id: 'enraizado', counters: { no_voluntary_withdraw: 2 } }] });
+  const burnt = creature('q', { speciesId: 'prueba', types: ['agua'], persistentStatuses: [{ id: 'quemado', counters: {} }, { id: 'enraizado', counters: { no_voluntary_withdraw: 2 } }] });
+  const reserve = creature('res', { speciesId: 'prueba', types: ['agua'], persistentStatuses: [{ id: 'enraizado', counters: { no_voluntary_withdraw: 2 } }] });
   let st = start(data, setup(s, [burnt, reserve]), setup(s, [creature('z', { baseStatsNV50: tank })]));
   assert.throws(() => round(data, st, { S0P0: { kind: 'switch', incomingId: 'res' }, S1P0: hit('S0P0') }), DeclarationError);
   st = round(data, st, { S0P0: hit('S1P0'), S1P0: hit('S0P0') });

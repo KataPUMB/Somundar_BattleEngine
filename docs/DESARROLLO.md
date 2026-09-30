@@ -2,7 +2,7 @@
 
 Referencia interna (estado, arquitectura, DSL de efectos, curado, supuestos y tests). El README solo contiene uso e instalación.
 
-Árbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y usa como base de datos los JSON de `Data/`.
+Árbitro determinista, reproducible y auditable de duelos de invocación. Aplica literalmente las normas de `NarrativeEngine/05_SISTEMA_DE_INVOCACION.md` (CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS, revisión r2) y las fichas de `NarrativeEngine/ficha_completa_de_criaturas.md` (CANON-CREATURES), y usa como base de datos los JSON de `Data/`.
 
 No es un videojuego libre: nunca inventa reglas. Cuando el canon no cubre una situación, el motor aplica un **supuesto configurable** (`RuleGap`), lo declara en la cabecera del log y lo marca en el evento donde interviene.
 
@@ -111,7 +111,7 @@ Limitación: con `--human both` los dos jugadores comparten terminal, así que e
 
 ## Escenarios
 
-Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_ficticio.json](scenarios/ejemplo_ficticio.json) (estadísticas inventadas, no canon).
+Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_ficticio.json](scenarios/ejemplo_ficticio.json) (preparaciones inventadas, no canon).
 
 ```jsonc
 {
@@ -131,19 +131,18 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
       "preparation": {
         "creatures": [
           {
-            "id": "brasal_a", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
+            "id": "brasal_a", "speciesId": "brasal", "nv": 40,
+            "types": ["fuego"],           // opcional; por defecto, los de la ficha
             "nickname": "Chispa",         // opcional; sustituye al nombre de la especie en el log y la consola
-            "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
+            "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },   // opcional; si difiere de la ficha, aviso CRE_SPECIES_STATS
             "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
             "equippedTechniques": ["golpe_candente", "aranazo"],
             "equippedManifestations": ["calima"],
             "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }],
             "hpCurrent": 200,             // opcional; por defecto Vitalidad máxima
-            "priorForms": [],             // formas anteriores (técnicas especiales heredadas)
-            "transfigurationLine": null,  // para comprobar 2.5
-            "canTransfigure": false,      // Poder latente (falta CANON-CREATURES)
+            "canTransfigure": false,      // Poder latente; por defecto, true si la especie tiene forma siguiente
             "horde": [                    // solo Holómicor con Horda: tres cadáveres
-              { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo" }
+              { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo" }   // atkNV50 opcional si la especie está en la guía
             ]
           }
         ]
@@ -154,7 +153,14 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
 }
 ```
 
-Las estadísticas de las criaturas son **explícitas por instancia** porque falta CANON-CREATURES (`04_CRIATURAS.md`): `creatures.json` solo tiene nombre, número y técnicas especiales de las 160 especies.
+`creatures.json` contiene las 160 fichas de `ficha_completa_de_criaturas.md`: tipos, estadísticas NV50, categoría de poder, Transfiguración (nivel o apoteosis con NV mínimo), forma previa y siguiente, línea, técnicas por nivel, por entrenamiento y al transfigurarse. Al crear el combate, lo que la instancia omite (tipos, estadísticas, `canTransfigure`) se toma de la ficha; la línea (2.5) y las formas anteriores siempre salen de ella. La validación añade:
+
+- `TECH_LEARNSET`: la técnica debe aprenderla la forma actual o una preforma con el NV actual (por nivel, entrenamiento, al transfigurarse, o exclusiva innata no listada). GAP-LEARN-PREFORM.
+- `CRE_FORM_NV`: el NV debe alcanzar el nivel de Transfiguración (o el NV mínimo de la apoteosis) de todas sus preformas.
+- `HORDE_CORPSE_STATS`: cadáver de Horda sin `atkNV50` y fuera de la guía.
+- Avisos `CRE_SPECIES_TYPES`, `CRE_SPECIES_STATS`, `CRE_SPECIES_FORMS` cuando la instancia contradice la ficha.
+
+El factor de profundización (FP) no aparece en las fichas; solo afecta a la progresión de Profundidad, no al combate.
 
 Los presets por estamento (Amplitud, Fortaleza, simultaneidad, Materialización parcial) están en [src/engine/model/presets.ts](src/engine/model/presets.ts). Son referencias, no llaves: el invocador lleva siempre sus capacidades como campos explícitos.
 
@@ -270,12 +276,12 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Lagunas del canon (RuleGap)
 
-`node dist/app/cli.js gaps` lista las 73 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
+`node dist/app/cli.js gaps` lista las 74 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
 
 | Laguna | Supuesto actual |
 |---|---|
-| Faltan fichas de especie (CANON-CREATURES) | Estadísticas y tipos explícitos por instancia; no se valida el aprendizaje de técnicas no especiales |
-| Distribución de impactos en «1-5» | Uniforme |
+| Técnicas no exclusivas de preformas | Una forma conserva lo que sus preformas aprenden con el NV actual (GAP-LEARN-PREFORM) |
+| Distribución de impactos en «1-5» | 30/25/20/15/10 % (media 2,5 del compendio); `config.multiHitDistribution: "uniform"` como alternativa |
 | Mantenimiento de la segunda posición del Adepto | `adeptSustain` por invocador; si falta, 1 ronda |
 | Cuándo ha tenido turno una criatura (contadores, Quemado) | Si ocupaba posición al declarar y sigue materializada al cierre |
 | Técnicas legales que fallarán con seguridad (Puño preciso fuera del primer turno) | Siguen siendo declarables (consumen la acción), se marcan con aviso en el modo interactivo y la IA aleatoria las evita si tiene otra opción |
@@ -300,7 +306,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
 | Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
 | «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
-| Horda (sin CANON-CREATURES) | Tres cadáveres explícitos por instancia; cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
+| Horda | Tres cadáveres por instancia (Ataque de la ficha si la especie está en la guía; si no, explícito); cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
 | «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
 | «Todos los aliados» en una Retirada | No incluye a la criatura que se retira |
 | Daño porcentual de Climas/Campos | Pérdida fija de Vitalidad máxima, sin tabla de tipos |

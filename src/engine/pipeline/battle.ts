@@ -3,13 +3,14 @@ import {
   DEFAULT_CONFIG, type Action, type BattleConfig, type BattleState, type Combatant, type Declarations, type Position,
   type SideIndex, type SideState,
 } from '../model/battle.js';
-import type { SideSetup, StageKey } from '../model/types.js';
+import type { SideSetupInput, StageKey } from '../model/types.js';
 import { emit } from '../log/events.js';
 import { createRng } from '../rng.js';
 import { RULE_GAPS } from '../gaps.js';
 import { dodgeChance } from '../rules/accuracy.js';
 import { clampStage } from '../rules/stats.js';
 import { hasErrors, positionCapacityAtDeployment, validatePreparation, type Violation } from '../legality/preparation.js';
+import { resolveSetup } from '../legality/species.js';
 import { positionsNeedingDeclaration, techniqueBlockReason, validateDeclaration } from '../legality/actions.js';
 import { afterHpLoss, auraOps, heal, loseHp, marksOf, removeMark, speedOf } from '../effects/runtime.js';
 import { runAuras } from '../effects/interpreter.js';
@@ -37,9 +38,10 @@ export interface CreateBattleOptions {
   controllers?: Controllers;
 }
 
-export function createBattle(data: GameData, setups: [SideSetup, SideSetup], opts: CreateBattleOptions): BattleState {
-  const violations = setups.map((s, i) => ({ side: i as SideIndex, violations: validatePreparation(s, data) }));
+export function createBattle(data: GameData, inputs: [SideSetupInput, SideSetupInput], opts: CreateBattleOptions): BattleState {
+  const violations = inputs.map((s, i) => ({ side: i as SideIndex, violations: validatePreparation(s, data) }));
   if (violations.some((v) => hasErrors(v.violations))) throw new PreparationError(violations);
+  const setups = inputs.map((s) => resolveSetup(s, data));
 
   const config: BattleConfig = { ...DEFAULT_CONFIG, ...opts.config };
   const sides = setups.map((s, i): SideState => {

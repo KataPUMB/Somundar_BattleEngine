@@ -117,7 +117,8 @@ export interface FieldState {
 
 export interface BattleConfig {
   effectsMode: EffectsMode;
-  multiHitDistribution: 'uniform';
+  /** decreasing: pesos 30/25/20/15/10 en 1-5 impactos (media 2,5, decision del autor) */
+  multiHitDistribution: 'decreasing' | 'uniform';
   maxRounds: number;
   maxChainDepth: number;
   contactDefault: 'physical' | 'none';
@@ -129,7 +130,7 @@ export interface BattleConfig {
 
 export const DEFAULT_CONFIG: BattleConfig = {
   effectsMode: 'strict',
-  multiHitDistribution: 'uniform',
+  multiHitDistribution: 'decreasing',
   maxRounds: 100,
   maxChainDepth: 64,
   contactDefault: 'physical',

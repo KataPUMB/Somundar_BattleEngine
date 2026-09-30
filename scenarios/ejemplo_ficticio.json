@@ -1,5 +1,5 @@
 {
-  "_nota": "Escenario ficticio de humo: estadisticas inventadas para probar el motor; no es canon.",
+  "_nota": "Escenario ficticio de humo: preparaciones inventadas para probar el motor; no es canon. Tipos y estadisticas segun la ficha de cada especie.",
   "seed": 11,
   "config": { "effectsMode": "strict", "maxRounds": 30 },
   "sides": [
@@ -11,15 +11,13 @@
       },
       "preparation": {
         "creatures": [
-          { "id": "brasal_a", "nickname": "Chispa", "speciesId": "brasal", "types": ["fuego"], "nv": 40,
-            "baseStatsNV50": { "hp": 260, "atk": 120, "matk": 80, "def": 90, "mdef": 80, "spe": 110 },
+          { "id": "brasal_a", "nickname": "Chispa", "speciesId": "brasal", "nv": 40,
             "fortaleza": { "atk": 20, "spe": 10 }, "orientations": ["atk", "spe"],
             "equippedTechniques": ["golpe_candente", "aranazo", "mordisco"], "equippedManifestations": ["calima"],
             "persistentStatuses": [] },
-          { "id": "gorim_a", "speciesId": "gorim", "types": ["tierra"], "nv": 45,
-            "baseStatsNV50": { "hp": 320, "atk": 130, "matk": 60, "def": 130, "mdef": 90, "spe": 60 },
+          { "id": "gorim_a", "speciesId": "gorim", "nv": 45,
             "fortaleza": {}, "orientations": [],
-            "equippedTechniques": ["embate_de_roca", "pisoton"], "equippedManifestations": [],
+            "equippedTechniques": ["embate_de_roca", "patada"], "equippedManifestations": [],
             "persistentStatuses": [] }
         ]
       },
@@ -33,15 +31,13 @@
       },
       "preparation": {
         "creatures": [
-          { "id": "dracendra_b", "speciesId": "dracendra", "types": ["fuego"], "nv": 42,
-            "baseStatsNV50": { "hp": 280, "atk": 125, "matk": 90, "def": 95, "mdef": 85, "spe": 100 },
+          { "id": "dracendra_b", "speciesId": "dracendra", "nv": 42,
             "fortaleza": { "atk": 10 }, "orientations": ["atk"],
             "equippedTechniques": ["ariete_draconico", "zarpazo"], "equippedManifestations": [],
             "persistentStatuses": [] },
-          { "id": "vercosalvi_b", "speciesId": "vercosalvi", "types": ["planta"], "nv": 38,
-            "baseStatsNV50": { "hp": 300, "atk": 100, "matk": 110, "def": 100, "mdef": 110, "spe": 70 },
+          { "id": "vercosalvi_b", "speciesId": "vercosalvi", "nv": 38,
             "fortaleza": {}, "orientations": [],
-            "equippedTechniques": ["latigo_de_lianas", "latigazo"], "equippedManifestations": [],
+            "equippedTechniques": ["presa_de_raices", "cornada"], "equippedManifestations": [],
             "persistentStatuses": [] }
         ]
       },

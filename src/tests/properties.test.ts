@@ -7,13 +7,12 @@ import { effStat } from '../engine/pipeline/combatant.js';
 import { createRng, nextInt, type RngState } from '../engine/rng.js';
 import type { BattleState, Declarations, SideIndex } from '../engine/model/battle.js';
 import type { Estamento, SideSetup, TypeId } from '../engine/model/types.js';
-import { TYPE_IDS } from '../engine/model/types.js';
+import { learnableTechniques, minimumFormLevel } from '../engine/legality/species.js';
 import { creature, loadData, summoner } from './helpers.js';
 
 const data = loadData();
 const executable = [...data.techniques.values()];
 const corpseTechniques = executable.filter((t) => t.category === 'anatomical' && t.class === 'physical' && typeof t.power?.perHit === 'number');
-const general = executable.filter((t) => t.category !== 'special');
 const special = executable.filter((t) => t.category === 'special');
 const speciesByNumber = new Map([...data.species.values()].map((s) => [s.number, s]));
 const manifestations = [...data.manifestations.values()].filter((m) => m.override?.effects);
@@ -23,17 +22,22 @@ function randomSetup(rng: RngState, tag: string): SideSetup {
   const s = summoner(tag, estamentos[nextInt(rng, 0, estamentos.length - 1)]!, { amplitude: null, manifestationRepertoire: manifestations.map((m) => m.id) });
   const n = nextInt(rng, 1, 4);
   const usedManifestations = new Set<string>();
+  const usedLines = new Set<string | null>();
   const creatures = Array.from({ length: n }, (_, i) => {
-    const sig = special[nextInt(rng, 0, special.length - 1)]!;
+    let sig = special[nextInt(rng, 0, special.length - 1)]!;
+    while (usedLines.has(speciesByNumber.get(sig.species!.number)!.transfigurationLine)) sig = special[nextInt(rng, 0, special.length - 1)]!;
     const sp = speciesByNumber.get(sig.species!.number)!;
-    const types = sp.types ?? [TYPE_IDS[nextInt(rng, 0, TYPE_IDS.length - 1)] as TypeId];
+    usedLines.add(sp.transfigurationLine);
+    const types = sp.types!;
+    let nv = nextInt(rng, minimumFormLevel(data, sp), 100);
+    if (!learnableTechniques(data, sp, nv).has(sig.id)) nv = 100;
+    const pool = [...learnableTechniques(data, sp, nv)].map((id) => data.techniques.get(id)!).filter((t) => t.category !== 'special');
     const techs = new Map<string, number>([[sig.id, sig.bondCost]]);
-    for (let k = 0; k < 10 && techs.size < 4; k++) {
-      const t = general[nextInt(rng, 0, general.length - 1)]!;
+    for (let k = 0; k < 10 && techs.size < 4 && pool.length > 0; k++) {
+      const t = pool[nextInt(rng, 0, pool.length - 1)]!;
       const used = [...techs.values()].reduce((a, b) => a + b, 0);
       if (used + t.bondCost <= 100) techs.set(t.id, t.bondCost);
     }
-    const nv = nextInt(rng, 5, 100);
     const compatible = manifestations.filter((m) => !usedManifestations.has(m.id) && (m.element === 'global' || types.includes(m.element as TypeId)));
     const mani = compatible.length ? [compatible[nextInt(rng, 0, compatible.length - 1)]!.id] : [];
     mani.forEach((m) => usedManifestations.add(m));
@@ -43,13 +47,13 @@ function randomSetup(rng: RngState, tag: string): SideSetup {
       types,
       nv,
       instinct: (['atk', 'def', 'spe'] as const)[nextInt(rng, 0, 2)],
-      baseStatsNV50: { hp: nextInt(rng, 150, 400), atk: stat(), matk: stat(), def: stat(), mdef: stat(), spe: stat() },
+      baseStatsNV50: { ...sp.baseStatsNV50! },
       equippedTechniques: [...techs.keys()],
       equippedManifestations: mani,
       horde: techs.has('horda')
         ? [0, 1, 2].map((j) => ({ speciesId: `cadaver${j}`, atkNV50: stat(), techniqueId: corpseTechniques[nextInt(rng, 0, corpseTechniques.length - 1)]!.id }))
         : undefined,
-      canTransfigure: nextInt(rng, 0, 1) === 1,
+      canTransfigure: sp.nextForm !== null && nextInt(rng, 0, 1) === 1,
     });
   });
   const cap = s.simultaneity === 'stable' ? 2 : 1;

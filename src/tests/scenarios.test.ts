@@ -37,7 +37,7 @@ function duel(d: Duel): BattleState {
   const creatures = structuredClone(own.preparation.creatures).map((c) => (d.hp?.[c.id] !== undefined ? { ...c, hpCurrent: d.hp[c.id] } : c));
   const a: SideSetup = { summoner: own.summoner, preparation: { creatures }, initialDeployment: d.ally ? [d.id, d.ally] : [d.id] };
   const dummy = creature('dummy', {
-    speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: { hp: 5000, atk: 100, matk: 100, def: 100, mdef: 100, spe: 10 },
+    speciesId: 'prueba', types: ['tierra'], baseStatsNV50: { hp: 5000, atk: 100, matk: 100, def: 100, mdef: 100, spe: 10 },
     equippedTechniques: DUMMY_TECHS, ...d.dummy,
   });
   const b: SideSetup = { summoner: summoner('dummy', 'iniciado', { amplitude: null }), preparation: { creatures: [dummy] }, initialDeployment: ['dummy'] };

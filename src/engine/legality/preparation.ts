@@ -1,5 +1,6 @@
 import type { GameData } from '../../data/schema.js';
-import { STAT_KEYS, STATUS_IDS, TYPE_IDS, type BondedCreature, type SideSetup, type TypeId } from '../model/types.js';
+import { STAT_KEYS, STATUS_IDS, TYPE_IDS, type BondedCreature, type BondedCreatureInput, type SideSetup, type SideSetupInput, type TypeId } from '../model/types.js';
+import { learnableTechniques, minimumFormLevel, resolveSetup } from './species.js';
 
 export interface Violation {
   severity: 'error' | 'warning';
@@ -20,7 +21,7 @@ function speciesIdOfTechnique(data: GameData, techniqueId: string): string | nul
   return null;
 }
 
-function validateCreature(c: BondedCreature, path: string, setup: SideSetup, data: GameData, out: Violation[]): void {
+function validateCreature(c: BondedCreature, raw: BondedCreatureInput, path: string, setup: SideSetup, data: GameData, out: Violation[]): void {
   const e = (code: string, ruleRef: string, message: string, p = path) => out.push({ severity: 'error', code, ruleRef, message, path: p });
   const w = (code: string, ruleRef: string, message: string, p = path) => out.push({ severity: 'warning', code, ruleRef, message, path: p });
   const s = setup.summoner;
@@ -35,8 +36,18 @@ function validateCreature(c: BondedCreature, path: string, setup: SideSetup, dat
   }
   const sp = data.species.get(c.speciesId);
   if (!sp) w('CRE_SPECIES_UNKNOWN', 'creatures.json', `especie ${c.speciesId} no esta en creatures.json`);
-  else if (sp.types && [...sp.types].sort().join('/') !== [...c.types].sort().join('/')) {
-    w('CRE_SPECIES_TYPES', 'creatures.json', `tipos de la instancia (${c.types.join('/')}) distintos de los registrados (${sp.types.join('/')})`);
+  else {
+    if (sp.types && [...sp.types].sort().join('/') !== [...c.types].sort().join('/')) {
+      w('CRE_SPECIES_TYPES', 'CANON-CREATURES', `tipos de la instancia (${c.types.join('/')}) distintos de los de la ficha (${sp.types.join('/')})`);
+    }
+    const base = sp.baseStatsNV50;
+    const diff = base ? STAT_KEYS.filter((k) => c.baseStatsNV50[k] !== base[k]) : [];
+    if (diff.length > 0) w('CRE_SPECIES_STATS', 'CANON-CREATURES', `estadisticas NV50 de la instancia distintas de la ficha: ${diff.map((k) => `${k} ${c.baseStatsNV50[k]} (ficha ${base![k]})`).join(', ')}`);
+    if (raw.priorForms && raw.priorForms.join('/') !== (c.priorForms ?? []).join('/')) {
+      w('CRE_SPECIES_FORMS', 'CANON-CREATURES', `formas previas declaradas (${raw.priorForms.join('/')}) ignoradas; la ficha indica ${(c.priorForms ?? []).join('/') || 'ninguna'}`);
+    }
+    const minNv = minimumFormLevel(data, sp);
+    if (c.nv < minNv) e('CRE_FORM_NV', 'CANON-CREATURES', `${sp.name} requiere NV ${minNv} o superior (NV ${c.nv})`);
   }
   for (const st of c.persistentStatuses) if (!STATUS_IDS.includes(st.id)) e('CRE_STATUS_UNKNOWN', 'CANON-MECHANICS 24', `estado desconocido: ${st.id}`);
 
@@ -54,6 +65,7 @@ function validateCreature(c: BondedCreature, path: string, setup: SideSetup, dat
 
   // Tecnicas (8.1-8.2)
   if (c.equippedTechniques.length > 4) e('TECH_MAX_4', 'CANON-MECHANICS 8.1', `${c.equippedTechniques.length} tecnicas equipadas (max. 4)`);
+  const learnable = sp ? learnableTechniques(data, sp, c.nv) : null;
   let local = 0;
   c.equippedTechniques.forEach((tid, i) => {
     const t = data.techniques.get(tid);
@@ -70,8 +82,15 @@ function validateCreature(c: BondedCreature, path: string, setup: SideSetup, dat
         e('TECH_SPECIES', 'CANON-TECHNIQUES Coste de Vinculo y equipamiento', `${t.name} es tecnica especial de ${owner ?? '?'}, no de ${c.speciesId}`, tp);
       }
     }
+    if (learnable && !learnable.has(tid)) {
+      e('TECH_LEARNSET', 'CANON-CREATURES Tecnicas', `${sp!.name} no aprende ${t.name} con NV ${c.nv}`, tp);
+    }
   });
   if (local > 100) e('TECH_LOCAL_COST', 'CANON-MECHANICS 8.2', `coste local ${local} supera 100`);
+
+  (c.horde ?? []).forEach((h, i) => {
+    if (!(h.atkNV50 > 0)) e('HORDE_CORPSE_STATS', 'CANON-TECHNIQUES Horda', `cadaver ${h.speciesId}: falta atkNV50 (especie fuera de la guia)`, `${path}.horde[${i}]`);
+  });
 
   // Manifestaciones (10.2-10.3)
   const slots = c.nv >= 50 ? 2 : 1;
@@ -92,7 +111,8 @@ function validateCreature(c: BondedCreature, path: string, setup: SideSetup, dat
   });
 }
 
-export function validatePreparation(setup: SideSetup, data: GameData): Violation[] {
+export function validatePreparation(input: SideSetupInput, data: GameData): Violation[] {
+  const setup = resolveSetup(input, data);
   const out: Violation[] = [];
   const e = (code: string, ruleRef: string, message: string, path?: string) => out.push({ severity: 'error', code, ruleRef, message, path });
   const s = setup.summoner;
@@ -103,7 +123,7 @@ export function validatePreparation(setup: SideSetup, data: GameData): Violation
   const ids = prep.map((c) => c.id);
   for (const id of new Set(ids.filter((id, i) => ids.indexOf(id) !== i))) e('PREP_DUPLICATE', 'CANON-MECHANICS 7.1', `criatura repetida: ${id}`, 'preparation');
 
-  prep.forEach((c, i) => validateCreature(c, `preparation.creatures[${i}]`, setup, data, out));
+  prep.forEach((c, i) => validateCreature(c, input.preparation.creatures[i]!, `preparation.creatures[${i}]`, setup, data, out));
 
   // 8.5 / 8.6
   const total = prep.reduce((acc, c) => acc + c.equippedTechniques.reduce((a, t) => a + (data.techniques.get(t)?.bondCost ?? 0), 0), 0);

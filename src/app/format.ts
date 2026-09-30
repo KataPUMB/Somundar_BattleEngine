@@ -37,6 +37,32 @@ export function statusLine(c: Combatant, data?: GameData): string {
   return `${c.hp}/${c.maxHp}${extra.length ? ` [${extra.join(' ')}]` : ''}${c.charging ? ' (cargando)' : ''}`;
 }
 
+const ENVIRONMENT_LABELS: Record<string, string> = { weather: 'Clima', field: 'Campo', anomaly: 'Anomalia' };
+
+function effectName(data: GameData, id: string): string {
+  return data.techniques.get(id)?.name ?? data.manifestations.get(id)?.name ?? id;
+}
+
+function roundsLeft(n: number): string {
+  if (n >= Number.MAX_SAFE_INTEGER / 2) return 'hasta consumirse';
+  return `queda${n === 1 ? '' : 'n'} ${n} ronda${n === 1 ? '' : 's'}`;
+}
+
+export function activeEffectLines(data: GameData, st: BattleState, side: 0 | 1): string[] {
+  const lines: string[] = [];
+  const env = st.environment;
+  if (env) lines.push(`${ENVIRONMENT_LABELS[env.kind] ?? env.kind}: ${effectName(data, env.id)}${env.sourceUid ? ` (de ${creatureName(st, env.sourceUid)})` : ''}`);
+  for (const s of [side === 0 ? 1 : 0, side] as const) {
+    const effs = st.sides[s].sideEffects.map((e) => `${effectName(data, e.id)}${e.barrier ? ' [barrera]' : ''} (${roundsLeft(e.roundsLeft)})`);
+    if (effs.length) lines.push(`${s === side ? 'Tu lado' : 'Lado rival'}: ${effs.join(' | ')}`);
+  }
+  const f = st.field;
+  if (f.trickRoomRounds > 0) lines.push(`Velocidad invertida (${roundsLeft(f.trickRoomRounds)})`);
+  if (f.priorityNullifiedRound === st.round) lines.push('Anular prioridad (esta ronda)');
+  if (f.revelationRounds > 0) lines.push(`Revelacion absoluta (${roundsLeft(f.revelationRounds)})`);
+  return lines;
+}
+
 export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): string | null {
   const who = creatureName(st, e.actor);
   const tgt = creatureName(st, e.targets?.[0]);

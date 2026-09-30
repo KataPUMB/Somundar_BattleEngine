@@ -4,7 +4,7 @@ import { loadGameData } from '../data/loader.js';
 import { buildCoverageReport, formatCoverage } from '../data/coverage.js';
 import type { EffectsMode } from '../engine/effects/availability.js';
 import type { BattleConfig } from '../engine/model/battle.js';
-import type { SideSetup } from '../engine/model/types.js';
+import type { SideSetupInput } from '../engine/model/types.js';
 import { validatePreparation } from '../engine/legality/preparation.js';
 import { randomLegalPolicy } from '../engine/ai/random.js';
 import { RULE_GAPS } from '../engine/gaps.js';
@@ -43,7 +43,7 @@ function main(argv: string[]): number {
       return 0;
     }
     case 'validate': {
-      const setup = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as SideSetup;
+      const setup = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as SideSetupInput;
       const v = validatePreparation(setup, data);
       for (const x of v) console.log(`${x.severity.toUpperCase()} ${x.code} (${x.ruleRef})${x.path ? ` ${x.path}` : ''}: ${x.message}`);
       return v.some((x) => x.severity === 'error') ? 1 : 0;
@@ -53,7 +53,7 @@ function main(argv: string[]): number {
         console.error('Data/ contiene errores; ejecuta validate-data');
         return 1;
       }
-      const sc = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as { sides: [SideSetup, SideSetup]; seed?: number; config?: Partial<BattleConfig> };
+      const sc = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as { sides: [SideSetupInput, SideSetupInput]; seed?: number; config?: Partial<BattleConfig> };
       const seed = Number(flag(args, 'seed') ?? sc.seed ?? 1);
       const mode = flag(args, 'mode') as EffectsMode | undefined;
       const humanArg = flag(args, 'human');

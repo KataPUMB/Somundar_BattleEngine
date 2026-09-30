@@ -15,7 +15,7 @@ const S = (id: string, est: 'iniciado' | 'invocador' = 'iniciado') => summoner(i
 const at = (techniqueId: string, positionId: string): Action => ({ kind: 'technique', techniqueId, target: { kind: 'position', positionId } });
 const self = (techniqueId: string): Action => ({ kind: 'technique', techniqueId, target: { kind: 'auto' } });
 const c = (id: string, over: Partial<BondedCreature> = {}) => creature(id, over);
-const z = (over: Partial<BondedCreature> = {}) => c('z', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado', 'aranazo'], ...over });
+const z = (over: Partial<BondedCreature> = {}) => c('z', { speciesId: 'prueba', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado', 'aranazo'], ...over });
 const dmg = (st: BattleState, actor: string, fromRound = 0) => eventsOf(st, 'damage', fromRound).filter((e) => e.actor === actor);
 const maxHpOf = (b: BondedCreature) => combatant(start(data, setup(S('a'), [b]), setup(S('b'), [z()])), uid(0, b.id)).maxHp;
 
@@ -237,7 +237,7 @@ test('Reemplazo por Derrota al terminar las acciones de la ronda; el ataque a la
 });
 
 test('18.2 / 28.5: si una accion altera la Velocidad se recalcula el orden de las pendientes (Estela)', () => {
-  const a1 = c('a1', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: { ...tank, spe: 200 }, equippedTechniques: ['estela', 'aranazo'] });
+  const a1 = c('a1', { speciesId: 'prueba', types: ['tierra'], baseStatsNV50: { ...tank, spe: 200 }, equippedTechniques: ['estela', 'aranazo'] });
   const a2 = c('a2', { baseStatsNV50: { ...tank, spe: 50 } });
   const b = c('b', { baseStatsNV50: { ...tank, spe: 80 } });
   const st = round(data, start(data, setup(S('a', 'invocador'), [a1, a2], ['a1', 'a2']), setup(S('b'), [b])), {

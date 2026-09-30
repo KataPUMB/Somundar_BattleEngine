@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { validatePreparation } from '../engine/legality/preparation.js';
 import { createBattle } from '../engine/pipeline/battle.js';
 import { creatureName } from '../app/format.js';
+import type { BondedCreatureInput, SideSetupInput } from '../engine/model/types.js';
 import { creature, loadData, setup, summoner } from './helpers.js';
 
 const data = loadData();
@@ -21,7 +22,7 @@ test('nickname sustituye al nombre de la especie; sin nickname se usa la especie
 test('Preparacion valida sin errores', () => {
   const s = summoner('ana', 'invocador', { manifestationRepertoire: ['combustion', 'juramento_de_las_mareas'] });
   const a = creature('a', { speciesId: 'brasal', equippedTechniques: ['golpe_candente', 'aranazo'], equippedManifestations: ['combustion'], fortaleza: { atk: 20, spe: 20 }, orientations: ['atk', 'spe'] });
-  const b = creature('b', { speciesId: 'undaria', types: ['agua'], equippedManifestations: ['juramento_de_las_mareas'] });
+  const b = creature('b', { speciesId: 'prueba', types: ['agua'], equippedManifestations: ['juramento_de_las_mareas'] });
   assert.deepEqual(codes(validatePreparation(setup(s, [a, b], ['a', 'b']), data)), []);
 });
 
@@ -85,7 +86,7 @@ test('9.2-9.4: Fortaleza y Orientaciones', () => {
 
 test('Tecnica especial de otra especie; forma anterior permitida', () => {
   const s = summoner('ana');
-  const a = creature('a', { speciesId: 'riftari', equippedTechniques: ['ariete_draconico'] });
+  const a = creature('a', { speciesId: 'prueba', equippedTechniques: ['ariete_draconico'] });
   assert.deepEqual(codes(validatePreparation(setup(s, [a]), data)), ['TECH_SPECIES']);
   const b = creature('b', { speciesId: 'valdrakar', types: ['fuego', 'mitico'], priorForms: ['brasal', 'dracendra'], equippedTechniques: ['ariete_draconico', 'golpe_candente'] });
   assert.deepEqual(codes(validatePreparation(setup(s, [b]), data)), []);
@@ -113,4 +114,46 @@ test('el validador devuelve todos los errores, con referencia de seccion', () =>
   const found = new Set(codes(v));
   for (const c of ['PREP_MAX_4', 'TECH_LOCAL_COST', 'AMPLITUDE', 'MANI_UNIQUE', 'MANI_ELEMENT', 'MANI_SLOTS', 'MANI_REPERTOIRE']) assert.ok(found.has(c), c);
   assert.ok(v.every((x) => x.ruleRef.length > 0));
+});
+
+const bare = (id: string, over: Partial<BondedCreatureInput> = {}): BondedCreatureInput => {
+  const { types: _t, baseStatsNV50: _b, ...rest } = creature(id);
+  return { ...rest, ...over };
+};
+const sideOf = (cs: BondedCreatureInput[]): SideSetupInput => ({ summoner: summoner('ana'), preparation: { creatures: cs }, initialDeployment: [cs[0]!.id] });
+
+test('CANON-CREATURES: tipos y estadisticas de la ficha si la instancia los omite; si los declara distintos, aviso', () => {
+  const st = createBattle(data, [sideOf([bare('a', { speciesId: 'brasal' })]), sideOf([bare('b', { speciesId: 'brasal' })])], { seed: 1 });
+  const a = st.sides[0].combatants[0]!.creature;
+  assert.deepEqual(a.types, ['fuego']);
+  assert.deepEqual(a.baseStatsNV50, data.species.get('brasal')!.baseStatsNV50);
+  assert.equal(a.transfigurationLine, 'brasal');
+  assert.equal(a.canTransfigure, true);
+  const v = validatePreparation(setup(summoner('ana'), [creature('a', { speciesId: 'brasal' })]), data);
+  assert.deepEqual(v.map((x) => x.code), ['CRE_SPECIES_STATS']);
+});
+
+test('CANON-CREATURES: tecnicas por nivel, entrenamiento y exclusivas de preformas', () => {
+  const at = (speciesId: string, nv: number, t: string) => codes(validatePreparation(sideOf([bare('a', { speciesId, nv, equippedTechniques: [t] })]), data));
+  assert.deepEqual(at('brasal', 11, 'golpe_candente'), ['TECH_LEARNSET']);
+  assert.deepEqual(at('brasal', 12, 'golpe_candente'), []);
+  assert.deepEqual(at('brasal', 50, 'romper_guardia'), []);
+  assert.deepEqual(at('brasal', 50, 'chorro'), ['TECH_LEARNSET']);
+  assert.deepEqual(at('dracendra', 30, 'golpe_candente'), []);
+  assert.deepEqual(at('valdrakar', 35, 'fauces_incandescentes'), []);
+});
+
+test('CANON-CREATURES: NV minimo de cada forma', () => {
+  const nv = (speciesId: string, n: number) => codes(validatePreparation(sideOf([bare('a', { speciesId, nv: n })]), data));
+  assert.deepEqual(nv('dracendra', 17), ['CRE_FORM_NV']);
+  assert.deepEqual(nv('dracendra', 18), []);
+  assert.deepEqual(nv('valdrakar', 34), ['CRE_FORM_NV']);
+  assert.deepEqual(nv('valdrakar', 35), []);
+});
+
+test('Horda: el Ataque del cadaver sale de la ficha si es una especie de la guia; si no, es obligatorio', () => {
+  const h = (speciesId: string) => bare('h', { speciesId: 'holomicor', nv: 40, equippedTechniques: ['horda'], horde: [0, 1, 2].map(() => ({ speciesId, techniqueId: 'embestida' })) });
+  assert.deepEqual(codes(validatePreparation(sideOf([h('lobo')]), data)), ['HORDE_CORPSE_STATS', 'HORDE_CORPSE_STATS', 'HORDE_CORPSE_STATS']);
+  const st = createBattle(data, [sideOf([h('brasal')]), sideOf([bare('b', { speciesId: 'brasal' })])], { seed: 1 });
+  assert.deepEqual(st.sides[0].combatants[0]!.creature.horde!.map((x) => x.atkNV50), [85, 85, 85]);
 });

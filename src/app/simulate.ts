@@ -1,6 +1,6 @@
 import type { GameData } from '../data/schema.js';
 import type { BattleConfig, BattleState, Declarations, SideIndex } from '../engine/model/battle.js';
-import type { SideSetup } from '../engine/model/types.js';
+import type { SideSetupInput } from '../engine/model/types.js';
 import { beginRound, createBattle, resolveRound } from '../engine/pipeline/battle.js';
 import { legalActions, type ActionOption } from '../engine/legality/actions.js';
 import type { Controllers } from '../engine/pipeline/context.js';
@@ -23,7 +23,7 @@ export interface RunOptions {
   onUpdate?: (st: BattleState) => void;
 }
 
-export function runBattle(data: GameData, setups: [SideSetup, SideSetup], policies: [Policy, Policy], opts: RunOptions): BattleState {
+export function runBattle(data: GameData, setups: [SideSetupInput, SideSetupInput], policies: [Policy, Policy], opts: RunOptions): BattleState {
   let st = createBattle(data, setups, { seed: opts.seed, config: opts.config, controllers: opts.controllers });
   const prng = createRng(opts.policySeed ?? opts.seed ^ 0x9e3779b9);
   opts.onUpdate?.(st);

@@ -9,6 +9,7 @@ import { creature, eventsOf, loadData, round, setup, start, summoner, uid, FLAT_
 import { legalMap } from '../app/simulate.js';
 import { randomLegalPolicy } from '../engine/ai/random.js';
 import { createRng } from '../engine/rng.js';
+import { rollHits } from '../engine/pipeline/techniques.js';
 
 const data = loadData();
 const tank = { ...FLAT_STATS, hp: 5000 };
@@ -17,7 +18,7 @@ const S = (id: string, est: 'iniciado' | 'invocador' = 'iniciado') => summoner(i
 const at = (techniqueId: string, positionId: string, choice?: string): Action => ({ kind: 'technique', techniqueId, target: { kind: 'position', positionId }, ...(choice ? { choice } : {}) });
 const self = (techniqueId: string): Action => ({ kind: 'technique', techniqueId, target: { kind: 'auto' } });
 const c = (id: string, over: Partial<BondedCreature> = {}) => creature(id, over);
-const z = (over: Partial<BondedCreature> = {}) => c('z', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado', 'aranazo'], ...over });
+const z = (over: Partial<BondedCreature> = {}) => c('z', { speciesId: 'prueba', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado', 'aranazo'], ...over });
 const dmg = (st: BattleState, actor: string, fromRound = 0) => eventsOf(st, 'damage', fromRound).filter((e) => e.actor === actor);
 const withCtl = (st: BattleState, decls: Declarations, ctl: Controllers) => resolveRound(data, beginRound(data, st), decls, ctl);
 
@@ -163,7 +164,7 @@ test('Anular prioridad reordena las acciones pendientes de la ronda', () => {
 
 test('Bola de fuego: la segunda criatura activa recibe el 50% del dano final', () => {
   const a = c('a', { equippedTechniques: ['bola_de_fuego'] });
-  const st = round(data, start(data, setup(S('a'), [a]), setup(S('b', 'invocador'), [z(), c('q', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado'] })], ['z', 'q'])), {
+  const st = round(data, start(data, setup(S('a'), [a]), setup(S('b', 'invocador'), [z(), c('q', { speciesId: 'prueba', types: ['tierra'], baseStatsNV50: tank, equippedTechniques: ['enfado'] })], ['z', 'q'])), {
     S0P0: at('bola_de_fuego', 'S1P0'), S1P0: self('enfado'), S1P1: self('enfado'),
   });
   const primary = Number(dmg(st, uid(0, 'a'))[0]!.data!.calculated);
@@ -230,7 +231,7 @@ test('Mueca exige elegir una opcion y aplica la elegida', () => {
 
 test('Helar: supereficaz contra Planta aunque la tabla diga x0,5 (GAP-FORCED-SE)', () => {
   const a = c('a', { equippedTechniques: ['helar'] });
-  const p = c('p', { speciesId: 'mairahda', types: ['planta'], baseStatsNV50: tank, equippedTechniques: ['enfado'] });
+  const p = c('p', { speciesId: 'prueba', types: ['planta'], baseStatsNV50: tank, equippedTechniques: ['enfado'] });
   const st = round(data, start(data, setup(S('a'), [a]), setup(S('b'), [p])), { S0P0: at('helar', 'S1P0'), S1P0: self('enfado') });
   assert.equal(dmg(st, uid(0, 'a'))[0]!.data!.typeMult, 2);
 });
@@ -243,7 +244,7 @@ test('Aliento de dragon ataca en el primer turno con Calima activa', () => {
 });
 
 test('Retorno arcano impide usar tecnicas Miticas en el siguiente turno', () => {
-  const m = c('m', { types: ['mitico'], speciesId: 'lernyra', equippedTechniques: ['retorno_arcano', 'proyectil_arcano', 'aranazo'] });
+  const m = c('m', { types: ['mitico'], equippedTechniques: ['retorno_arcano', 'proyectil_arcano', 'aranazo'] });
   let st = start(data, setup(S('a'), [m]), setup(S('b'), [z()]));
   st = round(data, st, { S0P0: at('retorno_arcano', 'S1P0'), S1P0: self('enfado') });
   assert.throws(() => round(data, st, { S0P0: at('proyectil_arcano', 'S1P0'), S1P0: self('enfado') }), DeclarationError);
@@ -252,18 +253,18 @@ test('Retorno arcano impide usar tecnicas Miticas en el siguiente turno', () => 
 });
 
 test('Infeccion: perdida al final de cada ronda y sin retirada voluntaria durante 2 rondas', () => {
-  const m = c('m', { speciesId: 'micora', types: ['planta'], equippedTechniques: ['infeccion', 'aranazo'] });
+  const m = c('m', { speciesId: 'micora', types: ['planta'], equippedTechniques: ['infeccion'] });
   let st = start(data, setup(S('a'), [m]), setup(S('b'), [z({ baseStatsNV50: { ...FLAT_STATS, hp: 320 } }), c('q')]));
   st = round(data, st, { S0P0: at('infeccion', 'S1P0'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'periodic_damage')[0]!.data!.loss, Math.round(320 * 0.0625));
-  assert.throws(() => round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: { kind: 'switch', incomingId: 'q' } }), DeclarationError);
-  st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: self('enfado') });
-  const r = round(data, st, { S0P0: at('aranazo', 'S1P0'), S1P0: { kind: 'switch', incomingId: 'q' } });
+  assert.throws(() => round(data, st, { S0P0: { kind: 'dodge' }, S1P0: { kind: 'switch', incomingId: 'q' } }), DeclarationError);
+  st = round(data, st, { S0P0: { kind: 'dodge' }, S1P0: self('enfado') });
+  const r = round(data, st, { S0P0: { kind: 'dodge' }, S1P0: { kind: 'switch', incomingId: 'q' } });
   assert.equal(r.sides[1].positions[0]!.occupantUid, uid(1, 'q'));
 });
 
 test('Revelacion absoluta elimina subidas y evasion enemigas e impide nuevas evasiones', () => {
-  const p = c('p', { speciesId: 'photerion', types: ['luz'], baseStatsNV50: tank, equippedTechniques: ['revelacion_absoluta'] });
+  const p = c('p', { speciesId: 'photerion', types: ['luz'], nv: 100, baseStatsNV50: tank, equippedTechniques: ['revelacion_absoluta'] });
   const v = z({ equippedTechniques: ['enfado', 'borrar_el_contorno'], speciesId: 'velin', types: ['oscuridad'] });
   let st = start(data, setup(S('a'), [p]), setup(S('b'), [v]));
   const dodge: Action = { kind: 'dodge' };
@@ -286,7 +287,7 @@ test('Borrar el contorno: -50% al proximo ataque recibido, y se consume aunque e
 });
 
 test('Mediodia: carga, baja mucho el Ataque magico y queda bloqueada hasta volver a entrar', () => {
-  const p = c('p', { speciesId: 'photerion', types: ['luz'], baseStatsNV50: tank, equippedTechniques: ['mediodia'] });
+  const p = c('p', { speciesId: 'photerion', types: ['luz'], nv: 100, baseStatsNV50: tank, equippedTechniques: ['mediodia'] });
   let st = start(data, setup(S('a'), [p]), setup(S('b'), [z()]));
   st = round(data, st, { S0P0: self('mediodia'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'charge_start').length, 1);
@@ -297,7 +298,7 @@ test('Mediodia: carga, baja mucho el Ataque magico y queda bloqueada hasta volve
 });
 
 test('Colapso destruye las barreras enemigas antes del dano e impide retirarse esa ronda', () => {
-  const k = c('k', { speciesId: 'skoterion', types: ['oscuridad'], equippedTechniques: ['colapso'] });
+  const k = c('k', { speciesId: 'skoterion', types: ['oscuridad'], nv: 100, equippedTechniques: ['colapso'] });
   const t = c('t', { speciesId: 'talifano', types: ['luz'], baseStatsNV50: tank, equippedTechniques: ['boveda_cristalina', 'enfado'] });
   let st = start(data, setup(S('a'), [k, c('k2')]), setup(S('b'), [t]));
   st = round(data, st, { S0P0: { kind: 'dodge' }, S1P0: self('boveda_cristalina') });
@@ -339,4 +340,17 @@ test('STAB: +25% de dano con tecnicas de un tipo propio (tambien en duotipos), s
   assert.ok(Math.abs(raw(['fuego'], 'llama') / raw(['tierra'], 'llama') - 1.25) < 1e-9);
   assert.ok(Math.abs(raw(['tierra', 'fuego'], 'llama') / raw(['tierra'], 'llama') - 1.25) < 1e-9);
   assert.equal(raw(['fuego'], 'aranazo'), raw(['tierra'], 'aranazo'));
+});
+
+test('19.4: 1-5 impactos con probabilidades 30/25/20/15/10 (media 2,5); uniforme configurable', () => {
+  const freq = (dist: 'decreasing' | 'uniform') => {
+    const st = { config: { ...DEFAULT_CONFIG, multiHitDistribution: dist }, rng: createRng(3) } as unknown as BattleState;
+    const f = [0, 0, 0, 0, 0];
+    for (let i = 0; i < 20000; i++) f[rollHits({ st }, 1, 5) - 1]!++;
+    return f.map((x) => x / 20000);
+  };
+  const d = freq('decreasing');
+  [0.3, 0.25, 0.2, 0.15, 0.1].forEach((p, i) => assert.ok(Math.abs(d[i]! - p) < 0.015, `${i + 1}: ${d[i]}`));
+  assert.ok(Math.abs(d.reduce((a, p, i) => a + p * (i + 1), 0) - 2.5) < 0.03);
+  freq('uniform').forEach((p) => assert.ok(Math.abs(p - 0.2) < 0.015));
 });

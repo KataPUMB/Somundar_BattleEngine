@@ -13,11 +13,23 @@ import { exitField, forcedReplacement, performSelfSwitch } from './lifecycle.js'
 import { computeAccuracy, computeHit, isContact, oncePerEntryBonuses, type DamageModifier, type HitScope } from './damage.js';
 import { stableStat } from '../rules/stats.js';
 
+export function rollHits(ctx: Pick<EngineCtx, 'st'>, min: number, max: number): number {
+  if (min === max) return min;
+  if (ctx.st.config.multiHitDistribution === 'uniform') return nextInt(ctx.st.rng, min, max);
+  const k = max - min + 1;
+  let r = nextInt(ctx.st.rng, 1, (k * (k + 3)) / 2);
+  for (let i = 0; i < k; i++) {
+    r -= k + 1 - i;
+    if (r <= 0) return min + i;
+  }
+  return max;
+}
+
 function hitCount(ctx: EngineCtx, t: Technique, user: Combatant, partial: boolean, cause: number): number {
   const h = t.power?.hits ?? { min: 1, max: 1 };
   // GAP-SOBRECARGA: toda tecnica de mas de un impacto realiza como minimo n impactos
   const floor = h.max > 1 && !partial ? auraOps(ctx, user, 'minHits', { subject: user, user, technique: t })[0] : undefined;
-  const n = h.min === h.max ? h.min : nextInt(ctx.st.rng, h.min, h.max);
+  const n = rollHits(ctx, h.min, h.max);
   const total = floor ? Math.max(n, Number(floor.op.n)) : n;
   if (h.min !== h.max || total !== n) {
     emit(ctx.st, { type: 'hit_count', data: { technique: t.id, hits: total, min: h.min, max: h.max, rolled: h.min === h.max ? undefined : n, minimumFrom: total !== n ? floor?.source : undefined, gap: 'GAP-MULTIHIT-DIST' }, cause, ruleRef: 'CANON-MECHANICS 19.4' });

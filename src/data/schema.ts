@@ -78,14 +78,36 @@ export interface StatusData {
   section: string;
 }
 
+export type SpeciesTransfiguration =
+  | { kind: 'level'; level: number }
+  | { kind: 'apotheosis'; minLevel: number; event: string };
+
+export interface LearnsetEntry {
+  level: number;
+  technique: string;
+  exclusive: boolean;
+}
+
 export interface SpeciesData {
   id: string;
   number: number;
   name: string;
+  source: { id: string; line: number };
   types: TypeId[] | null;
+  powerCategory: string | null;
+  rarity: string | null;
+  /** como se pasa de esta forma a la siguiente */
+  transfiguration: SpeciesTransfiguration | null;
+  apotheosis: string | null;
+  previousForm: string | null;
+  nextForm: string | null;
+  /** id de la primera forma de la linea */
   transfigurationLine: string | null;
   depthFactor: number | null;
   baseStatsNV50: Record<StatKey, number> | null;
+  learnset: LearnsetEntry[];
+  onTransfigure: string[];
+  training: string[];
   signatureTechniques: string[];
 }
 

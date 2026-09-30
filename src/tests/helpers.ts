@@ -36,7 +36,7 @@ export const FLAT_STATS: StatBlock = { hp: 300, atk: 100, matk: 100, def: 100, m
 export function creature(id: string, over: Partial<BondedCreature> = {}): BondedCreature {
   return {
     id,
-    speciesId: 'riftari',
+    speciesId: 'prueba',
     types: ['fuego'],
     nv: 50,
     baseStatsNV50: { ...FLAT_STATS },

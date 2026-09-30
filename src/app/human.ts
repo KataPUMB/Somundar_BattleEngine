@@ -5,7 +5,7 @@ import type { ActionOption } from '../engine/legality/actions.js';
 import type { Policy } from '../engine/ai/random.js';
 import type { RoundStartChoice } from '../engine/pipeline/battle.js';
 import { dodgeChance } from '../engine/rules/accuracy.js';
-import { creatureName, statusLine, techName } from './format.js';
+import { activeEffectLines, creatureName, statusLine, techName } from './format.js';
 
 function readLineSync(): string {
   const buf = Buffer.alloc(1);
@@ -51,6 +51,8 @@ function printBoard(data: GameData, st: BattleState, side: SideIndex, title = `r
   if (reserves.length) console.log(`  Intermedio: ${reserves.map((c) => `${c.displayName} ${c.location === 'defeated' ? '(derrotada)' : statusLine(c, data)}`).join(' | ')}`);
   const foeLeft = st.sides[foe].combatants.filter((c) => c.location === 'intermedio').length;
   console.log(`  Reservas viables del rival: ${foeLeft}`);
+  const effects = activeEffectLines(data, st, side);
+  console.log(effects.length ? effects.map((l) => `  ${l}`).join('\n') : '  Sin efectos de campo activos');
 }
 
 function describe(data: GameData, st: BattleState, positionId: string, o: ActionOption): string {

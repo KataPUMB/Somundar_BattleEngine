@@ -64,9 +64,9 @@ export interface BondedCreature {
   hpCurrent?: number;
   /** aptitud fijada por Instinto adoptado (Zanolah) */
   instinct?: 'atk' | 'def' | 'spe';
-  /** puede Transfigurarse todavia (Poder latente); explicito mientras falte CANON-CREATURES */
+  /** puede Transfigurarse todavia (Poder latente); por defecto, si la especie tiene forma siguiente */
   canTransfigure?: boolean;
-  /** cadaveres de Horda (Holomicor); explicitos mientras falte CANON-CREATURES */
+  /** cadaveres de Horda (Holomicor) */
   horde?: HordeCorpse[];
 }
 
@@ -76,15 +76,24 @@ export interface HordeCorpse {
   techniqueId: string;
 }
 
-export interface Preparation {
-  creatures: BondedCreature[];
+/** criatura tal como llega del escenario: tipos y estadisticas se toman de la especie si se omiten */
+export type BondedCreatureInput = Omit<BondedCreature, 'types' | 'baseStatsNV50' | 'horde'> & {
+  types?: TypeId[];
+  baseStatsNV50?: StatBlock;
+  horde?: (Omit<HordeCorpse, 'atkNV50'> & { atkNV50?: number })[];
+};
+
+export interface Preparation<C = BondedCreature> {
+  creatures: C[];
 }
 
-export interface SideSetup {
+export interface SideSetup<C = BondedCreature> {
   summoner: Summoner;
-  preparation: Preparation;
+  preparation: Preparation<C>;
   /** Vinculos no preparados, solo para comprobar 2.5 */
-  otherBonds?: BondedCreature[];
+  otherBonds?: C[];
   /** ids de criaturas preparadas para las posiciones iniciales; null deja la posicion vacia */
   initialDeployment: (string | null)[];
 }
+
+export type SideSetupInput = SideSetup<BondedCreatureInput>;

@@ -95,16 +95,20 @@ export function validateGameData(raw: RawData): DataIssue[] {
   for (const d of duplicates(raw.speciesRaw.map((s) => s.id))) err(C, d, 'id duplicado');
   for (const d of duplicates(raw.speciesRaw.map((s) => String(s.number)))) err(C, `n.${d}`, 'numero de especie duplicado');
   const techIds = new Set(raw.techniquesRaw.map((t) => t.id));
-  let withoutStats = 0;
+  const speciesIds = new Set(raw.speciesRaw.map((s) => s.id));
+  const byId = new Map(raw.speciesRaw.map((s) => [s.id, s]));
   for (const s of raw.speciesRaw) {
-    for (const tid of s.signatureTechniques) if (!techIds.has(tid)) err(C, s.id, `tecnica especial inexistente: ${tid}`);
+    const refs = [...s.signatureTechniques, ...s.learnset.map((l) => l.technique), ...s.onTransfigure, ...s.training];
+    for (const tid of new Set(refs)) if (!techIds.has(tid)) err(C, s.id, `tecnica inexistente: ${tid}`);
     if (s.types !== null) {
       if (s.types.length < 1 || s.types.length > 2) err(C, s.id, 'debe tener 1 o 2 tipos');
       for (const ty of s.types) if (!isType(ty)) err(C, s.id, `tipo invalido: ${ty}`);
     }
-    if (!s.baseStatsNV50) withoutStats++;
+    if (!s.baseStatsNV50) err(C, s.id, 'sin estadisticas NV50');
+    if (s.nextForm && (!speciesIds.has(s.nextForm) || byId.get(s.nextForm)!.previousForm !== s.id)) err(C, s.id, `forma siguiente incoherente: ${s.nextForm}`);
+    if (s.previousForm && (!speciesIds.has(s.previousForm) || byId.get(s.previousForm)!.nextForm !== s.id)) err(C, s.id, `forma previa incoherente: ${s.previousForm}`);
+    if (s.nextForm && !s.transfiguration) err(C, s.id, 'tiene forma siguiente pero no condicion de Transfiguracion');
   }
-  if (withoutStats > 0) warn(C, undefined, `${withoutStats} especies sin estadisticas NV50 (falta CANON-CREATURES); usar instancias explicitas`);
   return issues;
 }
 

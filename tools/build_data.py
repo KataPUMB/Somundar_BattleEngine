@@ -9,8 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ENGINE = ROOT / "NarrativeEngine"
 DATA = ROOT / "Data"
 SYSTEM = ENGINE / "05_SISTEMA_DE_INVOCACION.md"
-CHARACTERS = ENGINE / "03_PERSONAJES_Y_TRAYECTORIAS.md"
-CREATURES = ENGINE / "04_CRIATURAS.md"
+CREATURES = ENGINE / "ficha_completa_de_criaturas.md"
 
 EM = "\u2014"
 EN = "\u2013"
@@ -457,64 +456,126 @@ STATUS_RULES = {
 
 # ---------------------------------------------------------------- criaturas
 
-def parse_known_species_types():
-    known = {}
-    text = CHARACTERS.read_text(encoding="utf-8").splitlines()
-    for n, line in enumerate(text, 1):
-        m = re.match(r"^#{2,5} ([^" + EM + r"]+?) " + EM + r" ([^" + EM + r"]+?) " + EM + r" NV", line)
-        if m:
-            types = [type_id(t) for t in m.group(2).split("/")]
-            if all(types):
-                known.setdefault(m.group(1).strip(), {"types": types, "line": n})
-        m = re.match(r"^### \d+\.\d+\. \S+ " + EM + r" (\S+) NV\d+", line)
-        if m:
-            for k in range(n, min(n + 4, len(text))):
-                t = re.match(r"^\*\*Tipo:\*\* (.+?)\s*$", text[k])
-                if t:
-                    types = [type_id(x) for x in t.group(1).rstrip(".").split("/")]
-                    if all(types):
-                        known.setdefault(m.group(1), {"types": types, "line": k + 1})
-                    break
-    return known
+SHEET_STATS = {"ataque fisico": "atk", "ataque magico": "matk", "defensa": "def",
+               "defensa magica": "mdef", "velocidad": "spe", "vitalidad": "hp"}
+MIDDOT = "\u00b7"
 
 
-def build_creatures(techniques):
-    species = {}
+def parse_transfiguration(raw):
+    value = norm(strip_md(raw))
+    m = re.match(r"^nivel (\d+)", value)
+    if m:
+        return {"kind": "level", "level": int(m.group(1))}
+    parts = [p.strip() for p in raw.split(MIDDOT)]
+    lv = re.search(r"(\d+)", strip_md(parts[1])) if len(parts) > 1 else None
+    return {"kind": "apotheosis", "minLevel": int(lv.group(1)) if lv else None,
+            "event": strip_md(MIDDOT.join(parts[2:])) if len(parts) > 2 else None}
+
+
+def parse_creature_sheets(techniques):
+    lines = CREATURES.read_text(encoding="utf-8").splitlines()
+    tech_ids = {t["id"] for t in techniques}
+    signatures = {}
     for t in techniques:
         if t["species"]:
-            n, name = t["species"]["number"], t["species"]["name"]
-            species.setdefault(n, {"name": name, "signatureTechniques": []})["signatureTechniques"].append(t["id"])
-    known = parse_known_species_types()
-    out = []
-    for n in sorted(species):
-        s = species[n]
-        k = known.get(s["name"])
-        out.append({
-            "id": slug(s["name"]),
-            "number": n,
-            "name": s["name"],
-            "types": k["types"] if k else None,
-            "typesSource": {"id": "CANON-NOVELS", "line": k["line"]} if k else None,
-            "powerCategory": None,
-            "transfigurationLine": None,
-            "depthFactor": None,
-            "baseStatsNV50": None,
-            "anatomy": None,
-            "learnableTechniques": None,
-            "signatureTechniques": s["signatureTechniques"],
-        })
+            signatures.setdefault(t["species"]["number"], []).append(t["id"])
+    species, problems = [], []
+    cur, section = None, None
+
+    def tech(name, n):
+        tid = slug(name)
+        if tid not in tech_ids:
+            problems.append("linea %d: tecnica desconocida '%s'" % (n, name))
+        return tid
+
+    for n, line in enumerate(lines, 1):
+        line = line.rstrip()
+        h = re.match(r"^## (\d+)\. (.+)$", line)
+        if h:
+            cur = {"id": slug(h.group(2)), "number": int(h.group(1)), "name": h.group(2).strip(),
+                   "source": {"id": "CANON-CREATURES", "line": n}, "types": None, "powerCategory": None,
+                   "rarity": None, "transfiguration": None, "apotheosis": None, "previousForm": None,
+                   "nextForm": None, "transfigurationLine": None, "depthFactor": None, "baseStatsNV50": {},
+                   "learnset": [], "onTransfigure": [], "training": [],
+                   "signatureTechniques": signatures.get(int(h.group(1)), [])}
+            species.append(cur)
+            section = None
+            continue
+        if cur is None:
+            continue
+        f = re.match(r"^\*\*([^*]+):\*\*\s*(.*?)\s*$", line)
+        if f:
+            label, value = norm(f.group(1)), f.group(2)
+            if label == "tipo":
+                cur["types"] = [type_id(x) for x in value.split("/")]
+                if not all(cur["types"]):
+                    problems.append("linea %d: tipo desconocido '%s'" % (n, value))
+            elif label == "categoria de poder":
+                cur["powerCategory"] = slug(value)
+            elif label == "rareza":
+                cur["rarity"] = slug(value)
+            elif label == "transfiguracion":
+                cur["transfiguration"] = parse_transfiguration(value)
+            elif label == "apoteosis":
+                cur["apotheosis"] = strip_md(value)
+            continue
+        s = re.match(r"^\|\s*([^|]+?)\s*\|\s*([\d.,]+)\s*\|\s*$", line)
+        if s and norm(s.group(1)) in SHEET_STATS:
+            cur["baseStatsNV50"][SHEET_STATS[norm(s.group(1))]] = num(s.group(2))
+            continue
+        if line.startswith("#### "):
+            section = norm(line[5:])
+            continue
+        if line.startswith("---") or line.startswith("### "):
+            section = None
+            continue
+        item = re.match(r"^- (.+?)\s*$", line)
+        if not item or section is None:
+            continue
+        text = item.group(1)
+        exclusive = "(exclusiva)" in text
+        text = text.replace("(exclusiva)", "").strip()
+        if section == "aprende por nivel":
+            lv = re.match(r"^Nivel (\d+): (.+)$", text)
+            if lv:
+                cur["learnset"].append({"level": int(lv.group(1)), "technique": tech(lv.group(2), n), "exclusive": exclusive})
+            elif norm(text).startswith("al transfigurarse:"):
+                cur["onTransfigure"].append(tech(text.split(":", 1)[1], n))
+            else:
+                problems.append("linea %d: entrada de nivel no reconocida '%s'" % (n, text))
+        elif section == "aprende por entrenamiento":
+            cur["training"].append(tech(text, n))
+
+    # Una forma con Transfiguracion continua en la ficha siguiente de la guia
+    for i, sp in enumerate(species):
+        if sp["transfiguration"] and i + 1 < len(species):
+            sp["nextForm"] = species[i + 1]["id"]
+            species[i + 1]["previousForm"] = sp["id"]
+    by_id = {sp["id"]: sp for sp in species}
+    for sp in species:
+        first = sp
+        while first["previousForm"]:
+            first = by_id[first["previousForm"]]
+        sp["transfigurationLine"] = first["id"]
+        if len(sp["baseStatsNV50"]) != len(SHEET_STATS):
+            problems.append("%s: estadisticas NV50 incompletas" % sp["id"])
+    known = {sp["number"] for sp in species}
+    for number in signatures:
+        if number not in known:
+            problems.append("especie n.%d con tecnica especial pero sin ficha" % number)
+    if problems:
+        raise ValueError("Fichas de criaturas:\n  " + "\n  ".join(problems))
     return {
         "_meta": {
-            "status": "incompleto",
-            "missingSource": "CANON-CREATURES (04_CRIATURAS.md) no esta presente en NarrativeEngine/",
-            "derivedFrom": [
-                "CANON-TECHNIQUES > Tecnicas especiales (numero y nombre de especie)",
-                "CANON-NOVELS (tipos declarados en fichas individuales, no en fichas de especie)",
-            ],
+            "generatedFrom": "NarrativeEngine/" + CREATURES.name,
+            "source": "CANON-CREATURES",
+            "count": len(species),
             "statKeys": ["hp", "atk", "matk", "def", "mdef", "spe"],
+            "note": "baseStatsNV50 a NV 50; Stat(NV) = Stat(NV50) x (0,50 + NV/200) / 0,75. "
+                    "nextForm/previousForm se deducen del orden de la guia (la forma con Transfiguracion continua en la siguiente ficha).",
             "depthFactors": {"fluida": 0.8, "normal": 1.0, "exigente": 1.2, "dificil": 1.5, "singular": 2.0},
         },
-        "species": out,
+        "species": species,
     }
 
 
@@ -538,9 +599,6 @@ def main():
         if dupes:
             raise ValueError("IDs duplicados en %s: %s" % (label, dupes))
 
-    if CREATURES.exists():
-        print("AVISO: 04_CRIATURAS.md presente pero sin parser; creatures.json sigue siendo un esqueleto")
-
     DATA.mkdir(exist_ok=True)
     meta = {"generatedFrom": "NarrativeEngine/05_SISTEMA_DE_INVOCACION.md", "revision": "r2"}
     write("techniques.json", {"_meta": dict(meta, source="CANON-TECHNIQUES", count=len(techniques),
@@ -551,13 +609,13 @@ def main():
                                   "manifestations": manifestations})
     write("types.json", dict({"_meta": meta}, **parse_type_chart(mech_lines, mech_off)))
     write("status_conditions.json", {"_meta": meta, "rules": STATUS_RULES, "conditions": STATUS_CONDITIONS})
-    creatures = build_creatures(techniques)
+    creatures = parse_creature_sheets(techniques)
     write("creatures.json", creatures)
 
     print("tecnicas:", len(techniques))
     print("manifestaciones:", len(manifestations))
-    print("especies:", len(creatures["species"]), "con tipo conocido:",
-          sum(1 for s in creatures["species"] if s["types"]))
+    print("especies:", len(creatures["species"]), "lineas:",
+          len({s["transfigurationLine"] for s in creatures["species"]}))
 
 
 if __name__ == "__main__":
