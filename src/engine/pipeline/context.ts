@@ -28,6 +28,8 @@ export interface EngineCtx {
   /** tecnicas en curso: sus Reemplazos e Intercambios forzados esperan a que terminen (28.5) */
   inTechnique?: number;
   chainDepth?: number;
+  /** los Reemplazos por Derrota esperan al final de la fase de acciones / del cierre */
+  deferReplacements?: boolean;
 }
 
 export function sideOf(st: BattleState, i: SideIndex): SideState {

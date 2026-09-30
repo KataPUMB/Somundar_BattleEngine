@@ -64,6 +64,20 @@ export function defeatIfZero(ctx: EngineCtx, c: Combatant, cause?: number): void
   }
 }
 
+// GAP-EMPTY-TARGET: si la posicion declarada esta vacia, el impacto pasa a la otra posicion ocupada de ese mismo lado
+function targetAt(ctx: EngineCtx, pos: Position, techniqueId: string, user: Combatant, hitIndex: number, cause: number): Combatant | null {
+  const occ = occupantOf(ctx.st, pos.id);
+  if (occ) return occ;
+  const alt = sideOf(ctx.st, pos.side).positions.find((p) => p.id !== pos.id && p.occupantUid !== null);
+  if (!alt) {
+    emit(ctx.st, { type: 'hit_no_target', actor: user.uid, targets: [pos.id], data: { technique: techniqueId, hitIndex, gap: 'GAP-EMPTY-TARGET' }, cause, ruleRef: 'CANON-MECHANICS 14.2' });
+    return null;
+  }
+  const target = occupantOf(ctx.st, alt.id)!;
+  emit(ctx.st, { type: 'retargeted', actor: user.uid, targets: [target.uid], data: { technique: techniqueId, from: pos.id, to: alt.id, hitIndex, gap: 'GAP-EMPTY-TARGET' }, cause, ruleRef: 'CANON-MECHANICS 14.2' });
+  return target;
+}
+
 function redirectTarget(ctx: EngineCtx, t: Technique, user: Combatant, target: Combatant, single: boolean): { target: Combatant; pct: number } | null {
   if (!single || t.class === 'status' || target.side === user.side) return null;
   const guard = sideOf(ctx.st, target.side).combatants.find((c) => c !== target && c.location === 'field' && marksOf(c, 'redirect').length > 0);
@@ -90,11 +104,8 @@ function onDamageTaken(ctx: EngineCtx, run: TechRun, target: Combatant, marks: M
 // CANON-MECHANICS 28.5.15: precision, calculo sin redondeo intermedio, perdida real, respuestas de supervivencia
 function resolveHit(ctx: EngineCtx, run: TechRun, pos: Position, hitIndex: number, single: boolean, primary: boolean): boolean {
   const { t, user, cause } = run;
-  let target = occupantOf(ctx.st, pos.id);
-  if (!target) {
-    emit(ctx.st, { type: 'hit_no_target', actor: user.uid, targets: [pos.id], data: { technique: t.id, hitIndex, gap: 'GAP-EMPTY-TARGET' }, cause, ruleRef: 'CANON-MECHANICS 14.2' });
-    return false;
-  }
+  let target = targetAt(ctx, pos, t.id, user, hitIndex, cause);
+  if (!target) return false;
   const redirect = redirectTarget(ctx, t, user, target, single);
   if (redirect) {
     emit(ctx.st, { type: 'redirected', actor: user.uid, targets: [redirect.target.uid], data: { from: target.uid, technique: t.id }, cause });
@@ -146,7 +157,7 @@ function resolveHitOn(ctx: EngineCtx, run: TechRun, target: Combatant, hitIndex:
     data: {
       technique: t.id, hitIndex, attack: calc.attack, defense: calc.defense, typeMult: calc.typeMult, modifiers: calc.mods, halvings: calc.halvings,
       ignoreDefense: calc.ignoreDefense, raw: out.raw, calculated: out.calculated, loss, before, after: target.hp,
-      sharedWith: share?.uid,
+      sharedWith: share?.uid, attackParts: calc.attackParts, defenseParts: calc.defenseParts,
     },
     rolls,
     cause,
@@ -330,7 +341,7 @@ export function flushPending(ctx: EngineCtx, cause?: number): void {
   if ((ctx.inTechnique ?? 0) > 0) return;
   for (;;) {
     sweepDefeats(ctx, cause);
-    const pid = ctx.pendingReplacements?.shift();
+    const pid = ctx.deferReplacements ? undefined : ctx.pendingReplacements?.shift();
     if (pid !== undefined) {
       resolveChain(ctx, () => forcedReplacement(ctx, pid, cause));
       continue;
@@ -380,11 +391,8 @@ function hordeHits(ctx: EngineCtx, run: TechRun, declared: Position[]): void {
     if (!corpse || !ct || !p || run.user.location === 'defeated') break;
     const attack = stableStat(corpse.atkNV50, run.user.creature.nv);
     const ev = emit(ctx.st, { type: 'horde_corpse', actor: run.user.uid, data: { hitIndex: i, species: corpse.speciesId, technique: ct.id, attack, gap: 'GAP-HORDA' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
-    const target = occupantOf(ctx.st, p.id);
-    if (!target) {
-      emit(ctx.st, { type: 'hit_no_target', actor: run.user.uid, targets: [p.id], data: { technique: ct.id, hitIndex: i, gap: 'GAP-EMPTY-TARGET' }, cause: ev, ruleRef: 'CANON-MECHANICS 14.2' });
-      continue;
-    }
+    const target = targetAt(ctx, p, ct.id, run.user, i, ev);
+    if (!target) continue;
     const sub: TechRun = { ...run, t: ct, cause: ev, attackOverride: attack };
     resolveHitOn(ctx, sub, target, i, i === 0, undefined, ct.power?.perHit as number);
     run.damageDealt = sub.damageDealt;

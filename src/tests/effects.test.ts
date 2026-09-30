@@ -14,7 +14,7 @@ const at = (techniqueId: string, positionId: string) => ({ kind: 'technique' as 
 const brasal = (id: string, over: Partial<BondedCreature> = {}) => creature(id, { speciesId: 'brasal', types: ['fuego'], equippedTechniques: ['golpe_candente', 'aranazo'], ...over });
 const rock = (id: string, over: Partial<BondedCreature> = {}) => creature(id, { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: tank, ...over });
 // Golpe candente (PB 65, Fuego) con 100 de Ataque contra 100 de Defensa y tipo x1
-const base = (m: number) => rawDamage({ power: 65, attack: 100, defense: 100, damagePcts: [(m - 1) * 100], typeMult: 1, halvings: 0, ignoreDefense: false, constant: DEFAULT_CONFIG.damageConstant });
+const base = (m: number) => rawDamage({ power: 65, attack: 100, defense: 100, damagePcts: [(m - 1) * 100], typeMult: 1, halvings: 0, ignoreDefense: false, constant: DEFAULT_CONFIG.damageConstant, stab: DEFAULT_CONFIG.stabMultiplier });
 
 function firstDamage(st: ReturnType<typeof start>, actor: string) {
   return eventsOf(st, 'damage').find((e) => e.actor === actor)!;

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { beginRound, DeclarationError, resolveRound } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
 import { DEFAULT_CONFIG, type Action, type BattleState, type Declarations } from '../engine/model/battle.js';
-import type { BondedCreature } from '../engine/model/types.js';
+import type { BondedCreature, TypeId } from '../engine/model/types.js';
 import type { Controllers } from '../engine/pipeline/context.js';
 import { creature, eventsOf, loadData, round, setup, start, summoner, uid, FLAT_STATS } from './helpers.js';
 import { legalMap } from '../app/simulate.js';
@@ -326,4 +326,17 @@ test('23.1: la constante de dano del canon es 0,9375 (+25% sobre la anterior 0,7
     return Number(eventsOf(st, 'damage')[0]!.data!.raw);
   };
   assert.ok(Math.abs(hit() / hit({ damageConstant: 0.75 }) - 1.25) < 1e-9);
+});
+
+test('STAB: +25% de dano con tecnicas de un tipo propio (tambien en duotipos), sin aparecer en los modificadores', () => {
+  const raw = (types: TypeId[], techniqueId: string) => {
+    const a = c('a', { types, equippedTechniques: [techniqueId] });
+    const st = round(data, start(data, setup(S('a'), [a]), setup(S('b'), [z()])), { S0P0: at(techniqueId, 'S1P0'), S1P0: self('enfado') });
+    const d = eventsOf(st, 'damage')[0]!.data!;
+    assert.deepEqual(d.modifiers, []);
+    return Number(d.raw);
+  };
+  assert.ok(Math.abs(raw(['fuego'], 'llama') / raw(['tierra'], 'llama') - 1.25) < 1e-9);
+  assert.ok(Math.abs(raw(['tierra', 'fuego'], 'llama') / raw(['tierra'], 'llama') - 1.25) < 1e-9);
+  assert.equal(raw(['fuego'], 'aranazo'), raw(['tierra'], 'aranazo'));
 });

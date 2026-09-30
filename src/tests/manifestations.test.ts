@@ -215,6 +215,27 @@ test('16.6 / 28.5: un Reemplazo forzado resuelve toda su cadena de Entrada antes
   assert.equal(combatant(st, uid(0, 'a')).stages.atk, -2);
 });
 
+test('Reemplazo por Derrota al terminar las acciones de la ronda; el ataque a la posicion vacia va a la criatura que queda', () => {
+  const a1 = c('a1', { baseStatsNV50: { ...FLAT_STATS, atk: 3000, spe: 300 } });
+  const a2 = c('a2', { baseStatsNV50: { ...FLAT_STATS, spe: 200 } });
+  const b1 = c('b1', { baseStatsNV50: { ...FLAT_STATS, hp: 10, spe: 10 }, equippedTechniques: ['enfado'] });
+  const b2 = c('b2', { baseStatsNV50: { ...tank, spe: 10 }, equippedTechniques: ['enfado'] });
+  const b3 = c('b3', { types: ['aire'], baseStatsNV50: tank, equippedTechniques: ['enfado'], equippedManifestations: ['golpe_desorientador'] });
+  let st = start(data, setup(S('a', 'invocador'), [a1, a2], ['a1', 'a2']), setup(S('b', 'invocador'), [b1, b2, b3], ['b1', 'b2']));
+  st = round(data, st, { S0P0: at('aranazo', 'S1P0'), S0P1: at('aranazo', 'S1P0'), S1P0: self('enfado'), S1P1: self('enfado') });
+  const log = st.log.filter((e) => e.round === 1);
+  const idx = (pred: (e: (typeof log)[number]) => boolean) => log.findIndex(pred);
+  const defeat = idx((e) => e.type === 'defeat' && e.actor === uid(1, 'b1'));
+  const retarget = idx((e) => e.type === 'retargeted' && e.actor === uid(0, 'a2'));
+  const lastAction = log.map((e) => e.type).lastIndexOf('technique_end');
+  const repl = idx((e) => e.type === 'forced_replacement');
+  const entry = idx((e) => e.type === 'manifestation' && e.data!.manifestation === 'golpe_desorientador');
+  const end = idx((e) => e.type === 'end_of_round');
+  assert.ok(defeat < retarget && retarget < lastAction && lastAction < repl && repl < entry && entry < end, JSON.stringify([defeat, retarget, lastAction, repl, entry, end]));
+  assert.equal(dmg(st, uid(0, 'a2'))[0]!.targets?.[0], uid(1, 'b2'));
+  assert.ok(combatant(st, uid(0, 'a1')).statuses.some((s) => s.id === 'desorientado'));
+});
+
 test('18.2 / 28.5: si una accion altera la Velocidad se recalcula el orden de las pendientes (Estela)', () => {
   const a1 = c('a1', { speciesId: 'tamegona', types: ['tierra'], baseStatsNV50: { ...tank, spe: 200 }, equippedTechniques: ['estela', 'aranazo'] });
   const a2 = c('a2', { baseStatsNV50: { ...tank, spe: 50 } });

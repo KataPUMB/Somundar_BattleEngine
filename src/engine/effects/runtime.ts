@@ -162,6 +162,11 @@ export function auraOps(ctx: EngineCtx, subject: Combatant, kind: string, scope:
 
 // CANON-MECHANICS 21.3 con efectos laterales (Estela) y Manifestaciones que modifican estadisticas
 export function statOf(ctx: EngineCtx, c: Combatant, key: Exclude<StatKey, 'hp'>, stageOverride?: number): number {
+  return effectiveStat(c.stable[key], stageOverride ?? c.stages[key], statMods(ctx, c, key));
+}
+
+// Modificadores directos de una estadistica: estados, efectos de lado y Manifestaciones/Climas
+export function statMods(ctx: EngineCtx, c: Combatant, key: Exclude<StatKey, 'hp'>): DirectModifier[] {
   const mods: DirectModifier[] = [...statusModifiers(ctx.data, c, key)];
   if (c.location === 'field') {
     for (const se of sideOf(ctx.st, c.side).sideEffects) {
@@ -171,7 +176,7 @@ export function statOf(ctx: EngineCtx, c: Combatant, key: Exclude<StatKey, 'hp'>
       if (a.op.stat === key || (a.op.stats as string[] | undefined)?.includes(key)) mods.push({ pct: Number(a.op.pct), fromStatus: false, source: a.source });
     }
   }
-  return effectiveStat(c.stable[key], stageOverride ?? c.stages[key], mods);
+  return mods;
 }
 
 export function speedOf(ctx: EngineCtx, c: Combatant): number {

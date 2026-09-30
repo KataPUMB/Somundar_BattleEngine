@@ -13,6 +13,8 @@ export function techName(data: GameData, id: unknown): string {
   return data.techniques.get(String(id))?.name ?? String(id);
 }
 
+const STAT_LABELS: Record<string, string> = { atk: 'Ataque', matk: 'Ataque magico', def: 'Defensa', mdef: 'Defensa magica', spe: 'Velocidad' };
+
 const RESTRICTION_LABELS: Record<string, string> = {
   no_voluntary_withdraw: 'no puede retirarse',
   stat_cannot_increase: 'no puede subir',
@@ -60,7 +62,13 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'damage': {
       const mods = (d.modifiers as { pct: number; source: string }[] | undefined) ?? [];
       const m = mods.length ? ` [${mods.map((x) => `${x.source} ${x.pct > 0 ? '+' : ''}${x.pct}%`).join(', ')}]` : '';
-      return `  -> ${tgt} pierde ${String(d.loss)} (${String(d.before)} -> ${String(d.after)})${d.typeMult !== 1 ? ` x${String(d.typeMult)}` : ''}${m}`;
+      const stat = (label: string, p: { stat: string; stage: number; mods: { pct: number; source: string }[] } | null | undefined) => {
+        if (!p || (p.stage === 0 && p.mods.length === 0)) return '';
+        const parts = [...(p.stage !== 0 ? [`etapa ${p.stage > 0 ? '+' : ''}${p.stage}`] : []), ...p.mods.map((x) => `${x.source} ${x.pct > 0 ? '+' : ''}${x.pct}%`)];
+        return ` {${label} ${STAT_LABELS[p.stat] ?? p.stat}: ${parts.join(', ')}}`;
+      };
+      const stats = stat('usa', d.attackParts as never) + stat('rival', d.ignoreDefense ? null : (d.defenseParts as never));
+      return `  -> ${tgt} pierde ${String(d.loss)} (${String(d.before)} -> ${String(d.after)})${d.typeMult !== 1 ? ` x${String(d.typeMult)}` : ''}${m}${stats}`;
     }
     case 'manifestation': return `  Manifestacion ${String(d.manifestation)} de ${who}`;
     case 'manifestation_inactive': return `  Manifestacion ${String(d.manifestation)} de ${who} desactivada (${String(d.reason)})`;
@@ -107,6 +115,7 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'miss': return `  -> falla contra ${tgt} (precision ${Number(d.accuracy).toFixed(1)}%)`;
     case 'dodged': return `  -> ${tgt} lo esquiva`;
     case 'hit_no_target': return `  -> ${e.targets?.[0]} esta vacia: el impacto se pierde`;
+    case 'retargeted': return `  -> ${String(d.from)} esta vacia: el ataque va contra ${tgt}`;
     case 'technique_no_effect': return `  -> ${techName(data, d.technique)} no tiene efecto ejecutable`;
     case 'technique_end': return null;
     case 'defeat': return `  ${who} es derrotado`;

@@ -21,7 +21,7 @@
           { "id": "brumarina", "speciesId": "brumarina", "types": ["aire", "agua"], "nv": 37,
             "baseStatsNV50": { "hp": 300, "atk": 100, "matk": 100, "def": 100, "mdef": 100, "spe": 100 },
             "fortaleza": {}, "orientations": ["matk", "mdef"],
-            "equippedTechniques": ["corrientes_cambiantes", "rafaga", "desconcentrar", "puno_preciso"],
+            "equippedTechniques": ["corrientes_cambiantes", "desorientar", "punetazo", "puno_preciso"],
             "equippedManifestations": ["filo_del_viento"],
             "persistentStatuses": [] },
           { "id": "risco", "nickname": "Risco", "speciesId": "valdrakar", "types": ["fuego", "mitico"], "nv": 53,

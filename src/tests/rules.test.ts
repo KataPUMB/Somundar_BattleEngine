@@ -56,7 +56,7 @@ test('20.2: 100% con Desorientado -> 75%; + Tercer ojo (+10 pp) -> 85%', () => {
 
 test('23.1-23.4: formula de dano, M, R e ignorar Defensa (constante configurable)', () => {
   const K = 0.75;
-  const base = { power: 100, attack: 400, defense: 100, damagePcts: [], typeMult: 1, halvings: 0, ignoreDefense: false, constant: K };
+  const base = { power: 100, attack: 400, defense: 100, damagePcts: [], typeMult: 1, halvings: 0, ignoreDefense: false, constant: K, stab: 1 };
   close(rawDamage(base), K * 400 * 2);
   close(rawDamage({ ...base, damagePcts: [100, -50] }), K * 400 * 2 * 1.5);
   close(rawDamage({ ...base, halvings: 2 }), (K * 400 * 2) / 4);

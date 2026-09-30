@@ -123,6 +123,8 @@ export interface BattleConfig {
   contactDefault: 'physical' | 'none';
   /** constante de CANON-MECHANICS 23.1 (0,9375; la version anterior usaba 0,75) */
   damageConstant: number;
+  /** bonificacion por tecnica del mismo tipo que el usuario (decision del autor frente a 22.2) */
+  stabMultiplier: number;
 }
 
 export const DEFAULT_CONFIG: BattleConfig = {
@@ -132,6 +134,7 @@ export const DEFAULT_CONFIG: BattleConfig = {
   maxChainDepth: 64,
   contactDefault: 'physical',
   damageConstant: 0.9375,
+  stabMultiplier: 1.25,
 };
 
 export type Outcome =

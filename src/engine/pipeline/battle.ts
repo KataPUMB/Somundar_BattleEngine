@@ -426,6 +426,8 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
   }
 
   for (const i of surrendered) st.sides[i].surrendered = true;
+  endOfRoundReplacements(ctx);
+  ctx.deferReplacements = false;
   for (const side of st.sides) for (const c of side.combatants) {
     c.presentAtDeclaration = false;
     c.dodgingThisRound = false;
@@ -459,6 +461,7 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
   const ctx: EngineCtx = { data, st, controllers };
   const frozen = freeze(ctx, declarations);
   ctx.declared = new Map(frozen.map((f) => [f.actorUid, f.action]));
+  ctx.deferReplacements = true;
   for (const f of frozen) emit(st, { type: 'declaration', actor: f.actorUid, targets: [f.positionId], data: { action: f.action }, ruleRef: 'CANON-MECHANICS 14.1' });
 
   st.phase = 'switches';
@@ -486,9 +489,17 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
     const next = reorderPending(ctx, queue.filter((x) => !x.done), keys, key, 'action_reorder');
     if (next) queue = next;
   }
+  endOfRoundReplacements(ctx);
 
   closeRound(ctx, new Set(frozen.filter((f) => f.action.kind === 'surrender').map((f) => f.side)));
   return st;
+}
+
+// GAP-REPLACEMENT-TIMING: los Reemplazos por Derrota se resuelven al terminar las acciones de la ronda, con toda su cadena de Entrada
+function endOfRoundReplacements(ctx: EngineCtx): void {
+  ctx.deferReplacements = false;
+  flushPending(ctx);
+  ctx.deferReplacements = true;
 }
 
 const sameKeys = (a: number[], b: number[]) => a.length === b.length && a.every((v, i) => v === b[i]);

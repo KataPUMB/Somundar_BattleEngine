@@ -5,7 +5,7 @@ import type { TypeId } from '../model/types.js';
 import { finalAccuracy } from '../rules/accuracy.js';
 import { rawDamage } from '../rules/combat.js';
 import { effectiveStat } from '../rules/stats.js';
-import { auraOps, auras, evalCondition, marksOf, statOf, type EvalScope } from '../effects/runtime.js';
+import { auraOps, auras, evalCondition, marksOf, statMods, statOf, type EvalScope } from '../effects/runtime.js';
 import { sideOf, type EngineCtx } from './context.js';
 import { accuracyModifiers } from './combatant.js';
 
@@ -56,6 +56,15 @@ export interface HitCalc {
   raw: number;
   damageTakenMarks: Mark[];
   consumedSideEffects: string[];
+  /** etapa y modificadores directos que componen Ataque y Defensa (21.2-21.3) */
+  attackParts: StatParts | null;
+  defenseParts: StatParts;
+}
+
+export interface StatParts {
+  stat: string;
+  stage: number;
+  mods: { source: string; pct: number }[];
 }
 
 // CANON-MECHANICS 23.1-23.4 con todos los modificadores de tecnica, Manifestacion, Clima, marcas y efectos laterales
@@ -66,10 +75,13 @@ export function computeHit(ctx: EngineCtx, h: HitScope, perHit: number): HitCalc
 
   const atkOp = ops('attackStat')[0];
   let attack: number;
+  let attackFrom: { c: Combatant; key: 'atk' | 'matk' | 'def' | 'mdef' | 'spe' } | null = null;
   if (h.attackOverride !== undefined) attack = effectiveStat(h.attackOverride, user.stages.atk, []);
   else if (atkOp?.from === 'target' && atkOp.stat === 'highest_attack') attack = Math.max(statOf(ctx, target, 'atk'), statOf(ctx, target, 'matk'));
-  else if (atkOp) attack = statOf(ctx, user, atkOp.stat as 'def' | 'mdef' | 'spe' | 'atk' | 'matk');
-  else attack = statOf(ctx, user, physical ? 'atk' : 'matk');
+  else {
+    attackFrom = { c: user, key: atkOp ? (atkOp.stat as 'def' | 'mdef' | 'spe' | 'atk' | 'matk') : physical ? 'atk' : 'matk' };
+    attack = statOf(ctx, user, attackFrom.key);
+  }
 
   const defKey = physical ? 'def' : 'mdef';
   const undermine = marksOf(target, 'undermine').find((m) => m.params.byUid === user.uid);
@@ -156,8 +168,13 @@ export function computeHit(ctx: EngineCtx, h: HitScope, perHit: number): HitCalc
     }
   }
 
-  const raw = rawDamage({ power: perHit, attack, defense, damagePcts: mods.map((m) => m.pct), typeMult, halvings, ignoreDefense, constant: ctx.st.config.damageConstant });
-  return { attack, defense, typeMult, mods, halvings, ignoreDefense, raw, damageTakenMarks, consumedSideEffects };
+  const stab = t.type && user.creature.types.includes(t.type) ? ctx.st.config.stabMultiplier : 1;
+  const raw = rawDamage({ power: perHit, attack, defense, damagePcts: mods.map((m) => m.pct), typeMult, halvings, ignoreDefense, constant: ctx.st.config.damageConstant, stab });
+  const attackParts: StatParts | null = attackFrom
+    ? { stat: attackFrom.key, stage: attackFrom.c.stages[attackFrom.key], mods: statMods(ctx, attackFrom.c, attackFrom.key).map((m) => ({ source: m.source, pct: m.pct })) }
+    : null;
+  const defenseParts: StatParts = { stat: defKey, stage: ignorePositive ? Math.min(0, target.stages[defKey]) : target.stages[defKey], mods: statMods(ctx, target, defKey).map((m) => ({ source: m.source, pct: m.pct })) };
+  return { attack, defense, typeMult, mods, halvings, ignoreDefense, raw, damageTakenMarks, consumedSideEffects, attackParts, defenseParts };
 }
 
 export interface AccuracyCalc {

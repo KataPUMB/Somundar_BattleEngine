@@ -112,8 +112,6 @@ const cases: Record<string, Duel & { check: (st: BattleState) => void }> = {
     check: (st) => assert.ok(eventsOf(st, 'stage').some((e) => e.data!.source === 'debilitar' && e.data!.stat === 'atk' && e.data!.delta === -1)) },
   descarga_de_presion: { file: 'sarah_vs_adriano.json', id: 'undaria', rounds: [() => use('descarga_de_presion')],
     check: (st) => assert.equal(combatant(st, uid(0, 'undaria')).location, 'intermedio') },
-  desconcentrar: { file: 'sarah_vs_adriano.json', id: 'brumarina', rounds: [() => use('desconcentrar')],
-    check: (st) => assert.equal(combatant(st, D).stages.mdef, -1) },
   desorientar: { file: 'asesino_vs_adriano.json', id: 'mota', rounds: [() => use('desorientar')],
     check: (st) => assert.ok(combatant(st, D).statuses.some((s) => s.id === 'desorientado')) },
   estela: { file: 'asesino_vs_adriano.json', id: 'mota', rounds: [() => use('estela')],
@@ -168,12 +166,17 @@ const cases: Record<string, Duel & { check: (st: BattleState) => void }> = {
     check: (st) => assert.ok(mods(byTech(st, 'ariete_draconico')[0]!).includes('mundano:100')) },
   ruptura_de_afinidad: { file: 'sarah_vs_adriano.json', id: 'risco', dummy: { types: ['agua'] }, rounds: [() => use('fauces_incandescentes')],
     check: (st) => assert.equal(byTech(st, 'fauces_incandescentes')[0]!.data!.typeMult, 1) },
-  filo_del_viento: { file: 'sarah_vs_adriano.json', id: 'brumarina', rounds: [() => use('rafaga')],
-    check: (st) => assert.ok(mods(byTech(st, 'rafaga')[0]!).includes('filo_del_viento:25')) },
+  filo_del_viento: { file: 'sarah_vs_adriano.json', id: 'brumarina', rounds: [() => use('corrientes_cambiantes')],
+    check: (st) => assert.ok(mods(byTech(st, 'corrientes_cambiantes')[0]!).includes('filo_del_viento:25')) },
   formacion_de_caza: { file: 'sarah_vs_adriano.json', id: 'mota', ally: 'brumarina', rounds: [],
     check: (st) => {
       const b = combatant(st, uid(0, 'brumarina'));
       assert.ok(Math.abs(statOf(ctxOf(st), b, 'matk') / effStat(data, b, 'matk') - 1.25) < 0.01);
+    } },
+  formacion_de_caza_en_el_log: { file: 'sarah_vs_adriano.json', id: 'mota', ally: 'brumarina', rounds: [() => ({ ...use('estela'), ...use('corrientes_cambiantes', 'S0P1') })],
+    check: (st) => {
+      const parts = byTech(st, 'corrientes_cambiantes')[0]!.data!.attackParts as { mods: { source: string; pct: number }[] };
+      assert.ok(parts.mods.some((m) => m.source === 'formacion_de_caza' && m.pct === 25));
     } },
   oportunista: { file: 'sarah_vs_adriano.json', id: 'mota', dummy: { baseStatsNV50: { hp: 5000, atk: 100, matk: 100, def: 100, mdef: 100, spe: 400 } }, rounds: [() => use('estela')],
     check: (st) => assert.deepEqual(eventsOf(st, 'action_order')[0]!.data!.order, [uid(0, 'mota'), D]) },
