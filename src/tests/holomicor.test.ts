@@ -4,7 +4,7 @@ import { createBattle } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
 import { validatePreparation } from '../engine/legality/preparation.js';
 import {
-  HORDE_MAX_HITS_PER_TARGET, holomicorHpMultiplier, hordeHitPlan, hordeHitsPerTarget, materializedCorpses,
+  HORDE_MAX_HITS_PER_TARGET, holomicorHpMultiplier, hordeHitPlan, hordeHitsPerTarget,
 } from '../engine/rules/horde.js';
 import { stableStat } from '../engine/rules/stats.js';
 import type { Action } from '../engine/model/battle.js';
@@ -35,13 +35,13 @@ test('Vitalidad de la colonia: x1 con 1 cadaver, estrictamente creciente y subli
   assert.ok(mult[4]! < COUNTS[4]! / 5);
 });
 
-test('Vitalidad maxima del combatiente con corpseCount 1, 3, 10, 30 y 100', () => {
+test('Vitalidad maxima del combatiente con totalCorpseCount 1, 3, 10, 30 y 100', () => {
   const base = maxHp(holo());
-  assert.equal(maxHp(holo({ corpseCount: 1 })), base);
-  const hp = COUNTS.map((n) => maxHp(holo({ corpseCount: n })));
+  assert.equal(maxHp(holo({ totalCorpseCount: 1 })), base);
+  const hp = COUNTS.map((n) => maxHp(holo({ totalCorpseCount: n })));
   for (let i = 1; i < hp.length; i++) assert.ok(hp[i]! > hp[i - 1]!);
   assert.equal(hp[4], Math.round(base * holomicorHpMultiplier(100)));
-  const half = creature('h', { ...holo({ corpseCount: 100 }), hpCurrent: 1e9 });
+  const half = creature('h', { ...holo({ totalCorpseCount: 100 }), hpCurrent: 1e9 });
   assert.equal(combatant(start(data, setup(summoner('a'), [half]), setup(summoner('b'), [wall('w')])), uid(0, 'h')).hp, hp[4]);
 });
 
@@ -65,7 +65,7 @@ test('Horda contra varios objetivos: mas impactos totales, nunca mas que cadaver
 
 test('Limites: sin NaN, negativos ni infinitos; al menos 1 impacto con 1 cadaver', () => {
   for (const n of [0, -5, Number.NaN, Number.POSITIVE_INFINITY, 1.5, 1e9]) {
-    for (const v of [holomicorHpMultiplier(n), hordeHitsPerTarget(n), ...hordeHitPlan(n, 2), materializedCorpses({ corpseCount: n })]) {
+    for (const v of [holomicorHpMultiplier(n), hordeHitsPerTarget(n), ...hordeHitPlan(n, 2)]) {
       assert.ok(Number.isFinite(v) && v >= 0, `${n}: ${v}`);
     }
     assert.ok(holomicorHpMultiplier(n) >= 1);
@@ -76,7 +76,7 @@ test('Limites: sin NaN, negativos ni infinitos; al menos 1 impacto con 1 cadaver
 });
 
 test('Horda con 100 cadaveres contra un enemigo: impactos limitados y descriptores en ciclo', () => {
-  const h = holo({ corpseCount: 100, nv: 40 });
+  const h = holo({ totalCorpseCount: 100, nv: 40 });
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
   const expected = hordeHitsPerTarget(100);
   const count = eventsOf(st, 'hit_count')[0]!.data!;
@@ -88,7 +88,7 @@ test('Horda con 100 cadaveres contra un enemigo: impactos limitados y descriptor
 });
 
 test('Horda contra dos enemigos reparte los cadaveres y produce mas impactos', () => {
-  const h = holo({ corpseCount: 100, nv: 40 });
+  const h = holo({ totalCorpseCount: 100, nv: 40 });
   const foes = setup(S('b'), [wall('w'), wall('v')], ['w', 'v']);
   const st = round(data, start(data, setup(S('a'), [h]), foes), {
     S0P0: { kind: 'technique', techniqueId: 'horda', target: { kind: 'sequence', positionIds: ['S1P0', 'S1P1'] } },
@@ -104,31 +104,31 @@ test('Horda contra dos enemigos reparte los cadaveres y produce mas impactos', (
 });
 
 test('Solo cuentan los cadaveres materializados', () => {
-  const h = holo({ corpseCount: 100, materializedCorpseCount: 10, nv: 40 });
+  const h = holo({ totalCorpseCount: 100, initialMaterializedCorpseCount: 10, nv: 40 });
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'hit_count')[0]!.data!.hits, hordeHitsPerTarget(10));
-  assert.equal(maxHp(h), maxHp(holo({ corpseCount: 100, nv: 40 })));
+  assert.equal(maxHp(h), maxHp(holo({ totalCorpseCount: 100, nv: 40 })));
 });
 
-test('Compatibilidad: Holomicor sin corpseCount mantiene Vitalidad x1 y 3 impactos de Horda', () => {
+test('Compatibilidad: Holomicor sin totalCorpseCount mantiene Vitalidad x1 y 3 impactos de Horda', () => {
   const h = holo({ nv: 40 });
-  assert.equal(maxHp(h), maxHp(holo({ corpseCount: 1, nv: 40 })));
+  assert.equal(maxHp(h), maxHp(holo({ totalCorpseCount: 1, nv: 40 })));
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'damage').filter((e) => e.actor === uid(0, 'h')).length, 3);
 });
 
-test('Validacion de corpseCount y materializedCorpseCount', () => {
+test('Validacion de totalCorpseCount e initialMaterializedCorpseCount', () => {
   const codes = (c: BondedCreature) => validatePreparation(setup(S('a'), [c]), data).filter((v) => v.severity === 'error').map((v) => v.code);
-  assert.deepEqual(codes(holo({ corpseCount: 100 })), []);
-  assert.deepEqual(codes(holo({ corpseCount: 0 })), ['CRE_CORPSES']);
-  assert.deepEqual(codes(holo({ corpseCount: 2.5 })), ['CRE_CORPSES']);
-  assert.deepEqual(codes(holo({ corpseCount: 10, materializedCorpseCount: 11 })), ['CRE_CORPSES']);
-  assert.deepEqual(codes(creature('x', { corpseCount: 10 })), ['CRE_CORPSES']);
-  assert.throws(() => createBattle(data, [setup(S('a'), [holo({ corpseCount: -1 })]), setup(S('b'), [wall('w')])], { seed: 1 }));
+  assert.deepEqual(codes(holo({ totalCorpseCount: 100 })), []);
+  assert.deepEqual(codes(holo({ totalCorpseCount: 0 })), ['CRE_CORPSES']);
+  assert.deepEqual(codes(holo({ totalCorpseCount: 2.5 })), ['CRE_CORPSES']);
+  assert.deepEqual(codes(holo({ totalCorpseCount: 10, initialMaterializedCorpseCount: 11 })), ['CRE_CORPSES']);
+  assert.deepEqual(codes(creature('x', { totalCorpseCount: 10 })), ['CRE_CORPSES']);
+  assert.throws(() => createBattle(data, [setup(S('a'), [holo({ totalCorpseCount: -1 })]), setup(S('b'), [wall('w')])], { seed: 1 }));
 });
 
 test('Con 1 cadaver Horda sigue siendo legal y golpea una vez', () => {
-  const h = holo({ corpseCount: 1, horde: corpses.slice(0, 1), nv: 40 });
+  const h = holo({ totalCorpseCount: 1, horde: corpses.slice(0, 1), nv: 40 });
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
   assert.equal(eventsOf(st, 'damage').filter((e) => e.actor === uid(0, 'h')).length, 1);
 });

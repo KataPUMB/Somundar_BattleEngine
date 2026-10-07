@@ -142,8 +142,11 @@ Campos opcionales de cada criatura:
 - `hpCurrent`: Vitalidad inicial; por defecto, la máxima.
 - `types` y `baseStatsNV50`: por defecto, los de la ficha de la especie. Si se indican otros, se usan y la validación muestra un aviso.
 - `canTransfigure`: indica si la criatura todavía puede transfigurarse; por defecto, sí cuando la especie tiene una forma siguiente.
-- `horde`: cadáveres de Holómicor para la técnica Horda (`speciesId`, `techniqueId` y, si la especie no está en la guía, `atkNV50`); se reutilizan en ciclo.
-- `corpseCount`: cadáveres que controla la colonia de Holómicor. Multiplica la Vitalidad máxima (×1 con un cadáver, ×11 con 100) y aumenta los impactos de Horda con rendimientos decrecientes. Sin indicarlo, la Vitalidad no cambia y Horda hace 3 impactos.
-- `materializedCorpseCount`: cadáveres presentes para Horda; por defecto, `corpseCount`.
+- `horde`: cuerpos de la colonia de Holómicor para la técnica Horda: `speciesId`, `techniqueId`, `count` (cuántos cuerpos de ese tipo) y, si la especie no está en la guía, `atkNV50`. Se materializan en el orden de la lista.
+- `totalCorpseCount`: tamaño de la colonia. Multiplica la Vitalidad máxima (×1 con un cadáver, ×11 con 100). Sin indicarlo, la Vitalidad no cambia y Horda hace 3 impactos.
+- `initialMaterializedCorpseCount`: cadáveres materializados al entrar en combate; por defecto, todos los disponibles.
+- `destroyedCorpseCount`: cadáveres destruidos al empezar; por defecto, 0.
+
+Los cuerpos presentes (no el total) determinan los impactos de Horda y, solo cuando están todos los disponibles, activan las Manifestaciones de Holómicor. Al empezar cada ronda se puede materializar más cuerpos sin gastar la acción; reducirlos o cambiar de criatura son acciones de la posición. En modo interactivo el estado aparece como `Cadaveres: 12 / 100`.
 
 La línea de transfiguración y las formas anteriores salen de la ficha. La validación comprueba que cada técnica equipada se aprenda con el NV de la criatura y que el NV alcance el mínimo de su forma.

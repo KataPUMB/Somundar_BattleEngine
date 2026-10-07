@@ -1,10 +1,11 @@
 import type { Action, BattleState, Declarations, SideIndex, TargetDecl } from '../model/battle.js';
 import type { ActionOption } from '../legality/actions.js';
-import type { RoundStartChoice } from '../pipeline/battle.js';
+import type { ColonyChoice, RoundStartDecision } from '../pipeline/battle.js';
+import { availableCorpses } from '../rules/horde.js';
 import { nextFloat, nextInt, type RngState } from '../rng.js';
 
 export interface Policy {
-  roundStart?(view: Readonly<BattleState>, side: SideIndex, rng: RngState): RoundStartChoice[];
+  roundStart?(view: Readonly<BattleState>, side: SideIndex, rng: RngState): RoundStartDecision[];
   declare(view: Readonly<BattleState>, side: SideIndex, legal: Map<string, ActionOption[]>, rng: RngState): Declarations;
 }
 
@@ -39,14 +40,22 @@ export function withTarget(view: Readonly<BattleState>, side: SideIndex, opt: Ac
 export const randomLegalPolicy: Policy = {
   roundStart(view, side, rng) {
     const s = view.sides[side];
-    if (s.summoner.simultaneity !== 'adept_temporary' || s.positions.length >= 2 || nextFloat(rng) < 0.5) return [];
+    const out: RoundStartDecision[] = [];
+    for (const c of s.combatants) {
+      if (!c.colony || c.location !== 'field') continue;
+      const max = availableCorpses(c.colony);
+      if (max <= c.colony.materialized || nextFloat(rng) >= 0.3) continue;
+      const choice: ColonyChoice = { side, creatureId: c.creature.id, materializeCorpses: nextFloat(rng) < 0.3 ? 'all' : nextInt(rng, c.colony.materialized + 1, max) };
+      out.push(choice);
+    }
+    if (s.summoner.simultaneity !== 'adept_temporary' || s.positions.length >= 2 || nextFloat(rng) < 0.5) return out;
     const reserves = s.combatants.filter((c) => c.location === 'intermedio' && c.hp > 0);
-    return reserves.length > 0 ? [{ side, creatureId: pick(rng, reserves).creature.id }] : [];
+    return reserves.length > 0 ? [...out, { side, creatureId: pick(rng, reserves).creature.id }] : out;
   },
   declare(view, side, legal, rng) {
     const out: Declarations = {};
     for (const [pid, opts] of legal) {
-      const legalOpts = opts.filter((o) => o.legal && o.action.kind !== 'surrender');
+      const legalOpts = opts.filter((o) => o.legal && o.action.kind !== 'surrender' && o.action.kind !== 'corpses');
       const useful = legalOpts.filter((o) => !o.futile);
       const ok = useful.length > 0 ? useful : legalOpts;
       const occupied = view.sides[side].positions.find((p) => p.id === pid)?.occupantUid !== null;

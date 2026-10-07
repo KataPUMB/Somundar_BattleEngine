@@ -66,18 +66,22 @@ export interface BondedCreature {
   instinct?: 'atk' | 'def' | 'spe';
   /** puede Transfigurarse todavia (Poder latente); por defecto, si la especie tiene forma siguiente */
   canTransfigure?: boolean;
-  /** cadaveres de Horda (Holomicor) */
+  /** cuerpos de la colonia de Holomicor, en orden de materializacion; cada grupo puede repetirse `count` veces */
   horde?: HordeCorpse[];
-  /** cadaveres que controla la colonia de Holomicor; escala la Vitalidad. Sin declarar: x1 */
-  corpseCount?: number;
-  /** cadaveres presentes para Horda; por defecto, corpseCount */
-  materializedCorpseCount?: number;
+  /** tamano total de la colonia de Holomicor; escala la Vitalidad. Sin declarar: x1 y Horda de 3 impactos */
+  totalCorpseCount?: number;
+  /** cadaveres materializados al entrar en combate; por defecto, todos los disponibles */
+  initialMaterializedCorpseCount?: number;
+  /** cadaveres destruidos de forma permanente al empezar el combate; por defecto, 0 */
+  destroyedCorpseCount?: number;
 }
 
 export interface HordeCorpse {
   speciesId: string;
   atkNV50: number;
   techniqueId: string;
+  /** numero de cuerpos de este tipo; si algun grupo lo declara, la suma debe ser totalCorpseCount */
+  count?: number;
 }
 
 /** criatura tal como llega del escenario: tipos y estadisticas se toman de la especie si se omiten */

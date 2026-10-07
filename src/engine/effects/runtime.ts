@@ -7,6 +7,7 @@ import { emit } from '../log/events.js';
 import { allCombatants, sideOf, type EngineCtx } from '../pipeline/context.js';
 import { restrictionActive, statusModifiers } from '../pipeline/combatant.js';
 import { clampStage, effectiveStat, type DirectModifier } from '../rules/stats.js';
+import { availableCorpses } from '../rules/horde.js';
 import { runAuras } from './interpreter.js';
 
 export interface EvalScope {
@@ -103,6 +104,7 @@ export function manifestationInactiveReason(ctx: EngineCtx, c: Combatant, m: Man
   const a = manifestationAvailability(m);
   if (!a.executable) return a.reason ?? 'no implementada';
   if (c.location !== 'field') return 'la criatura no esta completamente materializada';
+  if (c.colony && c.colony.materialized < availableCorpses(c.colony)) return `la colonia no esta completa (${c.colony.materialized} / ${availableCorpses(c.colony)} cadaveres)`;
   if (restrictionActive(c, 'manifestations_disabled') && !m.override?.worksWhileDesvinculado) return 'Desvinculado (24.10)';
   for (const e of environmentEffects(ctx, 'environment')) {
     if (e.ops.some((o) => o.op === 'disableManifestations') && evalCondition(ctx, e.condition, { subject: c })) {

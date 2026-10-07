@@ -8,6 +8,7 @@ import { resolveChain } from './techniques.js';
 import { nextFloat } from '../rng.js';
 import { combatant, findPosition, orderDesc, sideOf, type EngineCtx, type PendingSelfSwitch } from './context.js';
 import { isViableReserve, restrictionActive, zeroStages } from './combatant.js';
+import { availableCorpses, entryCorpses } from '../rules/horde.js';
 
 // Disparadores del texto generado, solo para registrar Manifestaciones sin curar
 const RAW_TRIGGERS: Partial<Record<Trigger, string[]>> = {
@@ -24,7 +25,14 @@ export function placeOnField(ctx: EngineCtx, c: Combatant, pos: Position, cause?
   c.committedTechnique = null;
   c.flinched = false;
   pos.occupantUid = c.uid;
-  return emit(ctx.st, { type: 'materialize', actor: c.uid, targets: [pos.id], cause, ruleRef: 'CANON-MECHANICS 1 (Materializacion)' });
+  if (c.colony) {
+    // Una nueva entrada elige de nuevo cuantos cuerpos materializar (GAP-COLONY-MATERIALIZATION)
+    const suggested = entryCorpses(c.colony, c.creature);
+    const asked = ctx.controllers.chooseCorpses?.(ctx.st, c.uid, availableCorpses(c.colony), suggested);
+    c.colony.materialized = entryCorpses(c.colony, c.creature, asked ?? suggested);
+  }
+  const data = c.colony ? { corpses: c.colony.materialized, available: availableCorpses(c.colony), total: c.colony.total } : undefined;
+  return emit(ctx.st, { type: 'materialize', actor: c.uid, targets: [pos.id], data, cause, ruleRef: 'CANON-MECHANICS 1 (Materializacion)' });
 }
 
 export function manifestationsFor(ctx: EngineCtx, c: Combatant, trigger: Trigger): string[] {
@@ -97,6 +105,7 @@ export function exitField(ctx: EngineCtx, c: Combatant, kind: ExitKind, cause?: 
   c.techUses = {};
   c.streak = null;
   c.positionId = null;
+  if (c.colony) c.colony.materialized = 0;
   c.location = kind === 'defeat' ? 'defeated' : 'intermedio';
   return emit(ctx.st, {
     type: kind === 'defeat' ? 'defeat' : 'exit',

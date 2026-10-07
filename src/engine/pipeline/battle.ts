@@ -19,6 +19,7 @@ import { createCombatant, isViableReserve } from './combatant.js';
 import { exitField, initialDeployment, materializeWithEntry, withdrawBlocker } from './lifecycle.js';
 import { defeatIfZero, executeTechnique, flushPending } from './techniques.js';
 import { techniquePassiveOps } from './damage.js';
+import { availableCorpses } from '../rules/horde.js';
 
 export class PreparationError extends Error {
   constructor(public readonly violations: { side: SideIndex; violations: Violation[] }[]) {
@@ -90,8 +91,17 @@ export interface RoundStartChoice {
   positionId?: string;
 }
 
+/** Materializar mas cuerpos de la colonia de una criatura presente: la cantidad total deseada o 'all' (GAP-COLONY-MATERIALIZATION) */
+export interface ColonyChoice {
+  side: SideIndex;
+  creatureId: string;
+  materializeCorpses: number | 'all';
+}
+
+export type RoundStartDecision = RoundStartChoice | ColonyChoice;
+
 // CANON-MECHANICS 28.2.1-2 / 13.2
-export function beginRound(data: GameData, state: BattleState, choices: RoundStartChoice[] = [], controllers: Controllers = {}): BattleState {
+export function beginRound(data: GameData, state: BattleState, decisions: RoundStartDecision[] = [], controllers: Controllers = {}): BattleState {
   if (state.outcome) throw new Error('el combate ha terminado');
   if (state.phase !== 'deployment' && state.phase !== 'close') throw new Error(`beginRound en fase ${state.phase}`);
   const st = structuredClone(state);
@@ -107,6 +117,22 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
   emit(st, { type: 'round_start', ruleRef: 'CANON-MECHANICS 28.2' });
 
   const problems: string[] = [];
+  const choices = decisions.filter((d): d is RoundStartChoice => !('materializeCorpses' in d));
+  const colonyChoices: { c: Combatant; target: number }[] = [];
+  for (const ch of decisions) {
+    if (!('materializeCorpses' in ch)) continue;
+    const c = sideOf(st, ch.side).combatants.find((x) => x.creature.id === ch.creatureId);
+    if (!c?.colony || c.location !== 'field') {
+      problems.push(`S${ch.side}: ${ch.creatureId} no tiene una colonia materializada`);
+      continue;
+    }
+    const max = availableCorpses(c.colony);
+    const target = ch.materializeCorpses === 'all' ? max : ch.materializeCorpses;
+    if (colonyChoices.some((x) => x.c === c)) problems.push(`S${ch.side}: ${ch.creatureId} ya tiene una decision de colonia`);
+    else if (!Number.isInteger(target) || target <= c.colony.materialized) problems.push(`S${ch.side}: materializar mas cadaveres exige superar los ${c.colony.materialized} presentes`);
+    else if (target > max) problems.push(`S${ch.side}: solo hay ${max} cadaveres disponibles`);
+    else colonyChoices.push({ c, target });
+  }
   const pending: { c: Combatant; pos: Position; opened: boolean }[] = [];
   for (const ch of choices) {
     const side = sideOf(st, ch.side);
@@ -140,6 +166,14 @@ export function beginRound(data: GameData, state: BattleState, choices: RoundSta
     }
     materializeWithEntry(ctx, p.c, p.pos);
     flushPending(ctx);
+  }
+
+  // GAP-COLONY-MATERIALIZATION: como las Materializaciones del inicio de ronda, no consume la accion y se ordena por Velocidad
+  for (const x of orderDesc(ctx, colonyChoices, (y) => [speedOf(ctx, y.c)], 'colony_materialization', (y) => y.c.uid)) {
+    const colony = x.c.colony!;
+    const from = colony.materialized;
+    colony.materialized = x.target;
+    emit(st, { type: 'colony_materialize', actor: x.c.uid, data: { from, to: x.target, available: availableCorpses(colony), total: colony.total, gap: 'GAP-COLONY-MATERIALIZATION' }, ruleRef: 'CANON-MECHANICS 28.2' });
   }
 
   for (const side of st.sides) for (const c of side.combatants) c.presentAtDeclaration = c.location === 'field';
@@ -234,6 +268,22 @@ function resolveSwitch(ctx: EngineCtx, f: Frozen, frozen: Frozen[]): void {
   exitField(ctx, out, 'withdraw', ev);
   materializeWithEntry(ctx, incoming, pos, ev);
   flushPending(ctx, ev);
+}
+
+// GAP-COLONY-MATERIALIZATION: retirar parte de la colonia sigue la regla de la Retirada voluntaria (consume la accion, la bloquean sus restricciones)
+function resolveCorpses(ctx: EngineCtx, f: Frozen): void {
+  if (f.action.kind !== 'corpses') return;
+  const c = stillOccupies(ctx, f);
+  if (!c?.colony) return fail(ctx, f, 'la criatura ya no ocupa la posicion', 'CANON-MECHANICS 14.3');
+  const blocker = withdrawBlocker(c, true);
+  if (blocker) return fail(ctx, f, `${blocker}: la Retirada voluntaria se ha vuelto ilegal`, 'CANON-MECHANICS 16.4 / 24.5');
+  const to = f.action.count;
+  if (!Number.isInteger(to) || to < 1 || to >= c.colony.materialized) return fail(ctx, f, 'la cantidad de cadaveres ya no es valida', 'CANON-MECHANICS 16.4');
+  f.done = true;
+  startAction(c);
+  const from = c.colony.materialized;
+  c.colony.materialized = to;
+  emit(ctx.st, { type: 'colony_withdraw', actor: c.uid, targets: [f.positionId], data: { from, to, available: availableCorpses(c.colony), total: c.colony.total, gap: 'GAP-COLONY-MATERIALIZATION' }, ruleRef: 'CANON-MECHANICS 16.1' });
 }
 
 // CANON-MECHANICS 17 / 28.4
@@ -468,10 +518,12 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
 
   st.phase = 'switches';
   const switchKey = (x: Frozen) => [speedOf(ctx, combatant(st, x.actorUid))];
-  let switchQueue = orderDesc(ctx, frozen.filter((f) => f.action.kind === 'switch'), switchKey, 'switch_order', (x) => x.actorUid);
+  let switchQueue = orderDesc(ctx, frozen.filter((f) => f.action.kind === 'switch' || f.action.kind === 'corpses'), switchKey, 'switch_order', (x) => x.actorUid);
   let switchKeys = new Map(switchQueue.map((x) => [x, switchKey(x)]));
   while (switchQueue.length > 0) {
-    resolveSwitch(ctx, switchQueue.shift()!, frozen);
+    const f = switchQueue.shift()!;
+    if (f.action.kind === 'corpses') resolveCorpses(ctx, f);
+    else resolveSwitch(ctx, f, frozen);
     const next = reorderPending(ctx, switchQueue, switchKeys, switchKey, 'switch_reorder');
     if (next) switchQueue = next;
   }

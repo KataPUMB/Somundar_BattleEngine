@@ -5,7 +5,8 @@ import type { GameData, TechniqueOverride } from '../data/schema.js';
 import { summonerFromPreset } from '../engine/model/presets.js';
 import type { BondedCreature, Estamento, SideSetup, StatBlock, Summoner } from '../engine/model/types.js';
 import type { BattleState, Declarations, SideIndex } from '../engine/model/battle.js';
-import { beginRound, createBattle, resolveRound, type RoundStartChoice } from '../engine/pipeline/battle.js';
+import { beginRound, createBattle, resolveRound, type RoundStartDecision } from '../engine/pipeline/battle.js';
+import type { Controllers } from '../engine/pipeline/context.js';
 import type { BattleConfig } from '../engine/model/battle.js';
 import type { BattleEvent } from '../engine/log/events.js';
 
@@ -61,8 +62,8 @@ export function start(data: GameData, a: SideSetup, b: SideSetup, seed = 1, conf
   return createBattle(data, [a, b], { seed, config });
 }
 
-export function round(data: GameData, st: BattleState, decls: Declarations, choices: RoundStartChoice[] = []): BattleState {
-  return resolveRound(data, beginRound(data, st, choices), decls);
+export function round(data: GameData, st: BattleState, decls: Declarations, choices: RoundStartDecision[] = [], controllers: Controllers = {}): BattleState {
+  return resolveRound(data, beginRound(data, st, choices, controllers), decls, controllers);
 }
 
 export function eventsOf(st: BattleState, type: string, fromRound = 0): BattleEvent[] {

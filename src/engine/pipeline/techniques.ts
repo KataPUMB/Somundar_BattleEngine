@@ -12,7 +12,7 @@ import { applyStatus } from './combatant.js';
 import { exitField, forcedReplacement, performSelfSwitch } from './lifecycle.js';
 import { computeAccuracy, computeHit, isContact, oncePerEntryBonuses, type DamageModifier, type HitScope } from './damage.js';
 import { stableStat } from '../rules/stats.js';
-import { hordeHitPlan, materializedCorpses } from '../rules/horde.js';
+import { hordeBodies, hordeHitPlan, presentCorpses } from '../rules/horde.js';
 
 export function rollHits(ctx: Pick<EngineCtx, 'st'>, min: number, max: number): number {
   if (min === max) return min;
@@ -396,15 +396,15 @@ export function resolveChain(ctx: EngineCtx, step: () => void, droppable = false
 
 // CANON-TECHNIQUES Horda: cada golpe usa el Ataque y una tecnica anatomica de un cadaver (los descriptores se reutilizan en ciclo)
 function hordeHits(ctx: EngineCtx, run: TechRun, declared: Position[]): void {
-  const horde = run.user.creature.horde ?? [];
+  const horde = hordeBodies(run.user.creature.horde ?? []);
   const unique = declared.filter((p, i) => declared.findIndex((q) => q.id === p.id) === i);
   const occupied = unique.filter((p) => !!occupantOf(ctx.st, p.id));
   const positions = occupied.length > 0 ? occupied : unique.slice(0, 1);
-  const corpses = materializedCorpses(run.user.creature);
+  const corpses = presentCorpses(run.user.colony, run.user.creature, run.partial);
   const plan = hordeHitPlan(corpses, positions.length);
   const total = plan.reduce((a, b) => a + b, 0);
   if (horde.length === 0 || total === 0) return;
-  emit(ctx.st, { type: 'hit_count', actor: run.user.uid, data: { technique: run.t.id, hits: total, corpses, perTarget: plan, gap: 'GAP-HOLOMICOR-COLONY' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
+  emit(ctx.st, { type: 'hit_count', actor: run.user.uid, data: { technique: run.t.id, hits: total, corpses, perTarget: plan, total: run.user.colony?.total, gap: 'GAP-HOLOMICOR-COLONY' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
   let k = 0;
   for (let ti = 0; ti < positions.length; ti++) {
     for (let j = 0; j < (plan[ti] ?? 0); j++, k++) {

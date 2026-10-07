@@ -5,7 +5,7 @@ import { auraOps, evalCondition, marksOf } from '../effects/runtime.js';
 import { allPositions, combatant, findPosition, sideOf, type EngineCtx } from '../pipeline/context.js';
 import { isViableReserve, restrictionActive } from '../pipeline/combatant.js';
 import { withdrawBlocker } from '../pipeline/lifecycle.js';
-import { materializedCorpses } from '../rules/horde.js';
+import { hordeBodies, presentCorpses } from '../rules/horde.js';
 
 export interface ActionOption {
   action: Action;
@@ -18,6 +18,8 @@ export interface ActionOption {
   choices?: string[];
   /** legal pero fallara con seguridad al resolverse (p. ej. Puno preciso fuera del primer turno) */
   futile?: string;
+  /** cantidades validas de cuerpos materializados que puede dejar la accion `corpses` */
+  corpseRange?: { min: number; max: number };
 }
 
 function activeBonds(st: BattleState, side: 0 | 1): number {
@@ -44,8 +46,8 @@ export function techniqueBlockReason(ctx: EngineCtx, user: Combatant, t: Techniq
     if (commit) return `${commit.source}: solo puede repetir ${user.committedTechnique} mientras permanezca en campo`;
   }
   if (ov?.handler === 'horda') {
-    const horde = user.creature.horde ?? [];
-    const needed = Math.min(3, materializedCorpses(user.creature));
+    const horde = hordeBodies(user.creature.horde ?? []);
+    const needed = Math.min(3, presentCorpses(user.colony, user.creature, partial));
     const valid = horde.length >= needed && horde.every((h) => {
       const ct = ctx.data.techniques.get(h.techniqueId);
       return ct?.category === 'anatomical' && ct.class === 'physical' && typeof ct.power?.perHit === 'number';
@@ -87,6 +89,13 @@ export function legalActions(ctx: EngineCtx, positionId: string): ActionOption[]
       out.push({ action: { kind: 'dodge' }, legal: true, ruleRef: 'CANON-MECHANICS 17' });
     }
     const blocker = withdrawBlocker(user, true);
+    // Retirada parcial de la colonia: misma regla que la Retirada voluntaria (consume la accion, la bloquean sus restricciones)
+    if (user.colony && user.colony.materialized > 1) {
+      const action: Action = { kind: 'corpses', count: 1 };
+      const corpseRange = { min: 1, max: user.colony.materialized - 1 };
+      if (blocker) out.push({ action, legal: false, reason: `${blocker}: no puede retirarse voluntariamente`, ruleRef: 'CANON-MECHANICS 24.5 / GAP-COLONY-MATERIALIZATION', corpseRange });
+      else out.push({ action, legal: true, ruleRef: 'CANON-MECHANICS 16 / GAP-COLONY-MATERIALIZATION', corpseRange });
+    }
     for (const c of side.combatants) {
       if (c.uid === user.uid || c.location === 'field') continue;
       const action: Action = { kind: 'switch', incomingId: c.creature.id };
@@ -113,6 +122,8 @@ function sameOption(opt: Action, a: Action): boolean {
       return opt.kind === 'partial' && opt.techniqueId === a.techniqueId && opt.creatureId === a.creatureId;
     case 'switch':
       return opt.kind === 'switch' && opt.incomingId === a.incomingId;
+    case 'corpses':
+      return opt.kind === 'corpses';
     default:
       return true;
   }
@@ -142,6 +153,11 @@ export function validateDeclaration(ctx: EngineCtx, positionId: string, action: 
   const match = opts.find((o) => sameOption(o.action, action));
   if (!match) return 'accion no disponible en esta posicion';
   if (!match.legal) return match.reason ?? 'accion ilegal';
+  if (action.kind === 'corpses') {
+    const r = match.corpseRange;
+    if (!r || !Number.isInteger(action.count) || action.count < r.min || action.count > r.max) return `cadaveres a mantener: entero entre ${r?.min ?? 1} y ${r?.max ?? 1}`;
+    return null;
+  }
   if (action.kind === 'technique' || action.kind === 'partial') {
     const pos = findPosition(ctx.st, positionId)!;
     if (action.kind === 'technique' && pos.occupantUid && combatant(ctx.st, pos.occupantUid).charging) return null;

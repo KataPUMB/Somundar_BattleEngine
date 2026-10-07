@@ -1,0 +1,748 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+  (empate exacto resuelto al azar: Fényrax (Aster Valerio) > Riftari (Aster Valerio))
+Fényrax (Aster Valerio) se materializa en S0P0
+Riftari (Aster Valerio) se materializa en S0P1
+
+  Holómicor (Cassaro Valerio) entra en combate: 100 cadaveres disponibles (habitual: 3).
+  Cadaveres a materializar (1-100): 3
+Holómicor (Cassaro Valerio) se materializa en S1P0 con 3 / 100 cadaveres
+Lernyra (Cassaro Valerio) se materializa en S1P1
+  Manifestacion calima de Fényrax (Aster Valerio)
+  calima se impone
+Despliegue inicial completo
+
+--- Cassaro Valerio: colonia al empezar la ronda 1 ---
+  S0P0 (rival): Fényrax (Aster Valerio) 587/587
+  S0P1 (rival): Riftari (Aster Valerio) 1122/1122
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1569/1569
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 2
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  Holómicor - 3 / 100 cadaveres materializados
+    1) Mantener
+    2) Materializar mas cadaveres
+    3) Materializar todos (100)
+    (Reducir materializacion y Cambiar criatura se eligen entre las acciones de la posicion)
+  Colonia: 1
+
+=== Ronda 1 ===
+
+--- Aster Valerio: ronda 1 ---
+  S1P0 (rival): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S1P1 (rival): Lernyra (Cassaro Valerio) 1569/1569
+  S0P0 (tuya): Fényrax (Aster Valerio) 587/587
+  S0P1 (tuya): Riftari (Aster Valerio) 1122/1122
+  Intermedio: Mairahda 1716/1716 | Tamegona 1040/1040
+  Reservas viables del rival: 2
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S0P0: Fényrax (Aster Valerio)
+    1) Canto final [status, sin tipo, PB -, prio 0, all]
+    2) Paso de ceniza [magical, fuego, PB 70, prio 0, single]
+    3) Llamarada [magical, fuego, PB 55, prio 0, all]
+    4) Descenso aéreo [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mairahda (Aster Valerio)
+    7) Intercambio -> Tamegona (Aster Valerio)
+    8) Rendirse
+  Accion: 1
+    Todas las criaturas presentes que oyen el canto quedan Marcadas por la Muerte, incluido Fényrax y sus aliados. Al final de la tercera ronda, cada marcada que siga en campo muere. Retirarse elimina la marca.
+
+  S0P1: Riftari (Aster Valerio)
+    1) Punto blanco [magical, fuego, PB 190, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Paso de ceniza [magical, fuego, PB 70, prio 0, single]
+    4) Puño preciso [physical, sin tipo, PB 15, prio 3, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mairahda (Aster Valerio)
+    7) Intercambio -> Tamegona (Aster Valerio)
+    8) Rendirse
+  Accion: 4
+    La criatura lanza un puñetazo rápido contra un punto vulnerable del oponente. Si impacta, causa daño y, si el objetivo todavía no ha actuado, lo hace retroceder y le impide actuar durante ese turno. Solo funciona en el primer turno tras cada materialización; en los turnos posteriores falla, aunque no se haya utilizado antes. Para volver a usarla, la criatura debe retirarse al Intermedio y materializarse de nuevo.
+    1) S1P0 (rival): Holómicor (Cassaro Valerio)
+    2) S1P1 (rival): Lernyra (Cassaro Valerio)
+    3) S0P0 (tuya): Fényrax (Aster Valerio)
+    4) S0P1 (tuya): Riftari (Aster Valerio)
+  Objetivo: 2
+
+--- Cassaro Valerio: ronda 1 ---
+  S0P0 (rival): Fényrax (Aster Valerio) 587/587
+  S0P1 (rival): Riftari (Aster Valerio) 1122/1122
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1569/1569
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 2
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S1P0: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (3 cadaveres: 3 impactos contra un objetivo)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (3 / 100); consume la accion
+    7) Intercambio -> Calignis (Cassaro Valerio)
+    8) Intercambio -> Amra (Cassaro Valerio)
+    9) Rendirse
+  Accion: 1
+    Realiza exactamente 3 golpes con tres cadáveres distintos manifestados por la colonia. Cada golpe se resuelve por separado usando el Ataque físico y las capacidades anatómicas de la especie a la que pertenecía ese cadáver, escaladas al Nivel de Vínculo actual de Holómicor; puede usar una técnica anatómica compatible con ese cuerpo. Los cadáveres no recuperan magia elemental, Manifestaciones ni propiedades de su antiguo Vínculo.
+    1) S0P0 (rival): Fényrax (Aster Valerio)
+    2) S0P1 (rival): Riftari (Aster Valerio)
+    3) S1P0 (tuya): Holómicor (Cassaro Valerio)
+    4) S1P1 (tuya): Lernyra (Cassaro Valerio)
+  Posicion 1 de la secuencia (0 = terminar): 1
+  Posicion 2 de la secuencia (0 = terminar): 1
+  Posicion 3 de la secuencia (0 = terminar): 1
+  Posicion 4 de la secuencia (0 = terminar): 1
+  Posicion 5 de la secuencia (0 = terminar): 1
+  Posicion 6 de la secuencia (0 = terminar): 1
+  Posicion 7 de la secuencia (0 = terminar): 1
+  Posicion 8 de la secuencia (0 = terminar): 0
+
+  S1P1: Lernyra (Cassaro Valerio)
+    1) Cerco de nueve [physical, mitico, PB 18 x9-9, prio 0, multi]
+    2) Impacto soberano [physical, mitico, PB 90, prio 0, single]
+    3) Garra brutal [physical, sin tipo, PB 85, prio 0, single]
+    4) Mordida brutal [physical, sin tipo, PB 90, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Calignis (Cassaro Valerio)
+    7) Intercambio -> Amra (Cassaro Valerio)
+    8) Rendirse
+  Accion: 1
+    Las nueve cabezas atacan desde ángulos independientes. Realiza nueve impactos que pueden repartirse entre los enemigos presentes.
+    1) S0P0 (rival): Fényrax (Aster Valerio)
+    2) S0P1 (rival): Riftari (Aster Valerio)
+    3) S1P0 (tuya): Holómicor (Cassaro Valerio)
+    4) S1P1 (tuya): Lernyra (Cassaro Valerio)
+  Posicion 1 de la secuencia (0 = terminar): 1
+  Posicion 2 de la secuencia (0 = terminar): 1
+  Posicion 3 de la secuencia (0 = terminar): 1
+  Posicion 4 de la secuencia (0 = terminar): 1
+  Posicion 5 de la secuencia (0 = terminar): 1
+  Posicion 6 de la secuencia (0 = terminar): 2
+  Posicion 7 de la secuencia (0 = terminar): 2
+  Posicion 8 de la secuencia (0 = terminar): 2
+  Posicion 9 de la secuencia (0 = terminar): 2
+  Posicion 10 de la secuencia (0 = terminar): 1
+  Posicion 11 de la secuencia (0 = terminar): 0
+Riftari (Aster Valerio) usa Puño preciso
+  -> Lernyra (Cassaro Valerio) pierde 12 (1569 -> 1557)
+  Lernyra (Cassaro Valerio) retrocede: no podra actuar este turno
+Fényrax (Aster Valerio) usa Canto final
+  Fényrax (Aster Valerio): canto_final (death)
+  Riftari (Aster Valerio): canto_final (death)
+  Holómicor (Cassaro Valerio): canto_final (death)
+  Lernyra (Cassaro Valerio): canto_final (death)
+Holómicor (Cassaro Valerio) usa Horda
+  3 impactos de Horda (3 cadaveres; por objetivo: 3)
+  cadaver 1: valdrakar usa Mordida brutal (Ataque 320)
+  -> Fényrax (Aster Valerio) pierde 270 (587 -> 317)
+  cadaver 2: valdrakar usa Mordida brutal (Ataque 320)
+  -> Fényrax (Aster Valerio) pierde 270 (317 -> 47)
+  cadaver 3: dracendra usa Mordisco de presa (Ataque 193)
+  -> Fényrax (Aster Valerio) pierde 47 (47 -> 0)
+  Fényrax (Aster Valerio) es derrotado
+Lernyra (Cassaro Valerio): la accion falla (retrocede y no puede actuar este turno)
+
+  Reemplazo forzado en S0P0:
+    1) Mairahda (Aster Valerio)
+    2) Tamegona (Aster Valerio)
+  Criatura: 1
+  Mairahda (Aster Valerio) entra en S0P0 (Reemplazo forzado)
+Mairahda (Aster Valerio) se materializa en S0P0
+  Manifestacion raices_invasoras de Mairahda (Aster Valerio)
+  Holómicor (Cassaro Valerio) es inmune a enraizado
+  Lernyra (Cassaro Valerio) queda enraizado (raices_invasoras)
+
+--- Cassaro Valerio: colonia al empezar la ronda 2 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 1716/1716
+  S0P1 (rival): Riftari (Aster Valerio) 1122/1122
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1557/1569 [enraizado(spe -25%; no puede retirarse: 1 turno)]
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 1
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  Holómicor - 3 / 100 cadaveres materializados
+    1) Mantener
+    2) Materializar mas cadaveres
+    3) Materializar todos (100)
+    (Reducir materializacion y Cambiar criatura se eligen entre las acciones de la posicion)
+  Colonia: 2
+  Cadaveres materializados en total (4-100): 12
+
+=== Ronda 2 ===
+  Holómicor (Cassaro Valerio) materializa 9 cadaveres mas: 3 -> 12 / 100
+
+--- Aster Valerio: ronda 2 ---
+  S1P0 (rival): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 12 / 100
+  S1P1 (rival): Lernyra (Cassaro Valerio) 1557/1569 [enraizado(spe -25%; no puede retirarse: 1 turno)]
+  S0P0 (tuya): Mairahda (Aster Valerio) 1716/1716
+  S0P1 (tuya): Riftari (Aster Valerio) 1122/1122
+  Intermedio: Fényrax (derrotada) | Tamegona 1040/1040
+  Reservas viables del rival: 2
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S0P0: Mairahda (Aster Valerio)
+    1) Presa de raíces [status, planta, PB -, prio 0, single]
+    2) Momento justo [magical, planta, PB 120, prio 0, all]
+    3) Semilla acerada [magical, planta, PB 30, prio 0, single]
+    4) Lluvia de espinas [magical, planta, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Tamegona (Aster Valerio)
+    7) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Solo puede utilizarse si Mairahda no causó daño durante la ronda anterior. Entonces libera una expansión masiva de raíces propias que golpea a todos los enemigos.
+
+  S0P1: Riftari (Aster Valerio)
+    1) Punto blanco [magical, fuego, PB 190, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Paso de ceniza [magical, fuego, PB 70, prio 0, single]
+    4) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Tamegona (Aster Valerio)
+    7) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 3
+    El usuario se disuelve en ceniza tras golpear y es sustituido. Ignora restricciones de retirada.
+    1) S1P0 (rival): Holómicor (Cassaro Valerio)
+    2) S1P1 (rival): Lernyra (Cassaro Valerio)
+    3) S0P0 (tuya): Mairahda (Aster Valerio)
+    4) S0P1 (tuya): Riftari (Aster Valerio)
+  Objetivo: 1
+
+--- Cassaro Valerio: ronda 2 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 1716/1716
+  S0P1 (rival): Riftari (Aster Valerio) 1122/1122
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 12 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1557/1569 [enraizado(spe -25%; no puede retirarse: 1 turno)]
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 1
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S1P0: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (12 cadaveres: 6 impactos contra un objetivo)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (12 / 100); consume la accion
+    7) Intercambio -> Calignis (Cassaro Valerio)
+    8) Intercambio -> Amra (Cassaro Valerio)
+    9) Rendirse
+  Accion: 1
+    Realiza exactamente 3 golpes con tres cadáveres distintos manifestados por la colonia. Cada golpe se resuelve por separado usando el Ataque físico y las capacidades anatómicas de la especie a la que pertenecía ese cadáver, escaladas al Nivel de Vínculo actual de Holómicor; puede usar una técnica anatómica compatible con ese cuerpo. Los cadáveres no recuperan magia elemental, Manifestaciones ni propiedades de su antiguo Vínculo.
+    1) S0P0 (rival): Mairahda (Aster Valerio)
+    2) S0P1 (rival): Riftari (Aster Valerio)
+    3) S1P0 (tuya): Holómicor (Cassaro Valerio)
+    4) S1P1 (tuya): Lernyra (Cassaro Valerio)
+  Posicion 1 de la secuencia (0 = terminar): 1
+  Posicion 2 de la secuencia (0 = terminar): 1
+  Posicion 3 de la secuencia (0 = terminar): 1
+  Posicion 4 de la secuencia (0 = terminar): 1
+  Posicion 5 de la secuencia (0 = terminar): 1
+  Posicion 6 de la secuencia (0 = terminar): 1
+  Posicion 7 de la secuencia (0 = terminar): 1
+  Posicion 8 de la secuencia (0 = terminar): 1
+  Posicion 9 de la secuencia (0 = terminar): 1
+  Posicion 10 de la secuencia (0 = terminar): 1
+  Posicion 11 de la secuencia (0 = terminar): 1
+  Posicion 12 de la secuencia (0 = terminar): 1
+  Posicion 13 de la secuencia (0 = terminar): 1
+  Posicion 14 de la secuencia (0 = terminar): 0
+
+  S1P1: Lernyra (Cassaro Valerio)
+    1) Cerco de nueve [physical, mitico, PB 18 x9-9, prio 0, multi]
+    2) Impacto soberano [physical, mitico, PB 90, prio 0, single]
+    3) Garra brutal [physical, sin tipo, PB 85, prio 0, single]
+    4) Mordida brutal [physical, sin tipo, PB 90, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Calignis (Cassaro Valerio): no disponible (enraizado: no puede retirarse voluntariamente; CANON-MECHANICS 24.5)
+     -  Intercambio -> Amra (Cassaro Valerio): no disponible (enraizado: no puede retirarse voluntariamente; CANON-MECHANICS 24.5)
+  Accion: 2
+    Sin efecto adicional.
+    1) S0P0 (rival): Mairahda (Aster Valerio)
+    2) S0P1 (rival): Riftari (Aster Valerio)
+    3) S1P0 (tuya): Holómicor (Cassaro Valerio)
+    4) S1P1 (tuya): Lernyra (Cassaro Valerio)
+  Objetivo: 2
+Riftari (Aster Valerio) usa Paso de ceniza
+  ignicion potencia esta tecnica (+50%)
+  -> Holómicor (Cassaro Valerio) pierde 1413 (14632 -> 13219) [ignicion +50%, corazon_incendiado +100%, calima +50%]
+
+  Reemplazo forzado en S0P1:
+    1) Tamegona (Aster Valerio)
+  Criatura: 1
+  Riftari (Aster Valerio) es sustituido por Tamegona (Aster Valerio) (paso_de_ceniza)
+Tamegona (Aster Valerio) se materializa en S0P1
+  Manifestacion fractura_sismica de Tamegona (Aster Valerio)
+  Holómicor (Cassaro Valerio) queda agrietado (fractura_sismica)
+  Lernyra (Cassaro Valerio) queda agrietado (fractura_sismica)
+Holómicor (Cassaro Valerio) usa Horda
+  6 impactos de Horda (12 cadaveres; por objetivo: 6)
+  cadaver 1: valdrakar usa Mordida brutal (Ataque 320)
+  -> Mairahda (Aster Valerio) pierde 270 (1716 -> 1446)
+  cadaver 2: valdrakar usa Mordida brutal (Ataque 320)
+  -> Mairahda (Aster Valerio) pierde 270 (1446 -> 1176)
+  cadaver 3: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (1176 -> 1093) {rival Defensa: corteza_ancestral +50%}
+  cadaver 4: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (1093 -> 1010) {rival Defensa: corteza_ancestral +50%}
+  cadaver 5: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (1010 -> 927) {rival Defensa: corteza_ancestral +50%}
+  cadaver 6: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (927 -> 844) {rival Defensa: corteza_ancestral +50%}
+Mairahda (Aster Valerio) usa Momento justo
+  -> Holómicor (Cassaro Valerio) pierde 444 (13219 -> 12775)
+  -> Lernyra (Cassaro Valerio) pierde 293 (1557 -> 1264) [escudo_de_las_seis_leyes -33%]
+Lernyra (Cassaro Valerio) usa Impacto soberano
+  -> Tamegona (Aster Valerio) pierde 73 (1040 -> 967) [monolito -50%] {usa Ataque: agrietado -50%}
+
+--- Cassaro Valerio: colonia al empezar la ronda 3 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 844/1716
+  S0P1 (rival): Tamegona (Aster Valerio) 967/1040
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 12 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1264/1569 [enraizado(spe -25%) agrietado(atk -50%; no puede subir: 4 turnos)]
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 1
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  Holómicor - 12 / 100 cadaveres materializados
+    1) Mantener
+    2) Materializar mas cadaveres
+    3) Materializar todos (100)
+    (Reducir materializacion y Cambiar criatura se eligen entre las acciones de la posicion)
+  Colonia: 2
+  Cadaveres materializados en total (13-100): 15
+
+=== Ronda 3 ===
+  Holómicor (Cassaro Valerio) materializa 3 cadaveres mas: 12 -> 15 / 100
+
+--- Aster Valerio: ronda 3 ---
+  S1P0 (rival): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 15 / 100
+  S1P1 (rival): Lernyra (Cassaro Valerio) 1264/1569 [enraizado(spe -25%) agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P0 (tuya): Mairahda (Aster Valerio) 844/1716
+  S0P1 (tuya): Tamegona (Aster Valerio) 967/1040
+  Intermedio: Fényrax (derrotada) | Riftari 1122/1122
+  Reservas viables del rival: 2
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S0P0: Mairahda (Aster Valerio)
+    1) Presa de raíces [status, planta, PB -, prio 0, single]
+    2) Semilla acerada [magical, planta, PB 30, prio 0, single]
+    3) Lluvia de espinas [magical, planta, PB 20 x1-5, prio 0, multi]
+    4) Esquiva (100% de exito)
+    5) Intercambio -> Riftari (Aster Valerio)
+    6) Rendirse
+     -  Momento justo [magical, planta, PB 120, prio 0, all]: no disponible (no se cumple su condicion de uso; CANON-MECHANICS 14.3)
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Aplica Enraizado.
+    1) S1P0 (rival): Holómicor (Cassaro Valerio)
+    2) S1P1 (rival): Lernyra (Cassaro Valerio)
+    3) S0P0 (tuya): Mairahda (Aster Valerio)
+    4) S0P1 (tuya): Tamegona (Aster Valerio)
+  Objetivo: 2
+
+  S0P1: Tamegona (Aster Valerio)
+    1) Marea mineral [physical, tierra, PB 120, prio 0, all]
+    2) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    3) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Riftari (Aster Valerio)
+    7) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Convierte su cuerpo entero en una masa mineral fluida que atraviesa la formación enemiga. Golpea a todos los enemigos e ignora barreras.
+
+--- Cassaro Valerio: ronda 3 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 844/1716
+  S0P1 (rival): Tamegona (Aster Valerio) 967/1040
+  S1P0 (tuya): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 15 / 100
+  S1P1 (tuya): Lernyra (Cassaro Valerio) 1264/1569 [enraizado(spe -25%) agrietado(atk -50%; no puede subir: 4 turnos)]
+  Intermedio: Calignis 851/851 | Amra 1276/1276
+  Reservas viables del rival: 1
+  Clima: Calima (de Fényrax (Aster Valerio))
+
+  S1P0: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (15 cadaveres: 6 impactos contra un objetivo)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (15 / 100); consume la accion
+    7) Intercambio -> Calignis (Cassaro Valerio)
+    8) Intercambio -> Amra (Cassaro Valerio)
+    9) Rendirse
+  Accion: 8
+
+  S1P1: Lernyra (Cassaro Valerio)
+    1) Cerco de nueve [physical, mitico, PB 18 x9-9, prio 0, multi]
+    2) Impacto soberano [physical, mitico, PB 90, prio 0, single]
+    3) Garra brutal [physical, sin tipo, PB 85, prio 0, single]
+    4) Mordida brutal [physical, sin tipo, PB 90, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Calignis (Cassaro Valerio)
+    7) Intercambio -> Amra (Cassaro Valerio)
+    8) Rendirse
+  Accion: 7
+Holómicor (Cassaro Valerio) se retira; entra Amra (Cassaro Valerio)
+Amra (Cassaro Valerio) se materializa en S1P0
+  Manifestacion neblina_oscura de Amra (Cassaro Valerio)
+  neblina_oscura se impone y sustituye a calima
+Lernyra (Cassaro Valerio): la accion falla (el reemplazo ya no es viable)
+Tamegona (Aster Valerio) usa Marea mineral
+  -> Amra (Cassaro Valerio) pierde 231 (1276 -> 1045) [profundidad_umbria -50%] {rival Defensa: neblina_oscura +50%}
+  -> Lernyra (Cassaro Valerio) pierde 126 (1264 -> 1138) x0.5 [escudo_de_las_seis_leyes -33%]
+Mairahda (Aster Valerio) usa Presa de raíces
+  -> impacta a Lernyra (Cassaro Valerio)
+  Lernyra (Cassaro Valerio) ya estaba enraizado
+  Lernyra (Cassaro Valerio) sucumbe a canto_final
+  Lernyra (Cassaro Valerio) pierde 1138 por canto_final (1138 -> 0)
+  Lernyra (Cassaro Valerio) es derrotado
+
+  Reemplazo forzado en S1P1:
+    1) Holómicor (Cassaro Valerio)
+    2) Calignis (Cassaro Valerio)
+  Criatura: 1
+  Holómicor (Cassaro Valerio) entra en S1P1 (Reemplazo forzado)
+
+  Holómicor (Cassaro Valerio) entra en combate: 100 cadaveres disponibles (habitual: 3).
+  Cadaveres a materializar (1-100): 100
+Holómicor (Cassaro Valerio) se materializa en S1P1 con 100 / 100 cadaveres
+
+--- Cassaro Valerio: colonia al empezar la ronda 4 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 844/1716
+  S0P1 (rival): Tamegona (Aster Valerio) 967/1040
+  S1P0 (tuya): Amra (Cassaro Valerio) 1045/1276
+  S1P1 (tuya): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 100 / 100
+  Intermedio: Calignis 851/851 | Lernyra (derrotada)
+  Reservas viables del rival: 1
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  Holómicor - 100 / 100 cadaveres materializados
+    (todos materializados)
+
+=== Ronda 4 ===
+
+--- Aster Valerio: ronda 4 ---
+  S1P0 (rival): Amra (Cassaro Valerio) 1045/1276
+  S1P1 (rival): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 100 / 100
+  S0P0 (tuya): Mairahda (Aster Valerio) 844/1716
+  S0P1 (tuya): Tamegona (Aster Valerio) 967/1040
+  Intermedio: Fényrax (derrotada) | Riftari 1122/1122
+  Reservas viables del rival: 1
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  S0P0: Mairahda (Aster Valerio)
+    1) Presa de raíces [status, planta, PB -, prio 0, single]
+    2) Momento justo [magical, planta, PB 120, prio 0, all]
+    3) Semilla acerada [magical, planta, PB 30, prio 0, single]
+    4) Lluvia de espinas [magical, planta, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Riftari (Aster Valerio)
+    7) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Solo puede utilizarse si Mairahda no causó daño durante la ronda anterior. Entonces libera una expansión masiva de raíces propias que golpea a todos los enemigos.
+
+  S0P1: Tamegona (Aster Valerio)
+    1) Marea mineral [physical, tierra, PB 120, prio 0, all]
+    2) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    3) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Riftari (Aster Valerio)
+    7) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Convierte su cuerpo entero en una masa mineral fluida que atraviesa la formación enemiga. Golpea a todos los enemigos e ignora barreras.
+
+--- Cassaro Valerio: ronda 4 ---
+  S0P0 (rival): Mairahda (Aster Valerio) 844/1716
+  S0P1 (rival): Tamegona (Aster Valerio) 967/1040
+  S1P0 (tuya): Amra (Cassaro Valerio) 1045/1276
+  S1P1 (tuya): Holómicor (Cassaro Valerio) 12775/14632 [agrietado(atk -50%; no puede subir: 4 turnos)] | NV 100 | Cadaveres: 100 / 100
+  Intermedio: Calignis 851/851 | Lernyra (derrotada)
+  Reservas viables del rival: 1
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  S1P0: Amra (Cassaro Valerio)
+    1) Forma del miedo [magical, oscuridad, PB 120, prio 0, single]
+    2) Aprovechar hueco [physical, oscuridad, PB 65, prio 0, single]
+    3) Desvanecerse [magical, oscuridad, PB 70, prio 0, single]
+    4) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Calignis (Cassaro Valerio)
+    7) Rendirse
+     -  Intercambio -> Lernyra (Cassaro Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Para calcular el daño utiliza como valor ofensivo la característica actual más alta entre el Ataque y el Ataque mágico del propio objetivo.
+    1) S0P0 (rival): Mairahda (Aster Valerio)
+    2) S0P1 (rival): Tamegona (Aster Valerio)
+    3) S1P0 (tuya): Amra (Cassaro Valerio)
+    4) S1P1 (tuya): Holómicor (Cassaro Valerio)
+  Objetivo: 2
+
+  S1P1: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (100 cadaveres: 13 impactos contra un objetivo)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (100 / 100); consume la accion
+    7) Intercambio -> Calignis (Cassaro Valerio)
+    8) Rendirse
+     -  Intercambio -> Lernyra (Cassaro Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Realiza exactamente 3 golpes con tres cadáveres distintos manifestados por la colonia. Cada golpe se resuelve por separado usando el Ataque físico y las capacidades anatómicas de la especie a la que pertenecía ese cadáver, escaladas al Nivel de Vínculo actual de Holómicor; puede usar una técnica anatómica compatible con ese cuerpo. Los cadáveres no recuperan magia elemental, Manifestaciones ni propiedades de su antiguo Vínculo.
+    1) S0P0 (rival): Mairahda (Aster Valerio)
+    2) S0P1 (rival): Tamegona (Aster Valerio)
+    3) S1P0 (tuya): Amra (Cassaro Valerio)
+    4) S1P1 (tuya): Holómicor (Cassaro Valerio)
+  Posicion 1 de la secuencia (0 = terminar): 1
+  Posicion 2 de la secuencia (0 = terminar): 1
+  Posicion 3 de la secuencia (0 = terminar): 1
+  Posicion 4 de la secuencia (0 = terminar): 1
+  Posicion 5 de la secuencia (0 = terminar): 1
+  Posicion 6 de la secuencia (0 = terminar): 1
+  Posicion 7 de la secuencia (0 = terminar): 1
+  Posicion 8 de la secuencia (0 = terminar): 1
+  Posicion 9 de la secuencia (0 = terminar): 1
+  Posicion 10 de la secuencia (0 = terminar): 2
+  Posicion 11 de la secuencia (0 = terminar): 2
+  Posicion 12 de la secuencia (0 = terminar): 2
+  Posicion 13 de la secuencia (0 = terminar): 2
+  Posicion 14 de la secuencia (0 = terminar): 0
+Amra (Cassaro Valerio) usa Forma del miedo
+  -> Tamegona (Aster Valerio) pierde 127 (967 -> 840) x0.5 [monolito -50%]
+Tamegona (Aster Valerio) usa Marea mineral
+  -> Amra (Cassaro Valerio) pierde 231 (1045 -> 814) [profundidad_umbria -50%] {rival Defensa: neblina_oscura +50%}
+  -> Holómicor (Cassaro Valerio) pierde 281 (12775 -> 12494) {rival Defensa: corteza_ancestral +50%, neblina_oscura +50%}
+Holómicor (Cassaro Valerio) usa Horda
+  20 impactos de Horda (100 cadaveres; por objetivo: 10 + 10)
+  cadaver 1: valdrakar usa Mordida brutal (Ataque 320)
+  -> Mairahda (Aster Valerio) pierde 270 (844 -> 574)
+  cadaver 2: valdrakar usa Mordida brutal (Ataque 320)
+  -> Mairahda (Aster Valerio) pierde 270 (574 -> 304)
+  cadaver 3: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (304 -> 221) {rival Defensa: corteza_ancestral +50%}
+  cadaver 4: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (221 -> 138) {rival Defensa: corteza_ancestral +50%}
+  cadaver 5: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 83 (138 -> 55) {rival Defensa: corteza_ancestral +50%}
+  cadaver 6: dracendra usa Mordisco de presa (Ataque 193)
+  -> Mairahda (Aster Valerio) pierde 55 (55 -> 0) {rival Defensa: corteza_ancestral +50%}
+  Mairahda (Aster Valerio) es derrotado
+  cadaver 7: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) pierde 53 (840 -> 787) [monolito -50%]
+  cadaver 8: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) pierde 53 (787 -> 734) [monolito -50%]
+  cadaver 9: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) pierde 53 (734 -> 681) [monolito -50%]
+  cadaver 10: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) pierde 53 (681 -> 628) [monolito -50%]
+  cadaver 11: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (628 -> 575) [monolito -50%]
+  cadaver 12: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (575 -> 522) [monolito -50%]
+  cadaver 13: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (522 -> 469) [monolito -50%]
+  cadaver 14: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (469 -> 416) [monolito -50%]
+  cadaver 15: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (416 -> 363) [monolito -50%]
+  cadaver 16: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (363 -> 310) [monolito -50%]
+  cadaver 17: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (310 -> 257) [monolito -50%]
+  cadaver 18: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (257 -> 204) [monolito -50%]
+  cadaver 19: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (204 -> 151) [monolito -50%]
+  cadaver 20: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) pierde 53 (151 -> 98) [monolito -50%]
+Mairahda (Aster Valerio): la accion falla (el usuario ya no esta activo; la accion se pierde)
+
+  Reemplazo forzado en S0P0:
+    1) Riftari (Aster Valerio)
+  Criatura: 1
+  Riftari (Aster Valerio) entra en S0P0 (Reemplazo forzado)
+Riftari (Aster Valerio) se materializa en S0P0
+  Manifestacion hambre_del_abismo de Holómicor (Cassaro Valerio)
+  Tamegona (Aster Valerio) pierde 65 por hambre_del_abismo (98 -> 33)
+
+--- Cassaro Valerio: colonia al empezar la ronda 5 ---
+  S0P0 (rival): Riftari (Aster Valerio) 1122/1122
+  S0P1 (rival): Tamegona (Aster Valerio) 33/1040
+  S1P0 (tuya): Amra (Cassaro Valerio) 814/1276
+  S1P1 (tuya): Holómicor (Cassaro Valerio) 12494/14632 [agrietado(atk -50%; no puede subir: 3 turnos)] | NV 100 | Cadaveres: 100 / 100
+  Intermedio: Calignis 851/851 | Lernyra (derrotada)
+  Reservas viables del rival: 0
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  Holómicor - 100 / 100 cadaveres materializados
+    (todos materializados)
+
+=== Ronda 5 ===
+
+--- Aster Valerio: ronda 5 ---
+  S1P0 (rival): Amra (Cassaro Valerio) 814/1276
+  S1P1 (rival): Holómicor (Cassaro Valerio) 12494/14632 [agrietado(atk -50%; no puede subir: 3 turnos)] | NV 100 | Cadaveres: 100 / 100
+  S0P0 (tuya): Riftari (Aster Valerio) 1122/1122
+  S0P1 (tuya): Tamegona (Aster Valerio) 33/1040
+  Intermedio: Fényrax (derrotada) | Mairahda (derrotada)
+  Reservas viables del rival: 1
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  S0P0: Riftari (Aster Valerio)
+    1) Punto blanco [magical, fuego, PB 190, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Paso de ceniza [magical, fuego, PB 70, prio 0, single]
+    4) Puño preciso [physical, sin tipo, PB 15, prio 3, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Mairahda (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Primer turno: comprime fuego hasta formar un núcleo blanco diminuto. Segundo turno: libera toda la energía contra el objetivo.
+    1) S1P0 (rival): Amra (Cassaro Valerio)
+    2) S1P1 (rival): Holómicor (Cassaro Valerio)
+    3) S0P0 (tuya): Riftari (Aster Valerio)
+    4) S0P1 (tuya): Tamegona (Aster Valerio)
+  Objetivo: 2
+
+  S0P1: Tamegona (Aster Valerio)
+    1) Marea mineral [physical, tierra, PB 120, prio 0, all]
+    2) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    3) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Fényrax (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Mairahda (Aster Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 5
+
+--- Cassaro Valerio: ronda 5 ---
+  S0P0 (rival): Riftari (Aster Valerio) 1122/1122
+  S0P1 (rival): Tamegona (Aster Valerio) 33/1040
+  S1P0 (tuya): Amra (Cassaro Valerio) 814/1276
+  S1P1 (tuya): Holómicor (Cassaro Valerio) 12494/14632 [agrietado(atk -50%; no puede subir: 3 turnos)] | NV 100 | Cadaveres: 100 / 100
+  Intermedio: Calignis 851/851 | Lernyra (derrotada)
+  Reservas viables del rival: 0
+  Campo: Neblina Oscura (de Amra (Cassaro Valerio))
+
+  S1P0: Amra (Cassaro Valerio)
+    1) Forma del miedo [magical, oscuridad, PB 120, prio 0, single]
+    2) Aprovechar hueco [physical, oscuridad, PB 65, prio 0, single]
+    3) Desvanecerse [magical, oscuridad, PB 70, prio 0, single]
+    4) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Calignis (Cassaro Valerio)
+    7) Rendirse
+     -  Intercambio -> Lernyra (Cassaro Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Si el objetivo ha declarado una técnica de Estado para esta ronda, causa el doble de daño.
+    1) S0P0 (rival): Riftari (Aster Valerio)
+    2) S0P1 (rival): Tamegona (Aster Valerio)
+    3) S1P0 (tuya): Amra (Cassaro Valerio)
+    4) S1P1 (tuya): Holómicor (Cassaro Valerio)
+  Objetivo: 2
+
+  S1P1: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (100 cadaveres: 13 impactos contra un objetivo)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (100 / 100); consume la accion
+    7) Intercambio -> Calignis (Cassaro Valerio)
+    8) Rendirse
+     -  Intercambio -> Lernyra (Cassaro Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Realiza exactamente 3 golpes con tres cadáveres distintos manifestados por la colonia. Cada golpe se resuelve por separado usando el Ataque físico y las capacidades anatómicas de la especie a la que pertenecía ese cadáver, escaladas al Nivel de Vínculo actual de Holómicor; puede usar una técnica anatómica compatible con ese cuerpo. Los cadáveres no recuperan magia elemental, Manifestaciones ni propiedades de su antiguo Vínculo.
+    1) S0P0 (rival): Riftari (Aster Valerio)
+    2) S0P1 (rival): Tamegona (Aster Valerio)
+    3) S1P0 (tuya): Amra (Cassaro Valerio)
+    4) S1P1 (tuya): Holómicor (Cassaro Valerio)
+  Posicion 1 de la secuencia (0 = terminar): 1
+  Posicion 2 de la secuencia (0 = terminar): 1
+  Posicion 3 de la secuencia (0 = terminar): 1
+  Posicion 4 de la secuencia (0 = terminar): 1
+  Posicion 5 de la secuencia (0 = terminar): 1
+  Posicion 6 de la secuencia (0 = terminar): 1
+  Posicion 7 de la secuencia (0 = terminar): 1
+  Posicion 8 de la secuencia (0 = terminar): 1
+  Posicion 9 de la secuencia (0 = terminar): 2
+  Posicion 10 de la secuencia (0 = terminar): 2
+  Posicion 11 de la secuencia (0 = terminar): 2
+  Posicion 12 de la secuencia (0 = terminar): 2
+  Posicion 13 de la secuencia (0 = terminar): 2
+  Posicion 14 de la secuencia (0 = terminar): 0
+Tamegona (Aster Valerio) esquiva (uso 1, 100%): exito
+Amra (Cassaro Valerio) usa Aprovechar hueco
+  -> Tamegona (Aster Valerio) lo esquiva
+Riftari (Aster Valerio) carga Punto blanco
+Holómicor (Cassaro Valerio) usa Horda
+  20 impactos de Horda (100 cadaveres; por objetivo: 10 + 10)
+  cadaver 1: valdrakar usa Mordida brutal (Ataque 320)
+  -> Riftari (Aster Valerio) pierde 270 (1122 -> 852)
+  cadaver 2: valdrakar usa Mordida brutal (Ataque 320)
+  -> Riftari (Aster Valerio) pierde 270 (852 -> 582)
+  cadaver 3: dracendra usa Mordisco de presa (Ataque 193)
+  -> Riftari (Aster Valerio) pierde 131 (582 -> 451)
+  cadaver 4: dracendra usa Mordisco de presa (Ataque 193)
+  -> Riftari (Aster Valerio) pierde 131 (451 -> 320)
+  cadaver 5: dracendra usa Mordisco de presa (Ataque 193)
+  -> Riftari (Aster Valerio) pierde 131 (320 -> 189)
+  cadaver 6: dracendra usa Mordisco de presa (Ataque 193)
+  -> Riftari (Aster Valerio) pierde 131 (189 -> 58)
+  cadaver 7: dracendra usa Mordisco de presa (Ataque 193)
+  -> Riftari (Aster Valerio) pierde 58 (58 -> 0)
+  Riftari (Aster Valerio) es derrotado
+  cadaver 8: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 9: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 10: dracendra usa Mordisco de presa (Ataque 193)
+  -> S0P0 esta vacia: el ataque va contra Tamegona (Aster Valerio)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 11: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 12: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 13: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 14: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 15: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 16: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 17: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 18: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 19: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  cadaver 20: dracendra usa Mordisco de presa (Ataque 193)
+  -> Tamegona (Aster Valerio) lo esquiva
+  S0P0 queda vacia: no hay reservas
+  Manifestacion hambre_del_abismo de Holómicor (Cassaro Valerio)
+  Tamegona (Aster Valerio) pierde 33 por hambre_del_abismo (33 -> 0)
+  Tamegona (Aster Valerio) es derrotado
+  S0P1 queda vacia: no hay reservas
+
+Fin: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}

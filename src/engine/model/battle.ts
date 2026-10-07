@@ -43,6 +43,15 @@ export interface Combatant {
   committedTechnique: string | null;
   everUsed: string[];
   onceUsed: string[];
+  /** Colonia de Holomicor (null en el resto): total >= disponibles = total - destruidos >= materializados */
+  colony: ColonyState | null;
+}
+
+export interface ColonyState {
+  total: number;
+  destroyed: number;
+  /** cuerpos presentes; 0 mientras la criatura esta en el Intermedio */
+  materialized: number;
 }
 
 export type Expiry =
@@ -168,6 +177,7 @@ export type Action =
   | { kind: 'dodge' }
   | { kind: 'switch'; incomingId: string }
   | { kind: 'partial'; creatureId: string; techniqueId: string; target: TargetDecl; choice?: string }
-  | { kind: 'surrender' };
+  | { kind: 'surrender' }
+  | { kind: 'corpses'; count: number };
 
 export type Declarations = Record<string, Action>;

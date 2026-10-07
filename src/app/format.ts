@@ -2,6 +2,7 @@ import type { GameData } from '../data/schema.js';
 import type { BattleState, Combatant } from '../engine/model/battle.js';
 import type { BattleEvent } from '../engine/log/events.js';
 import { allCombatants } from '../engine/pipeline/context.js';
+import { availableCorpses } from '../engine/rules/horde.js';
 
 export function creatureName(st: BattleState, uid: string | undefined): string {
   if (!uid) return '?';
@@ -24,6 +25,14 @@ const RESTRICTION_LABELS: Record<string, string> = {
   bond_communication_cut: 'comunicacion cortada',
 };
 
+export function colonyLine(c: Combatant): string | null {
+  const col = c.colony;
+  if (!col) return null;
+  const available = availableCorpses(col);
+  if (col.destroyed > 0) return `Cadaveres materializados: ${col.materialized} | disponibles: ${available} | totales: ${col.total}`;
+  return `Cadaveres: ${col.materialized} / ${col.total}${c.location === 'field' ? '' : ' (en el Intermedio)'}`;
+}
+
 export function statusLine(c: Combatant, data?: GameData): string {
   const sts = c.statuses.map((s) => {
     const def = data?.statuses.get(s.id);
@@ -34,7 +43,7 @@ export function statusLine(c: Combatant, data?: GameData): string {
   });
   const stages = Object.entries(c.stages).filter(([, v]) => v !== 0).map(([k, v]) => `${k}${v > 0 ? '+' : ''}${v}`);
   const extra = [...sts, ...stages];
-  return `${c.hp}/${c.maxHp}${extra.length ? ` [${extra.join(' ')}]` : ''}${c.charging ? ' (cargando)' : ''}`;
+  return `${c.hp}/${c.maxHp}${extra.length ? ` [${extra.join(' ')}]` : ''}${c.charging ? ' (cargando)' : ''}${c.colony ? ` | NV ${c.creature.nv} | ${colonyLine(c)}` : ''}`;
 }
 
 const ENVIRONMENT_LABELS: Record<string, string> = { weather: 'Clima', field: 'Campo', anomaly: 'Anomalia' };
@@ -70,7 +79,9 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
   switch (e.type) {
     case 'battle_start': return `Combate (semilla ${String(d.seed)}, modo ${String((d.config as { effectsMode?: string })?.effectsMode)}, constante de dano ${String((d.config as { damageConstant?: number })?.damageConstant)}). Supuestos activos: ${(d.assumptions as unknown[]).length} (ver "cli gaps")`;
     case 'round_start': return `\n=== Ronda ${e.round} ===`;
-    case 'materialize': return `${who} se materializa en ${e.targets?.[0]}`;
+    case 'materialize': return `${who} se materializa en ${e.targets?.[0]}${d.corpses !== undefined ? ` con ${String(d.corpses)} / ${String(d.available)} cadaveres` : ''}`;
+    case 'colony_materialize': return `  ${who} materializa ${Number(d.to) - Number(d.from)} cadaveres mas: ${String(d.from)} -> ${String(d.to)} / ${String(d.available)}`;
+    case 'colony_withdraw': return `  ${who} retira cadaveres al Intermedio: ${String(d.from)} -> ${String(d.to)} / ${String(d.available)}`;
     case 'manifestation_inert': return `  Manifestacion ${String(d.manifestation)} de ${who}: sin efecto (${String(d.reason)})`;
     case 'deployment_complete': return 'Despliegue inicial completo';
     case 'declaration': return null;

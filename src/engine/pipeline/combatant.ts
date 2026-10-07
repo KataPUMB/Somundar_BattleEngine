@@ -4,7 +4,7 @@ import { STAGE_KEYS, type BondedCreature, type StageKey, type StatKey, type Stat
 import { effectiveStat, stableStats, type DirectModifier } from '../rules/stats.js';
 import { isImmuneToStatus } from '../rules/combat.js';
 import type { AccuracyModifiers } from '../rules/accuracy.js';
-import { holomicorHpMultiplier } from '../rules/horde.js';
+import { createColony, holomicorHpMultiplier } from '../rules/horde.js';
 
 export function zeroStages(): Record<StageKey, number> {
   return Object.fromEntries(STAGE_KEYS.map((k) => [k, 0])) as Record<StageKey, number>;
@@ -12,7 +12,7 @@ export function zeroStages(): Record<StageKey, number> {
 
 export function createCombatant(side: SideIndex, creature: BondedCreature, speciesName?: string): Combatant {
   const stable = stableStats(creature.baseStatsNV50, creature.nv, creature.fortaleza);
-  stable.hp = Math.max(1, Math.round(stable.hp * holomicorHpMultiplier(creature.corpseCount)));
+  stable.hp = Math.max(1, Math.round(stable.hp * holomicorHpMultiplier(creature.totalCorpseCount)));
   const hp = creature.hpCurrent === undefined ? stable.hp : Math.max(0, Math.min(stable.hp, creature.hpCurrent));
   return {
     uid: `${side}:${creature.id}`,
@@ -45,6 +45,7 @@ export function createCombatant(side: SideIndex, creature: BondedCreature, speci
     committedTechnique: null,
     everUsed: [],
     onceUsed: [],
+    colony: createColony(creature),
   };
 }
 

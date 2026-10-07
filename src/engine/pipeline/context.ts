@@ -6,6 +6,8 @@ import { nextFloat } from '../rng.js';
 export interface Controllers {
   chooseReplacement?(st: Readonly<BattleState>, side: SideIndex, positionId: string, candidates: string[]): string;
   chooseOptionalSwitch?(st: Readonly<BattleState>, uid: string, candidates: string[]): string | null;
+  /** cadaveres a materializar cuando Holomicor entra en combate (entre 1 y max) */
+  chooseCorpses?(st: Readonly<BattleState>, uid: string, max: number, suggested: number): number;
 }
 
 export interface PendingSelfSwitch {

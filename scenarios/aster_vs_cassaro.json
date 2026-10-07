@@ -1,5 +1,5 @@
 {
-  "_nota": "Aster Valerio contra Cassaro Valerio. Preparaciones principales canonicas segun CANON-NOVELS; las ocho criaturas estan en NV100. Estadisticas base tomadas de CANON-CREATURES a NV50; Fortaleza segun las fichas individuales. Ambos son Arcontes reales, por lo que se usa Amplitud practica 400, Capacidad de Fortaleza 60 y maximo 25 por estadistica. initialDeployment queda vacio porque el canon no fija un despliegue inicial concreto.",
+  "_nota": "Aster Valerio contra Cassaro Valerio. Preparaciones principales canonicas segun CANON-NOVELS; las ocho criaturas estan en NV100. Estadisticas base tomadas de CANON-CREATURES a NV50; Fortaleza segun las fichas individuales. Ambos son Arcontes reales, por lo que se usa Amplitud practica 400, Capacidad de Fortaleza 60 y maximo 25 por estadistica. initialDeployment: Aster abre con Fenyrax y Riftari; Cassaro, con Holomicor y Lernyra. Holomicor de Cassaro: colonia de 100 cadaveres (2 Valdrakar, 27 Dracendra, 13 Faresban, 18 Noctargo y 40 humanos) que se materializan en el orden de la lista; empieza con 3 y puede crecer hasta 100. Tecnica anatomica de cada cuerpo: la mas potente que su especie aprende; Ataque NV50 de los humanos (50) PROVISIONAL, el canon no lo fija. Las Manifestaciones de la colonia solo estan activas con los 100 cuerpos materializados.",
   "seed": 1,
   "config": {
     "effectsMode": "strict",
@@ -155,7 +155,7 @@
           }
         ]
       },
-      "initialDeployment": []
+      "initialDeployment": ["fenyrax", "riftari"]
     },
     {
       "summoner": {
@@ -185,7 +185,15 @@
             "speciesId": "holomicor",
             "types": ["oscuridad", "planta"],
             "nv": 100,
-            "corpseCount": 100,
+            "totalCorpseCount": 100,
+            "initialMaterializedCorpseCount": 3,
+            "horde": [
+              { "speciesId": "valdrakar", "techniqueId": "mordida_brutal", "count": 2 },
+              { "speciesId": "dracendra", "techniqueId": "mordisco_de_presa", "count": 27 },
+              { "speciesId": "faresban", "techniqueId": "taladrar", "count": 13 },
+              { "speciesId": "noctargo", "techniqueId": "mordisco_de_presa", "count": 18 },
+              { "speciesId": "humano", "atkNV50": 50, "techniqueId": "punetazo", "count": 40 }
+            ],
             "baseStatsNV50": {
               "hp": 800,
               "atk": 120,
@@ -307,7 +315,7 @@
           }
         ]
       },
-      "initialDeployment": []
+      "initialDeployment": ["holomicor", "lernyra"]
     }
   ]
 }

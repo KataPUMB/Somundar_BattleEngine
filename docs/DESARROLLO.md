@@ -141,10 +141,11 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
             "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }],
             "hpCurrent": 200,             // opcional; por defecto Vitalidad máxima
             "canTransfigure": false,      // Poder latente; por defecto, true si la especie tiene forma siguiente
-            "corpseCount": 100,           // solo Holómicor: escala Vitalidad e impactos de Horda (GAP-HOLOMICOR-COLONY)
-            "materializedCorpseCount": 100,   // opcional; cadáveres presentes para Horda (por defecto, corpseCount)
-            "horde": [                    // solo Holómicor con Horda: descriptores de cadáver (mínimo min(3, presentes))
-              { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo" }   // atkNV50 opcional si la especie está en la guía
+            "totalCorpseCount": 100,      // solo Holómicor: tamaño de la colonia; escala la Vitalidad (GAP-HOLOMICOR-COLONY)
+            "initialMaterializedCorpseCount": 3,   // opcional; por defecto, todos los disponibles
+            "destroyedCorpseCount": 0,    // opcional; estado preparado para cuerpos destruidos
+            "horde": [                    // cuerpos de la colonia en orden de materialización; count = cuántos de cada tipo (la suma debe ser totalCorpseCount)
+              { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo", "count": 100 }   // atkNV50 opcional si la especie está en la guía
             ]
           }
         ]
@@ -278,7 +279,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Lagunas del canon (RuleGap)
 
-`node dist/app/cli.js gaps` lista las 75 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
+`node dist/app/cli.js gaps` lista las 76 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
 
 | Laguna | Supuesto actual |
 |---|---|
@@ -308,7 +309,8 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
 | Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
 | «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
-| Colonia de Holómicor (`corpseCount`) | Vitalidad máxima ×(1 + 0,4·(n−1)^0,7). Horda reparte los cadáveres presentes por igual entre los objetivos declarados; cada objetivo recibe n impactos si n ≤ 3 y min(16, round(3 + (n−3)^0,5)) si no. Constantes en `src/engine/rules/horde.ts` (GAP-HOLOMICOR-COLONY) |
+| Colonia de Holómicor | Tres magnitudes separadas: `totalCorpseCount` escala la Vitalidad máxima ×(1 + 0,4·(n−1)^0,7); los cuerpos materializados deciden los impactos de Horda y las Manifestaciones (solo con todos los disponibles); los impactos por objetivo siguen `hits(n)` = n si n ≤ 3, si no min(16, round(3 + (n−3)^0,5)) con los cuerpos repartidos por igual entre los objetivos. Constantes en `src/engine/rules/horde.ts` (GAP-HOLOMICOR-COLONY) |
+| Cambiar los cuerpos materializados | Aumentarlos es gratis al empezar la ronda (como las Materializaciones de 28.2); reducirlos es una Retirada parcial que consume la acción y la bloquean las mismas restricciones. El número persiste entre rondas; al volver a entrar se elige de nuevo (por defecto `initialMaterializedCorpseCount`) (GAP-COLONY-MATERIALIZATION) |
 | Horda | Descriptores de cadáver por instancia (Ataque de la ficha si la especie está en la guía; si no, explícito); cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
 | «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
 | «Todos los aliados» en una Retirada | No incluye a la criatura que se retira |

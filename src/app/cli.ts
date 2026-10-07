@@ -9,7 +9,7 @@ import { validatePreparation } from '../engine/legality/preparation.js';
 import { randomLegalPolicy } from '../engine/ai/random.js';
 import { RULE_GAPS } from '../engine/gaps.js';
 import { runBattle } from './simulate.js';
-import { askOptionalSwitch, askReplacement, humanPolicy } from './human.js';
+import { askCorpses, askOptionalSwitch, askReplacement, humanPolicy } from './human.js';
 import { formatEvent } from './format.js';
 import type { BattleState, SideIndex } from '../engine/model/battle.js';
 import type { Policy } from '../engine/ai/random.js';
@@ -74,6 +74,12 @@ function main(argv: string[]): number {
           if (!human[side]) return candidates[0]!;
           flush(st);
           return askReplacement(st, pid, candidates);
+        },
+        chooseCorpses: (st: BattleState, uid: string, max: number, suggested: number) => {
+          const c = st.sides.flatMap((s) => s.combatants).find((x) => x.uid === uid)!;
+          if (!human[c.side]) return suggested;
+          flush(st);
+          return askCorpses(st, uid, max, suggested);
         },
         chooseOptionalSwitch: (st: BattleState, uid: string, candidates: string[]) => {
           const c = st.sides.flatMap((s) => s.combatants).find((x) => x.uid === uid)!;
