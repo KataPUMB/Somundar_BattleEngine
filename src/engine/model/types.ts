@@ -68,6 +68,10 @@ export interface BondedCreature {
   canTransfigure?: boolean;
   /** cadaveres de Horda (Holomicor) */
   horde?: HordeCorpse[];
+  /** cadaveres que controla la colonia de Holomicor; escala la Vitalidad. Sin declarar: x1 */
+  corpseCount?: number;
+  /** cadaveres presentes para Horda; por defecto, corpseCount */
+  materializedCorpseCount?: number;
 }
 
 export interface HordeCorpse {

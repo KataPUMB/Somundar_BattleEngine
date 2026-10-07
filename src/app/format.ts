@@ -84,7 +84,9 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'partial_materialization': return `${who} se materializa parcialmente en ${e.targets?.[0]} para usar ${techName(data, d.technique)}`;
     case 'partial_end': return `  ${who} vuelve al Intermedio`;
     case 'charge_start': return `${who} carga ${techName(data, d.technique)}`;
-    case 'hit_count': return d.minimumFrom ? `  ${String(d.hits)} impactos (minimo por ${String(d.minimumFrom)})` : `  ${String(d.hits)} impactos`;
+    case 'hit_count':
+      if (d.corpses !== undefined) return `  ${String(d.hits)} impactos de Horda (${String(d.corpses)} cadaveres; por objetivo: ${(d.perTarget as number[]).join(' + ')})`;
+      return d.minimumFrom ? `  ${String(d.hits)} impactos (minimo por ${String(d.minimumFrom)})` : `  ${String(d.hits)} impactos`;
     case 'damage': {
       const mods = (d.modifiers as { pct: number; source: string }[] | undefined) ?? [];
       const m = mods.length ? ` [${mods.map((x) => `${x.source} ${x.pct > 0 ? '+' : ''}${x.pct}%`).join(', ')}]` : '';

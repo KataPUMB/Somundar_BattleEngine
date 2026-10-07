@@ -1,6 +1,7 @@
 import type { GameData } from '../../data/schema.js';
 import { STAT_KEYS, STATUS_IDS, TYPE_IDS, type BondedCreature, type BondedCreatureInput, type SideSetup, type SideSetupInput, type TypeId } from '../model/types.js';
 import { learnableTechniques, minimumFormLevel, resolveSetup } from './species.js';
+import { HORDE_DEFAULT_CORPSES } from '../rules/horde.js';
 
 export interface Violation {
   severity: 'error' | 'warning';
@@ -91,6 +92,12 @@ function validateCreature(c: BondedCreature, raw: BondedCreatureInput, path: str
   (c.horde ?? []).forEach((h, i) => {
     if (!(h.atkNV50 > 0)) e('HORDE_CORPSE_STATS', 'CANON-TECHNIQUES Horda', `cadaver ${h.speciesId}: falta atkNV50 (especie fuera de la guia)`, `${path}.horde[${i}]`);
   });
+  const isCount = (n: number | undefined) => n === undefined || (Number.isInteger(n) && n >= 1);
+  if (!isCount(c.corpseCount) || !isCount(c.materializedCorpseCount)) e('CRE_CORPSES', 'CANON-CREATURES Holomicor', 'corpseCount y materializedCorpseCount deben ser enteros >= 1');
+  else {
+    if (c.corpseCount !== undefined && c.speciesId !== 'holomicor') e('CRE_CORPSES', 'CANON-CREATURES Holomicor', 'solo Holomicor controla una colonia de cadaveres');
+    if (c.materializedCorpseCount !== undefined && c.materializedCorpseCount > (c.corpseCount ?? HORDE_DEFAULT_CORPSES)) e('CRE_CORPSES', 'CANON-CREATURES Holomicor', 'materializedCorpseCount no puede superar corpseCount');
+  }
 
   // Manifestaciones (10.2-10.3)
   const slots = c.nv >= 50 ? 2 : 1;

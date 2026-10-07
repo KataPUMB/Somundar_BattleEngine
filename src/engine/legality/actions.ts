@@ -5,6 +5,7 @@ import { auraOps, evalCondition, marksOf } from '../effects/runtime.js';
 import { allPositions, combatant, findPosition, sideOf, type EngineCtx } from '../pipeline/context.js';
 import { isViableReserve, restrictionActive } from '../pipeline/combatant.js';
 import { withdrawBlocker } from '../pipeline/lifecycle.js';
+import { materializedCorpses } from '../rules/horde.js';
 
 export interface ActionOption {
   action: Action;
@@ -44,11 +45,12 @@ export function techniqueBlockReason(ctx: EngineCtx, user: Combatant, t: Techniq
   }
   if (ov?.handler === 'horda') {
     const horde = user.creature.horde ?? [];
-    const valid = horde.length >= 3 && horde.slice(0, 3).every((h) => {
+    const needed = Math.min(3, materializedCorpses(user.creature));
+    const valid = horde.length >= needed && horde.every((h) => {
       const ct = ctx.data.techniques.get(h.techniqueId);
       return ct?.category === 'anatomical' && ct.class === 'physical' && typeof ct.power?.perHit === 'number';
     });
-    if (!valid) return 'Horda requiere tres cadaveres con una tecnica anatomica fisica cada uno (creature.horde, GAP-HORDA)';
+    if (!valid) return `Horda requiere ${needed} descriptor${needed === 1 ? '' : 'es'} de cadaver con una tecnica anatomica fisica (creature.horde, GAP-HORDA)`;
   }
   return null;
 }

@@ -12,6 +12,7 @@ import { applyStatus } from './combatant.js';
 import { exitField, forcedReplacement, performSelfSwitch } from './lifecycle.js';
 import { computeAccuracy, computeHit, isContact, oncePerEntryBonuses, type DamageModifier, type HitScope } from './damage.js';
 import { stableStat } from '../rules/stats.js';
+import { hordeHitPlan, materializedCorpses } from '../rules/horde.js';
 
 export function rollHits(ctx: Pick<EngineCtx, 'st'>, min: number, max: number): number {
   if (min === max) return min;
@@ -250,7 +251,7 @@ export function executeTechnique(ctx: EngineCtx, t: Technique, user: Combatant, 
     emit(ctx.st, { type: 'bonus_consumed', actor: user.uid, data: { manifestation: b.source, technique: t.id, pct: b.pct }, cause, ruleRef: 'CANON-MANIFESTATIONS' });
   }
   const run: TechRun = { t, user, partial, choice, phase, charged, cause, bonuses, impacted: [], damageDealt: 0, primaryCalculated: null, consumed: new Set(), anyImpact: false };
-  const n = t.class === 'status' ? 1 : ov?.handler === 'horda' ? 3 : hitCount(ctx, t, user, partial, cause);
+  const n = t.class === 'status' ? 1 : ov?.handler === 'horda' ? 0 : hitCount(ctx, t, user, partial, cause);
   const declared = positionsForTarget(ctx, target);
   const side = ov?.targetSide;
   const targeting = ov?.declareAs ?? t.targeting;
@@ -393,22 +394,32 @@ export function resolveChain(ctx: EngineCtx, step: () => void, droppable = false
   }
 }
 
-// CANON-TECHNIQUES Horda: tres golpes, cada uno con el Ataque y una tecnica anatomica de un cadaver distinto
+// CANON-TECHNIQUES Horda: cada golpe usa el Ataque y una tecnica anatomica de un cadaver (los descriptores se reutilizan en ciclo)
 function hordeHits(ctx: EngineCtx, run: TechRun, declared: Position[]): void {
   const horde = run.user.creature.horde ?? [];
-  for (let i = 0; i < 3; i++) {
-    const corpse = horde[i];
-    const ct = corpse ? ctx.data.techniques.get(corpse.techniqueId) : undefined;
-    const p = declared[Math.min(i, declared.length - 1)];
-    if (!corpse || !ct || !p || run.user.location === 'defeated') break;
-    const attack = stableStat(corpse.atkNV50, run.user.creature.nv);
-    const ev = emit(ctx.st, { type: 'horde_corpse', actor: run.user.uid, data: { hitIndex: i, species: corpse.speciesId, technique: ct.id, attack, gap: 'GAP-HORDA' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
-    const target = targetAt(ctx, p, ct.id, run.user, i, ev);
-    if (!target) continue;
-    const sub: TechRun = { ...run, t: ct, cause: ev, attackOverride: attack };
-    resolveHitOn(ctx, sub, target, i, i === 0, undefined, ct.power?.perHit as number);
-    run.damageDealt = sub.damageDealt;
-    run.anyImpact = sub.anyImpact;
-    run.primaryCalculated = sub.primaryCalculated;
+  const unique = declared.filter((p, i) => declared.findIndex((q) => q.id === p.id) === i);
+  const occupied = unique.filter((p) => !!occupantOf(ctx.st, p.id));
+  const positions = occupied.length > 0 ? occupied : unique.slice(0, 1);
+  const corpses = materializedCorpses(run.user.creature);
+  const plan = hordeHitPlan(corpses, positions.length);
+  const total = plan.reduce((a, b) => a + b, 0);
+  if (horde.length === 0 || total === 0) return;
+  emit(ctx.st, { type: 'hit_count', actor: run.user.uid, data: { technique: run.t.id, hits: total, corpses, perTarget: plan, gap: 'GAP-HOLOMICOR-COLONY' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
+  let k = 0;
+  for (let ti = 0; ti < positions.length; ti++) {
+    for (let j = 0; j < (plan[ti] ?? 0); j++, k++) {
+      const corpse = horde[k % horde.length]!;
+      const ct = ctx.data.techniques.get(corpse.techniqueId);
+      if (!ct || run.user.location === 'defeated') return;
+      const attack = stableStat(corpse.atkNV50, run.user.creature.nv);
+      const ev = emit(ctx.st, { type: 'horde_corpse', actor: run.user.uid, data: { hitIndex: k, species: corpse.speciesId, technique: ct.id, attack, gap: 'GAP-HORDA' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
+      const target = targetAt(ctx, positions[ti]!, ct.id, run.user, k, ev);
+      if (!target) return;
+      const sub: TechRun = { ...run, t: ct, cause: ev, attackOverride: attack };
+      resolveHitOn(ctx, sub, target, k, k === 0, undefined, ct.power?.perHit as number);
+      run.damageDealt = sub.damageDealt;
+      run.anyImpact = sub.anyImpact;
+      run.primaryCalculated = sub.primaryCalculated;
+    }
   }
 }

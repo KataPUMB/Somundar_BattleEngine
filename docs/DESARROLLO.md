@@ -141,7 +141,9 @@ Un escenario es un JSON con los dos bandos. Ver el ejemplo [scenarios/ejemplo_fi
             "persistentStatuses": [{ "id": "enraizado", "counters": { "no_voluntary_withdraw": 1 } }],
             "hpCurrent": 200,             // opcional; por defecto Vitalidad máxima
             "canTransfigure": false,      // Poder latente; por defecto, true si la especie tiene forma siguiente
-            "horde": [                    // solo Holómicor con Horda: tres cadáveres
+            "corpseCount": 100,           // solo Holómicor: escala Vitalidad e impactos de Horda (GAP-HOLOMICOR-COLONY)
+            "materializedCorpseCount": 100,   // opcional; cadáveres presentes para Horda (por defecto, corpseCount)
+            "horde": [                    // solo Holómicor con Horda: descriptores de cadáver (mínimo min(3, presentes))
               { "speciesId": "lobo", "atkNV50": 150, "techniqueId": "aranazo" }   // atkNV50 opcional si la especie está en la guía
             ]
           }
@@ -276,7 +278,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 
 ## Lagunas del canon (RuleGap)
 
-`node dist/app/cli.js gaps` lista las 74 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
+`node dist/app/cli.js gaps` lista las 75 lagunas con su pregunta y el supuesto aplicado. Las que más afectan al juego:
 
 | Laguna | Supuesto actual |
 |---|---|
@@ -306,7 +308,8 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
 | Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
 | «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
-| Horda | Tres cadáveres por instancia (Ataque de la ficha si la especie está en la guía; si no, explícito); cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
+| Colonia de Holómicor (`corpseCount`) | Vitalidad máxima ×(1 + 0,4·(n−1)^0,7). Horda reparte los cadáveres presentes por igual entre los objetivos declarados; cada objetivo recibe n impactos si n ≤ 3 y min(16, round(3 + (n−3)^0,5)) si no. Constantes en `src/engine/rules/horde.ts` (GAP-HOLOMICOR-COLONY) |
+| Horda | Descriptores de cadáver por instancia (Ataque de la ficha si la especie está en la guía; si no, explícito); cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
 | «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
 | «Todos los aliados» en una Retirada | No incluye a la criatura que se retira |
 | Daño porcentual de Climas/Campos | Pérdida fija de Vitalidad máxima, sin tabla de tipos |
