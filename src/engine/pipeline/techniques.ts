@@ -12,7 +12,7 @@ import { applyStatus } from './combatant.js';
 import { exitField, forcedReplacement, performSelfSwitch } from './lifecycle.js';
 import { computeAccuracy, computeHit, isContact, oncePerEntryBonuses, type DamageModifier, type HitScope } from './damage.js';
 import { stableStat } from '../rules/stats.js';
-import { hordeBodies, hordeHitPlan, presentCorpses } from '../rules/horde.js';
+import { hordeBodies, hordeHitPlan, HORDE_CORPSE_DAMAGE_PCT, presentCorpses } from '../rules/horde.js';
 
 export function rollHits(ctx: Pick<EngineCtx, 'st'>, min: number, max: number): number {
   if (min === max) return min;
@@ -415,7 +415,7 @@ function hordeHits(ctx: EngineCtx, run: TechRun, declared: Position[]): void {
       const ev = emit(ctx.st, { type: 'horde_corpse', actor: run.user.uid, data: { hitIndex: k, species: corpse.speciesId, technique: ct.id, attack, gap: 'GAP-HORDA' }, cause: run.cause, ruleRef: 'CANON-TECHNIQUES Horda' });
       const target = targetAt(ctx, positions[ti]!, ct.id, run.user, k, ev);
       if (!target) return;
-      const sub: TechRun = { ...run, t: ct, cause: ev, attackOverride: attack };
+      const sub: TechRun = { ...run, t: ct, cause: ev, attackOverride: attack, bonuses: [...run.bonuses, { pct: HORDE_CORPSE_DAMAGE_PCT, source: 'horda' }] };
       resolveHitOn(ctx, sub, target, k, k === 0, undefined, ct.power?.perHit as number);
       run.damageDealt = sub.damageDealt;
       run.anyImpact = sub.anyImpact;

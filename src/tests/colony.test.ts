@@ -9,7 +9,7 @@ import { beginRound, DeclarationError } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
 import type { Action, BattleState, SideIndex } from '../engine/model/battle.js';
 import type { BondedCreature, TypeId } from '../engine/model/types.js';
-import { availableCorpses, hordeHitsPerTarget } from '../engine/rules/horde.js';
+import { availableCorpses, hordeHits } from '../engine/rules/horde.js';
 import { creature, eventsOf, loadData, round, setup, start, summoner, uid, FLAT_STATS } from './helpers.js';
 
 const data = loadData();
@@ -55,7 +55,7 @@ test('3. Subir de 3 a 10 al empezar la ronda sin gastar la accion', () => {
   const st = round(data, fight(), attack(), grow(10));
   assert.equal(colony(st).materialized, 10);
   assert.equal(lastCount(st).corpses, 10);
-  assert.equal(lastCount(st).hits, hordeHitsPerTarget(10));
+  assert.equal(lastCount(st).hits, hordeHits(10));
   const ev = eventsOf(st, 'colony_materialize')[0]!.data!;
   assert.deepEqual([ev.from, ev.to, ev.available, ev.total], [3, 10, 100, 100]);
   assert.ok(eventsOf(st, 'damage').some((e) => e.actor === uid(0, 'h')), 'Holomicor sigue actuando esa ronda');
@@ -65,7 +65,7 @@ test('4. Subir de 10 a 100', () => {
   let st = round(data, fight(), attack(), grow(10));
   st = round(data, st, attack(), grow(100));
   assert.equal(colony(st).materialized, 100);
-  assert.equal(lastCount(st).hits, hordeHitsPerTarget(100));
+  assert.equal(lastCount(st).hits, hordeHits(100));
 });
 
 test('5. Materializar todos: de 3 a los 100 disponibles', () => {
@@ -83,7 +83,7 @@ test('6. Reducir consume la accion (regla de la Retirada voluntaria) y se mantie
   assert.equal(combatant(st, uid(0, 'h')).location, 'field');
   st = round(data, st, attack());
   assert.equal(lastCount(st).corpses, 5);
-  assert.equal(lastCount(st).hits, hordeHitsPerTarget(5));
+  assert.equal(lastCount(st).hits, hordeHits(5));
 });
 
 test('6b. Un Holomicor Enraizado no puede reducir su materializacion', () => {
@@ -96,13 +96,13 @@ test('7. Horda usa el numero de cuerpos presentes: 3 y 100 son estados tacticos 
   const small = round(data, fight(), attack());
   const full = round(data, fight(holo({ initialMaterializedCorpseCount: 100 })), attack());
   assert.equal(lastCount(small).hits, 3);
-  assert.equal(lastCount(full).hits, hordeHitsPerTarget(100));
+  assert.equal(lastCount(full).hits, hordeHits(100));
   assert.ok(lastCount(full).hits as number > 4 * (lastCount(small).hits as number) && lastCount(full).hits as number < 100 / 5);
   assert.equal(combatant(small, uid(0, 'h')).maxHp, combatant(full, uid(0, 'h')).maxHp);
   assert.equal(small.sides[0].combatants.length, full.sides[0].combatants.length);
   const bodies = (st: BattleState) => eventsOf(st, 'horde_corpse', st.round).map((e) => e.data!.species);
   assert.deepEqual(bodies(small), ['brasal', 'brasal', 'brasal']);
-  assert.equal(bodies(full).length, hordeHitsPerTarget(100));
+  assert.equal(bodies(full).length, hordeHits(100));
 });
 
 test('7b. Las Manifestaciones de la colonia solo estan activas con todos los cadaveres materializados', () => {

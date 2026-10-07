@@ -4,7 +4,7 @@ import { createBattle } from '../engine/pipeline/battle.js';
 import { combatant } from '../engine/pipeline/context.js';
 import { validatePreparation } from '../engine/legality/preparation.js';
 import {
-  HORDE_MAX_HITS_PER_TARGET, holomicorHpMultiplier, hordeHitPlan, hordeHitsPerTarget,
+  HORDE_CORPSE_DAMAGE_PCT, HORDE_MAX_HITS, holomicorHpMultiplier, hordeHitPlan, hordeHits,
 } from '../engine/rules/horde.js';
 import { stableStat } from '../engine/rules/stats.js';
 import type { Action } from '../engine/model/battle.js';
@@ -46,39 +46,40 @@ test('Vitalidad maxima del combatiente con totalCorpseCount 1, 3, 10, 30 y 100',
 });
 
 test('Horda contra un objetivo: 1 y 3 cadaveres golpean todos; 100 sufren fuerte congestion', () => {
-  const hits = COUNTS.map((n) => hordeHitsPerTarget(n));
+  const hits = COUNTS.map((n) => hordeHits(n));
   assert.deepEqual(hits.slice(0, 2), [1, 3]);
   for (let i = 1; i < hits.length; i++) assert.ok(hits[i]! > hits[i - 1]!);
-  assert.ok(hits[4]! <= HORDE_MAX_HITS_PER_TARGET && hits[4]! < 100 / 5);
+  assert.ok(hits[4]! <= HORDE_MAX_HITS && hits[4]! < 100 / 5);
   assert.ok(hits[3]! < 30 / 2);
 });
 
-test('Horda contra varios objetivos: mas impactos totales, nunca mas que cadaveres presentes', () => {
+test('Horda contra varios objetivos: el total no aumenta y se reparte por igual (13 -> 7 + 6)', () => {
   const total = (m: number, t: number) => hordeHitPlan(m, t).reduce((a, b) => a + b, 0);
-  assert.ok(total(100, 2) > total(100, 1));
-  assert.ok(total(100, 4) > total(100, 2));
-  assert.ok(total(100, 20) > total(100, 4));
-  for (const m of [1, 2, 3, 10, 30, 100]) for (const t of [1, 2, 3, 4, 8]) assert.ok(total(m, t) <= m && total(m, t) >= 1, `${m}/${t}`);
+  for (const m of [1, 2, 3, 10, 30, 100]) for (const t of [1, 2, 3, 4, 8]) assert.equal(total(m, t), hordeHits(m), `${m}/${t}`);
+  assert.deepEqual(hordeHitPlan(100, 2), [7, 6]);
+  assert.deepEqual(hordeHitPlan(100, 1), [13]);
+  assert.deepEqual(hordeHitPlan(30, 2), [4, 4]);
+  assert.deepEqual(hordeHitPlan(100, 3), [5, 4, 4]);
   assert.deepEqual(hordeHitPlan(3, 1), [3]);
   assert.deepEqual(hordeHitPlan(1, 2), [1, 0]);
 });
 
 test('Limites: sin NaN, negativos ni infinitos; al menos 1 impacto con 1 cadaver', () => {
   for (const n of [0, -5, Number.NaN, Number.POSITIVE_INFINITY, 1.5, 1e9]) {
-    for (const v of [holomicorHpMultiplier(n), hordeHitsPerTarget(n), ...hordeHitPlan(n, 2)]) {
+    for (const v of [holomicorHpMultiplier(n), hordeHits(n), ...hordeHitPlan(n, 2)]) {
       assert.ok(Number.isFinite(v) && v >= 0, `${n}: ${v}`);
     }
     assert.ok(holomicorHpMultiplier(n) >= 1);
   }
-  assert.ok(hordeHitsPerTarget(1) >= 1);
-  assert.equal(hordeHitsPerTarget(1e9), HORDE_MAX_HITS_PER_TARGET);
+  assert.ok(hordeHits(1) >= 1);
+  assert.equal(hordeHits(1e9), HORDE_MAX_HITS);
   assert.equal(hordeHitPlan(5, 0).length, 0);
 });
 
 test('Horda con 100 cadaveres contra un enemigo: impactos limitados y descriptores en ciclo', () => {
   const h = holo({ totalCorpseCount: 100, nv: 40 });
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
-  const expected = hordeHitsPerTarget(100);
+  const expected = hordeHits(100);
   const count = eventsOf(st, 'hit_count')[0]!.data!;
   assert.equal(count.hits, expected);
   assert.deepEqual(count.perTarget, [expected]);
@@ -87,7 +88,7 @@ test('Horda con 100 cadaveres contra un enemigo: impactos limitados y descriptor
   assert.deepEqual(hits.map((e) => e.data!.attack), hits.map((_, i) => stableStat(corpses[i % 3]!.atkNV50, 40)));
 });
 
-test('Horda contra dos enemigos reparte los cadaveres y produce mas impactos', () => {
+test('Horda contra dos enemigos reparte los impactos 7 + 6 y cada golpe de cadaver hace un 50% menos de dano', () => {
   const h = holo({ totalCorpseCount: 100, nv: 40 });
   const foes = setup(S('b'), [wall('w'), wall('v')], ['w', 'v']);
   const st = round(data, start(data, setup(S('a'), [h]), foes), {
@@ -96,17 +97,28 @@ test('Horda contra dos enemigos reparte los cadaveres y produce mas impactos', (
     S1P1: self('enfado'),
   });
   const plan = hordeHitPlan(100, 2);
+  assert.deepEqual(plan, [7, 6]);
   assert.deepEqual(eventsOf(st, 'hit_count')[0]!.data!.perTarget, plan);
   const hits = eventsOf(st, 'damage').filter((e) => e.actor === uid(0, 'h'));
-  assert.equal(hits.length, plan[0]! + plan[1]!);
-  assert.ok(hits.length > hordeHitsPerTarget(100));
+  assert.equal(hits.length, hordeHits(100));
   assert.deepEqual([0, 1].map((i) => hits.filter((e) => e.targets![0] === uid(1, i === 0 ? 'w' : 'v')).length), plan);
+  for (const e of hits) assert.ok((e.data!.modifiers as { source: string; pct: number }[]).some((m) => m.source === 'horda' && m.pct === HORDE_CORPSE_DAMAGE_PCT));
+});
+
+test('Los golpes de cadaver de Horda hacen la mitad de dano que el mismo golpe sin la reduccion', () => {
+  const hit = (user: BondedCreature, tech: string) => {
+    const st = round(data, start(data, setup(S('a'), [user]), setup(S('b'), [wall('w')])), { S0P0: at(tech, 'S1P0'), S1P0: self('enfado') });
+    return eventsOf(st, 'damage').filter((e) => e.actor === uid(0, user.id)).map((e) => e.data!.raw as number);
+  };
+  const horda = hit(holo({ nv: 40, horde: [{ speciesId: 'lobo', atkNV50: 150, techniqueId: 'aranazo' }], totalCorpseCount: 1 }), 'horda')[0]!;
+  const normal = hit(creature('h', { speciesId: 'prueba', nv: 40, baseStatsNV50: { ...FLAT_STATS, atk: 150 }, equippedTechniques: ['aranazo'] }), 'aranazo')[0]!;
+  assert.ok(Math.abs(horda / normal - 0.5) < 0.02, `${horda} / ${normal}`);
 });
 
 test('Solo cuentan los cadaveres materializados', () => {
   const h = holo({ totalCorpseCount: 100, initialMaterializedCorpseCount: 10, nv: 40 });
   const st = round(data, start(data, setup(S('a'), [h]), setup(S('b'), [wall('w')])), { S0P0: at('horda', 'S1P0'), S1P0: self('enfado') });
-  assert.equal(eventsOf(st, 'hit_count')[0]!.data!.hits, hordeHitsPerTarget(10));
+  assert.equal(eventsOf(st, 'hit_count')[0]!.data!.hits, hordeHits(10));
   assert.equal(maxHp(h), maxHp(holo({ totalCorpseCount: 100, nv: 40 })));
 });
 

@@ -5,10 +5,14 @@ import type { HordeCorpse } from '../model/types.js';
 /** Vitalidad: mult(n) = 1 + bonusPerCorpse * (n - 1) ^ exponent; con 1 cadaver vale x1 */
 export const HOLOMICOR_HP_SCALING = { bonusPerCorpse: 0.4, exponent: 0.7 } as const;
 
-/** Horda contra un objetivo: hasta freeContact cadaveres golpean sin estorbarse; el resto rinde con exponente < 1 */
+/** Horda: hasta freeContact cadaveres golpean sin estorbarse; el resto rinde con exponente < 1 */
 export const HORDE_CONGESTION = { freeContact: 3, exponent: 0.5 } as const;
 
-export const HORDE_MAX_HITS_PER_TARGET = 16;
+/** Tope de impactos totales de una Horda */
+export const HORDE_MAX_HITS = 16;
+
+/** Modificador de dano de cada golpe de cadaver (en % sobre M) */
+export const HORDE_CORPSE_DAMAGE_PCT = -50;
 
 /** Cadaveres que se suponen cuando la instancia no declara totalCorpseCount (comportamiento anterior: 3 golpes) */
 export const HORDE_DEFAULT_CORPSES = 3;
@@ -59,20 +63,21 @@ export function hasExplicitComposition(horde: readonly Pick<HordeCorpse, 'count'
   return horde.some((h) => h.count !== undefined);
 }
 
-export function hordeHitsPerTarget(corpses: number): number {
+/** Impactos totales de Horda con `corpses` cuerpos presentes (la congestion no depende del numero de objetivos) */
+export function hordeHits(corpses: number): number {
   if (!Number.isFinite(corpses) || corpses < 1) return 0;
   const c = Math.floor(corpses);
   const { freeContact, exponent } = HORDE_CONGESTION;
   if (c <= freeContact) return c;
-  return Math.min(HORDE_MAX_HITS_PER_TARGET, Math.round(freeContact + (c - freeContact) ** exponent));
+  return Math.min(HORDE_MAX_HITS, Math.round(freeContact + (c - freeContact) ** exponent));
 }
 
-/** Impactos por objetivo, en el orden declarado; los cadaveres se reparten por igual entre los objetivos */
+/** Reparte los impactos totales por igual entre los objetivos; si no es exacto, los primeros reciben uno mas (13 -> 7 + 6) */
 export function hordeHitPlan(corpses: number, targets: number): number[] {
-  if (!Number.isFinite(corpses) || !Number.isFinite(targets) || corpses < 1 || targets < 1) return [];
-  const m = Math.floor(corpses);
+  const total = hordeHits(corpses);
+  if (!Number.isFinite(targets) || total < 1 || targets < 1) return [];
   const t = Math.floor(targets);
-  const base = Math.floor(m / t);
-  const extra = m % t;
-  return Array.from({ length: t }, (_, i) => hordeHitsPerTarget(base + (i < extra ? 1 : 0)));
+  const base = Math.floor(total / t);
+  const extra = total % t;
+  return Array.from({ length: t }, (_, i) => base + (i < extra ? 1 : 0));
 }

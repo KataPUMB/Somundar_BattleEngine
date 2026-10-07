@@ -65,6 +65,7 @@ Sin más opciones, los dos bandos los controla una IA que elige al azar entre la
 |---|---|
 | `--human 0` / `--human 1` / `--human both` | Ese bando lo decides tú por consola |
 | `--pretty` | Log en texto legible (se activa solo con `--human`) |
+| `--log [archivo]` | Guarda todo lo que se ve por consola (con tus respuestas) al terminar. Sin archivo, en `logs/<escenario>.log` junto al escenario |
 | `--json` | Log completo en JSON |
 | `--seed N` | Semilla del combate (por defecto, la del escenario) |
 | `--mode strict\|lenient` | `strict` (por defecto) solo permite efectos verificados; `lenient` permite también los no revisados |
@@ -147,6 +148,6 @@ Campos opcionales de cada criatura:
 - `initialMaterializedCorpseCount`: cadáveres materializados al entrar en combate; por defecto, todos los disponibles.
 - `destroyedCorpseCount`: cadáveres destruidos al empezar; por defecto, 0.
 
-Los cuerpos presentes (no el total) determinan los impactos de Horda y, solo cuando están todos los disponibles, activan las Manifestaciones de Holómicor. Al empezar cada ronda se puede materializar más cuerpos sin gastar la acción; reducirlos o cambiar de criatura son acciones de la posición. En modo interactivo el estado aparece como `Cadaveres: 12 / 100`.
+Los cuerpos presentes (no el total) determinan los impactos totales de Horda, que se reparten por igual entre las criaturas elegidas como objetivo (13 impactos: 7 + 6), y cada golpe de cadáver hace un 50 % menos de daño. Además, solo cuando están todos los disponibles, activan las Manifestaciones de Holómicor. Al empezar cada ronda se puede materializar más cuerpos sin gastar la acción; reducirlos o cambiar de criatura son acciones de la posición. En modo interactivo el estado aparece como `Cadaveres: 12 / 100`.
 
 La línea de transfiguración y las formas anteriores salen de la ficha. La validación comprueba que cada técnica equipada se aprenda con el NV de la criatura y que el NV alcance el mínimo de su forma.

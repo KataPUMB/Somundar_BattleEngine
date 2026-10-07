@@ -5,7 +5,8 @@ import type { ActionOption } from '../engine/legality/actions.js';
 import type { Policy } from '../engine/ai/random.js';
 import type { RoundStartChoice, ColonyChoice, RoundStartDecision } from '../engine/pipeline/battle.js';
 import { dodgeChance } from '../engine/rules/accuracy.js';
-import { availableCorpses, hordeHitsPerTarget, presentCorpses } from '../engine/rules/horde.js';
+import { availableCorpses, hordeHitPlan, hordeHits, presentCorpses } from '../engine/rules/horde.js';
+import { recordInput } from './transcript.js';
 import { activeEffectLines, creatureName, statusLine, techName } from './format.js';
 
 function readLineSync(): string {
@@ -27,7 +28,9 @@ function readLineSync(): string {
     if (ch === '\n') break;
     s += ch;
   }
-  return s.replace(/\r$/, '').trim();
+  const line = s.replace(/\r$/, '').trim();
+  recordInput(line);
+  return line;
 }
 
 function ask(question: string, max: number, allowZero = false): number {
@@ -63,7 +66,7 @@ function describe(data: GameData, st: BattleState, positionId: string, o: Action
   switch (a.kind) {
     case 'technique': {
       const t = data.techniques.get(a.techniqueId);
-      const horde = t?.override?.handler === 'horda' && user ? ` (${presentCorpses(user.colony, user.creature, false)} cadaveres: ${hordeHitsPerTarget(presentCorpses(user.colony, user.creature, false))} impactos contra un objetivo)` : '';
+      const horde = t?.override?.handler === 'horda' && user ? ` (${presentCorpses(user.colony, user.creature, false)} cadaveres: ${hordeHits(presentCorpses(user.colony, user.creature, false))} impactos en total)` : '';
       return `${techName(data, a.techniqueId)} [${t?.class}, ${t?.type ?? 'sin tipo'}, PB ${t?.power?.perHit ?? '-'}${t?.power?.hits && t.power.hits.max > 1 ? ` x${t.power.hits.min}-${t.power.hits.max}` : ''}, prio ${t?.priority}, ${t?.targeting}]${horde}${o.reason === 'ejecucion de la carga' ? ' (ejecutar carga)' : ''}`;
     }
     case 'corpses': return `Reducir la materializacion de la colonia (${user?.colony?.materialized ?? '?'} / ${user?.colony ? availableCorpses(user.colony) : '?'}); consume la accion`;
@@ -78,7 +81,7 @@ function describe(data: GameData, st: BattleState, positionId: string, o: Action
   }
 }
 
-function chooseTarget(st: BattleState, side: SideIndex, o: ActionOption): TargetDecl {
+function chooseTarget(data: GameData, st: BattleState, side: SideIndex, o: ActionOption, positionId: string): TargetDecl {
   if (o.targeting === 'all' || o.targetSide === 'self' || o.targetSide === 'side') return { kind: 'auto' };
   const foe: SideIndex = side === 0 ? 1 : 0;
   const positions = o.targetSide === 'ally' ? [...st.sides[side].positions] : [...st.sides[foe].positions, ...st.sides[side].positions];
@@ -86,14 +89,33 @@ function chooseTarget(st: BattleState, side: SideIndex, o: ActionOption): Target
     const p = positions.find((x) => x.id === id)!;
     return `${id} ${p.side === side ? '(tuya)' : '(rival)'}: ${p.occupantUid ? creatureName(st, p.occupantUid) : 'vacia'}`;
   };
-  positions.forEach((p, i) => console.log(`    ${i + 1}) ${label(p.id)}`));
-  if (o.targeting === 'single') return { kind: 'position', positionId: positions[ask('  Objetivo:', positions.length) - 1]!.id };
-  const seq: string[] = [];
-  for (;;) {
-    const n = ask(`  Posicion ${seq.length + 1} de la secuencia (0 = terminar):`, positions.length, seq.length > 0);
-    if (n === 0) break;
-    seq.push(positions[n - 1]!.id);
+  if (o.targeting === 'single') {
+    positions.forEach((p, i) => console.log(`    ${i + 1}) ${label(p.id)}`));
+    return { kind: 'position', positionId: positions[ask('  Objetivo:', positions.length) - 1]!.id };
   }
+  // Multiobjetivo: criaturas distintas en orden, como maximo una por impacto
+  const a = o.action;
+  const t = a.kind === 'technique' || a.kind === 'partial' ? data.techniques.get(a.techniqueId) : undefined;
+  const side0 = o.targetSide === 'ally' ? side : foe;
+  const occupied = st.sides[side0].positions.filter((p) => p.occupantUid !== null);
+  const pool = occupied.length > 0 ? occupied : st.sides[side0].positions;
+  const user = a.kind === 'partial'
+    ? st.sides[side].combatants.find((c) => c.creature.id === a.creatureId)
+    : st.sides[side].combatants.find((c) => c.uid === st.sides[side].positions.find((p) => p.id === positionId)?.occupantUid);
+  const horde = t?.override?.handler === 'horda' && user !== undefined;
+  const corpses = horde ? presentCorpses(user.colony, user.creature, a.kind === 'partial') : 0;
+  const hits = horde ? hordeHits(corpses) : t?.power?.hits?.max ?? 1;
+  const max = Math.min(hits, pool.length);
+  console.log(horde ? `  Horda: ${hits} impactos repartidos por igual entre las criaturas que elijas (maximo ${max}).` : `  Hasta ${max} objetivo${max === 1 ? '' : 's'} (uno por impacto como maximo), en orden.`);
+  const seq: string[] = [];
+  while (seq.length < max) {
+    const remaining = pool.filter((p) => !seq.includes(p.id));
+    remaining.forEach((p, i) => console.log(`    ${i + 1}) ${label(p.id)}`));
+    const n = ask(`  Objetivo ${seq.length + 1}${seq.length > 0 ? ' (0 = terminar)' : ''}:`, remaining.length, seq.length > 0);
+    if (n === 0) break;
+    seq.push(remaining[n - 1]!.id);
+  }
+  if (horde) console.log(`  Reparto: ${hordeHitPlan(corpses, seq.length).join(' + ')}`);
   return { kind: 'sequence', positionIds: seq };
 }
 
@@ -173,7 +195,7 @@ export function humanPolicy(data: GameData): Policy {
             o.choices.forEach((c, i) => console.log(`    ${i + 1}) ${c}`));
             choice = o.choices[ask('  Opcion:', o.choices.length) - 1];
           }
-          action = { ...action, target: chooseTarget(st, side, o), ...(choice ? { choice } : {}) };
+          action = { ...action, target: chooseTarget(data, st, side, o, pid), ...(choice ? { choice } : {}) };
         }
         out[pid] = action;
       }

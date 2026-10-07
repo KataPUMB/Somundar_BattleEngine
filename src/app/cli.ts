@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { basename, dirname, extname, join, resolve } from 'node:path';
+import { startTranscript } from './transcript.js';
 import { loadGameData } from '../data/loader.js';
 import { buildCoverageReport, formatCoverage } from '../data/coverage.js';
 import type { EffectsMode } from '../engine/effects/availability.js';
@@ -59,6 +60,11 @@ function main(argv: string[]): number {
       const humanArg = flag(args, 'human');
       const human = [humanArg === '0' || humanArg === 'both', humanArg === '1' || humanArg === 'both'];
       const pretty = args.includes('--pretty') || human.some(Boolean);
+      const logAt = args.indexOf('--log');
+      const logArg = logAt >= 0 ? args[logAt + 1] : undefined;
+      const scenarioPath = resolve(args[0] ?? '');
+      const logPath = logAt < 0 ? null : logArg && !logArg.startsWith('--') ? resolve(logArg) : join(dirname(scenarioPath), 'logs', `${basename(scenarioPath, extname(scenarioPath))}.log`);
+      const stopLog = logPath ? startTranscript(logPath) : null;
       let printed = 0;
       const flush = (st: BattleState) => {
         for (const e of st.log) {
@@ -88,18 +94,23 @@ function main(argv: string[]): number {
           return askOptionalSwitch(st, uid, candidates);
         },
       };
-      const st = runBattle(data, sc.sides, policies, {
-        seed,
-        config: { ...sc.config, ...(mode ? { effectsMode: mode } : {}) },
-        controllers,
-        onUpdate: json ? undefined : flush,
-      });
-      if (json) console.log(JSON.stringify(st.log, null, 2));
-      else console.log(`Resultado: ${JSON.stringify(st.outcome)}`);
+      try {
+        const st = runBattle(data, sc.sides, policies, {
+          seed,
+          config: { ...sc.config, ...(mode ? { effectsMode: mode } : {}) },
+          controllers,
+          onUpdate: json ? undefined : flush,
+        });
+        if (json) console.log(JSON.stringify(st.log, null, 2));
+        else console.log(`Resultado: ${JSON.stringify(st.outcome)}`);
+      } finally {
+        stopLog?.();
+      }
+      if (logPath) console.error(`Log guardado en ${logPath}`);
       return 0;
     }
     default:
-      console.log('Uso: cli <validate-data | coverage [--mode strict|lenient] [--json] | gaps | validate <setup.json> | simulate <escenario.json> [--seed N] [--mode M] [--human 0|1|both] [--pretty] [--json]> [--data DIR]');
+      console.log('Uso: cli <validate-data | coverage [--mode strict|lenient] [--json] | gaps | validate <setup.json> | simulate <escenario.json> [--seed N] [--mode M] [--human 0|1|both] [--pretty] [--json] [--log [archivo]]> [--data DIR]');
       return cmd ? 1 : 0;
   }
 }

@@ -85,6 +85,7 @@ Opciones de `simulate`:
 |---|---|
 | `--human 0`, `--human 1`, `--human both` | Ese bando lo decides tú por consola; el resto usa la política aleatoria |
 | `--pretty` | Log en texto legible (se activa solo con `--human`) |
+| `--log [archivo]` | Guarda todo lo que se ve por consola (con tus respuestas) al terminar. Sin archivo, en `logs/<escenario>.log` junto al escenario |
 | `--json` | Vuelca el log estructurado completo en JSON |
 | `--seed N` | Semilla del RNG del combate (por defecto, la del escenario) |
 | `--mode strict\|lenient` | Sobrescribe el modo de efectos del escenario |
@@ -309,7 +310,7 @@ Cada evento lleva `id, round, phase, type, actor, targets, data, rolls, cause (i
 | «Tras causar daño» | Exige pérdida real de Vitalidad > 0 |
 | Sustituciones del usuario | «Es sustituido» = Intercambio forzado tras los Reemplazos; «puede retirarse» = Retirada voluntaria opcional |
 | «El doble de daño», «+50% de potencia» | Se suman en M (+100%, +50%) |
-| Colonia de Holómicor | Tres magnitudes separadas: `totalCorpseCount` escala la Vitalidad máxima ×(1 + 0,4·(n−1)^0,7); los cuerpos materializados deciden los impactos de Horda y las Manifestaciones (solo con todos los disponibles); los impactos por objetivo siguen `hits(n)` = n si n ≤ 3, si no min(16, round(3 + (n−3)^0,5)) con los cuerpos repartidos por igual entre los objetivos. Constantes en `src/engine/rules/horde.ts` (GAP-HOLOMICOR-COLONY) |
+| Colonia de Holómicor | Tres magnitudes separadas: `totalCorpseCount` escala la Vitalidad máxima ×(1 + 0,4·(n−1)^0,7); los cuerpos materializados deciden los impactos totales de Horda (n si n ≤ 3, si no min(16, round(3 + (n−3)^0,5))) y las Manifestaciones (solo con todos los disponibles). Los impactos se reparten por igual entre las criaturas objetivo (13 → 7 + 6, el primero recibe el sobrante) y cada golpe de cadáver causa un 50 % menos de daño. Constantes en `src/engine/rules/horde.ts` (GAP-HOLOMICOR-COLONY) |
 | Cambiar los cuerpos materializados | Aumentarlos es gratis al empezar la ronda (como las Materializaciones de 28.2); reducirlos es una Retirada parcial que consume la acción y la bloquean las mismas restricciones. El número persiste entre rondas; al volver a entrar se elige de nuevo (por defecto `initialMaterializedCorpseCount`) (GAP-COLONY-MATERIALIZATION) |
 | Horda | Descriptores de cadáver por instancia (Ataque de la ficha si la especie está en la guía; si no, explícito); cada golpe usa su Ataque escalado al NV de Holómicor y el daño de su técnica anatómica |
 | «Hasta finalizar la siguiente ronda» para todos los aliados | Efecto de lado de 2 rondas |
