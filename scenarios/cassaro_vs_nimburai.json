@@ -1,0 +1,172 @@
+{
+  "_nota": "Cassaro contra un Nimburai salvaje de escala NV100. Cassaro utiliza únicamente Holomicor y Lernyra y abre siempre con ambos. Holomicor contiene exactamente 100 cadáveres: 2 Valdrakar, 27 Dracendra, 13 Faresban, 18 Noctargo y 40 humanos. Se han eliminado Archelia, Nimburai y Maraviel de la horda original. El Nimburai rival es salvaje: no posee Fortaleza ni Manifestaciones. El summoner del lado salvaje es únicamente un adaptador técnico para el esquema actual del simulador.",
+  "seed": 1,
+  "config": {
+    "effectsMode": "strict",
+    "maxRounds": 30
+  },
+  "sides": [
+    {
+      "summoner": {
+        "id": "cassaro",
+        "name": "Cassaro Valerio",
+        "estamento": "arconte",
+        "amplitude": 400,
+        "fortalezaCapacity": 60,
+        "fortalezaMaxPerStat": 25,
+        "simultaneity": "stable",
+        "partialMaterialization": true,
+        "manifestationRepertoire": [
+          "corteza_ancestral",
+          "hambre_del_abismo",
+          "negacion_elemental",
+          "escudo_de_las_seis_leyes"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "holomicor",
+            "speciesId": "holomicor",
+            "types": ["oscuridad", "planta"],
+            "nv": 100,
+            "totalCorpseCount": 100,
+            "initialMaterializedCorpseCount": 3,
+            "horde": [
+              {
+                "speciesId": "valdrakar",
+                "techniqueId": "mordida_brutal",
+                "count": 2
+              },
+              {
+                "speciesId": "dracendra",
+                "techniqueId": "mordisco_de_presa",
+                "count": 27
+              },
+              {
+                "speciesId": "faresban",
+                "techniqueId": "taladrar",
+                "count": 13
+              },
+              {
+                "speciesId": "noctargo",
+                "techniqueId": "mordisco_de_presa",
+                "count": 18
+              },
+              {
+                "speciesId": "humano",
+                "atkNV50": 50,
+                "techniqueId": "punetazo",
+                "count": 40
+              }
+            ],
+            "baseStatsNV50": {
+              "hp": 800,
+              "atk": 120,
+              "matk": 210,
+              "def": 170,
+              "mdef": 150,
+              "spe": 100
+            },
+            "fortaleza": {
+              "def": 25,
+              "mdef": 10,
+              "hp": 25
+            },
+            "orientations": ["def", "hp"],
+            "equippedTechniques": [
+              "horda",
+              "consumir_el_vinculo",
+              "infeccion",
+              "drenar_vida"
+            ],
+            "equippedManifestations": [
+              "corteza_ancestral",
+              "hambre_del_abismo"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "lernyra",
+            "speciesId": "lernyra",
+            "types": ["mitico"],
+            "nv": 100,
+            "baseStatsNV50": {
+              "hp": 1070,
+              "atk": 210,
+              "matk": 150,
+              "def": 190,
+              "mdef": 170,
+              "spe": 80
+            },
+            "fortaleza": {
+              "atk": 25,
+              "def": 25,
+              "hp": 10
+            },
+            "orientations": ["atk", "def"],
+            "equippedTechniques": [
+              "cerco_de_nueve",
+              "impacto_soberano",
+              "garra_brutal",
+              "mordida_brutal"
+            ],
+            "equippedManifestations": [
+              "negacion_elemental",
+              "escudo_de_las_seis_leyes"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "holomicor",
+        "lernyra"
+      ]
+    },
+    {
+      "summoner": {
+        "id": "wild_nimburai_controller",
+        "name": "Nimburai salvaje",
+        "estamento": "despertado",
+        "amplitude": 100,
+        "fortalezaCapacity": 0,
+        "fortalezaMaxPerStat": 0,
+        "simultaneity": "none",
+        "partialMaterialization": false,
+        "manifestationRepertoire": []
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "nimburai_salvaje",
+            "speciesId": "nimburai",
+            "types": ["aire", "mitico"],
+            "nv": 100,
+            "baseStatsNV50": {
+              "hp": 420,
+              "atk": 110,
+              "matk": 205,
+              "def": 110,
+              "mdef": 160,
+              "spe": 265
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "nueve_corrientes",
+              "quiebro",
+              "zarpazo",
+              "mordisco_de_presa"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "nimburai_salvaje"
+      ]
+    }
+  ]
+}
