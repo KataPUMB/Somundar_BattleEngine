@@ -1,0 +1,97 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Nimburai (Nimburai salvaje) se materializa en S1P0
+
+  Holómicor (Cassaro Valerio) entra en combate: 100 cadaveres disponibles (habitual: 3).
+  Cadaveres a materializar (1-100): 3
+Holómicor (Cassaro Valerio) se materializa en S0P0 con 3 / 100 cadaveres
+Lernyra (Cassaro Valerio) se materializa en S0P1
+Despliegue inicial completo
+
+--- Cassaro Valerio: colonia al empezar la ronda 1 ---
+  S1P0 (rival): Nimburai (Nimburai salvaje) 560/560
+  S0P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S0P1 (tuya): Lernyra (Cassaro Valerio) 1569/1569
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  Holómicor - 3 / 100 cadaveres materializados
+    1) Mantener
+    2) Materializar mas cadaveres
+    3) Materializar todos (100)
+    (Reducir materializacion y Cambiar criatura se eligen entre las acciones de la posicion)
+  Colonia: 1
+
+=== Ronda 1 ===
+
+--- Cassaro Valerio: ronda 1 ---
+  S1P0 (rival): Nimburai (Nimburai salvaje) 560/560
+  S0P0 (tuya): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S0P1 (tuya): Lernyra (Cassaro Valerio) 1569/1569
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Holómicor (Cassaro Valerio)
+    1) Horda [physical, sin tipo, PB variable x3-3, prio 0, multi] (3 cadaveres: 3 impactos en total)
+    2) Consumir el vínculo [status, sin tipo, PB -, prio 0, single]
+    3) Infección [status, planta, PB -, prio 0, single]
+    4) Drenar vida [magical, oscuridad, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Reducir la materializacion de la colonia (3 / 100); consume la accion
+    7) Rendirse
+  Accion: 5
+
+  S0P1: Lernyra (Cassaro Valerio)
+    1) Cerco de nueve [physical, mitico, PB 18 x9-9, prio 0, multi]
+    2) Impacto soberano [physical, mitico, PB 90, prio 0, single]
+    3) Garra brutal [physical, sin tipo, PB 85, prio 0, single]
+    4) Mordida brutal [physical, sin tipo, PB 90, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Las nueve cabezas atacan desde ángulos independientes. Realiza nueve impactos que pueden repartirse entre los enemigos presentes.
+  Hasta 1 objetivo (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Nimburai (Nimburai salvaje)
+  Objetivo 1: 1
+
+--- Nimburai salvaje: ronda 1 ---
+  S0P0 (rival): Holómicor (Cassaro Valerio) 14632/14632 | NV 100 | Cadaveres: 3 / 100
+  S0P1 (rival): Lernyra (Cassaro Valerio) 1569/1569
+  S1P0 (tuya): Nimburai (Nimburai salvaje) 560/560
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Nimburai (Nimburai salvaje)
+    1) Nueve corrientes [magical, aire, PB 18 x9-9, prio 1, multi]
+    2) Quiebro [magical, aire, PB 95, prio 1, single]
+    3) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    4) Mordisco de presa [physical, sin tipo, PB 70, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Sus nueve colas mantienen nueve corrientes independientes. Realiza nueve impactos que pueden repartirse libremente entre los enemigos presentes.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S0P0 (rival): Holómicor (Cassaro Valerio)
+    2) S0P1 (rival): Lernyra (Cassaro Valerio)
+  Objetivo 1: 1
+    1) S0P1 (rival): Lernyra (Cassaro Valerio)
+  Objetivo 2 (0 = terminar): 1
+Holómicor (Cassaro Valerio) esquiva (uso 1, 100%): exito
+Nimburai (Nimburai salvaje) usa Nueve corrientes
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+  -> Holómicor (Cassaro Valerio) lo esquiva
+Lernyra (Cassaro Valerio) usa Cerco de nueve
+  -> Nimburai (Nimburai salvaje) pierde 228 (560 -> 332) x2
+  -> Nimburai (Nimburai salvaje) pierde 228 (332 -> 104) x2
+  -> Nimburai (Nimburai salvaje) pierde 104 (104 -> 0) x2
+  Nimburai (Nimburai salvaje) es derrotado
+  S1P0 queda vacia: no hay reservas
+
+Fin: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
