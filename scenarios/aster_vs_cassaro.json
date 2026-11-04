@@ -185,9 +185,12 @@
             "speciesId": "holomicor",
             "types": ["oscuridad", "planta"],
             "nv": 100,
-            "totalCorpseCount": 100,
+            "totalCorpseCount": 103,
             "initialMaterializedCorpseCount": 3,
             "horde": [
+              { "speciesId": "archelia", "techniqueId": "garra_brutal", "count": 1 },
+              { "speciesId": "nimburai", "techniqueId": "mordisco_de_presa", "count": 1 },
+              { "speciesId": "maraviel", "techniqueId": "mordida_brutal", "count": 1 },
               { "speciesId": "valdrakar", "techniqueId": "mordida_brutal", "count": 2 },
               { "speciesId": "dracendra", "techniqueId": "mordisco_de_presa", "count": 27 },
               { "speciesId": "faresban", "techniqueId": "taladrar", "count": 13 },

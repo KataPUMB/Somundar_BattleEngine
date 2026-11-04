@@ -1,0 +1,82 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Cinthera (Silvia Vardana) se materializa en S0P1
+Raigral (Silvia Vardana) se materializa en S0P0
+Velarc (Olivia) se materializa en S1P0
+  Manifestacion ruptura_del_vinculo de Cinthera (Silvia Vardana)
+  Velarc (Olivia) queda desvinculado (ruptura_del_vinculo)
+  Manifestacion descarga_paralizante de Raigral (Silvia Vardana)
+  Velarc (Olivia) queda paralizado (descarga_paralizante)
+Despliegue inicial completo
+
+=== Ronda 1 ===
+
+--- Silvia Vardana: ronda 1 ---
+  S1P0 (rival): Velarc (Olivia) 175/175 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos) paralizado(spe -50%; no puede subir: 5 turnos)]
+  S0P0 (tuya): Raigral (Silvia Vardana) 415/415
+  S0P1 (tuya): Cinthera (Silvia Vardana) 258/258
+  Intermedio: Lefaries 500/500 | Zarpiroza 510/510
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Raigral (Silvia Vardana)
+    1) Púas cargadas [status, rayo, PB -, prio 2, single]
+    2) Relámpago [magical, rayo, PB 75, prio 1, single]
+    3) Salto estático [physical, rayo, PB 60, prio 1, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 2
+    Un relámpago dirigido de ejecución rápida.
+    1) S1P0 (rival): Velarc (Olivia)
+    2) S0P0 (tuya): Raigral (Silvia Vardana)
+    3) S0P1 (tuya): Cinthera (Silvia Vardana)
+  Objetivo: 1
+
+  S0P1: Cinthera (Silvia Vardana)
+    1) Asalto ahumado [physical, fuego, PB 105, prio 0, single]
+    2) Ectoplasma corrosivo [magical, oscuridad, PB 55, prio 0, single]
+    3) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 1
+    Si actúa antes que el objetivo, tiene 30% de Quemarlo.
+    1) S1P0 (rival): Velarc (Olivia)
+    2) S0P0 (tuya): Raigral (Silvia Vardana)
+    3) S0P1 (tuya): Cinthera (Silvia Vardana)
+  Objetivo: 1
+
+--- Olivia: ronda 1 ---
+  S0P0 (rival): Raigral (Silvia Vardana) 415/415
+  S0P1 (rival): Cinthera (Silvia Vardana) 258/258
+  S1P0 (tuya): Velarc (Olivia) 175/175 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos) paralizado(spe -50%; no puede subir: 5 turnos)]
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Velarc (Olivia)
+    1) Semilla acerada [magical, planta, PB 30, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    4) Cornada [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Dispara una semilla endurecida.
+    1) S0P0 (rival): Raigral (Silvia Vardana)
+    2) S0P1 (rival): Cinthera (Silvia Vardana)
+    3) S1P0 (tuya): Velarc (Olivia)
+  Objetivo: 1
+Raigral (Silvia Vardana) usa Relámpago
+  -> Velarc (Olivia) pierde 53 (175 -> 122) x0.5
+Cinthera (Silvia Vardana) usa Asalto ahumado
+  -> Velarc (Olivia) pierde 122 (122 -> 0) x2
+  Velarc (Olivia) es derrotado
+Velarc (Olivia): la accion falla (el usuario ya no esta activo; la accion se pierde)
+  S1P0 queda vacia: no hay reservas
+
+Fin: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}

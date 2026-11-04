@@ -1,0 +1,181 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Cinthera (Silvia Vardana) se materializa en S0P1
+Torvalán (Marco Valerio) se materializa en S1P0
+Raigral (Silvia Vardana) se materializa en S0P0
+Nimburu (Marco Valerio) se materializa en S1P1
+  Manifestacion ruptura_del_vinculo de Cinthera (Silvia Vardana)
+  Torvalán (Marco Valerio) queda desvinculado (ruptura_del_vinculo)
+  Nimburu (Marco Valerio) queda desvinculado (ruptura_del_vinculo)
+  Manifestacion descarga_paralizante de Raigral (Silvia Vardana)
+  Torvalán (Marco Valerio) es inmune a paralizado
+  Nimburu (Marco Valerio) queda paralizado (descarga_paralizante)
+Despliegue inicial completo
+
+=== Ronda 1 ===
+
+--- Silvia Vardana: ronda 1 ---
+  S1P0 (rival): Torvalán (Marco Valerio) 252/252 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos)]
+  S1P1 (rival): Nimburu (Marco Valerio) 238/238 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos) paralizado(spe -50%; no puede subir: 5 turnos)]
+  S0P0 (tuya): Raigral (Silvia Vardana) 415/415
+  S0P1 (tuya): Cinthera (Silvia Vardana) 258/258
+  Intermedio: Lefaries 500/500 | Zarpiroza 510/510
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Raigral (Silvia Vardana)
+    1) Púas cargadas [status, rayo, PB -, prio 2, single]
+    2) Relámpago [magical, rayo, PB 75, prio 1, single]
+    3) Salto estático [physical, rayo, PB 60, prio 1, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 2
+    Un relámpago dirigido de ejecución rápida.
+    1) S1P0 (rival): Torvalán (Marco Valerio)
+    2) S1P1 (rival): Nimburu (Marco Valerio)
+    3) S0P0 (tuya): Raigral (Silvia Vardana)
+    4) S0P1 (tuya): Cinthera (Silvia Vardana)
+  Objetivo: 1
+
+  S0P1: Cinthera (Silvia Vardana)
+    1) Asalto ahumado [physical, fuego, PB 105, prio 0, single]
+    2) Ectoplasma corrosivo [magical, oscuridad, PB 55, prio 0, single]
+    3) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 1
+    Si actúa antes que el objetivo, tiene 30% de Quemarlo.
+    1) S1P0 (rival): Torvalán (Marco Valerio)
+    2) S1P1 (rival): Nimburu (Marco Valerio)
+    3) S0P0 (tuya): Raigral (Silvia Vardana)
+    4) S0P1 (tuya): Cinthera (Silvia Vardana)
+  Objetivo: 2
+
+--- Marco Valerio: ronda 1 ---
+  S0P0 (rival): Raigral (Silvia Vardana) 415/415
+  S0P1 (rival): Cinthera (Silvia Vardana) 258/258
+  S1P0 (tuya): Torvalán (Marco Valerio) 252/252 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos)]
+  S1P1 (tuya): Nimburu (Marco Valerio) 238/238 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 5 turnos; comunicacion cortada: 5 turnos) paralizado(spe -50%; no puede subir: 5 turnos)]
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Torvalán (Marco Valerio)
+    1) Rasante [physical, aire, PB 60, prio 1, single]
+    2) Garra de tormenta [physical, rayo, PB 60, prio 0, single]
+    3) Arco eléctrico [magical, rayo, PB 55, prio 0, single]
+    4) Descenso aéreo [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Ataca durante un vuelo bajo. Después de resolver el ataque puede retirarse voluntariamente y ser sustituido.
+    1) S0P0 (rival): Raigral (Silvia Vardana)
+    2) S0P1 (rival): Cinthera (Silvia Vardana)
+    3) S1P0 (tuya): Torvalán (Marco Valerio)
+    4) S1P1 (tuya): Nimburu (Marco Valerio)
+  Objetivo: 1
+
+  S1P1: Nimburu (Marco Valerio)
+    1) Rebufo [magical, aire, PB 55, prio 1, single]
+    2) Cortes de viento [magical, aire, PB 20 x1-5, prio 0, multi]
+    3) Onda sónica [magical, aire, PB 55, prio 0, all]
+    4) Ráfaga [magical, aire, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 2
+    Lanza entre 1 y 5 cuchillas de aire. Si al menos una impacta, la curación que reciba el objetivo se reduce un 25% hasta que se retire.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S0P0 (rival): Raigral (Silvia Vardana)
+    2) S0P1 (rival): Cinthera (Silvia Vardana)
+  Objetivo 1: 1
+    1) S0P1 (rival): Cinthera (Silvia Vardana)
+  Objetivo 2 (0 = terminar): 1
+Torvalán (Marco Valerio) usa Rasante
+  -> Raigral (Silvia Vardana) pierde 133 (415 -> 282)
+  Torvalán (Marco Valerio) no puede ser sustituido (no hay reservas viables)
+Raigral (Silvia Vardana) usa Relámpago
+  -> Torvalán (Marco Valerio) pierde 95 (252 -> 157)
+Cinthera (Silvia Vardana) usa Asalto ahumado
+  -> Nimburu (Marco Valerio) pierde 238 (238 -> 0) x2
+  Nimburu (Marco Valerio) es derrotado
+Nimburu (Marco Valerio): la accion falla (el usuario ya no esta activo; la accion se pierde)
+  S1P1 queda vacia: no hay reservas
+
+=== Ronda 2 ===
+
+--- Silvia Vardana: ronda 2 ---
+  S1P0 (rival): Torvalán (Marco Valerio) 157/252 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 4 turnos; comunicacion cortada: 4 turnos)]
+  S1P1 (rival): vacia
+  S0P0 (tuya): Raigral (Silvia Vardana) 282/415
+  S0P1 (tuya): Cinthera (Silvia Vardana) 258/258
+  Intermedio: Lefaries 500/500 | Zarpiroza 510/510
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Raigral (Silvia Vardana)
+    1) Púas cargadas [status, rayo, PB -, prio 2, single]
+    2) Relámpago [magical, rayo, PB 75, prio 1, single]
+    3) Salto estático [physical, rayo, PB 60, prio 1, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 5
+
+  S0P1: Cinthera (Silvia Vardana)
+    1) Asalto ahumado [physical, fuego, PB 105, prio 0, single]
+    2) Ectoplasma corrosivo [magical, oscuridad, PB 55, prio 0, single]
+    3) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Lefaries (Silvia Vardana)
+    7) Intercambio -> Zarpiroza (Silvia Vardana)
+    8) Rendirse
+  Accion: 1
+    Si actúa antes que el objetivo, tiene 30% de Quemarlo.
+    1) S1P0 (rival): Torvalán (Marco Valerio)
+    2) S1P1 (rival): vacia
+    3) S0P0 (tuya): Raigral (Silvia Vardana)
+    4) S0P1 (tuya): Cinthera (Silvia Vardana)
+  Objetivo: 1
+
+--- Marco Valerio: ronda 2 ---
+  S0P0 (rival): Raigral (Silvia Vardana) 282/415
+  S0P1 (rival): Cinthera (Silvia Vardana) 258/258
+  S1P0 (tuya): Torvalán (Marco Valerio) 157/252 [desvinculado(healingReceived -25%; Manifestaciones desactivadas: 4 turnos; comunicacion cortada: 4 turnos)]
+  S1P1 (tuya): vacia
+  Intermedio: Nimburu (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Torvalán (Marco Valerio)
+    1) Rasante [physical, aire, PB 60, prio 1, single]
+    2) Garra de tormenta [physical, rayo, PB 60, prio 0, single]
+    3) Arco eléctrico [magical, rayo, PB 55, prio 0, single]
+    4) Descenso aéreo [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Nimburu (Marco Valerio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Ataca durante un vuelo bajo. Después de resolver el ataque puede retirarse voluntariamente y ser sustituido.
+    1) S0P0 (rival): Raigral (Silvia Vardana)
+    2) S0P1 (rival): Cinthera (Silvia Vardana)
+    3) S1P0 (tuya): Torvalán (Marco Valerio)
+    4) S1P1 (tuya): vacia
+  Objetivo: 1
+Raigral (Silvia Vardana) esquiva (uso 1, 100%): exito
+Torvalán (Marco Valerio) usa Rasante
+  -> Raigral (Silvia Vardana) lo esquiva
+  Torvalán (Marco Valerio) no puede ser sustituido (no hay reservas viables)
+Cinthera (Silvia Vardana) usa Asalto ahumado
+  -> Torvalán (Marco Valerio) pierde 157 (157 -> 0) x2
+  Torvalán (Marco Valerio) es derrotado
+  S1P0 queda vacia: no hay reservas
+
+Fin: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":0,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}

@@ -1,0 +1,212 @@
+{
+  "_nota": "Silvia al final de Universidad contra Marco. Las tecnicas de las reservas Lefaries y Zarpiroza se recortan para respetar la Amplitud 250; el despliegue inicial sigue siendo Raigral y Cinthera. Marco combate unicamente con Torvalan NV28 y Nimburu NV17. El nivel principal de Marco queda aproximadamente 12 niveles por debajo del Raigral NV40 de Silvia. Nimburu permanece en NV17 porque su transfiguracion ordinaria ocurre a NV18. No se inventan Manifestaciones individuales de Marco que no estan documentadas.",
+  "seed": 1,
+  "config": {
+    "effectsMode": "strict",
+    "maxRounds": 30
+  },
+  "sides": [
+    {
+      "summoner": {
+        "id": "silvia",
+        "name": "Silvia Vardana",
+        "estamento": "invocador",
+        "amplitude": 250,
+        "fortalezaCapacity": 40,
+        "fortalezaMaxPerStat": 20,
+        "simultaneity": "stable",
+        "partialMaterialization": true,
+        "manifestationRepertoire": [
+          "descarga_paralizante",
+          "relevo_radiante",
+          "raices_invasoras",
+          "ruptura_del_vinculo"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "raigral_silvia",
+            "nickname": "Raigral",
+            "speciesId": "raigral",
+            "types": ["rayo"],
+            "nv": 40,
+            "baseStatsNV50": {
+              "hp": 445,
+              "atk": 80,
+              "matk": 95,
+              "def": 50,
+              "mdef": 50,
+              "spe": 125
+            },
+            "fortaleza": {},
+            "orientations": ["spe", "matk"],
+            "equippedTechniques": [
+              "puas_cargadas",
+              "relampago",
+              "salto_estatico",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "descarga_paralizante"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "lefaries_silvia",
+            "nickname": "Lefaries",
+            "speciesId": "lefaries",
+            "types": ["luz"],
+            "nv": 39,
+            "baseStatsNV50": {
+              "hp": 540,
+              "atk": 40,
+              "matk": 115,
+              "def": 60,
+              "mdef": 120,
+              "spe": 65
+            },
+            "fortaleza": {},
+            "orientations": ["matk", "mdef"],
+            "equippedTechniques": [
+              "velo_luminoso",
+              "orbe_del_alba",
+              "corona_de_motas"
+            ],
+            "equippedManifestations": [
+              "relevo_radiante"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "zarpiroza_silvia",
+            "nickname": "Zarpiroza",
+            "speciesId": "zarpiroza",
+            "types": ["fuego", "planta"],
+            "nv": 32,
+            "baseStatsNV50": {
+              "hp": 580,
+              "atk": 150,
+              "matk": 60,
+              "def": 130,
+              "mdef": 90,
+              "spe": 70
+            },
+            "fortaleza": {},
+            "orientations": ["atk", "hp"],
+            "equippedTechniques": [
+              "llamarada",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "raices_invasoras"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "cinthera_silvia",
+            "nickname": "Cinthera",
+            "speciesId": "cinthera",
+            "types": ["oscuridad", "fuego"],
+            "nv": 31,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 140,
+              "matk": 60,
+              "def": 90,
+              "mdef": 70,
+              "spe": 140
+            },
+            "fortaleza": {},
+            "orientations": ["atk", "spe"],
+            "equippedTechniques": [
+              "asalto_ahumado",
+              "ectoplasma_corrosivo",
+              "saeta_umbria",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "ruptura_del_vinculo"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "raigral_silvia",
+        "cinthera_silvia"
+      ]
+    },
+    {
+      "summoner": {
+        "id": "marco",
+        "name": "Marco Valerio",
+        "estamento": "adepto",
+        "amplitude": 200,
+        "fortalezaCapacity": 30,
+        "fortalezaMaxPerStat": 15,
+        "simultaneity": "stable",
+        "partialMaterialization": false,
+        "manifestationRepertoire": []
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "torvalan_marco",
+            "nickname": "Torvalán",
+            "speciesId": "torvalan",
+            "types": ["aire", "rayo"],
+            "nv": 28,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 140,
+              "matk": 60,
+              "def": 90,
+              "mdef": 70,
+              "spe": 140
+            },
+            "fortaleza": {},
+            "orientations": ["spe", "atk"],
+            "equippedTechniques": [
+              "rasante",
+              "garra_de_tormenta",
+              "arco_electrico",
+              "descenso_aereo"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": []
+          },
+          {
+            "id": "nimburu_marco",
+            "nickname": "Nimburu",
+            "speciesId": "nimburu",
+            "types": ["aire"],
+            "nv": 17,
+            "baseStatsNV50": {
+              "hp": 305,
+              "atk": 40,
+              "matk": 70,
+              "def": 40,
+              "mdef": 60,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": ["spe", "matk"],
+            "equippedTechniques": [
+              "rebufo",
+              "cortes_de_viento",
+              "onda_sonica",
+              "rafaga"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "torvalan_marco",
+        "nimburu_marco"
+      ]
+    }
+  ]
+}
