@@ -1,14 +1,14 @@
 # Sistema de invocación, técnicas y Manifestaciones
 
 SOURCE_ID: SYSTEM-CORPUS
-REVISION: 2
-FECHA_ACTUALIZACION: 2026-09-28
+REVISION: 3
+FECHA_ACTUALIZACION: 2026-11-15
 TIPO: contenedor de fuentes completas con revisiones aceptadas del autor
 FUENTES: CANON-MECHANICS, CANON-TECHNIQUES, CANON-MANIFESTATIONS
 
 Tres especialistas con fronteras conservadas. CANON-MECHANICS rige la resolución general; los compendios describen efectos particulares y excepciones expresas. Para acceso se cruza CANON-CREATURES y el estado del individuo. Consultar ISS-004 sobre etapas negativas. No leer los tres catálogos enteros para una consulta local.
 
-Los bloques entre INICIO_FUENTE y FIN_FUENTE contienen las fuentes completas. La importación r1 identifica su procedencia; REVISION_ACTIVA r2 incorpora los cambios explícitos registrados en CANON-DECISIONS. La metadata y la navegación permanecen fuera del cuerpo de cada fuente. El contenido ajeno a esos cambios se conserva; la autoridad pertenece a cada especialista y a sus secciones.
+Los bloques entre INICIO_FUENTE y FIN_FUENTE contienen las fuentes completas. La importación r1 identifica su procedencia; REVISION_ACTIVA r3 conserva los cambios explícitos e incorpora DEC-010 registrados en CANON-DECISIONS. La metadata y la navegación permanecen fuera del cuerpo de cada fuente. El contenido ajeno a esos cambios se conserva; la autoridad pertenece a cada especialista y a sus secciones.
 
 ## Fuente CANON-MECHANICS
 
@@ -1883,7 +1883,7 @@ No existe bonificación implícita por utilizar una técnica del mismo tipo que 
 
 Para una técnica dañina:
 
-`Daño bruto = 0,9375 × (PB / 100) × Ataque × √(Ataque / Defensa) × M × T / R`
+`Daño bruto = 0,75 × (PB / 100) × Ataque × √(Ataque / Defensa) × M × T / R`
 
 Donde:
 
@@ -1918,7 +1918,7 @@ Las reducciones redactadas como «daño recibido -50%» pertenecen a M, no a R.
 
 Si una técnica ignora Defensa o Defensa mágica, se elimina el término defensivo de la raíz:
 
-`Daño bruto = 0,9375 × (PB / 100) × Ataque × M × T / R`
+`Daño bruto = 0,75 × (PB / 100) × Ataque × M × T / R`
 
 ## 23.5. Límites
 
@@ -2622,400 +2622,402 @@ FIN_FUENTE: CANON-MECHANICS
 
 SOURCE_ID: CANON-TECHNIQUES
 REVISION_IMPORTACION: r1
-REVISION_ACTIVA: r2
-CAMBIOS_APLICADOS: DEC-001, DEC-006
+REVISION_ACTIVA: r3
+CAMBIOS_APLICADOS: DEC-001, DEC-006, DEC-010
 NOMBRE_FISICO_OBSERVADO: compendio_de_tecnicas_somundar(2).md
 TIPO: Fuente normativa especializada
 AUTORIDAD: Efectos, parámetros y excepciones de técnicas; reglas generales bajo CANON-MECHANICS
 ALCANCE: Repertorio completo del documento
-RELACION_DE_VERSION: Título interno: revisión 2. No se deduce de (2). Ver ISS-004. Revisión activa r2: actualizada por decisiones explícitas del autor; véase CANON-DECISIONS.
+RELACION_DE_VERSION: Título interno: revisión 2. No se deduce de (2). Ver ISS-004. Revisión activa r3: incorpora tres exclusivas de la línea Néspira → Deinarach → Aracnoir y renumera las especiales posteriores (DEC-010); conserva los efectos anteriores. Véase CANON-DECISIONS.
 
 ### Navegación local de CANON-TECHNIQUES
 
-Índice de encabezados, no resumen ni segunda autoridad. Líneas relativas al cuerpo de esta fuente en su **revisión activa r2**, tomando como línea 1 el primer encabezado del cuerpo tras INICIO_FUENTE. No son líneas del contenedor. La importación r1 permanece como procedencia; los cambios aceptados se registran en CANON-DECISIONS.
+Índice de encabezados, no resumen ni segunda autoridad. Líneas relativas al cuerpo de esta fuente en su **revisión activa r3**, tomando como línea 1 el primer encabezado del cuerpo tras INICIO_FUENTE. No son líneas del contenedor. La importación r1 permanece como procedencia; los cambios aceptados se registran en CANON-DECISIONS.
 
-| Línea de la fuente r2 | Ruta / encabezado literal |
+| Línea de la fuente r3 | Ruta / encabezado literal |
 |---:|---|
-| 1 | Compendio de técnicas Somundar — revisión 2 |
-| 5 | Compendio de técnicas Somundar — revisión 2 > Terminología |
-| 20 | Compendio de técnicas Somundar — revisión 2 > Reglas de uso |
-| 34 | Compendio de técnicas Somundar — revisión 2 > Coste de Vínculo y equipamiento |
-| 44 | Compendio de técnicas Somundar — revisión 2 > Principio de refinamiento elemental |
-| 50 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas |
-| 55 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Arañazo |
-| 64 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Picoteo frenético |
-| 73 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Ráfaga de zarpazos |
-| 82 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Golpe tentáculo |
-| 91 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Mordisco |
-| 100 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Picotazo |
-| 109 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Puñetazo |
-| 118 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Coletazo |
-| 127 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Embestida |
-| 136 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Golpe de ala |
-| 145 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Golpe de aleta |
-| 154 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Patada |
-| 163 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Colmillazo |
-| 172 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Cornada |
-| 181 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Desgarrar |
-| 190 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Impacto de caparazón |
-| 199 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Latigazo |
-| 208 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Pisotón |
-| 217 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Zarpazo |
-| 226 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Gancho ascendente |
-| 235 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Mordisco de presa |
-| 244 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Taladrar |
-| 253 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Aleta cortante |
-| 262 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Descenso aéreo |
-| 271 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Patadón |
-| 280 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Puño preciso |
-| 289 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Embestida pesada |
-| 298 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Garra perforante |
-| 307 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Impacto acorazado |
-| 316 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Cornada poderosa |
-| 325 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Garra brutal |
-| 334 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Mordida brutal |
-| 343 | Compendio de técnicas Somundar — revisión 2 > Técnicas anatómicas > Pisotón aplastante |
-| 352 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales |
-| 356 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego |
-| 358 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Prender |
-| 367 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Llama |
-| 376 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Proyectil ígneo |
-| 385 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Proyectiles ígneos |
-| 394 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Llamarada |
-| 403 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Fauces en llamas |
-| 412 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Martillo magmático |
-| 421 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Paso de ceniza |
-| 430 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Bomba de magma |
-| 439 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Bola de fuego |
-| 448 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Incinerar |
-| 457 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Aliento de fuego |
-| 466 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Envite ardiente |
-| 475 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Conflagración |
-| 484 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Fuego > Aliento de dragón |
-| 493 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua |
-| 495 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Agua curativa |
-| 504 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Depurar |
-| 513 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Saturar |
-| 522 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Chorro |
-| 531 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Salva a presión |
-| 540 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Vapor abrasador |
-| 549 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Cola de agua |
-| 558 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Descarga de presión |
-| 567 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Gelifracción |
-| 576 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Cavitación |
-| 585 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Lanza de hielo |
-| 594 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Helar |
-| 603 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Agua > Impulso hidráulico |
-| 612 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta |
-| 614 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Presa de raíces |
-| 623 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Rebrotar |
-| 632 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Renovar |
-| 641 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Semilla acerada |
-| 650 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Lluvia de espinas |
-| 659 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Látigo de lianas |
-| 668 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Raíz de agarre |
-| 677 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Polen urticante |
-| 686 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Liana de retorno |
-| 695 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Maraña |
-| 704 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Drenar |
-| 713 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Fruto explosivo |
-| 722 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Martillo de raíces |
-| 731 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Lanza de espinas |
-| 740 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Tronco arrollador |
-| 749 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Planta > Florecer |
-| 758 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra |
-| 760 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Fractura |
-| 769 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Esquirla de cuarzo |
-| 778 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Salva de esquirlas |
-| 787 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Embate de roca |
-| 796 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Granalla mineral |
-| 805 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Maza de basalto |
-| 814 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Salto de arena |
-| 823 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Jabalina de hierro |
-| 832 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Bala de plata |
-| 841 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Sacudida |
-| 850 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Prensa tectónica |
-| 859 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Avalancha |
-| 868 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Tierra > Terremoto |
-| 877 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire |
-| 879 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Desorientar |
-| 888 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Ráfaga |
-| 897 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Cortes de viento |
-| 906 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Onda sónica |
-| 915 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Corrientes cambiantes |
-| 924 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Turbulencia |
-| 933 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Hoja de viento |
-| 942 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Vendaval cortante |
-| 951 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Aire > Tornado |
-| 960 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo |
-| 962 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Calambre |
-| 971 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Chispa |
-| 980 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Cadena de chispas |
-| 989 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Arco eléctrico |
-| 998 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Garra de tormenta |
-| 1007 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Carga excesiva |
-| 1016 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Salto de voltaje |
-| 1025 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Relámpago |
-| 1034 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Lanza de plasma |
-| 1043 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Rayo > Rayo |
-| 1052 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz |
-| 1054 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Corte espiritual |
-| 1063 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Purificar |
-| 1072 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Recomponer |
-| 1081 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Sacramento |
-| 1090 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Haz de luz |
-| 1099 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Salva radiante |
-| 1108 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Oleada sagrada |
-| 1117 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Envite radiante |
-| 1126 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Centelleo |
-| 1135 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Rayo purificador |
-| 1144 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Filo del alba |
-| 1153 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Orbe del alba |
-| 1162 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Lanza prismática |
-| 1171 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Luz > Columna sagrada |
-| 1180 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro |
-| 1182 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Corte de vínculo |
-| 1191 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Pacto de sangre |
-| 1200 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Saeta umbría |
-| 1209 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Absorber vida |
-| 1218 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Salva de saetas |
-| 1227 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Ectoplasma corrosivo |
-| 1236 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Desgarro maldito |
-| 1245 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Desvanecerse |
-| 1254 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Pisar la sombra |
-| 1263 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Drenar vida |
-| 1272 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Calavera maldita |
-| 1281 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Mal de ojo |
-| 1290 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Hueste espectral |
-| 1299 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Oscuro > Arremetida suicida |
-| 1308 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico |
-| 1310 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Proyectil arcano |
-| 1319 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Pulso primordial |
-| 1328 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Ruptura primordial |
-| 1337 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Embate primordial |
-| 1346 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Salva arcana |
-| 1355 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Paso imposible |
-| 1364 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Golpe soberano |
-| 1373 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Impacto soberano |
-| 1382 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Desborde mítico |
-| 1391 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Fuerza titánica |
-| 1400 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Fractura de esencia |
-| 1409 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Retorno arcano |
-| 1418 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Colisión primordial |
-| 1427 | Compendio de técnicas Somundar — revisión 2 > Técnicas elementales > Mítico > Ruptura absoluta |
-| 1436 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento |
-| 1440 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Aumentos de características |
-| 1442 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Aumentos de características > Ataque |
-| 1444 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Enfado |
-| 1453 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Afilar |
-| 1462 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Danza de combate |
-| 1471 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Danza de combate > Ataque mágico |
-| 1473 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Canalizar |
-| 1482 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Concentración intensa |
-| 1491 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Impulso mágico |
-| 1500 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Impulso mágico > Defensa |
-| 1502 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Endurecer |
-| 1511 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Fortificar |
-| 1520 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Postura firme |
-| 1529 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Postura firme > Defensa mágica |
-| 1531 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Resguardo |
-| 1540 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Mente firme |
-| 1549 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Mente firme > Velocidad |
-| 1551 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Acelerar |
-| 1560 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Aceleración |
-| 1569 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Reducciones de características |
-| 1571 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Reducciones de características > Ataque |
-| 1573 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Debilitar |
-| 1582 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Intimidar |
-| 1591 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Intimidar > Ataque mágico |
-| 1593 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Dispersar energía |
-| 1602 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Disrupción |
-| 1611 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Disrupción > Defensa |
-| 1613 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Romper guardia |
-| 1622 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Quebrar postura |
-| 1631 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Quebrar postura > Defensa mágica |
-| 1633 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Desconcentrar |
-| 1642 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Romper concentración |
-| 1651 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Romper concentración > Velocidad |
-| 1653 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Frenar |
-| 1662 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Desestabilizar |
-| 1671 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Control, protección y otras técnicas de Estado |
-| 1673 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Anular impulso |
-| 1682 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Anular prioridad |
-| 1693 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Barrera de fuerza |
-| 1704 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Consumir el vínculo |
-| 1713 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Estela |
-| 1724 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Velocidad invertida |
-| 1735 | Compendio de técnicas Somundar — revisión 2 > Técnicas sin elemento > Zona antimagia |
-| 1746 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales |
-| 1750 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 1. Brasal — Golpe candente |
-| 1759 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 2. Dracendra — Ariete dracónico |
-| 1768 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 3. Valdrakar — Fauces incandescentes |
-| 1777 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 4. Neril — Sentir la corriente |
-| 1786 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 5. Talassar — Chorro a reacción |
-| 1795 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 6. Maraviel — Marea inversa |
-| 1804 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 7. Velarc — Rocío de astas |
-| 1813 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 8. Varemar — Cornamenta viva |
-| 1822 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 9. Vercosalvi — Bosque andante |
-| 1831 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 10. Gorim — Puño de piedra |
-| 1840 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 11. Targor — Cuerpo monolítico |
-| 1849 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 12. Numegor — Desprendimiento |
-| 1858 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 13. Nimburu — Rebufo |
-| 1867 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 14. Nimbaro — Quiebro |
-| 1876 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 15. Nimburai — Nueve corrientes |
-| 1885 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 16. Zairu — Arranque |
-| 1894 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 17. Keraul — Arco serpentino |
-| 1903 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 18. Nerakous — Cielo conductor |
-| 1912 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 19. Nulem — Fogonazo |
-| 1921 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 20. Aureon — Guardia solar |
-| 1930 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 21. Archelia — Bajo mi amparo |
-| 1939 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 22. Umbrín — Rastro |
-| 1948 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 23. Noctargo — Caza de sombra |
-| 1957 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 24. Umbrafen — Caza espectral |
-| 1966 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 25. Broncian — Hollín ardiente |
-| 1975 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 26. Vetamur — Veta incandescente |
-| 1984 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 27. Pirarín — Pluma ígnea |
-| 1993 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 28. Faresban — Lágrimas de fénix |
-| 2002 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 29. Fényrax — Canto final |
-| 2011 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 30. Bráscajo — Caparazón incandescente |
-| 2020 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 31. Cervolasto — Tenaza voltaica |
-| 2029 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 32. Cauzarzas — Espinas candentes |
-| 2038 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 33. Zarpiroza — Espinas de rebrote |
-| 2047 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 34. Florain — Lumbre ventral |
-| 2056 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 35. Solandra — Llama blanca |
-| 2065 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 36. Pantarin — Panzazo |
-| 2074 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 37. Darnalo — Salto sísmico |
-| 2083 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 38. Juncel — Impulso elástico |
-| 2092 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 39. Batrioma — Jardín dorsal |
-| 2101 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 40. Brumel — Campana de presión |
-| 2110 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 41. Belusamunda — Nube osmótica |
-| 2119 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 42. Linganui — Latigazo sinuoso |
-| 2128 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 43. Fulguilla — Abrazo voltaico |
-| 2137 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 44. Murlín — Pulso abisal |
-| 2146 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 45. Abisalia — Acecho |
-| 2155 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 46. Naugrima — Pavor abisal |
-| 2164 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 47. Zeropid — Rodar en placas |
-| 2173 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 48. Musgarma — Caparazón fértil |
-| 2182 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 49. Nipto — Socavar |
-| 2191 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 50. Palmatagma — Taladro al rojo |
-| 2200 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 51. Ofelito — Muda de pizarra |
-| 2209 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 52. Litófis — Muralla quebrada |
-| 2218 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 53. Zercual — Cristal opaco |
-| 2227 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 54. Luminax — Prisma de retorno |
-| 2236 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 55. Nairen — Patada rasante |
-| 2245 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 56. Valeduno — Quiebro aéreo |
-| 2254 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 57. Brelatadire — Salto balístico |
-| 2263 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 58. Álverin — Rasante |
-| 2272 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 59. Torvalán — Estampido |
-| 2281 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 60. Lenipon — Polvillo de alas |
-| 2290 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 61. Verdálula — Siembra al vuelo |
-| 2299 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 62. Cirrín — Deshilado |
-| 2308 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 63. Zanolah — Instinto adoptado |
-| 2317 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 64. Curmin — Eco exacto |
-| 2326 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 65. Noctivelo — Silencio de alas |
-| 2335 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 66. Eosmis — Compresión |
-| 2344 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 67. Brumarina — Lluvia propia |
-| 2353 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 68. Tempestral — Tormenta encarnada |
-| 2362 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 69. Fulmus — Chisporroteo |
-| 2371 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 70. Centelox — Estela eléctrica |
-| 2380 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 71. Pardochis — Cornada estática |
-| 2389 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 72. Fulgurom — Cuerno mineral |
-| 2398 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 73. Fulgocerno — Embestida de chispa |
-| 2407 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 74. Voltacerno — Cuerno al rojo |
-| 2416 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 75. Brontocerno — Carga de tormenta |
-| 2425 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 76. Zulpin — Pulso intermitente |
-| 2434 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 77. Valdoroi — Arco blanco |
-| 2443 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 78. Noxilo — Reflejo galvánico |
-| 2452 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 79. Bramentor — Apagón |
-| 2461 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 80. Brotalí — Hocico de brotes |
-| 2470 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 81. Rizabal — Arado de raíces |
-| 2479 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 82. Camalín — Sesteo |
-| 2488 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 83. Camabara — Remanso |
-| 2497 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 84. Sonderir — Hoja trampa |
-| 2506 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 85. Nerponterre — Digestión |
-| 2515 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 86. Dalgoni — Prenderse |
-| 2524 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 87. Copolusa — Polen anestésico |
-| 2533 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 88. Velaflora — Dispersión |
-| 2542 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 89. Rolfel — Polen nutritivo |
-| 2551 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 90. Flarosol — Flor solar |
-| 2560 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 91. Lucilo — Salto de luz |
-| 2569 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 92. Heliacris — Rebote solar |
-| 2578 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 93. Irisela — Escamas prismáticas |
-| 2587 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 94. Halaria — Cinta de luz |
-| 2596 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 95. Cornelín — Cuerno sereno |
-| 2605 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 96. Unisylva — Savia luminosa |
-| 2614 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 97. Silvakeros — Lanza vital |
-| 2623 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 98. Pelnir — Señal de banco |
-| 2632 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 99. Zularem — Faro profundo |
-| 2641 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 100. Vitrel — Escama espejo |
-| 2650 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 101. Talifano — Bóveda cristalina |
-| 2659 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 102. Murrín — Mordida baja |
-| 2668 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 103. Palutra — Arrastre de corriente |
-| 2677 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 104. Grotín — Mano larga |
-| 2686 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 105. Corvexan — Blindaje de despojos |
-| 2695 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 106. Gremorak — Saqueo |
-| 2704 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 107. Velín — Borrar el contorno |
-| 2713 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 108. Lacumbra — Jirón cortante |
-| 2722 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 109. Nilloh — Salto de hollín |
-| 2731 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 110. Cinthera — Asalto ahumado |
-| 2740 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 111. Mícora — Infección |
-| 2749 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 112. Somícor — Regeneración micelial |
-| 2758 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 113. Holómicor — Horda |
-| 2767 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 114. Melín — Encajar |
-| 2776 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 115. Barramel — Carga excavadora |
-| 2785 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 116. Megalés — No ceder |
-| 2794 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 117. Calánima — Mueca |
-| 2803 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 118. Calignis — Boca del brasero |
-| 2812 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 119. Ascuil — Cola de brasa |
-| 2821 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 120. Aurascuil — Estela dorada |
-| 2830 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 121. Bural — Cabeza baja |
-| 2839 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 122. Leucauro — Carga cegadora |
-| 2848 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 123. Lorican — Pólipos a presión |
-| 2857 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 124. Curxola — Manto coralino |
-| 2866 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 125. Cerreali — Mil faros |
-| 2875 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 126. Lurigan — Disparo gular |
-| 2884 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 127. Pelaskos — Cañón gular |
-| 2893 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 128. Pelagón — Bombardeo hidráulico |
-| 2902 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 129. Prunel — Brasa desprendida |
-| 2911 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 130. Ignar — Fuego guiado |
-| 2920 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 131. Riftari — Punto blanco |
-| 2929 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 132. Gútula — Ceder |
-| 2938 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 133. Náyara — Licuar |
-| 2947 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 134. Undaria — Forma de ola |
-| 2956 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 135. Artelar — Aletazo de pala |
-| 2965 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 136. Litharra — Cuchillas cruzadas |
-| 2974 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 137. Tamegona — Marea mineral |
-| 2983 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 138. Filsin — Sin inercia |
-| 2992 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 139. Foceri — Retorno |
-| 3001 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 140. Anemarca — Cizalla |
-| 3010 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 141. Cistra — Salto estático |
-| 3019 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 142. Raigral — Púas cargadas |
-| 3028 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 143. Vajrakar — Asalto del rayo |
-| 3037 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 144. Talíade — Arraigo |
-| 3046 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 145. Dariad — Aguardar |
-| 3055 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 146. Mairahda — Momento justo |
-| 3064 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 147. Aelio — Corona de motas |
-| 3073 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 148. Lefaries — Velo luminoso |
-| 3082 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 149. Parohim — Revelar |
-| 3091 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 150. Sargot — Aprovechar hueco |
-| 3100 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 151. Sedopan — Tu miedo |
-| 3109 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 152. Amra — Forma del miedo |
-| 3118 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 153. Nirdih — Tres mordiscos |
-| 3127 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 154. Karydha — Regenerar cabezas |
-| 3136 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 155. Lernyra — Cerco de nueve |
-| 3145 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 156. Telnice — Chispa fugaz |
-| 3154 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 157. Astrapí — Cruce relámpago |
-| 3163 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 158. Keraulí — Línea de relámpago |
-| 3172 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 159. Photerion |
-| 3174 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 159. Photerion > Revelación absoluta |
-| 3183 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 159. Photerion > Mediodía |
-| 3192 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 160. Skoterion |
-| 3194 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 160. Skoterion > Negación |
-| 3203 | Compendio de técnicas Somundar — revisión 2 > Técnicas especiales > 160. Skoterion > Colapso |
+| 1 | Compendio de técnicas Somundar — revisión 3 |
+| 5 | Compendio de técnicas Somundar — revisión 3 > Terminología |
+| 20 | Compendio de técnicas Somundar — revisión 3 > Reglas de uso |
+| 34 | Compendio de técnicas Somundar — revisión 3 > Coste de Vínculo y equipamiento |
+| 44 | Compendio de técnicas Somundar — revisión 3 > Principio de refinamiento elemental |
+| 50 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas |
+| 55 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Arañazo |
+| 64 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Picoteo frenético |
+| 73 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Ráfaga de zarpazos |
+| 82 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Golpe tentáculo |
+| 91 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Mordisco |
+| 100 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Picotazo |
+| 109 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Puñetazo |
+| 118 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Coletazo |
+| 127 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Embestida |
+| 136 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Golpe de ala |
+| 145 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Golpe de aleta |
+| 154 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Patada |
+| 163 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Colmillazo |
+| 172 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Cornada |
+| 181 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Desgarrar |
+| 190 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Impacto de caparazón |
+| 199 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Latigazo |
+| 208 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Pisotón |
+| 217 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Zarpazo |
+| 226 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Gancho ascendente |
+| 235 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Mordisco de presa |
+| 244 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Taladrar |
+| 253 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Aleta cortante |
+| 262 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Descenso aéreo |
+| 271 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Patadón |
+| 280 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Puño preciso |
+| 289 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Embestida pesada |
+| 298 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Garra perforante |
+| 307 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Impacto acorazado |
+| 316 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Cornada poderosa |
+| 325 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Garra brutal |
+| 334 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Mordida brutal |
+| 343 | Compendio de técnicas Somundar — revisión 3 > Técnicas anatómicas > Pisotón aplastante |
+| 352 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales |
+| 356 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego |
+| 358 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Prender |
+| 367 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Llama |
+| 376 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Proyectil ígneo |
+| 385 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Proyectiles ígneos |
+| 394 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Llamarada |
+| 403 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Fauces en llamas |
+| 412 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Martillo magmático |
+| 421 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Paso de ceniza |
+| 430 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Bomba de magma |
+| 439 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Bola de fuego |
+| 448 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Incinerar |
+| 457 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Aliento de fuego |
+| 466 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Envite ardiente |
+| 475 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Conflagración |
+| 484 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Fuego > Aliento de dragón |
+| 493 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua |
+| 495 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Agua curativa |
+| 504 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Depurar |
+| 513 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Saturar |
+| 522 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Chorro |
+| 531 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Salva a presión |
+| 540 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Vapor abrasador |
+| 549 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Cola de agua |
+| 558 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Descarga de presión |
+| 567 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Gelifracción |
+| 576 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Cavitación |
+| 585 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Lanza de hielo |
+| 594 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Helar |
+| 603 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Agua > Impulso hidráulico |
+| 612 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta |
+| 614 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Presa de raíces |
+| 623 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Rebrotar |
+| 632 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Renovar |
+| 641 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Semilla acerada |
+| 650 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Lluvia de espinas |
+| 659 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Látigo de lianas |
+| 668 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Raíz de agarre |
+| 677 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Polen urticante |
+| 686 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Liana de retorno |
+| 695 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Maraña |
+| 704 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Drenar |
+| 713 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Fruto explosivo |
+| 722 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Martillo de raíces |
+| 731 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Lanza de espinas |
+| 740 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Tronco arrollador |
+| 749 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Planta > Florecer |
+| 758 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra |
+| 760 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Fractura |
+| 769 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Esquirla de cuarzo |
+| 778 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Salva de esquirlas |
+| 787 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Embate de roca |
+| 796 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Granalla mineral |
+| 805 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Maza de basalto |
+| 814 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Salto de arena |
+| 823 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Jabalina de hierro |
+| 832 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Bala de plata |
+| 841 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Sacudida |
+| 850 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Prensa tectónica |
+| 859 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Avalancha |
+| 868 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Tierra > Terremoto |
+| 877 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire |
+| 879 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Desorientar |
+| 888 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Ráfaga |
+| 897 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Cortes de viento |
+| 906 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Onda sónica |
+| 915 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Corrientes cambiantes |
+| 924 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Turbulencia |
+| 933 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Hoja de viento |
+| 942 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Vendaval cortante |
+| 951 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Aire > Tornado |
+| 960 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo |
+| 962 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Calambre |
+| 971 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Chispa |
+| 980 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Cadena de chispas |
+| 989 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Arco eléctrico |
+| 998 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Garra de tormenta |
+| 1007 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Carga excesiva |
+| 1016 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Salto de voltaje |
+| 1025 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Relámpago |
+| 1034 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Lanza de plasma |
+| 1043 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Rayo > Rayo |
+| 1052 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz |
+| 1054 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Corte espiritual |
+| 1063 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Purificar |
+| 1072 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Recomponer |
+| 1081 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Sacramento |
+| 1090 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Haz de luz |
+| 1099 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Salva radiante |
+| 1108 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Oleada sagrada |
+| 1117 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Envite radiante |
+| 1126 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Centelleo |
+| 1135 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Rayo purificador |
+| 1144 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Filo del alba |
+| 1153 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Orbe del alba |
+| 1162 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Lanza prismática |
+| 1171 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Luz > Columna sagrada |
+| 1180 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro |
+| 1182 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Corte de vínculo |
+| 1191 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Pacto de sangre |
+| 1200 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Saeta umbría |
+| 1209 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Absorber vida |
+| 1218 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Salva de saetas |
+| 1227 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Ectoplasma corrosivo |
+| 1236 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Desgarro maldito |
+| 1245 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Desvanecerse |
+| 1254 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Pisar la sombra |
+| 1263 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Drenar vida |
+| 1272 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Calavera maldita |
+| 1281 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Mal de ojo |
+| 1290 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Hueste espectral |
+| 1299 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Oscuro > Arremetida suicida |
+| 1308 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico |
+| 1310 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Proyectil arcano |
+| 1319 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Pulso primordial |
+| 1328 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Ruptura primordial |
+| 1337 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Embate primordial |
+| 1346 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Salva arcana |
+| 1355 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Paso imposible |
+| 1364 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Golpe soberano |
+| 1373 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Impacto soberano |
+| 1382 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Desborde mítico |
+| 1391 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Fuerza titánica |
+| 1400 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Fractura de esencia |
+| 1409 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Retorno arcano |
+| 1418 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Colisión primordial |
+| 1427 | Compendio de técnicas Somundar — revisión 3 > Técnicas elementales > Mítico > Ruptura absoluta |
+| 1436 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento |
+| 1440 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Aumentos de características |
+| 1442 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Aumentos de características > Ataque |
+| 1444 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Enfado |
+| 1453 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Afilar |
+| 1462 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Danza de combate |
+| 1471 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Danza de combate > Ataque mágico |
+| 1473 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Canalizar |
+| 1482 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Concentración intensa |
+| 1491 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Impulso mágico |
+| 1500 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Impulso mágico > Defensa |
+| 1502 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Endurecer |
+| 1511 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Fortificar |
+| 1520 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Postura firme |
+| 1529 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Postura firme > Defensa mágica |
+| 1531 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Resguardo |
+| 1540 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Mente firme |
+| 1549 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Mente firme > Velocidad |
+| 1551 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Acelerar |
+| 1560 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Aceleración |
+| 1569 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Reducciones de características |
+| 1571 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Reducciones de características > Ataque |
+| 1573 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Debilitar |
+| 1582 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Intimidar |
+| 1591 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Intimidar > Ataque mágico |
+| 1593 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Dispersar energía |
+| 1602 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Disrupción |
+| 1611 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Disrupción > Defensa |
+| 1613 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Romper guardia |
+| 1622 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Quebrar postura |
+| 1631 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Quebrar postura > Defensa mágica |
+| 1633 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Desconcentrar |
+| 1642 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Romper concentración |
+| 1651 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Romper concentración > Velocidad |
+| 1653 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Frenar |
+| 1662 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Desestabilizar |
+| 1671 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Control, protección y otras técnicas de Estado |
+| 1673 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Anular impulso |
+| 1682 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Anular prioridad |
+| 1693 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Barrera de fuerza |
+| 1704 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Consumir el vínculo |
+| 1713 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Estela |
+| 1724 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Velocidad invertida |
+| 1735 | Compendio de técnicas Somundar — revisión 3 > Técnicas sin elemento > Zona antimagia |
+| 1746 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales |
+| 1750 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 1. Brasal — Golpe candente |
+| 1759 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 2. Dracendra — Ariete dracónico |
+| 1768 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 3. Valdrakar — Fauces incandescentes |
+| 1777 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 4. Neril — Sentir la corriente |
+| 1786 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 5. Talassar — Chorro a reacción |
+| 1795 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 6. Maraviel — Marea inversa |
+| 1804 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 7. Velarc — Rocío de astas |
+| 1813 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 8. Varemar — Cornamenta viva |
+| 1822 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 9. Vercosalvi — Bosque andante |
+| 1831 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 10. Gorim — Puño de piedra |
+| 1840 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 11. Targor — Cuerpo monolítico |
+| 1849 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 12. Numegor — Desprendimiento |
+| 1858 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 13. Nimburu — Rebufo |
+| 1867 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 14. Nimbaro — Quiebro |
+| 1876 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 15. Nimburai — Nueve corrientes |
+| 1885 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 16. Zairu — Arranque |
+| 1894 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 17. Keraul — Arco serpentino |
+| 1903 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 18. Nerakous — Cielo conductor |
+| 1912 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 19. Nulem — Fogonazo |
+| 1921 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 20. Aureon — Guardia solar |
+| 1930 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 21. Archelia — Bajo mi amparo |
+| 1939 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 22. Umbrín — Rastro |
+| 1948 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 23. Noctargo — Caza de sombra |
+| 1957 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 24. Umbrafen — Caza espectral |
+| 1966 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 25. Broncian — Hollín ardiente |
+| 1975 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 26. Vetamur — Veta incandescente |
+| 1984 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 27. Pirarín — Pluma ígnea |
+| 1993 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 28. Faresban — Lágrimas de fénix |
+| 2002 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 29. Fényrax — Canto final |
+| 2011 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 30. Bráscajo — Caparazón incandescente |
+| 2020 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 31. Cervolasto — Tenaza voltaica |
+| 2029 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 32. Cauzarzas — Espinas candentes |
+| 2038 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 33. Zarpiroza — Espinas de rebrote |
+| 2047 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 34. Florain — Lumbre ventral |
+| 2056 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 35. Solandra — Llama blanca |
+| 2065 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 36. Pantarin — Panzazo |
+| 2074 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 37. Darnalo — Salto sísmico |
+| 2083 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 38. Juncel — Impulso elástico |
+| 2092 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 39. Batrioma — Jardín dorsal |
+| 2101 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 40. Brumel — Campana de presión |
+| 2110 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 41. Belusamunda — Nube osmótica |
+| 2119 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 42. Linganui — Latigazo sinuoso |
+| 2128 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 43. Fulguilla — Abrazo voltaico |
+| 2137 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 44. Murlín — Pulso abisal |
+| 2146 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 45. Abisalia — Acecho |
+| 2155 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 46. Naugrima — Pavor abisal |
+| 2164 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 47. Zeropid — Rodar en placas |
+| 2173 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 48. Musgarma — Caparazón fértil |
+| 2182 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 49. Nipto — Socavar |
+| 2191 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 50. Palmatagma — Taladro al rojo |
+| 2200 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 51. Ofelito — Muda de pizarra |
+| 2209 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 52. Litófis — Muralla quebrada |
+| 2218 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 53. Zercual — Cristal opaco |
+| 2227 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 54. Luminax — Prisma de retorno |
+| 2236 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 55. Nairen — Patada rasante |
+| 2245 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 56. Valeduno — Quiebro aéreo |
+| 2254 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 57. Brelatadire — Salto balístico |
+| 2263 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 58. Álverin — Rasante |
+| 2272 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 59. Torvalán — Estampido |
+| 2281 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 60. Lenipon — Polvillo de alas |
+| 2290 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 61. Verdálula — Siembra al vuelo |
+| 2299 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 62. Cirrín — Deshilado |
+| 2308 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 63. Zanolah — Instinto adoptado |
+| 2317 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 64. Curmin — Eco exacto |
+| 2326 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 65. Noctivelo — Silencio de alas |
+| 2335 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 66. Eosmis — Compresión |
+| 2344 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 67. Brumarina — Lluvia propia |
+| 2353 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 68. Tempestral — Tormenta encarnada |
+| 2362 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 69. Fulmus — Chisporroteo |
+| 2371 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 70. Centelox — Estela eléctrica |
+| 2380 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 71. Pardochis — Cornada estática |
+| 2389 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 72. Fulgurom — Cuerno mineral |
+| 2398 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 73. Fulgocerno — Embestida de chispa |
+| 2407 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 74. Voltacerno — Cuerno al rojo |
+| 2416 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 75. Brontocerno — Carga de tormenta |
+| 2425 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 76. Zulpin — Pulso intermitente |
+| 2434 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 77. Valdoroi — Arco blanco |
+| 2443 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 78. Noxilo — Reflejo galvánico |
+| 2452 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 79. Bramentor — Apagón |
+| 2461 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 80. Brotalí — Hocico de brotes |
+| 2470 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 81. Rizabal — Arado de raíces |
+| 2479 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 82. Camalín — Sesteo |
+| 2488 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 83. Camabara — Remanso |
+| 2497 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 84. Sonderir — Hoja trampa |
+| 2506 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 85. Nerponterre — Digestión |
+| 2515 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 86. Dalgoni — Prenderse |
+| 2524 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 87. Copolusa — Polen anestésico |
+| 2533 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 88. Velaflora — Dispersión |
+| 2542 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 89. Rolfel — Polen nutritivo |
+| 2551 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 90. Flarosol — Flor solar |
+| 2560 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 91. Lucilo — Salto de luz |
+| 2569 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 92. Heliacris — Rebote solar |
+| 2578 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 93. Irisela — Escamas prismáticas |
+| 2587 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 94. Halaria — Cinta de luz |
+| 2596 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 95. Cornelín — Cuerno sereno |
+| 2605 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 96. Unisylva — Savia luminosa |
+| 2614 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 97. Silvakeros — Lanza vital |
+| 2623 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 98. Pelnir — Señal de banco |
+| 2632 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 99. Zularem — Faro profundo |
+| 2641 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 100. Vitrel — Escama espejo |
+| 2650 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 101. Talifano — Bóveda cristalina |
+| 2659 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 102. Murrín — Mordida baja |
+| 2668 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 103. Palutra — Arrastre de corriente |
+| 2677 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 104. Grotín — Mano larga |
+| 2686 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 105. Corvexan — Blindaje de despojos |
+| 2695 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 106. Gremorak — Saqueo |
+| 2704 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 107. Velín — Borrar el contorno |
+| 2713 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 108. Lacumbra — Jirón cortante |
+| 2722 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 109. Nilloh — Salto de hollín |
+| 2731 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 110. Cinthera — Asalto ahumado |
+| 2740 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 111. Mícora — Infección |
+| 2749 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 112. Somícor — Regeneración micelial |
+| 2758 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 113. Holómicor — Horda |
+| 2767 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 114. Melín — Encajar |
+| 2776 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 115. Barramel — Carga excavadora |
+| 2785 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 116. Megalés — No ceder |
+| 2794 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 117. Calánima — Mueca |
+| 2803 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 118. Calignis — Boca del brasero |
+| 2812 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 119. Ascuil — Cola de brasa |
+| 2821 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 120. Aurascuil — Estela dorada |
+| 2830 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 121. Bural — Cabeza baja |
+| 2839 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 122. Leucauro — Carga cegadora |
+| 2848 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 123. Lorican — Pólipos a presión |
+| 2857 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 124. Curxola — Manto coralino |
+| 2866 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 125. Cerreali — Mil faros |
+| 2875 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 126. Lurigan — Disparo gular |
+| 2884 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 127. Pelaskos — Cañón gular |
+| 2893 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 128. Pelagón — Bombardeo hidráulico |
+| 2902 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 129. Prunel — Brasa desprendida |
+| 2911 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 130. Ignar — Fuego guiado |
+| 2920 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 131. Riftari — Punto blanco |
+| 2929 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 132. Gútula — Ceder |
+| 2938 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 133. Náyara — Licuar |
+| 2947 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 134. Undaria — Forma de ola |
+| 2956 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 135. Artelar — Aletazo de pala |
+| 2965 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 136. Litharra — Cuchillas cruzadas |
+| 2974 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 137. Tamegona — Marea mineral |
+| 2983 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 138. Filsin — Sin inercia |
+| 2992 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 139. Foceri — Retorno |
+| 3001 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 140. Anemarca — Cizalla |
+| 3010 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 141. Cistra — Salto estático |
+| 3019 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 142. Raigral — Púas cargadas |
+| 3028 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 143. Vajrakar — Asalto del rayo |
+| 3037 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 144. Talíade — Arraigo |
+| 3046 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 145. Dariad — Aguardar |
+| 3055 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 146. Mairahda — Momento justo |
+| 3064 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 147. Aelio — Corona de motas |
+| 3073 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 148. Lefaries — Velo luminoso |
+| 3082 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 149. Parohim — Revelar |
+| 3091 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 150. Sargot — Aprovechar hueco |
+| 3100 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 151. Sedopan — Tu miedo |
+| 3109 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 152. Amra — Forma del miedo |
+| 3118 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 153. Néspira — Seda umbría |
+| 3127 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 154. Deinarach — Trama quebradiza |
+| 3136 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 155. Aracnoir — Telaraña de ruina |
+| 3145 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 156. Nirdih — Tres mordiscos |
+| 3154 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 157. Karydha — Regenerar cabezas |
+| 3163 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 158. Lernyra — Cerco de nueve |
+| 3172 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 159. Telnice — Chispa fugaz |
+| 3181 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 160. Astrapí — Cruce relámpago |
+| 3190 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 161. Keraulí — Línea de relámpago |
+| 3199 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 162. Photerion |
+| 3201 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 162. Photerion > Revelación absoluta |
+| 3210 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 162. Photerion > Mediodía |
+| 3219 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 163. Skoterion |
+| 3221 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 163. Skoterion > Negación |
+| 3230 | Compendio de técnicas Somundar — revisión 3 > Técnicas especiales > 163. Skoterion > Colapso |
 
 INICIO_FUENTE: CANON-TECHNIQUES
-
-# Compendio de técnicas Somundar — revisión 2
+# Compendio de técnicas Somundar — revisión 3
 
 Este documento reorganiza el sistema de técnicas de Somundar sin convertir los tipos en repertorios automáticos. Una criatura sólo puede aprender las técnicas que su especie, anatomía, afinidad y desarrollo permitan. El objetivo del catálogo es que las técnicas compartidas proporcionen un lenguaje común al sistema mientras las técnicas especiales definan funciones de combate propias para cada especie.
 
@@ -6132,7 +6134,34 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Para calcular el daño utiliza como valor ofensivo la característica actual más alta entre el Ataque y el Ataque mágico del propio objetivo.
 
-### 153. Nirdih — Tres mordiscos
+### 153. Néspira — Seda umbría
+**Tipo:** Oscuro · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 40 | 100% | 12,5 | +0 | Objetivo único |
+
+**Descripción de efectos:** Proyecta una masa de seda oscura y adherente que envuelve parcialmente al objetivo y le causa daño. Sin efecto adicional.
+
+### 154. Deinarach — Trama quebradiza
+**Tipo:** Tierra · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 50 | 100% | 25 | +0 | Objetivo único |
+
+**Descripción de efectos:** Proyecta una telaraña impregnada de partículas minerales que se adhieren al cuerpo del objetivo. Al tensarse, los filamentos endurecidos provocan pequeñas fracturas en su estructura física y mágica. Causa daño y aplica Agrietado.
+
+### 155. Aracnoir — Telaraña de ruina
+**Tipo:** Tierra · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 35 | 100% | 75 | +0 | A todos |
+
+**Descripción de efectos:** Extiende una inmensa telaraña de filamentos oscuros y mineralizados por todo el campo de combate. Los hilos se adhieren a todos los enemigos presentes y se tensan violentamente, provocando fracturas en sus cuerpos y dificultando sus movimientos. Causa daño, aplica Agrietado y baja mucho la Velocidad de todos los enemigos alcanzados. No crea un Campo persistente.
+
+### 156. Nirdih — Tres mordiscos
 **Tipo:** Mítico · **Clase:** Física
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6141,7 +6170,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Las tres cabezas muerden de forma independiente. Realiza exactamente tres impactos que pueden repartirse entre objetivos distintos.
 
-### 154. Karydha — Regenerar cabezas
+### 157. Karydha — Regenerar cabezas
 **Tipo:** Mítico · **Clase:** Estado
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6150,7 +6179,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Regenera cuellos, escamas y tejidos compartidos. Recupera 33% de Vitalidad máxima; si está por debajo de 50%, recupera 50% en su lugar.
 
-### 155. Lernyra — Cerco de nueve
+### 158. Lernyra — Cerco de nueve
 **Tipo:** Mítico · **Clase:** Física
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6159,7 +6188,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Las nueve cabezas atacan desde ángulos independientes. Realiza nueve impactos que pueden repartirse entre los enemigos presentes.
 
-### 156. Telnice — Chispa fugaz
+### 159. Telnice — Chispa fugaz
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6168,7 +6197,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Pasa junto al objetivo como una descarga diminuta y extremadamente rápida.
 
-### 157. Astrapí — Cruce relámpago
+### 160. Astrapí — Cruce relámpago
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6177,7 +6206,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Astrapí atraviesa al objetivo convertido en una descarga. Después de causar daño, puede ser sustituido inmediatamente por otra criatura preparada; el intercambio forma parte de la resolución de la técnica.
 
-### 158. Keraulí — Línea de relámpago
+### 161. Keraulí — Línea de relámpago
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -6186,7 +6215,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Acelera hasta desaparecer de la vista y atraviesa al objetivo dejando una línea eléctrica. Ignora barreras.
 
-### 159. Photerion
+### 162. Photerion
 
 #### Revelación absoluta
 **Tipo:** Luz · **Clase:** Estado
@@ -6206,7 +6235,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Primer turno: Photerion concentra una cantidad descomunal de radiancia. Segundo turno: todo el campo queda inundado por una descarga de Luz que golpea a todos los enemigos. Después de usarla, baja mucho su Ataque mágico y no puede volver a utilizar Mediodía hasta retirarse y entrar de nuevo.
 
-### 160. Skoterion
+### 163. Skoterion
 
 #### Negación
 **Tipo:** Oscuro · **Clase:** Estado
@@ -6225,8 +6254,6 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 | 260 | 100% | 100 | +0 | A todos |
 
 **Descripción de efectos:** Concentra oscuridad en un punto que atrae violentamente cuerpos, proyectiles y magia hacia él. Golpea a todos los enemigos, destruye sus barreras antes de calcular el daño e impide toda retirada voluntaria durante la ronda en que se resuelve.
-
-
 FIN_FUENTE: CANON-TECHNIQUES
 
 ## Fuente CANON-MANIFESTATIONS

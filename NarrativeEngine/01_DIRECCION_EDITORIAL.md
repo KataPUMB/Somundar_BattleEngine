@@ -1,8 +1,8 @@
 # Dirección editorial de Somundar
 
 SOURCE_ID: EDITORIAL-HANDBOOK
-REVISION: 2
-FECHA_ACTUALIZACION: 2026-09-28
+REVISION: 4
+FECHA_ACTUALIZACION: 2026-11-15
 TIPO: contenedor de normativa editorial y protocolos
 
 ## Acceso por responsabilidad
@@ -2002,7 +2002,7 @@ Estado: regla operativa resuelta por precedencia expresa; armonización de redac
 
 ## ISS-005 · Fórmula abreviada de daño
 
-CANON-CREATURES > Daño y Vitalidad presenta `0,75 × Ataque × √(Ataque / Defensa)`. CANON-MECHANICS > 23.1. Fórmula base añade PB/100, M, T y R, con redondeo y límites en 23.5. La expresión abreviada coincide con un caso base cuando esos factores valen uno; no debe usarse como fórmula completa de cualquier técnica. La constante vigente de CANON-MECHANICS > 23.1 es 0,9375 (antes 0,75); la expresión abreviada de CANON-CREATURES debe leerse con esa constante.
+CANON-CREATURES > Daño y Vitalidad presenta `0,75 × Ataque × √(Ataque / Defensa)`. CANON-MECHANICS > 23.1. Fórmula base añade PB/100, M, T y R, con redondeo y límites en 23.5. La expresión abreviada coincide con un caso base cuando esos factores valen uno; no debe usarse como fórmula completa de cualquier técnica.
 
 Estado: alcance de uso delimitado. Para cálculo completo se recupera la sección mecánica y los efectos concretos.
 
@@ -2066,8 +2066,8 @@ INICIO_BLOQUE: CANON-DECISIONS
 # Decisiones explícitas del autor
 
 SOURCE_ID: CANON-DECISIONS
-REVISION: 2
-FECHA_APLICACION: 2026-09-28
+REVISION: 4
+FECHA_APLICACION: 2026-11-15
 RESPONSABILIDAD: conservar cambios inequívocos y su alcance; no sustituir las fuentes
 
 ## Procedencia y estado de aplicación
@@ -2122,6 +2122,36 @@ Las correcciones de autor ya documentadas en la importación r1, como las edades
 
 **Aplicada en:** CANON-MECHANICS @ r2 > Materialización parcial, 11.4, 32 y regla 34.8; CANON-TECHNIQUES @ r2 > Reglas de uso; CANON-WORLD @ r2 > Invocador; CANON-NOVELS @ r2 > doctrina de Silvano y preparación IV. GLOBAL-INDEX y navegaciones locales actualizados.
 
+## DEC-007 · Cronología imperial, edades y calendario solmeriano
+
+**Decisión:** el año de *Despertar* es 347 EI; *Valerio*, 348 EI; *Universidad* comienza en 349 EI; *Conspiraciones*, 352 EI; y *Quinto Arconte*, 353 EI. El año civil solmeriano consta de doce meses de 28 días. Los nombres y el orden acordados son Umbrén, Maravelo, Vercosal, Arquelia, Nimbario, Fenaria, Lucero, Valdrario, Neraco, Numegro, Lernia y Noctario. El mes séptimo honra a Lucerio; el décimo se llama **Numegro** y el duodécimo **Noctario**. El calendario civil semanal, los días estacionales exactos y los ajustes astronómicos siguen sin fijar.
+
+**Aplicada en:** CANON-NOVELS @ r5 > cronología biográfica; GLOBAL-INDEX @ r3 > ruta de calendario. Documento auxiliar de referencia: `calendarioSolmeriano.md` (no se presenta como fuente autónoma ya instalada en los ocho contenedores).
+
+## DEC-008 · Cumpleaños, fallecimientos y ciclo universitario
+
+**Decisión:** cumpleaños de Adriano 28/10, Alex 16/02, Silvia 11/06, Aster 22/08 y Cassaro 24/12, en calendario solmeriano. Caelio muere con 17 años al inicio de *Despertar* (347 EI), por lo que su año de nacimiento de referencia es 330 EI. Vermina muere dando a luz a Caelio a los 31 años: año de nacimiento de referencia 299 EI y fallecimiento 330 EI. Terenio muere con 19 años tres años antes que Caelio: fallece en 344 EI y su nacimiento de referencia es 325 EI. Naim tiene 46 años, Haruen 38 y Beltrán 27 en *Valerio* (348 EI): años de referencia 302, 310 y 321 EI. La Universidad inicia cada curso el **28/09** y lo concluye el **28/06** del año siguiente; las vacaciones de verano comienzan al cierre. El primer curso de la promoción descrita comienza el 28/09/349 EI.
+
+**Precisión:** las restas de edades producen años de referencia sujetos a la posición exacta del cumpleaños y de la escena; las fechas completas aleatorias de personajes sin día y mes fijados son propuestas documentales, no decisiones del autor. No elevar a canon una fecha asignada al azar por aparecer en una ficha.
+
+**Aplicada en:** CANON-NOVELS @ r5 > fichas, cronología y promoción; CONTINUITY-INDEX @ r3 > control de cronología, sin escenas indexadas.
+
+## DEC-009 · Identidad de Ciro y Lurigan
+
+**Decisión:** **Ciro** no se apellida Lurigan; **Lurigan** es el nombre de su criatura. Corregir «Ciro Lurigan» cuando designe al humano, conservando «Lurigan» para la criatura.
+
+**Aplicada en:** CANON-NOVELS @ r5; CANON-SOLMER en WORLD-CORPUS @ r3; GLOBAL-INDEX @ r3.
+
+## DEC-010 · Línea arácnida Néspira → Deinarach → Aracnoir y exclusivas
+
+**Decisión:** incorporar a CANON-CREATURES las fichas **153 Néspira (Oscuro, Típica), 154 Deinarach (Oscuro/Tierra, Rara) y 155 Aracnoir (Oscuro/Tierra, Súper rara)**. Transfiguraciones por Nivel de Vínculo 22 y 41, sin Apoteosis. Mantener exactamente las estadísticas de referencia NV50 de Eosmis (35/75/60/90/40/390), Brumarina (55/140/100/150/55/650) y Tempestral (70/220/110/170/180/360), respectivamente, en el orden Ataque físico, Ataque mágico, Defensa, Defensa mágica, Velocidad y Vitalidad. La forma final tiene cuerpo inferior arácnido de ocho patas, torso superior quitinoso y erguido, dos brazos y manos articuladas aptas para técnicas como Puño preciso. Quedan aceptados nombres, descripciones y repertorios detallados en las tres fichas entregadas por el autor en esta conversación.
+
+**Técnicas exclusivas:** Seda umbría (Néspira, NV10, Oscuro, Mágica, PB40, Coste 12,5, un objetivo); Trama quebradiza (Deinarach, NV28, Tierra, Mágica, PB50, Coste 25, un objetivo, aplica Agrietado); Telaraña de ruina (Aracnoir, NV45, Tierra, Mágica, PB35, Coste 75, afecta a todos los enemigos presentes, aplica Agrietado y reduce dos etapas la Velocidad; no establece un Campo persistente). Precisión base 100% y Prioridad +0 en las tres. Los efectos de etapas e inmunidades se resuelven según CANON-MECHANICS, sin excepciones nuevas.
+
+**Numeración:** las tres fichas se insertan antes de Nirdih. Nirdih pasa a 156, Karydha a 157, Lernyra a 158; todas las fichas y especiales anteriores desde el número 153 se desplazan +3 hasta el nuevo número 163. La numeración es editorial, no cambia identidad de especies, de individuos ni cronología narrada.
+
+**Aplicada en esta entrega:** CANON-CREATURES @ r3 y CANON-TECHNIQUES @ r3; CREATURE-CORPUS @ r3; SYSTEM-CORPUS @ r3; GLOBAL-INDEX @ r4; SOURCE-MANIFEST @ r4. No se han alterado CANON-MECHANICS ni CANON-MANIFESTATIONS; no se declara nueva escena narrativa ni se modifica CONTINUITY-INDEX.
+
 ## Mantenimiento posterior
 
 Una decisión inequívoca no necesita una segunda aceptación ritual. Su aplicación documental no acredita escenas no leídas. Si se aportan manuscritos con divergencias, registrar el pasaje y el alcance de la decisión; no ocultar la discrepancia ni atribuir una reescritura no realizada. Conservar estos IDs si una decisión se sustituye en el futuro.
@@ -2133,8 +2163,8 @@ INICIO_BLOQUE: SOURCE-MANIFEST
 # Manifiesto de fuentes de Somundar
 
 SOURCE_ID: SOURCE-MANIFEST
-REVISION: 2
-FECHA: 2026-09-28
+REVISION: 4
+FECHA: 2026-11-15
 RESPONSABILIDAD: identidad, procedencia, autoridad, versión y destino
 UBICACION_OPERATIVA: bloque SOURCE-MANIFEST de EDITORIAL-HANDBOOK
 
@@ -2167,15 +2197,15 @@ Los nombres siguientes identifican los documentos de origen. Las copias operativ
 | SOURCE_ID | Versión / relación comprobable | Rango o responsabilidad |
 |---|---|---|
 | CORE-LEGACY | Sin revisión interna declarada; el nuevo encargo sustituye su alcance de una única novela. Conservado íntegro. | Coordinación y pautas previas |
-| CANON-TECHNIQUES | Importación r1; activa r2 por DEC-001, DEC-006. Procedencia: Título interno: revisión 2. No se deduce de (2). Ver ISS-004. | Repertorio completo del documento |
+| CANON-TECHNIQUES | Importación r1; activa r3 por DEC-001, DEC-006 y DEC-010. Procedencia: Título interno: revisión 2. No se deduce de (2). Ver ISS-004. | Repertorio completo del documento |
 | CANON-MANIFESTATIONS | Importación r1; activa r2 por DEC-001, DEC-005. Procedencia: Título: compendio completo; sin número de revisión declarado. (9) no acredita versión. Ver ISS-004. | Existencia de autor; conocimiento distribuido |
-| CANON-CREATURES | Importación r1; activa r2 por DEC-001, DEC-003, DEC-005. Procedencia: Sin revisión interna numerada. Fórmulas y alcance: ISS-005 e ISS-010. | 160 fichas de especie y criterios generales |
+| CANON-CREATURES | Importación r1; activa r3 por DEC-001, DEC-003, DEC-005 y DEC-010. Procedencia: Sin revisión interna numerada. Fórmulas y alcance: ISS-005 e ISS-010. | 163 fichas de especie y criterios generales |
 | STYLE-GUIDE | Sin revisión interna numerada. Contenido íntegro; el encargo amplía tareas/escala sin reescribir la guía. Ver ISS-006. | Criterios locales y estructurales |
-| CANON-SOLMER | Propósito y estado temporal: segunda novela. No se extiende automáticamente a III o posteriores. | Presente narrativo de novela II y antecedentes indicados |
+| CANON-SOLMER | Activa r2 por corrección del encabezado de Ciro (DEC-009). Propósito y estado temporal: segunda novela. No se extiende automáticamente a III o posteriores. | Presente narrativo de novela II y antecedentes indicados |
 | CANON-MECHANICS | Importación r1; activa r2 por DEC-001, DEC-003, DEC-006. Procedencia: Sin revisión interna numerada. Mantiene ejemplos y excepciones íntegros. | Reglas generales; aplicación según estado narrativo |
 | CANON-TEACHERS-LEGACY | Sustituido expresamente por CANON-NOVELS > PROFESORES; comparación de los ocho bloques confirma la relación. Ver ISS-003. | Antecedente íntegro; propuestas no canónicas |
 | CANON-WORLD | Importación r1; activa r2 por DEC-003, DEC-006. Procedencia: Propósito subordina detalles a fichas y compendios especializados. Sin revisión interna numerada. | Marco de mundo y regiones; periodos señalados en el contenido |
-| CANON-NOVELS | Importación r1; activa r2 por DEC-001, DEC-002, DEC-003, DEC-004, DEC-005, DEC-006. Procedencia: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. | Partes PERSONAJES / PROFESORES / PROGRESIÓN; estados I–III y planes IV–VIII |
+| CANON-NOVELS | Importación r1; activa r5 por DEC-001 a DEC-009, sustitución de promoción r3, cronología r4 y corrección de Ciro r5. Procedencia: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. | Partes PERSONAJES / PROFESORES / PROGRESIÓN; estados I–III y planes IV–VIII |
 | BRIEF-ARCHITECTURE | Aportado como prompt base de la petición actual. No se ejecuta de nuevo al consultarlo. | Arquitectura editorial general y presupuesto de archivos |
 
 La sustitución de profesores se acredita por el propio texto y por sus diferencias, no por similitud de nombres. La identidad del dossier unificado no convierte en hechos narrados sus planes. Los originales históricos se preservan fuera del conjunto permanente para evitar competencia de instrucciones y versiones.
@@ -2185,37 +2215,37 @@ La sustitución de profesores se acredita por el propio texto y por sus diferenc
 | SOURCE_ID | Tipo / autoridad | Versión | Destino operativo |
 |---|---|---|---|
 | CORE-PROJECT | Coordinador editorial, derivado del encargo y garantías de fuentes | 1 | Campo de Instrucciones; copia en INSTRUCCIONES_PROYECTO.md |
-| GLOBAL-INDEX | Índice único; localización, no canon | 2 | 00_INDICE_GLOBAL.md |
-| EDITORIAL-HANDBOOK | Contenedor; autoridad de cada bloque | 2 | 01_DIRECCION_EDITORIAL.md |
+| GLOBAL-INDEX | Índice único; localización, no canon | 4 | 00_INDICE_GLOBAL.md |
+| EDITORIAL-HANDBOOK | Contenedor; autoridad de cada bloque | 4 | 01_DIRECCION_EDITORIAL.md |
 | EDITORIAL-PROCEDURES | Coordinación por tarea/escala y mantenimiento | 1 | Bloque en EDITORIAL-HANDBOOK |
-| SOURCE-MANIFEST | Registro de procedencia y versiones | 2 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
+| SOURCE-MANIFEST | Registro de procedencia y versiones | 4 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
 | SOURCE-ISSUES | Incidencias y límites de verificación | 2 | Bloque en EDITORIAL-HANDBOOK |
-| CANON-DECISIONS | DEC-001 a DEC-006 aplicadas; alcance y trazabilidad | 2 | Bloque en EDITORIAL-HANDBOOK |
+| CANON-DECISIONS | DEC-001 a DEC-010 documentadas; alcance y trazabilidad | 4 | Bloque en EDITORIAL-HANDBOOK |
 | CONTINUITY-STANDARD | Protocolo estable de evidencia y referencias | 1 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
 | INDEXING-PROMPT | Encargo reutilizable; no se ejecuta por mera lectura | 1 | Bloque en EDITORIAL-HANDBOOK; copia externa |
-| WORLD-CORPUS | Contenedor, no una nueva síntesis del mundo | 2 | 02_MUNDO_Y_SOLMER.md |
-| CHARACTER-CORPUS | Contenedor del dossier íntegro | 2 | 03_PERSONAJES_Y_TRAYECTORIAS.md |
-| CREATURE-CORPUS | Contenedor de fichas de especie | 2 | 04_CRIATURAS.md |
-| SYSTEM-CORPUS | Contenedor de los tres especialistas mecánicos | 2 | 05_SISTEMA_DE_INVOCACION.md |
+| WORLD-CORPUS | Contenedor, no una nueva síntesis del mundo | 3 | 02_MUNDO_Y_SOLMER.md |
+| CHARACTER-CORPUS | Contenedor del dossier íntegro | 5 | 03_PERSONAJES_Y_TRAYECTORIAS.md |
+| CREATURE-CORPUS | Contenedor de fichas de especie | 3 | 04_CRIATURAS.md |
+| SYSTEM-CORPUS | Contenedor de los tres especialistas mecánicos | 3 | 05_SISTEMA_DE_INVOCACION.md |
 | NARRATIVE-CORPUS | Contenedor preparado; sin cuerpos narrativos iniciales | 1 | 06_MANUSCRITOS_ACEPTADOS.md |
-| CONTINUITY-INDEX | Índice especializado; cobertura SIN_INDEXAR | 2 | 07_CONTINUIDAD_NARRATIVA.md |
+| CONTINUITY-INDEX | Índice especializado; cobertura SIN_INDEXAR | 3 | 07_CONTINUIDAD_NARRATIVA.md |
 | PROJECT-ARCHITECTURE | Documentación de instalación; no ocupa plaza permanente | 1 | ARQUITECTURA_PROYECTO.md, fuera de la carga habitual |
 
-## Archivos operativos modificados — revisión 2
+## Archivos operativos modificados — revisiones vigentes
 
 Los sufijos físicos entre paréntesis no determinan la revisión. Cada archivo mantiene su SOURCE_ID; los nombres siguientes son los observados en el conjunto actualizado.
 
 | Archivo operativo observado | SOURCE_ID | Revisión | Contenido actualizado |
 |---|---|---:|---|
-| 00_INDICE_GLOBAL(2).md | GLOBAL-INDEX | 2 | Rutas de DEC-001 a DEC-006. |
-| 01_DIRECCION_EDITORIAL(2).md | EDITORIAL-HANDBOOK | 2 | SOURCE-ISSUES, CANON-DECISIONS y SOURCE-MANIFEST en r2; restantes bloques sin cambio. |
-| 02_MUNDO_Y_SOLMER(2).md | WORLD-CORPUS | 2 | CANON-WORLD r2; CANON-SOLMER permanece en r1. |
-| 03_PERSONAJES_Y_TRAYECTORIAS(1).md | CHARACTER-CORPUS | 2 | CANON-NOVELS r2 y navegación local. |
-| 04_CRIATURAS(2).md | CREATURE-CORPUS | 2 | CANON-CREATURES r2 y navegación local. |
-| 05_SISTEMA_DE_INVOCACION(2).md | SYSTEM-CORPUS | 2 | CANON-MECHANICS, CANON-TECHNIQUES y CANON-MANIFESTATIONS r2. |
-| 07_CONTINUIDAD_NARRATIVA(1).md | CONTINUITY-INDEX | 2 | Controles de autor; cobertura narrativa permanece SIN_INDEXAR. |
+| 00_INDICE_GLOBAL.md | GLOBAL-INDEX | 4 | Rutas de DEC-001 a DEC-009 y calendario. |
+| 01_DIRECCION_EDITORIAL.md | EDITORIAL-HANDBOOK | 4 | CANON-DECISIONS y SOURCE-MANIFEST actualizados; restantes bloques sin cambio. |
+| 02_MUNDO_Y_SOLMER.md | WORLD-CORPUS | 3 | CANON-WORLD r2; CANON-SOLMER r2 por DEC-009. |
+| 03_PERSONAJES_Y_TRAYECTORIAS.md | CHARACTER-CORPUS | 5 | CANON-NOVELS r5 y navegación regenerada. |
+| 04_CRIATURAS.md | CREATURE-CORPUS | 3 | CANON-CREATURES r3: fichas 153–155 y navegación local regenerada; posteriores renumeradas. |
+| 05_SISTEMA_DE_INVOCACION.md | SYSTEM-CORPUS | 3 | CANON-TECHNIQUES r3 y navegación local regenerada; CANON-MECHANICS y CANON-MANIFESTATIONS permanecen r2. |
+| 07_CONTINUIDAD_NARRATIVA.md | CONTINUITY-INDEX | 3 | Controles de autor y cronología; cobertura narrativa permanece SIN_INDEXAR. |
 
-06_MANUSCRITOS_ACEPTADOS y las Instrucciones del Proyecto no requieren cambios en este encargo. Las copias externas de instalación conservan su condición de instantáneas r1; la autoridad de mantenimiento reside en estos archivos operativos.
+06_MANUSCRITOS_ACEPTADOS, 07_CONTINUIDAD_NARRATIVA, WORLD-CORPUS, CHARACTER-CORPUS y las Instrucciones del Proyecto no requieren cambios por DEC-010. Las copias externas de instalación conservan su condición de instantáneas r1; la autoridad de mantenimiento reside en estos archivos operativos.
 
 ## Referencias mencionadas pero no suministradas
 
