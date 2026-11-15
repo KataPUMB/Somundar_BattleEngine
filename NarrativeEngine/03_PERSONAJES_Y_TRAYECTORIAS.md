@@ -1,438 +1,796 @@
 # Personajes, profesores y trayectorias
 
 SOURCE_ID: CHARACTER-CORPUS
-REVISION: 2
-FECHA_ACTUALIZACION: 2026-09-28
+REVISION: 6
+FECHA_ACTUALIZACION: 2026-11-15
 TIPO: contenedor de fuentes completas con revisiones aceptadas del autor
 FUENTES: CANON-NOVELS
 
 Dossier íntegro, no manuscrito ni índice de escenas verificadas. Sus referencias a manuscritos finales son declaraciones del documento original; los cuerpos narrativos están ausentes en esta entrega. Respetar PERSONAJES / PROFESORES / PROGRESIÓN, estados históricos y toda etiqueta NO CANÓNICA. Los planes IV–VIII no son acontecimientos ocurridos. El número de encabezado no es identificador de novela fuera de su contexto; algunos se repiten en el original.
 
-Los bloques entre INICIO_FUENTE y FIN_FUENTE contienen las fuentes completas. La importación r1 identifica su procedencia; REVISION_ACTIVA r2 incorpora los cambios explícitos registrados en CANON-DECISIONS. La metadata y la navegación permanecen fuera del cuerpo de cada fuente. El contenido ajeno a esos cambios se conserva; la autoridad pertenece a cada especialista y a sus secciones.
+Los bloques entre INICIO_FUENTE y FIN_FUENTE contienen las fuentes completas. La importación r1 identifica su procedencia; REVISION_ACTIVA r2 incorpora los cambios explícitos registrados en CANON-DECISIONS. La metadata y la navegación permanecen fuera del cuerpo de cada fuente. La revisión r3 sustituye la sección completa de la promoción por el documento de compañeros actualizado. La revisión r4 añade cronología biográfica y calendario académico sin alterar las descripciones, las relaciones ni las preparaciones. La revisión r5 incorpora la corrección del nombre de Ciro y conserva el resto de las fichas de la versión más reciente de personajes.md. La revisión r6 amplía únicamente la ficha de Maelle y documenta objetivos de Amplitud sin alterar las otras Preparaciones. El contenido ajeno a esos cambios se conserva; la autoridad pertenece a cada especialista y a sus secciones.
 
 ## Fuente CANON-NOVELS
 
 SOURCE_ID: CANON-NOVELS
 REVISION_IMPORTACION: r1
-REVISION_ACTIVA: r2
-CAMBIOS_APLICADOS: DEC-001, DEC-002, DEC-003, DEC-004, DEC-005, DEC-006
+REVISION_ACTIVA: r6
+CAMBIO_R6: Maelle: Néspira, Curmin en la mina, Preparación inicial y proyección de graduación; objetivos aproximados de Amplitud en DEC-011.
+CAMBIO_R5: Corrección explícita del autor: Ciro no lleva el apellido Lurigan; Lurigan es el nombre de su criatura. Incorporada la versión más reciente de personajes.md, conservando las fichas y cronología de r4. Decisiones registradas en CANON-DECISIONS DEC-007 a DEC-009.
+CAMBIO_R4: Incorporación de fechas de nacimiento propuestas a las fichas y años de fallecimiento verificables; ciclo universitario 28/09–28/06; fechas expresas y edades fijadas por el autor. Decisiones registradas en CANON-DECISIONS DEC-007 a DEC-009.
+CAMBIO_R3: Sustitución íntegra de la promoción universitaria por `compañeros.md`, incluida familia Aredes, Elvia Arven, Crispo Servilio y Trajano Servilio. Procedencia de la revisión r3 preservada; el original `compañeros.md` no está disponible para nuevo cotejo.
+CAMBIOS_APLICADOS: DEC-001 a DEC-011
 NOMBRE_FISICO_OBSERVADO: Canon_Novelas(1).md
 TIPO: Dossier mixto: fichas, síntesis, conocimiento de autor y planes
 AUTORIDAD: Personajes y hechos de autor; reconstrucción narrativa subordinada a manuscritos; planes no canónicos
 ALCANCE: Partes PERSONAJES / PROFESORES / PROGRESIÓN; estados I–III y planes IV–VIII
-RELACION_DE_VERSION: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. Revisión activa r2: actualizada por decisiones explícitas del autor; véase CANON-DECISIONS.
+RELACION_DE_VERSION: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. Revisión activa r5: promoción sustituida en r3 por `compañeros.md` a petición del autor; cronología añadida en r4 y corrección de Ciro en r5, documentadas en DEC-007 a DEC-009.
 
 ### Navegación local de CANON-NOVELS
 
-Índice de encabezados, no resumen ni segunda autoridad. Líneas relativas al cuerpo de esta fuente en su **revisión activa r2**, tomando como línea 1 el primer encabezado del cuerpo tras INICIO_FUENTE. No son líneas del contenedor. La importación r1 permanece como procedencia; los cambios aceptados se registran en CANON-DECISIONS.
+**Navegación regenerada para r5:** localizadores relativos al cuerpo de CANON-NOVELS, verificados sobre esta revisión.
 
-| Línea de la fuente r2 | Ruta / encabezado literal |
+Índice de encabezados, no resumen ni segunda autoridad. Líneas relativas al cuerpo de esta fuente en su **revisión activa r5**, tomando como línea 1 el primer encabezado del cuerpo tras INICIO_FUENTE. No son líneas del contenedor. La importación r1 permanece como procedencia; los cambios aceptados se registran en CANON-DECISIONS.
+
+| Línea de la fuente actual | Ruta / encabezado literal |
 |---:|---|
-| 1 | CANON DE LAS NOVELAS I–III |
-| 8 | PARTE — PERSONAJES |
-| 10 | PARTE — PERSONAJES > Personajes de Solmer |
-| 12 | PARTE — PERSONAJES > Personajes de Solmer > Autoridad canónica de esta revisión |
-| 22 | PARTE — PERSONAJES > Personajes de Solmer > Autoridad canónica de esta revisión > Convención de conocimiento |
-| 38 | PARTE — PERSONAJES > Personajes de Solmer > Autoridad canónica de esta revisión > Convención de edades |
-| 56 | PARTE — PERSONAJES > Personajes de Solmer > Autoridad canónica de esta revisión > Convención de preparación y Estamento |
-| 68 | PARTE — PERSONAJES > Personajes de Solmer > Secreto de filiación de Aster, Marco y Adriano — DEC-002 |
-| 82 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* |
-| 86 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aster Valerio |
-| 92 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Sarah Ordan |
-| 98 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orsen Valmar |
-| 104 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Darian Nerio |
-| 110 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucerio IV de Solmer |
-| 116 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vermina |
-| 122 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Terenio de Solmer |
-| 128 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Caelio de Solmer |
-| 134 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Cassaro Valerio |
-| 140 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Meralda Torven |
-| 146 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Decar Varen |
-| 152 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orren Calvio |
-| 158 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elian Arven |
-| 164 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celerio Veltar |
-| 170 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Livia Marcena |
-| 176 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orvian Selcar |
-| 182 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Doria Valcera |
-| 188 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tavio Cerlan |
-| 194 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Cassia Mornal |
-| 200 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Nerio Salven |
-| 206 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Bereno Salvian |
-| 212 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mirella Cerdan |
-| 218 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vario Lucen |
-| 224 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Alisia Corven |
-| 230 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Darcio Neral |
-| 236 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elara Montel |
-| 242 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Savio Rencar |
-| 248 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marena Virel |
-| 254 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Ceralio Padran |
-| 260 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Favia Lurcen |
-| 266 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orelio Basten |
-| 272 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Talia Serano |
-| 278 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Adriano Valerio |
-| 284 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Olivia |
-| 292 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marco Valerio |
-| 300 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Helena |
-| 308 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Alex |
-| 316 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Ciro Lurigan |
-| 322 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Valco |
-| 328 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Flavia Valco |
-| 334 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Sabina Cerio |
-| 340 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Gabino Varo |
-| 346 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Naim |
-| 352 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Haruen |
-| 358 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Beltrán |
-| 364 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aulo |
-| 370 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucano |
-| 376 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tacio |
-| 382 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celsa |
-| 388 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vibia |
-| 394 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Maro |
-| 400 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mirea |
-| 406 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celia Lousada |
-| 412 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Maelle Vaurin |
-| 418 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Geraud Auvrelle |
-| 424 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aveline Auvrelle |
-| 430 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Bastien Auvrelle |
-| 436 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Prisca Eburia |
-| 442 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mara Fornia |
-| 448 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Silvia Vardana |
-| 454 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Neria Tosca |
-| 460 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marcia Bravia |
-| 466 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elvia Norba |
-| 472 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Octavia Quintela |
-| 478 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Brenn Veyr |
-| 484 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Hagen Veyr |
-| 490 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Leandro Quirino |
-| 496 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Crispo Castedo |
-| 502 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Fausto Merro |
-| 508 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aulo Bragano |
-| 514 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucio Aredes |
-| 520 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tulia Severina |
-| 526 | PARTE — PERSONAJES > Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Gaio Marçal |
-| 534 | PARTE — PERSONAJES > 1. Los Arcontes de Solmer |
-| 536 | PARTE — PERSONAJES > 1. Los Arcontes de Solmer > 1.1. Aster Valerio |
-| 733 | PARTE — PERSONAJES > 1. Los Arcontes de Solmer > 1.2. Sarah Ordan |
-| 904 | PARTE — PERSONAJES > 1. Los Arcontes de Solmer > 1.3. Orsen Valmar |
-| 1051 | PARTE — PERSONAJES > 1. Los Arcontes de Solmer > 1.4. Darian Nerio |
-| 1203 | PARTE — PERSONAJES > 2. Casa Imperial de Solmer |
-| 1205 | PARTE — PERSONAJES > 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer |
-| 1258 | PARTE — PERSONAJES > 2. Casa Imperial de Solmer > 2.2. Vermina |
-| 1279 | PARTE — PERSONAJES > 2. Casa Imperial de Solmer > 2.3. Terenio de Solmer |
-| 1302 | PARTE — PERSONAJES > 2. Casa Imperial de Solmer > 2.4. Caelio de Solmer |
-| 1323 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial |
-| 1331 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio |
-| 1494 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.2. Meralda Torven |
-| 1528 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.3. Decar Varen |
-| 1558 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.4. Orren Calvio |
-| 1590 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven |
-| 1640 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.6. Celerio Veltar |
-| 1670 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.7. Livia Marcena |
-| 1700 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.8. Orvian Selcar |
-| 1730 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.9. Doria Valcera |
-| 1759 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.10. Tavio Cerlan |
-| 1789 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.11. Cassia Mornal |
-| 1818 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.12. Nerio Salven |
-| 1850 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.13. Bereno Salvian |
-| 1880 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.14. Mirella Cerdan |
-| 1909 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.15. Vario Lucen |
-| 1945 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.16. Alisia Corven |
-| 1976 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.17. Darcio Neral |
-| 2006 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.18. Elara Montel |
-| 2036 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.19. Savio Rencar |
-| 2071 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.20. Marena Virel |
-| 2103 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.21. Ceralio Padran |
-| 2134 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.22. Favia Lurcen |
-| 2166 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.23. Orelio Basten |
-| 2204 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.24. Talia Serano |
-| 2239 | PARTE — PERSONAJES > 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.25. Composición actual del Pacto de los Trece |
-| 2265 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio |
-| 2267 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio |
-| 2358 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco |
-| 2466 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Desarrollo futuro — planificación de autor, NO ocurrido todavía |
-| 2482 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota |
-| 2574 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
-| 2588 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) |
-| 2686 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
-| 2698 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) |
-| 2799 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
-| 2813 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia |
-| 2865 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio |
-| 2919 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena |
-| 2974 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex |
-| 3025 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro Lurigan |
-| 3071 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco |
-| 3115 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco |
-| 3165 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio |
-| 3207 | PARTE — PERSONAJES > 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo |
-| 3250 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* |
-| 3252 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim |
-| 3286 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.2. Haruen |
-| 3313 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.3. Beltrán |
-| 3333 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.4. Aulo |
-| 3350 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.5. Lucano |
-| 3367 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.6. Tacio |
-| 3382 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.7. Celsa |
-| 3397 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.8. Vibia |
-| 3412 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.9. Maro |
-| 3427 | PARTE — PERSONAJES > 5. Personajes incorporados o definidos en *Valerio* > 5.10. Mirea |
-| 3444 | PARTE — PERSONAJES > Promoción de Adriano — Universidad Imperial de Invocadores |
-| 3446 | PARTE — PERSONAJES > Promoción de Adriano — Universidad Imperial de Invocadores > Criterios generales de la promoción |
-| 3461 | PARTE — PERSONAJES > 1. Celia Lousada |
-| 3468 | PARTE — PERSONAJES > 1. Celia Lousada > Descripción física |
-| 3472 | PARTE — PERSONAJES > 1. Celia Lousada > Motivación |
-| 3476 | PARTE — PERSONAJES > 1. Celia Lousada > Psicología |
-| 3482 | PARTE — PERSONAJES > 1. Celia Lousada > Al entrar en la Universidad |
-| 3494 | PARTE — PERSONAJES > 1. Celia Lousada > Proyección previa de graduación — NO CANÓNICA |
-| 3510 | PARTE — PERSONAJES > 2. Maelle Vaurin |
-| 3522 | PARTE — PERSONAJES > 2. Maelle Vaurin > Descripción física |
-| 3528 | PARTE — PERSONAJES > 2. Maelle Vaurin > Identidad de cobertura |
-| 3540 | PARTE — PERSONAJES > 2. Maelle Vaurin > Motivación |
-| 3554 | PARTE — PERSONAJES > 2. Maelle Vaurin > Psicología |
-| 3564 | PARTE — PERSONAJES > Familia real de Corona Azur |
-| 3566 | PARTE — PERSONAJES > Familia real de Corona Azur > Casa Auvrelle |
-| 3574 | PARTE — PERSONAJES > Familia real de Corona Azur > Geraud Auvrelle |
-| 3599 | PARTE — PERSONAJES > Familia real de Corona Azur > Aveline Auvrelle |
-| 3618 | PARTE — PERSONAJES > Familia real de Corona Azur > Bastien Auvrelle |
-| 3635 | PARTE — PERSONAJES > Familia real de Corona Azur > El matrimonio con el Arconte |
-| 3653 | PARTE — PERSONAJES > Familia real de Corona Azur > Planificación previa — NO CANÓNICA |
-| 3667 | PARTE — PERSONAJES > 3. Prisca Eburia |
-| 3674 | PARTE — PERSONAJES > 3. Prisca Eburia > Descripción física |
-| 3678 | PARTE — PERSONAJES > 3. Prisca Eburia > Motivación |
-| 3682 | PARTE — PERSONAJES > 3. Prisca Eburia > Psicología |
-| 3688 | PARTE — PERSONAJES > 3. Prisca Eburia > Al entrar en la Universidad |
-| 3701 | PARTE — PERSONAJES > 3. Prisca Eburia > Proyección previa de graduación — NO CANÓNICA |
-| 3719 | PARTE — PERSONAJES > 4. Mara Fornia |
-| 3726 | PARTE — PERSONAJES > 4. Mara Fornia > Descripción física |
-| 3730 | PARTE — PERSONAJES > 4. Mara Fornia > Motivación |
-| 3734 | PARTE — PERSONAJES > 4. Mara Fornia > Psicología |
-| 3740 | PARTE — PERSONAJES > 4. Mara Fornia > Al entrar en la Universidad |
-| 3752 | PARTE — PERSONAJES > 4. Mara Fornia > Proyección previa de graduación — NO CANÓNICA |
-| 3770 | PARTE — PERSONAJES > 5. Silvia Vardana |
-| 3777 | PARTE — PERSONAJES > 5. Silvia Vardana > Descripción física |
-| 3781 | PARTE — PERSONAJES > 5. Silvia Vardana > Motivación |
-| 3787 | PARTE — PERSONAJES > 5. Silvia Vardana > Psicología |
-| 3793 | PARTE — PERSONAJES > 5. Silvia Vardana > Al entrar en la Universidad |
-| 3805 | PARTE — PERSONAJES > 5. Silvia Vardana > Proyección previa de graduación — NO CANÓNICA |
-| 3821 | PARTE — PERSONAJES > 5. Silvia Vardana > Planificación previa — NO CANÓNICA |
-| 3828 | PARTE — PERSONAJES > 6. Neria Tosca |
-| 3835 | PARTE — PERSONAJES > 6. Neria Tosca > Descripción física |
-| 3839 | PARTE — PERSONAJES > 6. Neria Tosca > Motivación |
-| 3843 | PARTE — PERSONAJES > 6. Neria Tosca > Psicología |
-| 3849 | PARTE — PERSONAJES > 6. Neria Tosca > Al entrar en la Universidad |
-| 3861 | PARTE — PERSONAJES > 6. Neria Tosca > Proyección previa de graduación — NO CANÓNICA |
-| 3879 | PARTE — PERSONAJES > 7. Marcia Bravia |
-| 3886 | PARTE — PERSONAJES > 7. Marcia Bravia > Descripción física |
-| 3890 | PARTE — PERSONAJES > 7. Marcia Bravia > Motivación |
-| 3894 | PARTE — PERSONAJES > 7. Marcia Bravia > Psicología |
-| 3900 | PARTE — PERSONAJES > 7. Marcia Bravia > Al entrar en la Universidad |
-| 3912 | PARTE — PERSONAJES > 7. Marcia Bravia > Proyección previa de graduación — NO CANÓNICA |
-| 3928 | PARTE — PERSONAJES > 8. Elvia Norba |
-| 3935 | PARTE — PERSONAJES > 8. Elvia Norba > Descripción física |
-| 3939 | PARTE — PERSONAJES > 8. Elvia Norba > Motivación |
-| 3943 | PARTE — PERSONAJES > 8. Elvia Norba > Psicología |
-| 3949 | PARTE — PERSONAJES > 8. Elvia Norba > Al entrar en la Universidad |
-| 3959 | PARTE — PERSONAJES > 8. Elvia Norba > Proyección previa de graduación — NO CANÓNICA |
-| 3975 | PARTE — PERSONAJES > 9. Octavia Quintela |
-| 3982 | PARTE — PERSONAJES > 9. Octavia Quintela > Descripción física |
-| 3986 | PARTE — PERSONAJES > 9. Octavia Quintela > Motivación |
-| 3990 | PARTE — PERSONAJES > 9. Octavia Quintela > Psicología |
-| 3996 | PARTE — PERSONAJES > 9. Octavia Quintela > Al entrar en la Universidad |
-| 4006 | PARTE — PERSONAJES > 9. Octavia Quintela > Proyección previa de graduación — NO CANÓNICA |
-| 4020 | PARTE — PERSONAJES > 9. Octavia Quintela > Planificación previa — NO CANÓNICA |
-| 4025 | PARTE — PERSONAJES > 10. Brenn Veyr |
-| 4044 | PARTE — PERSONAJES > 10. Brenn Veyr > Descripción física |
-| 4050 | PARTE — PERSONAJES > 10. Brenn Veyr > Familia |
-| 4110 | PARTE — PERSONAJES > 10. Brenn Veyr > Motivación |
-| 4130 | PARTE — PERSONAJES > 10. Brenn Veyr > Psicología |
-| 4160 | PARTE — PERSONAJES > 10. Brenn Veyr > Al entrar en la Universidad |
-| 4179 | PARTE — PERSONAJES > 10. Brenn Veyr > Proyección previa de graduación — NO CANÓNICA |
-| 4200 | PARTE — PERSONAJES > 10. Brenn Veyr > Planificación previa — NO CANÓNICA |
-| 4220 | PARTE — PERSONAJES > Familia Veyr |
-| 4222 | PARTE — PERSONAJES > Familia Veyr > Hagen Veyr |
-| 4334 | PARTE — PERSONAJES > Familia Veyr > Brenn |
-| 4402 | PARTE — PERSONAJES > Familia Veyr > Los doce hijos |
-| 4456 | PARTE — PERSONAJES > Familia Veyr > Gerwin y Falk |
-| 4470 | PARTE — PERSONAJES > Familia Veyr > Caelio de Solmer — conocimiento de autor |
-| 4506 | PARTE — PERSONAJES > 11. Leandro Quirino |
-| 4513 | PARTE — PERSONAJES > 11. Leandro Quirino > Descripción física |
-| 4517 | PARTE — PERSONAJES > 11. Leandro Quirino > Motivación |
-| 4521 | PARTE — PERSONAJES > 11. Leandro Quirino > Psicología |
-| 4527 | PARTE — PERSONAJES > 11. Leandro Quirino > Al entrar en la Universidad |
-| 4537 | PARTE — PERSONAJES > 11. Leandro Quirino > Proyección previa de graduación — NO CANÓNICA |
-| 4555 | PARTE — PERSONAJES > 12. Crispo Castedo |
-| 4562 | PARTE — PERSONAJES > 12. Crispo Castedo > Descripción física |
-| 4566 | PARTE — PERSONAJES > 12. Crispo Castedo > Motivación |
-| 4570 | PARTE — PERSONAJES > 12. Crispo Castedo > Psicología |
-| 4576 | PARTE — PERSONAJES > 12. Crispo Castedo > Al entrar en la Universidad |
-| 4587 | PARTE — PERSONAJES > 12. Crispo Castedo > Proyección previa de graduación — NO CANÓNICA |
-| 4607 | PARTE — PERSONAJES > 13. Fausto Merro |
-| 4614 | PARTE — PERSONAJES > 13. Fausto Merro > Descripción física |
-| 4618 | PARTE — PERSONAJES > 13. Fausto Merro > Motivación |
-| 4622 | PARTE — PERSONAJES > 13. Fausto Merro > Psicología |
-| 4628 | PARTE — PERSONAJES > 13. Fausto Merro > Al entrar en la Universidad |
-| 4639 | PARTE — PERSONAJES > 13. Fausto Merro > Proyección previa de graduación — NO CANÓNICA |
-| 4655 | PARTE — PERSONAJES > 14. Aulo Bragano |
-| 4662 | PARTE — PERSONAJES > 14. Aulo Bragano > Descripción física |
-| 4666 | PARTE — PERSONAJES > 14. Aulo Bragano > Motivación |
-| 4670 | PARTE — PERSONAJES > 14. Aulo Bragano > Psicología |
-| 4676 | PARTE — PERSONAJES > 14. Aulo Bragano > Al entrar en la Universidad |
-| 4686 | PARTE — PERSONAJES > 14. Aulo Bragano > Proyección previa de graduación — NO CANÓNICA |
-| 4704 | PARTE — PERSONAJES > 15. Lucio Aredes |
-| 4711 | PARTE — PERSONAJES > 15. Lucio Aredes > Descripción física |
-| 4715 | PARTE — PERSONAJES > 15. Lucio Aredes > Motivación |
-| 4719 | PARTE — PERSONAJES > 15. Lucio Aredes > Psicología |
-| 4725 | PARTE — PERSONAJES > 15. Lucio Aredes > Al entrar en la Universidad |
-| 4737 | PARTE — PERSONAJES > 15. Lucio Aredes > Proyección previa de graduación — NO CANÓNICA |
-| 4751 | PARTE — PERSONAJES > 15. Lucio Aredes > Planificación previa — NO CANÓNICA |
-| 4759 | PARTE — PERSONAJES > Resumen canónico de la promoción al cierre de la novela III |
-| 4781 | PARTE — PERSONAJES > Resumen canónico de la promoción al cierre de la novela III > Distribución al comenzar |
-| 4788 | PARTE — PERSONAJES > Resumen canónico de la promoción al cierre de la novela III > Relaciones narrativas canónicas con Adriano |
-| 4798 | PARTE — PERSONAJES > Tulia Severina |
-| 4806 | PARTE — PERSONAJES > Tulia Severina > Aspecto |
-| 4812 | PARTE — PERSONAJES > Tulia Severina > Función en la Universidad |
-| 4824 | PARTE — PERSONAJES > Tulia Severina > Personalidad |
-| 4840 | PARTE — PERSONAJES > Gaio Marçal |
-| 4849 | PARTE — PERSONAJES > Gaio Marçal > Aspecto |
-| 4855 | PARTE — PERSONAJES > Gaio Marçal > Personalidad |
-| 4873 | PARTE — PERSONAJES > Gaio Marçal > Faresban — NV57 |
-| 4895 | PARTE — PERSONAJES > Gaio Marçal > Pelaskos — NV34 |
-| 4920 | PARTE — PERSONAJES > Gaio Marçal > Tulia y Gaio durante las evaluaciones |
-| 4938 | PARTE — PROFESORES DE LA UNIVERSIDAD |
-| 4940 | PARTE — PROFESORES DE LA UNIVERSIDAD > PROFESORES DE LA UNIVERSIDAD IMPERIAL DE INVOCADORES |
-| 4948 | PARTE — PROFESORES DE LA UNIVERSIDAD > PROFESORES DE LA UNIVERSIDAD IMPERIAL DE INVOCADORES > Organización docente |
-| 4977 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia |
-| 4986 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > La cátedra |
-| 5004 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Personalidad |
-| 5014 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Su entendimiento del Vínculo |
-| 5034 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Aproximación a los problemas |
-| 5051 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Forma de enseñar |
-| 5063 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Preparación principal |
-| 5070 | PARTE — PROFESORES DE LA UNIVERSIDAD > 1. Eulalia Cordeia > Intervención canónica en *Universidad* |
-| 5090 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira |
-| 5099 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > La cátedra |
-| 5117 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Personalidad |
-| 5127 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Su entendimiento del tema |
-| 5155 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Aproximación a los problemas |
-| 5175 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Forma de enseñar |
-| 5191 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Preparación principal |
-| 5198 | PARTE — PROFESORES DE LA UNIVERSIDAD > 2. Galo Almeira > Intervención canónica en *Universidad* |
-| 5215 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure |
-| 5224 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > La cátedra |
-| 5241 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Personalidad |
-| 5255 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Su entendimiento del tema |
-| 5275 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Aproximación a los problemas |
-| 5293 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Forma de enseñar |
-| 5315 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Preparación principal |
-| 5322 | PARTE — PROFESORES DE LA UNIVERSIDAD > 3. Silvano Moure > Intervención canónica en *Universidad* |
-| 5337 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia |
-| 5346 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > La cátedra |
-| 5371 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Personalidad |
-| 5379 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Su entendimiento del tema |
-| 5405 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Aproximación a los problemas |
-| 5421 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Forma de enseñar |
-| 5439 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Preparación principal |
-| 5446 | PARTE — PROFESORES DE LA UNIVERSIDAD > 4. Teodora Gouveia > Estado canónico en *Universidad* |
-| 5457 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa |
-| 5466 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > La cátedra |
-| 5485 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Personalidad |
-| 5497 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Su entendimiento del tema |
-| 5519 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Aproximación a los problemas |
-| 5531 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Forma de enseñar |
-| 5541 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Preparación principal |
-| 5548 | PARTE — PROFESORES DE LA UNIVERSIDAD > 5. Domitia Serpa > Estado canónico en *Universidad* |
-| 5561 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga |
-| 5570 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > La cátedra |
-| 5595 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Personalidad |
-| 5611 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Su entendimiento del tema |
-| 5635 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Aproximación a los problemas |
-| 5661 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Forma de enseñar |
-| 5673 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Preparación principal |
-| 5680 | PARTE — PROFESORES DE LA UNIVERSIDAD > 6. Feliciano Borga > Intervención canónica en *Universidad* |
-| 5691 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral |
-| 5700 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > La cátedra |
-| 5725 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Personalidad |
-| 5739 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Su entendimiento del tema |
-| 5759 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Aproximación a los problemas |
-| 5777 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Forma de enseñar |
-| 5793 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Preparación principal |
-| 5800 | PARTE — PROFESORES DE LA UNIVERSIDAD > 7. Emilia Cabral > Intervención canónica en *Universidad* |
-| 5813 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao |
-| 5822 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > La cátedra |
-| 5849 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Personalidad |
-| 5859 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Su entendimiento del tema |
-| 5893 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Aproximación a los problemas |
-| 5907 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Forma de enseñar |
-| 5924 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Preparación principal |
-| 5933 | PARTE — PROFESORES DE LA UNIVERSIDAD > 8. Tiberio Falcao > Estado canónico en *Universidad* |
-| 5944 | PARTE — PROFESORES DE LA UNIVERSIDAD > Diferencias doctrinales entre los ocho |
-| 5990 | PARTE — PROGRESIÓN DE ADRIANO |
-| 5992 | PARTE — PROGRESIÓN DE ADRIANO > PROGRESIÓN DE ADRIANO POR NOVELA |
-| 5994 | PARTE — PROGRESIÓN DE ADRIANO > PROGRESIÓN DE ADRIANO POR NOVELA > Autoridad canónica de esta revisión |
-| 6008 | PARTE — PROGRESIÓN DE ADRIANO > 1. CRONOLOGÍA CANÓNICA DE ADRIANO |
-| 6024 | PARTE — PROGRESIÓN DE ADRIANO > 2. NOVELA I — DESPERTAR |
-| 6026 | PARTE — PROGRESIÓN DE ADRIANO > 2. NOVELA I — DESPERTAR > Estado al comenzar |
-| 6034 | PARTE — PROGRESIÓN DE ADRIANO > 2. NOVELA I — DESPERTAR > Progresión canónica |
-| 6044 | PARTE — PROGRESIÓN DE ADRIANO > 2. NOVELA I — DESPERTAR > Estado al cierre |
-| 6061 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO |
-| 6063 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Estado al comenzar |
-| 6073 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Progresión de edad |
-| 6077 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Incorporación de los otros tres Vínculos |
-| 6106 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Risco durante Valerio |
-| 6118 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Simultaneidad y Estamento |
-| 6142 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Materialización parcial |
-| 6148 | PARTE — PROGRESIÓN DE ADRIANO > 3. NOVELA II — VALERIO > Estado al cierre de Valerio |
-| 6165 | PARTE — PROGRESIÓN DE ADRIANO > 4. NOVELA III — UNIVERSIDAD |
-| 6167 | PARTE — PROGRESIÓN DE ADRIANO > 4. NOVELA III — UNIVERSIDAD > Estado al comenzar |
-| 6180 | PARTE — PROGRESIÓN DE ADRIANO > 4. NOVELA III — UNIVERSIDAD > Estamento al ingreso |
-| 6188 | PARTE — PROGRESIÓN DE ADRIANO > 4. NOVELA III — UNIVERSIDAD > Lo que la Universidad cambia en Adriano |
-| 6207 | PARTE — PROGRESIÓN DE ADRIANO > 4. NOVELA III — UNIVERSIDAD > Transfiguraciones canónicas |
-| 6236 | PARTE — PROGRESIÓN DE ADRIANO > 5. LA PREPARACIÓN UNIVERSITARIA FINAL |
-| 6238 | PARTE — PROGRESIÓN DE ADRIANO > 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Risco — Dracendra |
-| 6251 | PARTE — PROGRESIÓN DE ADRIANO > 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Mota — Nimbaro |
-| 6275 | PARTE — PROGRESIÓN DE ADRIANO > 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Brumarina |
-| 6295 | PARTE — PROGRESIÓN DE ADRIANO > 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Náyara |
-| 6308 | PARTE — PROGRESIÓN DE ADRIANO > 6. ARQUITECTURA TÁCTICA AL CIERRE DE UNIVERSIDAD |
-| 6323 | PARTE — PROGRESIÓN DE ADRIANO > 7. ESTAMENTO AL CIERRE DE UNIVERSIDAD |
-| 6333 | PARTE — PROGRESIÓN DE ADRIANO > 7. ESTAMENTO AL CIERRE DE UNIVERSIDAD > Estado final canónico de la novela III |
-| 6353 | PARTE — PROGRESIÓN DE ADRIANO > 8. CORRECCIONES RESPECTO DE LA VERSIÓN ANTERIOR |
-| 6367 | PARTE — PROGRESIÓN DE ADRIANO > 9. PLANIFICACIÓN POSTERIOR A LA NOVELA III |
-| 6374 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES |
-| 6376 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Estado al comenzar |
-| 6385 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Transfiguración central |
-| 6399 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Objetivo de cierre |
-| 6410 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV |
-| 6427 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Risco — Valdrakar NV53 |
-| 6431 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Mota — Nimbaro NV51 |
-| 6435 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Brumarina NV37 |
-| 6439 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Náyara NV42 |
-| 6447 | PARTE — PROGRESIÓN DE ADRIANO > 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Identidad del equipo al final de la novela IV |
-| 6460 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V |
-| 6462 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V > Estado al comenzar |
-| 6471 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V > Transfiguraciones |
-| 6485 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V > Objetivo de cierre |
-| 6494 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V > Preparación de cierre |
-| 6569 | PARTE — PROGRESIÓN DE ADRIANO > 5. NOVELA V > Identidad del equipo al final de la novela V |
-| 6580 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI |
-| 6582 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI > Estado al comenzar |
-| 6591 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI > Transfiguración central |
-| 6603 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI > Objetivo de cierre |
-| 6612 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI > Preparación de cierre |
-| 6669 | PARTE — PROGRESIÓN DE ADRIANO > 6. NOVELA VI > Identidad del equipo al final de la novela VI |
-| 6683 | PARTE — PROGRESIÓN DE ADRIANO > 7. NOVELA VII |
-| 6685 | PARTE — PROGRESIÓN DE ADRIANO > 7. NOVELA VII > Estado al comenzar |
-| 6694 | PARTE — PROGRESIÓN DE ADRIANO > 7. NOVELA VII > Objetivo de cierre |
-| 6707 | PARTE — PROGRESIÓN DE ADRIANO > 7. NOVELA VII > Preparación de cierre |
-| 6731 | PARTE — PROGRESIÓN DE ADRIANO > 7. NOVELA VII > Función narrativa |
-| 6745 | PARTE — PROGRESIÓN DE ADRIANO > 8. NOVELA VIII — ADRIANO ARCONTE |
-| 6747 | PARTE — PROGRESIÓN DE ADRIANO > 8. NOVELA VIII — ADRIANO ARCONTE > Estado al comenzar |
-| 6756 | PARTE — PROGRESIÓN DE ADRIANO > 8. NOVELA VIII — ADRIANO ARCONTE > Objetivo de cierre |
-| 6769 | PARTE — PROGRESIÓN DE ADRIANO > 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva |
-| 6900 | PARTE — PROGRESIÓN DE ADRIANO > 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate |
-| 6922 | PARTE — PROGRESIÓN DE ADRIANO > 9. MANIFESTACIÓN DE ARCONTE PENDIENTE |
-| 6943 | PARTE — PROGRESIÓN DE ADRIANO > 10. RESUMEN DE HITOS |
-| 6957 | PARTE — PROGRESIÓN DE ADRIANO > 11. FUENTES DE LA PLANIFICACIÓN ANTERIOR — NO CANÓNICAS EN ESTA REVISIÓN |
-| 6968 | PARTE — PROGRESIÓN DE ADRIANO > 11. FUENTES DE LA PLANIFICACIÓN ANTERIOR — NO CANÓNICAS EN ESTA REVISIÓN > Fuentes canónicas usadas para las novelas I–III |
+| 2 | CANON DE LAS NOVELAS I–III |
+| 9 | PARTE — PERSONAJES |
+| 11 | Personajes de Solmer |
+| 13 | Personajes de Solmer > Autoridad canónica de esta revisión |
+| 23 | Personajes de Solmer > Autoridad canónica de esta revisión > Convención de conocimiento |
+| 39 | Personajes de Solmer > Autoridad canónica de esta revisión > Convención de edades |
+| 57 | Personajes de Solmer > Autoridad canónica de esta revisión > Convención de preparación y Estamento |
+| 69 | Personajes de Solmer > Secreto de filiación de Aster, Marco y Adriano — DEC-002 |
+| 83 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* |
+| 87 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aster Valerio |
+| 93 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Sarah Ordan |
+| 99 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orsen Valmar |
+| 105 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Darian Nerio |
+| 111 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucerio IV de Solmer |
+| 117 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vermina |
+| 123 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Terenio de Solmer |
+| 129 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Caelio de Solmer |
+| 135 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Cassaro Valerio |
+| 141 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Meralda Torven |
+| 147 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Decar Varen |
+| 153 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orren Calvio |
+| 159 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elian Arven |
+| 165 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celerio Veltar |
+| 171 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Livia Marcena |
+| 177 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orvian Selcar |
+| 183 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Doria Valcera |
+| 189 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tavio Cerlan |
+| 195 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Cassia Mornal |
+| 201 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Nerio Salven |
+| 207 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Bereno Salvian |
+| 213 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mirella Cerdan |
+| 219 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vario Lucen |
+| 225 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Alisia Corven |
+| 231 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Darcio Neral |
+| 237 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elara Montel |
+| 243 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Savio Rencar |
+| 249 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marena Virel |
+| 255 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Ceralio Padran |
+| 261 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Favia Lurcen |
+| 267 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Orelio Basten |
+| 273 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Talia Serano |
+| 279 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Adriano Valerio |
+| 285 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Olivia |
+| 293 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marco Valerio |
+| 301 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Helena |
+| 309 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Alex |
+| 317 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Ciro |
+| 323 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Valco |
+| 329 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Flavia Valco |
+| 335 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Sabina Cerio |
+| 341 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Gabino Varo |
+| 347 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Naim |
+| 353 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Haruen |
+| 359 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Beltrán |
+| 365 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aulo |
+| 371 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucano |
+| 377 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tacio |
+| 383 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celsa |
+| 389 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Vibia |
+| 395 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Maro |
+| 401 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mirea |
+| 407 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Celia Lousada |
+| 413 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Maelle Vaurin |
+| 419 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Geraud Auvrelle |
+| 425 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aveline Auvrelle |
+| 431 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Bastien Auvrelle |
+| 437 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Prisca Eburia |
+| 443 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Mara Fornia |
+| 449 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Silvia Vardana |
+| 455 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Neria Tosca |
+| 461 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Marcia Bravia |
+| 467 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Elvia Norba |
+| 473 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Octavia Quintela |
+| 479 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Brenn Veyr |
+| 485 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Hagen Veyr |
+| 491 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Leandro Quirino |
+| 497 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Crispo Castedo |
+| 503 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Fausto Merro |
+| 509 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Aulo Bragano |
+| 515 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Lucio Aredes |
+| 521 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Tulia Severina |
+| 527 | Personajes de Solmer > Índice canónico de conocimiento al cierre de *Universidad* > Gaio Marçal |
+| 535 | 1. Los Arcontes de Solmer |
+| 537 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio |
+| 551 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Aspecto |
+| 559 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Personalidad |
+| 567 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Preparación principal |
+| 571 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Preparación principal > Fényrax — Fuego/Aire — NV 100 |
+| 599 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Preparación principal > Mairahda — Planta — NV 100 |
+| 627 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Preparación principal > Riftari — Fuego — NV 100 |
+| 655 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Preparación principal > Tamegona — Tierra — NV 100 |
+| 683 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Lógica de combate |
+| 687 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Talassar de entrenamiento — NV aproximado 19 |
+| 707 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico — hito histórico |
+| 709 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico — hito histórico > Conocimiento confirmado |
+| 723 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico — hito histórico > Límites y cosas que no sabe |
+| 729 | 1. Los Arcontes de Solmer > 1.1. Aster Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico — hito histórico > Personas conocidas relevantes |
+| 737 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan |
+| 749 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Aspecto |
+| 757 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Personalidad |
+| 765 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Preparación principal |
+| 769 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Preparación principal > Umbrafen — Oscuro/Mítico — NV 100 |
+| 797 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Preparación principal > Parohim — Luz — NV 100 |
+| 825 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Preparación principal > Naugrima — Agua/Oscuro — NV 100 |
+| 853 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Preparación principal > Keraulí — Rayo/Mítico — NV 100 |
+| 883 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Lógica de combate |
+| 890 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 892 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 897 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 903 | 1. Los Arcontes de Solmer > 1.2. Sarah Ordan > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 911 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar |
+| 924 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Aspecto |
+| 930 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Personalidad |
+| 936 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Preparación principal |
+| 940 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Preparación principal > Maraviel — Agua/Mítico — NV 100 |
+| 968 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Preparación principal > Tempestral — Aire/Rayo — NV 100 |
+| 995 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Preparación principal > Vajrakar — Rayo — NV 100 |
+| 1023 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Preparación principal > Naugrima — Agua/Oscuro — NV 100 |
+| 1051 | 1. Los Arcontes de Solmer > 1.3. Orsen Valmar > Lógica de combate y Fényrax |
+| 1061 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio |
+| 1074 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Aspecto |
+| 1082 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Personalidad |
+| 1090 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Preparación principal de combate |
+| 1094 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Preparación principal de combate > Anemarca — Aire — NV 100 |
+| 1123 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Preparación principal de combate > Numegor — Tierra/Mítico — NV 100 |
+| 1151 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Preparación principal de combate > Tamegona — Tierra — NV 100 |
+| 1179 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Preparación principal de combate > Undaria — Agua — NV 100 |
+| 1206 | 1. Los Arcontes de Solmer > 1.4. Darian Nerio > Lógica de combate y trabajo de la caldera |
+| 1216 | 2. Casa Imperial de Solmer |
+| 1218 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer |
+| 1230 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Aspecto |
+| 1238 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Personalidad |
+| 1251 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 1253 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 1260 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 1267 | 2. Casa Imperial de Solmer > 2.1. Lucerio IV de Solmer > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 1274 | 2. Casa Imperial de Solmer > 2.2. Vermina |
+| 1285 | 2. Casa Imperial de Solmer > 2.2. Vermina > Aspecto |
+| 1291 | 2. Casa Imperial de Solmer > 2.2. Vermina > Personalidad |
+| 1299 | 2. Casa Imperial de Solmer > 2.3. Terenio de Solmer |
+| 1310 | 2. Casa Imperial de Solmer > 2.3. Terenio de Solmer > Aspecto |
+| 1316 | 2. Casa Imperial de Solmer > 2.3. Terenio de Solmer > Personalidad |
+| 1326 | 2. Casa Imperial de Solmer > 2.4. Caelio de Solmer |
+| 1337 | 2. Casa Imperial de Solmer > 2.4. Caelio de Solmer > Aspecto |
+| 1341 | 2. Casa Imperial de Solmer > 2.4. Caelio de Solmer > Personalidad |
+| 1351 | 3. Los Veinticuatro Magísteres del Consejo Imperial |
+| 1359 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio |
+| 1377 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Aspecto |
+| 1385 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Personalidad y familia |
+| 1393 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real |
+| 1397 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real > Holómicor — Oscuro/Planta — NV 100 |
+| 1425 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real > Holómicor — Oscuro/Planta — NV 100 > La madre de los Valerio — conocimiento de autor |
+| 1429 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real > Calignis — Oscuro/Fuego — NV 100 |
+| 1457 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real > Amra — Oscuro — NV 100 |
+| 1485 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Preparación real > Lernyra — Mítico — NV 100 |
+| 1513 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.1. Cassaro Valerio > Lógica de combate y secreto de rango |
+| 1525 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.2. Meralda Torven |
+| 1538 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.2. Meralda Torven > Aspecto |
+| 1546 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.2. Meralda Torven > Persona y poder |
+| 1562 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.3. Decar Varen |
+| 1575 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.3. Decar Varen > Aspecto |
+| 1581 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.3. Decar Varen > Persona y poder |
+| 1595 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.4. Orren Calvio |
+| 1608 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.4. Orren Calvio > Aspecto |
+| 1614 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.4. Orren Calvio > Persona y poder |
+| 1630 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven |
+| 1643 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Aspecto |
+| 1649 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Historia en las Postas |
+| 1661 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 1663 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 1669 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 1675 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.5. Elian Arven > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 1683 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.6. Celerio Veltar |
+| 1696 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.6. Celerio Veltar > Aspecto |
+| 1702 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.6. Celerio Veltar > Persona y poder |
+| 1716 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.7. Livia Marcena |
+| 1729 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.7. Livia Marcena > Aspecto |
+| 1735 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.7. Livia Marcena > Persona y poder |
+| 1749 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.8. Orvian Selcar |
+| 1762 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.8. Orvian Selcar > Aspecto |
+| 1768 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.8. Orvian Selcar > Persona y poder |
+| 1782 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.9. Doria Valcera |
+| 1794 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.9. Doria Valcera > Aspecto |
+| 1800 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.9. Doria Valcera > Persona y poder |
+| 1814 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.10. Tavio Cerlan |
+| 1827 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.10. Tavio Cerlan > Aspecto |
+| 1833 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.10. Tavio Cerlan > Persona y poder |
+| 1847 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.11. Cassia Mornal |
+| 1859 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.11. Cassia Mornal > Aspecto |
+| 1865 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.11. Cassia Mornal > Persona y poder |
+| 1879 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.12. Nerio Salven |
+| 1892 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.12. Nerio Salven > Aspecto |
+| 1898 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.12. Nerio Salven > Persona y poder |
+| 1914 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.13. Bereno Salvian |
+| 1927 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.13. Bereno Salvian > Aspecto |
+| 1933 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.13. Bereno Salvian > Persona y poder |
+| 1947 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.14. Mirella Cerdan |
+| 1959 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.14. Mirella Cerdan > Aspecto |
+| 1965 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.14. Mirella Cerdan > Persona y poder |
+| 1979 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.15. Vario Lucen |
+| 1992 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.15. Vario Lucen > Aspecto |
+| 1998 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.15. Vario Lucen > Persona y secreto |
+| 2018 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.16. Alisia Corven |
+| 2030 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.16. Alisia Corven > Aspecto |
+| 2036 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.16. Alisia Corven > Persona y poder |
+| 2052 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.17. Darcio Neral |
+| 2065 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.17. Darcio Neral > Aspecto |
+| 2071 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.17. Darcio Neral > Persona y poder |
+| 2085 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.18. Elara Montel |
+| 2098 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.18. Elara Montel > Aspecto |
+| 2104 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.18. Elara Montel > Persona y poder |
+| 2118 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.19. Savio Rencar |
+| 2130 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.19. Savio Rencar > Aspecto |
+| 2136 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.19. Savio Rencar > Persona y prestigio |
+| 2156 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.20. Marena Virel |
+| 2169 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.20. Marena Virel > Aspecto |
+| 2175 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.20. Marena Virel > Persona y poder |
+| 2191 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.21. Ceralio Padran |
+| 2203 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.21. Ceralio Padran > Aspecto |
+| 2209 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.21. Ceralio Padran > Persona y poder |
+| 2225 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.22. Favia Lurcen |
+| 2238 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.22. Favia Lurcen > Aspecto |
+| 2244 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.22. Favia Lurcen > Persona y poder |
+| 2260 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.23. Orelio Basten |
+| 2273 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.23. Orelio Basten > Aspecto |
+| 2279 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.23. Orelio Basten > Persona, negocios e información |
+| 2301 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.24. Talia Serano |
+| 2313 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.24. Talia Serano > Aspecto |
+| 2319 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.24. Talia Serano > Persona y privilegio |
+| 2339 | 3. Los Veinticuatro Magísteres del Consejo Imperial > 3.25. Composición actual del Pacto de los Trece |
+| 2365 | 4. Villa Ámbrela y entorno familiar de los Valerio |
+| 2367 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio |
+| 2382 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Aspecto |
+| 2388 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Personalidad |
+| 2397 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 2399 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 2416 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Inferencias e información incompleta |
+| 2421 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 2429 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 2436 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Actualización canónica durante y al cierre de *Universidad* |
+| 2438 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Actualización canónica durante y al cierre de *Universidad* > Conocimiento confirmado nuevo |
+| 2454 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1. Adriano Valerio > Actualización canónica durante y al cierre de *Universidad* > Información que sigue oculta o incompleta |
+| 2461 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco |
+| 2473 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Aspecto |
+| 2485 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Personalidad |
+| 2499 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Relación con Adriano |
+| 2513 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Relación con Helena, Alex y la familia |
+| 2525 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Comunicación y percepción |
+| 2535 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Combate y desarrollo |
+| 2547 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Estado de experiencia al cierre de *Valerio* — hito histórico |
+| 2549 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Estado de experiencia al cierre de *Valerio* — hito histórico > Experiencia confirmada |
+| 2562 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Estado de experiencia al cierre de *Valerio* — hito histórico > Límites |
+| 2569 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.A. Risco > Desarrollo futuro — planificación de autor, NO ocurrido todavía |
+| 2585 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota |
+| 2597 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Aspecto |
+| 2607 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Personalidad |
+| 2621 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Relación con Adriano |
+| 2635 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Comunicación y percepción |
+| 2643 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Combate y desarrollo |
+| 2655 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Estado de experiencia al cierre de *Valerio* — hito histórico |
+| 2657 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Estado de experiencia al cierre de *Valerio* — hito histórico > Experiencia confirmada |
+| 2670 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Estado de experiencia al cierre de *Valerio* — hito histórico > Límites |
+| 2677 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.B. Mota > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
+| 2691 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) |
+| 2704 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Etapa Eosmis — aspecto histórico |
+| 2714 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Personalidad |
+| 2728 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Relación con Adriano |
+| 2738 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Comunicación y percepción |
+| 2748 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Combate y desarrollo |
+| 2758 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Estado de experiencia al cierre de *Valerio* — hito histórico |
+| 2760 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Estado de experiencia al cierre de *Valerio* — hito histórico > Experiencia confirmada |
+| 2772 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Estado de experiencia al cierre de *Valerio* — hito histórico > Límites |
+| 2780 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Actualización de experiencia durante *Universidad* |
+| 2789 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.C. Brumarina (antes Eosmis) > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
+| 2801 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) |
+| 2814 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Etapa Gútula — aspecto histórico |
+| 2824 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Personalidad |
+| 2838 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Relación con Adriano |
+| 2850 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Comunicación y percepción |
+| 2860 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Combate y desarrollo |
+| 2870 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Estado de experiencia al cierre de *Valerio* — hito histórico |
+| 2872 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Estado de experiencia al cierre de *Valerio* — hito histórico > Experiencia confirmada |
+| 2884 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Estado de experiencia al cierre de *Valerio* — hito histórico > Límites |
+| 2893 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Actualización de experiencia durante *Universidad* |
+| 2902 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.1.D. Náyara (antes Gútula) > Desarrollo posterior a *Universidad* — planificación, NO ocurrido todavía |
+| 2916 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia |
+| 2929 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Aspecto |
+| 2935 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Personalidad |
+| 2944 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 2946 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 2957 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 2964 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.2. Olivia > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 2971 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio |
+| 2985 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Aspecto |
+| 2991 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Personalidad |
+| 3000 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3002 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3014 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 3021 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.3. Marco Valerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 3028 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena |
+| 3041 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Aspecto |
+| 3047 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Personalidad |
+| 3062 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3064 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3072 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites, secretos mantenidos y cosas que no sabe |
+| 3079 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.4. Helena > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 3086 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex |
+| 3099 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Aspecto |
+| 3105 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Personalidad |
+| 3114 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3116 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3125 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 3133 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.5. Alex > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 3140 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro |
+| 3153 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Aspecto |
+| 3159 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Personalidad |
+| 3168 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Estado de conocimiento al morir en *Valerio* |
+| 3170 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Estado de conocimiento al morir en *Valerio* > Conocimiento confirmado |
+| 3177 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Estado de conocimiento al morir en *Valerio* > Límites al morir |
+| 3183 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.6. Ciro > Estado de conocimiento al morir en *Valerio* > Personas conocidas relevantes |
+| 3190 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco |
+| 3203 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Aspecto |
+| 3209 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Personalidad |
+| 3218 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Estado de conocimiento al morir en *Valerio* |
+| 3220 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Estado de conocimiento al morir en *Valerio* > Conocimiento confirmado |
+| 3227 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Estado de conocimiento al morir en *Valerio* > Límites al morir |
+| 3232 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.7. Valco > Estado de conocimiento al morir en *Valerio* > Personas conocidas relevantes |
+| 3238 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco |
+| 3250 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Aspecto |
+| 3254 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Personalidad |
+| 3263 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3265 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3276 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 3284 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.8. Flavia Valco > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 3291 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio |
+| 3301 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Aspecto |
+| 3307 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Personalidad |
+| 3315 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3317 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3325 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites y cosas que no sabe |
+| 3332 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.9. Sabina Cerio > Estado de conocimiento al cierre de *Valerio* — hito histórico > Personas conocidas relevantes |
+| 3336 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo |
+| 3349 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Aspecto |
+| 3353 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Personalidad |
+| 3359 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Estado de conocimiento al cierre de *Despertar* — hito histórico |
+| 3361 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Estado de conocimiento al cierre de *Despertar* — hito histórico > Conocimiento confirmado |
+| 3369 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Estado de conocimiento al cierre de *Despertar* — hito histórico > Límites y cosas que no sabe |
+| 3376 | 4. Villa Ámbrela y entorno familiar de los Valerio > 4.10. Gabino Varo > Estado de conocimiento al cierre de *Despertar* — hito histórico > Personas conocidas relevantes |
+| 3382 | 5. Personajes incorporados o definidos en *Valerio* |
+| 3384 | 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim |
+| 3396 | 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim > Personalidad y función |
+| 3400 | 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3402 | 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim > Estado de conocimiento al cierre de *Valerio* — hito histórico > Conocimiento confirmado |
+| 3410 | 5. Personajes incorporados o definidos en *Valerio* > 5.1. Naim > Estado de conocimiento al cierre de *Valerio* — hito histórico > Información falsa o incompleta |
+| 3421 | 5. Personajes incorporados o definidos en *Valerio* > 5.2. Haruen |
+| 3432 | 5. Personajes incorporados o definidos en *Valerio* > 5.2. Haruen > Aspecto y personalidad |
+| 3436 | 5. Personajes incorporados o definidos en *Valerio* > 5.2. Haruen > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3444 | 5. Personajes incorporados o definidos en *Valerio* > 5.2. Haruen > Estado de conocimiento al cierre de *Valerio* — hito histórico > Límites |
+| 3451 | 5. Personajes incorporados o definidos en *Valerio* > 5.3. Beltrán |
+| 3461 | 5. Personajes incorporados o definidos en *Valerio* > 5.3. Beltrán > Personalidad y continuidad |
+| 3465 | 5. Personajes incorporados o definidos en *Valerio* > 5.3. Beltrán > Estado de conocimiento al cierre de *Valerio* — hito histórico |
+| 3474 | 5. Personajes incorporados o definidos en *Valerio* > 5.4. Aulo |
+| 3484 | 5. Personajes incorporados o definidos en *Valerio* > 5.4. Aulo > Continuidad |
+| 3488 | 5. Personajes incorporados o definidos en *Valerio* > 5.4. Aulo > Continuidad > Límites |
+| 3494 | 5. Personajes incorporados o definidos en *Valerio* > 5.5. Lucano |
+| 3504 | 5. Personajes incorporados o definidos en *Valerio* > 5.5. Lucano > Continuidad |
+| 3508 | 5. Personajes incorporados o definidos en *Valerio* > 5.5. Lucano > Continuidad > Límites |
+| 3514 | 5. Personajes incorporados o definidos en *Valerio* > 5.6. Tacio |
+| 3524 | 5. Personajes incorporados o definidos en *Valerio* > 5.6. Tacio > Continuidad y conocimiento |
+| 3532 | 5. Personajes incorporados o definidos en *Valerio* > 5.7. Celsa |
+| 3542 | 5. Personajes incorporados o definidos en *Valerio* > 5.7. Celsa > Continuidad y conocimiento |
+| 3550 | 5. Personajes incorporados o definidos en *Valerio* > 5.8. Vibia |
+| 3560 | 5. Personajes incorporados o definidos en *Valerio* > 5.8. Vibia > Continuidad y conocimiento |
+| 3568 | 5. Personajes incorporados o definidos en *Valerio* > 5.9. Maro |
+| 3578 | 5. Personajes incorporados o definidos en *Valerio* > 5.9. Maro > Continuidad y conocimiento |
+| 3586 | 5. Personajes incorporados o definidos en *Valerio* > 5.10. Mirea |
+| 3599 | 5. Personajes incorporados o definidos en *Valerio* > 5.10. Mirea > Conocimiento de autor y continuidad histórica |
+| 3609 | Promoción de Adriano — Universidad Imperial de Invocadores |
+| 3613 | Promoción de Adriano — Universidad Imperial de Invocadores > Criterios generales de la promoción |
+| 3628 | 1. Celia Lousada |
+| 3638 | 1. Celia Lousada > Descripción física |
+| 3642 | 1. Celia Lousada > Motivación |
+| 3646 | 1. Celia Lousada > Psicología |
+| 3652 | 1. Celia Lousada > Al entrar en la Universidad |
+| 3657 | 1. Celia Lousada > Al entrar en la Universidad > Preparación principal |
+| 3664 | 1. Celia Lousada > Proyección previa de graduación — NO CANÓNICA |
+| 3669 | 1. Celia Lousada > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 3680 | 2. Maelle Vaurin |
+| 3695 | 2. Maelle Vaurin > Descripción física |
+| 3701 | 2. Maelle Vaurin > Identidad de cobertura |
+| 3713 | 2. Maelle Vaurin > Motivación |
+| 3727 | 2. Maelle Vaurin > Psicología |
+| 3737 | Familia real de Corona Azur |
+| 3739 | Familia real de Corona Azur > Casa Auvrelle |
+| 3747 | Familia real de Corona Azur > Geraud Auvrelle |
+| 3775 | Familia real de Corona Azur > Aveline Auvrelle |
+| 3797 | Familia real de Corona Azur > Bastien Auvrelle |
+| 3817 | Familia real de Corona Azur > El matrimonio con el Arconte |
+| 3835 | Familia real de Corona Azur > Planificación previa — NO CANÓNICA |
+| 3849 | 3. Prisca Eburia |
+| 3859 | 3. Prisca Eburia > Descripción física |
+| 3863 | 3. Prisca Eburia > Motivación |
+| 3867 | 3. Prisca Eburia > Psicología |
+| 3873 | 3. Prisca Eburia > Al entrar en la Universidad |
+| 3878 | 3. Prisca Eburia > Al entrar en la Universidad > Preparación principal |
+| 3886 | 3. Prisca Eburia > Proyección previa de graduación — NO CANÓNICA |
+| 3891 | 3. Prisca Eburia > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 3904 | 4. Mara Fornia |
+| 3914 | 4. Mara Fornia > Descripción física |
+| 3918 | 4. Mara Fornia > Motivación |
+| 3922 | 4. Mara Fornia > Psicología |
+| 3928 | 4. Mara Fornia > Al entrar en la Universidad |
+| 3933 | 4. Mara Fornia > Al entrar en la Universidad > Preparación principal |
+| 3940 | 4. Mara Fornia > Proyección previa de graduación — NO CANÓNICA |
+| 3945 | 4. Mara Fornia > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 3958 | 5. Silvia Vardana |
+| 3968 | 5. Silvia Vardana > Descripción física |
+| 3972 | 5. Silvia Vardana > Motivación |
+| 3978 | 5. Silvia Vardana > Psicología |
+| 3984 | 5. Silvia Vardana > Al entrar en la Universidad |
+| 3989 | 5. Silvia Vardana > Al entrar en la Universidad > Preparación principal |
+| 3996 | 5. Silvia Vardana > Proyección previa de graduación — NO CANÓNICA |
+| 4001 | 5. Silvia Vardana > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4012 | 5. Silvia Vardana > Planificación previa — NO CANÓNICA |
+| 4019 | Familia Vardana — Ampliación de Silvia |
+| 4043 | Familia Vardana — Ampliación de Silvia > 1. El taller de sellos Vardana |
+| 4055 | Familia Vardana — Ampliación de Silvia > 1. El taller de sellos Vardana > Materiales y técnicas |
+| 4071 | Familia Vardana — Ampliación de Silvia > 1. El taller de sellos Vardana > Organización |
+| 4081 | Familia Vardana — Ampliación de Silvia > 2. Los padres de Silvia |
+| 4083 | Familia Vardana — Ampliación de Silvia > 2. Los padres de Silvia > Dacio Vardano — Padre |
+| 4127 | Familia Vardana — Ampliación de Silvia > 2. Los padres de Silvia > Sabina Vardana — Madre |
+| 4171 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores |
+| 4173 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor |
+| 4185 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor > Aspecto físico |
+| 4197 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor > Personalidad y ocupación |
+| 4213 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor > Matrimonio con Tiberio Varen |
+| 4229 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor > Hijos |
+| 4241 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Livia Vardana — Hermana mayor > Relación con Silvia |
+| 4259 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Claudia Vardana — Segunda hermana |
+| 4288 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Claudia Vardana — Segunda hermana > Darío Cerano — Esposo de Claudia |
+| 4311 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Emilia Vardana — Tercera hermana |
+| 4340 | Familia Vardana — Ampliación de Silvia > 3. Las tres hermanas mayores > Emilia Vardana — Tercera hermana > Néstor Arvenio — Esposo de Emilia |
+| 4365 | Familia Vardana — Ampliación de Silvia > 4. Las expectativas matrimoniales de los Vardana |
+| 4399 | Familia Vardana — Ampliación de Silvia > 5. El conflicto de Silvia |
+| 4447 | 6. Neria Tosca |
+| 4457 | 6. Neria Tosca > Descripción física |
+| 4461 | 6. Neria Tosca > Motivación |
+| 4465 | 6. Neria Tosca > Psicología |
+| 4471 | 6. Neria Tosca > Al entrar en la Universidad |
+| 4476 | 6. Neria Tosca > Al entrar en la Universidad > Preparación principal |
+| 4483 | 6. Neria Tosca > Proyección previa de graduación — NO CANÓNICA |
+| 4488 | 6. Neria Tosca > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4501 | 7. Marcia Bravia |
+| 4511 | 7. Marcia Bravia > Descripción física |
+| 4515 | 7. Marcia Bravia > Motivación |
+| 4519 | 7. Marcia Bravia > Psicología |
+| 4525 | 7. Marcia Bravia > Al entrar en la Universidad |
+| 4530 | 7. Marcia Bravia > Al entrar en la Universidad > Preparación principal |
+| 4537 | 7. Marcia Bravia > Proyección previa de graduación — NO CANÓNICA |
+| 4542 | 7. Marcia Bravia > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4553 | 8. Elvia Arven |
+| 4563 | 8. Elvia Arven > Descripción física |
+| 4567 | 8. Elvia Arven > Motivación |
+| 4571 | 8. Elvia Arven > Psicología |
+| 4577 | 8. Elvia Arven > Familia y relación con su padre |
+| 4585 | 8. Elvia Arven > Al entrar en la Universidad |
+| 4590 | 8. Elvia Arven > Al entrar en la Universidad > Preparación principal |
+| 4595 | 8. Elvia Arven > Proyección previa de graduación — NO CANÓNICA |
+| 4600 | 8. Elvia Arven > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4611 | 8. Elvia Arven > Elian Arven — Padre de Elvia |
+| 4628 | 9. Octavia Quintela |
+| 4638 | 9. Octavia Quintela > Descripción física |
+| 4642 | 9. Octavia Quintela > Motivación |
+| 4646 | 9. Octavia Quintela > Psicología |
+| 4652 | 9. Octavia Quintela > Al entrar en la Universidad |
+| 4657 | 9. Octavia Quintela > Al entrar en la Universidad > Preparación principal |
+| 4662 | 9. Octavia Quintela > Proyección previa de graduación — NO CANÓNICA |
+| 4667 | 9. Octavia Quintela > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4676 | 9. Octavia Quintela > Planificación previa — NO CANÓNICA |
+| 4681 | 10. Brenn Veyr |
+| 4703 | 10. Brenn Veyr > Descripción física |
+| 4709 | 10. Brenn Veyr > Familia |
+| 4733 | 10. Brenn Veyr > Familia > El silencio sobre su familia |
+| 4769 | 10. Brenn Veyr > Motivación |
+| 4789 | 10. Brenn Veyr > Psicología |
+| 4819 | 10. Brenn Veyr > Al entrar en la Universidad |
+| 4824 | 10. Brenn Veyr > Al entrar en la Universidad > Preparación principal |
+| 4838 | 10. Brenn Veyr > Proyección previa de graduación — NO CANÓNICA |
+| 4843 | 10. Brenn Veyr > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 4859 | 10. Brenn Veyr > Planificación previa — NO CANÓNICA |
+| 4879 | Familia Veyr |
+| 4881 | Familia Veyr > Hagen Veyr |
+| 4896 | Familia Veyr > Hagen Veyr > Descripción física |
+| 4906 | Familia Veyr > Hagen Veyr > Personalidad |
+| 4926 | Familia Veyr > Hagen Veyr > Sus hijos |
+| 4952 | Familia Veyr > Hagen Veyr > Brenn y su madre |
+| 4968 | Familia Veyr > Hagen Veyr > Paternidad |
+| 4996 | Familia Veyr > Brenn |
+| 5022 | Familia Veyr > Brenn > La Universidad |
+| 5040 | Familia Veyr > Brenn > Valdrakar |
+| 5064 | Familia Veyr > Los doce hijos |
+| 5068 | Familia Veyr > Los doce hijos > Primera madre |
+| 5082 | Familia Veyr > Los doce hijos > Segunda madre |
+| 5090 | Familia Veyr > Los doce hijos > Tercera madre |
+| 5098 | Familia Veyr > Los doce hijos > Rivalidad |
+| 5118 | Familia Veyr > Gerwin y Falk |
+| 5136 | Familia Veyr > Caelio de Solmer — conocimiento de autor |
+| 5172 | 11. Leandro Quirino |
+| 5182 | 11. Leandro Quirino > Descripción física |
+| 5186 | 11. Leandro Quirino > Motivación |
+| 5190 | 11. Leandro Quirino > Psicología |
+| 5196 | 11. Leandro Quirino > Al entrar en la Universidad |
+| 5201 | 11. Leandro Quirino > Al entrar en la Universidad > Preparación principal |
+| 5206 | 11. Leandro Quirino > Proyección previa de graduación — NO CANÓNICA |
+| 5211 | 11. Leandro Quirino > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 5224 | 12. Crispo Servilio |
+| 5234 | 12. Crispo Servilio > Descripción física |
+| 5238 | 12. Crispo Servilio > Motivación |
+| 5242 | 12. Crispo Servilio > Psicología |
+| 5248 | 12. Crispo Servilio > Familia y relación con Trajano |
+| 5254 | 12. Crispo Servilio > Al entrar en la Universidad |
+| 5259 | 12. Crispo Servilio > Al entrar en la Universidad > Preparación principal |
+| 5265 | 12. Crispo Servilio > Proyección previa de graduación — NO CANÓNICA |
+| 5270 | 12. Crispo Servilio > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 5285 | Trajano Servilio — Padre de Crispo |
+| 5297 | Trajano Servilio — Padre de Crispo > Descripción y carácter |
+| 5303 | Trajano Servilio — Padre de Crispo > Gobierno de Lurena |
+| 5309 | Trajano Servilio — Padre de Crispo > Relación con Crispo |
+| 5313 | Trajano Servilio — Padre de Crispo > Proyección en *El emperador de las cenizas* — Guion, no hecho narrado aceptado |
+| 5321 | 13. Fausto Merro |
+| 5331 | 13. Fausto Merro > Descripción física |
+| 5335 | 13. Fausto Merro > Motivación |
+| 5339 | 13. Fausto Merro > Psicología |
+| 5345 | 13. Fausto Merro > Al entrar en la Universidad |
+| 5350 | 13. Fausto Merro > Al entrar en la Universidad > Preparación principal |
+| 5356 | 13. Fausto Merro > Proyección previa de graduación — NO CANÓNICA |
+| 5361 | 13. Fausto Merro > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 5372 | 14. Aulo Bragano |
+| 5382 | 14. Aulo Bragano > Descripción física |
+| 5386 | 14. Aulo Bragano > Motivación |
+| 5390 | 14. Aulo Bragano > Psicología |
+| 5396 | 14. Aulo Bragano > Al entrar en la Universidad |
+| 5401 | 14. Aulo Bragano > Al entrar en la Universidad > Preparación principal |
+| 5406 | 14. Aulo Bragano > Proyección previa de graduación — NO CANÓNICA |
+| 5411 | 14. Aulo Bragano > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 5424 | 15. Lucio Aredes |
+| 5434 | 15. Lucio Aredes > Descripción física |
+| 5438 | 15. Lucio Aredes > Motivación |
+| 5442 | 15. Lucio Aredes > Psicología |
+| 5448 | 15. Lucio Aredes > Al entrar en la Universidad |
+| 5453 | 15. Lucio Aredes > Al entrar en la Universidad > Preparación principal |
+| 5460 | 15. Lucio Aredes > Proyección previa de graduación — NO CANÓNICA |
+| 5465 | 15. Lucio Aredes > Proyección previa de graduación — NO CANÓNICA > Preparación principal |
+| 5474 | 15. Lucio Aredes > Planificación previa — NO CANÓNICA |
+| 5482 | Familia Aredes — Ampliación de Lucio |
+| 5499 | Familia Aredes — Ampliación de Lucio > 1. El antiguo linaje y el taller Aredes |
+| 5501 | Familia Aredes — Ampliación de Lucio > 1. El antiguo linaje y el taller Aredes > Origen del apellido |
+| 5507 | Familia Aredes — Ampliación de Lucio > 1. El antiguo linaje y el taller Aredes > El taller de grabados |
+| 5513 | Familia Aredes — Ampliación de Lucio > 1. El antiguo linaje y el taller Aredes > La pluma de Fényrax |
+| 5517 | Familia Aredes — Ampliación de Lucio > 1. El antiguo linaje y el taller Aredes > La sucesión |
+| 5525 | Familia Aredes — Ampliación de Lucio > 2. La posada de Villa Estora |
+| 5535 | Familia Aredes — Ampliación de Lucio > 3. Los padres de Lucio |
+| 5537 | Familia Aredes — Ampliación de Lucio > 3. Los padres de Lucio > Servio — Padre |
+| 5558 | Familia Aredes — Ampliación de Lucio > 3. Los padres de Lucio > Mariela Aredes — Madre |
+| 5580 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes |
+| 5597 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Lucio Aredes — Primogénito |
+| 5603 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Dacio Aredes — Segundo hijo |
+| 5618 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Tadeo Aredes — Tercer hijo |
+| 5631 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Elia Aredes — Cuarta hija |
+| 5644 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Bruno Aredes — Quinto hijo |
+| 5657 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Nora Aredes — Sexta hija |
+| 5670 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Nela Aredes — Séptima hija |
+| 5683 | Familia Aredes — Ampliación de Lucio > 4. Los ocho hermanos Aredes > Milo Aredes — Octavo hijo |
+| 5698 | Familia Aredes — Ampliación de Lucio > 5. Los abuelos maternos |
+| 5700 | Familia Aredes — Ampliación de Lucio > 5. Los abuelos maternos > Octavio Aredes — Abuelo materno |
+| 5721 | Familia Aredes — Ampliación de Lucio > 5. Los abuelos maternos > Teresa Aredes — Abuela materna |
+| 5741 | Familia Aredes — Ampliación de Lucio > 6. Los abuelos paternos |
+| 5747 | Familia Aredes — Ampliación de Lucio > 7. El despertar de Lucio y las expectativas familiares |
+| 5759 | Familia Aredes — Ampliación de Lucio > 8. La influencia familiar y la contradicción de Lucio |
+| 5769 | Familia Aredes — Ampliación de Lucio > 9. Síntesis familiar |
+| 5775 | Resumen canónico de la promoción al cierre de la novela III |
+| 5797 | Resumen canónico de la promoción al cierre de la novela III > Distribución al comenzar |
+| 5804 | Resumen canónico de la promoción al cierre de la novela III > Relaciones narrativas canónicas con Adriano |
+| 5815 | PARTE — PROFESORES DE LA UNIVERSIDAD |
+| 5817 | PROFESORES DE LA UNIVERSIDAD IMPERIAL DE INVOCADORES |
+| 5825 | PROFESORES DE LA UNIVERSIDAD IMPERIAL DE INVOCADORES > Organización docente |
+| 5854 | 1. Eulalia Cordeia |
+| 5866 | 1. Eulalia Cordeia > La cátedra |
+| 5884 | 1. Eulalia Cordeia > Personalidad |
+| 5894 | 1. Eulalia Cordeia > Su entendimiento del Vínculo |
+| 5914 | 1. Eulalia Cordeia > Aproximación a los problemas |
+| 5931 | 1. Eulalia Cordeia > Forma de enseñar |
+| 5943 | 1. Eulalia Cordeia > Preparación principal |
+| 5950 | 1. Eulalia Cordeia > Intervención canónica en *Universidad* |
+| 5970 | 2. Galo Almeira |
+| 5982 | 2. Galo Almeira > La cátedra |
+| 6000 | 2. Galo Almeira > Personalidad |
+| 6010 | 2. Galo Almeira > Su entendimiento del tema |
+| 6038 | 2. Galo Almeira > Aproximación a los problemas |
+| 6058 | 2. Galo Almeira > Forma de enseñar |
+| 6074 | 2. Galo Almeira > Preparación principal |
+| 6081 | 2. Galo Almeira > Intervención canónica en *Universidad* |
+| 6098 | 3. Silvano Moure |
+| 6110 | 3. Silvano Moure > La cátedra |
+| 6127 | 3. Silvano Moure > Personalidad |
+| 6141 | 3. Silvano Moure > Su entendimiento del tema |
+| 6161 | 3. Silvano Moure > Aproximación a los problemas |
+| 6179 | 3. Silvano Moure > Forma de enseñar |
+| 6201 | 3. Silvano Moure > Preparación principal |
+| 6208 | 3. Silvano Moure > Intervención canónica en *Universidad* |
+| 6223 | 4. Teodora Gouveia |
+| 6235 | 4. Teodora Gouveia > La cátedra |
+| 6260 | 4. Teodora Gouveia > Personalidad |
+| 6268 | 4. Teodora Gouveia > Su entendimiento del tema |
+| 6294 | 4. Teodora Gouveia > Aproximación a los problemas |
+| 6310 | 4. Teodora Gouveia > Forma de enseñar |
+| 6328 | 4. Teodora Gouveia > Preparación principal |
+| 6335 | 4. Teodora Gouveia > Estado canónico en *Universidad* |
+| 6346 | 5. Domitia Serpa |
+| 6358 | 5. Domitia Serpa > La cátedra |
+| 6377 | 5. Domitia Serpa > Personalidad |
+| 6389 | 5. Domitia Serpa > Su entendimiento del tema |
+| 6411 | 5. Domitia Serpa > Aproximación a los problemas |
+| 6423 | 5. Domitia Serpa > Forma de enseñar |
+| 6433 | 5. Domitia Serpa > Preparación principal |
+| 6440 | 5. Domitia Serpa > Estado canónico en *Universidad* |
+| 6453 | 6. Feliciano Borga |
+| 6465 | 6. Feliciano Borga > La cátedra |
+| 6490 | 6. Feliciano Borga > Personalidad |
+| 6506 | 6. Feliciano Borga > Su entendimiento del tema |
+| 6530 | 6. Feliciano Borga > Aproximación a los problemas |
+| 6556 | 6. Feliciano Borga > Forma de enseñar |
+| 6568 | 6. Feliciano Borga > Preparación principal |
+| 6575 | 6. Feliciano Borga > Intervención canónica en *Universidad* |
+| 6586 | 7. Emilia Cabral |
+| 6598 | 7. Emilia Cabral > La cátedra |
+| 6623 | 7. Emilia Cabral > Personalidad |
+| 6637 | 7. Emilia Cabral > Su entendimiento del tema |
+| 6657 | 7. Emilia Cabral > Aproximación a los problemas |
+| 6675 | 7. Emilia Cabral > Forma de enseñar |
+| 6691 | 7. Emilia Cabral > Preparación principal |
+| 6698 | 7. Emilia Cabral > Intervención canónica en *Universidad* |
+| 6711 | 8. Tiberio Falcao |
+| 6723 | 8. Tiberio Falcao > La cátedra |
+| 6750 | 8. Tiberio Falcao > Personalidad |
+| 6760 | 8. Tiberio Falcao > Su entendimiento del tema |
+| 6794 | 8. Tiberio Falcao > Aproximación a los problemas |
+| 6808 | 8. Tiberio Falcao > Forma de enseñar |
+| 6825 | 8. Tiberio Falcao > Preparación principal |
+| 6834 | 8. Tiberio Falcao > Estado canónico en *Universidad* |
+| 6845 | Diferencias doctrinales entre los ocho |
+| 6891 | PARTE — PROGRESIÓN DE ADRIANO |
+| 6893 | PROGRESIÓN DE ADRIANO POR NOVELA |
+| 6895 | PROGRESIÓN DE ADRIANO POR NOVELA > Autoridad canónica de esta revisión |
+| 6909 | 1. CRONOLOGÍA CANÓNICA DE ADRIANO |
+| 6917 | 1. CRONOLOGÍA CANÓNICA DE ADRIANO > Anclas narrativas |
+| 6925 | 2. NOVELA I — DESPERTAR |
+| 6927 | 2. NOVELA I — DESPERTAR > Estado al comenzar |
+| 6935 | 2. NOVELA I — DESPERTAR > Progresión canónica |
+| 6945 | 2. NOVELA I — DESPERTAR > Estado al cierre |
+| 6962 | 3. NOVELA II — VALERIO |
+| 6964 | 3. NOVELA II — VALERIO > Estado al comenzar |
+| 6974 | 3. NOVELA II — VALERIO > Progresión de edad |
+| 6978 | 3. NOVELA II — VALERIO > Incorporación de los otros tres Vínculos |
+| 6980 | 3. NOVELA II — VALERIO > Incorporación de los otros tres Vínculos > Mota |
+| 6993 | 3. NOVELA II — VALERIO > Incorporación de los otros tres Vínculos > Eosmis |
+| 7000 | 3. NOVELA II — VALERIO > Incorporación de los otros tres Vínculos > Gútula |
+| 7007 | 3. NOVELA II — VALERIO > Risco durante Valerio |
+| 7019 | 3. NOVELA II — VALERIO > Simultaneidad y Estamento |
+| 7034 | 3. NOVELA II — VALERIO > Simultaneidad y Estamento > Distinción necesaria |
+| 7043 | 3. NOVELA II — VALERIO > Materialización parcial |
+| 7049 | 3. NOVELA II — VALERIO > Estado al cierre de Valerio |
+| 7066 | 4. NOVELA III — UNIVERSIDAD |
+| 7068 | 4. NOVELA III — UNIVERSIDAD > Estado al comenzar |
+| 7081 | 4. NOVELA III — UNIVERSIDAD > Estamento al ingreso |
+| 7089 | 4. NOVELA III — UNIVERSIDAD > Lo que la Universidad cambia en Adriano |
+| 7108 | 4. NOVELA III — UNIVERSIDAD > Transfiguraciones canónicas |
+| 7110 | 4. NOVELA III — UNIVERSIDAD > Transfiguraciones canónicas > Eosmis → Brumarina |
+| 7116 | 4. NOVELA III — UNIVERSIDAD > Transfiguraciones canónicas > Gútula → Náyara |
+| 7128 | 4. NOVELA III — UNIVERSIDAD > Transfiguraciones canónicas > Risco y Mota |
+| 7137 | 5. LA PREPARACIÓN UNIVERSITARIA FINAL |
+| 7139 | 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Risco — Dracendra |
+| 7152 | 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Mota — Nimbaro |
+| 7176 | 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Brumarina |
+| 7196 | 5. LA PREPARACIÓN UNIVERSITARIA FINAL > Náyara |
+| 7209 | 6. ARQUITECTURA TÁCTICA AL CIERRE DE UNIVERSIDAD |
+| 7224 | 7. ESTAMENTO AL CIERRE DE UNIVERSIDAD |
+| 7234 | 7. ESTAMENTO AL CIERRE DE UNIVERSIDAD > Estado final canónico de la novela III |
+| 7254 | 8. CORRECCIONES RESPECTO DE LA VERSIÓN ANTERIOR |
+| 7268 | 9. PLANIFICACIÓN POSTERIOR A LA NOVELA III |
+| 7275 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES |
+| 7277 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Estado al comenzar |
+| 7286 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Transfiguración central |
+| 7288 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Transfiguración central > Risco → Valdrakar |
+| 7300 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Objetivo de cierre |
+| 7311 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV |
+| 7328 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Risco — Valdrakar NV53 |
+| 7332 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Mota — Nimbaro NV51 |
+| 7336 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Brumarina NV37 |
+| 7340 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Preparación final de Adriano — Novela IV > Náyara NV42 |
+| 7348 | 10. PLANIFICACIÓN — NOVELA IV — CONSPIRACIONES > Identidad del equipo al final de la novela IV |
+| 7361 | 5. NOVELA V |
+| 7363 | 5. NOVELA V > Estado al comenzar |
+| 7372 | 5. NOVELA V > Transfiguraciones |
+| 7374 | 5. NOVELA V > Transfiguraciones > Mota → Nimburai |
+| 7380 | 5. NOVELA V > Transfiguraciones > Brumarina → Tempestral |
+| 7386 | 5. NOVELA V > Objetivo de cierre |
+| 7395 | 5. NOVELA V > Preparación de cierre |
+| 7397 | 5. NOVELA V > Preparación de cierre > Risco — Valdrakar NV58 |
+| 7410 | 5. NOVELA V > Preparación de cierre > Mota — Nimburai NV56 |
+| 7418 | 5. NOVELA V > Preparación de cierre > Tempestral NV50 |
+| 7451 | 5. NOVELA V > Preparación de cierre > Náyara NV52 |
+| 7470 | 5. NOVELA V > Identidad del equipo al final de la novela V |
+| 7481 | 6. NOVELA VI |
+| 7483 | 6. NOVELA VI > Estado al comenzar |
+| 7492 | 6. NOVELA VI > Transfiguración central |
+| 7494 | 6. NOVELA VI > Transfiguración central > Náyara → Undaria |
+| 7504 | 6. NOVELA VI > Objetivo de cierre |
+| 7513 | 6. NOVELA VI > Preparación de cierre |
+| 7515 | 6. NOVELA VI > Preparación de cierre > Risco — Valdrakar NV78 |
+| 7523 | 6. NOVELA VI > Preparación de cierre > Mota — Nimburai NV69 |
+| 7531 | 6. NOVELA VI > Preparación de cierre > Tempestral NV63 |
+| 7542 | 6. NOVELA VI > Preparación de cierre > Undaria NV66 |
+| 7570 | 6. NOVELA VI > Identidad del equipo al final de la novela VI |
+| 7584 | 7. NOVELA VII |
+| 7586 | 7. NOVELA VII > Estado al comenzar |
+| 7595 | 7. NOVELA VII > Objetivo de cierre |
+| 7608 | 7. NOVELA VII > Preparación de cierre |
+| 7610 | 7. NOVELA VII > Preparación de cierre > Risco — Valdrakar NV100 |
+| 7616 | 7. NOVELA VII > Preparación de cierre > Mota — Nimburai NV94 |
+| 7621 | 7. NOVELA VII > Preparación de cierre > Tempestral NV87 |
+| 7627 | 7. NOVELA VII > Preparación de cierre > Undaria NV91 |
+| 7632 | 7. NOVELA VII > Función narrativa |
+| 7646 | 8. NOVELA VIII — ADRIANO ARCONTE |
+| 7648 | 8. NOVELA VIII — ADRIANO ARCONTE > Estado al comenzar |
+| 7657 | 8. NOVELA VIII — ADRIANO ARCONTE > Objetivo de cierre |
+| 7670 | 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva |
+| 7672 | 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva > 8.1. Risco — Valdrakar NV100 |
+| 7703 | 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva > 8.2. Mota — Nimburai NV100 |
+| 7738 | 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva > 8.3. Tempestral NV100 |
+| 7770 | 8. NOVELA VIII — ADRIANO ARCONTE > Preparación principal definitiva > 8.4. Undaria NV100 |
+| 7801 | 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate |
+| 7805 | 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate > Eje físico |
+| 7809 | 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate > Eje mágico |
+| 7813 | 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate > Eje de reconstrucción |
+| 7817 | 8. NOVELA VIII — ADRIANO ARCONTE > Lógica final de combate > Eje de tempo |
+| 7823 | 9. MANIFESTACIÓN DE ARCONTE PENDIENTE |
+| 7834 | 9. MANIFESTACIÓN DE ARCONTE PENDIENTE > Candidato canónico existente |
+| 7838 | 9. MANIFESTACIÓN DE ARCONTE PENDIENTE > Candidato canónico existente > Dirección de diseño si se crea una Manifestación temporal |
+| 7844 | 10. RESUMEN DE HITOS |
+| 7858 | 11. FUENTES DE LA PLANIFICACIÓN ANTERIOR — NO CANÓNICAS EN ESTA REVISIÓN |
+| 7869 | 11. FUENTES DE LA PLANIFICACIÓN ANTERIOR — NO CANÓNICAS EN ESTA REVISIÓN > Fuentes canónicas usadas para las novelas I–III |
+
+
+### Actualización de navegación r6 — Maelle Vaurin
+
+Ruta: CANON-NOVELS > Promoción de Adriano — Universidad Imperial de Invocadores > 2. Maelle Vaurin > Al entrar en la Universidad / Preparación al final de la Universidad — desarrollo propuesto. Localizar por encabezado literal: la tabla de números de línea de r5 no se ha regenerado íntegramente y sus desplazamientos no son fiables tras la ampliación.
 
 INICIO_FUENTE: CANON-NOVELS
 
@@ -751,7 +1109,7 @@ Este bloque es la referencia rápida. Los bloques históricos «al cierre de Des
 
 **Secreto de filiación — DEC-002:** sabe que Aster no es el padre biológico de Marco ni el abuelo biológico de Adriano, aunque legalmente lo es. Forma parte de los seis únicos conocedores enumerados en la regla del secreto.
 
-### Ciro Lurigan
+### Ciro
 
 **Edades en las novelas I–III:** Muere durante *Valerio* con una edad aproximada de 56 años.
 
@@ -973,6 +1331,9 @@ Este bloque es la referencia rápida. Los bloques históricos «al cierre de Des
 
 ## 1.1. Aster Valerio
 
+**Nacimiento (calendario solmeriano):** 22/08/156 EI. **Certeza:** día y mes fijados por el autor; año calculado desde la edad de referencia.  
+
+
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
 **Edad aproximada:** 191 años.  
@@ -1149,7 +1510,7 @@ A ese nivel sólo puede mantener una Manifestación; cuando Aster necesita traba
 - **Sabe que Marco, Olivia y Adriano han descubierto que Cassaro Valerio pertenece a su familia, pero no les revela el parentesco exacto.** Mantiene fuera de su alcance que Cassaro es su hermano. **Referencia:** *Valerio*, cap. 6 — «Apellidos».
 - **Restaura el antiguo refugio de pastores utilizado por Gabino como punto de emergencia para proteger a Alex y Helena frente a una amenaza exterior.** Durante el saqueo lo utiliza precisamente con esa finalidad. **Referencia:** *Valerio*, cap. 9 — «El saqueo».
 - **Durante el ataque pirata sabe que Naim busca a «Aster Valerio» y que el apellido ha atraído una amenaza concreta hacia la villa.** Permanece oculto mientras protege a Alex y Helena y después interviene desde fuera de la vista pública con Fényrax y Riftari; impone la Calima que altera el final del combate. **Referencia:** *Valerio*, caps. 9–10 — «El saqueo» y «Naim el Pirata».
-- **Sabe que Ciro Lurigan y Valco mueren durante el saqueo y que Marco sobrevive al ataque marítimo que Naim daba por mortal.** Participa además en la reorganización posterior de la villa y en el entrenamiento de Marco. **Referencia:** *Valerio*, caps. 9–11.
+- **Sabe que Ciro y Valco mueren durante el saqueo y que Marco sobrevive al ataque marítimo que Naim daba por mortal.** Participa además en la reorganización posterior de la villa y en el entrenamiento de Marco. **Referencia:** *Valerio*, caps. 9–11.
 - **Sabe que Marco establece un segundo Vínculo con un Álverin y progresa en simultaneidad.** **Referencia:** *Valerio*, cap. 14 — «Despedida».
 - **Reconoce a Adriano como Adepto después de comprobar una simultaneidad estable bajo presión.** A continuación empieza a enseñarle Materialización parcial; antes de la partida, Adriano sólo logra una ejecución limpia con Risco. **Referencia:** *Valerio*, cap. 14 — «Despedida».
 - **Prepara la recomendación para la Universidad y la autorización bancaria de Adriano con su sello personal único.** También garantiza la financiación de sus estudios mediante la Casa Valerio. **Referencia:** *Valerio*, caps. 14–15.
@@ -1162,13 +1523,16 @@ A ese nivel sólo puede mantener una Manifestación; cuando Aster necesita traba
 
 #### Personas conocidas relevantes
 
-**Trato personal actualizado:** Lucerio IV; Helena; Alex; Adriano Valerio; Marco Valerio; Olivia; Sarah Ordan; Elian Arven; Flavia Valco; Ciro Lurigan; Valco.  
+**Trato personal actualizado:** Lucerio IV; Helena; Alex; Adriano Valerio; Marco Valerio; Olivia; Sarah Ordan; Elian Arven; Flavia Valco; Ciro; Valco.  
 **Conocimiento de oídas o por el conflicto de *Valerio*:** Naim.  
 **Relaciones no exhaustivas anteriores:** Cassaro Valerio y la Casa Imperial forman parte de su historia canónica; *Valerio* no revela esa historia completa a Adriano.
 
 ---
 
 ## 1.2. Sarah Ordan
+
+**Nacimiento (calendario solmeriano):** 13/12/166 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad aproximada:** 181 años.  
 **Edades durante las novelas I–III:** *Despertar–Valerio*: alrededor de 181 años como referencia; *Universidad*: aproximadamente 181–185 a lo largo del arco completo. La novela la describe también como una mujer de alrededor de ciento ochenta años.  
@@ -1341,6 +1705,9 @@ El principio de Sarah es el mismo que Adriano identifica al escuchar el combate 
 
 ## 1.3. Orsen Valmar
 
+**Nacimiento (calendario solmeriano):** 02/10/146 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad aproximada:** aproximadamente 201 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Rango:** Arconte.  
@@ -1487,6 +1854,9 @@ Su **Fényrax** es una de sus criaturas más queridas y lo acompaña en viajes y
 ---
 
 ## 1.4. Darian Nerio
+
+**Nacimiento (calendario solmeriano):** 01/07/86 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad aproximada:** 261 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -1642,6 +2012,9 @@ En la caldera su repertorio cambia según el trabajo. **Riftari** es una presenc
 
 ## 2.1. Lucerio IV de Solmer
 
+**Nacimiento (calendario solmeriano):** 15/04/294 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** alrededor de 53–54 años al cierre de *Valerio*.  
 **Edades durante las novelas I–III:** *Valerio*: alrededor de 53–54 años; *Universidad*: sigue en sus cincuenta y envejece varios años durante el arco. El manuscrito final lo describe como de «más de cincuenta años».  
 **Posición:** emperador de Solmer.  
@@ -1695,6 +2068,10 @@ La muerte de Vermina y, después, de sus dos hijos legítimos quebró partes de 
 
 ## 2.2. Vermina
 
+**Nacimiento (calendario solmeriano):** 01/02/299 EI. **Certeza:** año calculado con las edades y muertes fijadas por el autor; día y mes propuestos.  
+**Fallecimiento:** 01/02/330 EI (al dar a luz a Caelio; día y mes propuestos).  
+
+
 **Estado:** fallecida.  
 **Posición histórica:** emperatriz de Solmer; esposa de Lucerio.  
 **Edad al morir:** 31; murió poco después del nacimiento de Caelio por complicaciones tras el parto.
@@ -1715,6 +2092,10 @@ No fue una esposa ornamental. Era confidente de Lucerio y una de las pocas perso
 ---
 
 ## 2.3. Terenio de Solmer
+
+**Nacimiento (calendario solmeriano):** 23/04/325 EI. **Certeza:** año calculado con las edades y muertes fijadas por el autor; día y mes propuestos.  
+**Fallecimiento:** 344 EI (día y mes no establecidos).  
+
 
 **Estado:** fallecido.  
 **Edad al morir:** 19 años.  
@@ -1738,6 +2119,10 @@ Murió después de un banquete al ingerir unos alimentos. La corte y el pueblo i
 ---
 
 ## 2.4. Caelio de Solmer
+
+**Nacimiento (calendario solmeriano):** 01/02/330 EI. **Certeza:** año calculado con las edades y muertes fijadas por el autor; día y mes propuestos.  
+**Fallecimiento:** 347 EI (día y mes no establecidos).  
+
 
 **Estado:** fallecido.  
 **Edad al morir:** 17 años.  
@@ -1767,6 +2152,9 @@ Algunos miembros ejercen además un oficio imperial definido. Otros no necesitan
 Los miembros del Pacto de los Trece no son subordinados de Cassaro. Coinciden en terminar con la supremacía del Solio, pero cada uno espera un reparto de poder diferente después. Fuera del Pacto existen personas reclutables, adversarios difíciles y figuras cuya posición todavía podría cambiar según la forma concreta que adopte la crisis.
 
 ## 3.1. Cassaro Valerio
+
+**Nacimiento (calendario solmeriano):** 24/12/159 EI. **Certeza:** día y mes fijados por el autor; año calculado desde la edad de referencia.  
+
 
 **Límite de conocimiento — DEC-002:** no sabe que Aster no es el padre biológico de Marco ni el abuelo biológico de Adriano. Conocer el reconocimiento legal y considerar a Adriano su sobrino nieto no le concede ese secreto.
 
@@ -1931,6 +2319,9 @@ La ocultación de su rango no depende de una técnica secreta que falsifique el 
 
 ## 3.2. Meralda Torven
 
+**Nacimiento (calendario solmeriano):** 18/10/188 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 156 años.  
 **Edad real:** 159 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -1965,6 +2356,9 @@ Su defecto central consiste en confundir con demasiada facilidad saber algo con 
 
 ## 3.3. Decar Varen
 
+**Nacimiento (calendario solmeriano):** 10/05/205 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 141 años.  
 **Edad real:** 142 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -1994,6 +2388,9 @@ Es leal, protector y valiente, pero controlador y rencoroso. Puede perdonar un e
 ---
 
 ## 3.4. Orren Calvio
+
+**Nacimiento (calendario solmeriano):** 05/09/180 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 161 años.  
 **Edad real:** 167 años.  
@@ -2026,6 +2423,9 @@ Su peor defecto es el control. Si ayuda a alguien, empieza a considerar que tien
 ---
 
 ## 3.5. Elian Arven
+
+**Nacimiento (calendario solmeriano):** 20/08/234 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 111 años.  
 **Edad real:** 113 años.  
@@ -2077,6 +2477,9 @@ Elian escribe magníficamente y habla peor cuanto más importante es lo que quie
 
 ## 3.6. Celerio Veltar
 
+**Nacimiento (calendario solmeriano):** 15/08/213 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 131 años.  
 **Edad real:** 134 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2106,6 +2509,9 @@ Su vida sexual fue mucho menos ordenada que su vida económica. Mantuvo varias a
 ---
 
 ## 3.7. Livia Marcena
+
+**Nacimiento (calendario solmeriano):** 08/10/229 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 116 años.  
 **Edad real:** 118 años.  
@@ -2137,6 +2543,9 @@ Su defecto consiste en creer que comprender un riesgo equivale casi siempre a do
 
 ## 3.8. Orvian Selcar
 
+**Nacimiento (calendario solmeriano):** 04/08/195 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 146 años.  
 **Edad real:** 152 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2167,6 +2576,9 @@ Su defecto es querer reparar las consecuencias de una injusticia sin permitir qu
 
 ## 3.9. Doria Valcera
 
+**Nacimiento (calendario solmeriano):** 02/03/299 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 48 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Años en el cargo:** 7 años.  
@@ -2195,6 +2607,9 @@ Es rápida entendiendo conflictos concretos y muy buena separando el problema re
 ---
 
 ## 3.10. Tavio Cerlan
+
+**Nacimiento (calendario solmeriano):** 15/10/238 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 106 años.  
 **Edad real:** 109 años.  
@@ -2226,6 +2641,9 @@ Su nieta lo acusa de intentar «curar» incluso decisiones vitales ajenas. Tiene
 
 ## 3.11. Cassia Mornal
 
+**Nacimiento (calendario solmeriano):** 26/05/302 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 45 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Años en el cargo:** 4 años.  
@@ -2254,6 +2672,9 @@ Su vida amorosa ha sido complicada. Ha mantenido relaciones con hombres y mujere
 ---
 
 ## 3.12. Nerio Salven
+
+**Nacimiento (calendario solmeriano):** 13/11/217 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 126 años.  
 **Edad real:** 130 años.  
@@ -2287,6 +2708,9 @@ Bebe más de lo que debería. Nunca llega ebrio al Consejo ni dirige asuntos imp
 
 ## 3.13. Bereno Salvian
 
+**Nacimiento (calendario solmeriano):** 04/06/220 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 121 años.  
 **Edad real:** 127 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2317,6 +2741,9 @@ Es excelente cuando algo va mal. La ausencia de urgencia lo desorienta de una ma
 
 ## 3.14. Mirella Cerdan
 
+**Nacimiento (calendario solmeriano):** 14/06/268 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 79 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Años en el cargo:** 23 años.  
@@ -2345,6 +2772,9 @@ Puede ser divertida, generosa y muy buena detectando inseguridades. También uti
 ---
 
 ## 3.15. Vario Lucen
+
+**Nacimiento (calendario solmeriano):** 16/08/190 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 151 años.  
 **Edad real:** 157 años.  
@@ -2382,6 +2812,9 @@ Cuando revisa a solas los antiguos documentos, Lefaries suele permanecer cerca y
 
 ## 3.16. Alisia Corven
 
+**Nacimiento (calendario solmeriano):** 11/06/298 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 49 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Años en el cargo:** 5 años.  
@@ -2413,6 +2846,9 @@ Exige mucho porque se exige lo mismo. El defecto consiste en creer que eso vuelv
 
 ## 3.17. Darcio Neral
 
+**Nacimiento (calendario solmeriano):** 02/10/228 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 116 años.  
 **Edad real:** 119 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2443,6 +2879,9 @@ El hombre que exige nombres correctos en cada padrón lleva décadas permitiendo
 
 ## 3.18. Elara Montel
 
+**Nacimiento (calendario solmeriano):** 09/06/186 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 156 años.  
 **Edad real:** 161 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2472,6 +2911,9 @@ Durante años ha utilizado propiedades, administraciones y contratos para manten
 ---
 
 ## 3.19. Savio Rencar
+
+**Nacimiento (calendario solmeriano):** 13/08/304 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 43 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2508,6 +2950,9 @@ Apuesta mucho. Evita hacerlo en combates donde participa alguien bajo su patrona
 
 ## 3.20. Marena Virel
 
+**Nacimiento (calendario solmeriano):** 20/11/174 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad conocida aproximada:** 166 años.  
 **Edad real:** 173 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2540,6 +2985,9 @@ Es clasista, severa y perfectamente capaz de perdonar una deuda después de una 
 
 ## 3.21. Ceralio Padran
 
+**Nacimiento (calendario solmeriano):** 03/02/296 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 51 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
 **Años en el cargo:** 8 años.  
@@ -2570,6 +3018,9 @@ La propia casa ha creado mecanismos para impedir que comprometa por sí solo det
 ---
 
 ## 3.22. Favia Lurcen
+
+**Nacimiento (calendario solmeriano):** 06/12/223 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 121 años.  
 **Edad real:** 124 años.  
@@ -2602,6 +3053,9 @@ Torvalán, en NV 81, es excepcionalmente poderoso y convierte a Favia en una de 
 ---
 
 ## 3.23. Orelio Basten
+
+**Nacimiento (calendario solmeriano):** 13/05/245 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad conocida aproximada:** 101 años.  
 **Edad real:** 102 años.  
@@ -2640,6 +3094,9 @@ Su hijo mayor quiere vender buena parte de los negocios «vergonzosos», comprar
 ---
 
 ## 3.24. Talia Serano
+
+**Nacimiento (calendario solmeriano):** 13/12/311 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 36 años.  
 **Edades durante las novelas I–III:** La cifra de la ficha es una referencia compatible de autor; los manuscritos I–III no narran una secuencia de cumpleaños que permita convertirla en una cronología más precisa.  
@@ -2704,6 +3161,9 @@ La división no constituye dos partidos visibles ni una lista definitiva de alia
 
 ## 4.1. Adriano Valerio
 
+**Nacimiento (calendario solmeriano):** 28/10/331 EI. **Certeza:** día y mes fijados por el autor; año calculado desde la edad de referencia.  
+
+
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
 **Edades:** *Despertar*: 16 años · *Valerio*: 16 → 17 · *Universidad*: 17 → 18 → 19 → 20 → 21; termina con 21 y próximo a cumplir 22.
@@ -2763,7 +3223,7 @@ No es imprudente porque ignore el riesgo; a menudo lo comprende y llega a la con
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Olivia; Marco Valerio; Alex; Helena; Aster Valerio; Ciro Lurigan; Valco; Flavia Valco; Sabina Cerio; Naim; Haruen; Beltrán; Aulo; Lucano; Elian Arven.  
+**Trato personal:** Olivia; Marco Valerio; Alex; Helena; Aster Valerio; Ciro; Valco; Flavia Valco; Sabina Cerio; Naim; Haruen; Beltrán; Aulo; Lucano; Elian Arven.  
 **Sin trato personal, pero conoce su existencia a través del relato de Marco:** Tacio; Celsa; Vibia; Maro.  
 **Figuras públicas o de oídas:** Sarah Ordan; Lucerio IV; Cassaro Valerio; Darian Nerio.
 
@@ -3250,6 +3710,9 @@ Hasta que una novela posterior lo narre, la forma canónica actual continúa sie
 
 ## 4.2. Olivia
 
+**Nacimiento (calendario solmeriano):** 21/07/307 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
 **Edad aproximada:** alrededor de cuarenta y un años al cierre de *Valerio*.  
@@ -3295,12 +3758,15 @@ Mantiene con Helena una amistad construida mediante años de ayuda concreta: com
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Adriano Valerio; Marco Valerio; Helena; Alex; Aster Valerio; Flavia Valco; Valco; Sabina Cerio; Ciro Lurigan; Haruen.  
+**Trato personal:** Adriano Valerio; Marco Valerio; Helena; Alex; Aster Valerio; Flavia Valco; Valco; Sabina Cerio; Ciro; Haruen.  
 **Conocimiento de oídas:** Naim; Cassaro Valerio; Elian Arven.
 
 ---
 
 ## 4.3. Marco Valerio
+
+**Nacimiento (calendario solmeriano):** 06/10/306 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
@@ -3349,12 +3815,15 @@ No idealiza el viaje pese a disfrutarlo. Regresar forma parte de su identidad ta
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Olivia; Adriano Valerio; Helena; Alex; Aster Valerio; Ciro Lurigan; Sabina Cerio; Flavia Valco; Beltrán; Aulo; Lucano; Haruen; Tacio; Celsa; Vibia; Maro.  
+**Trato personal:** Olivia; Adriano Valerio; Helena; Alex; Aster Valerio; Ciro; Sabina Cerio; Flavia Valco; Beltrán; Aulo; Lucano; Haruen; Tacio; Celsa; Vibia; Maro.  
 **Conocimiento de oídas o por conflicto:** Naim; Cassaro Valerio.
 
 ---
 
 ## 4.4. Helena
+
+**Nacimiento (calendario solmeriano):** 11/07/308 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
@@ -3411,6 +3880,9 @@ De forma ocasional visita el burdel de la villa para despejarse y buscar compañ
 
 ## 4.5. Alex
 
+**Nacimiento (calendario solmeriano):** 16/02/333 EI. **Certeza:** día y mes fijados por el autor; año calculado desde la edad de referencia.  
+
+
 **Conocimiento reservado vigente — DEC-002:** conoce que Aster no es biológicamente el padre de Marco ni el abuelo de Adriano y que ambas filiaciones legales son reales. Los únicos conocedores son Adriano, Olivia, Marco, Helena, Alex y Aster; véase «Secreto de filiación de Aster, Marco y Adriano».
 
 **Edad:** 15 años al cierre de *Valerio*.  
@@ -3455,12 +3927,16 @@ No carece de curiosidad; simplemente no convierte cada pregunta en un proyecto. 
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Helena; Adriano Valerio; Olivia; Marco Valerio; Aster Valerio; Ciro Lurigan; Valco; Flavia Valco; Sabina Cerio.  
+**Trato personal:** Helena; Adriano Valerio; Olivia; Marco Valerio; Aster Valerio; Ciro; Valco; Flavia Valco; Sabina Cerio.  
 **Conocimiento de oídas:** Naim; Haruen; Cassaro Valerio.
 
 ---
 
-## 4.6. Ciro Lurigan
+## 4.6. Ciro
+
+**Nacimiento (calendario solmeriano):** 14/11/292 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+**Fallecimiento:** 348 EI (día y mes no establecidos).  
+
 
 **Estado:** fallecido durante el saqueo de Villa Ámbrela en *Valerio*.
 **Edad aproximada al morir:** alrededor de cincuenta y seis años.
@@ -3508,6 +3984,10 @@ Lleva alrededor de quince años sin salir de Punta Ámbar y eso no reduce su dis
 
 ## 4.7. Valco
 
+**Nacimiento (calendario solmeriano):** 17/05/297 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+**Fallecimiento:** 348 EI (día y mes no establecidos).  
+
+
 **Estado:** fallecido durante el saqueo de Villa Ámbrela en *Valerio*.
 **Edad aproximada al morir:** alrededor de cincuenta y un años.
 **Edades durante las novelas I–III:** Muere durante *Valerio* con una edad aproximada de 51 años.  
@@ -3546,11 +4026,14 @@ Su conflicto con Flavia nace precisamente de que ambos quieren libertad para ell
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Flavia Valco; Adriano; Alex; Olivia; Ciro Lurigan; Sabina Cerio.
+**Trato personal:** Flavia Valco; Adriano; Alex; Olivia; Ciro; Sabina Cerio.
 
 ---
 
 ## 4.8. Flavia Valco
+
+**Nacimiento (calendario solmeriano):** 24/09/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 18 años al cierre de *Valerio*.
 **Edades durante las novelas I–III:** **Despertar: 17. Valerio: 18.** En *Universidad* está fuera de escena; su edad seguiría avanzando, pero no se muestran sus cumpleaños.  
@@ -3595,12 +4078,15 @@ De niña molestaba bastante a Adriano; al crecer se distanció cuando comprendi�
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Valco; Adriano Valerio; Alex; Ciro Lurigan; Sabina Cerio; Olivia; Marco Valerio; Aster Valerio.  
+**Trato personal:** Valco; Adriano Valerio; Alex; Ciro; Sabina Cerio; Olivia; Marco Valerio; Aster Valerio.  
 **Encuentro hostil:** Naim.
 
 ---
 
 ## 4.9. Sabina Cerio
+
+**Nacimiento (calendario solmeriano):** 02/12/302 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad aproximada:** mediados de los cuarenta; aproximadamente un año mayor que en *Despertar*.
 **Edades durante las novelas I–III:** *Despertar*: mediados de los cuarenta; *Valerio*: aproximadamente un año más; sin cronología individual mostrada en *Universidad*.  
@@ -3640,9 +4126,12 @@ No posee un cargo político formal, pero una cantidad considerable de decisiones
 
 #### Personas conocidas relevantes
 
-**Trato personal:** Ciro Lurigan; Marco Valerio; Adriano Valerio; Flavia Valco; Valco; Olivia; Beltrán; Haruen.
+**Trato personal:** Ciro; Marco Valerio; Adriano Valerio; Flavia Valco; Valco; Olivia; Beltrán; Haruen.
 
 ## 4.10. Gabino Varo
+
+**Nacimiento (calendario solmeriano):** 04/07/297 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Estado:** fallecido al final de *Despertar*.  
 **Edad aproximada:** alrededor de cincuenta años.  
@@ -3689,6 +4178,9 @@ Su crueldad más clara en *Despertar* aparece cuando ordena un segundo ataque co
 
 ## 5.1. Naim
 
+**Nacimiento (calendario solmeriano):** 01/04/302 EI. **Certeza:** edad en 348 EI fijada por el autor; día y mes propuestos.  
+
+
 **Edad:** no fijada por el manuscrito.  
 **Edades durante las novelas I–III:** *Valerio*: edad no fijada por el manuscrito; no aparece en *Universidad*.  
 **Procedencia:** Navegantes de las Corrientes / Morante.  
@@ -3723,6 +4215,9 @@ Naim es orgulloso, experimentado y suficientemente competente para coordinar dos
 
 ## 5.2. Haruen
 
+**Nacimiento (calendario solmeriano):** 14/10/310 EI. **Certeza:** edad en 348 EI fijada por el autor; día y mes propuestos.  
+
+
 **Edad:** no fijada; el manuscrito sólo permite situarlo como algo más joven que Marco.  
 **Edades durante las novelas I–III:** *Valerio*: edad no fijada; sólo se establece que parece algo más joven que Marco.  
 **Procedencia:** Corona de Verdantis.  
@@ -3750,6 +4245,9 @@ Haruen llega a Morante con pocas pertenencias y una relación todavía insegura 
 
 ## 5.3. Beltrán
 
+**Nacimiento (calendario solmeriano):** 27/07/321 EI. **Certeza:** edad en 348 EI fijada por el autor; día y mes propuestos.  
+
+
 **Edad:** no fijada.  
 **Edades durante las novelas I–III:** Edad no fijada por las novelas.  
 **Lugar:** Villa Ámbrela.  
@@ -3770,6 +4268,9 @@ Beltrán es práctico, obstinado y muy consciente de cuánta cuerda necesita una
 
 ## 5.4. Aulo
 
+**Nacimiento (calendario solmeriano):** 02/11 (año sin determinar). **Certeza:** día y mes propuestos; año no calculable con la información disponible.  
+
+
 **Edad:** no fijada; algo más joven que Lucano según la impresión narrativa.  
 **Edades durante las novelas I–III:** Edad no fijada en *Valerio*; no confundir con Aulo Bragano.  
 **Lugar:** Villa Ámbrela.  
@@ -3786,6 +4287,9 @@ No se le atribuye conocimiento de los secretos de Aster, Alex o la Casa Imperial
 ---
 
 ## 5.5. Lucano
+
+**Nacimiento (calendario solmeriano):** 11/10 (año sin determinar). **Certeza:** día y mes propuestos; año no calculable con la información disponible.  
+
 
 **Edad:** no fijada.  
 **Edades durante las novelas I–III:** Edad no fijada por el manuscrito.  
@@ -3804,6 +4308,9 @@ No se le atribuye conocimiento de los secretos de Aster, Alex o la Casa Imperial
 
 ## 5.6. Tacio
 
+**Nacimiento (calendario solmeriano):** 15/04/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** aproximadamente diecisiete o dieciocho años según la percepción de Marco.  
 **Edades durante las novelas I–III:** *Valerio*: aproximadamente 17–18 según la percepción narrativa; no aparece después.  
 **Lugar:** Orvia, pequeña población de Punta Ámbar.  
@@ -3818,6 +4325,9 @@ Sabe que Marco se llama Marco, que procede de Villa Ámbrela, que mantiene un Ni
 ---
 
 ## 5.7. Celsa
+
+**Nacimiento (calendario solmeriano):** 23/02/332 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** algo menor que Tacio; no fijada con mayor precisión.  
 **Edades durante las novelas I–III:** *Valerio*: algo menor que Tacio; sin cifra exacta.  
@@ -3834,6 +4344,9 @@ Sabe el nombre de Marco, su procedencia y que es Invocador. No conoce la identid
 
 ## 5.8. Vibia
 
+**Nacimiento (calendario solmeriano):** 16/05 (año sin determinar). **Certeza:** día y mes propuestos; año no calculable con la información disponible.  
+
+
 **Edad:** no fijada.  
 **Edades durante las novelas I–III:** Edad no fijada.  
 **Lugar:** Orvia.  
@@ -3849,6 +4362,9 @@ No conoce la trama política que rodea el apellido Valerio ni los secretos de As
 
 ## 5.9. Maro
 
+**Nacimiento (calendario solmeriano):** 10/06 (año sin determinar). **Certeza:** día y mes propuestos; año no calculable con la información disponible.  
+
+
 **Edad:** no fijada; se lo describe como un hombre fibroso de barba gris.  
 **Edades durante las novelas I–III:** Edad no fijada; se describe como hombre de barba gris.  
 **Lugar:** Orvia.  
@@ -3863,6 +4379,12 @@ Sabe que Marco se llama Marco, que procede de Villa Ámbrela y que mantiene un N
 ---
 
 ## 5.10. Mirea
+
+**Nacimiento (calendario solmeriano):**  17/04 (año sin determinar; día y mes propuestos).  
+**Fallecimiento:** año sin determinar (Arvensa).  
+
+**Nacimiento (calendario solmeriano):** 15/05 (año sin determinar). **Certeza:** día y mes propuestos; año no calculable con la información disponible.  
+
 
 **Estado:** fallecida mucho antes de *Valerio*, durante los acontecimientos de Arvensa.  
 **Edad al morir:** no fijada.  
@@ -3881,6 +4403,8 @@ Murió en Arvensa. Lucerio, padre del emperador actual, murió menos de una hora
 
 # Promoción de Adriano — Universidad Imperial de Invocadores
 
+**Calendario académico fijado por el autor:** el ciclo comienza el **28 de Neraco (28/09)** y concluye el **28 de Fenaria (28/06)** del año siguiente, fecha de inicio de las vacaciones de verano. El primer ciclo de esta promoción comienza el **28/09/349 EI** y concluye el **28/06/350 EI**. Las edades al ingreso se calculan al 28/09/349 EI; la novela abarca varios ciclos.
+
 ## Criterios generales de la promoción
 
 La promoción de Adriano está formada por quince compañeros de clase. Al iniciar sus estudios hay **12 Iniciados, 2 Adeptos y 1 Despertada**. Todos tienen entre **17 y 19 años**. Trece proceden de Solmer y dos son estudiantes de intercambio: **Maelle Vaurin**, de Corona Azur, y **Brenn Veyr**, de Liran.
@@ -3897,6 +4421,9 @@ El Vínculo deja huellas en ambos sentidos. Las criaturas no controlan la person
 ---
 
 # 1. Celia Lousada
+
+**Nacimiento (calendario solmeriano):** 16/05/332 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 17 años  
 **Edades durante las novelas I–III:** *Universidad*: 17 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **20–21 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -3947,6 +4474,9 @@ Vitrel alterna largos periodos de absoluta quietud con movimientos repentinos, m
 
 # 2. Maelle Vaurin
 
+**Nacimiento (calendario solmeriano):** 23/02/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Nombre verdadero:** **Maelle Auvrelle**
 **Edad:** 18 años
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -3995,9 +4525,44 @@ Es encantadora, perceptiva, divertida cuando se siente segura y peligrosamente b
 
 Parte de esa tendencia precede incluso a sus Vínculos. Maelle fue educada en una corte donde un regalo puede significar afecto, deuda, alianza, disculpa, reconocimiento o amenaza dependiendo de quién lo entregue y delante de quién. Le cuesta aceptar que algunas personas hagan algo por ella sin esperar que la relación cambie de alguna manera.
 
-Noctargo posee una memoria extraordinaria de individuos, caminos y experiencias y una lealtad muy marcada. La consecuencia en Maelle ha sido ambigua: ama con intensidad y perdona con dificultad. Curmin, además, la ha vuelto muy sensible a pequeños cambios alrededor. A veces cree estar leyendo a una persona cuando únicamente está buscando una amenaza que ya esperaba encontrar.
+Noctargo posee una memoria extraordinaria de individuos, caminos y experiencias y una lealtad muy marcada. La consecuencia en Maelle ha sido ambigua: ama con intensidad y perdona con dificultad. Néspira refuerza su paciencia observadora y su tendencia a calcular las consecuencias emocionales de cada relación, sin volverla malvada ni imponerle pensamientos. Curmin, vinculado más adelante durante una excursión a la mina, la vuelve también muy sensible a pequeños cambios alrededor. A veces cree estar leyendo a una persona cuando únicamente está buscando una amenaza que ya esperaba encontrar.
 
 La Universidad empieza siendo para ella una representación particularmente elaborada y termina convirtiéndose en el primer lugar donde posee relaciones que no fueron escogidas por su apellido. Por eso Adriano, Silvia, Brenn y Lucio llegan a importarle de una manera que ni ella misma comprende del todo al principio.
+
+## Al entrar en la Universidad
+
+**Rango:** Iniciada  
+**Criaturas más reconocibles:** Noctargo · Néspira
+
+### Preparación principal
+
+- **Noctargo — NV20** · Manifestación: **Manto Oscuro** · Técnicas: Rastro · Saeta umbría · Desgarro maldito · Mordisco de presa · Orientación: Velocidad / Ataque físico.
+- **Néspira — NV14** · Manifestación: **Noche Protectora** · Técnicas: Seda umbría · Salva de saetas · Saeta umbría · Desconcentrar *(entrenamiento)* · Orientación: Defensa mágica / Vitalidad.
+
+**Idea de combate:** Noctargo presiona y persigue; Néspira observa, interfiere y obliga a Maelle a combatir con paciencia. La araña refuerza su hábito de calcular relaciones, reacciones y deudas emocionales, sin determinar su moralidad.
+
+**Desarrollo universitario:** durante una excursión a la mina, Maelle vincula a **Curmin**, que más adelante transfigura en **Noctivelo**. Néspira transfigura en **Deinarach**. Unisylva se incorpora en un momento todavía por fijar.
+
+## Preparación al final de la Universidad — desarrollo propuesto
+
+**Rango:** Invocadora  
+**Amplitud:** **258** · **Coste de Vínculo equipado:** **250** · **Margen:** **8**  
+**Criaturas más reconocibles:** Noctargo · Deinarach · Noctivelo · Unisylva
+
+### Preparación principal
+
+- **Noctargo — NV38** · Manifestación: **Manto Oscuro** · Técnicas: **Corte de vínculo [25] · Caza de sombra [37,5] · Zarpazo [0] · Mordisco de presa [0]** · Coste: **62,5** · Orientación: Velocidad / Ataque físico.
+- **Deinarach — NV36** · Manifestación: **Ruptura del Vínculo** · Técnicas: **Corte de vínculo [25] · Trama quebradiza [25] · Salva de saetas [12,5] · Colmillazo [0]** · Coste: **62,5** · Orientación: Ataque mágico / Defensa mágica.
+- **Noctivelo — NV35** · Manifestación: **Filo del Viento** · Técnicas: **Corte de vínculo [25] · Hoja de viento [25] · Salva de saetas [12,5] · Mordisco [0]** · Coste: **62,5** · Orientación: Velocidad / Ataque mágico.
+- **Unisylva — NV34** · Manifestación: **Veredicto** · Técnicas: **Orbe del alba [25] · Fruto explosivo [25] · Haz de luz [12,5] · Cornada [0]** · Coste: **62,5** · Orientación: Ataque mágico / Velocidad.
+
+**Comprobación de Amplitud:** 62,5 + 62,5 + 62,5 + 62,5 = **250 ≤ 258**. Ninguna criatura supera el límite local de 100. Las cuatro técnicas de cada una se encuentran dentro de su repertorio y son accesibles a los niveles propuestos.
+
+**Idea de combate:** Maelle busca **cortar el Vínculo del adversario**, impedir que establezca su ritmo y castigar las aperturas con ataques veloces. Deinarach es la pieza de interferencia: **Ruptura del Vínculo** amenaza con Desvinculado al materializarse, mientras **Trama quebradiza** añade Agrietado. Noctargo aporta presión física rápida con **Caza de sombra**; Noctivelo ataca desde el aire con **Hoja de viento** y mantiene la amenaza de **Corte de vínculo**. **Unisylva** es el rematador inesperado: **Veredicto** potencia sus ataques de Luz contra criaturas por debajo de la mitad de Vitalidad, y **Fruto explosivo** le permite atacar también mediante Planta. No todas las criaturas son vulnerables a Desvinculado: Oscuridad y Mítico son inmunes al estado.
+
+**Límite táctico:** la Preparación sacrifica parte de su potencia y variedad de técnicas para sostener cuatro amenazas complementarias dentro de la Amplitud disponible. Maelle puede equivocarse si insiste demasiado en controlar el combate en vez de aceptar un enfrentamiento directo.
+
+**Manifestaciones:** selección propuesta de las Manifestaciones existentes; no se atribuyen automáticamente a las especies. Cada una pertenece al Vínculo individual con Maelle. La procedencia y adquisición concreta de estas Manifestaciones siguen pendientes de fijar narrativamente.
 
 # Familia real de Corona Azur
 
@@ -4010,6 +4575,9 @@ La familia real inmediata está formada por el monarca Geraud Auvrelle y sus tre
 Esto posee un peso particular en una cultura donde las grandes casas invierten enormes recursos en sus Invocadores y donde prestigio familiar y poder vinculado pueden pertenecer a personas distintas.
 
 ## Geraud Auvrelle
+
+**Nacimiento (calendario solmeriano):** 01/09/277 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 72 años.
 **Edades durante las novelas I–III:** 72 años en la referencia de ficha; no aparece una cronología personal en las novelas I–III.  
@@ -4036,6 +4604,9 @@ Para Geraud, que ambas partes se opongan constituye un problema político que to
 
 ## Aveline Auvrelle
 
+**Nacimiento (calendario solmeriano):** 06/09/323 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 26 años.
 **Edades durante las novelas I–III:** 26 años en la referencia de ficha; no aparece una cronología personal en las novelas I–III.  
 **Posición:** princesa heredera de Corona Azur.
@@ -4054,6 +4625,9 @@ Aveline envidia a veces que Maelle haya Despertado y pueda construir una reputac
 Aveline no desea que Maelle sea obligada a casarse con el Arconte, pero tampoco puede comportarse como si la decisión no tuviese consecuencias para la Corona. Esa diferencia entre **no quererlo para su hermana** y **comprender perfectamente por qué su padre lo quiere** puede convertirla en una de las personas más difíciles para Maelle de discutir.
 
 ## Bastien Auvrelle
+
+**Nacimiento (calendario solmeriano):** 10/01/333 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 16 años.
 **Edades durante las novelas I–III:** 16 años en la referencia de ficha; no aparece una cronología personal en las novelas I–III.  
@@ -4103,6 +4677,9 @@ La revelación futura de que **Maelle Vaurin nunca existió** debe tener consecu
 ---
 
 # 3. Prisca Eburia
+
+**Nacimiento (calendario solmeriano):** 14/03/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 19 años  
 **Edades durante las novelas I–III:** *Universidad*: 19 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **22–23 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -4156,6 +4733,9 @@ Prisca es uno de los dos alumnos más avanzados al comenzar. No será una de las
 
 # 4. Mara Fornia
 
+**Nacimiento (calendario solmeriano):** 03/10/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 18 años  
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** mujer  
@@ -4206,6 +4786,9 @@ Mara nunca se convierte en una duelista espectacular. Sí puede acabar siendo un
 ---
 
 # 5. Silvia Vardana
+
+**Nacimiento (calendario solmeriano):** 11/06/332 EI. **Certeza:** día y mes fijados por el autor; año calculado desde la edad de referencia.  
+
 
 **Edad:** 17 años  
 **Edades durante las novelas I–III:** *Universidad*: 17 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **20–21 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -4263,7 +4846,438 @@ Es, probablemente, la estudiante más fuerte de la promoción al final aparte de
 
 ---
 
+# Familia Vardana — Ampliación de Silvia
+
+**Residencia familiar:** Tarsia.  
+**Condición social:** casa noble menor, perteneciente a la nobleza emergente de Tarsia.  
+**Actividad económica principal:** propiedad de un prestigioso taller especializado en sellos acreditativos.  
+**Ámbito de influencia:** política de las casas menores de Tarsia.  
+**Invocadores de la familia:** Silvia es la primera en despertar.
+
+Los Vardana son una familia de la nobleza emergente de Tarsia. Su posición no procede de un linaje especialmente antiguo ni de grandes posesiones territoriales, sino de una prosperidad económica que les ha permitido acceder a los círculos políticos de las casas menores.
+
+La principal fuente de riqueza de la familia es un taller especializado en la fabricación de **sellos acreditativos para casas nobles, autoridades y personalidades importantes**.
+
+El establecimiento goza de un reconocimiento extraordinario. Entre sus encargos más prestigiosos se encuentran los sellos de **los arcontes, miembros del Consejo y el mismísimo emperador**.
+
+Estos trabajos han convertido el nombre Vardana en una referencia de calidad y discreción. Que una personalidad tan importante como el emperador encargue su sello a su taller supone un reconocimiento excepcional.
+
+Sin embargo, **ese prestigio no se traduce automáticamente en influencia política**. Los Vardana pueden presumir de haber trabajado para algunas de las personas más poderosas del Imperio, pero eso no significa que estas les deban favores, los consideren aliados o estén dispuestas a intervenir por ellos.
+
+La familia participa en la política de las casas menores de Tarsia, donde mantiene relaciones, negocia apoyos y procura mejorar su posición. Sus aspiraciones son relativamente modestas dentro del conjunto de la política imperial, aunque importantes para una casa de su categoría.
+
+El matrimonio de Livia con el hijo menor de Decar Varen, miembro actual del Consejo Imperial, ha establecido un vínculo familiar prestigioso. Sin embargo, este parentesco no garantiza a los Vardana influencia sobre Decar ni participación en las decisiones del Consejo.
+
+Ningún miembro de la familia había despertado como Invocador antes de Silvia. Su despertar supuso un acontecimiento extraordinario y alteró las expectativas que sus padres tenían para ella.
+
+## 1. El taller de sellos Vardana
+
+El taller Vardana es uno de los establecimientos más prestigiosos de Tarsia en la fabricación de sellos acreditativos.
+
+Su especialidad no es la producción de adornos ni el grabado artístico convencional, sino la creación de piezas destinadas a **identificar y acreditar la autoridad de una persona, una casa o una institución**.
+
+Los sellos pueden utilizarse para autenticar correspondencia, órdenes, acuerdos y otros documentos oficiales.
+
+Cada encargo se realiza de manera individual, siguiendo las exigencias del cliente y las medidas de seguridad correspondientes.
+
+La reputación del taller se fundamenta en tres aspectos: la precisión de sus grabados, la dificultad de reproducirlos y la absoluta discreción con la que trata los encargos.
+
+### Materiales y técnicas
+
+El principal distintivo del taller Vardana es la posesión de **cinco plumas de Fényrax**, un material extraordinariamente valioso que constituye la base de su especialización en sellos acreditativos.
+
+Las plumas de Fényrax poseen una propiedad singular: **al rasgarse, producen calor**. Los maestros grabadores del taller aprovechan esta característica para realizar incisiones de una precisión excepcional, capaces de reproducir trazos y detalles prácticamente imposibles de conseguir mediante herramientas convencionales.
+
+Esta técnica permite fabricar matrices con grabados extremadamente complejos, cuya reproducción resulta muy difícil incluso para otros talleres especializados.
+
+Las cinco plumas son uno de los bienes más preciados de la casa Vardana. Su utilización está reservada a los maestros grabadores de mayor confianza y a los encargos que requieren el máximo nivel de precisión.
+
+El taller emplea también metales y aleaciones de gran calidad, seleccionados según las necesidades de cada sello. Sin embargo, son las plumas de Fényrax y la habilidad de los artesanos que trabajan con ellas las que han dado al establecimiento su extraordinaria reputación.
+
+Gracias a esta especialización, el taller Vardana ha recibido encargos de arcontes, miembros del Consejo Imperial y del propio emperador.
+
+La familia no participa directamente en la elaboración de las piezas, pero conserva la propiedad del taller, sus herramientas y las cinco plumas, cuya posesión constituye una parte fundamental de su patrimonio.
+
+### Organización
+
+Los Vardana son propietarios del establecimiento, pero no trabajan personalmente como artesanos.
+
+El taller cuenta con maestros grabadores, especialistas en metales, aprendices y personal encargado de la preparación y entrega de los pedidos.
+
+La familia supervisa su administración, selecciona los encargos importantes y protege las relaciones con los clientes.
+
+El taller constituye su principal patrimonio y una parte esencial de su identidad como casa noble.
+
+## 2. Los padres de Silvia
+
+### Dacio Vardano — Padre
+
+**Nacimiento (calendario solmeriano):** 21/09/293 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 56 años.  
+**Residencia:** Tarsia.  
+**Condición:** noble de una casa menor.  
+**Ocupación:** propietario del taller familiar y participante en la política de las casas menores de Tarsia.
+
+Dacio es un hombre de estatura media, hombros anchos y cabello castaño, bastante encanecido. Lleva una barba corta y cuidada y suele vestir con la sobriedad propia de alguien que desea transmitir respetabilidad antes que ostentación.
+
+Es un hombre orgulloso, perseverante y muy consciente de la posición que ocupa su familia.
+
+Dedica buena parte de su tiempo a los asuntos políticos de las casas menores de Tarsia. Participa en reuniones, cultiva relaciones y busca acuerdos que permitan mejorar la situación de los Vardana.
+
+No posee una influencia especialmente destacada, pero conoce bien los equilibrios de poder entre las familias de su entorno.
+
+Aunque no ejerce como artesano, conoce el funcionamiento del taller y comprende la importancia de mantener su prestigio. Supervisa las decisiones económicas más relevantes y procura que ningún encargo comprometa la reputación familiar.
+
+Es ambicioso, aunque sus aspiraciones siempre han estado limitadas por las posibilidades reales de su casa.
+
+**Relación con Silvia**
+
+El despertar de Silvia fue uno de los acontecimientos más felices de su vida.
+
+Hasta entonces, los Vardana nunca habían contado con un Invocador entre sus miembros. Para Dacio, descubrir que su hija poseía esa capacidad fue motivo de un orgullo inmenso.
+
+Desde el primer momento decidió apoyar su formación.
+
+Es **el principal responsable de financiar la educación universitaria de Silvia** y considera que el dinero invertido en ella está más que justificado.
+
+Le gusta hablar de sus progresos y presume de sus capacidades cuando tiene ocasión, aunque procura no hacerlo de manera demasiado evidente delante de otras familias.
+
+Dacio cree que Silvia puede alcanzar una posición que ningún Vardana ha ocupado antes.
+
+Sin embargo, interpreta sus posibilidades principalmente desde la perspectiva familiar: si su hija consigue prestigio como Invocadora, también aumentará la consideración que reciben los Vardana.
+
+Esto no significa que su orgullo sea interesado. Quiere sinceramente a Silvia y desea verla triunfar.
+
+Simplemente le cuesta separar los éxitos de su hija del ascenso social de la familia.
+
+No comprende del todo hasta dónde llegan sus ambiciones, pero tampoco pretende detenerlas.
+
+### Sabina Vardana — Madre
+
+**Nacimiento (calendario solmeriano):** 08/04/297 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 52 años.  
+**Residencia:** Tarsia.  
+**Condición:** noble de una casa menor.  
+**Ocupación:** administración de los intereses familiares y participación en las relaciones sociales y políticas de Tarsia.
+
+Sabina es una mujer elegante, de cabello rubio oscuro y ojos verdes, rasgos que Silvia ha heredado de ella.
+
+Cuida mucho su apariencia y presta especial atención a la forma de vestir, hablar y comportarse de quienes la rodean.
+
+Es inteligente, observadora y muy hábil para interpretar las relaciones sociales.
+
+Participa activamente en la vida de las casas menores de Tarsia, mantiene contactos con otras familias y procura que los Vardana estén presentes en las reuniones y acontecimientos adecuados.
+
+También interviene en la administración del patrimonio familiar, especialmente en los asuntos relacionados con contratos, compromisos y relaciones comerciales.
+
+Sabina comprende perfectamente los límites de la posición de los Vardana.
+
+Sabe que el reconocimiento que proporciona el taller no basta para convertirlos en una familia verdaderamente influyente.
+
+Por eso considera que los matrimonios son una de las herramientas más importantes para mejorar su posición.
+
+**Relación con Silvia**
+
+Sabina quiere a su hija y reconoce que posee una inteligencia y una determinación extraordinarias.
+
+Sin embargo, no comparte el entusiasmo de Dacio por su carrera como Invocadora.
+
+Considera que el despertar de Silvia es una circunstancia excepcional que puede aumentar su atractivo como candidata matrimonial, pero no cree que deba dedicar su vida a combatir o competir por rangos.
+
+Para Sabina, **los juegos de criaturas deben dejarse a los soldados**.
+
+No entiende por qué una joven noble, educada y con posibilidades de contraer un matrimonio ventajoso debería exponerse a los riesgos y exigencias de la vida de un Invocador.
+
+Preferiría que Silvia se casase con un hombre pudiente y bien relacionado, capaz de proporcionarle una posición social superior a la que actualmente disfruta su familia.
+
+Su mayor preocupación es que la ambición de su hija termine alejándola de las oportunidades que considera verdaderamente importantes.
+
+Sabina no se opone a Silvia por falta de afecto, sino porque está convencida de que su hija está equivocándose sobre la manera de conseguir una buena vida.
+
+## 3. Las tres hermanas mayores
+
+### Livia Vardana — Hermana mayor
+
+**Nacimiento (calendario solmeriano):** 23/04/319 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 30 años.  
+**Residencia:** Tarsia.  
+**Estado civil:** casada.  
+**Esposo:** Tiberio Varen, hijo menor de Decar Varen, miembro actual del Consejo Imperial.  
+**Hijos:** un niño de dos años y una niña de uno.  
+**Ocupación:** administración del taller familiar y futura propietaria.
+
+#### Aspecto físico
+
+Livia es una mujer alta, de aproximadamente un metro setenta y cinco, con una complexión esbelta y hombros rectos. Tiene la cintura definida, las caderas proporcionadas y una figura elegante que mantiene incluso cuando viste prendas sencillas. No es especialmente delgada ni posee una constitución atlética; su apariencia es la de una mujer saludable, acostumbrada a una vida acomodada, pero activa.
+
+Su rostro es alargado, con pómulos marcados, nariz recta y mandíbula bien definida. Tiene los ojos verdes, ligeramente almendrados, bajo unas cejas oscuras que acentúan su expresión seria. Sus labios son finos y rara vez sonríe por simple cortesía, aunque su rostro cambia notablemente cuando lo hace.
+
+Lleva el cabello castaño oscuro, largo y abundante. Habitualmente lo recoge en un moño bajo o en una trenza elaborada, especialmente cuando se ocupa de los asuntos del taller. En las reuniones sociales prefiere peinados más cuidados, adornados con pequeñas piezas de orfebrería.
+
+Viste con elegancia discreta. Prefiere los tonos oscuros, los tejidos de buena calidad y las prendas bien ajustadas, sin excesivos adornos. Suele llevar alguna joya sencilla que recuerda su posición como miembro de una casa noble.
+
+Camina con la espalda erguida y movimientos tranquilos. No acostumbra a gesticular demasiado y mantiene una expresión atenta cuando escucha a los demás. Su presencia transmite seguridad y cierta severidad, aunque quienes la conocen saben que es mucho más afectuosa de lo que aparenta.
+
+#### Personalidad y ocupación
+
+Livia es reservada, disciplinada y muy competente en los asuntos económicos.
+
+Desde joven se interesó por la administración del patrimonio familiar. Conoce a los trabajadores del taller, comprende sus procesos de producción y mantiene una relación estrecha con los responsables de los encargos más importantes.
+
+Aunque no ejerce como grabadora, es quien mejor conoce el funcionamiento cotidiano del negocio.
+
+**Livia heredará el taller Vardana** y ya participa activamente en su dirección.
+
+Su padre confía plenamente en su criterio y considera que es la persona más capacitada para conservar el prestigio del establecimiento.
+
+Livia es consciente del valor de las cinco plumas de Fényrax que posee la familia y de la importancia de mantener la confianza de quienes encargan sus sellos al taller. Presta especial atención a la discreción de los trabajadores y al cumplimiento de los compromisos adquiridos.
+
+No considera que administrar el negocio familiar sea una ocupación inferior a las responsabilidades políticas de su padre. Al contrario, está convencida de que la estabilidad económica de los Vardana depende principalmente del taller.
+
+#### Matrimonio con Tiberio Varen
+
+**Nacimiento de Tiberio Varen (propuesto):** 27/11/313 EI.
+
+Livia está casada con **Tiberio Varen**, hijo menor de Decar Varen, miembro actual del Consejo Imperial.
+
+Tiberio es un hombre de aproximadamente treinta y cinco años, alto y de constitución robusta. Tiene el cabello negro, corto y cuidadosamente peinado, ojos oscuros y un rostro de facciones fuertes. Su espalda ancha y su manera de mantenerse erguido recuerdan la apariencia de su padre, aunque sus rasgos son menos severos.
+
+Es un hombre educado, tranquilo y de trato correcto. Está acostumbrado a las formalidades propias de una familia importante y procura mantener una buena relación con las personas de su entorno.
+
+Su matrimonio con Livia ha establecido un vínculo familiar prestigioso para los Vardana, aunque no implica que la casa disponga de influencia directa sobre Decar ni sobre el Consejo Imperial.
+
+Tiberio respeta las responsabilidades de su esposa y no pretende apartarla de la administración del taller. Livia, por su parte, mantiene sus obligaciones familiares sin considerar que su matrimonio deba modificar su futuro como heredera.
+
+La pareja reside en Tarsia.
+
+#### Hijos
+
+Livia y Tiberio tienen actualmente dos hijos.
+
+**El mayor es un niño de dos años.** Tiene el cabello castaño oscuro y los ojos verdes de su madre. Es inquieto, curioso y comienza a mostrar un carácter obstinado. Le gusta seguir a los adultos por la casa y tocar cuanto encuentra a su alcance.
+
+**La pequeña es una niña de un año.** Tiene el cabello oscuro y fino, ojos grandes y una expresión despierta. Todavía necesita mucha atención y suele permanecer al cuidado de su madre o de las personas encargadas de los niños.
+
+Livia quiere profundamente a sus hijos y procura dedicarles tiempo a pesar de sus responsabilidades.
+
+La maternidad no ha alterado su intención de heredar y dirigir el taller. Organiza sus obligaciones para atender tanto a su familia como al negocio, aunque no siempre le resulta sencillo.
+
+#### Relación con Silvia
+
+Livia siente un gran afecto por su hermana pequeña y está orgullosa de sus capacidades como Invocadora.
+
+Sin embargo, no comparte su obsesión por alcanzar una posición política importante.
+
+Considera que el poder también puede ejercerse desde la administración de un patrimonio y que Silvia concede demasiada importancia a los títulos y reconocimientos.
+
+Silvia, por su parte, admira la independencia de Livia, aunque le cuesta comprender que se conforme con dirigir el negocio familiar.
+
+El matrimonio de Livia con el hijo de un miembro del Consejo representa, además, una diferencia importante entre ambas hermanas.
+
+Livia ha establecido una relación familiar con una de las grandes figuras del Imperio mediante el matrimonio, mientras que Silvia aspira a alcanzar una posición semejante por sus propios méritos.
+
+Esto no significa que Silvia desprecie a su hermana ni que Livia haya renunciado a su independencia. Simplemente han elegido caminos distintos.
+
+Ambas mantienen una relación cercana, pero sus diferencias de carácter provocan discusiones ocasionales.
+
+### Claudia Vardana — Segunda hermana
+
+**Nacimiento (calendario solmeriano):** 08/12/321 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 27 años.  
+**Residencia:** Cerralba.  
+**Estado civil:** casada.
+
+Claudia es una mujer atractiva, de cabello castaño claro y ojos verdes.
+
+Tiene un carácter afable, es sociable y sabe desenvolverse con naturalidad entre personas acomodadas.
+
+Desde joven mostró facilidad para las relaciones sociales y disfrutaba acompañando a su madre en reuniones y celebraciones.
+
+Se casó con un mercader rico de Cerralba y actualmente disfruta de una posición económica muy cómoda.
+
+Su matrimonio fue bien recibido por los Vardana, especialmente por Sabina, que considera que Claudia supo aprovechar sus oportunidades.
+
+Claudia está satisfecha con su vida y mantiene una buena relación con su familia.
+
+**Relación con Silvia**
+
+Claudia suele aconsejar a Silvia que no desprecie las ventajas de un matrimonio conveniente.
+
+No comprende del todo sus ambiciones políticas, pero tampoco pretende impedirle que las persiga.
+
+Silvia la quiere, aunque le molesta que interprete sus posibilidades de futuro principalmente en términos matrimoniales.
+
+#### Darío Cerano — Esposo de Claudia
+
+**Nacimiento (calendario solmeriano):** 08/11/313 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 35 años.  
+**Residencia:** Cerralba.  
+**Profesión:** mercader acomodado.
+
+Darío es un hombre alto, corpulento y de cabello negro, con una barba cuidadosamente recortada.
+
+Es cordial, generoso y hábil para negociar.
+
+Ha construido una fortuna considerable mediante el comercio de metales trabajados, herramientas especializadas y artículos de lujo.
+
+Mantiene relaciones comerciales con distintas ciudades y posee una amplia red de proveedores.
+
+Su matrimonio con Claudia es estable y ambos disfrutan de una vida acomodada.
+
+Darío mantiene una buena relación con sus suegros y considera que el taller Vardana es un negocio de gran prestigio.
+
+Trata a Silvia con cordialidad y se interesa por sus estudios, aunque no termina de comprender sus aspiraciones políticas.
+
+### Emilia Vardana — Tercera hermana
+
+**Nacimiento (calendario solmeriano):** 25/01/325 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 24 años.  
+**Residencia:** Arvensa.  
+**Estado civil:** casada.
+
+Emilia es de estatura media, cabello rubio oscuro y ojos castaños.
+
+Tiene una expresión vivaz y una forma de hablar directa, poco preocupada por las formalidades.
+
+Es espontánea, curiosa y la menos interesada de las hermanas por las convenciones sociales de Tarsia.
+
+Desde joven disfrutaba visitando talleres y conociendo los oficios de quienes trabajaban para su familia.
+
+Se casó con un artesano de Arvensa, una elección que no entusiasmó a Sabina debido a la diferencia de posición social.
+
+Sin embargo, Emilia está satisfecha con su matrimonio y no lamenta haber renunciado a otras oportunidades.
+
+**Relación con Silvia**
+
+Emilia es la hermana con la que Silvia puede hablar con mayor libertad.
+
+Se burla cariñosamente de sus ambiciones políticas, aunque la anima a perseguir sus objetivos.
+
+No comparte su perfeccionismo y suele recordarle que una vida satisfactoria no necesita impresionar a nadie.
+
+#### Néstor Arvenio — Esposo de Emilia
+
+**Nacimiento (calendario solmeriano):** 09/11/320 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 28 años.  
+**Residencia:** Arvensa.  
+**Profesión:** artesano especializado en monturas metálicas, cierres de precisión y pequeños mecanismos.
+
+Néstor es un hombre de complexión delgada, cabello castaño y manos acostumbradas al trabajo minucioso.
+
+Es tranquilo, ingenioso y algo tímido cuando se encuentra entre desconocidos.
+
+Posee un taller dedicado a fabricar cerraduras, bisagras elaboradas, cierres para cofres y monturas metálicas destinadas a instrumentos y objetos de valor.
+
+No tiene una gran fortuna, pero su oficio está bien considerado y le permite mantener una vida estable.
+
+Su matrimonio con Emilia es feliz.
+
+Dacio lo respeta como profesional, aunque considera que su posición social es inferior a la de los Vardana.
+
+Sabina lo trata con corrección, pero nunca ha ocultado del todo que esperaba un matrimonio más ventajoso para su hija.
+
+Néstor mantiene una relación cordial con Silvia y la trata con naturalidad, sin prestar demasiada atención a su condición de Invocadora.
+
+## 4. Las expectativas matrimoniales de los Vardana
+
+Los matrimonios de las tres hermanas mayores han tenido resultados diferentes.
+
+Livia se ha casado con Tiberio Varen, hijo menor de Decar Varen, miembro actual del Consejo Imperial. La unión supone un vínculo familiar prestigioso, aunque Livia conserva su responsabilidad sobre el taller que heredará. La pareja tiene dos hijos, un niño de dos años y una niña de uno.
+
+Claudia se casó con un mercader rico, consolidando una posición económica cómoda y estableciendo relaciones comerciales útiles.
+
+Emilia eligió a un artesano de Arvensa, una decisión que sus padres aceptaron, aunque Sabina habría preferido una unión socialmente más ventajosa.
+
+Silvia representa una situación distinta.
+
+Su despertar como Invocadora ha abierto posibilidades que ninguno de sus padres había previsto.
+
+**Dacio considera que su hija debe aprovechar esa oportunidad para alcanzar el mayor prestigio posible.**
+
+Está orgulloso de sus capacidades y dispuesto a financiar su formación, aunque también espera que sus logros favorezcan el reconocimiento de la casa Vardana.
+
+**Sabina, en cambio, considera que Silvia debería casarse con alguien pudiente y obtener una posición social mediante el matrimonio.**
+
+No cree que su hija necesite convertirse en una gran Invocadora para tener éxito.
+
+Preferiría verla casada con un miembro de una casa influyente, un heredero acomodado o un hombre con una posición destacada en la administración imperial.
+
+La Universidad representa para ella una oportunidad de establecer relaciones con familias importantes, no necesariamente el comienzo de una carrera profesional.
+
+Las conversaciones familiares sobre el futuro de Silvia suelen reflejar estas diferencias.
+
+Dacio pregunta por sus avances, sus criaturas y sus posibilidades de progresar como Invocadora.
+
+Sabina se interesa por las personas que conoce, sus apellidos y sus circunstancias familiares.
+
+Ambos desean lo mejor para su hija, pero imaginan futuros distintos.
+
+## 5. El conflicto de Silvia
+
+Silvia ha crecido en una familia que posee riqueza, prestigio y una posición noble reconocida, pero cuya influencia política es limitada.
+
+Desde pequeña ha visto cómo sus padres procuraban mejorar la situación de los Vardana mediante relaciones, acuerdos y compromisos con otras casas menores.
+
+También ha observado que el reconocimiento social no siempre equivale a poder.
+
+El taller familiar puede fabricar el sello del emperador, pero eso no convierte a los Vardana en personas cercanas al trono.
+
+Incluso el matrimonio de Livia con el hijo de un miembro del Consejo representa una relación familiar, no una garantía de participación en las decisiones del poder imperial.
+
+Esa diferencia ha marcado profundamente su manera de entender la sociedad.
+
+Cuando despertó como Invocadora, Silvia descubrió una posibilidad que ninguna de sus hermanas había tenido: **alcanzar una posición que dependiera de sus propias capacidades**.
+
+El orgullo de su padre reforzó su confianza, mientras que las expectativas matrimoniales de su madre despertaron una resistencia cada vez mayor.
+
+Silvia no quiere convertirse en la esposa de un hombre importante.
+
+**Quiere ser ella la persona importante.**
+
+Tampoco desea limitarse a mejorar la posición de los Vardana. Aunque siente afecto por su familia y valora el apoyo económico de su padre, necesita demostrar que puede conseguir algo que le pertenezca por completo.
+
+Su ambición no nace únicamente del deseo de reconocimiento.
+
+También procede de haber crecido cerca de un poder al que su familia nunca ha tenido verdadero acceso.
+
+Conoce los nombres de las grandes figuras del Imperio, ha oído hablar de ellas durante toda su vida y sabe que algunas han confiado encargos importantes al taller familiar.
+
+Pero también sabe que esas relaciones no convierten a los Vardana en sus iguales.
+
+Silvia quiere superar esa distancia.
+
+Su objetivo es convertirse en Magíster y, con el tiempo, aspirar a uno de los Veinticuatro asientos del Consejo Imperial.
+
+Esta aspiración no surge de un interés puramente académico. Está relacionada con su necesidad de demostrar que puede alcanzar por sus propios méritos una posición que su familia jamás habría podido proporcionarle.
+
+**Esa necesidad de reconocimiento y autonomía será uno de los motores que la impulsen a buscar la cercanía del poder.**
+
+La contradicción central de Silvia es que desea independizarse de las expectativas familiares, pero ha heredado de sus padres una profunda conciencia de las jerarquías sociales.
+
+Rechaza que su valor dependa del hombre con quien se case, aunque sigue midiendo buena parte de su éxito por la posición que ocupa frente a los demás.
+
+Su evolución deberá enfrentarla a esa contradicción: aprender a distinguir entre alcanzar una posición importante y necesitar constantemente que los demás reconozcan su importancia.
+
+---
+
 # 6. Neria Tosca
+
+**Nacimiento (calendario solmeriano):** 04/05/332 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 17 años  
 **Edades durante las novelas I–III:** *Universidad*: 17 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **20–21 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -4316,6 +5330,9 @@ No termina entre los buenos de la promoción. Su progreso personal, sin embargo,
 
 # 7. Marcia Bravia
 
+**Nacimiento (calendario solmeriano):** 15/07/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 18 años  
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** mujer  
@@ -4363,12 +5380,15 @@ Talassar posee una memoria extraordinaria para rutas y corrientes. Marcia ha des
 
 ---
 
-# 8. Elvia Norba
+# 8. Elvia Arven
+
+**Nacimiento (calendario solmeriano):** 16/07/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 19 años  
 **Edades durante las novelas I–III:** *Universidad*: 19 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **22–23 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** mujer  
-**Origen:** Villa Arven. Sus padres gestionan alojamiento y animales para viajeros vinculados a una ruta de postas secundaria.
+**Origen:** familia de Elian Arven, Magíster de las Postas Imperiales. Es su última hija y la única hija viva que le queda; sus hermanos mayores fallecieron y Elian tiene varios nietos, algunos de mayor edad que ella. Su madre murió al darla a luz.
 
 ## Descripción física
 
@@ -4376,13 +5396,21 @@ Alta, extraordinariamente delgada, de nariz larga y cabello oscuro liso. No llam
 
 ## Motivación
 
-Quiere trabajar algún día en la organización de las Postas, no necesariamente como mensajera. Le interesan rutas, tiempos, información y la coordinación necesaria para que algo llegue.
+Quiere vivir por su cuenta y decidir quién es al margen de su padre. No desea que la identifiquen por el cargo de Elian ni que él resuelva cada dificultad con sus contactos y recursos. La Universidad le permite disfrutar de una libertad que no encontraba en su casa. **No tiene como aspiración establecida trabajar en las Postas.**
 
 ## Psicología
 
-Es observadora, seca, paciente y bastante orgullosa de su capacidad para detectar mentiras.
+Es observadora, seca, paciente, independiente y bastante orgullosa de su capacidad para detectar mentiras. Le irrita que intenten protegerla, organizarle la vida o averiguar asuntos personales que no quiere compartir. Puede interpretar una ayuda sincera como una intromisión y responder con una brusquedad desproporcionada. Al mismo tiempo, está acostumbrada a comodidades que su padre le ha proporcionado y no siempre reconoce esa contradicción.
 
 Nimbaro es socialmente perceptivo y difícil de engañar dos veces. Elvia ha absorbido parte de eso. Perdona una mentira mucho peor que una ofensa. La sensibilidad atmosférica de Eosmis y después Brumarina hace además que preste atención a cambios mínimos en un ambiente. A veces sabe que dos personas están enfadadas antes de que ellas decidan admitirlo; otras veces convierte una incomodidad banal en una conspiración.
+
+## Familia y relación con su padre
+
+Elvia nació cuando Elian ya era un hombre extraordinariamente anciano. Su madre murió durante el parto. Creció en una familia donde su padre tenía nietos —algunos mayores que ella— y donde las relaciones entre generaciones resultaban insólitas: Elvia era tía de personas de su edad o mayores. No se siente cómoda con ese lugar familiar y evita explicarlo a quienes no conoce bien.
+
+A sus ojos, Elian tiene más edad de abuelo o bisabuelo que de padre. Le cuesta reconocerlo como la figura paterna que hubiera querido tener. Está harta de que se preocupe por ella y de que intente solucionar todos sus problemas. **Elian le consiente prácticamente todo lo que desea**, tolera sus desplantes y utiliza su posición para facilitarle las cosas, pero eso suele irritarla todavía más. Elvia lo quiere, aunque apenas se lo demuestre, y reclama distancia incluso cuando se beneficia de sus atenciones.
+
+No anuncia a sus compañeros que su padre es el Magíster de las Postas. No tiene por qué mentir sobre su identidad: sencillamente no quiere hablar de ello y desea que la dejen en paz. No presupone que sus compañeros conozcan el parentesco.
 
 ## Al entrar en la Universidad
 
@@ -4410,7 +5438,27 @@ Nimbaro es socialmente perceptivo y difícil de engañar dos veces. Elvia ha abs
 
 ---
 
+## Elian Arven — Padre de Elvia
+
+**Edad real de referencia:** 113 años.  
+**Cargo:** Magíster de las Postas Imperiales, cabeza de la red postal desde hace 29 años.  
+**Condición:** Invocador.  
+**Criaturas más reconocibles:** Dracendra — NV80; Faresban — NV74.
+
+Elian es delgado y fibroso, de altura media, con piernas fuertes y cabello que mezcla cobre apagado, gris y blanco. Sus Vínculos de Fuego han conservado su aspecto hasta hacerlo parecer poco mayor de cincuenta años. Comenzó como mensajero, ascendió mediante el trabajo en rutas y estaciones y terminó al frente de una red de relaciones con posaderos, comerciantes, funcionarios y mensajeros de todo Solmer. Su Dracendra posee una resistencia aérea excepcional.
+
+Es un hombre competente y de enorme experiencia, pero se expresa peor cuanto más importante es para él lo que quiere decir. Durante su matrimonio utilizó demasiadas veces sus viajes para evitar conversaciones difíciles. Su esposa, madre de Elvia, murió en el parto; los hijos mayores de Elian también han fallecido. Conserva varios nietos y a Elvia como única hija viva.
+
+La llegada tardía de Elvia y la pérdida de su madre hicieron que Elian volcase en ella una atención excesiva. Le concede casi cualquier capricho y procura anticiparse a sus necesidades. Confunde a veces cuidar con intervenir. Aunque Elvia se rebela contra sus atenciones, él soporta sus malas contestaciones con una paciencia poco habitual en sus relaciones profesionales. Su afecto es real; su dificultad es aceptar que su hija necesita decidir por sí misma.
+
+**Motivación conservada:** conseguir que la distancia no convierta necesariamente una ausencia en abandono. Su historia profesional, sus Vínculos y sus conocimientos narrativos previos no se modifican.
+
+---
+
 # 9. Octavia Quintela
+
+**Nacimiento (calendario solmeriano):** 13/12/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 17 años  
 **Edades durante las novelas I–III:** *Universidad*: 17 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **20–21 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -4461,6 +5509,9 @@ Batrioma puede quedarse quieto durante muchísimo tiempo y reaccionar con violen
 
 ---
 # 10. Brenn Veyr
+
+**Nacimiento (calendario solmeriano):** 04/11/329 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 19 años
 **Edades durante las novelas I–III:** *Universidad*: 19 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **22–23 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -4658,6 +5709,9 @@ Su relación con Maelle toca precisamente esa vulnerabilidad. Brenn está acostu
 # Familia Veyr
 
 ## Hagen Veyr
+
+**Nacimiento (calendario solmeriano):** 18/01/219 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 130 años.
 **Edades durante las novelas I–III:** 130 años en la referencia de ficha; no aparece una cronología personal directa en las novelas I–III.  
@@ -4893,6 +5947,10 @@ Eso convierte su favor en un recurso presente, no únicamente en una discusión 
 
 ## Gerwin y Falk
 
+**Nacimiento de Falk Veyr (propuesto):** 03/06 (año sin determinar).
+
+**Nacimiento de Gerwin Veyr (propuesto):** 07/02 (año sin determinar).
+
 Gerwin y Falk son hermanos completos de Brenn.
 
 La muerte de su madre durante el nacimiento de Brenn forma parte de la historia que comparten y contribuyó a que ambos desarrollaran desde muy pronto una relación hostil hacia el hermano pequeño.
@@ -4943,6 +6001,9 @@ Y, dado que evita hablar de Hagen siempre que puede, es perfectamente posible qu
 
 # 11. Leandro Quirino
 
+**Nacimiento (calendario solmeriano):** 26/08/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 18 años  
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** hombre  
@@ -4990,12 +6051,15 @@ Es un buen estudiante que podría haber sido mucho mejor.
 
 ---
 
-# 12. Crispo Castedo
+# 12. Crispo Servilio
+
+**Nacimiento (calendario solmeriano):** 11/11/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 17 años  
 **Edades durante las novelas I–III:** *Universidad*: 17 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **20–21 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** hombre  
-**Origen:** Puerto de Alscor. Familia con pocos recursos; estudia mediante patronazgo.
+**Origen:** Lurena. Tercer hijo de Trajano Servilio, gobernador de la ciudad y cabeza de la Casa Servilia. Único Invocador entre los hijos de Trajano.
 
 ## Descripción física
 
@@ -5003,13 +6067,19 @@ Bajo, muy delgado y de facciones sorprendentemente bonitas. Tiene ojos oscuros e
 
 ## Motivación
 
-Ascenso social. No lo disfraza. Quiere dinero, posición y reconocimiento porque ha visto cómo cambia el tono de una conversación dependiendo de quién puede pagarla.
+Quiere demostrar que sus logros son suyos y no regalos del apellido Servilio. Ha crecido rodeado de privilegios y sabe que cualquier éxito puede atribuirse a la influencia de su padre. Por eso se obsesiona con los méritos, las clasificaciones y las mediciones: necesita pruebas que nadie pueda discutir. No pretende ascender desde la pobreza, sino dejar de vivir a la sombra de una familia poderosa.
 
 ## Psicología
 
-Es brillante, competitivo, orgulloso y capaz de convertir una comparación casual en una rivalidad de seis meses.
+Es brillante, competitivo, orgulloso y capaz de convertir una comparación casual en una rivalidad de seis meses. No le basta con mejorar: necesita mejorar más que los demás. Una derrota puede parecerle una refutación de su propio valor, mientras que una victoria apenas lo satisface antes de buscar otra prueba.
 
-Fulgocerno tiene un fuerte sentido territorial y social y suele advertir antes de cargar. Noxilo permanece inmóvil hasta moverse explosivamente. Nereo ha adquirido ambos patrones: marca territorio verbalmente, avisa, presume, provoca y luego, de pronto, se compromete en exceso para demostrar que hablaba en serio.
+Fulgocerno tiene un fuerte sentido territorial y social y suele advertir antes de cargar. Noxilo permanece inmóvil hasta moverse explosivamente. Crispo ha adquirido ambos patrones: marca territorio verbalmente, avisa, presume, provoca y luego, de pronto, se compromete en exceso para demostrar que hablaba en serio.
+
+## Familia y relación con Trajano
+
+Crispo es el tercer hijo de Trajano. Sus dos hermanos mayores, que no despertaron como Invocadores, han seguido caminos ligados a las responsabilidades familiares; sus funciones concretas quedan pendientes de fijar. Crispo es el único hijo que ha despertado. Su padre tampoco es Invocador.
+
+Trajano está orgulloso de él, pero considera que el mérito sirve para asumir responsabilidades y tomar buenas decisiones, no para acumular victorias y reconocimientos. Crispo interpreta esa perspectiva como una incomprensión de su esfuerzo. Quiere que Trajano lo vea como alguien extraordinario por sí mismo; Trajano quiere que comprenda que ser extraordinario no basta. La tensión entre ambos no elimina el afecto ni convierte a Trajano en un padre despreciativo.
 
 ## Al entrar en la Universidad
 
@@ -5036,13 +6106,52 @@ Fulgocerno tiene un fuerte sentido territorial y social y suele advertir antes d
 
 **Idea de combate:** **Cuerno al rojo** amenaza con Quemado y abre oportunidades para un equipo que castiga criaturas debilitadas o mal posicionadas.
 
-Nereo es deliberadamente frustrante: posee uno de los Vínculos individuales más desarrollados de toda la promoción y aun así sólo se gradúa como Adepto. La simultaneidad y la coordinación bajo presión siguen siendo mediocres.
+Crispo es deliberadamente frustrante: posee uno de los Vínculos individuales más desarrollados de toda la promoción y aun así sólo se gradúa como Adepto. La simultaneidad y la coordinación bajo presión siguen siendo mediocres.
 
 Eso le dolerá mucho más que perder contra Adriano.
 
 ---
 
+# Trajano Servilio — Padre de Crispo
+
+**Nacimiento (calendario solmeriano):** 06/02/289 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad aproximada:** 60 años.  
+**Residencia:** Lurena.  
+**Cargo:** gobernador de Lurena, segunda gran ciudad de Solmer después de Tarsia.  
+**Linaje:** cabeza de la Casa Servilia.  
+**Condición:** no es Invocador.  
+**Familia:** padre de Crispo, su tercer hijo y único Invocador.
+
+## Descripción y carácter
+
+Trajano es un hombre de presencia sobria y maneras prácticas. No necesita convertir cada decisión en una exhibición de autoridad. Escucha, sopesa costes y consecuencias y actúa cuando considera que dispone de información suficiente. Es capaz de una hospitalidad franca, pero no toma decisiones políticas por simple simpatía. Su aspecto físico preciso queda por fijar.
+
+Su poder procede de una casa antigua, de las instituciones de Lurena y de una extensa red de alianzas comerciales, administradores, responsables de caminos y fuerzas locales. La Casa Servilia no controla por sí sola todos los negocios de la ciudad; su influencia depende de negociar con otros intereses y preservar la confianza en sus instituciones.
+
+## Gobierno de Lurena
+
+Lurena es una metrópoli interior de enorme importancia económica, vinculada a los caminos entre cordilleras, el comercio de metales y las mercancías procedentes de los puertos. Su relación con Tarsia convierte el corredor entre ambas ciudades en una de las grandes rutas comerciales de Solmer. **Villa Estora se encuentra en ese corredor**, lo que explica la afluencia de mercaderes, transportistas y viajeros relativamente acomodados a la posada que regentan Servio y Mariela, padres de Lucio Aredes.
+
+Trajano defiende la seguridad de las rutas, la continuidad de los contratos y la autonomía administrativa de Lurena. No es un separatista ni un partidario incondicional de una forma de gobierno. Puede considerar valiosa la continuidad institucional de una monarquía sin convertir esa opinión en una verdad universal.
+
+## Relación con Crispo
+
+Trajano no despertó como Invocador y tampoco lo hicieron los dos hijos mayores. El despertar de Crispo fue excepcional en su familia inmediata. Está orgulloso de su hijo, pero no mide la valía de una persona únicamente por sus victorias. Crispo, en cambio, teme que todos atribuyan sus logros al apellido Servilio. Esta diferencia de criterio sostiene su relación difícil, aunque afectuosa.
+
+## Proyección en *El emperador de las cenizas* — Guion, no hecho narrado aceptado
+
+Tras la persecución de los Aredes por Cassaro, Trajano les permite entrar en Lurena y les ofrece refugio. Propone ayudar a reinstalar su imprenta y convertir el *Diario de Solmer* en una publicación periódica. Su financiación no le concede control editorial: exige información comprobable y admite que el periódico publique críticas contra su propio gobierno.
+
+Trajano protege a la familia porque comprende que permitir a Cassaro castigar a cualquier testigo incómodo pondría también la autonomía de Lurena en manos de Tarsia. Ante una reclamación del gobierno central, se niega a entregar automáticamente a Lucio sin un procedimiento que no dependa exclusivamente de su acusador. **No declara independiente a Lurena ni emprende una guerra contra Cassaro.**
+
+---
+
 # 13. Fausto Merro
+
+**Nacimiento (calendario solmeriano):** 01/10/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 18 años  
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -5092,6 +6201,9 @@ Targor refuerza en él la estabilidad y la tendencia a no moverse si no existe u
 
 # 14. Aulo Bragano
 
+**Nacimiento (calendario solmeriano):** 04/07/331 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 18 años  
 **Edades durante las novelas I–III:** *Universidad*: 18 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **21–22 años**, sin escoger una cifra exacta si el texto no la establece.  
 **Sexo:** hombre  
@@ -5140,6 +6252,9 @@ Su gran problema competitivo es muy humano: algunas veces utiliza una acción pa
 ---
 
 # 15. Lucio Aredes
+
+**Nacimiento (calendario solmeriano):** 23/06/330 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 19 años  
 **Edades durante las novelas I–III:** *Universidad*: 19 años al ingreso según la ficha. Como la novela cubre varios años y no fija su fecha de cumpleaños, al tramo final debe tratarse como aproximadamente **22–23 años**, sin escoger una cifra exacta si el texto no la establece.  
@@ -5194,6 +6309,299 @@ Lucio habla con desconocidos cuando Adriano está mirando una criatura. Lucio im
 
 ---
 
+# Familia Aredes — Ampliación de Lucio
+
+**Residencia:** Villa Estora.  
+**Origen del apellido:** antiguo linaje noble materno, hoy sin influencia nobiliaria significativa.  
+**Actividad de los padres:** posada de Villa Estora.  
+**Patrimonio de los Aredes:** taller de grabados y una pluma de Fényrax.  
+**Invocadores:** Lucio es el único; ninguno de sus siete hermanos despertará.  
+**Hijos:** ocho, con Lucio como primogénito.
+
+Los Aredes son una familia numerosa de Villa Estora. El apellido procede de la madre de Lucio, Mariela Aredes, descendiente de un antiguo linaje noble cuya posición e influencia se han perdido. Su marido, Servio, es un plebeyo sin apellido; en este mundo no todas las personas poseen uno. Por eso sus ocho hijos llevan el apellido materno y se los conoce como los Aredes, nombre que también identifica el antiguo taller de grabados de la familia.
+
+Los Aredes no disfrutan hoy de privilegios ni de influencia política significativa. El taller y su pluma de Fényrax son vestigios materiales de una importancia pasada. Octavio, abuelo materno de Lucio, es un artesano respetado en Villa Estora, pero desconocido fuera de ella. La posada de Servio y Mariela proporciona la principal fuente de ingresos de la casa. Los abuelos maternos participan estrechamente en la crianza de sus ocho nietos; los abuelos paternos han fallecido.
+
+Lucio es una excepción extraordinaria: procede de una familia sin antecedentes recientes de Invocadores. Ninguno de sus padres o abuelos lo es, y ninguno de sus hermanos llegará a despertar. Este último dato es verdad de autor, no necesariamente conocimiento de los hermanos menores.
+
+---
+
+## 1. El antiguo linaje y el taller Aredes
+
+### Origen del apellido
+
+Los Aredes descienden de una familia noble que tuvo una posición considerablemente más importante generaciones atrás. El bisabuelo de Lucio fue alguien relevante, aunque su cargo concreto y las causas de la decadencia del linaje permanecen por definir. Sus descendientes perdieron patrimonio, reconocimiento e influencia hasta convertirse en una familia de artesanos de Villa Estora. El apellido se conserva, pero ya no les concede un lugar destacado en la sociedad imperial.
+
+Mariela, hija de Octavio y Teresa, transmitió el apellido Aredes a sus ocho hijos porque Servio, su esposo, no posee apellido. La pertenencia al antiguo linaje no significa que Lucio y sus hermanos sean nobles influyentes. La familia es conocida en Villa Estora sobre todo por el taller que lleva su nombre.
+
+### El taller de grabados
+
+Octavio Aredes posee y trabaja personalmente un pequeño taller de grabados. Realiza inscripciones sobre metal, placas identificativas, sellos sencillos, piezas decorativas y encargos cotidianos de vecinos y comerciantes. Tiene una excelente reputación local por la precisión de sus trabajos, pero fuera de Villa Estora prácticamente nadie lo conoce.
+
+A diferencia de la familia Vardana, propietaria de un taller prestigioso cuyos trabajos ejecutan artesanos contratados, **Octavio es él mismo el maestro grabador**. Los Vardana poseen cinco plumas de Fényrax y han trabajado para las más altas autoridades imperiales; Octavio posee una sola pluma y atiende principalmente encargos locales.
+
+### La pluma de Fényrax
+
+La posesión más valiosa del taller es una pluma de Fényrax, conservada como parte del antiguo patrimonio familiar. Al rasgarla o rozarla de la manera adecuada produce calor, propiedad que Octavio aprovecha para ejecutar grabados de extraordinaria precisión, especialmente sobre metal. No la necesita para cada encargo, pero le permite realizar trabajos difíciles con herramientas ordinarias. La protege con gran cuidado: es una herramienta excepcional, no una prueba de que su propietario sea Invocador. La procedencia exacta de la pluma dentro de la historia del linaje aún no está definida.
+
+### La sucesión
+
+Lucio nunca tuvo interés por el grabado y Octavio tampoco intentó enseñarle el oficio. El abuelo considera que el aprendizaje formal debe comenzar al alcanzar la mayoría de edad, cuando el aprendiz puede responsabilizarse de las herramientas y de una pieza tan valiosa como la pluma.
+
+Octavio espera ahora a **Dacio Aredes**, segundo hermano de Lucio, de dieciséis años. Ya se ha comprobado que Dacio no es Invocador. Su temperamento responsable, metódico y paciente lo convierte en un posible sucesor. Por ahora observa el trabajo de su abuelo, conoce materiales y herramientas y recibe explicaciones introductorias, **pero todavía no es un aprendiz formal**. Octavio quiere iniciar su formación completa cuando sea mayor de edad y, si muestra interés y aptitud, dejarle con el tiempo el taller y la pluma. No desea imponerle el oficio.
+
+---
+
+## 2. La posada de Villa Estora
+
+La posada de Servio y Mariela ofrece habitaciones, comida y descanso a los viajeros que transitan por el Camino Imperial. No es lujosa, pero dispone de comedor común, cocina, almacenes, habitaciones para huéspedes y dependencias familiares. Los niños han crecido entre conversaciones, viajeros de distintas procedencias y las obligaciones de un negocio que ocupa casi toda la jornada de sus padres.
+
+Servio lleva las cuentas, negocia suministros, controla los gastos y vigila la rentabilidad. Mariela atiende a los huéspedes, organiza la actividad diaria y procura que todos quieran regresar. Para él, la hospitalidad consiste en un servicio correcto y rentable; para ella, también en recordar los gustos de cada visitante, ofrecer soluciones e introducir detalles que hagan agradable la estancia. Discuten por los gastos y las promesas improvisadas, pero sus maneras de trabajar se complementan.
+
+Lucio creció escuchando historias de ciudades lejanas, caminos, criaturas y viajeros. Su madre le permitía conversar con los huéspedes mientras no los molestase; su padre prefería verlo ocupado en tareas útiles. Aprendió pronto a tratar con desconocidos, a leer el ánimo de las personas y a desear conocer por sí mismo los lugares que le describían. **La posada le enseñó a tratar con personas; los viajeros, a querer marcharse.**
+
+---
+
+## 3. Los padres de Lucio
+
+### Servio — Padre
+
+**Nacimiento (calendario solmeriano):** 19/07/303 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 46 años.  
+**Condición:** plebeyo sin apellido; no es Invocador.  
+**Ocupación:** propietario y responsable de la posada.  
+**Esposa:** Mariela Aredes.  
+**Hijos:** ocho.
+
+**Aspecto físico.** Hombre de aproximadamente 1,72 m, robusto, de espalda ancha, cuello grueso y abdomen algo abultado. Tiene manos grandes y endurecidas por el trabajo; cabello castaño oscuro, corto y encanecido en las sienes; ojos marrones, pequeños y atentos; cejas pobladas, nariz ancha y mandíbula cuadrada. Suele mantener el entrecejo fruncido y viste camisas, chalecos oscuros y pantalones resistentes, siempre limpios y cuidados aunque rara vez nuevos. Camina con firmeza y habla con voz grave y contenida.
+
+**Personalidad.** Serio, trabajador, austero hasta la tacañería y desconfiado de los gastos superfluos. Repara los objetos antes de sustituirlos, compara precios y recuerda las deudas de los huéspedes. Su preocupación nace de la responsabilidad de mantener a ocho hijos y conservar un negocio estable, no de la falta absoluta de recursos. Tiene poca paciencia con las bromas cuando hay trabajo y demuestra el cariño mediante la provisión y el cumplimiento de sus obligaciones, más que con elogios.
+
+**Origen familiar.** Sus padres, abuelos paternos de Lucio, han fallecido. Servio no procede del linaje Aredes ni posee apellido. Ha construido su posición mediante el trabajo en la posada y no considera que el apellido de su esposa disminuya su autoridad dentro del hogar.
+
+**Relación con Mariela.** Le desesperan las ocurrencias, favores y gastos que ella propone; Mariela cree que él se preocupa tanto por ahorrar que olvida disfrutar. Sin embargo, Servio reconoce la capacidad de su esposa para fidelizar huéspedes, y ella aprecia la disciplina económica que permite mantener a la familia. Su matrimonio es estable y complementario.
+
+**Relación con Lucio.** Desde niño le reprochaba distraerse escuchando viajeros, bromear en momentos inoportunos e improvisar en vez de seguir instrucciones. **El despertar de Lucio como Invocador cambió su consideración hacia él**: lo respeta por una capacidad que puede abrirle oportunidades que Servio nunca tuvo. Sigue criticando su ligereza y sus gastos, pero ya no pretende reducir su futuro a la posada. Lucio lo quiere y respeta su esfuerzo, aunque teme pasar la vida preocupado por las cuentas y las obligaciones.
+
+### Mariela Aredes — Madre
+
+**Nacimiento (calendario solmeriano):** 24/01/309 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 40 años.  
+**Condición:** descendiente del antiguo linaje Aredes; no es Invocadora.  
+**Ocupación:** atención y administración cotidiana de la posada.  
+**Esposo:** Servio.  
+**Padres:** Octavio y Teresa Aredes.  
+**Hijos:** ocho.
+
+**Aspecto físico.** Mujer de aproximadamente 1,64 m, figura proporcionada y ligeramente redondeada, caderas anchas y brazos fuertes. Tiene rostro ovalado, mejillas llenas, nariz pequeña, boca amplia y ojos grandes de tono verde grisáceo, muy expresivos. Su cabello castaño claro, abundante y ondulado suele estar recogido para trabajar, con mechones sueltos alrededor de la cara. Prefiere prendas cómodas y resistentes, con colores alegres, pañuelos y pequeños adornos. Habla con voz cálida y acompaña sus palabras con gestos.
+
+**Personalidad.** Jovial, sociable, inventiva y comunicativa. Recuerda nombres, rostros, comidas favoritas y detalles de las conversaciones de los huéspedes. Improvisa soluciones cuando faltan ingredientes, surge una avería o dos clientes discuten. Rara vez se queda paralizada ante un problema, pero tiende a prometer favores y organizar actividades sin calcular el trabajo o el gasto. Su imaginación y hospitalidad son una de las fortalezas de la posada.
+
+**Relación con su familia de origen.** Conoce el pasado noble de los Aredes y valora el taller de su padre, aunque ha construido su vida alrededor de la posada y de sus hijos. Sus padres participan a diario en el cuidado de los niños. Transmitió a estos el apellido materno porque Servio carece de uno.
+
+**Relación con Lucio.** **Es la principal influencia en su carácter.** De ella heredó la facilidad para hablar con desconocidos, el humor, la curiosidad, la inventiva y el talento para improvisar. Aprendió observándola escuchar a los huéspedes y reconocer cuándo alguien necesitaba conversación o tranquilidad. También heredó sus defectos: prometer antes de pensar y esquivar asuntos desagradables con una sonrisa. Mariela comprende su deseo de viajar; celebró su despertar, aunque teme los peligros que afrontará lejos de casa. Lucio confía especialmente en ella, que sabe reconocer cuándo utiliza una broma para ocultar una preocupación.
+
+---
+
+## 4. Los ocho hermanos Aredes
+
+**Edades al inicio de la Universidad.** Los nombres propuestos y la edad de Milo permanecen como detalles editoriales provisionales allí donde no se han fijado expresamente.
+
+| Orden | Nombre | Edad | Sexo |
+|---|---|---:|---|
+| 1 | Lucio Aredes | 19 | Hombre |
+| 2 | Dacio Aredes | 16 | Hombre |
+| 3 | Tadeo Aredes | 14 | Hombre |
+| 4 | Elia Aredes | 13 | Mujer |
+| 5 | Bruno Aredes | 10 | Hombre |
+| 6 | Nora Aredes | 6 | Mujer |
+| 7 | Nela Aredes | 6 | Mujer |
+| 8 | Milo Aredes | 3 | Hombre |
+
+Lucio es el único Invocador de los ocho. **Ninguno de sus hermanos despertará**, aunque los más pequeños no conocen necesariamente su futuro. Nora y Nela son gemelas.
+
+### Lucio Aredes — Primogénito
+
+**Edad:** 19 años. **Condición:** Invocador.
+
+Es sociable, ingenioso, bromista y curioso, con gran facilidad para relacionarse con personas muy distintas. Ha crecido entre viajeros y desea conocer los lugares que le describían. Le cuesta sostener conversaciones difíciles sin cambiar de tema, bromear o marcharse. No desea heredar la administración de la posada ni aprender el oficio de grabador. Su despertar le abrió un camino propio, aunque conserva un afecto profundo por su familia y Villa Estora. Su ficha universitaria principal figura inmediatamente antes de esta ampliación.
+
+### Dacio Aredes — Segundo hijo
+
+**Nacimiento (calendario solmeriano):** 13/05/333 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 16 años. **Condición:** no es Invocador y no despertará. **Posible futuro:** sucesor del taller Aredes.
+
+**Aspecto físico.** Alto para su edad, delgado, con hombros que comienzan a ensancharse, cabello castaño oscuro liso y corto, ojos marrones y rostro alargado de expresión seria. Se parece más a Servio que a Lucio.
+
+**Personalidad.** Responsable, reservado y metódico. Ayuda en la posada, organiza suministros, recuerda tareas y tiene facilidad para las cuentas. Prefiere observar y escuchar antes que conversar con los viajeros. Comparte la prudencia económica de su padre, aunque no su grado de tacañería.
+
+**Relación con Lucio.** Lo admira por ser Invocador, pero a veces le molesta que pueda marcharse mientras él sigue atendiendo responsabilidades familiares. Lucio lo anima a encontrar sus aspiraciones; Dacio responde que alguien debe ocuparse de las cosas importantes. La tensión no elimina el afecto fraternal.
+
+**Relación con Octavio.** Es el posible heredero del taller. Ya se ha comprobado que no es Invocador, y Octavio ve en su paciencia y método cualidades útiles para el grabado. Dacio observa encargos y aprende nociones de materiales y herramientas, pero la formación formal comenzará cuando alcance la mayoría de edad. Su abuelo espera que pueda asumir algún día el taller y la pluma de Fényrax, siempre que desee y consiga aprender el oficio.
+
+### Tadeo Aredes — Tercer hijo
+
+**Nacimiento (calendario solmeriano):** 28/07/335 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 14 años. **Condición:** no despertará como Invocador.
+
+**Aspecto físico.** Delgado y rápido, de estatura media, cabello castaño claro ligeramente ondulado, ojos verdes y sonrisa amplia parecida a la de Mariela. Su rostro empieza a perder los rasgos infantiles.
+
+**Personalidad.** Inquieto, curioso y bromista; escucha fascinado a los viajeros y suele actuar antes de pensar. Imita las bromas de Lucio sin reconocer siempre cuándo resultan inoportunas.
+
+**Relación con Lucio.** Lo admira y le pregunta por criaturas, viajes y Universidad. Comparten bromas y travesuras. Lucio disfruta contando historias, aunque procura no idealizar las responsabilidades de un Invocador.
+
+### Elia Aredes — Cuarta hija
+
+**Nacimiento (calendario solmeriano):** 11/06/336 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 13 años. **Condición:** no despertará como Invocadora.
+
+**Aspecto físico.** Complexión fina, cabello castaño oscuro largo y liso, habitualmente trenzado; ojos verde grisáceos como los de Mariela, nariz pequeña y facciones delicadas.
+
+**Personalidad.** Observadora, inteligente y prudente. Tiene excelente memoria para los nombres y los detalles de los huéspedes y ayuda a su madre. No es tímida, pero habla cuando tiene algo que aportar.
+
+**Relación con Lucio.** Detecta sus excusas y pequeñas mentiras con facilidad. Lo admira por su trato con desconocidos, aunque cree que debería tomarse más cosas en serio. Lucio la encuentra divertida y algo desesperante porque es difícil engañarla.
+
+### Bruno Aredes — Quinto hijo
+
+**Nacimiento (calendario solmeriano):** 18/01/339 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 10 años. **Condición:** no despertará como Invocador.
+
+**Aspecto físico.** Robusto, de cabello castaño oscuro, ojos marrones, rostro redondeado y mejillas llenas. Suele llevar la ropa desordenada tras jugar o ayudar en tareas menores.
+
+**Personalidad.** Alegre, competitivo y enérgico. Disfruta las carreras y los juegos físicos, se enfada cuando pierde y olvida pronto sus disgustos. Sueña con invocar criaturas, sin saber que no llegará a despertar.
+
+**Relación con Lucio.** Lo considera un héroe familiar y le pide relatos de combates y técnicas. Lucio disfruta de su entusiasmo e intenta explicarle que combatir no consiste solo en atacar más rápido.
+
+### Nora Aredes — Sexta hija
+
+**Nacimiento (calendario solmeriano):** 28/12/342 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 6 años. **Condición:** gemela de Nela; no despertará como Invocadora.
+
+**Aspecto físico.** Niña pequeña, de cabello castaño claro rizado y abundante, ojos verdes, rostro redondeado y sonrisa traviesa. Es apenas más alta que su gemela.
+
+**Personalidad.** Extrovertida, inquieta y muy habladora. Suele tomar la iniciativa en los juegos y hace preguntas sin esperar siempre la respuesta.
+
+**Relación con Lucio.** Corre a recibirlo cuando vuelve a casa, le exige historias y las interrumpe continuamente con preguntas.
+
+### Nela Aredes — Séptima hija
+
+**Nacimiento (calendario solmeriano):** 28/12/342 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad:** 6 años. **Condición:** gemela de Nora; no despertará como Invocadora.
+
+**Aspecto físico.** Muy parecida a Nora, con cabello castaño claro rizado algo menos abundante, ojos verdes, rostro ligeramente más estrecho y expresión tranquila.
+
+**Personalidad.** Cariñosa, imaginativa y más reservada que Nora. Recuerda detalles de los relatos, no siempre sigue las iniciativas de su gemela y puede ser muy obstinada.
+
+**Relación con Lucio.** Prefiere escuchar sus historias con atención y le pide que repita sus favoritas. Lucio quiere mucho a ambas y procura tratarlas como personas distintas.
+
+### Milo Aredes — Octavo hijo
+
+**Nacimiento (calendario solmeriano):** 26/09/346 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 3 años. **Condición:** benjamín; no despertará como Invocador.
+
+**Aspecto físico.** Pequeño, de cabello castaño claro, ojos marrones, mejillas redondas y pasos rápidos y algo torpes.
+
+**Personalidad.** Afectuoso, curioso y testarudo. Imita a sus hermanos y se enfada si lo excluyen de sus juegos. Necesita todavía mucha atención de los adultos.
+
+**Relación con Lucio.** No comprende aún qué significa ser Invocador. Disfruta cuando su hermano lo alza, juega con él o lo entretiene mientras Mariela atiende la posada.
+
+---
+
+## 5. Los abuelos maternos
+
+### Octavio Aredes — Abuelo materno
+
+**Nacimiento (calendario solmeriano):** 21/11/279 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 69 años.  
+**Ocupación:** maestro grabador y propietario del taller Aredes.  
+**Origen:** antiguo linaje noble Aredes.  
+**Posesión más valiosa:** una pluma de Fényrax.  
+**Condición:** no es Invocador.
+
+**Aspecto físico.** Hombre de estatura media, algo encorvado tras años de trabajo inclinado sobre una mesa; delgado, con brazos fibrosos, manos grandes y dedos largos y hábiles. Tiene cabello blanco corto, barba blanca irregular, arrugas profundas y ojos grises pequeños y atentos. Suele acercar las piezas al rostro para examinarlas y viste ropa de trabajo con un delantal de cuero marcado por el uso.
+
+**Personalidad.** Paciente, meticuloso y orgulloso de su oficio. Puede pasar horas trabajando una pieza diminuta. Habla poco mientras trabaja, pero explica con gusto el grabado a quien demuestra interés. Tiene un humor seco y responde con ironía a quienes pretenden enseñarle su propio oficio. En Villa Estora es reconocido por su precisión; fuera de ella, casi nadie conoce su nombre. Prefiere que lo juzguen por su trabajo y no por la fama de sus antepasados.
+
+**Relación con el pasado familiar.** Conoce la antigua importancia de los Aredes, pero no vive obsesionado con recuperar el poder perdido. Conserva el taller y la pluma como patrimonio familiar y valora el apellido por el trabajo de quienes lo llevan.
+
+**Relación con Lucio.** Quiere mucho a su nieto mayor, aunque nunca intentó enseñarle a grabar: Lucio no mostró interés y Octavio considera que el aprendizaje formal corresponde a personas mayores de edad. Su despertar como Invocador confirmó que seguiría otro camino. Octavio está orgulloso, pero le importa más que aprenda responsabilidad y paciencia que el rango que pueda alcanzar.
+
+**Relación con Dacio.** Considera a su segundo nieto el posible sucesor del taller. Dacio ya sabe que no es Invocador y tiene un temperamento adecuado para el oficio. Octavio le permite observar y aprender nociones preliminares, pero espera a su mayoría de edad para formarlo formalmente. Desea que herede el taller y la pluma si demuestra interés y aptitud, sin imponérselo.
+
+### Teresa Aredes — Abuela materna
+
+**Nacimiento (calendario solmeriano):** 03/09/283 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
+**Edad propuesta:** 66 años.  
+**Ocupación:** ama de casa y cuidadora habitual de sus nietos.  
+**Esposo:** Octavio Aredes.  
+**Condición:** no es Invocadora.
+
+**Aspecto físico.** Mujer baja, de aproximadamente 1,58 m, complexión ancha y figura redondeada. Lleva el cabello gris largo recogido en un moño, tiene rostro redondo, mejillas llenas, nariz pequeña, ojos marrones cálidos y arrugas que se acentúan al sonreír. Sus manos pequeñas son fuertes por el trabajo doméstico. Viste prendas sencillas y delantales amplios; se mueve con calma, pero conserva mucha energía para atender a los niños.
+
+**Personalidad.** Afectuosa, paciente y profundamente familiar. Conoce los gustos y preocupaciones de cada nieto, descubre travesuras y sabe reprenderlos cuando hace falta, aunque rara vez permanece enfadada. Disfruta cocinando, cuidándolos y reuniendo a toda la familia alrededor de la mesa.
+
+**Relación con los nietos.** Participa activamente en la crianza de los ocho. Cuida especialmente a las gemelas y a Milo cuando Servio y Mariela trabajan en la posada. La casa de los abuelos es para los niños un lugar de comida, compañía y cierta libertad frente a las obligaciones del negocio.
+
+**Relación con Lucio.** Lo recuerda como un niño inquieto que soñaba con lugares lejanos. Su marcha a la Universidad le produjo orgullo y tristeza. Cuando regresa, prepara sus comidas favoritas y pregunta si se alimenta bien. Lucio bromea con ella y agradece sus cuidados.
+
+---
+
+## 6. Los abuelos paternos
+
+Los padres de Servio, abuelos paternos de Lucio, han fallecido. Eran plebeyos sin apellido. No pertenecían al linaje Aredes ni estaban vinculados al taller o a la pluma de Fényrax. No se desarrollan fichas individuales.
+
+---
+
+## 7. El despertar de Lucio y las expectativas familiares
+
+Lucio es el único Invocador entre los ocho hijos de Servio y Mariela. Ninguno de sus padres o abuelos es Invocador. Ninguno de sus siete hermanos llegará a despertar. **Su condición es una rareza dentro de una familia sin antecedentes recientes de Invocadores**, no el comienzo de una nueva generación de ellos.
+
+Antes del despertar, Servio esperaba que su primogénito ayudara en la posada y pudiera participar algún día en su administración. Lucio disfrutaba con los huéspedes, pero no con las cuentas ni con la perspectiva de pasar allí toda su vida. El despertar le ofreció una vía real para viajar.
+
+**Servio** recibió la noticia con orgullo y comenzó a respetar a su hijo de un modo distinto, aunque siguió reprochándole sus gastos y falta de disciplina. **Mariela** lo celebró con entusiasmo y temor a los peligros que encontraría lejos de casa. **Octavio** se alegró sin esperar que Lucio continuara el oficio; ha puesto sus esperanzas de sucesión en Dacio.
+
+**Dacio** admira a Lucio, pero percibe la desigualdad de oportunidades y responsabilidades. **Tadeo y Bruno** sienten fascinación por sus criaturas y viajes; **Elia** combina admiración y sentido crítico; **Nora y Nela** disfrutan con sus historias; **Milo** aún es demasiado pequeño para entenderlo. Algunos de los menores pueden soñar con despertar, aunque, como verdad de autor, sabemos que no ocurrirá.
+
+---
+
+## 8. La influencia familiar y la contradicción de Lucio
+
+De Mariela proceden la sociabilidad, el humor, la curiosidad y la inventiva de Lucio, así como su tendencia a improvisar, prometer antes de pensar y evitar conversaciones incómodas. Servio representa el esfuerzo constante, la disciplina y la estabilidad económica que Lucio respeta, pero teme convertir en el único sentido de su vida. Octavio encarna la paciencia y la precisión de un oficio que Lucio admira sin desear practicar. Teresa representa la seguridad de un hogar al que siempre puede regresar.
+
+Lucio desea viajar, conocer ciudades, personas y criaturas que hasta ahora solo aparecían en los relatos de los huéspedes. Quiere una vida distinta de la de sus padres y su abuelo, pero no desprecia su trabajo ni deja de querer a su familia. Su condición de Invocador le permite marcharse y, a la vez, le impone responsabilidades que no siempre podrá resolver con una broma o una escapatoria.
+
+**Lucio sabe marcharse. Lo que todavía debe aprender es cuándo merece la pena quedarse.** Su amistad con Adriano, sus relaciones universitarias y el cuidado de sus criaturas pueden obligarlo a sostener compromisos en vez de eludirlos.
+
+---
+
+## 9. Síntesis familiar
+
+La familia Aredes reúne tres realidades: **el pasado noble**, conservado en el apellido, el taller y la pluma de Fényrax; **la vida cotidiana**, organizada alrededor de la posada y de los ocho hermanos; y **la excepcionalidad de Lucio**, único Invocador de la familia. Dacio puede continuar el taller, Servio y Mariela sostienen la posada y Lucio ha elegido un camino que lo llevará lejos de Villa Estora sin romper su vínculo con ella.
+
+---
+
 # Resumen canónico de la promoción al cierre de la novela III
 
 La novela termina **antes de completar el último ciclo universitario**. Por tanto, los antiguos campos «Rango final» y «Vínculos al graduarse» eran proyecciones, no hechos consumados.
@@ -5201,17 +6609,17 @@ La novela termina **antes de completar el último ciclo universitario**. Por tan
 | Alumno | Edad de ficha al ingreso | Rango inicial | Estado de rango al cierre narrado |
 |---|---:|---|---|
 | Celia Lousada | 17 | Iniciada | No se muestra una medición final individual |
-| Maelle Vaurin | 18 | Iniciada | No se muestra una medición final individual |
+| Maelle Vaurin | 18 | Iniciada | Proyección de graduación: Invocadora; Amplitud objetivo ≈258 (no medición narrativa) |
 | Prisca Eburia | 19 | Adepta | No se muestra una medición final individual |
 | Mara Fornia | 18 | Iniciada | No se muestra una medición final individual |
 | Silvia Vardana | 17 | Iniciada | **Adepta**, confirmado expresamente en la última medición mostrada |
 | Neria Tosca | 17 | Despertada | Progresa durante la novela; no se muestra una medición final individual |
 | Marcia Bravia | 18 | Iniciada | No se muestra una medición final individual |
-| Elvia Norba | 19 | Iniciada | No se muestra una medición final individual |
+| Elvia Arven | 19 | Iniciada | No se muestra una medición final individual |
 | Octavia Quintela | 17 | Iniciada | No se muestra una medición final individual |
 | Brenn Veyr | 19 | Adepto | Continúa siendo Adepto en la última referencia explícita; no se muestra su medición final |
 | Leandro Quirino | 18 | Iniciado | No se muestra una medición final individual |
-| Crispo Castedo | 17 | Iniciado | No se muestra una medición final individual |
+| Crispo Servilio | 17 | Iniciado | No se muestra una medición final individual |
 | Fausto Merro | 18 | Iniciado | No se muestra una medición final individual |
 | Aulo Bragano | 18 | Iniciado | No se muestra una medición final individual |
 | Lucio Aredes | 19 | Iniciado | No se muestra una medición final individual |
@@ -5230,146 +6638,7 @@ La novela termina **antes de completar el último ciclo universitario**. Por tan
 - **Silvia Vardana:** rival académica, colaboradora y pareja sentimental. Tras una ruptura importante, ambos se reconcilian antes de la última medición y terminan la novela juntos.
 - **Maelle Vaurin:** amiga íntima; desarrolla sentimientos por Adriano que influyen en el conflicto con Silvia y en la dinámica del grupo. Al final la amistad se encuentra en proceso de reparación.
 - **Octavia Quintela:** compañera de promoción. **No existe romance canónico con Adriano en el manuscrito final.**
-- **Crispo Castedo:** rivalidad competitiva y comparación constante, especialmente alrededor de medición y progreso.
-
-
-# Tulia Severina
-
-**Edad:** 50 años
-**Edades durante las novelas I–III:** 50 años al inicio de su referencia universitaria; durante los años cubiertos por *Universidad* se mueve aproximadamente por los primeros cincuenta, sin cumpleaños fijado.  
-**Origen:** Tarsia
-**Invocadora:** no. Nunca ha Despertado.
-**Cargo:** responsable de mediciones y evaluación de Estamentos en la Universidad Imperial de Invocadores.
-
-## Aspecto
-
-Tulia es una mujer de estatura media y constitución robusta, de hombros anchos y movimientos tranquilos. Tiene el cabello oscuro, normalmente recogido, con algunas hebras grises en las sienes. Su rostro es ancho, de nariz recta y facciones poco delicadas; suele vestir prendas resistentes y cómodas, apropiadas para pasar buena parte del día entre aulas y campos de entrenamiento.
-
-No lleva ninguna insignia de Estamento.
-
-## Función en la Universidad
-
-Tulia se ocupa de determinar qué capacidades ha desarrollado realmente un estudiante y qué Estamento le corresponde.
-
-Participa en las mediciones periódicas, revisa Preparaciones, simultaneidad y capacidades adquiridas y detecta carencias que pueden quedar ocultas detrás de una ejecución aparentemente buena.
-
-No es profesora de una cátedra y tampoco necesita que un estudiante conozca perfectamente la terminología académica para reconocer una capacidad que ya domina. Le importa distinguir entre **saber hacer algo, entender por qué funciona y ser capaz de repetirlo de manera fiable**.
-
-Durante la medición de otoño confirma a Adriano como Adepto, pero detecta enseguida lo irregular de su formación: posee mucha más competencia práctica de la que corresponde a sus conocimientos sobre especies, Manifestaciones y construcción equilibrada de una Preparación.
-
-Para Tulia, ésa es precisamente la razón por la que Adriano necesita estudiar en la Universidad.
-
-## Personalidad
-
-Tulia es observadora, directa y difícil de impresionar.
-
-No tiene interés en intimidar a los estudiantes ni en hacer de las evaluaciones un espectáculo. Hace preguntas concretas, observa mucho y suele detectar con rapidez cuándo dos errores aparentemente distintos proceden del mismo problema.
-
-Su principal fortaleza es separar una mala ejecución puntual de una carencia real. No considera que fallar una vez demuestre incapacidad ni que conseguir algo una vez demuestre dominio.
-
-Puede resultar incómoda porque presta poca atención a lo que un estudiante quería demostrarle y mucha a lo que realmente ha demostrado.
-
-No haber Despertado nunca no constituye para ella un conflicto permanente ni algo que necesite justificar. Sabe perfectamente qué aspectos del Vínculo no puede experimentar personalmente y no pretende lo contrario.
-
-Para aquello que exige la intervención directa de un Invocador cuenta habitualmente con Gaio Marçal.
-
----
-
-# Gaio Marçal
-
-**Edad:** 62 años
-**Edades durante las novelas I–III:** 62 años al inicio de su referencia universitaria; durante el arco completo avanza varios años, sin cumpleaños fijado.  
-**Origen:** solariano
-**Rango:** Invocador
-**Función:** acompaña habitualmente a Tulia durante las mediciones y pruebas prácticas.
-**Criaturas más reconocibles:** Faresban y Pelaskos.
-
-## Aspecto
-
-Gaio es alto y delgado, de rostro estrecho y cabello corto ya bastante gris. Viste con sencillez y suele permanecer ligeramente apartado mientras Tulia habla con los alumnos.
-
-Tiene una presencia discreta y resulta fácil pasar varios minutos junto a él sin escucharlo decir una palabra.
-
-## Personalidad
-
-Gaio es un hombre callado.
-
-Habla únicamente cuando necesita comunicar algo concreto y nunca intenta participar en las evaluaciones más de lo necesario. No explica sus opiniones si Tulia no se las pide, no da consejos espontáneos a los estudiantes y rara vez interviene en una conversación que ella pueda conducir sola.
-
-Su expresión resulta difícil de interpretar y los alumnos suelen tardar en saber si una ejecución le ha parecido buena, mala o simplemente irrelevante.
-
-Siempre acompaña a Tulia en las evaluaciones importantes.
-
-**La naturaleza exacta de su relación no se explica.**
-
-No se presenta como subordinado suyo, ayudante personal, amigo ni familiar. Simplemente están casi siempre juntos cuando Tulia trabaja y ambos actúan como si aquello no necesitara explicación.
-
-Tulia dirige.
-
-Gaio ejecuta las partes de la prueba que requieren un Invocador.
-
-## Faresban — NV57
-
-**Tipo:** Fuego / Aire
-**Papel:** movilidad, presión y pruebas contra objetivos rápidos.
-
-Es el Vínculo más profundo y reconocible de Gaio.
-
-Faresban lleva suficiente tiempo con él para que ambos se coordinen con muy pocas indicaciones visibles. Durante las evaluaciones Gaio puede utilizarlo para obligar a un estudiante a responder a cambios rápidos de posición, presión aérea o ataques desde distintos ángulos.
-
-Su gran movilidad lo convierte también en una criatura apropiada para intervenir si un ejercicio se descontrola.
-
-**Orientaciones:** Velocidad / Ataque mágico.
-
-### Técnicas habituales
-
-* Paso de ceniza
-* Lágrimas de fénix
-* Llamarada
-* Picotazo
-
-Gaio no utiliza toda la potencia de Faresban contra estudiantes salvo que la prueba lo requiera. La criatura sirve ante todo para crear una situación que permita observar una respuesta.
-
-## Pelaskos — NV34
-
-**Tipo:** Agua
-**Categoría de poder:** Rara
-**Papel:** presión a distancia, precisión y control.
-
-Pelaskos es el segundo Vínculo reconocible de Gaio y posee ya una Profundidad considerable, aunque claramente inferior a la que mantiene con Faresban.
-
-Es una gran ave costera de cuerpo robusto, alas largas y una enorme bolsa gular que utiliza como cámara de compresión. Puede expulsar agua con mucha más fuerza y precisión que un Lurigan y dispone de suficiente movilidad para cambiar rápidamente de posición durante un ejercicio.
-
-Gaio lo utiliza con frecuencia cuando Faresban resultaría excesivo.
-
-Pelaskos permite exigir a un estudiante que lea trayectorias, proteja una posición, responda a ataques a distancia o gestione una presión continua sin introducir inmediatamente la velocidad y capacidad ofensiva del Faresban.
-
-**Orientaciones:** Ataque mágico / Velocidad.
-
-### Técnicas habituales
-
-* Cañón gular
-* Descarga de presión
-* Chorro
-* Picotazo
-
-La diferencia entre ambos Vínculos resulta visible incluso para estudiantes poco experimentados. Gaio y Faresban funcionan con una coordinación construida durante mucho tiempo; con Pelaskos sigue existiendo una comunicación profunda y eficaz, pero más consciente y menos inmediata.
-
-## Tulia y Gaio durante las evaluaciones
-
-Tulia lleva el peso de la evaluación.
-
-Pregunta, observa y decide qué necesita comprobar.
-
-Gaio rara vez habla con el alumno. Materializa a Faresban o Pelaskos cuando Tulia necesita introducir una criatura rival, modificar las condiciones del ejercicio o comprobar una capacidad concreta.
-
-Después vuelve a apartarse.
-
-Si Tulia quiere su opinión, se la pide.
-
-No siempre sabemos qué le responde ni hasta qué punto sus conclusiones coinciden.
-
-Para los estudiantes, ambos terminan funcionando casi como una sola rutina universitaria: cuando Tulia aparece para una medición importante, Gaio suele estar unos pasos detrás.
+- **Crispo Servilio:** rivalidad competitiva y comparación constante, especialmente alrededor de medición y progreso.
 
 ---
 
@@ -5413,6 +6682,9 @@ Sarah Ordan dirige la institución, pero no ocupa ninguna de estas cátedras.
 ---
 
 # 1. Eulalia Cordeia
+
+**Nacimiento (calendario solmeriano):** 21/08/281 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 68 años  
 
@@ -5526,6 +6798,9 @@ Por tanto, la función canónica de Eulalia en la novela es **dar lenguaje acad�
 ---
 
 # 2. Galo Almeira
+
+**Nacimiento (calendario solmeriano):** 01/09/290 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 59 años  
 
@@ -5652,6 +6927,9 @@ Celia Lousada desarrolla además un interés sostenido por el enfoque de Galo y 
 
 # 3. Silvano Moure
 
+**Nacimiento (calendario solmeriano):** 08/07/302 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 47 años  
 
 **Edades durante *Universidad*:** 47 años al comienzo de su referencia de ficha; aproximadamente 47–51 a lo largo del arco completo, sin fecha de cumpleaños fijada. El manuscrito fija expresamente 47 años en su primera gran escena.
@@ -5774,6 +7052,9 @@ La función canónica de Silvano consiste en hacer explícito algo que Aster ens
 
 # 4. Teodora Gouveia
 
+**Nacimiento (calendario solmeriano):** 03/08/285 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 64 años  
 
 **Edades durante *Universidad*:** 64 años al comienzo de su referencia de ficha; aproximadamente 64–68 a lo largo del arco completo, sin fecha de cumpleaños fijada. No tiene una escena docente directa en el manuscrito final; la cifra procede de la ficha.
@@ -5894,6 +7175,9 @@ Puede conservarse la descripción doctrinal de la cátedra como worldbuilding co
 
 # 5. Domitia Serpa
 
+**Nacimiento (calendario solmeriano):** 15/09/293 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 56 años  
 
 **Edades durante *Universidad*:** 56 años al comienzo de su referencia de ficha; aproximadamente 56–60 a lo largo del arco completo, sin fecha de cumpleaños fijada. Aparece mencionada como catedrática, pero sin una escena que permita datar su cumpleaños.
@@ -5997,6 +7281,9 @@ Por tanto:
 ---
 
 # 6. Feliciano Borga
+
+**Nacimiento (calendario solmeriano):** 25/11/275 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 73 años  
 
@@ -6128,6 +7415,9 @@ La escena cumple la función general prevista —contrastar el conocimiento sist
 
 # 7. Emilia Cabral
 
+**Nacimiento (calendario solmeriano):** 07/01/268 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
+
 **Edad:** 81 años  
 
 **Edades durante *Universidad*:** 81 años al comienzo de su referencia de ficha; aproximadamente 81–85 a lo largo del arco completo, sin fecha de cumpleaños fijada. Interviene en el coloquio sobre Vínculo, conciencia y Manifestaciones; su cumpleaños no se fija.
@@ -6249,6 +7539,9 @@ Emilia formula la idea que más afecta a Adriano: una criatura salvaje posee cap
 ---
 
 # 8. Tiberio Falcao
+
+**Nacimiento (calendario solmeriano):** 06/03/273 EI. **Certeza:** fecha propuesta; año calculado desde la edad de ficha y su referencia temporal.  
+
 
 **Edad:** 76 años  
 

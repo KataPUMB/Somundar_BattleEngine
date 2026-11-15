@@ -1,7 +1,7 @@
 # Dirección editorial de Somundar
 
 SOURCE_ID: EDITORIAL-HANDBOOK
-REVISION: 4
+REVISION: 5
 FECHA_ACTUALIZACION: 2026-11-15
 TIPO: contenedor de normativa editorial y protocolos
 
@@ -2066,7 +2066,7 @@ INICIO_BLOQUE: CANON-DECISIONS
 # Decisiones explícitas del autor
 
 SOURCE_ID: CANON-DECISIONS
-REVISION: 4
+REVISION: 5
 FECHA_APLICACION: 2026-11-15
 RESPONSABILIDAD: conservar cambios inequívocos y su alcance; no sustituir las fuentes
 
@@ -2152,6 +2152,16 @@ Las correcciones de autor ya documentadas en la importación r1, como las edades
 
 **Aplicada en esta entrega:** CANON-CREATURES @ r3 y CANON-TECHNIQUES @ r3; CREATURE-CORPUS @ r3; SYSTEM-CORPUS @ r3; GLOBAL-INDEX @ r4; SOURCE-MANIFEST @ r4. No se han alterado CANON-MECHANICS ni CANON-MANIFESTATIONS; no se declara nueva escena narrativa ni se modifica CONTINUITY-INDEX.
 
+## DEC-011 · Maelle Vaurin y amplitudes objetivo al cierre de Universidad
+
+**Decisión del autor (2026-11-15):** Maelle ingresa con Noctargo y Néspira; vincula a Curmin durante la excursión a la mina. Néspira transfigura en Deinarach y Curmin en Noctivelo. Al graduarse su Preparación prevista incluye Noctargo, Deinarach, Noctivelo y Unisylva; es **Invocadora**. Su estilo busca interferir en el Vínculo rival y atacar rápidamente; Unisylva aporta Planta/Luz para rematar. Néspira influye en su cálculo emocional sin imponer maldad ni control mental. La adquisición de Unisylva no está fechada.
+
+**Objetivos aproximados de Amplitud:** Adriano 285; Silvia 262; Brenn 276; Lucio 255; Maelle 258. Son objetivos de diseño, no mediciones verificadas en escenas. No alterar automáticamente las Preparaciones de los otros cuatro sin comprobar su Coste y capacidades.
+
+**Desarrollo propuesto para Maelle:** NV 38/36/35/34, técnicas y Manifestaciones enumeradas en CANON-NOVELS > 2. Maelle Vaurin > Preparación al final de la Universidad — desarrollo propuesto. Coste equipado 250, margen 8 sobre Amplitud 258; Manifestaciones Manto Oscuro, Ruptura del Vínculo, Filo del Viento y Veredicto. La selección de técnicas y Manifestaciones procede del diseño editorial aceptado como propuesta, no de una escena acreditada. Su adquisición concreta sigue abierta.
+
+**Aplicación:** CANON-NOVELS @ r6, CHARACTER-CORPUS @ r6, GLOBAL-INDEX @ r5 y SOURCE-MANIFEST @ r5. Sin cambios a CANON-CREATURES, CANON-MECHANICS, CANON-TECHNIQUES ni CANON-MANIFESTATIONS; sin indexación ficticia de escenas.
+
 ## Mantenimiento posterior
 
 Una decisión inequívoca no necesita una segunda aceptación ritual. Su aplicación documental no acredita escenas no leídas. Si se aportan manuscritos con divergencias, registrar el pasaje y el alcance de la decisión; no ocultar la discrepancia ni atribuir una reescritura no realizada. Conservar estos IDs si una decisión se sustituye en el futuro.
@@ -2163,7 +2173,7 @@ INICIO_BLOQUE: SOURCE-MANIFEST
 # Manifiesto de fuentes de Somundar
 
 SOURCE_ID: SOURCE-MANIFEST
-REVISION: 4
+REVISION: 5
 FECHA: 2026-11-15
 RESPONSABILIDAD: identidad, procedencia, autoridad, versión y destino
 UBICACION_OPERATIVA: bloque SOURCE-MANIFEST de EDITORIAL-HANDBOOK
@@ -2205,7 +2215,7 @@ Los nombres siguientes identifican los documentos de origen. Las copias operativ
 | CANON-MECHANICS | Importación r1; activa r2 por DEC-001, DEC-003, DEC-006. Procedencia: Sin revisión interna numerada. Mantiene ejemplos y excepciones íntegros. | Reglas generales; aplicación según estado narrativo |
 | CANON-TEACHERS-LEGACY | Sustituido expresamente por CANON-NOVELS > PROFESORES; comparación de los ocho bloques confirma la relación. Ver ISS-003. | Antecedente íntegro; propuestas no canónicas |
 | CANON-WORLD | Importación r1; activa r2 por DEC-003, DEC-006. Procedencia: Propósito subordina detalles a fichas y compendios especializados. Sin revisión interna numerada. | Marco de mundo y regiones; periodos señalados en el contenido |
-| CANON-NOVELS | Importación r1; activa r5 por DEC-001 a DEC-009, sustitución de promoción r3, cronología r4 y corrección de Ciro r5. Procedencia: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. | Partes PERSONAJES / PROFESORES / PROGRESIÓN; estados I–III y planes IV–VIII |
+| CANON-NOVELS | Importación r1; activa r6 por DEC-001 a DEC-011, sustitución de promoción r3, cronología r4 y corrección de Ciro r5. Procedencia: Se declara unificación revisada de personajes, profesores y progresión, contrastada en origen con novelas I–III. No se repite aquí ese contraste por ausencia de los manuscritos. | Partes PERSONAJES / PROFESORES / PROGRESIÓN; estados I–III y planes IV–VIII |
 | BRIEF-ARCHITECTURE | Aportado como prompt base de la petición actual. No se ejecuta de nuevo al consultarlo. | Arquitectura editorial general y presupuesto de archivos |
 
 La sustitución de profesores se acredita por el propio texto y por sus diferencias, no por similitud de nombres. La identidad del dossier unificado no convierte en hechos narrados sus planes. Los originales históricos se preservan fuera del conjunto permanente para evitar competencia de instrucciones y versiones.
@@ -2215,16 +2225,16 @@ La sustitución de profesores se acredita por el propio texto y por sus diferenc
 | SOURCE_ID | Tipo / autoridad | Versión | Destino operativo |
 |---|---|---|---|
 | CORE-PROJECT | Coordinador editorial, derivado del encargo y garantías de fuentes | 1 | Campo de Instrucciones; copia en INSTRUCCIONES_PROYECTO.md |
-| GLOBAL-INDEX | Índice único; localización, no canon | 4 | 00_INDICE_GLOBAL.md |
-| EDITORIAL-HANDBOOK | Contenedor; autoridad de cada bloque | 4 | 01_DIRECCION_EDITORIAL.md |
+| GLOBAL-INDEX | Índice único; localización, no canon | 5 | 00_INDICE_GLOBAL.md |
+| EDITORIAL-HANDBOOK | Contenedor; autoridad de cada bloque | 5 | 01_DIRECCION_EDITORIAL.md |
 | EDITORIAL-PROCEDURES | Coordinación por tarea/escala y mantenimiento | 1 | Bloque en EDITORIAL-HANDBOOK |
-| SOURCE-MANIFEST | Registro de procedencia y versiones | 4 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
+| SOURCE-MANIFEST | Registro de procedencia y versiones | 5 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
 | SOURCE-ISSUES | Incidencias y límites de verificación | 2 | Bloque en EDITORIAL-HANDBOOK |
-| CANON-DECISIONS | DEC-001 a DEC-010 documentadas; alcance y trazabilidad | 4 | Bloque en EDITORIAL-HANDBOOK |
+| CANON-DECISIONS | DEC-001 a DEC-011 documentadas; alcance y trazabilidad | 5 | Bloque en EDITORIAL-HANDBOOK |
 | CONTINUITY-STANDARD | Protocolo estable de evidencia y referencias | 1 | Bloque en EDITORIAL-HANDBOOK; copia externa de instalación |
 | INDEXING-PROMPT | Encargo reutilizable; no se ejecuta por mera lectura | 1 | Bloque en EDITORIAL-HANDBOOK; copia externa |
 | WORLD-CORPUS | Contenedor, no una nueva síntesis del mundo | 3 | 02_MUNDO_Y_SOLMER.md |
-| CHARACTER-CORPUS | Contenedor del dossier íntegro | 5 | 03_PERSONAJES_Y_TRAYECTORIAS.md |
+| CHARACTER-CORPUS | Contenedor del dossier íntegro | 6 | 03_PERSONAJES_Y_TRAYECTORIAS.md |
 | CREATURE-CORPUS | Contenedor de fichas de especie | 3 | 04_CRIATURAS.md |
 | SYSTEM-CORPUS | Contenedor de los tres especialistas mecánicos | 3 | 05_SISTEMA_DE_INVOCACION.md |
 | NARRATIVE-CORPUS | Contenedor preparado; sin cuerpos narrativos iniciales | 1 | 06_MANUSCRITOS_ACEPTADOS.md |

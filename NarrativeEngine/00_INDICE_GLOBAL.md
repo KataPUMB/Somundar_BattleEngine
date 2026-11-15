@@ -1,7 +1,7 @@
 # Índice global de Somundar
 
 SOURCE_ID: GLOBAL-INDEX
-REVISION: 4
+REVISION: 5
 FECHA_ACTUALIZACION: 2026-11-15
 FECHA: 2026-11-15
 RESPONSABILIDAD: único mapa global de recuperación
@@ -35,7 +35,7 @@ Si una consulta se resuelve con el dossier, responde atribuyendo «según CANON-
 | EDITORIAL-PROCEDURES | Modos de tarea, alcance y mantenimiento | EDITORIAL-HANDBOOK | Usar sólo el procedimiento pertinente. |
 | SOURCE-MANIFEST | Identidad, revisión, procedencia y relaciones | EDITORIAL-HANDBOOK | Registro de fuentes, incluidas ausencias e históricos. |
 | SOURCE-ISSUES | Conflictos, límites y sustituciones detectadas | EDITORIAL-HANDBOOK | Registro inicial, ampliable; no auditoría exhaustiva. |
-| CANON-DECISIONS | Decisiones explícitas, alcance y aplicación | EDITORIAL-HANDBOOK | DEC-001 a DEC-010 documentadas: estados, secreto, objetos, cierre IV, Ruptura de Afinidad y Materialización parcial. |
+| CANON-DECISIONS | Decisiones explícitas, alcance y aplicación | EDITORIAL-HANDBOOK | DEC-001 a DEC-011 documentadas: estados, secreto, objetos, cierre IV, Ruptura de Afinidad y Materialización parcial. |
 | CONTINUITY-STANDARD | Estructura y evidencia de índices narrativos | EDITORIAL-HANDBOOK | Para indexar, interpretar o reparar registros. |
 | INDEXING-PROMPT | Encargo reutilizable de indexación | EDITORIAL-HANDBOOK | Ejecutar por petición; no es una tarea automática al leerlo. |
 | CANON-WORLD | Mundo, culturas, metafísica, materiales y relaciones regionales | WORLD-CORPUS; «Somundar» | Marco general; restricciones y vacíos explícitos. |
@@ -185,3 +185,9 @@ Si se divide un contenedor para ocupar una plaza libre, conservar SOURCE_ID y ca
 - **Navegación:** los localizadores de encabezado de CANON-NOVELS fueron regenerados para r5; los índices históricos de otras fuentes pueden conservar números de líneas anteriores cuando no se haya reconstruido su navegación.
 
 - **Nueva línea arácnida (DEC-010):** CANON-CREATURES @ r3 > 153. Néspira, 154. Deinarach, 155. Aracnoir; transfiguraciones NV22/NV41; exclusivas Seda umbría, Trama quebradiza y Telaraña de ruina en CANON-TECHNIQUES @ r3 > Técnicas especiales 153–155. Hidra renumerada 156–158; catálogo hasta 163.
+
+## Actualización r5 — Maelle y cierre de Universidad
+
+- **CANON-NOVELS @ r6 > Promoción de Adriano > 2. Maelle Vaurin:** entrada con Noctargo y Néspira; Curmin se vincula en la excursión a la mina; proyección de graduación como Invocadora con Noctargo, Deinarach, Noctivelo y Unisylva. Consultar el texto original para niveles, técnicas, Manifestaciones y costes. La proyección no acredita escenas narradas.
+- **CANON-DECISIONS @ r5 > DEC-011:** objetivos aproximados de Amplitud al graduarse: Adriano 285, Silvia 262, Brenn 276, Lucio 255, Maelle 258. No inferir que las Preparaciones previas de los cuatro primeros ya cuadran con esos objetivos.
+- **SOURCE-MANIFEST @ r5:** revisiones y destino de esta entrega. Las entradas de navegación numérica anteriores a r6 del dossier pueden estar desplazadas: localizar por encabezado y cotejar cuerpo.
