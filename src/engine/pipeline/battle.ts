@@ -39,6 +39,10 @@ export interface CreateBattleOptions {
   controllers?: Controllers;
 }
 
+function isAdeptTemporary(simultaneity: string): boolean {
+  return simultaneity === 'adept_temporary' || simultaneity === 'limited';
+}
+
 export function createBattle(data: GameData, inputs: [SideSetupInput, SideSetupInput], opts: CreateBattleOptions): BattleState {
   const violations = inputs.map((s, i) => ({ side: i as SideIndex, violations: validatePreparation(s, data) }));
   if (violations.some((v) => hasErrors(v.violations))) throw new PreparationError(violations);
@@ -47,11 +51,27 @@ export function createBattle(data: GameData, inputs: [SideSetupInput, SideSetupI
   const config: BattleConfig = { ...DEFAULT_CONFIG, ...opts.config };
   const sides = setups.map((s, i): SideState => {
     const side = i as SideIndex;
+    const sim = (s.summoner as { simultaneity?: string }).simultaneity ?? s.summoner.simultaneity;
+    const adept = isAdeptTemporary(sim);
+    const battleMode = !!s.battleMode;
+    const adeptMaxRounds = battleMode ? null : (adept ? Math.max(1, s.summoner.adeptSustain?.maxRounds ?? 1) : null);
     const positions: Position[] = [];
     for (let slot = 0; slot < positionCapacityAtDeployment(s); slot++) {
-      positions.push({ id: positionId(side, slot), side, slot, temporary: false, openedRound: 0, occupantUid: null, partialUid: null });
+      const temporary = isAdeptTemporary(sim) && slot > 0;
+      positions.push({ id: positionId(side, slot), side, slot, temporary, openedRound: temporary ? 1 : 0, occupantUid: null, partialUid: null });
     }
-    return { index: side, summoner: s.summoner, combatants: s.preparation.creatures.map((c) => createCombatant(side, c, data.species.get(c.speciesId)?.name)), positions, sideEffects: [], surrendered: false };
+    return {
+      index: side,
+      battleMode,
+      summoner: s.summoner,
+      combatants: s.preparation.creatures.map((c) => createCombatant(side, c, data.species.get(c.speciesId)?.name)),
+      positions,
+      sideEffects: [],
+      surrendered: false,
+      adeptUsedRounds: 0,
+      adeptMaxRounds,
+      adeptExhausted: false,
+    };
   }) as [SideState, SideState];
 
   const st: BattleState = {
@@ -147,8 +167,13 @@ export function beginRound(data: GameData, state: BattleState, decisions: RoundS
       else pending.push({ c, pos, opened: false });
       continue;
     }
-    if (side.summoner.simultaneity !== 'adept_temporary' || side.positions.length >= 2 || pending.some((p) => p.opened && p.pos.side === ch.side)) {
+    if (!isAdeptTemporary((side.summoner as { simultaneity?: string }).simultaneity ?? side.summoner.simultaneity) || side.positions.length >= 2 || pending.some((p) => p.opened && p.pos.side === ch.side)) {
       problems.push(`S${ch.side}: no puede abrir una segunda posicion temporal`);
+      continue;
+    }
+    if (!side.battleMode && (side.adeptExhausted || (side.adeptMaxRounds !== null && side.adeptUsedRounds >= side.adeptMaxRounds))) {
+      side.adeptExhausted = true;
+      problems.push(`S${ch.side}: el invocador esta agotado y no puede mantener la simultaneidad`);
       continue;
     }
     const slot = 1;
@@ -267,6 +292,22 @@ function resolveSwitch(ctx: EngineCtx, f: Frozen, frozen: Frozen[]): void {
   const ev = emit(ctx.st, { type: 'switch', actor: out.uid, targets: [pos.id], data: { incoming: incoming.uid }, ruleRef: 'CANON-MECHANICS 16.3' });
   exitField(ctx, out, 'withdraw', ev);
   materializeWithEntry(ctx, incoming, pos, ev);
+  flushPending(ctx, ev);
+}
+
+// GAP-ADEPT-SUSTAIN: un Adepto puede retirar voluntariamente la criatura de la posicion temporal y dejarla vacia
+function resolveWithdraw(ctx: EngineCtx, f: Frozen): void {
+  if (f.action.kind !== 'withdraw') return;
+  const out = stillOccupies(ctx, f);
+  if (!out) return fail(ctx, f, 'la criatura saliente ya no ocupa la posicion', 'CANON-MECHANICS 14.3');
+  const pos = findPosition(ctx.st, f.positionId);
+  if (!pos?.temporary) return fail(ctx, f, 'solo puede vaciarse una posicion temporal', 'CANON-MECHANICS 16.4 / GAP-ADEPT-SUSTAIN');
+  const blocker = withdrawBlocker(out, true);
+  if (blocker) return fail(ctx, f, `${blocker}: la Retirada voluntaria se ha vuelto ilegal`, 'CANON-MECHANICS 16.4 / 24.5');
+  f.done = true;
+  startAction(out);
+  const ev = emit(ctx.st, { type: 'exit', actor: out.uid, targets: [pos.id], data: { kind: 'withdraw', leftEmpty: true, gap: 'GAP-ADEPT-SUSTAIN' }, ruleRef: 'CANON-MECHANICS 16.3 / GAP-ADEPT-SUSTAIN' });
+  exitField(ctx, out, 'withdraw', ev);
   flushPending(ctx, ev);
 }
 
@@ -458,18 +499,42 @@ function closeRound(ctx: EngineCtx, surrendered: Set<SideIndex>): void {
   }
 
   for (const side of st.sides) {
-    for (const pos of side.positions.filter((p) => p.temporary)) {
-      const sustain = side.summoner.adeptSustain;
-      const maxRounds = sustain?.maxRounds ?? (sustain?.chancePct === undefined ? 1 : Infinity);
+    if (side.battleMode) continue;
+    const temporaries = side.positions.filter((p) => p.temporary);
+    if (temporaries.length === 0) continue;
+    const sustain = side.summoner.adeptSustain;
+    const hasDouble = temporaries.some((p) => p.occupantUid !== null);
+    if (side.adeptMaxRounds !== null && hasDouble) {
+      side.adeptUsedRounds++;
+      if (side.adeptUsedRounds >= side.adeptMaxRounds) side.adeptExhausted = true;
+    }
+    for (const pos of temporaries) {
       const open = st.round - pos.openedRound + 1;
-      let kept = open < maxRounds;
+      let kept = !side.adeptExhausted;
+      let reason: 'exhausted' | 'chance' | undefined = side.adeptExhausted ? 'exhausted' : undefined;
       const rolls = [];
       if (kept && sustain?.chancePct !== undefined) {
         const r = roll(ctx, `adept_sustain:${pos.id}`, sustain.chancePct);
         rolls.push(r);
         kept = r.result;
+        if (!kept) reason = 'chance';
       }
-      const ev = emit(st, { type: kept ? 'position_sustained' : 'position_closed', targets: [pos.id], data: { roundsOpen: open, gap: 'GAP-ADEPT-SUSTAIN' }, rolls, ruleRef: 'CANON-MECHANICS 13.2 / 28.6.19' });
+      const ev = emit(st, {
+        type: kept ? 'position_sustained' : 'position_closed',
+        actor: pos.occupantUid ?? undefined,
+        targets: [pos.id],
+        data: {
+          roundsOpen: open,
+          usedRounds: side.adeptUsedRounds,
+          maxRounds: side.adeptMaxRounds,
+          exhausted: reason === 'exhausted',
+          reason,
+          summoner: side.summoner.name,
+          gap: 'GAP-ADEPT-SUSTAIN',
+        },
+        rolls,
+        ruleRef: 'CANON-MECHANICS 13.2 / 28.6.19',
+      });
       if (!kept) {
         if (pos.occupantUid) exitField(ctx, combatant(st, pos.occupantUid), 'position_closed', ev);
         side.positions = side.positions.filter((p) => p !== pos);
@@ -518,11 +583,12 @@ export function resolveRound(data: GameData, state: BattleState, declarations: D
 
   st.phase = 'switches';
   const switchKey = (x: Frozen) => [speedOf(ctx, combatant(st, x.actorUid))];
-  let switchQueue = orderDesc(ctx, frozen.filter((f) => f.action.kind === 'switch' || f.action.kind === 'corpses'), switchKey, 'switch_order', (x) => x.actorUid);
+  let switchQueue = orderDesc(ctx, frozen.filter((f) => f.action.kind === 'switch' || f.action.kind === 'corpses' || f.action.kind === 'withdraw'), switchKey, 'switch_order', (x) => x.actorUid);
   let switchKeys = new Map(switchQueue.map((x) => [x, switchKey(x)]));
   while (switchQueue.length > 0) {
     const f = switchQueue.shift()!;
     if (f.action.kind === 'corpses') resolveCorpses(ctx, f);
+    else if (f.action.kind === 'withdraw') resolveWithdraw(ctx, f);
     else resolveSwitch(ctx, f, frozen);
     const next = reorderPending(ctx, switchQueue, switchKeys, switchKey, 'switch_reorder');
     if (next) switchQueue = next;

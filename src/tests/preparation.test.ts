@@ -32,6 +32,13 @@ test('7.1: 5 criaturas preparadas', () => {
   assert.ok(codes(validatePreparation(setup(s, cs), data)).includes('PREP_MAX_4'));
 });
 
+test('modo batalla: permite mas de 4 criaturas preparadas', () => {
+  const s = summoner('ana');
+  const cs = Array.from({ length: 15 }, (_, i) => creature(`a${i}`));
+  const v = validatePreparation({ ...setup(s, cs, cs.map((c) => c.id)), battleMode: true }, data);
+  assert.ok(!codes(v).includes('PREP_MAX_4'));
+});
+
 test('8.2: 50 + 50 + 50 + 0 = 150 excede el coste local', () => {
   const s = summoner('ana', 'arconte');
   const a = creature('a', { equippedTechniques: ['envite_ardiente', 'conflagracion', 'impulso_hidraulico', 'aranazo'] });
@@ -100,11 +107,35 @@ test('2.5: dos Vinculos de la misma linea (incluye no preparados)', () => {
   assert.deepEqual(codes(v), ['LINE_UNIQUE']);
 });
 
+test('modo batalla: permite repetir linea evolutiva en preparacion masiva', () => {
+  const s = summoner('ana');
+  const a = creature('a', { transfigurationLine: 'linea_brasal' });
+  const b = creature('b', { transfigurationLine: 'linea_brasal' });
+  const v = validatePreparation({ ...setup(s, [a, b], ['a', 'b']), battleMode: true }, data);
+  assert.ok(!codes(v).includes('LINE_UNIQUE'));
+});
+
 test('13.4 / 7.2: despliegue inicial', () => {
   const single = summoner('ana', 'iniciado');
   const cs = [creature('a'), creature('b')];
   assert.ok(codes(validatePreparation(setup(single, cs, ['a', 'b']), data)).includes('DEPLOY_POSITIONS'));
   assert.ok(codes(validatePreparation(setup(summoner('b'), cs, ['zzz']), data)).includes('DEPLOY_NOT_PREPARED'));
+});
+
+test('alias legacy limited: Adepto admite despliegue inicial de 2 posiciones', () => {
+  const s = { ...summoner('ana', 'adepto'), simultaneity: 'limited' };
+  const cs = [creature('a'), creature('b')];
+  const input = { ...setup(s as never, cs, ['a', 'b']) };
+  const v = validatePreparation(input as never, data);
+  assert.ok(!codes(v).includes('DEPLOY_POSITIONS'));
+});
+
+test('modo batalla: permite despliegue inicial masivo en ambos lados', () => {
+  const s = summoner('ana', 'iniciado');
+  const cs = Array.from({ length: 15 }, (_, i) => creature(`b${i}`));
+  const dep = cs.map((c) => c.id);
+  const v = validatePreparation({ ...setup(s, cs, dep), battleMode: true }, data);
+  assert.ok(!codes(v).includes('DEPLOY_POSITIONS'));
 });
 
 test('el validador devuelve todos los errores, con referencia de seccion', () => {

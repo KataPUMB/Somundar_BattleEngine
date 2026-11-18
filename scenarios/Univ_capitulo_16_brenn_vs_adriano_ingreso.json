@@ -1,0 +1,290 @@
+{
+  "_nota": "Simulación hipotética de combate amistoso Adriano Valerio vs Brenn Veyr para el capítulo 16; el guion vigente describe un ejercicio conjunto, no un duelo. Se usan las Preparaciones completas de ingreso (28/09/349 EI), sin mejoras de diciembre o posteriores: Adriano tiene 4 criaturas preparadas y Brenn 3; sólo pueden mantener 2 activas a la vez. Los despliegues iniciales son una propuesta para simular, no canon narrado. baseStatsNV50 son CANÓNICAS de especie, no cifras provisionales; se escalan por NV en el motor. Fortaleza real no documentada (objetos vacíos); capacity/max son referencias aproximadas para Adepto. simultaneity=\"limited\" refleja que son Adeptos, no Invocadores. partialMaterialization=false desactiva su uso fiable en este ensayo: Adriano sólo había logrado una ejecución limpia con Risco; no se acredita dominio de Brenn. CORRECCIÓN TÉCNICA: se utiliza el ID elemental `oscuridad` para coincidir con CANON-MECHANICS y el validador del simulador (no `oscuro`).",
+  "seed": 1,
+  "config": {
+    "effectsMode": "strict",
+    "maxRounds": 30
+  },
+  "sides": [
+    {
+      "summoner": {
+        "id": "adriano",
+        "name": "Adriano Valerio",
+        "estamento": "adepto",
+        "amplitude": 181.25,
+        "fortalezaCapacity": 30,
+        "fortalezaMaxPerStat": 15,
+        "simultaneity": "limited",
+        "partialMaterialization": false,
+        "manifestationRepertoire": [
+          "mundano",
+          "formacion_de_caza",
+          "fluidez_aerea",
+          "marea_reparadora"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "risco",
+            "nickname": "Risco",
+            "speciesId": "dracendra",
+            "priorForms": [
+              "brasal"
+            ],
+            "types": [
+              "fuego"
+            ],
+            "nv": 32,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 145,
+              "matk": 95,
+              "def": 100,
+              "mdef": 70,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "ariete_draconico",
+              "proyectil_igneo",
+              "llama",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "mundano"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "mota",
+            "nickname": "Mota",
+            "speciesId": "nimbaro",
+            "priorForms": [
+              "nimburu"
+            ],
+            "types": [
+              "aire"
+            ],
+            "nv": 18,
+            "baseStatsNV50": {
+              "hp": 515,
+              "atk": 65,
+              "matk": 120,
+              "def": 65,
+              "mdef": 95,
+              "spe": 155
+            },
+            "fortaleza": {},
+            "orientations": [
+              "matk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "rebufo",
+              "cortes_de_viento",
+              "rafaga",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "formacion_de_caza"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "eosmis",
+            "speciesId": "eosmis",
+            "types": [
+              "aire"
+            ],
+            "nv": 8,
+            "baseStatsNV50": {
+              "hp": 390,
+              "atk": 35,
+              "matk": 75,
+              "def": 60,
+              "mdef": 90,
+              "spe": 40
+            },
+            "fortaleza": {},
+            "orientations": [
+              "matk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "rafaga",
+              "resguardo",
+              "puno_preciso",
+              "debilitar"
+            ],
+            "equippedManifestations": [
+              "fluidez_aerea"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "gutula",
+            "speciesId": "gutula",
+            "types": [
+              "agua"
+            ],
+            "nv": 9,
+            "baseStatsNV50": {
+              "hp": 470,
+              "atk": 35,
+              "matk": 90,
+              "def": 65,
+              "mdef": 100,
+              "spe": 60
+            },
+            "fortaleza": {},
+            "orientations": [
+              "def",
+              "mdef"
+            ],
+            "equippedTechniques": [
+              "chorro",
+              "resguardo",
+              "puno_preciso",
+              "desconcentrar"
+            ],
+            "equippedManifestations": [
+              "marea_reparadora"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "risco",
+        "eosmis"
+      ]
+    },
+    {
+      "summoner": {
+        "id": "brenn",
+        "name": "Brenn Veyr",
+        "estamento": "adepto",
+        "amplitude": 187.5,
+        "fortalezaCapacity": 30,
+        "fortalezaMaxPerStat": 15,
+        "simultaneity": "limited",
+        "partialMaterialization": false,
+        "manifestationRepertoire": [
+          "combustion",
+          "piel_de_piedra",
+          "alta_tension"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "dracendra_brenn",
+            "speciesId": "dracendra",
+            "priorForms": [
+              "brasal"
+            ],
+            "types": [
+              "fuego"
+            ],
+            "nv": 24,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 145,
+              "matk": 95,
+              "def": 100,
+              "mdef": 70,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "def"
+            ],
+            "equippedTechniques": [
+              "proyectiles_igneos",
+              "fauces_en_llamas",
+              "proyectil_igneo",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "combustion"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "litharra_brenn",
+            "speciesId": "litharra",
+            "types": [
+              "tierra"
+            ],
+            "nv": 21,
+            "baseStatsNV50": {
+              "hp": 365,
+              "atk": 80,
+              "matk": 65,
+              "def": 100,
+              "mdef": 75,
+              "spe": 80
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "def"
+            ],
+            "equippedTechniques": [
+              "aletazo_de_pala",
+              "granalla_mineral",
+              "salva_de_esquirlas",
+              "aleta_cortante"
+            ],
+            "equippedManifestations": [
+              "piel_de_piedra"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "cervolasto_brenn",
+            "speciesId": "cervolasto",
+            "types": [
+              "fuego",
+              "rayo"
+            ],
+            "nv": 20,
+            "baseStatsNV50": {
+              "hp": 460,
+              "atk": 125,
+              "matk": 125,
+              "def": 80,
+              "mdef": 80,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": [
+              "def",
+              "atk"
+            ],
+            "equippedTechniques": [
+              "caparazon_incandescente",
+              "proyectiles_igneos",
+              "cadena_de_chispas",
+              "impacto_acorazado"
+            ],
+            "equippedManifestations": [
+              "alta_tension"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "dracendra_brenn",
+        "litharra_brenn"
+      ]
+    }
+  ]
+}

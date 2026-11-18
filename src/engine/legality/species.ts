@@ -45,8 +45,11 @@ export function resolveCreature(c: BondedCreatureInput, data: GameData): BondedC
 }
 
 export function resolveSetup(setup: SideSetupInput, data: GameData): SideSetup {
+  const rawSimultaneity = (setup.summoner as { simultaneity?: string }).simultaneity;
+  const simultaneity = rawSimultaneity === 'limited' ? 'adept_temporary' : setup.summoner.simultaneity;
   return {
     ...setup,
+    summoner: { ...setup.summoner, simultaneity },
     preparation: { creatures: setup.preparation.creatures.map((c) => resolveCreature(c, data)) },
     otherBonds: setup.otherBonds?.map((c) => resolveCreature(c, data)),
   };

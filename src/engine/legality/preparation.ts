@@ -11,8 +11,16 @@ export interface Violation {
   path?: string;
 }
 
-export function positionCapacityAtDeployment(setup: Pick<SideSetup, 'summoner'>): number {
-  return setup.summoner.simultaneity === 'stable' ? 2 : 1;
+export function positionCapacityAtDeployment(setup: Pick<SideSetup, 'summoner' | 'battleMode'> & Partial<Pick<SideSetup, 'initialDeployment' | 'preparation'>>): number {
+  const raw = (setup.summoner as { simultaneity?: string }).simultaneity;
+  const simultaneity = raw === 'limited' ? 'adept_temporary' : setup.summoner.simultaneity;
+  const base = simultaneity === 'stable' ? 2 : 1;
+  const requested = setup.initialDeployment?.length ?? 0;
+  if (!setup.battleMode) {
+    if (simultaneity === 'adept_temporary') return Math.max(1, Math.min(2, requested || 1));
+    return base;
+  }
+  return Math.max(base, requested);
 }
 
 function speciesIdOfTechnique(data: GameData, techniqueId: string): string | null {
@@ -142,7 +150,7 @@ export function validatePreparation(input: SideSetupInput, data: GameData): Viol
   const prep = setup.preparation.creatures;
 
   if (s.fortalezaMaxPerStat > 25) e('SUM_FORT_MAX', 'CANON-MECHANICS 9.4', 'el maximo por estadistica no puede superar +25%', 'summoner');
-  if (prep.length > 4) e('PREP_MAX_4', 'CANON-MECHANICS 7.1', `${prep.length} criaturas preparadas (max. 4)`, 'preparation');
+  if (!setup.battleMode && prep.length > 4) e('PREP_MAX_4', 'CANON-MECHANICS 7.1', `${prep.length} criaturas preparadas (max. 4)`, 'preparation');
   const ids = prep.map((c) => c.id);
   for (const id of new Set(ids.filter((id, i) => ids.indexOf(id) !== i))) e('PREP_DUPLICATE', 'CANON-MECHANICS 7.1', `criatura repetida: ${id}`, 'preparation');
 
@@ -160,13 +168,15 @@ export function validatePreparation(input: SideSetupInput, data: GameData): Viol
     else seen.set(m, c.id);
   }));
 
-  // 2.5
-  const byLine = new Map<string, string>();
-  for (const c of [...prep, ...(setup.otherBonds ?? [])]) {
-    if (!c.transfigurationLine) continue;
-    const prev = byLine.get(c.transfigurationLine);
-    if (prev !== undefined && prev !== c.id) e('LINE_UNIQUE', 'CANON-MECHANICS 2.5', `${prev} y ${c.id} pertenecen a la linea ${c.transfigurationLine}`, 'bonds');
-    else byLine.set(c.transfigurationLine, c.id);
+  // 2.5: en modo batalla se permiten enjambres/salvajes repetidos
+  if (!setup.battleMode) {
+    const byLine = new Map<string, string>();
+    for (const c of [...prep, ...(setup.otherBonds ?? [])]) {
+      if (!c.transfigurationLine) continue;
+      const prev = byLine.get(c.transfigurationLine);
+      if (prev !== undefined && prev !== c.id) e('LINE_UNIQUE', 'CANON-MECHANICS 2.5', `${prev} y ${c.id} pertenecen a la linea ${c.transfigurationLine}`, 'bonds');
+      else byLine.set(c.transfigurationLine, c.id);
+    }
   }
 
   // 13.4 / 7.2

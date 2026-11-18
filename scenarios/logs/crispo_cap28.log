@@ -1,0 +1,448 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Noctargo (Darío Pelmar) se materializa en S1P1
+Litófis (Darío Pelmar) se materializa en S1P0
+Fulgocerno (Crispo Servilio) se materializa en S0P0
+  Manifestacion fractura_sismica de Litófis (Darío Pelmar)
+  Fulgocerno (Crispo Servilio) queda agrietado (fractura_sismica)
+Despliegue inicial completo
+
+--- Crispo Servilio: establecimiento de posiciones de la ronda 1 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 432/432
+  S0P0 (tuya): Fulgocerno (Crispo Servilio) 227/227 [agrietado(atk -50%; no puede subir: 5 turnos)]
+  Intermedio: Noxilo 236/236 | Pelnir 320/320
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+  Puedes abrir una segunda posicion temporal materializando una criatura completa:
+    1) Noxilo 236/236
+    2) Pelnir 320/320
+  Criatura (0 = no): 1
+
+=== Ronda 1 ===
+Se abre la posicion temporal S0P1
+Noxilo (Crispo Servilio) se materializa en S0P1
+
+--- Crispo Servilio: ronda 1 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 432/432
+  S0P0 (tuya): Fulgocerno (Crispo Servilio) 227/227 [agrietado(atk -50%; no puede subir: 5 turnos)]
+  S0P1* (tuya): Noxilo (Crispo Servilio) 236/236
+  Intermedio: Pelnir 320/320
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Fulgocerno (Crispo Servilio)
+    1) Embestida de chispa [physical, rayo, PB 65, prio 0, single]
+    2) Arco eléctrico [magical, rayo, PB 55, prio 0, single]
+    3) Calambre [status, rayo, PB -, prio 0, single]
+    4) Chispa [magical, rayo, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Pelnir (Crispo Servilio)
+    7) Rendirse
+  Accion: 1
+    Carga con electricidad acumulada en los cuernos. Con 75% o más de Vitalidad causa +25% de daño.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+    3) S0P0 (tuya): Fulgocerno (Crispo Servilio)
+    4) S0P1 (tuya): Noxilo (Crispo Servilio)
+  Objetivo: 2
+
+  S0P1: Noxilo (Crispo Servilio)
+    1) Reflejo galvánico [status, rayo, PB -, prio 1, single]
+    2) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    3) Chispa [magical, rayo, PB 30, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Pelnir (Crispo Servilio)
+    8) Rendirse
+  Accion: 2
+    Lanza entre 1 y 5 chispas eléctricas.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+  Objetivo 1: 2
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+  Objetivo 2 (0 = terminar): 1
+
+--- Darío Pelmar: ronda 1 ---
+  S0P0 (rival): Fulgocerno (Crispo Servilio) 227/227 [agrietado(atk -50%; no puede subir: 5 turnos)]
+  S0P1* (rival): Noxilo (Crispo Servilio) 236/236
+  S1P0 (tuya): Litófis (Darío Pelmar) 549/549
+  S1P1 (tuya): Noctargo (Darío Pelmar) 432/432
+  Intermedio: Valeduno 436/436
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Litófis (Darío Pelmar)
+    1) Muralla quebrada [physical, tierra, PB 105, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 5
+
+  S1P1: Noctargo (Darío Pelmar)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Caza de sombra [physical, oscuridad, PB 80, prio 1, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 4
+    Ataque con las mandíbulas.
+    1) S0P0 (rival): Fulgocerno (Crispo Servilio)
+    2) S0P1 (rival): Noxilo (Crispo Servilio)
+    3) S1P0 (tuya): Litófis (Darío Pelmar)
+    4) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+Litófis (Darío Pelmar) esquiva (uso 1, 100%): exito
+Noctargo (Darío Pelmar) usa Mordisco
+  -> Fulgocerno (Crispo Servilio) pierde 74 (227 -> 153)
+Noxilo (Crispo Servilio) usa Cadena de chispas
+  3 impactos
+  -> Noctargo (Darío Pelmar) pierde 6 (432 -> 426) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (426 -> 420) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (420 -> 414) [noche_protectora -25%]
+Fulgocerno (Crispo Servilio) usa Embestida de chispa
+  -> Noctargo (Darío Pelmar) pierde 24 (414 -> 390) [alta_tension +25%] {usa Ataque: agrietado -50%}
+La posicion temporal S0P1 se sostiene
+
+=== Ronda 2 ===
+
+--- Crispo Servilio: ronda 2 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 390/432
+  S0P0 (tuya): Fulgocerno (Crispo Servilio) 153/227 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (tuya): Noxilo (Crispo Servilio) 236/236
+  Intermedio: Pelnir 320/320
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Fulgocerno (Crispo Servilio)
+    1) Embestida de chispa [physical, rayo, PB 65, prio 0, single]
+    2) Arco eléctrico [magical, rayo, PB 55, prio 0, single]
+    3) Calambre [status, rayo, PB -, prio 0, single]
+    4) Chispa [magical, rayo, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Pelnir (Crispo Servilio)
+    7) Rendirse
+  Accion: 1
+    Carga con electricidad acumulada en los cuernos. Con 75% o más de Vitalidad causa +25% de daño.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+    3) S0P0 (tuya): Fulgocerno (Crispo Servilio)
+    4) S0P1 (tuya): Noxilo (Crispo Servilio)
+  Objetivo: 2
+
+  S0P1: Noxilo (Crispo Servilio)
+    1) Reflejo galvánico [status, rayo, PB -, prio 1, single]
+    2) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    3) Chispa [magical, rayo, PB 30, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Pelnir (Crispo Servilio)
+    8) Rendirse
+  Accion: 2
+    Lanza entre 1 y 5 chispas eléctricas.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+  Objetivo 1: 2
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+  Objetivo 2 (0 = terminar): 1
+
+--- Darío Pelmar: ronda 2 ---
+  S0P0 (rival): Fulgocerno (Crispo Servilio) 153/227 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (rival): Noxilo (Crispo Servilio) 236/236
+  S1P0 (tuya): Litófis (Darío Pelmar) 549/549
+  S1P1 (tuya): Noctargo (Darío Pelmar) 390/432
+  Intermedio: Valeduno 436/436
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Litófis (Darío Pelmar)
+    1) Muralla quebrada [physical, tierra, PB 105, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (50% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 1
+    Se pliega y se despliega contra el objetivo como una sección de muralla en movimiento. Con 75% o más de Vitalidad causa +50% de daño.
+    1) S0P0 (rival): Fulgocerno (Crispo Servilio)
+    2) S0P1 (rival): Noxilo (Crispo Servilio)
+    3) S1P0 (tuya): Litófis (Darío Pelmar)
+    4) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+
+  S1P1: Noctargo (Darío Pelmar)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Caza de sombra [physical, oscuridad, PB 80, prio 1, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 3
+    Las garras se impregnan de una maldición. 20% de Desvinculado.
+    1) S0P0 (rival): Fulgocerno (Crispo Servilio)
+    2) S0P1 (rival): Noxilo (Crispo Servilio)
+    3) S1P0 (tuya): Litófis (Darío Pelmar)
+    4) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+Noctargo (Darío Pelmar) usa Desgarro maldito
+  -> Fulgocerno (Crispo Servilio) pierde 111 (153 -> 42)
+  Fulgocerno (Crispo Servilio) queda desvinculado (desgarro_maldito)
+Noxilo (Crispo Servilio) usa Cadena de chispas
+  2 impactos
+  -> Noctargo (Darío Pelmar) pierde 6 (390 -> 384) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (384 -> 378) [noche_protectora -25%]
+Litófis (Darío Pelmar) usa Muralla quebrada
+  -> Fulgocerno (Crispo Servilio) pierde 42 (42 -> 0) x2 [muralla_quebrada +50%]
+  Fulgocerno (Crispo Servilio) es derrotado
+Fulgocerno (Crispo Servilio): la accion falla (el usuario ya no esta activo; la accion se pierde)
+
+  Reemplazo forzado en S0P0:
+    1) Pelnir (Crispo Servilio)
+  Criatura: 1
+  Pelnir (Crispo Servilio) entra en S0P0 (Reemplazo forzado)
+Pelnir (Crispo Servilio) se materializa en S0P0
+Crispo Servilio esta agotado y no puede mantener la simultaneidad: Noxilo (Crispo Servilio) en S0P1 vuelve al Intermedio
+
+=== Ronda 3 ===
+
+--- Crispo Servilio: ronda 3 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 378/432
+  S0P0 (tuya): Pelnir (Crispo Servilio) 320/320
+  Intermedio: Fulgocerno (derrotada) | Noxilo 236/236
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Pelnir (Crispo Servilio)
+    1) Señal de banco [status, luz, PB -, prio 1, single]
+    2) Salva radiante [magical, luz, PB 20 x1-5, prio 0, multi]
+    3) Haz de luz [magical, luz, PB 30, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Noxilo (Crispo Servilio)
+    7) Rendirse
+     -  Intercambio -> Fulgocerno (Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Dispara entre 1 y 5 proyectiles de luz. Cada impacto tiene 10% de aplicar Espíritu Cercenado.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+  Objetivo 1: 2
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+  Objetivo 2 (0 = terminar): 1
+
+--- Darío Pelmar: ronda 3 ---
+  S0P0 (rival): Pelnir (Crispo Servilio) 320/320
+  S1P0 (tuya): Litófis (Darío Pelmar) 549/549
+  S1P1 (tuya): Noctargo (Darío Pelmar) 378/432
+  Intermedio: Valeduno 436/436
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Litófis (Darío Pelmar)
+    1) Muralla quebrada [physical, tierra, PB 105, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 5
+
+  S1P1: Noctargo (Darío Pelmar)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Caza de sombra [physical, oscuridad, PB 80, prio 1, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 1
+    Marca a una presa. El objetivo no puede retirarse voluntariamente durante las siguientes 2 rondas.
+    1) S0P0 (rival): Pelnir (Crispo Servilio)
+    2) S1P0 (tuya): Litófis (Darío Pelmar)
+    3) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+Litófis (Darío Pelmar) esquiva (uso 1, 100%): exito
+Noctargo (Darío Pelmar) usa Rastro
+  -> impacta a Pelnir (Crispo Servilio)
+  Pelnir (Crispo Servilio): rastro (no_withdraw)
+Pelnir (Crispo Servilio) usa Salva radiante
+  5 impactos
+  -> Noctargo (Darío Pelmar) pierde 27 (378 -> 351) x2 [resplandor +25%, noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 27 (351 -> 324) x2 [resplandor +25%, noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 27 (324 -> 297) x2 [resplandor +25%, noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 27 (297 -> 270) x2 [resplandor +25%, noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 27 (270 -> 243) x2 [resplandor +25%, noche_protectora -25%]
+
+=== Ronda 4 ===
+
+--- Crispo Servilio: ronda 4 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 243/432
+  S0P0 (tuya): Pelnir (Crispo Servilio) 320/320
+  Intermedio: Fulgocerno (derrotada) | Noxilo 236/236
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Pelnir (Crispo Servilio)
+    1) Señal de banco [status, luz, PB -, prio 1, single]
+    2) Salva radiante [magical, luz, PB 20 x1-5, prio 0, multi]
+    3) Haz de luz [magical, luz, PB 30, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Fulgocerno (Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Noxilo (Crispo Servilio): no disponible (rastro: no puede retirarse voluntariamente; CANON-MECHANICS 24.5)
+  Accion: 2
+    Dispara entre 1 y 5 proyectiles de luz. Cada impacto tiene 10% de aplicar Espíritu Cercenado.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+  Objetivo 1: 2
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+  Objetivo 2 (0 = terminar): 1
+
+--- Darío Pelmar: ronda 4 ---
+  S0P0 (rival): Pelnir (Crispo Servilio) 320/320
+  S1P0 (tuya): Litófis (Darío Pelmar) 549/549
+  S1P1 (tuya): Noctargo (Darío Pelmar) 243/432
+  Intermedio: Valeduno 436/436
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Litófis (Darío Pelmar)
+    1) Muralla quebrada [physical, tierra, PB 105, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (50% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 1
+    Se pliega y se despliega contra el objetivo como una sección de muralla en movimiento. Con 75% o más de Vitalidad causa +50% de daño.
+    1) S0P0 (rival): Pelnir (Crispo Servilio)
+    2) S1P0 (tuya): Litófis (Darío Pelmar)
+    3) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+
+  S1P1: Noctargo (Darío Pelmar)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Caza de sombra [physical, oscuridad, PB 80, prio 1, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 2
+    Contra un objetivo afectado por Rastro, ignora reducciones de Precisión y causa +50% de daño.
+    1) S0P0 (rival): Pelnir (Crispo Servilio)
+    2) S1P0 (tuya): Litófis (Darío Pelmar)
+    3) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+Noctargo (Darío Pelmar) usa Caza de sombra
+  -> Pelnir (Crispo Servilio) pierde 320 (320 -> 0) x2 [caza_de_sombra +50%]
+  Pelnir (Crispo Servilio) es derrotado
+Litófis (Darío Pelmar) usa Muralla quebrada
+  -> S0P0 esta vacia: el impacto se pierde
+Pelnir (Crispo Servilio): la accion falla (el usuario ya no esta activo; la accion se pierde)
+
+  Reemplazo forzado en S0P0:
+    1) Noxilo (Crispo Servilio)
+  Criatura: 1
+  Noxilo (Crispo Servilio) entra en S0P0 (Reemplazo forzado)
+Noxilo (Crispo Servilio) se materializa en S0P0
+
+=== Ronda 5 ===
+
+--- Crispo Servilio: ronda 5 ---
+  S1P0 (rival): Litófis (Darío Pelmar) 549/549
+  S1P1 (rival): Noctargo (Darío Pelmar) 243/432
+  S0P0 (tuya): Noxilo (Crispo Servilio) 236/236
+  Intermedio: Fulgocerno (derrotada) | Pelnir (derrotada)
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Noxilo (Crispo Servilio)
+    1) Reflejo galvánico [status, rayo, PB -, prio 1, single]
+    2) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    3) Chispa [magical, rayo, PB 30, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Fulgocerno (Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Pelnir (Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Lanza entre 1 y 5 chispas eléctricas.
+  Hasta 2 objetivos (uno por impacto como maximo), en orden.
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+    2) S1P1 (rival): Noctargo (Darío Pelmar)
+  Objetivo 1: 2
+    1) S1P0 (rival): Litófis (Darío Pelmar)
+  Objetivo 2 (0 = terminar): 1
+
+--- Darío Pelmar: ronda 5 ---
+  S0P0 (rival): Noxilo (Crispo Servilio) 236/236
+  S1P0 (tuya): Litófis (Darío Pelmar) 549/549
+  S1P1 (tuya): Noctargo (Darío Pelmar) 243/432
+  Intermedio: Valeduno 436/436
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Litófis (Darío Pelmar)
+    1) Muralla quebrada [physical, tierra, PB 105, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 1
+    Se pliega y se despliega contra el objetivo como una sección de muralla en movimiento. Con 75% o más de Vitalidad causa +50% de daño.
+    1) S0P0 (rival): Noxilo (Crispo Servilio)
+    2) S1P0 (tuya): Litófis (Darío Pelmar)
+    3) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+
+  S1P1: Noctargo (Darío Pelmar)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Caza de sombra [physical, oscuridad, PB 80, prio 1, single]
+    3) Desgarro maldito [physical, oscuridad, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Valeduno (Darío Pelmar)
+    7) Rendirse
+  Accion: 2
+    Contra un objetivo afectado por Rastro, ignora reducciones de Precisión y causa +50% de daño.
+    1) S0P0 (rival): Noxilo (Crispo Servilio)
+    2) S1P0 (tuya): Litófis (Darío Pelmar)
+    3) S1P1 (tuya): Noctargo (Darío Pelmar)
+  Objetivo: 1
+Noctargo (Darío Pelmar) usa Caza de sombra
+  -> Noxilo (Crispo Servilio) pierde 188 (236 -> 48)
+Noxilo (Crispo Servilio) usa Cadena de chispas
+  5 impactos
+  -> Noctargo (Darío Pelmar) pierde 6 (243 -> 237) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (237 -> 231) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (231 -> 225) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (225 -> 219) [noche_protectora -25%]
+  -> Noctargo (Darío Pelmar) pierde 6 (219 -> 213) [noche_protectora -25%]
+Litófis (Darío Pelmar) usa Muralla quebrada
+  -> Noxilo (Crispo Servilio) pierde 48 (48 -> 0) x2 [muralla_quebrada +50%]
+  Noxilo (Crispo Servilio) es derrotado
+  S0P0 queda vacia: no hay reservas
+
+Fin: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}

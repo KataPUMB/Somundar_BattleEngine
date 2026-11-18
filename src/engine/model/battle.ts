@@ -104,11 +104,18 @@ export interface SideEffect {
 
 export interface SideState {
   index: SideIndex;
+  battleMode: boolean;
   summoner: Summoner;
   combatants: Combatant[];
   positions: Position[];
   sideEffects: SideEffect[];
   surrendered: boolean;
+  /** rondas acumuladas de doble materializacion del Adepto durante todo el combate */
+  adeptUsedRounds: number;
+  /** maximo de rondas de doble materializacion; null si no aplica */
+  adeptMaxRounds: number | null;
+  /** agotado: no puede volver a abrir la posicion temporal */
+  adeptExhausted: boolean;
 }
 
 export interface EnvironmentState {
@@ -176,6 +183,7 @@ export type Action =
   | { kind: 'technique'; techniqueId: string; target: TargetDecl; choice?: string }
   | { kind: 'dodge' }
   | { kind: 'switch'; incomingId: string }
+  | { kind: 'withdraw' }
   | { kind: 'partial'; creatureId: string; techniqueId: string; target: TargetDecl; choice?: string }
   | { kind: 'surrender' }
   | { kind: 'corpses'; count: number };

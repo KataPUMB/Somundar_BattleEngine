@@ -181,6 +181,55 @@ test('13.2 / 28.6.19: segunda posicion temporal del Adepto (supuesto por defecto
   assert.equal(combatant(r, uid(0, 'b')).location, 'intermedio');
 });
 
+test('Adepto agotado: no puede reabrir la posicion temporal en rondas posteriores', () => {
+  const s0 = summoner('ad', 'adepto', { adeptSustain: { maxRounds: 2 } });
+  const s1 = summoner('y', 'iniciado');
+  let st = start(data, setup(s0, [creature('a', { baseStatsNV50: tank }), creature('b', { baseStatsNV50: tank })], ['a']), setup(s1, [creature('z', { baseStatsNV50: tank })]));
+  st = beginRound(data, st, [{ side: 0, creatureId: 'b' }]);
+  st = resolveRound(data, st, { S0P0: hit('S1P0'), S0P1: hit('S1P0'), S1P0: hit('S0P0') });
+  st = beginRound(data, st);
+  st = resolveRound(data, st, { S0P0: hit('S1P0'), S0P1: hit('S1P0'), S1P0: hit('S0P0') });
+  assert.equal(st.sides[0].adeptExhausted, true);
+  assert.equal(st.sides[0].positions.length, 1);
+  assert.throws(() => beginRound(data, st, [{ side: 0, creatureId: 'b' }]), DeclarationError);
+});
+
+test('modo batalla: Adepto ignora limite de sosten y mantiene doble materializacion', () => {
+  const s0 = summoner('ad', 'adepto', { adeptSustain: { maxRounds: 1 } });
+  const s1 = summoner('y', 'iniciado');
+  let st = start(
+    data,
+    { ...setup(s0, [creature('a', { baseStatsNV50: tank }), creature('b', { baseStatsNV50: tank })], ['a', 'b']), battleMode: true },
+    { ...setup(s1, [creature('z', { baseStatsNV50: tank })]), battleMode: true },
+  );
+  st = beginRound(data, st);
+  st = resolveRound(data, st, { S0P0: hit('S1P0'), S0P1: hit('S1P0'), S1P0: hit('S0P0') });
+  assert.equal(st.sides[0].positions.length, 2);
+  assert.equal(st.sides[0].adeptExhausted, false);
+});
+
+test('Adepto: puede retirar la posicion temporal y los ataques a esa posicion se redirigen a SxP0', () => {
+  const s0 = summoner('ad', 'adepto', { adeptSustain: { maxRounds: 3 } });
+  const s1 = summoner('rv', 'iniciado');
+  const st = start(
+    data,
+    setup(s0, [
+      creature('p0', { baseStatsNV50: tank }),
+      creature('p1', { baseStatsNV50: { ...FLAT_STATS, spe: 200 } }),
+    ], ['p0', 'p1']),
+    setup(s1, [creature('atk', { baseStatsNV50: { ...FLAT_STATS, spe: 100 }, equippedTechniques: ['aranazo'] })]),
+  );
+  const r = round(data, st, {
+    S0P0: { kind: 'technique', techniqueId: 'aranazo', target: { kind: 'position', positionId: 'S1P0' } },
+    S0P1: { kind: 'withdraw' },
+    S1P0: { kind: 'technique', techniqueId: 'aranazo', target: { kind: 'position', positionId: 'S0P1' } },
+  });
+  assert.equal(combatant(r, uid(0, 'p1')).location, 'intermedio');
+  assert.equal(r.sides[0].positions.find((p) => p.id === 'S0P1')?.occupantUid ?? null, null);
+  assert.ok(eventsOf(r, 'retargeted').some((e) => e.data?.from === 'S0P1' && e.data?.to === 'S0P0'));
+  assert.ok(eventsOf(r, 'damage').some((e) => e.targets?.[0] === uid(0, 'p0')));
+});
+
 test('modo strict: una tecnica sin efectos curados no se puede declarar', () => {
   const s = summoner('x', 'iniciado');
   const raw = withoutOverride(data, 'bola_de_fuego');

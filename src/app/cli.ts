@@ -10,7 +10,7 @@ import { validatePreparation } from '../engine/legality/preparation.js';
 import { randomLegalPolicy } from '../engine/ai/random.js';
 import { RULE_GAPS } from '../engine/gaps.js';
 import { runBattle } from './simulate.js';
-import { askCorpses, askOptionalSwitch, askReplacement, humanPolicy } from './human.js';
+import { askAdeptSustainRounds, askCorpses, askOptionalSwitch, askReplacement, humanPolicy } from './human.js';
 import { formatEvent } from './format.js';
 import type { BattleState, SideIndex } from '../engine/model/battle.js';
 import type { Policy } from '../engine/ai/random.js';
@@ -54,11 +54,21 @@ function main(argv: string[]): number {
         console.error('Data/ contiene errores; ejecuta validate-data');
         return 1;
       }
-      const sc = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as { sides: [SideSetupInput, SideSetupInput]; seed?: number; config?: Partial<BattleConfig> };
+      const sc = JSON.parse(readFileSync(resolve(args[0] ?? ''), 'utf-8')) as { mode?: 'duel' | 'battle'; sides: [SideSetupInput, SideSetupInput]; seed?: number; config?: Partial<BattleConfig> };
+      let sides = sc.mode === 'battle'
+        ? sc.sides.map((s) => ({ ...s, battleMode: true })) as [SideSetupInput, SideSetupInput]
+        : sc.sides;
       const seed = Number(flag(args, 'seed') ?? sc.seed ?? 1);
       const mode = flag(args, 'mode') as EffectsMode | undefined;
       const humanArg = flag(args, 'human');
       const human = [humanArg === '0' || humanArg === 'both', humanArg === '1' || humanArg === 'both'];
+      sides = sides.map((s, idx) => {
+        if (!human[idx]) return s;
+        if (s.battleMode) return s;
+        if (s.summoner.estamento !== 'adepto') return s;
+        const rounds = askAdeptSustainRounds(s.summoner.name);
+        return { ...s, summoner: { ...s.summoner, adeptSustain: { ...s.summoner.adeptSustain, maxRounds: rounds } } };
+      }) as [SideSetupInput, SideSetupInput];
       const pretty = args.includes('--pretty') || human.some(Boolean);
       const logAt = args.indexOf('--log');
       const logArg = logAt >= 0 ? args[logAt + 1] : undefined;
@@ -95,7 +105,7 @@ function main(argv: string[]): number {
         },
       };
       try {
-        const st = runBattle(data, sc.sides, policies, {
+        const st = runBattle(data, sides, policies, {
           seed,
           config: { ...sc.config, ...(mode ? { effectsMode: mode } : {}) },
           controllers,

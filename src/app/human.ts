@@ -77,6 +77,7 @@ function describe(data: GameData, st: BattleState, positionId: string, o: Action
       return `Esquiva (${dodgeChance(streak)}% de exito)`;
     }
     case 'switch': return `Intercambio -> ${own(a.incomingId)}`;
+    case 'withdraw': return 'Retirada voluntaria: dejar la posicion temporal vacia';
     case 'surrender': return 'Rendirse';
   }
 }
@@ -159,7 +160,7 @@ export function humanPolicy(data: GameData): Policy {
       const colony = askColony(data, view as BattleState, side, false);
       const reserves = s.combatants.filter((c) => c.location === 'intermedio' && c.hp > 0);
       const empty = s.positions.filter((p) => p.occupantUid === null);
-      const canOpen = s.summoner.simultaneity === 'adept_temporary' && s.positions.length < 2;
+      const canOpen = s.summoner.simultaneity === 'adept_temporary' && s.positions.length < 2 && !s.adeptExhausted;
       if (reserves.length === 0 || (!canOpen && empty.length === 0)) return colony;
       printBoard(data, view as BattleState, side, `establecimiento de posiciones de la ronda ${view.round + 1}`);
       const where = canOpen ? 'abrir una segunda posicion temporal' : `ocupar ${empty[0]!.id}`;
@@ -220,4 +221,9 @@ export function askOptionalSwitch(st: BattleState, uid: string, candidates: stri
   candidates.forEach((u, i) => console.log(`    ${i + 1}) ${creatureName(st, u)}`));
   const n = ask('  Criatura (0 = quedarse):', candidates.length, true);
   return n === 0 ? null : candidates[n - 1]!;
+}
+
+export function askAdeptSustainRounds(summonerName: string): number {
+  console.log(`\n  ${summonerName}: doble materializacion temporal de Adepto.`);
+  return ask('  Rondas maximas para sostener la posicion temporal (1-30):', 30);
 }

@@ -1,0 +1,449 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Risco (Adriano Valerio) se materializa en S0P0
+Dracendra (Brenn Veyr) se materializa en S1P0
+Litharra (Brenn Veyr) se materializa en S1P1
+Eosmis (Adriano Valerio) se materializa en S0P1
+Despliegue inicial completo
+
+=== Ronda 1 ===
+
+--- Adriano Valerio: ronda 1 ---
+  S1P0 (rival): Dracendra (Brenn Veyr) 244/244
+  S1P1* (rival): Litharra (Brenn Veyr) 294/294
+  S0P0 (tuya): Risco (Adriano Valerio) 260/260
+  S0P1* (tuya): Eosmis (Adriano Valerio) 281/281
+  Intermedio: Mota 405/405 | Gútula 342/342
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Risco (Adriano Valerio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio)
+    7) Intercambio -> Gútula (Adriano Valerio)
+    8) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S1P0 (rival): Dracendra (Brenn Veyr)
+    2) S1P1 (rival): Litharra (Brenn Veyr)
+    3) S0P0 (tuya): Risco (Adriano Valerio)
+    4) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 1
+
+  S0P1: Eosmis (Adriano Valerio)
+    1) Ráfaga [magical, aire, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]
+    4) Debilitar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Mota (Adriano Valerio)
+    8) Intercambio -> Gútula (Adriano Valerio)
+    9) Rendirse
+  Accion: 4
+    Baja el Ataque del objetivo.
+    1) S1P0 (rival): Dracendra (Brenn Veyr)
+    2) S1P1 (rival): Litharra (Brenn Veyr)
+    3) S0P0 (tuya): Risco (Adriano Valerio)
+    4) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 2
+
+--- Brenn Veyr: ronda 1 ---
+  S0P0 (rival): Risco (Adriano Valerio) 260/260
+  S0P1* (rival): Eosmis (Adriano Valerio) 281/281
+  S1P0 (tuya): Dracendra (Brenn Veyr) 244/244
+  S1P1* (tuya): Litharra (Brenn Veyr) 294/294
+  Intermedio: Cervolasto 368/368
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Dracendra (Brenn Veyr)
+    1) Proyectiles ígneos [magical, fuego, PB 20 x1-5, prio 0, multi]
+    2) Fauces en llamas [physical, fuego, PB 60, prio 0, single]
+    3) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Cervolasto (Brenn Veyr)
+    7) Rendirse
+  Accion: 2
+    20% de Quemado.
+    1) S0P0 (rival): Risco (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): Dracendra (Brenn Veyr)
+    4) S1P1 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 2
+
+  S1P1: Litharra (Brenn Veyr)
+    1) Aletazo de pala [physical, tierra, PB 65, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    4) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Cervolasto (Brenn Veyr)
+    8) Rendirse
+  Accion: 1
+    Golpea con una de sus grandes aletas excavadoras. 20% de Agrietado.
+    1) S0P0 (rival): Risco (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): Dracendra (Brenn Veyr)
+    4) S1P1 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 1
+Risco (Adriano Valerio) usa Ariete dracónico
+  -> Dracendra (Brenn Veyr) pierde 244 (244 -> 0) [mundano +100%]
+  Dracendra (Brenn Veyr) es derrotado
+Dracendra (Brenn Veyr): la accion falla (el usuario ya no esta activo; la accion se pierde)
+Litharra (Brenn Veyr) usa Aletazo de pala
+  -> Risco (Adriano Valerio) pierde 85 (260 -> 175) x2
+Eosmis (Adriano Valerio) usa Debilitar
+  -> impacta a Litharra (Brenn Veyr)
+  Litharra (Brenn Veyr): atk 0 -> -1
+
+  Reemplazo forzado en S1P0:
+    1) Cervolasto (Brenn Veyr)
+  Criatura: 1
+  Cervolasto (Brenn Veyr) entra en S1P0 (Reemplazo forzado)
+Cervolasto (Brenn Veyr) se materializa en S1P0
+La posicion temporal S0P1 se sostiene
+La posicion temporal S1P1 se sostiene
+
+=== Ronda 2 ===
+
+--- Adriano Valerio: ronda 2 ---
+  S1P0 (rival): Cervolasto (Brenn Veyr) 368/368
+  S1P1* (rival): Litharra (Brenn Veyr) 294/294 [atk-1]
+  S0P0 (tuya): Risco (Adriano Valerio) 175/260
+  S0P1* (tuya): Eosmis (Adriano Valerio) 281/281
+  Intermedio: Mota 405/405 | Gútula 342/342
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Risco (Adriano Valerio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio)
+    7) Intercambio -> Gútula (Adriano Valerio)
+    8) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S1P0 (rival): Cervolasto (Brenn Veyr)
+    2) S1P1 (rival): Litharra (Brenn Veyr)
+    3) S0P0 (tuya): Risco (Adriano Valerio)
+    4) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 1
+
+  S0P1: Eosmis (Adriano Valerio)
+    1) Ráfaga [magical, aire, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    4) Debilitar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Mota (Adriano Valerio)
+    8) Intercambio -> Gútula (Adriano Valerio)
+    9) Rendirse
+  Accion: 4
+    Baja el Ataque del objetivo.
+    1) S1P0 (rival): Cervolasto (Brenn Veyr)
+    2) S1P1 (rival): Litharra (Brenn Veyr)
+    3) S0P0 (tuya): Risco (Adriano Valerio)
+    4) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 2
+
+--- Brenn Veyr: ronda 2 ---
+  S0P0 (rival): Risco (Adriano Valerio) 175/260
+  S0P1* (rival): Eosmis (Adriano Valerio) 281/281
+  S1P0 (tuya): Cervolasto (Brenn Veyr) 368/368
+  S1P1* (tuya): Litharra (Brenn Veyr) 294/294 [atk-1]
+  Intermedio: Dracendra (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Cervolasto (Brenn Veyr)
+    1) Caparazón incandescente [status, fuego, PB -, prio 0, single]
+    2) Proyectiles ígneos [magical, fuego, PB 20 x1-5, prio 0, multi]
+    3) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    4) Impacto acorazado [physical, sin tipo, PB 80, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 4
+    Usa la Defensa del usuario en lugar de su Ataque físico para calcular el daño.
+    1) S0P0 (rival): Risco (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): Cervolasto (Brenn Veyr)
+    4) S1P1 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 1
+
+  S1P1: Litharra (Brenn Veyr)
+    1) Aletazo de pala [physical, tierra, PB 65, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    4) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Rendirse
+     -  Intercambio -> Dracendra (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Golpea con una de sus grandes aletas excavadoras. 20% de Agrietado.
+    1) S0P0 (rival): Risco (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): Cervolasto (Brenn Veyr)
+    4) S1P1 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 1
+Risco (Adriano Valerio) usa Ariete dracónico
+  -> Cervolasto (Brenn Veyr) pierde 368 (368 -> 0) [mundano +100%]
+  Cervolasto (Brenn Veyr) es derrotado
+Cervolasto (Brenn Veyr): la accion falla (el usuario ya no esta activo; la accion se pierde)
+Litharra (Brenn Veyr) usa Aletazo de pala
+  -> Risco (Adriano Valerio) pierde 46 (175 -> 129) x2 {usa Ataque: etapa -1}
+  Risco (Adriano Valerio) queda agrietado (aletazo_de_pala)
+Eosmis (Adriano Valerio) usa Debilitar
+  -> impacta a Litharra (Brenn Veyr)
+  Litharra (Brenn Veyr): atk -1 -> -2
+  S1P0 queda vacia: no hay reservas
+La posicion temporal S0P1 se sostiene
+La posicion temporal S1P1 se sostiene
+
+=== Ronda 3 ===
+
+--- Adriano Valerio: ronda 3 ---
+  S1P0 (rival): vacia
+  S1P1* (rival): Litharra (Brenn Veyr) 294/294 [atk-2]
+  S0P0 (tuya): Risco (Adriano Valerio) 129/260 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (tuya): Eosmis (Adriano Valerio) 281/281
+  Intermedio: Mota 405/405 | Gútula 342/342
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Risco (Adriano Valerio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio)
+    7) Intercambio -> Gútula (Adriano Valerio)
+    8) Rendirse
+  Accion: 6
+
+  S0P1: Eosmis (Adriano Valerio)
+    1) Ráfaga [magical, aire, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    4) Debilitar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Mota (Adriano Valerio)
+    8) Intercambio -> Gútula (Adriano Valerio)
+    9) Rendirse
+  Accion: 1
+    Lanza una ráfaga de aire comprimido.
+    1) S1P0 (rival): vacia
+    2) S1P1 (rival): Litharra (Brenn Veyr)
+    3) S0P0 (tuya): Risco (Adriano Valerio)
+    4) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 2
+
+--- Brenn Veyr: ronda 3 ---
+  S0P0 (rival): Risco (Adriano Valerio) 129/260 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (rival): Eosmis (Adriano Valerio) 281/281
+  S1P0 (tuya): vacia
+  S1P1* (tuya): Litharra (Brenn Veyr) 294/294 [atk-2]
+  Intermedio: Dracendra (derrotada) | Cervolasto (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P1: Litharra (Brenn Veyr)
+    1) Aletazo de pala [physical, tierra, PB 65, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    4) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Rendirse
+     -  Intercambio -> Dracendra (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Cervolasto (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Expulsa una nube de fragmentos minerales. 10% de Agrietado. La curación que reciba el objetivo se reduce un 25% hasta que se retire.
+    1) S0P0 (rival): Risco (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): vacia
+    4) S1P1 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 1
+Risco (Adriano Valerio) se retira; entra Mota (Adriano Valerio)
+Mota (Adriano Valerio) se materializa en S0P0
+Litharra (Brenn Veyr) usa Granalla mineral
+  -> Mota (Adriano Valerio) pierde 14 (405 -> 391) x0.5
+  Mota (Adriano Valerio): granalla_mineral (healing_mod)
+Eosmis (Adriano Valerio) usa Ráfaga
+  -> Litharra (Brenn Veyr) pierde 50 (294 -> 244) x2 {usa Ataque magico: formacion_de_caza +25%}
+La posicion temporal S0P1 se sostiene
+Brenn Veyr esta agotado y no puede mantener la simultaneidad: Litharra (Brenn Veyr) en S1P1 vuelve al Intermedio
+
+--- Brenn Veyr: establecimiento de posiciones de la ronda 4 ---
+  S0P0 (rival): Mota (Adriano Valerio) 391/405
+  S0P1* (rival): Eosmis (Adriano Valerio) 281/281
+  S1P0 (tuya): vacia
+  Intermedio: Dracendra (derrotada) | Litharra 244/294 | Cervolasto (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+  Puedes ocupar S1P0 materializando una criatura completa:
+    1) Litharra 244/294
+  Criatura (0 = no): 1
+
+=== Ronda 4 ===
+  (supuesto GAP-EMPTY-POSITION-FILL en S1P0)
+Litharra (Brenn Veyr) se materializa en S1P0
+
+--- Adriano Valerio: ronda 4 ---
+  S1P0 (rival): Litharra (Brenn Veyr) 244/294
+  S0P0 (tuya): Mota (Adriano Valerio) 391/405
+  S0P1* (tuya): Eosmis (Adriano Valerio) 281/281
+  Intermedio: Risco 129/260 [agrietado(atk -50%; no puede subir: 4 turnos)] | Gútula 342/342
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Mota (Adriano Valerio)
+    1) Rebufo [magical, aire, PB 55, prio 1, single]
+    2) Cortes de viento [magical, aire, PB 20 x1-5, prio 0, multi]
+    3) Ráfaga [magical, aire, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Risco (Adriano Valerio)
+    7) Intercambio -> Gútula (Adriano Valerio)
+    8) Rendirse
+  Accion: 1
+    Golpea con una corriente generada por sus dos colas. Después de resolver el ataque puede retirarse voluntariamente y ser sustituido.
+    1) S1P0 (rival): Litharra (Brenn Veyr)
+    2) S0P0 (tuya): Mota (Adriano Valerio)
+    3) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 1
+
+  S0P1: Eosmis (Adriano Valerio)
+    1) Ráfaga [magical, aire, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    4) Debilitar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Risco (Adriano Valerio)
+    8) Intercambio -> Gútula (Adriano Valerio)
+    9) Rendirse
+  Accion: 2
+    Sube la Defensa mágica.
+
+--- Brenn Veyr: ronda 4 ---
+  S0P0 (rival): Mota (Adriano Valerio) 391/405
+  S0P1* (rival): Eosmis (Adriano Valerio) 281/281
+  S1P0 (tuya): Litharra (Brenn Veyr) 244/294
+  Intermedio: Dracendra (derrotada) | Cervolasto (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Litharra (Brenn Veyr)
+    1) Aletazo de pala [physical, tierra, PB 65, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    4) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Cervolasto (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Golpea con una de sus grandes aletas excavadoras. 20% de Agrietado.
+    1) S0P0 (rival): Mota (Adriano Valerio)
+    2) S0P1 (rival): Eosmis (Adriano Valerio)
+    3) S1P0 (tuya): Litharra (Brenn Veyr)
+  Objetivo: 2
+Mota (Adriano Valerio) usa Rebufo
+  -> Litharra (Brenn Veyr) pierde 210 (244 -> 34) x2 {usa Ataque magico: formacion_de_caza +25%}
+
+  Mota (Adriano Valerio) puede retirarse voluntariamente y ser sustituida:
+    1) Risco (Adriano Valerio)
+    2) Gútula (Adriano Valerio)
+  Criatura (0 = quedarse): 1
+  Mota (Adriano Valerio) es sustituido por Risco (Adriano Valerio) (rebufo)
+Risco (Adriano Valerio) se materializa en S0P0
+Litharra (Brenn Veyr) usa Aletazo de pala
+  -> Eosmis (Adriano Valerio) pierde 30 (281 -> 251) x0.5
+Eosmis (Adriano Valerio) usa Resguardo
+  -> impacta a Eosmis (Adriano Valerio)
+  Eosmis (Adriano Valerio): mdef 0 -> 1
+La posicion temporal S0P1 se sostiene
+
+=== Ronda 5 ===
+
+--- Adriano Valerio: ronda 5 ---
+  S1P0 (rival): Litharra (Brenn Veyr) 34/294
+  S0P0 (tuya): Risco (Adriano Valerio) 129/260 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (tuya): Eosmis (Adriano Valerio) 251/281 [mdef+1]
+  Intermedio: Mota 391/405 | Gútula 342/342
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Risco (Adriano Valerio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio)
+    7) Intercambio -> Gútula (Adriano Valerio)
+    8) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S1P0 (rival): Litharra (Brenn Veyr)
+    2) S0P0 (tuya): Risco (Adriano Valerio)
+    3) S0P1 (tuya): Eosmis (Adriano Valerio)
+  Objetivo: 1
+
+  S0P1: Eosmis (Adriano Valerio)
+    1) Ráfaga [magical, aire, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    4) Debilitar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Mota (Adriano Valerio)
+    8) Intercambio -> Gútula (Adriano Valerio)
+    9) Rendirse
+  Accion: 8
+
+--- Brenn Veyr: ronda 5 ---
+  S0P0 (rival): Risco (Adriano Valerio) 129/260 [agrietado(atk -50%; no puede subir: 4 turnos)]
+  S0P1* (rival): Eosmis (Adriano Valerio) 251/281 [mdef+1]
+  S1P0 (tuya): Litharra (Brenn Veyr) 34/294
+  Intermedio: Dracendra (derrotada) | Cervolasto (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S1P0: Litharra (Brenn Veyr)
+    1) Aletazo de pala [physical, tierra, PB 65, prio 0, single]
+    2) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    3) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    4) Aleta cortante [physical, sin tipo, PB 75, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Cervolasto (Brenn Veyr): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+Eosmis (Adriano Valerio) se retira; entra Gútula (Adriano Valerio)
+Gútula (Adriano Valerio) se materializa en S0P1
+  Manifestacion marea_reparadora de Gútula (Adriano Valerio)
+  Risco (Adriano Valerio) recupera 65 (129 -> 194)
+  Gútula (Adriano Valerio) recupera 0 (342 -> 342)
+Risco (Adriano Valerio) usa Ariete dracónico
+Brenn Veyr surrenders
+Gútula vuelve al Intermedio
+Risco vuelve al Intermedio
+Litharra vuelve al Intermedio
+
+Fin: {"kind":"victory","winner":0,"reason":"rendicion"}
+Resultado: {"kind":"victory","winner":0,"reason":"rendicion"}

@@ -1,0 +1,1098 @@
+Combate (semilla 42, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+  (empate exacto resuelto al azar: Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir))
+Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P1
+Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P2
+Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P0
+Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P4
+Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P3
+Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P0 (entra en frenesí, puede atacar aliados)
+Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P1 (entra en frenesí, puede atacar aliados)
+Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P3 (entra en frenesí, puede atacar aliados)
+Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P2 (entra en frenesí, puede atacar aliados)
+Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P6 (entra en frenesí, puede atacar aliados)
+Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P7 (entra en frenesí, puede atacar aliados)
+Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P4 (entra en frenesí, puede atacar aliados)
+Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) se materializa en S0P5 (entra en frenesí, puede atacar aliados)
+Despliegue inicial completo
+
+=== Ronda 1 ===
+
+--- Ocho Palmatagma de la colonia de Valdir: ronda 1 ---
+  S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 267/267
+  S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 419/419
+  S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 393/393
+  S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 211/211
+  S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 217/217
+  S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) 582/582
+  S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 567/567
+  S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  Reservas viables del rival: 3
+  Sin efectos de campo activos
+
+  S0P0: Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Ataque con las mandíbulas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 6
+
+  S0P1: Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 5
+
+  S0P2: Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Ataque con garras o uñas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 1
+
+  S0P3: Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 2
+    Carga corporal contra el objetivo.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 1
+
+  S0P4: Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    3) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 3
+    Sin efecto adicional.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 5
+
+  S0P5: Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 5
+
+  S0P6: Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 3
+    Dispara una esquirla de cuarzo.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 3
+
+  S0P7: Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 3
+    Lanza una pequeña masa de fuego.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 4
+
+--- Adriano Valerio + Maelle Vaurin + Crispo Servilio: ronda 1 ---
+  S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) 582/582
+  S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 567/567
+  S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 267/267
+  S1P1 (tuya): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 419/419
+  S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 393/393
+  S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 211/211
+  S1P4 (tuya): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 217/217
+  Intermedio: Eosmis 291/291 | Gútula 354/354 | Pelnir 289/289
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Intercambio -> Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    9) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P1: Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Rebufo [magical, aire, PB 55, prio 1, single]
+    2) Cortes de viento [magical, aire, PB 20 x1-5, prio 0, multi]
+    3) Ráfaga [magical, aire, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Intercambio -> Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    9) Rendirse
+  Accion: 1
+    Golpea con una corriente generada por sus dos colas. Después de resolver el ataque puede retirarse voluntariamente y ser sustituido.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P2: Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    3) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Intercambio -> Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    9) Rendirse
+  Accion: 3
+    Golpe potente con las garras.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P3: Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Embestida de chispa [physical, rayo, PB 65, prio 0, single]
+    2) Chispa [magical, rayo, PB 30, prio 0, single]
+    3) Cornada [physical, sin tipo, PB 60, prio 0, single]
+    4) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Intercambio -> Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    9) Rendirse
+  Accion: 1
+    Carga con electricidad acumulada en los cuernos. Con 75% o más de Vitalidad causa +25% de daño.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 3
+
+  S1P4: Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Reflejo galvánico [status, rayo, PB -, prio 1, single]
+    2) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    3) Chispa [magical, rayo, PB 30, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Intercambio -> Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    9) Rendirse
+  Accion: 2
+    Lanza entre 1 y 5 chispas eléctricas.
+  Hasta 5 objetivos (uno por impacto como maximo), en orden.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 1: 3
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 2 (0 = terminar): 2
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 3 (0 = terminar): 1
+    1) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 4 (0 = terminar): 0
+Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) esquiva (uso 1, 100%): exito
+Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) esquiva (uso 1, 100%): exito
+  (empate exacto resuelto al azar: Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir))
+Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Rebufo
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 95 (582 -> 487) {usa Ataque magico: formacion_de_caza +25%}
+
+  Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) puede retirarse voluntariamente y ser sustituida:
+    1) Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Criatura (0 = quedarse): 2
+  Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio) es sustituido por Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) (rebufo)
+Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P1
+  Manifestacion marea_reparadora de Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) recupera 0 (267 -> 267)
+  Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) recupera 0 (354 -> 354)
+  Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) recupera 0 (393 -> 393) x1.50
+  Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) recupera 0 (211 -> 211)
+  Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) recupera 0 (217 -> 217)
+Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Zarpazo
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 53 (487 -> 434)
+Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Cadena de chispas
+  2 impactos
+  -> Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) pierde 4 (558 -> 554) x0.5
+  -> Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) pierde 4 (554 -> 550) x0.5
+Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Ariete dracónico
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 302 (434 -> 132) [mundano +100%]
+Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Embestida de chispa
+  -> Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) pierde 26 (550 -> 524) x0.5 [alta_tension +25%, embestida_de_chispa +25%]
+Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) usa Mordisco
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 52 (132 -> 80)
+Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) usa Arañazo
+  -> Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 50 (267 -> 217)
+Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) usa Llama
+  -> Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 16 (211 -> 195)
+Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) usa Esquirla de cuarzo
+  -> Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 12 (393 -> 381)
+Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) usa Embestida
+  -> Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 62 (217 -> 155)
+Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) usa Embate de roca
+  -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 217 (217 -> 0) x2
+  Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio) es derrotado
+
+  Reemplazo forzado en S1P4:
+    1) Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Criatura: 3
+  Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) entra en S1P4 (Reemplazo forzado)
+Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) se materializa en S1P4
+  (empate exacto resuelto al azar: Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir))
+  (empate exacto resuelto al azar: Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir))
+
+=== Ronda 2 ===
+
+--- Ocho Palmatagma de la colonia de Valdir: ronda 2 ---
+  S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 155/267
+  S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 354/354
+  S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 381/393
+  S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 195/211
+  S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 289/289
+  S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) 80/582
+  S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 567/567
+  S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 524/558
+  S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S0P0: Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 4
+    Lanza una pequeña masa de fuego.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 7
+
+  S0P1: Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (50% de exito)
+    6) Rendirse
+  Accion: 1
+    Carga corporal contra el objetivo.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 8
+
+  S0P2: Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Ataque con garras o uñas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 6
+
+  S0P3: Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Ataque con las mandíbulas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 10
+
+  S0P4: Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    3) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 2
+    Ataque con garras o uñas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 1
+
+  S0P5: Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    5) Esquiva (50% de exito)
+    6) Rendirse
+  Accion: 3
+    Lanza una pequeña masa de fuego.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 2
+
+  S0P6: Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 1
+    Carga corporal contra el objetivo.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 1
+
+  S0P7: Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+  Accion: 5
+
+--- Adriano Valerio + Maelle Vaurin + Crispo Servilio: ronda 2 ---
+  S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) 80/582
+  S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 567/567
+  S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 524/558
+  S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 155/267
+  S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 354/354
+  S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 381/393
+  S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 195/211
+  S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 289/289
+  Intermedio: Mota 419/419 | Eosmis 291/291 | Noxilo (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P1: Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Chorro [magical, agua, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]
+    4) Desconcentrar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Lanza un chorro de agua a presión.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P2: Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    3) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 3
+    Golpe potente con las garras.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P3: Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Embestida de chispa [physical, rayo, PB 65, prio 0, single]
+    2) Chispa [magical, rayo, PB 30, prio 0, single]
+    3) Cornada [physical, sin tipo, PB 60, prio 0, single]
+    4) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 3
+    Ataque con cuernos.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+
+  S1P4: Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Señal de banco [status, luz, PB -, prio 1, single]
+    2) Salva radiante [magical, luz, PB 20 x1-5, prio 0, multi]
+    3) Haz de luz [magical, luz, PB 30, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 4
+    Golpea con una aleta.
+    1) S0P0 (rival): Palmatagma grande (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 1
+Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) esquiva (uso 1, 100%): exito
+  (empate exacto resuelto al azar: Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir))
+Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Zarpazo
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 53 (80 -> 27)
+Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Ariete dracónico
+  -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) pierde 27 (27 -> 0) [mundano +100%]
+  Palmatagma grande (Ocho Palmatagma de la colonia de Valdir) es derrotado
+Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Cornada
+  -> S0P0 esta vacia: el ataque va contra Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+  -> Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) pierde 25 (567 -> 542)
+Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Chorro
+  -> S0P0 esta vacia: el ataque va contra Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+  -> Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) pierde 87 (542 -> 455) x4
+Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): la accion falla (el usuario ya no esta activo; la accion se pierde)
+Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) usa Embestida
+  -> Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) pierde 56 (524 -> 468)
+Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) usa Arañazo
+  -> Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 50 (155 -> 105)
+Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) usa Llama
+  -> Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 6 (354 -> 348) x0.5
+Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) usa Mordisco
+  -> Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) pierde 49 (558 -> 509)
+Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) usa Arañazo
+  -> S0P0 esta vacia: el ataque va contra Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+  -> Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) pierde 44 (455 -> 411)
+Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) usa Embestida
+  -> Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 61 (105 -> 44)
+Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Golpe de aleta
+  -> S0P0 esta vacia: el ataque va contra Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+  -> Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) pierde 6 (411 -> 405)
+  S0P0 queda vacia: no hay reservas
+  (empate exacto resuelto al azar: Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir))
+  (empate exacto resuelto al azar: Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir))
+
+=== Ronda 3 ===
+
+--- Ocho Palmatagma de la colonia de Valdir: ronda 3 ---
+  S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 44/267
+  S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 348/354
+  S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 381/393
+  S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 195/211
+  S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 289/289
+  S0P0 (tuya): vacia
+  S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 405/567
+  S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 468/558
+  S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 509/558
+  S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  Intermedio: Palmatagma grande (derrotada)
+  Reservas viables del rival: 2
+  Sin efectos de campo activos
+
+  S0P1: Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P2: Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P3: Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P4: Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    3) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P5: Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    1) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    2) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P6: Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    1) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    2) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Llama [magical, fuego, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 6
+
+  S0P7: Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    1) Arañazo [physical, sin tipo, PB 45, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    5) Esquiva (50% de exito)
+    6) Rendirse
+     -  Intercambio -> Palmatagma grande (Ocho Palmatagma de la colonia de Valdir): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Ataque con garras o uñas.
+    1) S1P0 (rival): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    2) S1P1 (rival): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    3) S1P2 (rival): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    4) S1P3 (rival): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    5) S1P4 (rival): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    6) S0P0 (tuya): vacia
+    7) S0P1 (tuya): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P2 (tuya): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    9) S0P3 (tuya): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    10) S0P4 (tuya): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    11) S0P5 (tuya): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    12) S0P6 (tuya): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    13) S0P7 (tuya): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo: 3
+
+--- Adriano Valerio + Maelle Vaurin + Crispo Servilio: ronda 3 ---
+  S0P0 (rival): vacia
+  S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) 405/567
+  S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) 468/558
+  S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) 558/558
+  S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) 509/558
+  S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) 553/553
+  S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 44/267
+  S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 348/354
+  S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 381/393
+  S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 195/211
+  S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) 289/289
+  Intermedio: Mota 419/419 | Eosmis 291/291 | Noxilo (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    3) Llama [magical, fuego, PB 30, prio 0, single]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 4
+    Golpe potente con las garras.
+    1) S0P0 (rival): vacia
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 8
+
+  S1P1: Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Chorro [magical, agua, PB 30, prio 0, single]
+    2) Resguardo [status, sin tipo, PB -, prio 0, single]
+    3) Puño preciso [physical, sin tipo, PB 15, prio 3, single]  [aviso: fallara al usarse (CANON-TECHNIQUES Puno preciso / GAP-PARTIAL-FIRST-TURN)]
+    4) Desconcentrar [status, sin tipo, PB -, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Lanza un chorro de agua a presión.
+    1) S0P0 (rival): vacia
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 8
+
+  S1P2: Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Rastro [status, oscuridad, PB -, prio 0, single]
+    2) Saeta umbría [magical, oscuridad, PB 30, prio 0, single]
+    3) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    4) Mordisco [physical, sin tipo, PB 50, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 3
+    Golpe potente con las garras.
+    1) S0P0 (rival): vacia
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 2
+
+  S1P3: Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Embestida de chispa [physical, rayo, PB 65, prio 0, single]
+    2) Chispa [magical, rayo, PB 30, prio 0, single]
+    3) Cornada [physical, sin tipo, PB 60, prio 0, single]
+    4) Embestida [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 4
+    Carga corporal contra el objetivo.
+    1) S0P0 (rival): vacia
+    2) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    8) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+    9) S1P0 (tuya): Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    10) S1P1 (tuya): Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    11) S1P2 (tuya): Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    12) S1P3 (tuya): Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    13) S1P4 (tuya): Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+  Objetivo: 3
+
+  S1P4: Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    1) Señal de banco [status, luz, PB -, prio 1, single]
+    2) Salva radiante [magical, luz, PB 20 x1-5, prio 0, multi]
+    3) Haz de luz [magical, luz, PB 30, prio 0, single]
+    4) Golpe de aleta [physical, sin tipo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Mota (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    7) Intercambio -> Eosmis (Adriano Valerio + Maelle Vaurin + Crispo Servilio)
+    8) Rendirse
+     -  Intercambio -> Noxilo (Adriano Valerio + Maelle Vaurin + Crispo Servilio): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Dispara entre 1 y 5 proyectiles de luz. Cada impacto tiene 10% de aplicar Espíritu Cercenado.
+  Hasta 5 objetivos (uno por impacto como maximo), en orden.
+    1) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+    7) S0P7 (rival): Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 1: 7
+    1) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+    6) S0P6 (rival): Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 2 (0 = terminar): 6
+    1) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+    5) S0P5 (rival): Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 3 (0 = terminar): 5
+    1) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+    4) S0P4 (rival): Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 4 (0 = terminar): 4
+    1) S0P1 (rival): Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir)
+    2) S0P2 (rival): Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir)
+    3) S0P3 (rival): Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir)
+  Objetivo 5 (0 = terminar): 3
+Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Zarpazo
+  -> Palmatagma del ojo cicatrizado (Ocho Palmatagma de la colonia de Valdir) pierde 54 (405 -> 351)
+Risco (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Zarpazo
+  -> Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) pierde 157 (553 -> 396) [mundano +100%]
+Fulgocerno (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Embestida
+  -> Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) pierde 23 (468 -> 445)
+Gútula (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Chorro
+  -> Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) pierde 88 (396 -> 308) x4
+Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) usa Arañazo
+  -> Noctargo de Maelle (Adriano Valerio + Maelle Vaurin + Crispo Servilio) pierde 63 (381 -> 318)
+Pelnir (Adriano Valerio + Maelle Vaurin + Crispo Servilio) usa Salva radiante
+  2 impactos
+  -> Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) pierde 7 (308 -> 301) x0.5 [resplandor +25%]
+  -> Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) pierde 7 (301 -> 294) x0.5 [resplandor +25%]
+  Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) queda espiritu_cercenado (salva_radiante)
+  (empate exacto resuelto al azar: Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir))
+  (empate exacto resuelto al azar: Palmatagma de pelaje oscuro (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de garras largas (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de mandíbula torcida (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de lomo rojizo (Ocho Palmatagma de la colonia de Valdir) > Palmatagma joven y nervioso (Ocho Palmatagma de la colonia de Valdir) > Palmatagma de cola rota (Ocho Palmatagma de la colonia de Valdir))
+
+Al haber derrotado al alfa los Palmatagma se retiran.
+
+Fin: {"kind":"victory","winner":1,"reason":"rendicion"}
+Resultado: {"kind":"victory","winner":1,"reason":"rendicion"}

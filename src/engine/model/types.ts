@@ -96,6 +96,8 @@ export interface Preparation<C = BondedCreature> {
 }
 
 export interface SideSetup<C = BondedCreature> {
+  /** habilita combates masivos (modo batalla): permite desplegar todas las posiciones declaradas en initialDeployment */
+  battleMode?: boolean;
   summoner: Summoner;
   preparation: Preparation<C>;
   /** Vinculos no preparados, solo para comprobar 2.5 */

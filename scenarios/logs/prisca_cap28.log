@@ -1,0 +1,502 @@
+Combate (semilla 1, modo strict, constante de dano 0.9375). Supuestos activos: 76 (ver "cli gaps")
+Valeduno (Lerio Saval) se materializa en S1P0
+Keraul (Prisca Eburia) se materializa en S0P0
+Dracendra (Lerio Saval) se materializa en S1P1
+Despliegue inicial completo
+
+--- Prisca Eburia: establecimiento de posiciones de la ronda 1 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 429/429
+  S1P1 (rival): Dracendra (Lerio Saval) 252/252
+  S0P0 (tuya): Keraul (Prisca Eburia) 429/429
+  Intermedio: Targor 601/601 | Faresban 242/242
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+  Puedes abrir una segunda posicion temporal materializando una criatura completa:
+    1) Targor 601/601
+    2) Faresban 242/242
+  Criatura (0 = no): 1
+
+=== Ronda 1 ===
+Se abre la posicion temporal S0P1
+Targor (Prisca Eburia) se materializa en S0P1
+
+--- Prisca Eburia: ronda 1 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 429/429
+  S1P1 (rival): Dracendra (Lerio Saval) 252/252
+  S0P0 (tuya): Keraul (Prisca Eburia) 429/429
+  S0P1* (tuya): Targor (Prisca Eburia) 601/601
+  Intermedio: Faresban 242/242
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Keraul (Prisca Eburia)
+    1) Arranque [magical, rayo, PB 55, prio 1, single]
+    2) Cadena de chispas [magical, rayo, PB 20 x1-5, prio 0, multi]
+    3) Chispa [magical, rayo, PB 30, prio 0, single]
+    4) Arco eléctrico [magical, rayo, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Faresban (Prisca Eburia)
+    7) Rendirse
+  Accion: 3
+    Dispara una chispa concentrada.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Dracendra (Lerio Saval)
+    3) S0P0 (tuya): Keraul (Prisca Eburia)
+    4) S0P1 (tuya): Targor (Prisca Eburia)
+  Objetivo: 2
+
+  S0P1: Targor (Prisca Eburia)
+    1) Fractura [status, tierra, PB -, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Intercambio -> Faresban (Prisca Eburia)
+    8) Rendirse
+  Accion: 2
+    Sin efecto adicional.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Dracendra (Lerio Saval)
+    3) S0P0 (tuya): Keraul (Prisca Eburia)
+    4) S0P1 (tuya): Targor (Prisca Eburia)
+  Objetivo: 2
+
+--- Lerio Saval: ronda 1 ---
+  S0P0 (rival): Keraul (Prisca Eburia) 429/429
+  S0P1* (rival): Targor (Prisca Eburia) 601/601
+  S1P0 (tuya): Valeduno (Lerio Saval) 429/429
+  S1P1 (tuya): Dracendra (Lerio Saval) 252/252
+  Intermedio: Talassar 380/380
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Talassar (Lerio Saval)
+    7) Rendirse
+  Accion: 3
+    Golpea con una masa de basalto conjurada. Destruye Barrera de fuerza antes de calcular el daño.
+    1) S0P0 (rival): Keraul (Prisca Eburia)
+    2) S0P1 (rival): Targor (Prisca Eburia)
+    3) S1P0 (tuya): Valeduno (Lerio Saval)
+    4) S1P1 (tuya): Dracendra (Lerio Saval)
+  Objetivo: 1
+
+  S1P1: Dracendra (Lerio Saval)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Fauces en llamas [physical, fuego, PB 60, prio 0, single]
+    3) Proyectiles ígneos [magical, fuego, PB 20 x1-5, prio 0, multi]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Talassar (Lerio Saval)
+    7) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S0P0 (rival): Keraul (Prisca Eburia)
+    2) S0P1 (rival): Targor (Prisca Eburia)
+    3) S1P0 (tuya): Valeduno (Lerio Saval)
+    4) S1P1 (tuya): Dracendra (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) usa Maza de basalto
+  -> Keraul (Prisca Eburia) pierde 199 (429 -> 230) x2
+Keraul (Prisca Eburia) usa Chispa
+  carga_subita potencia esta tecnica (+50%)
+  -> Dracendra (Lerio Saval) pierde 72 (252 -> 180) [carga_subita +50%]
+Dracendra (Lerio Saval) usa Ariete dracónico
+  ignicion potencia esta tecnica (+50%)
+  -> Keraul (Prisca Eburia) pierde 230 (230 -> 0) [ignicion +50%]
+  Keraul (Prisca Eburia) es derrotado
+Targor (Prisca Eburia) usa Embate de roca
+  -> Dracendra (Lerio Saval) pierde 112 (180 -> 68) x2
+
+  Reemplazo forzado en S0P0:
+    1) Faresban (Prisca Eburia)
+  Criatura: 1
+  Faresban (Prisca Eburia) entra en S0P0 (Reemplazo forzado)
+Faresban (Prisca Eburia) se materializa en S0P0
+La posicion temporal S0P1 se sostiene
+
+=== Ronda 2 ===
+
+--- Prisca Eburia: ronda 2 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 429/429
+  S1P1 (rival): Dracendra (Lerio Saval) 68/252
+  S0P0 (tuya): Faresban (Prisca Eburia) 242/242
+  S0P1* (tuya): Targor (Prisca Eburia) 601/601
+  Intermedio: Keraul (derrotada)
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S0P0: Faresban (Prisca Eburia)
+    1) Llamarada [magical, fuego, PB 55, prio 0, all]
+    2) Pluma ígnea [magical, fuego, PB 50, prio 0, single]
+    3) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    4) Ráfaga [magical, aire, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Expulsa una llamarada amplia. 10% de Quemado.
+
+  S0P1: Targor (Prisca Eburia)
+    1) Fractura [status, tierra, PB -, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Retirada voluntaria: dejar la posicion temporal vacia
+    7) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Sin efecto adicional.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Dracendra (Lerio Saval)
+    3) S0P0 (tuya): Faresban (Prisca Eburia)
+    4) S0P1 (tuya): Targor (Prisca Eburia)
+  Objetivo: 2
+
+--- Lerio Saval: ronda 2 ---
+  S0P0 (rival): Faresban (Prisca Eburia) 242/242
+  S0P1* (rival): Targor (Prisca Eburia) 601/601
+  S1P0 (tuya): Valeduno (Lerio Saval) 429/429
+  S1P1 (tuya): Dracendra (Lerio Saval) 68/252
+  Intermedio: Talassar 380/380
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Talassar (Lerio Saval)
+    7) Rendirse
+  Accion: 5
+
+  S1P1: Dracendra (Lerio Saval)
+    1) Ariete dracónico [physical, fuego, PB 95, prio 0, single]
+    2) Fauces en llamas [physical, fuego, PB 60, prio 0, single]
+    3) Proyectiles ígneos [magical, fuego, PB 20 x1-5, prio 0, multi]
+    4) Zarpazo [physical, sin tipo, PB 60, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Talassar (Lerio Saval)
+    7) Rendirse
+  Accion: 1
+    Dracendra concentra su fuego alrededor del torso y lo libera hacia atrás en el momento de atacar, impulsando todo su cuerpo contra el adversario como un ariete. La combustión aumenta enormemente la velocidad y la fuerza de la embestida. Sin efecto adicional.
+    1) S0P0 (rival): Faresban (Prisca Eburia)
+    2) S0P1 (rival): Targor (Prisca Eburia)
+    3) S1P0 (tuya): Valeduno (Lerio Saval)
+    4) S1P1 (tuya): Dracendra (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) esquiva (uso 1, 100%): exito
+Faresban (Prisca Eburia) usa Llamarada
+  -> Valeduno (Lerio Saval) lo esquiva
+  -> Dracendra (Lerio Saval) pierde 68 (68 -> 0) [combustion +25%]
+  Dracendra (Lerio Saval) es derrotado
+Dracendra (Lerio Saval): la accion falla (el usuario ya no esta activo; la accion se pierde)
+Targor (Prisca Eburia) usa Embate de roca
+  -> S1P1 esta vacia: el ataque va contra Valeduno (Lerio Saval)
+  -> Valeduno (Lerio Saval) lo esquiva
+
+  Reemplazo forzado en S1P1:
+    1) Talassar (Lerio Saval)
+  Criatura: 1
+  Talassar (Lerio Saval) entra en S1P1 (Reemplazo forzado)
+Talassar (Lerio Saval) se materializa en S1P1
+Prisca Eburia esta agotado y no puede mantener la simultaneidad: Targor (Prisca Eburia) en S0P1 vuelve al Intermedio
+
+=== Ronda 3 ===
+
+--- Prisca Eburia: ronda 3 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 429/429
+  S1P1 (rival): Talassar (Lerio Saval) 380/380
+  S0P0 (tuya): Faresban (Prisca Eburia) 242/242
+  Intermedio: Targor 601/601 | Keraul (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Faresban (Prisca Eburia)
+    1) Llamarada [magical, fuego, PB 55, prio 0, all]
+    2) Pluma ígnea [magical, fuego, PB 50, prio 0, single]
+    3) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    4) Ráfaga [magical, aire, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Targor (Prisca Eburia)
+    7) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Expulsa una llamarada amplia. 10% de Quemado.
+
+--- Lerio Saval: ronda 3 ---
+  S0P0 (rival): Faresban (Prisca Eburia) 242/242
+  S1P0 (tuya): Valeduno (Lerio Saval) 429/429
+  S1P1 (tuya): Talassar (Lerio Saval) 380/380
+  Intermedio: Dracendra (derrotada)
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (50% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Corrige el salto a mitad del movimiento. Después de golpear, la Precisión del siguiente ataque dirigido contra él se reduce 25%.
+    1) S0P0 (rival): Faresban (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+
+  S1P1: Talassar (Lerio Saval)
+    1) Chorro a reacción [magical, agua, PB 70, prio 1, single]
+    2) Descarga de presión [magical, agua, PB 70, prio 0, single]
+    3) Gelifracción [magical, agua, PB 75, prio 0, single]
+    4) Chorro [magical, agua, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 3
+    Proyecta agua superenfriada que se congela al contacto y fractura la estructura mágica. Destruye Zona antimagia antes de calcular el daño. Contra criaturas de Agua o Planta, se considera supereficaz independientemente de la tabla de tipos.
+    1) S0P0 (rival): Faresban (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) usa Quiebro aéreo
+  -> Faresban (Prisca Eburia) pierde 50 (242 -> 192) x0.5 [filo_del_viento +25%]
+  Valeduno (Lerio Saval): quiebro_aereo (incoming_accuracy)
+Faresban (Prisca Eburia) usa Llamarada
+  -> Valeduno (Lerio Saval) pierde 204 (429 -> 225) x2 [combustion +25%, guardamar -25%]
+  -> Talassar (Lerio Saval) pierde 38 (380 -> 342) x0.5 [combustion +25%, guardamar -25%]
+  Valeduno (Lerio Saval) queda quemado (llamarada)
+Talassar (Lerio Saval) usa Gelifracción
+  -> Faresban (Prisca Eburia) pierde 116 (192 -> 76)
+Valeduno (Lerio Saval) pierde 27 por quemado (225 -> 198)
+
+=== Ronda 4 ===
+
+--- Prisca Eburia: ronda 4 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 198/429 [quemado(def -50%)]
+  S1P1 (rival): Talassar (Lerio Saval) 342/380
+  S0P0 (tuya): Faresban (Prisca Eburia) 76/242
+  Intermedio: Targor 601/601 | Keraul (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Faresban (Prisca Eburia)
+    1) Llamarada [magical, fuego, PB 55, prio 0, all]
+    2) Pluma ígnea [magical, fuego, PB 50, prio 0, single]
+    3) Proyectil ígneo [magical, fuego, PB 40, prio 0, single]
+    4) Ráfaga [magical, aire, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Intercambio -> Targor (Prisca Eburia)
+    7) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Arranca una pluma de llama y la lanza como proyectil.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Talassar (Lerio Saval)
+    3) S0P0 (tuya): Faresban (Prisca Eburia)
+  Objetivo: 1
+
+--- Lerio Saval: ronda 4 ---
+  S0P0 (rival): Faresban (Prisca Eburia) 76/242
+  S1P0 (tuya): Valeduno (Lerio Saval) 198/429 [quemado(def -50%)]
+  S1P1 (tuya): Talassar (Lerio Saval) 342/380
+  Intermedio: Dracendra (derrotada)
+  Reservas viables del rival: 1
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 5
+
+  S1P1: Talassar (Lerio Saval)
+    1) Chorro a reacción [magical, agua, PB 70, prio 1, single]
+    2) Descarga de presión [magical, agua, PB 70, prio 0, single]
+    3) Gelifracción [magical, agua, PB 75, prio 0, single]
+    4) Chorro [magical, agua, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Talassar comprime agua frente a las mandíbulas y la expulsa en un chorro extremadamente estrecho y veloz. Si impacta, aplica Saturado con 100% de probabilidad.
+    1) S0P0 (rival): Faresban (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) esquiva (uso 1, 100%): exito
+Talassar (Lerio Saval) usa Chorro a reacción
+  -> Faresban (Prisca Eburia) pierde 76 (76 -> 0)
+  Faresban (Prisca Eburia) es derrotado
+Faresban (Prisca Eburia): la accion falla (el usuario ya no esta activo; la accion se pierde)
+
+  Reemplazo forzado en S0P0:
+    1) Targor (Prisca Eburia)
+  Criatura: 1
+  Targor (Prisca Eburia) entra en S0P0 (Reemplazo forzado)
+Targor (Prisca Eburia) se materializa en S0P0
+Valeduno (Lerio Saval) pierde 27 por quemado (198 -> 171)
+
+=== Ronda 5 ===
+
+--- Prisca Eburia: ronda 5 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 171/429 [quemado(def -50%)]
+  S1P1 (rival): Talassar (Lerio Saval) 342/380
+  S0P0 (tuya): Targor (Prisca Eburia) 601/601
+  Intermedio: Keraul (derrotada) | Faresban (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Targor (Prisca Eburia)
+    1) Fractura [status, tierra, PB -, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Faresban (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Sin efecto adicional.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Talassar (Lerio Saval)
+    3) S0P0 (tuya): Targor (Prisca Eburia)
+  Objetivo: 1
+
+--- Lerio Saval: ronda 5 ---
+  S0P0 (rival): Targor (Prisca Eburia) 601/601
+  S1P0 (tuya): Valeduno (Lerio Saval) 171/429 [quemado(def -50%)]
+  S1P1 (tuya): Talassar (Lerio Saval) 342/380
+  Intermedio: Dracendra (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (50% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Corrige el salto a mitad del movimiento. Después de golpear, la Precisión del siguiente ataque dirigido contra él se reduce 25%.
+    1) S0P0 (rival): Targor (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+
+  S1P1: Talassar (Lerio Saval)
+    1) Chorro a reacción [magical, agua, PB 70, prio 1, single]
+    2) Descarga de presión [magical, agua, PB 70, prio 0, single]
+    3) Gelifracción [magical, agua, PB 75, prio 0, single]
+    4) Chorro [magical, agua, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Talassar comprime agua frente a las mandíbulas y la expulsa en un chorro extremadamente estrecho y veloz. Si impacta, aplica Saturado con 100% de probabilidad.
+    1) S0P0 (rival): Targor (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) usa Quiebro aéreo
+  -> Targor (Prisca Eburia) pierde 103 (601 -> 498) x2 [filo_del_viento +25%, piel_de_piedra -25%]
+  Valeduno (Lerio Saval): quiebro_aereo (incoming_accuracy)
+Talassar (Lerio Saval) usa Chorro a reacción
+  -> Targor (Prisca Eburia) pierde 199 (498 -> 299) x2
+  Targor (Prisca Eburia) queda saturado (chorro_a_reaccion)
+Targor (Prisca Eburia) usa Embate de roca
+  -> falla contra Valeduno (Lerio Saval) (precision 75.0%)
+Valeduno (Lerio Saval) pierde 27 por quemado (171 -> 144)
+
+=== Ronda 6 ===
+
+--- Prisca Eburia: ronda 6 ---
+  S1P0 (rival): Valeduno (Lerio Saval) 144/429 [quemado(def -50%)]
+  S1P1 (rival): Talassar (Lerio Saval) 342/380
+  S0P0 (tuya): Targor (Prisca Eburia) 299/601 [saturado(matk -50%; no puede subir: 4 turnos)]
+  Intermedio: Keraul (derrotada) | Faresban (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S0P0: Targor (Prisca Eburia)
+    1) Fractura [status, tierra, PB -, prio 0, single]
+    2) Embate de roca [physical, tierra, PB 50, prio 0, single]
+    3) Esquirla de cuarzo [magical, tierra, PB 30, prio 0, single]
+    4) Granalla mineral [magical, tierra, PB 55, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Keraul (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+     -  Intercambio -> Faresban (Prisca Eburia): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 2
+    Sin efecto adicional.
+    1) S1P0 (rival): Valeduno (Lerio Saval)
+    2) S1P1 (rival): Talassar (Lerio Saval)
+    3) S0P0 (tuya): Targor (Prisca Eburia)
+  Objetivo: 1
+
+--- Lerio Saval: ronda 6 ---
+  S0P0 (rival): Targor (Prisca Eburia) 299/601 [saturado(matk -50%; no puede subir: 4 turnos)]
+  S1P0 (tuya): Valeduno (Lerio Saval) 144/429 [quemado(def -50%)]
+  S1P1 (tuya): Talassar (Lerio Saval) 342/380
+  Intermedio: Dracendra (derrotada)
+  Reservas viables del rival: 0
+  Sin efectos de campo activos
+
+  S1P0: Valeduno (Lerio Saval)
+    1) Quiebro aéreo [physical, aire, PB 90, prio 2, single]
+    2) Jabalina de hierro [magical, tierra, PB 75, prio 0, single]
+    3) Maza de basalto [magical, tierra, PB 70, prio 0, single]
+    4) Salva de esquirlas [magical, tierra, PB 20 x1-5, prio 0, multi]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Corrige el salto a mitad del movimiento. Después de golpear, la Precisión del siguiente ataque dirigido contra él se reduce 25%.
+    1) S0P0 (rival): Targor (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+
+  S1P1: Talassar (Lerio Saval)
+    1) Chorro a reacción [magical, agua, PB 70, prio 1, single]
+    2) Descarga de presión [magical, agua, PB 70, prio 0, single]
+    3) Gelifracción [magical, agua, PB 75, prio 0, single]
+    4) Chorro [magical, agua, PB 30, prio 0, single]
+    5) Esquiva (100% de exito)
+    6) Rendirse
+     -  Intercambio -> Dracendra (Lerio Saval): no disponible (no es una reserva viable; CANON-MECHANICS 26.1)
+  Accion: 1
+    Talassar comprime agua frente a las mandíbulas y la expulsa en un chorro extremadamente estrecho y veloz. Si impacta, aplica Saturado con 100% de probabilidad.
+    1) S0P0 (rival): Targor (Prisca Eburia)
+    2) S1P0 (tuya): Valeduno (Lerio Saval)
+    3) S1P1 (tuya): Talassar (Lerio Saval)
+  Objetivo: 1
+Valeduno (Lerio Saval) usa Quiebro aéreo
+  -> Targor (Prisca Eburia) pierde 103 (299 -> 196) x2 [filo_del_viento +25%, piel_de_piedra -25%]
+  Valeduno (Lerio Saval): quiebro_aereo (incoming_accuracy)
+Talassar (Lerio Saval) usa Chorro a reacción
+  -> Targor (Prisca Eburia) pierde 196 (196 -> 0) x2
+  Targor (Prisca Eburia) es derrotado
+Targor (Prisca Eburia): la accion falla (el usuario ya no esta activo; la accion se pierde)
+  S0P0 queda vacia: no hay reservas
+Valeduno (Lerio Saval) pierde 27 por quemado (144 -> 117)
+
+Fin: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}
+Resultado: {"kind":"victory","winner":1,"reason":"todas las criaturas de la Preparacion derrotadas (26.2)"}

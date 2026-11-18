@@ -112,6 +112,8 @@ const cases: Record<string, Duel & { check: (st: BattleState) => void }> = {
     check: (st) => assert.ok(eventsOf(st, 'stage').some((e) => e.data!.source === 'debilitar' && e.data!.stat === 'atk' && e.data!.delta === -1)) },
   descarga_de_presion: { file: 'sarah_vs_adriano.json', id: 'undaria', rounds: [() => use('descarga_de_presion')],
     check: (st) => assert.equal(combatant(st, uid(0, 'undaria')).location, 'intermedio') },
+  desconcentrar: { file: 'sarah_vs_adriano.json', id: 'brumarina', rounds: [() => use('desconcentrar')],
+    check: (st) => assert.ok(eventsOf(st, 'stage').some((e) => e.data!.source === 'desconcentrar' && e.data!.stat === 'mdef' && e.data!.delta === -1)) },
   desorientar: { file: 'asesino_vs_adriano.json', id: 'mota', rounds: [() => use('desorientar')],
     check: (st) => assert.ok(combatant(st, D).statuses.some((s) => s.id === 'desorientado')) },
   estela: { file: 'asesino_vs_adriano.json', id: 'mota', rounds: [() => use('estela')],

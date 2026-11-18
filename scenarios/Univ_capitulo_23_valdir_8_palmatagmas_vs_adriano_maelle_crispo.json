@@ -1,0 +1,610 @@
+{
+  "_nota": "Guion Universidad cap. 23, mina de Valdir: simulación del combate de ocho Palmatagma salvajes contra Adriano Valerio, Maelle Vaurin y Crispo Servilio. Palmatagma: NV 22/19/17/17/17/16/16/16, con técnicas sencillas disponibles a esos niveles, sin Taladro al rojo, Sacudida, Fauces en llamas ni Granalla mineral. Adriano conserva las cuatro técnicas de cada criatura en el JSON de ingreso y sube sólo los NV: Risco 36, Mota 22, Eosmis 12, Gútula 13. Maelle y Crispo conservan equipamientos de ingreso. Curmin recién vinculado NV7 y Broncian recién vinculado NV5 constan en _vinculosRecientesEnIntermedio, pero NO en la Preparación de batalla: acaban de pasar al Intermedio y no pueden ser materializados ni servir de reemplazo durante esta crisis. El equipo de aliados es un agregado técnico de tres invocadores para el formato battle (el estamento arconte y las capacidades 60/25 del campo summoner SON SOLO UN CONTENEDOR DE SIMULACIÓN; no son su Estamento real ni permiten que un alumno controle los Vínculos de otro). Despliegue inicial: Adriano 2, Crispo 2, Maelle 1; los demás quedan en reserva, sin exceder dos criaturas iniciales por persona. La capacidad individual de Fortaleza no está acreditada; valores de Fortaleza vacíos y Orientaciones orientativas. Los NV y equipos elegidos para la batalla son parámetros de simulación, no log ni reescritura del guion. Amplitudes académicas al cierre del curso: Adriano 237,5; Crispo 187,5; Maelle 137,5; las cargas equipadas en esta simulación son deliberadamente inferiores porque se usa equipamiento de ingreso a petición del autor. CORRECCIÓN TÉCNICA: se utiliza el ID elemental `oscuridad` para coincidir con CANON-MECHANICS y el validador del simulador (no `oscuro`). Los ocho Palmatagma salvajes se distinguen mediante apodos descriptivos para facilitar el seguimiento del combate.",
+  "_vinculosRecientesEnIntermedio": [
+    {
+      "summonerId": "maelle",
+      "id": "maelle_curmin",
+      "speciesId": "curmin",
+      "types": [
+        "aire"
+      ],
+      "nv": 7,
+      "baseStatsNV50": {
+        "hp": 285,
+        "atk": 55,
+        "matk": 55,
+        "def": 45,
+        "mdef": 45,
+        "spe": 100
+      },
+      "fortaleza": {},
+      "orientations": [],
+      "equippedTechniques": [],
+      "equippedManifestations": [],
+      "persistentStatuses": [],
+      "learnedTechniques": [
+        "mordisco",
+        "rafaga"
+      ],
+      "battleStatus": "intermedio_no_preparado"
+    },
+    {
+      "summonerId": "crispo",
+      "id": "crispo_broncian",
+      "speciesId": "broncian",
+      "types": [
+        "fuego"
+      ],
+      "nv": 5,
+      "baseStatsNV50": {
+        "hp": 420,
+        "atk": 75,
+        "matk": 35,
+        "def": 90,
+        "mdef": 65,
+        "spe": 35
+      },
+      "fortaleza": {},
+      "orientations": [],
+      "equippedTechniques": [],
+      "equippedManifestations": [],
+      "persistentStatuses": [],
+      "learnedTechniques": [
+        "aranazo",
+        "mordisco",
+        "embestida",
+        "patada"
+      ],
+      "battleStatus": "intermedio_no_preparado"
+    }
+  ],
+  "mode": "battle",
+  "seed": 42,
+  "config": {
+    "effectsMode": "strict",
+    "maxRounds": 40
+  },
+  "sides": [
+    {
+      "summoner": {
+        "id": "palmatagmas_salvajes",
+        "name": "Ocho Palmatagma de la colonia de Valdir",
+        "estamento": "arconte",
+        "amplitude": null,
+        "fortalezaCapacity": 60,
+        "fortalezaMaxPerStat": 25,
+        "simultaneity": "stable",
+        "partialMaterialization": false,
+        "manifestationRepertoire": []
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "palma_1",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 22,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "mordisco",
+              "embate_de_roca",
+              "esquirla_de_cuarzo",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma grande"
+          },
+          {
+            "id": "palma_2",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 19,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "embestida",
+              "mordisco",
+              "esquirla_de_cuarzo",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma del ojo cicatrizado"
+          },
+          {
+            "id": "palma_3",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 17,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "aranazo",
+              "embate_de_roca",
+              "esquirla_de_cuarzo",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma de pelaje oscuro"
+          },
+          {
+            "id": "palma_4",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 17,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "mordisco",
+              "embestida",
+              "esquirla_de_cuarzo",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma de cola rota"
+          },
+          {
+            "id": "palma_5",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 17,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "mordisco",
+              "aranazo",
+              "embate_de_roca",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma de lomo rojizo"
+          },
+          {
+            "id": "palma_6",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 16,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "mordisco",
+              "esquirla_de_cuarzo",
+              "llama",
+              "aranazo"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma de mandíbula torcida"
+          },
+          {
+            "id": "palma_7",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 16,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "embestida",
+              "mordisco",
+              "esquirla_de_cuarzo",
+              "llama"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma de garras largas"
+          },
+          {
+            "id": "palma_8",
+            "speciesId": "palmatagma",
+            "types": [
+              "tierra",
+              "fuego"
+            ],
+            "nv": 16,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 140,
+              "matk": 55,
+              "def": 150,
+              "mdef": 105,
+              "spe": 50
+            },
+            "fortaleza": {},
+            "orientations": [],
+            "equippedTechniques": [
+              "aranazo",
+              "embate_de_roca",
+              "llama",
+              "esquirla_de_cuarzo"
+            ],
+            "equippedManifestations": [],
+            "persistentStatuses": [],
+            "nickname": "Palmatagma joven y nervioso"
+          }
+        ]
+      },
+      "initialDeployment": [
+        "palma_1",
+        "palma_2",
+        "palma_3",
+        "palma_4",
+        "palma_5",
+        "palma_6",
+        "palma_7",
+        "palma_8"
+      ]
+    },
+    {
+      "summoner": {
+        "id": "alianza_valdir",
+        "name": "Adriano Valerio + Maelle Vaurin + Crispo Servilio",
+        "estamento": "arconte",
+        "amplitude": null,
+        "fortalezaCapacity": 60,
+        "fortalezaMaxPerStat": 25,
+        "simultaneity": "stable",
+        "partialMaterialization": false,
+        "manifestationRepertoire": [
+          "mundano",
+          "formacion_de_caza",
+          "fluidez_aerea",
+          "marea_reparadora",
+          "velo_nocturno",
+          "alta_tension",
+          "reflejos_electricos",
+          "resplandor"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "adriano_risco",
+            "nickname": "Risco",
+            "speciesId": "dracendra",
+            "priorForms": [
+              "brasal"
+            ],
+            "types": [
+              "fuego"
+            ],
+            "nv": 36,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 145,
+              "matk": 95,
+              "def": 100,
+              "mdef": 70,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "ariete_draconico",
+              "proyectil_igneo",
+              "llama",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "mundano"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "adriano_mota",
+            "nickname": "Mota",
+            "speciesId": "nimbaro",
+            "priorForms": [
+              "nimburu"
+            ],
+            "types": [
+              "aire"
+            ],
+            "nv": 22,
+            "baseStatsNV50": {
+              "hp": 515,
+              "atk": 65,
+              "matk": 120,
+              "def": 65,
+              "mdef": 95,
+              "spe": 155
+            },
+            "fortaleza": {},
+            "orientations": [
+              "matk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "rebufo",
+              "cortes_de_viento",
+              "rafaga",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "formacion_de_caza"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "adriano_eosmis",
+            "speciesId": "eosmis",
+            "types": [
+              "aire"
+            ],
+            "nv": 12,
+            "baseStatsNV50": {
+              "hp": 390,
+              "atk": 35,
+              "matk": 75,
+              "def": 60,
+              "mdef": 90,
+              "spe": 40
+            },
+            "fortaleza": {},
+            "orientations": [
+              "matk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "rafaga",
+              "resguardo",
+              "puno_preciso",
+              "debilitar"
+            ],
+            "equippedManifestations": [
+              "fluidez_aerea"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "adriano_gutula",
+            "speciesId": "gutula",
+            "types": [
+              "agua"
+            ],
+            "nv": 13,
+            "baseStatsNV50": {
+              "hp": 470,
+              "atk": 35,
+              "matk": 90,
+              "def": 65,
+              "mdef": 100,
+              "spe": 60
+            },
+            "fortaleza": {},
+            "orientations": [
+              "def",
+              "mdef"
+            ],
+            "equippedTechniques": [
+              "chorro",
+              "resguardo",
+              "puno_preciso",
+              "desconcentrar"
+            ],
+            "equippedManifestations": [
+              "marea_reparadora"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "maelle_noctargo",
+            "nickname": "Noctargo de Maelle",
+            "speciesId": "noctargo",
+            "types": [
+              "oscuridad"
+            ],
+            "nv": 19,
+            "baseStatsNV50": {
+              "hp": 495,
+              "atk": 130,
+              "matk": 75,
+              "def": 70,
+              "mdef": 80,
+              "spe": 145
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "rastro",
+              "saeta_umbria",
+              "zarpazo",
+              "mordisco"
+            ],
+            "equippedManifestations": [
+              "velo_nocturno"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "crispo_fulgocerno",
+            "speciesId": "fulgocerno",
+            "types": [
+              "rayo"
+            ],
+            "nv": 17,
+            "baseStatsNV50": {
+              "hp": 270,
+              "atk": 80,
+              "matk": 35,
+              "def": 70,
+              "mdef": 50,
+              "spe": 65
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "embestida_de_chispa",
+              "chispa",
+              "cornada",
+              "embestida"
+            ],
+            "equippedManifestations": [
+              "alta_tension"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "crispo_noxilo",
+            "speciesId": "noxilo",
+            "types": [
+              "rayo"
+            ],
+            "nv": 14,
+            "baseStatsNV50": {
+              "hp": 285,
+              "atk": 55,
+              "matk": 55,
+              "def": 45,
+              "mdef": 45,
+              "spe": 100
+            },
+            "fortaleza": {},
+            "orientations": [
+              "spe",
+              "matk"
+            ],
+            "equippedTechniques": [
+              "reflejo_galvanico",
+              "cadena_de_chispas",
+              "chispa",
+              "mordisco"
+            ],
+            "equippedManifestations": [
+              "reflejos_electricos"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "crispo_pelnir",
+            "speciesId": "pelnir",
+            "types": [
+              "luz"
+            ],
+            "nv": 11,
+            "baseStatsNV50": {
+              "hp": 390,
+              "atk": 35,
+              "matk": 75,
+              "def": 60,
+              "mdef": 90,
+              "spe": 40
+            },
+            "fortaleza": {},
+            "orientations": [
+              "mdef",
+              "matk"
+            ],
+            "equippedTechniques": [
+              "senal_de_banco",
+              "salva_radiante",
+              "haz_de_luz",
+              "golpe_de_aleta"
+            ],
+            "equippedManifestations": [
+              "resplandor"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "adriano_risco",
+        "adriano_mota",
+        "maelle_noctargo",
+        "crispo_fulgocerno",
+        "crispo_noxilo"
+      ]
+    }
+  ]
+}

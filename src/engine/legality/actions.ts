@@ -89,6 +89,11 @@ export function legalActions(ctx: EngineCtx, positionId: string): ActionOption[]
       out.push({ action: { kind: 'dodge' }, legal: true, ruleRef: 'CANON-MECHANICS 17' });
     }
     const blocker = withdrawBlocker(user, true);
+    if (pos.temporary) {
+      const action: Action = { kind: 'withdraw' };
+      if (blocker) out.push({ action, legal: false, reason: `${blocker}: no puede retirarse voluntariamente`, ruleRef: 'CANON-MECHANICS 24.5 / GAP-ADEPT-SUSTAIN' });
+      else out.push({ action, legal: true, ruleRef: 'CANON-MECHANICS 16 / GAP-ADEPT-SUSTAIN' });
+    }
     // Retirada parcial de la colonia: misma regla que la Retirada voluntaria (consume la accion, la bloquean sus restricciones)
     if (user.colony && user.colony.materialized > 1) {
       const action: Action = { kind: 'corpses', count: 1 };
@@ -122,6 +127,8 @@ function sameOption(opt: Action, a: Action): boolean {
       return opt.kind === 'partial' && opt.techniqueId === a.techniqueId && opt.creatureId === a.creatureId;
     case 'switch':
       return opt.kind === 'switch' && opt.incomingId === a.incomingId;
+    case 'withdraw':
+      return opt.kind === 'withdraw';
     case 'corpses':
       return opt.kind === 'corpses';
     default:

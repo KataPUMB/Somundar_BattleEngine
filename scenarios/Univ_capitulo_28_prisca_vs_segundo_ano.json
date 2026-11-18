@@ -1,0 +1,247 @@
+{
+  "_nota": "Capítulo 28: torneo estival de Lucerio IV, primera ronda. Prisca Eburia (1.er curso) vs Lerio Saval (2.º curso, personaje propuesto). Combate 3v3 con máximo dos criaturas activas por lado. Datos de Prisca: Preparación de cierre del primer curso de CANON-NOVELS, Amplitud 212,5. Sus NV exactos del torneo NO constan: 26/25/23 son ESTIMACIONES de simulación, compatibles con Fractura de Targor; las criaturas del rival quedan exactamente +5 NV por pareja de comparación (31/30/28). Rival, Manifestaciones y equipamientos son PROPUESTAS, no canon ni log. Ventajas de tipo calculadas según CANON-MECHANICS: Agua vs Targor (Tierra) ×2; Tierra vs Keraul (Rayo) ×2; Fuego vs Faresban (Fuego/Aire) ×2. NO hay debilidad ×4 en el trío de Prisca; el resultado no queda forzado. Fortaleza sin mediciones individuales: objetos vacíos; capacidades orientativas por Estamento. Los dos logs deben resolver el combate y determinar la derrota que fija el guion.",
+  "seed": 1,
+  "config": {
+    "effectsMode": "strict",
+    "maxRounds": 30
+  },
+  "sides": [
+    {
+      "summoner": {
+        "id": "prisca",
+        "name": "Prisca Eburia",
+        "estamento": "adepto",
+        "amplitude": 212.5,
+        "fortalezaCapacity": 30,
+        "fortalezaMaxPerStat": 15,
+        "simultaneity": "limited",
+        "partialMaterialization": false,
+        "manifestationRepertoire": [
+          "piel_de_piedra",
+          "carga_subita",
+          "combustion"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "targor_prisca",
+            "speciesId": "targor",
+            "types": [
+              "tierra"
+            ],
+            "nv": 26,
+            "baseStatsNV50": {
+              "hp": 715,
+              "atk": 110,
+              "matk": 65,
+              "def": 165,
+              "mdef": 105,
+              "spe": 55
+            },
+            "fortaleza": {},
+            "orientations": [
+              "def",
+              "hp"
+            ],
+            "equippedTechniques": [
+              "fractura",
+              "embate_de_roca",
+              "esquirla_de_cuarzo",
+              "granalla_mineral"
+            ],
+            "equippedManifestations": [
+              "piel_de_piedra"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "keraul_prisca",
+            "speciesId": "keraul",
+            "types": [
+              "rayo"
+            ],
+            "nv": 25,
+            "baseStatsNV50": {
+              "hp": 515,
+              "atk": 90,
+              "matk": 125,
+              "def": 65,
+              "mdef": 70,
+              "spe": 150
+            },
+            "fortaleza": {},
+            "orientations": [
+              "spe",
+              "matk"
+            ],
+            "equippedTechniques": [
+              "arranque",
+              "cadena_de_chispas",
+              "chispa",
+              "arco_electrico"
+            ],
+            "equippedManifestations": [
+              "carga_subita"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "faresban_prisca",
+            "speciesId": "faresban",
+            "types": [
+              "fuego",
+              "aire"
+            ],
+            "nv": 23,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 60,
+              "matk": 140,
+              "def": 70,
+              "mdef": 90,
+              "spe": 140
+            },
+            "fortaleza": {},
+            "orientations": [
+              "spe",
+              "matk"
+            ],
+            "equippedTechniques": [
+              "llamarada",
+              "pluma_ignea",
+              "proyectil_igneo",
+              "rafaga"
+            ],
+            "equippedManifestations": [
+              "combustion"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "keraul_prisca"
+      ]
+    },
+    {
+      "summoner": {
+        "id": "lerio",
+        "name": "Lerio Saval",
+        "estamento": "invocador",
+        "amplitude": 287.5,
+        "fortalezaCapacity": 40,
+        "fortalezaMaxPerStat": 20,
+        "simultaneity": "stable",
+        "partialMaterialization": true,
+        "manifestationRepertoire": [
+          "guardamar",
+          "filo_del_viento",
+          "ignicion"
+        ]
+      },
+      "preparation": {
+        "creatures": [
+          {
+            "id": "talassar_lerio",
+            "speciesId": "talassar",
+            "types": [
+              "agua"
+            ],
+            "nv": 31,
+            "baseStatsNV50": {
+              "hp": 435,
+              "atk": 75,
+              "matk": 125,
+              "def": 90,
+              "mdef": 125,
+              "spe": 85
+            },
+            "fortaleza": {},
+            "orientations": [
+              "matk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "chorro_a_reaccion",
+              "descarga_de_presion",
+              "gelifraccion",
+              "chorro"
+            ],
+            "equippedManifestations": [
+              "guardamar"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "valeduno_lerio",
+            "speciesId": "valeduno",
+            "types": [
+              "tierra",
+              "aire"
+            ],
+            "nv": 30,
+            "baseStatsNV50": {
+              "hp": 495,
+              "atk": 80,
+              "matk": 110,
+              "def": 70,
+              "mdef": 70,
+              "spe": 170
+            },
+            "fortaleza": {},
+            "orientations": [
+              "spe",
+              "matk"
+            ],
+            "equippedTechniques": [
+              "quiebro_aereo",
+              "jabalina_de_hierro",
+              "maza_de_basalto",
+              "salva_de_esquirlas"
+            ],
+            "equippedManifestations": [
+              "filo_del_viento"
+            ],
+            "persistentStatuses": []
+          },
+          {
+            "id": "dracendra_lerio",
+            "speciesId": "dracendra",
+            "types": [
+              "fuego"
+            ],
+            "nv": 28,
+            "baseStatsNV50": {
+              "hp": 295,
+              "atk": 145,
+              "matk": 95,
+              "def": 100,
+              "mdef": 70,
+              "spe": 90
+            },
+            "fortaleza": {},
+            "orientations": [
+              "atk",
+              "spe"
+            ],
+            "equippedTechniques": [
+              "ariete_draconico",
+              "fauces_en_llamas",
+              "proyectiles_igneos",
+              "zarpazo"
+            ],
+            "equippedManifestations": [
+              "ignicion"
+            ],
+            "persistentStatuses": []
+          }
+        ]
+      },
+      "initialDeployment": [
+        "valeduno_lerio",
+        "dracendra_lerio"
+      ]
+    }
+  ]
+}

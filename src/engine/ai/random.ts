@@ -48,7 +48,7 @@ export const randomLegalPolicy: Policy = {
       const choice: ColonyChoice = { side, creatureId: c.creature.id, materializeCorpses: nextFloat(rng) < 0.3 ? 'all' : nextInt(rng, c.colony.materialized + 1, max) };
       out.push(choice);
     }
-    if (s.summoner.simultaneity !== 'adept_temporary' || s.positions.length >= 2 || nextFloat(rng) < 0.5) return out;
+    if (s.summoner.simultaneity !== 'adept_temporary' || s.positions.length >= 2 || s.adeptExhausted || nextFloat(rng) < 0.5) return out;
     const reserves = s.combatants.filter((c) => c.location === 'intermedio' && c.hp > 0);
     return reserves.length > 0 ? [...out, { side, creatureId: pick(rng, reserves).creature.id }] : out;
   },

@@ -86,7 +86,9 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'deployment_complete': return 'Despliegue inicial completo';
     case 'declaration': return null;
     case 'switch': return `${who} se retira; entra ${creatureName(st, String(d.incoming))}`;
-    case 'exit': return d.chargeLost ? `  ${who} pierde la carga al salir` : null;
+    case 'exit':
+      if (d.leftEmpty) return `  ${who} se retira y deja la posicion vacia`;
+      return d.chargeLost ? `  ${who} pierde la carga al salir` : null;
     case 'entry_complete': return null;
     case 'dodge_success': return `${who} esquiva (uso ${String(d.consecutiveUse)}, ${String(d.chance)}%): exito`;
     case 'dodge_fail': return `${who} intenta esquivar (uso ${String(d.consecutiveUse)}, ${String(d.chance)}%): fallo`;
@@ -163,7 +165,12 @@ export function formatEvent(data: GameData, st: BattleState, e: BattleEvent): st
     case 'action_failed': return `${who}: la accion falla (${String(d.reason)})`;
     case 'status_damage': return `${who} pierde ${String(d.loss)} por ${String(d.status)} (${String(d.before)} -> ${String(d.after)})`;
     case 'position_opened': return `Se abre la posicion temporal ${e.targets?.[0]}`;
-    case 'position_closed': return `La posicion temporal ${e.targets?.[0]} no se sostiene y desaparece`;
+    case 'position_closed':
+      if (d.exhausted) {
+        const who2 = who === '?' ? 'La criatura' : who;
+        return `${String(d.summoner)} esta agotado y no puede mantener la simultaneidad: ${who2} en ${e.targets?.[0]} vuelve al Intermedio`;
+      }
+      return `La posicion temporal ${e.targets?.[0]} no se sostiene y desaparece`;
     case 'position_sustained': return `La posicion temporal ${e.targets?.[0]} se sostiene`;
     case 'tie_break': return `  (empate exacto resuelto al azar: ${(d.order as string[]).map((u) => creatureName(st, u.split('/')[0])).join(' > ')})`;
     case 'end_of_round': case 'counters_advanced': return null;
