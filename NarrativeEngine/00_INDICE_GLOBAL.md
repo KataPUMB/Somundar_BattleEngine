@@ -1,9 +1,9 @@
 # Índice global de Somundar
 
 SOURCE_ID: GLOBAL-INDEX
-REVISION: 2
-FECHA_ACTUALIZACION: 2026-09-28
-FECHA: 2026-09-28
+REVISION: 5
+FECHA_ACTUALIZACION: 2026-11-15
+FECHA: 2026-11-15
 RESPONSABILIDAD: único mapa global de recuperación
 AUTORIDAD: índice derivado; no sustituye fuentes
 
@@ -18,7 +18,7 @@ SOURCE_ID identifica una responsabilidad estable. Un contenedor puede reunir var
 | Recurso | Estado vigente | Qué permite y qué no |
 |---|---|---|
 | Ocho fuentes de contenido vigentes | Completas; seis actualizadas a r2, STYLE-GUIDE y CANON-SOLMER conservan r1 | Consultar normas, fichas, hitos documentados y estilo, con periodo y estado de cada sección. |
-| CANON-NOVELS | Dossier unificado presente | Consultar su reconstrucción y conocimiento de autor; no reemplaza la evidencia narrativa ni acredita que hayamos leído los manuscritos. |
+| CANON-NOVELS | Dossier unificado presente, revisión activa r5 | Consultar su reconstrucción y conocimiento de autor; no reemplaza la evidencia narrativa ni acredita que hayamos leído los manuscritos. |
 | NOVEL-DESPERTAR / NOVEL-VALERIO / NOVEL-UNIVERSIDAD | Referenciados por el dossier, cuerpos ausentes | No hay pasajes íntegros que puedan recuperarse de ellos en esta entrega. |
 | CONTINUITY-INDEX | SIN_INDEXAR en narrativa; controles de autor incorporados | No contiene escenas verificadas. Sí localiza el secreto de filiación y la planificación aprobada de IV, con su procedencia explícita. |
 | Mapas y guía de novelas separada | No adjuntos | No inventar lectura visual ni rellenar su contenido. Sí hay planificación dentro de CANON-NOVELS. |
@@ -35,15 +35,15 @@ Si una consulta se resuelve con el dossier, responde atribuyendo «según CANON-
 | EDITORIAL-PROCEDURES | Modos de tarea, alcance y mantenimiento | EDITORIAL-HANDBOOK | Usar sólo el procedimiento pertinente. |
 | SOURCE-MANIFEST | Identidad, revisión, procedencia y relaciones | EDITORIAL-HANDBOOK | Registro de fuentes, incluidas ausencias e históricos. |
 | SOURCE-ISSUES | Conflictos, límites y sustituciones detectadas | EDITORIAL-HANDBOOK | Registro inicial, ampliable; no auditoría exhaustiva. |
-| CANON-DECISIONS | Decisiones explícitas, alcance y aplicación | EDITORIAL-HANDBOOK | DEC-001 a DEC-006 aplicadas: estados, secreto, objetos, cierre IV, Ruptura de Afinidad y Materialización parcial. |
+| CANON-DECISIONS | Decisiones explícitas, alcance y aplicación | EDITORIAL-HANDBOOK | DEC-001 a DEC-011 documentadas: estados, secreto, objetos, cierre IV, Ruptura de Afinidad y Materialización parcial. |
 | CONTINUITY-STANDARD | Estructura y evidencia de índices narrativos | EDITORIAL-HANDBOOK | Para indexar, interpretar o reparar registros. |
 | INDEXING-PROMPT | Encargo reutilizable de indexación | EDITORIAL-HANDBOOK | Ejecutar por petición; no es una tarea automática al leerlo. |
 | CANON-WORLD | Mundo, culturas, metafísica, materiales y relaciones regionales | WORLD-CORPUS; «Somundar» | Marco general; restricciones y vacíos explícitos. |
 | CANON-SOLMER | Geografía, instituciones, política, economía y cultura imperial | WORLD-CORPUS; «Imperio de Solmer» | Presente declarado de novela II. |
 | CANON-NOVELS | Personajes, profesores, secretos e hitos reconstruidos | CHARACTER-CORPUS; tres partes originales | I–III; estados históricos y cierre III; planes IV–VIII separados por rótulos. |
-| CANON-CREATURES | Especies, anatomía, estadísticas, formas y aprendizaje | CREATURE-CORPUS; 160 fichas numeradas | No demuestra aprendizaje o estado de cada individuo. |
+| CANON-CREATURES | Especies, anatomía, estadísticas, formas y aprendizaje | CREATURE-CORPUS; 163 fichas numeradas (r3) | No demuestra aprendizaje o estado de cada individuo. |
 | CANON-MECHANICS | Regla general de invocación, progresión y resolución | SYSTEM-CORPUS; «Mecánicas de invocación de Somundar» | Prevalencia mecánica declarada. |
-| CANON-TECHNIQUES | Parámetros, efectos, condiciones y excepciones de técnicas | SYSTEM-CORPUS; «Compendio de técnicas Somundar — revisión 2» | Repertorio; no acceso universal por compartir elemento. |
+| CANON-TECHNIQUES | Parámetros, efectos, condiciones y excepciones de técnicas | SYSTEM-CORPUS; «Compendio de técnicas Somundar — revisión 3» | Repertorio; no acceso universal por compartir elemento. |
 | CANON-MANIFESTATIONS | Repertorio, efectos, acceso, equipamiento y transmisión | SYSTEM-CORPUS; «Manifestaciones del Vínculo…» | Existencia no implica conocimiento humano. |
 | NOVEL-* | Texto íntegro aceptado y hechos narrados | NARRATIVE-CORPUS | Inicialmente ausente; consulta su registro antes de atribuirle un pasaje. |
 | CONTINUITY-INDEX | Localización de escenas, estados y dependencias | CONTINUITY-INDEX | Cobertura narrativa SIN_INDEXAR; controles de autor separados en 4.1, 5.1 y 9.1. |
@@ -101,7 +101,7 @@ Los siguientes son términos de búsqueda, no declaraciones exhaustivas de ident
 | Silvia Vardana; Silvia | CANON-NOVELS > Promoción > 5. Silvia Vardana | Relación y trabajo con Adriano; Estela; escenas y cambios de confianza. |
 | Brenn Veyr; Brenn; familia Veyr; Hagen | CANON-NOVELS > 10. Brenn Veyr; Familia Veyr | Identidad pública, conocimiento de autor, relación con Adriano y criaturas individuales. |
 | Maelle Vaurin; Maelle; Casa Auvrelle | CANON-NOVELS > 2. Maelle Vaurin; Familia real de Corona Azur | Cobertura, familia y secreto; no fusionar identidades sin leer el apartado. |
-| Ciro Lurigan; Valco; Flavia Valco; Sabina Cerio; Gabino Varo | CANON-NOVELS > Villa Ámbrela | Estados de vida/muerte, experiencias, relaciones y certificación, según momento. |
+| Ciro (criatura: Lurigan); Valco; Flavia Valco; Sabina Cerio; Gabino Varo | CANON-NOVELS > Villa Ámbrela | Estados de vida/muerte, experiencias, relaciones y certificación, según momento. |
 | Naim; Haruen; Beltrán; Aulo; Lucano; Tacio; Celsa; Vibia; Maro; Mirea | CANON-NOVELS > Personajes incorporados o definidos en Valerio | Aulo de este bloque no se fusiona con Aulo Bragano. |
 | Tulia Severina; Gaio Marçal | CANON-NOVELS > apartados con esos nombres | Medición, evaluación, capacidades frente a certificación. |
 | Eulalia; Galo; Silvano; Teodora; Domitia; Feliciano; Emilia; Tiberio | CANON-NOVELS > PROFESORES DE LA UNIVERSIDAD | Cátedras, doctrina e intervención real según dossier; no eventos posibles del antecedente. |
@@ -169,10 +169,25 @@ No usar los ejemplos como escenas aceptadas ni permitir que una pauta superficia
 
 SOURCE-ISSUES registra: manuscritos ausentes; alcance de autoridad normativa/narrativa; sustitución de profesores; etapas negativas; fórmula de daño abreviada; ejemplos de interfaces; periodos y planificación; mapas/guía ausentes; totales de costes de IV, corregidos por DEC-004 (ISS-009 resuelta); equivalencia de fórmulas de NV. Consulte la incidencia aplicable antes de dar por resuelta una discrepancia.
 
-SOURCE-MANIFEST conserva nombre observado, SOURCE_ID, tipo, autoridad, revisión/relación y destino. CANON-DECISIONS conserva DEC-001 a DEC-006, ya aplicadas, y las decisiones que se incorporen después. Ninguno permite elevar una hipótesis a canon.
+SOURCE-MANIFEST conserva nombre observado, SOURCE_ID, tipo, autoridad, revisión/relación y destino. CANON-DECISIONS conserva DEC-001 a DEC-010, incluida la nueva línea arácnida; su aplicación no acredita escenas narradas. Ninguno permite elevar una hipótesis a canon.
 
 ## 10. Actualizar este mapa
 
 Añadir o cambiar únicamente responsabilidades, ubicación, cobertura y rutas semánticas que ayuden a recuperar. Los eventos, estados, conocimiento y relaciones detallados viven en CONTINUITY-INDEX y sus fuentes. Las normas completas permanecen en sus especialistas. No crear un segundo índice global ni copiar resúmenes de capítulos aquí.
 
 Si se divide un contenedor para ocupar una plaza libre, conservar SOURCE_ID y cambiar ubicación en este mapa y el manifiesto. Si cambia una versión, actualizar sus rutas y declarar las vistas desactualizadas hasta comprobarlas. El mapa nunca debe ocultar qué corpus falta o qué cobertura es parcial.
+
+## Actualización de recuperación — cronología y nombres (2026-11-15)
+
+- **Calendario solmeriano:** `calendarioSolmeriano.md` es referencia auxiliar de las decisiones de autor recogidas en CANON-DECISIONS @ r3 > DEC-007. No confundir días y meses propuestos con hechos aceptados.
+- **Fechas de personajes y curso universitario:** CANON-NOVELS @ r5 > fichas y promoción; CANON-DECISIONS @ r3 > DEC-008; CONTINUITY-INDEX @ r3 > 10. Los cumpleaños no expresamente fijados son propuestas.
+- **Ciro / Lurigan:** CANON-NOVELS @ r5 > Ciro; CANON-SOLMER en WORLD-CORPUS @ r3 > 8.5; CANON-DECISIONS @ r3 > DEC-009. Ciro es el humano; Lurigan su criatura, no su apellido.
+- **Navegación:** los localizadores de encabezado de CANON-NOVELS fueron regenerados para r5; los índices históricos de otras fuentes pueden conservar números de líneas anteriores cuando no se haya reconstruido su navegación.
+
+- **Nueva línea arácnida (DEC-010):** CANON-CREATURES @ r3 > 153. Néspira, 154. Deinarach, 155. Aracnoir; transfiguraciones NV22/NV41; exclusivas Seda umbría, Trama quebradiza y Telaraña de ruina en CANON-TECHNIQUES @ r3 > Técnicas especiales 153–155. Hidra renumerada 156–158; catálogo hasta 163.
+
+## Actualización r5 — Maelle y cierre de Universidad
+
+- **CANON-NOVELS @ r6 > Promoción de Adriano > 2. Maelle Vaurin:** entrada con Noctargo y Néspira; Curmin se vincula en la excursión a la mina; proyección de graduación como Invocadora con Noctargo, Deinarach, Noctivelo y Unisylva. Consultar el texto original para niveles, técnicas, Manifestaciones y costes. La proyección no acredita escenas narradas.
+- **CANON-DECISIONS @ r5 > DEC-011:** objetivos aproximados de Amplitud al graduarse: Adriano 285, Silvia 262, Brenn 276, Lucio 255, Maelle 258. No inferir que las Preparaciones previas de los cuatro primeros ya cuadran con esos objetivos.
+- **SOURCE-MANIFEST @ r5:** revisiones y destino de esta entrega. Las entradas de navegación numérica anteriores a r6 del dossier pueden estar desplazadas: localizar por encabezado y cotejar cuerpo.

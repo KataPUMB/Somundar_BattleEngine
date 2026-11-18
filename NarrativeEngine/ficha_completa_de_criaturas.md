@@ -22,6 +22,40 @@ Una criatura que permanece en una forma posterior después de quedar libre suele
 
 Esta regla resulta especialmente importante para las especies cuya morfología posterior depende del invocador, del lugar o de la historia del Vínculo. Un Zanolah, un Numegor o determinadas colonias fúngicas pueden conservar rasgos imposibles de explicar sin conocer cómo y dónde se produjo su desarrollo anterior.
 
+## Objetos integrados y relación metafísica
+
+Los objetos que forman parte de algunas Transfiguraciones y quedan integrados en la criatura **pueden pasar con ella al Intermedio**. Targor, Dracendra y Corvexan son ejemplos de criaturas capaces de transportar de ese modo realidad material: esos objetos forman parte de la criatura y, por ello, de la relación metafísica entre invocador y criatura.
+
+El criterio es su integración en la criatura y el Vínculo. La regla no concede un inventario general para cualquier objeto que una criatura sostenga, lleve encima o encuentre.
+
+## Tipos, problemas de estado e inmunidades
+
+**Coexistencia:** todos los problemas de estado pueden coexistir sobre una misma criatura, salvo aquellos a los que sea inmune. Aplicar un estado distinto no sustituye ni elimina los que ya tenga.
+
+**Sin suma de impedimentos sobre la misma estadística:** si varios problemas de estado reducen la misma estadística, se aplica únicamente la reducción más severa. Los estados siguen presentes; sus demás efectos, restricciones y contadores se mantienen por separado. Al desaparecer el estado más restrictivo, se vuelve a calcular la penalización con los que permanezcan.
+
+**Ejemplo — Paralizado + Enraizado:** la Velocidad se reduce **50%**, no 75%. A la vez, la Velocidad **no puede aumentar durante los siguientes 5 turnos materializados** por Parálisis y la criatura **no puede retirarse voluntariamente durante los siguientes 2 turnos materializados** por Enraizado. Cada contador conserva su propia duración.
+
+**Inmunidad por tipo:** una criatura es inmune al problema de estado asociado a cada uno de sus tipos. Una criatura duotipo conserva ambas inmunidades. Fuego impide Quemado; Fuego/Oscuridad impide Quemado y Desvinculado.
+
+**Inmunidad de Mítico:** las criaturas de tipo Mítico, también las duotipo, son inmunes a **Espíritu Cercenado (Luz)** y **Desvinculado (Oscuridad)**. Una criatura Fuego/Mítico no puede sufrir Quemado, Desvinculado ni Espíritu Cercenado. Mítico no posee problema de estado propio.
+
+Estas inmunidades afectan al problema de estado, no conceden por sí mismas inmunidad al daño ni a todos los efectos de las técnicas de ese elemento.
+
+| Tipo presente en la criatura | Problema de estado al que es inmune |
+|---|---|
+| Fuego | Quemado |
+| Agua | Saturado |
+| Planta | Enraizado |
+| Tierra | Agrietado |
+| Rayo | Paralizado |
+| Aire | Desorientado |
+| Luz | Espíritu Cercenado |
+| Oscuridad / Oscuro | Desvinculado |
+| Mítico | Espíritu Cercenado y Desvinculado |
+
+La regla se aplica a todas las fichas según su tipo actual. «Mítico» designa aquí el tipo elemental, no una categoría de poder o rareza. La resolución completa corresponde a CANON-MECHANICS > 24.1.
+
 ## Criterio de descripción morfológica
 
 La sección **Descripción** de cada ficha debe permitir imaginar a la criatura antes de explicar qué hace. Por ello debe fijar, siempre que la especie posea una forma estable, su silueta general, las partes principales del cuerpo, sus proporciones, el recubrimiento corporal y los rasgos que permiten reconocerla.
@@ -141,6 +175,8 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 **Peso:** 220–380 kg  
 **Transfiguración:** Evento por apoteosis · **Nivel de Vínculo mínimo:** 35 · **El tesoro.** El invocador debe entregar voluntariamente a Dracendra un gran tesoro. Dracendra debe aceptarlo como suyo y decidir custodiarlo y defenderlo como una posesión propia.  
 
+**Objetos e Intermedio:** los objetos que forman parte de Dracendra y del Vínculo pueden acompañarla al Intermedio. Su relación con objetos y Transfiguraciones no convierte cualquier tesoro o carga en parte de la criatura. Véase «Objetos integrados y relación metafísica».
+
 | Stat | Valor a NV 50 |
 |---|---:|
 | Ataque físico | 145 |
@@ -193,6 +229,10 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 **Tamaño:** 22–30 m de largo y hasta unos 35 m de envergadura; enorme, pero comparable en longitud a un gran navío de guerra.  
 **Peso:** 25–45 t  
 **Apoteósis:** **El tesoro.** El invocador debe entregar voluntariamente a Dracendra un gran tesoro. Dracendra debe aceptarlo como suyo y decidir custodiarlo y defenderlo como una posesión propia.  
+
+**Inmunidades de estado:** por ser Fuego/Mítico, no puede sufrir Quemado, Desvinculado ni Espíritu Cercenado.
+
+**Referencia individual — Risco, planificación de novela IV:** al transfigurar en Valdrakar, Risco y Adriano ganan Ruptura de Afinidad. La Manifestación pertenece a ese Vínculo, no a todos los miembros de la especie. Véanse CANON-NOVELS > Risco y preparación final de novela IV; CANON-MANIFESTATIONS > Ruptura de Afinidad.
 
 | Stat | Valor a NV 50 |
 |---|---:|
@@ -669,6 +709,8 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 **Tamaño:** 2–2,5 m de altura.  
 **Peso:** 1,5–2,5 t  
 **Transfiguración:** Evento por apoteosis · **Nivel de Vínculo mínimo:** 35 · **La Piedra Fundacional.** Durante la transfiguración, Targor integra materiales del entorno inmediato en su nuevo cuerpo y debe incorporar también un elemento profundamente personal ligado a la historia compartida con su invocador; ese elemento permanece como parte física de Numegor.  
+
+**Objetos e Intermedio:** los materiales y objetos integrados en Targor pueden pasar con él al Intermedio por formar parte de la criatura y del Vínculo. La incorporación de materiales y del elemento personal en su Transfiguración mantiene este principio.
 
 | Stat | Valor a NV 50 |
 |---|---:|
@@ -2468,7 +2510,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 #### Aprende por nivel
 - Nivel 1: Coletazo
 - Nivel 1: Golpe de aleta
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 10: Pulso abisal (exclusiva)
 - Nivel 11: Salva a presión
@@ -2513,7 +2554,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 - Nivel 1: Mordisco
 - Nivel 1: Coletazo
 - Nivel 1: Golpe de aleta
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 4: Saeta umbría
 - Nivel 10: Pulso abisal (exclusiva)
@@ -2576,7 +2616,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 - Nivel 1: Mordisco
 - Nivel 1: Coletazo
 - Nivel 1: Golpe de aleta
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 4: Saeta umbría
 - Nivel 10: Pulso abisal (exclusiva)
@@ -3579,7 +3618,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Ráfaga
 - Nivel 10: Compresión (exclusiva)
 - Nivel 11: Cortes de viento
@@ -3622,7 +3660,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 4: Ráfaga
 - Nivel 10: Compresión (exclusiva)
@@ -3677,7 +3714,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Chispa
 - Nivel 4: Ráfaga
 - Nivel 10: Compresión (exclusiva)
@@ -5592,6 +5628,8 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 **Peso:** 80–135 kg  
 **Transfiguración:** Evento por apoteosis · **Nivel de Vínculo mínimo:** 35 · **Robar lo que no cabe en un saco.** Corvexan y su invocador deben apropiarse deliberadamente de un lugar que pertenezca a otro —una casa, terreno, torre, taller u otro espacio— y mantener su posesión hasta que, en términos prácticos, sólo pueda utilizarse con su permiso. Al completarse la transfiguración, Corvexan incorpora físicamente una parte de ese lugar.  
 
+**Objetos e Intermedio:** las piezas y objetos integrados en Corvexan pueden pasar con él al Intermedio. Forman parte de la criatura y de su relación metafísica con el invocador; la incorporación de parte de un lugar al transfigurarse sigue ese mismo principio.
+
 | Stat | Valor a NV 50 |
 |---|---:|
 | Ataque físico | 140 |
@@ -5731,7 +5769,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Saeta umbría
 - Nivel 10: Borrar el contorno (exclusiva)
 - Nivel 11: Salva de saetas
@@ -5772,7 +5809,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Ráfaga
 - Nivel 4: Saeta umbría
 - Nivel 10: Borrar el contorno (exclusiva)
@@ -6996,7 +7032,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 10: Ceder (exclusiva)
 - Nivel 11: Salva a presión
@@ -7041,7 +7076,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 10: Ceder (exclusiva)
 - Nivel 12: Salva a presión
@@ -7089,7 +7123,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Chorro
 - Nivel 10: Ceder (exclusiva)
 - Nivel 13: Salva a presión
@@ -7290,7 +7323,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Ráfaga
 - Nivel 10: Sin inercia (exclusiva)
 - Nivel 11: Cortes de viento
@@ -7332,7 +7364,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Ráfaga
 - Nivel 10: Sin inercia (exclusiva)
 - Nivel 12: Cortes de viento
@@ -7379,7 +7410,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Ráfaga
 - Nivel 10: Sin inercia (exclusiva)
 - Nivel 13: Cortes de viento
@@ -7605,7 +7635,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Semilla acerada
 - Nivel 10: Arraigo (exclusiva)
 - Nivel 11: Lluvia de espinas
@@ -7649,7 +7678,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Semilla acerada
 - Nivel 10: Arraigo (exclusiva)
 - Nivel 12: Lluvia de espinas
@@ -7699,7 +7727,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Semilla acerada
 - Nivel 10: Arraigo (exclusiva)
 - Nivel 13: Lluvia de espinas
@@ -7797,7 +7824,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Haz de luz
 - Nivel 10: Corona de motas (exclusiva)
 - Nivel 12: Salva radiante
@@ -7846,7 +7872,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Haz de luz
 - Nivel 10: Corona de motas (exclusiva)
 - Nivel 13: Salva radiante
@@ -7956,7 +7981,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 - Nivel 1: Puñetazo
 - Nivel 1: Patada
 - Nivel 1: Gancho ascendente
-- Nivel 1: Puñetazo
 - Nivel 6: Saeta umbría
 - Nivel 10: Aprovechar hueco (exclusiva)
 - Nivel 14: Salva de saetas
@@ -8006,7 +8030,6 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 ### Técnicas
 
 #### Aprende por nivel
-- Nivel 1: Puñetazo
 - Nivel 4: Saeta umbría
 - Nivel 10: Aprovechar hueco (exclusiva)
 - Nivel 13: Salva de saetas
@@ -8044,7 +8067,192 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 153. Nirdih
+## 153. Néspira
+
+**Tipo:** Oscuro  
+**Categoría de poder:** Típica  
+**Descripción:** Pequeña araña de cuerpo compacto y abdomen casi esférico, sostenido por ocho patas cortas y robustas. El cefalotórax es ancho, de color negro violáceo, con ocho ojos pequeños agrupados en su parte anterior y dos quelíceros curvados hacia abajo. El abdomen está cubierto por una densa capa de pelos finos, oscuros en los costados y blanquecinos en la región dorsal, donde forman dibujos irregulares que recuerdan a espirales. Sobre el cefalotórax presenta un mechón de pelos blancos más largos que sobresale hacia delante y oculta parcialmente sus ojos. Sus patas terminan en pequeñas uñas que le permiten aferrarse a superficies irregulares. Habita lugares sombríos, grietas y pequeñas cavidades, donde construye refugios con seda oscura. Percibe las vibraciones del entorno mediante las patas y los filamentos que extiende alrededor de su madriguera. Su afinidad con la Oscuridad le permite amortiguar los reflejos sobre su cuerpo y dificultar que otras criaturas distingan su silueta cuando permanece inmóvil.  
+**Tamaño:** 25–35 cm de cuerpo; 55–75 cm de extensión entre las patas.  
+**Peso:** 4–8 kg  
+**Transfiguración:** Nivel 22.
+
+| Stat | Valor a NV 50 |
+|---|---:|
+| Ataque físico | 35 |
+| Ataque mágico | 75 |
+| Defensa | 60 |
+| Defensa mágica | 90 |
+| Velocidad | 40 |
+| Vitalidad | 390 |
+
+### Técnicas
+
+#### Aprende por nivel
+- Nivel 1: Arañazo
+- Nivel 1: Mordisco
+- Nivel 4: Saeta umbría
+- Nivel 10: Seda umbría (exclusiva)
+- Nivel 13: Salva de saetas
+- Nivel 24: Desvanecerse
+- Nivel 27: Corte de vínculo
+- Nivel 32: Absorber vida
+- Nivel 37: Pisar la sombra
+- Nivel 44: Calavera maldita
+- Nivel 78: Mal de ojo
+
+#### Aprende por entrenamiento
+- Debilitar
+- Desconcentrar
+- Dispersar energía
+- Endurecer
+- Enfado
+- Resguardo
+- Frenar
+- Ectoplasma corrosivo
+
+---
+
+## 154. Deinarach
+
+**Tipo:** Oscuro / Tierra  
+**Categoría de poder:** Rara  
+**Descripción:** Araña de gran tamaño, abdomen voluminoso y ocho patas largas y articuladas que le permiten mantener el cuerpo elevado sobre el suelo. El cefalotórax es alargado y está protegido por una cubierta de quitina negra, sobre la que se desarrollan placas minerales de tonos grisáceos y violáceos. Los pelos blancos de Néspira se concentran en la parte superior de la cabeza y forman una cresta curva que se prolonga hacia atrás. Sus ojos adquieren una tonalidad azulada y los quelíceros crecen hasta convertirse en dos grandes estructuras oscuras terminadas en colmillos curvados. Los pedipalpos anteriores se alargan y adquieren una musculatura más desarrollada, aunque todavía no posee manos diferenciadas. Las patas presentan segmentos de quitina endurecida y articulaciones flexibles, mientras sus extremos se estrechan hasta formar puntas capaces de sujetarse a la roca. El abdomen conserva una forma redondeada y muestra dibujos espirales pálidos entre las placas oscuras. Deinarach excava refugios amplios y construye redes resistentes que combina con tierra y pequeños fragmentos minerales. Su dominio de ambos elementos le permite manipular la oscuridad y los materiales minerales próximos, ocultar sus movimientos y atacar desde posiciones protegidas. Es una criatura paciente y territorial que utiliza las vibraciones de sus redes para localizar intrusos y anticipar sus desplazamientos.  
+**Tamaño:** 0,8–1,1 m de cuerpo; 2–2,8 m de extensión entre las patas.  
+**Peso:** 45–80 kg  
+**Transfiguración:** Nivel 41.
+
+| Stat | Valor a NV 50 |
+|---|---:|
+| Ataque físico | 55 |
+| Ataque mágico | 140 |
+| Defensa | 100 |
+| Defensa mágica | 150 |
+| Velocidad | 55 |
+| Vitalidad | 650 |
+
+### Técnicas
+
+#### Aprende por nivel
+- Nivel 1: Arañazo
+- Nivel 1: Mordisco
+- Nivel 1: Colmillazo
+- Nivel 1: Desgarrar
+- Nivel 1: Zarpazo
+- Nivel 4: Saeta umbría
+- Nivel 6: Esquirla de cuarzo
+- Nivel 10: Seda umbría (exclusiva)
+- Nivel 13: Salva de saetas
+- Nivel 15: Salva de esquirlas
+- Nivel 24: Desvanecerse
+- Nivel 26: Corte de vínculo
+- Nivel 28: Trama quebradiza (exclusiva)
+- Nivel 31: Absorber vida
+- Nivel 33: Granalla mineral
+- Nivel 35: Maza de basalto
+- Nivel 37: Pisar la sombra
+- Nivel 39: Calavera maldita
+- Nivel 43: Jabalina de hierro
+- Nivel 48: Mal de ojo
+- Nivel 56: Drenar vida
+- Nivel 84: Bala de plata
+
+#### Aprende por entrenamiento
+- Canalizar
+- Debilitar
+- Desconcentrar
+- Dispersar energía
+- Endurecer
+- Enfado
+- Resguardo
+- Frenar
+- Romper guardia
+- Fractura
+- Embate de roca
+- Ectoplasma corrosivo
+- Desgarro maldito
+- Salto de arena
+- Consumir el vínculo
+
+---
+
+## 155. Aracnoir
+
+**Tipo:** Oscuro / Tierra  
+**Categoría de poder:** Súper rara  
+**Descripción:** Enorme criatura arácnida cuya anatomía combina el cuerpo inferior de una araña gigantesca con una estructura superior erguida de apariencia vagamente humanoide. El abdomen, ovalado y relativamente pequeño respecto a la longitud de sus extremidades, se encuentra unido a un cefalotórax alargado del que nacen ocho patas extraordinariamente largas, formadas por segmentos delgados y angulosos. Desde la región anterior del cefalotórax se eleva un segundo tronco estrecho, protegido por placas de quitina negra y minerales de tonos violáceos y rojizos. Su silueta recuerda a un torso femenino, con cintura estrecha, hombros definidos y dos brazos independientes, aunque carece de piel humana y toda su anatomía está constituida por estructuras arácnidas. Los brazos terminan en manos de cuatro dedos largos y articulados, recubiertos de quitina y rematados por uñas duras y afiladas, capaces tanto de manipular objetos con precisión como de ejecutar golpes. La cabeza, situada sobre un cuello corto, presenta un rostro estrecho y anguloso, desprovisto de nariz y labios humanos, con ocho pequeños ojos de brillo azulado y dos quelíceros curvos que descienden a ambos lados de la boca. Dos grandes crestas de quitina blanquecina se proyectan hacia atrás desde la parte superior de la cabeza, formando una estructura semejante a una corona irregular. Las patas poseen articulaciones reforzadas y extremos afilados de tonalidad mineral dorada. A pesar de su tamaño, Aracnoir es extraordinariamente rápida. Puede recorrer superficies verticales, salvar grandes desniveles y cambiar de dirección con movimientos repentinos difíciles de seguir. Ha abandonado buena parte de los hábitos sedentarios de sus preformas y se desplaza por extensos territorios, utilizando su seda para establecer puntos de anclaje y detectar movimientos. Su afinidad con la Oscuridad le permite alterar los contrastes y las sombras de su entorno inmediato, mientras que su dominio de Tierra alcanza una precisión excepcional en la manipulación de minerales y fragmentos rocosos. Combina ambas capacidades para atacar desde ángulos inesperados y emplea sus brazos para defenderse, sujetar presas y ejecutar movimientos precisos sin depender exclusivamente de sus patas o quelíceros.  
+**Tamaño:** 4–5 m de extensión entre las patas; 2,2–2,8 m de altura total en postura erguida.  
+**Peso:** 70–120 kg.
+
+| Stat | Valor a NV 50 |
+|---|---:|
+| Ataque físico | 70 |
+| Ataque mágico | 220 |
+| Defensa | 110 |
+| Defensa mágica | 170 |
+| Velocidad | 180 |
+| Vitalidad | 360 |
+
+### Técnicas
+
+#### Aprende por nivel
+- Nivel 1: Arañazo
+- Nivel 1: Ráfaga de zarpazos
+- Nivel 1: Mordisco
+- Nivel 1: Puñetazo
+- Nivel 1: Colmillazo
+- Nivel 1: Desgarrar
+- Nivel 1: Zarpazo
+- Nivel 1: Gancho ascendente
+- Nivel 1: Mordisco de presa
+- Nivel 4: Saeta umbría
+- Nivel 6: Esquirla de cuarzo
+- Nivel 10: Seda umbría (exclusiva)
+- Nivel 13: Salva de saetas
+- Nivel 15: Salva de esquirlas
+- Nivel 22: Absorber vida
+- Nivel 24: Desvanecerse
+- Nivel 26: Corte de vínculo
+- Nivel 28: Trama quebradiza (exclusiva)
+- Nivel 31: Granalla mineral
+- Nivel 33: Pisar la sombra
+- Nivel 35: Maza de basalto
+- Nivel 38: Calavera maldita
+- Nivel 42: Jabalina de hierro
+- Nivel 45: Telaraña de ruina (exclusiva)
+- Nivel 50: Drenar vida
+- Nivel 65: Bala de plata
+- Nivel 100: Mal de ojo
+
+#### Aprende por entrenamiento
+- Puño preciso
+- Acelerar
+- Canalizar
+- Debilitar
+- Desconcentrar
+- Dispersar energía
+- Endurecer
+- Enfado
+- Frenar
+- Resguardo
+- Romper guardia
+- Fractura
+- Embate de roca
+- Ectoplasma corrosivo
+- Desgarro maldito
+- Salto de arena
+- Sacudida
+- Aceleración
+- Concentración intensa
+- Desestabilizar
+- Disrupción
+- Impulso mágico
+- Intimidar
+- Romper concentración
+- Consumir el vínculo
+
+---
+
+## 156. Nirdih
 
 **Tipo:** Mítico  
 **Categoría de poder:** Común  
@@ -8089,7 +8297,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 154. Karydha
+## 157. Karydha
 
 **Tipo:** Mítico  
 **Categoría de poder:** Poco común  
@@ -8142,7 +8350,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 155. Lernyra
+## 158. Lernyra
 
 **Tipo:** Mítico  
 **Categoría de poder:** Excepcional  
@@ -8209,7 +8417,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 156. Telnice
+## 159. Telnice
 
 **Tipo:** Rayo / Mítico  
 **Categoría de poder:** Común  
@@ -8257,7 +8465,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 157. Astrapí
+## 160. Astrapí
 
 **Tipo:** Rayo / Mítico  
 **Categoría de poder:** Poco común  
@@ -8310,7 +8518,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 158. Keraulí
+## 161. Keraulí
 
 **Tipo:** Rayo / Mítico  
 **Categoría de poder:** Legendaria  
@@ -8370,7 +8578,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 159. Photerion
+## 162. Photerion
 
 **Tipo:** Luz / Mítico  
 **Categoría de poder:** Primordial  
@@ -8443,7 +8651,7 @@ Como referencia narrativa, un perfil muy ofensivo suele resistir alrededor de **
 
 ---
 
-## 160. Skoterion
+## 163. Skoterion
 
 **Tipo:** Oscuro / Mítico  
 **Categoría de poder:** Primordial  

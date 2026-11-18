@@ -1,4 +1,4 @@
-# Compendio de técnicas Somundar — revisión 2
+# Compendio de técnicas Somundar — revisión 3
 
 Este documento reorganiza el sistema de técnicas de Somundar sin convertir los tipos en repertorios automáticos. Una criatura sólo puede aprender las técnicas que su especie, anatomía, afinidad y desarrollo permitan. El objetivo del catálogo es que las técnicas compartidas proporcionen un lenguaje común al sistema mientras las técnicas especiales definan funciones de combate propias para cada especie.
 
@@ -19,6 +19,8 @@ Este documento reorganiza el sistema de técnicas de Somundar sin convertir los 
 
 ## Reglas de uso
 
+- **Materialización parcial:** cualquier técnica preparada puede ejecutarse de esta forma, incluidas las Físicas, Mágicas y de Estado. Sólo puede proceder de una criatura preparada, ocupa una posición activa y consume su acción; no habilita un tercer Vínculo ni cambia la Prioridad. Es una forma rápida de actuar mediante la parte corporal o mágica necesaria. Se aplican CANON-MECHANICS > Materialización parcial y 19.5, incluida la excepción a la permanencia corporal previa de las técnicas de carga.
+- **Problemas de estado:** todos pueden coexistir salvo inmunidad. Si varios reducen la misma estadística, sólo se aplica la reducción más severa; las restricciones independientes y sus contadores continúan activos. Cada tipo hace inmune a su propio estado, también en duotipo; Mítico impide Espíritu Cercenado y Desvinculado. El daño y los demás efectos de una técnica se resuelven por separado. Consultar CANON-MECHANICS > 24.1.
 - Las técnicas con **Poder Base inferior a 100** tienen **100% de Precisión base**, salvo que su ficha indique otra cosa.
 - La prioridad normal es **+0**.
 - Las técnicas **Físicas** calculan el daño con Ataque físico y Defensa. Las **Mágicas** usan Ataque mágico y Defensa mágica. Las de **Estado** no causan daño directo salvo que su efecto indique expresamente una pérdida de Vitalidad.
@@ -3113,7 +3115,34 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Para calcular el daño utiliza como valor ofensivo la característica actual más alta entre el Ataque y el Ataque mágico del propio objetivo.
 
-### 153. Nirdih — Tres mordiscos
+### 153. Néspira — Seda umbría
+**Tipo:** Oscuro · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 40 | 100% | 12,5 | +0 | Objetivo único |
+
+**Descripción de efectos:** Proyecta una masa de seda oscura y adherente que envuelve parcialmente al objetivo y le causa daño. Sin efecto adicional.
+
+### 154. Deinarach — Trama quebradiza
+**Tipo:** Tierra · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 50 | 100% | 25 | +0 | Objetivo único |
+
+**Descripción de efectos:** Proyecta una telaraña impregnada de partículas minerales que se adhieren al cuerpo del objetivo. Al tensarse, los filamentos endurecidos provocan pequeñas fracturas en su estructura física y mágica. Causa daño y aplica Agrietado.
+
+### 155. Aracnoir — Telaraña de ruina
+**Tipo:** Tierra · **Clase:** Mágica
+
+| Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
+|---:|---:|---:|---:|---|
+| 35 | 100% | 75 | +0 | A todos |
+
+**Descripción de efectos:** Extiende una inmensa telaraña de filamentos oscuros y mineralizados por todo el campo de combate. Los hilos se adhieren a todos los enemigos presentes y se tensan violentamente, provocando fracturas en sus cuerpos y dificultando sus movimientos. Causa daño, aplica Agrietado y baja mucho la Velocidad de todos los enemigos alcanzados. No crea un Campo persistente.
+
+### 156. Nirdih — Tres mordiscos
 **Tipo:** Mítico · **Clase:** Física
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3122,7 +3151,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Las tres cabezas muerden de forma independiente. Realiza exactamente tres impactos que pueden repartirse entre objetivos distintos.
 
-### 154. Karydha — Regenerar cabezas
+### 157. Karydha — Regenerar cabezas
 **Tipo:** Mítico · **Clase:** Estado
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3131,7 +3160,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Regenera cuellos, escamas y tejidos compartidos. Recupera 33% de Vitalidad máxima; si está por debajo de 50%, recupera 50% en su lugar.
 
-### 155. Lernyra — Cerco de nueve
+### 158. Lernyra — Cerco de nueve
 **Tipo:** Mítico · **Clase:** Física
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3140,7 +3169,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Las nueve cabezas atacan desde ángulos independientes. Realiza nueve impactos que pueden repartirse entre los enemigos presentes.
 
-### 156. Telnice — Chispa fugaz
+### 159. Telnice — Chispa fugaz
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3149,7 +3178,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Pasa junto al objetivo como una descarga diminuta y extremadamente rápida.
 
-### 157. Astrapí — Cruce relámpago
+### 160. Astrapí — Cruce relámpago
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3158,7 +3187,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Astrapí atraviesa al objetivo convertido en una descarga. Después de causar daño, puede ser sustituido inmediatamente por otra criatura preparada; el intercambio forma parte de la resolución de la técnica.
 
-### 158. Keraulí — Línea de relámpago
+### 161. Keraulí — Línea de relámpago
 **Tipo:** Rayo · **Clase:** Mágica
 
 | Poder base | Precisión | Coste de Vínculo | Prioridad | Objetivos |
@@ -3167,7 +3196,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Acelera hasta desaparecer de la vista y atraviesa al objetivo dejando una línea eléctrica. Ignora barreras.
 
-### 159. Photerion
+### 162. Photerion
 
 #### Revelación absoluta
 **Tipo:** Luz · **Clase:** Estado
@@ -3187,7 +3216,7 @@ Cada entrada corresponde a la técnica característica de esa especie o forma. E
 
 **Descripción de efectos:** Primer turno: Photerion concentra una cantidad descomunal de radiancia. Segundo turno: todo el campo queda inundado por una descarga de Luz que golpea a todos los enemigos. Después de usarla, baja mucho su Ataque mágico y no puede volver a utilizar Mediodía hasta retirarse y entrar de nuevo.
 
-### 160. Skoterion
+### 163. Skoterion
 
 #### Negación
 **Tipo:** Oscuro · **Clase:** Estado
